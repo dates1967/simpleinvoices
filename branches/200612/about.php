@@ -1,0 +1,54 @@
+<?php
+include('./include/include_main.php');
+
+$display_block ="
+
+<b>About</b>
+<br>
+<br>
+Simple Invoices:
+<br>Version: $version
+<br>Theme: $theme
+<br>Homepage: <a href='http://www.simpleinvoices.org'>http://www.simpleinvoices.org</a>
+
+";
+
+
+
+
+?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript" src="niftycube.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+Nifty("div#container");
+Nifty("div#content,div#nav","same-height small");
+Nifty("div#header,div#footer","small");
+}
+</script>
+
+
+<title>Simple Invoices - Manage billers
+</title>
+<body>
+<?php
+$mid->printMenu('hormenu1');
+$mid->printFooter();
+?>
+
+<link rel="stylesheet" type="text/css" href="themes/<?php echo $theme; ?>/tables.css">
+<br>
+<div id="container">
+
+<div id="header"></div>
+<?php echo $display_block; ?>
+<div id="footer"></div>
+</div>
+</div>
+
+</body>
+</html>
