@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss version="2.0">
+  <channel>
+  <title>Simple Invoices Google Group</title>
+  <link>http://groups.google.com/group/simpleinvoices</link>
+  <description>This is the mailing list for simpleinvoices.sf.net</description>
+  <language>en</language>
+  <item>
+  <title>Simple Invoices news: 2006 10 01</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/368ed27cd6008d39</link>
+  <description>
+  Hi All, &lt;br&gt; quick news re Simple Invoices &lt;br&gt; Im in the process of moving our development site from cvsdude.com to &lt;br&gt; google (&lt;a target=&quot;_blank&quot; href=&quot;http://code.google.com/p/simpleinvoices&quot;&gt;[link]&lt;/a&gt;) &lt;br&gt; 1- the moving of the subversion server is complete, our subveriosn &lt;br&gt; server is now hosted at google &lt;br&gt; refer: &lt;a target=&quot;_blank&quot; href=&quot;http://code.google.com/p/simpleinvoices/source&quot;&gt;[link]&lt;/a&gt;
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/368ed27cd6008d39</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sun, 01 Oct 2006 06:48:36 UT
+</pubDate>
+  </item>
+  <item>
+  <title>SimpleInvoices 20060927 release; Editable invoices!!</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/536d98a33d5431a5</link>
+  <description>
+  Hi All, &lt;br&gt; finally, invoices that you create can now be edited!!! &lt;br&gt; pretty much since Simple Invoices was first release back near the &lt;br&gt; start of the year one of the main features missing was the ability to &lt;br&gt; edit invoices &lt;br&gt; Note; you cant yet add more items into an invoice when your editing &lt;br&gt; it, this will change in the future
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/536d98a33d5431a5</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Wed, 27 Sep 2006 05:45:15 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices new 2006 09 26</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/cc060f7f31e0ce58</link>
+  <description>
+  Hi All, &lt;br&gt; quick news update for Simple Invoices &lt;br&gt; 1. Editable invoices &lt;br&gt; - after many months of thinking about this, editable invoices are &lt;br&gt; just around the corner :) - i finally got off my a$$ and got this &lt;br&gt; coded over the weekend. This will be included in the next release - &lt;br&gt; sometime later this week, &lt;br&gt; - Note: this is an inital implementation, so basically you can most
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/cc060f7f31e0ce58</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Tue, 26 Sep 2006 05:59:12 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Re: error trying to login</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/680f13bf5831524d</link>
+  <description>
+  Hi, &lt;br&gt; there was a small problem with the latest SimpleInvoices-20060920 &lt;br&gt; to fix this, open up the file index.php and remove the line &lt;br&gt; include(&#39;./auth.php&#39;); &lt;br&gt; which a few lines from the top of the file &lt;br&gt; I left this line in by mistake &lt;br&gt; or go to &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://sourceforge.net/project/showfiles.php?group_id=164303&quot;&gt;[link]&lt;/a&gt; &lt;br&gt; and download the latest relase which has this issue fixed.
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/680f13bf5831524d</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Mon, 25 Sep 2006 23:05:26 UT
+</pubDate>
+  </item>
+  <item>
+  <title>error trying to login</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/c0f1ab391841aebd</link>
+  <description>
+  Hi there, &lt;br&gt; Downloaded 20060920 stable. Following the ReadMe.html I installed &lt;br&gt; the MySQL database and after finishing the setup and testing I tried to &lt;br&gt; login to the system using &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://192.168.1.25/simpleinvoices&quot;&gt;[link]&lt;/a&gt; &lt;br&gt; I got the login screen and when entering the username and password and &lt;br&gt; clicking the login button I get the following Query failed. Table
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/c0f1ab391841aebd</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Mon, 25 Sep 2006 19:30:36 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices 20060920: TinyMCE added</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/36972b9e35fc5b66</link>
+  <description>
+  Hi All, &lt;br&gt; just a quick notice, Simple Ivnoices 2060920 has been released. &lt;br&gt; The new feature is the use of TinyMCE (&lt;a target=&quot;_blank&quot; href=&quot;http://tinymce.moxiecode.com/&quot;&gt;[link]&lt;/a&gt;) &lt;br&gt; in the new invoices pages. &lt;br&gt; TinyMCE is a javascript HTML editor - meaning you now get gmail rich &lt;br&gt; formatting like features in various screens - which should make
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/36972b9e35fc5b66</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Wed, 20 Sep 2006 03:53:56 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices 2006 09 18: client accounts work finished</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/07b7ad977a5692eb</link>
+  <description>
+  Hi All, &lt;br&gt; Simple Invoices 2006 09 18 has been release !! &lt;br&gt; I had alot of fun over the weekend hacking on Simple Invoices, this &lt;br&gt; release rounds up the work on &#39;Client Accounts&amp;quot; and introduces to new &lt;br&gt; terms into the use of Simple Invoices. &lt;br&gt; The main features of this release is the concept of invoice &#39;Age&#39; and &#39;Aging&#39;
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/07b7ad977a5692eb</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Mon, 18 Sep 2006 03:17:54 UT
+</pubDate>
+  </item>
+  <item>
+  <title>error in the latest release</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/aa31358bb7920f0f</link>
+  <description>
+  Hi All, &lt;br&gt; unfortunately the simpleinvoices_20060913.zip i uploaded onto &lt;br&gt; souceforge the other day is stuffed &lt;br&gt; you&#39;ll be able to grab the real version from &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://sourceforge.net/project/showfiles.php?group_id=164303&quot;&gt;[link]&lt;/a&gt; in a few &lt;br&gt; hours after ive double checked everthing &lt;br&gt; im not having a good run with the releases lately :)
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/aa31358bb7920f0f</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sat, 16 Sep 2006 12:12:40 UT
+</pubDate>
+  </item>
+  <item>
+  <title>update</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/51fea0b521ed7f07</link>
+  <description>
+  Hi All. &lt;br&gt; guess who forgot to checkin one of the changes for the auto-complete stuff :) &lt;br&gt; has been checked in now and an update simpleinvoice 20060691-1 release &lt;br&gt; has been put up on sourceforge &lt;br&gt; now the demo at : &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://simpleinvoices.sourceforge.net/demo/process_payment.php?op=pay_invoice&quot;&gt;[link]&lt;/a&gt; &lt;br&gt; will work correctly
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/51fea0b521ed7f07</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Tue, 12 Sep 2006 23:44:31 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices 2006 09 13</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/1d7e1fef9bce7e5e</link>
+  <description>
+  Hi All, &lt;br&gt; Simple Invoices 2006 09 13 has been released ! &lt;br&gt; The main new stuff in this release is the improvement to the Process &lt;br&gt; Payments screen, The Invoice ID field received some jquery &lt;br&gt; magic(&lt;a target=&quot;_blank&quot; href=&quot;http://www.dyve.net/jquery/?autocomplete&quot;&gt;[link]&lt;/a&gt;) is an auto-complete &lt;br&gt; field - This mean say if you have 12 invoices in your database - when
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/1d7e1fef9bce7e5e</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Tue, 12 Sep 2006 23:32:47 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices demo site update</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/f9410bee3c107675</link>
+  <description>
+  Hi All, &lt;br&gt; Quick update, the Simple Invoices demo site &lt;br&gt; (&lt;a target=&quot;_blank&quot; href=&quot;http://simpleinvoices.sf.net/demo&quot;&gt;[link]&lt;/a&gt;) has been upgrade to the latest &lt;br&gt; release 20060909. &lt;br&gt; Cheers &lt;br&gt; Justin
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/f9410bee3c107675</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sun, 10 Sep 2006 23:37:41 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices 20060909 release</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/ca6fead95a486f2d</link>
+  <description>
+  Hi All, &lt;br&gt; After a fair bit of work Simple Invoices 2006 09 09 has finally been &lt;br&gt; released. The main new features of this release is the implemetation &lt;br&gt; of &#39;Client Accounts&#39; stage 2 - refer the wiki page &lt;br&gt; (&lt;a target=&quot;_blank&quot; href=&quot;https://mirror2.cvsdude.com/trac/simpleinvoices/simpleinvoices/wiki/Client_Accounts&quot;&gt;[link]&lt;/a&gt;) &lt;br&gt; for more info &lt;br&gt; Client Accounts progress is going quite well - were on track to get
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/ca6fead95a486f2d</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sat, 09 Sep 2006 12:44:28 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices news: Sep 03 2006</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/8ec852a31083f56b</link>
+  <description>
+  Hi All, &lt;br&gt; quick update re Simple Invoices. &lt;br&gt; Stage 2 of Simple Invoices is about 50% done and checked into subversion, we &lt;br&gt; should be able to do a release next week with this stage finished. &lt;br&gt; also Ive update the Simple Invoices website, thanks to Stuart Brown from &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://www.modernlifeisrubbish.co.uk/&quot;&gt;[link]&lt;/a&gt; for allowing me to borrow their css
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/8ec852a31083f56b</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sun, 03 Sep 2006 02:31:34 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Simple Invoices 20060825</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/dd54282bff830d19</link>
+  <description>
+  Hi All, &lt;br&gt; I&#39;m very happy to announce the availability of Simple Invoice 20060525. &lt;br&gt; The major addition in this release is the new &#39;Client Accounts&#39;, basically &lt;br&gt; it allows to mange/track/etc. payments customer make to you. What this &lt;br&gt; means is that in the Manage Invoices &amp;amp; Customers screen new columns have &lt;br&gt; been added to shown you how much of the invoice has been paid and hows much
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/dd54282bff830d19</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Sat, 26 Aug 2006 14:14:31 UT
+</pubDate>
+  </item>
+  <item>
+  <title>Re: [simpleinvoices:90] Re: Problem With PDF export</title>
+  <link>http://groups.google.com/group/simpleinvoices/msg/359d42f15a6315b7</link>
+  <description>
+  Hi Sebastian, &lt;br&gt; as your PDF works for the google example then its most likely a Simple &lt;br&gt; Invoices issues &lt;br&gt; there are 2 issues, 1 config file and 1 code &lt;br&gt; 1 config: &lt;br&gt; you mentioend your using a subdomain - i&#39;ll assume its sumething like &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://test.google.com&quot;&gt;[link]&lt;/a&gt; and simpleinvoices at the end ie. &lt;br&gt; &lt;a target=&quot;_blank&quot; href=&quot;http://test.google.com/simpleinvoices&quot;&gt;[link]&lt;/a&gt;
+  </description>
+  <guid isPermaLink="true">http://groups.google.com/group/simpleinvoices/msg/359d42f15a6315b7</guid>
+  <author>
+  simpleinvoices@googlegroups.com
+  </author>
+  <pubDate>Mon, 21 Aug 2006 23:58:21 UT
+</pubDate>
+  </item>
+  </channel>
+</rss>
