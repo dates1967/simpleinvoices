@@ -1,0 +1,139 @@
+/* Teleology theme by Denis Polevoi http://teleology.ru Version 0.3 Need further improvements. */
+
+
+            a {
+                color:            #c00;
+            }
+
+body {
+                margin:           0px;
+                background-color: #eee;
+                font-family:      'Lucida Grande', Helvetica, sans-serif;
+}
+h2, h3, h4, h5, h6 {
+                color:            #c00;
+                text-decoration:  none;
+}
+h2 {
+                font-size:        18px;
+                font-weight:      Bold;
+                color:            #c00;
+                letter-spacing:   -1px;
+                margin:           0px 0px 10px 0px;
+            }
+h2 a {
+
+                text-decoration:  none;
+}
+table {font-size: 1em;}
+
+#container {
+                width:            420px;
+                margin:           auto;
+                padding:          15px;
+                background-color: #fff;
+                position:         relative;
+            }
+
+
+
+#top {
+		background: #fff;  
+		margin: auto;
+}
+
+
+#navigation {background: #fff url(images/menu-bg.png) center repeat; /*border-top: 1px solid #ddd;*/ float: left; font-size: 1em; text-align: center; width: 100%;}
+#leftnav {float: left; width: 19%; margin: 0 auto auto 3%;}
+#rightnav {
+                position:         absolute;
+                left:             450px;
+                font:             Normal 18px Helvetica,sans-serif;
+                line-height:      20px;
+                width:            150px;
+                color:            #666;
+                color:            #666;
+                text-decoration:  none;
+}
+
+
+
+
+.node {
+                font-size:        12px;
+                color:            #444;
+		margin-bottom:    40px;
+/*               line-height:      7px;*/
+}
+
+
+.node .content, .node .info {
+                font-size:        12px;
+                color:            #444;
+/*                line-height:      7px; */
+
+}
+.content {
+		
+}
+
+p {
+	line-height: 10px:
+	margin:0px:
+}
+
+            div.post-date {
+                background-color: #ccc;
+                white-space:      nowrap;
+                font:             Normal 20px Helvetica, sans-serif;
+                letter-spacing:   -1px;
+                color:            #fff;
+                display:          inline;
+                padding:          3px 5px 0px 5px;
+                line-height:      20px;
+            }
+
+            div.post-date a {
+                color:            #fff;
+                text-decoration:  none;
+            }
+
+            h1 {
+                padding:          30px 0px 50px 0px;
+                margin:           0px;
+                text-align:       center;
+                font:             Bold 55px 'Arial Black', Tahoma, Helvetica, sans-serif;
+                letter-spacing:   -2px;
+                line-height:      50px;
+            }
+
+            h1 a {
+                color:            #444;
+                text-decoration:  none;
+            }
+
+            div.labels {
+                position:         absolute;
+                right:            450px;
+                text-align:       right;
+                width:            150px;
+            }
+
+            div#description {
+                position:         relative;
+            }
+
+            div#description div {
+                position:         absolute;
+                left:             450px;
+                font:             Normal 18px Helvetica,sans-serif;
+                line-height:      20px;
+                width:            150px;
+                color:            #666;
+            }
+
+            div#description div a {
+                color:            #666;
+                text-decoration:  none;
+            }
+
