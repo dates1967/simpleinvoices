@@ -3,7 +3,7 @@
 <div class="CFile CTopic" id=MainTopic><h1 class=CTitle><a name="Donate"></a>Donate</h1><div class=CBody>
 
 <p class=CParagraph>
-Like Simple Invoices, got a wad of cash weighing you down, no, anyway you can still help out with the development of Simple Invoices.  Donations are accepted and greatly help out covering the costs of free software development.  Just click on the PayPal Donate button below and follow the instruction.<br><br>
+Like Simple Invoices?<br><br>To cover the cost of free software development donations are accepted and greatly help out.  Just click on the PayPal Donate button below and follow the instruction.<br><br>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" align="center">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">

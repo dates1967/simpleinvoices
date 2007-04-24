@@ -1,6 +1,7 @@
 
 
-<div class="CFile CTopic" id=MainTopic><h1 class=CTitle><a name="Home"></a>Home</h1><div class=CBody><p class=CParagraph>Simple Invoices</p><p class=CParagraph>Free/Open source software, no marketing, no buzz words, no whizz bang features your never going to use, just a simple web based invoicing system designed to get the job done.</p>
+<div class="CFile CTopic" id=MainTopic><h1 class=CTitle><a name="Home"></a>Home</h1><div class=CBody><p class=CParagraph>Simple Invoices</p><p class=CParagraph>
+a simple web based invoicing system designed to get the job done, Free/Open source software, communtiy developed, no marketing, no buzz words, no whizzbang features you're never going to use.</p>
 <p class=CParagraph>
 <h4 class=CHeading align=center>
 <a href="index.php?page=About">Read more &gt;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

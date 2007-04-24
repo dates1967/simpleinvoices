@@ -26,11 +26,19 @@ There are many ways you can help out with the development of Simple Invoices eve
 		</ul>
 	<li>Code
 		<ul class=CBulletList>
-			<li>Know or want to know PHP and or MySQL. Jump on the <a href="http://simpleinvoices.org/forum/forum.php?id=3">forum</a> or check out our <a href="http://code.google.com/p/simpleinvoices/issues/list?can=2&q=&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary">issues list</a> to see whats planned for future development. If you can lend a hand coding its always greatly appreciated. Note: for those interested in Simple Invoices development I suggest a quick read of the following links
-			<li><a href="http://gettingreal.37signals.com/toc.php">37signals.com :: less features, small and passionate dev teams</a>
-			<li><a href="http://simpleinvoices.org/wiki/doku.php?id=simple_invoices_mantra_design_philosophy">Our dev mantra/design philosophy</a>
-			<li><a href="http://simpleinvoices.org/index.php?page=Philosophy">What were on about</a>
+			<li>Know or want to know PHP and or MySQL. Jump on the <a href="http://simpleinvoices.org/forum/forum.php?id=3">forum</a> or check out our <a href="http://code.google.com/p/simpleinvoices/issues/list?can=2&q=&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary">issues list</a> to see whats planned for future development. If you can lend a hand coding its always greatly appreciated. </li>
+			<li>Note: for those interested in Simple Invoices development I suggest a quick read of the following links</li>
+				<ul>
+				<li><a href="http://gettingreal.37signals.com/toc.php">37signals.com :: less features, small and passionate dev teams</a>
+				<li><a href="http://simpleinvoices.org/wiki/doku.php?id=simple_invoices_mantra_design_philosophy">Our dev mantra/design philosophy</a>
+				<li><a href="http://simpleinvoices.org/index.php?page=Philosophy">What were on about</a>
+				</ul>
 			<li>Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we havent thought about it or bugged it doesnt mean it shouldnt get done (alot of Simple Invoices dev is stuff someone thought about at 2am in the morning and just started coding). Just keep in mind the above reading: have fun and keep it simple.
+		</ul>
+	<li>Jobs</li>
+		<ul class=CBulletList>
+			<li>Are your a casual developer, UI freak? Looking to work on Simple Invoices but svn head may not be your style. No worries, there are plenty of ‘jobs’ in the Simple Invoices community that need workers</li>
+			<li>In the <a href="http://simpleinvoices.org/wiki/doku.php?id=jobs">'Jobs'</a> section out our <a href="http://simpleinvoices.org/wiki/">wiki</a> we list jobs/projects that would be a great addition to Simple Invoices, can be worked on independently of developers, and no one else is looking at.  Enjoy :)</li>
 		</ul>
 	<li>Donate
 		<ul class=CBulletList><li>
