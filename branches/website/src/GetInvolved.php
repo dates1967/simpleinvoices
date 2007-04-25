@@ -37,7 +37,7 @@ There are many ways you can help out with the development of Simple Invoices eve
 		</ul>
 	<li>Jobs</li>
 		<ul class=CBulletList>
-			<li>Are your a casual developer, UI freak? Looking to work on Simple Invoices but svn head may not be your style. No worries, there are plenty of ‘jobs’ in the Simple Invoices community that need workers</li>
+			<li>Are your a casual developer, UI freak? Looking to work on Simple Invoices but svn head may not be your style. No worries, there are plenty of 'jobs' in the Simple Invoices community that need workers</li>
 			<li>In the <a href="http://simpleinvoices.org/wiki/doku.php?id=jobs">'Jobs'</a> section out our <a href="http://simpleinvoices.org/wiki/">wiki</a> we list jobs/projects that would be a great addition to Simple Invoices, can be worked on independently of developers, and no one else is looking at.  Enjoy :)</li>
 		</ul>
 	<li>Donate
