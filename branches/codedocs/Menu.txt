@@ -46,8 +46,6 @@ Format: Development Release 02-10-2007 (1.35 base)
 # --------------------------------------------------------------------------
 
 
-File: db_peardb.php  (src/reports/database/db_peardb.php)
-
 Group: Include  {
 
    File: functions.php  (include/functions.php)
@@ -56,9 +54,20 @@ Group: Include  {
    File: smarty_make_timestamp<br>  (include/smarty/plugins/shared.make_timestamp.php)
    }  # Group: Include
 
-File: PHP Class "weather"  (src/include/js/lgplus/php/weather/class.weather.php)
-File: PHP Class "xmlParser"  (src/include/js/lgplus/php/weather/class.xml.parser.php)
-File: PHP Script "Yahoo Weather Demo"  (src/include/js/lgplus/php/weather/weather.test.php)
+Group: Lang  {
+
+   File: castellan_spanish.inc.php  (lang/castellano_spanish.inc.php)
+   File: catala_catalan.inc.php  (lang/catala_catalan.inc.php)
+   File: engligh_UK.inc.php  (lang/english_UK.inc.php)
+   }  # Group: Lang
+
+Group: Src  {
+
+   File: db_peardb.php  (src/reports/database/db_peardb.php)
+   File: PHP Class "weather"  (src/include/js/lgplus/php/weather/class.weather.php)
+   File: PHP Class "xmlParser"  (src/include/js/lgplus/php/weather/class.xml.parser.php)
+   File: PHP Script "Yahoo Weather Demo"  (src/include/js/lgplus/php/weather/weather.test.php)
+   }  # Group: Src
 
 Group: Index  {
 
