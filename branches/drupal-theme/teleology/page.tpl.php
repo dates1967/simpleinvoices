@@ -4,6 +4,14 @@
   <title><?php print $head_title ?></title>
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <?php print $head ?><?php print $styles ?>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1885246-1";
+urchinTracker();
+</script>
+
 </head>
 
 <body <?php print theme("onload_attribute"); ?>>

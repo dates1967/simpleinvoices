@@ -32,5 +32,4 @@ else {
         include("./src/start.php");
         include("./src/include/footer.php");
 }
-
 ?>
