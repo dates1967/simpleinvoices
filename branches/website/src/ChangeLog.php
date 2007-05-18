@@ -5,13 +5,13 @@
 <p class=CParagraph>
 <?php
 
-                $fp = fopen("./demo/documentation/ChangeLog.html", "r" );
+                $fp = fopen("./demo/documentation/en/general/ChangeLog.html", "r" );
                 if(!$fp)
                 {
                     echo "Couldn't open the data file. Try again later.";
                     exit;
                 }
-                $filename ="./demo/documentation/ChangeLog.html";
+                $filename ="./demo/documentation/en/general/ChangeLog.html";
                 $display_block .= fread( $fp, filesize( $filename ) );
 
                 echo $display_block;
