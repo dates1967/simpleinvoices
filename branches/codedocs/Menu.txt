@@ -58,16 +58,18 @@ Group: Lang  {
 
    File: castellan_spanish.inc.php  (lang/castellano_spanish.inc.php)
    File: catala_catalan.inc.php  (lang/catala_catalan.inc.php)
+   File: cestina_czech.inc.php  (lang/cestina_czech.inc.php)
+   File: duetsch_german.inc.php  (lang/deutsch_german.inc.php)
    File: engligh_UK.inc.php  (lang/english_UK.inc.php)
+   File: francais_french.inc.php  (lang/francais_french.inc.php)
+   File: galego-galician.inc.php  (lang/galego_galician.inc.php)
+   File: nederland_dutch.inc.php  (lang/nederlands_dutch.inc.php)
+   File: portugues_portuguese_UK.inc.php  (lang/portugues_portuguese.inc.php)
+   File: romana_romanian.inc.php  (lang/romana_romanian.inc.php)
+   File: suomi_finnish.inc.php  (lang/suomi_finnish.inc.php)
    }  # Group: Lang
 
-Group: Src  {
-
-   File: db_peardb.php  (src/reports/database/db_peardb.php)
-   File: PHP Class "weather"  (src/include/js/lgplus/php/weather/class.weather.php)
-   File: PHP Class "xmlParser"  (src/include/js/lgplus/php/weather/class.xml.parser.php)
-   File: PHP Script "Yahoo Weather Demo"  (src/include/js/lgplus/php/weather/weather.test.php)
-   }  # Group: Src
+File: db_peardb.php  (modules/reports/database/db_peardb.php)
 
 Group: Index  {
 
