@@ -34,7 +34,7 @@ if ( !defined('INCLUDED') )
 //
 
 $templates['header'] = '
-	<table class="maintable">
+	<table class="topicListTable">
 		<tr>
 			<th class="icon"></th>
 			<th>{l_Forum}</th>

@@ -104,12 +104,12 @@ $templates['normal_header'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Stri
 <body{js_onload}>
 	<div id="topmenu">
 		<ul>
-			<li class="menuInactive"><a class="menuInactive" href="{link_home}">Simple Invoices.org</a></li><li><a href="{link_reg_panel}">Blog</a></li><li><a href="{link_faq}">Forum</a></li><li><a href="{link_search}">Wiki</a></li>
+			<li class="menuInactive"><a class="menuInactive" href="http://www.simpleinvoices.org">Simple Invoices.org</a></li><li class="menuInactive"><a href="http://www.simpleinvoices.org/blog">Blog</a></li><li class="menuActive"><a href="http://www.simpleinvoices.org/forum">Forum</a></li><li class="menuInactive"><a href="http://www.simpleinvoices.org/wiki">Wiki</a></li>
 		</ul>
 	</div>
 	
 	<div id="subtopmenu"><ul>
-	<li>Simple Invoices Forum</LI>
+<!--	<li>Simple Invoices Forum >></li>-->
 		<li><a href="{link_home}">{l_Home}</a></li><li><a href="{link_reg_panel}">{reg_panel}</a></li><li><a href="{link_faq}">{l_FAQ}</a></li><li><a href="{link_search}">{l_Search}</a></li><li><a href="{link_active}">{l_ActiveTopics}</a></li><li><a href="{link_log_inout}">{log_inout}</a></li>
 	</ul></div>
 	<div id="topmenu-shadow"></div>

@@ -34,7 +34,7 @@ if ( !defined('INCLUDED') )
 //
 
 $templates['forum_stats_box'] = '
-	<table class="maintable">
+	<table class="topicListTable">
 		<tr>
 			<th colspan="2">{board_name} {l_Statistics}</th>
 		</tr>

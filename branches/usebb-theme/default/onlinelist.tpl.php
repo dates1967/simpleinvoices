@@ -35,7 +35,7 @@ if ( !defined('INCLUDED') )
 
 $templates['header'] = '
 	<p id="pagelinksothertop">{page_links}</p>
-	<table class="maintable">
+	<table class="topicListTable">
 		<tr>
 			<th>{l_Username}</th>
 			<th>{l_CurrentPage}</th>

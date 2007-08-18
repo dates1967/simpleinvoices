@@ -205,15 +205,16 @@ h2#boarddescr {
 }
 #topmenu {
 	clear: both;
-	float: left;
+	/*float: left;*/
 	width: 100%;
 	background-color: #545047;
 	color:#fff;
-	border-top: 5px solid #545047;
+	border-top: 10px solid #545047;
 	border-bottom: 5px solid #76736B;
-	padding: .5em 10px .5em 10px;
+	padding-bottom: 5px;
+	/*padding: .5em 0px .5em 0px;*/
 	/*
-	padding: 3px 0 3px 0px;
+	padding-bottom: 5px;
 	margin: 5px 0 0 0;
 	*/
 }
@@ -242,9 +243,11 @@ h2#boarddescr {
 }
 #topmenu ul li {
 	display: inline;
-	border-right: 5px solid #545047;
+/*	border-right: 5px solid #545047;
+/*	border-bottom: 5px solid #545047;
+*/
 	padding: .5em 14px .5em 10px;
-	background-color: #76736B;
+/*	background-color: #76736B;*/
 }
 #subtopmenu ul li {
 	display: inline;
@@ -301,7 +304,14 @@ h2#boarddescr {
 }
 
 li.menuInactive {
- background-color: #9C9791;
+	background-color: #9C9791;
+	border-bottom: 5px solid #76736B;
+	padding-bottom:5px;
+}
+li.menuActive {
+	 background-color: #76736B;
+	border-bottom: 5px solid #76736B;
+	padding-bottom:5px;
 }
 
 p.locationbar {
@@ -327,6 +337,16 @@ table.maintable, table.confirmform {
 	margin: 0 0 20px 0;
 	width: 100%;
 }
+table.topicListTable, table.confirmform {
+	clear: both;
+	border-collapse: collapse;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	margin: 0 0 20px 0;
+	width: 100%;
+}
+
 table.topictable {
 	clear: both;
 	border-collapse: collapse;
@@ -347,6 +367,22 @@ table.maintable th, table.confirmform th {
 	padding: 4px 6px 4px 6px;
 	border-left: 1px solid silver;
 	border-top: 1px solid silver;
+	white-space: nowrap;
+}
+table.topicListTable th, table.confirmform th {
+	color: #333;
+/*	color: #EBD6AD;*/
+	font-weight: bold;
+	background-color: #FFF;
+/*	background-color: #DFDFDF;*/
+/*	background-image: url(gfx/tableheadbg.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+*/
+	text-align: left;
+	padding: 4px 6px 4px 6px;
+	border-left: 0px solid #efefef;
+/*	border-top: 1px solid #efefef;*/
 	white-space: nowrap;
 }
 table.topictable th {
@@ -370,6 +406,16 @@ table.maintable td, table.confirmform td, td.msg {
 	border-top: 1px solid silver;
 	vertical-align: middle;
 }
+table.topicListTable td, table.confirmform td, td.msg {
+/*	background-color: #EFEFEF; */
+	background-color: #FFF; 
+	padding: 6px !important;
+	text-align: left;
+	border-left: 0px solid white;
+	border-bottom: 0px solid white;
+	border-top: 1px solid #e8e8e8;
+	vertical-align: middle;
+}
 table.topictable td, table.confirmform td, td.msg {
 /*	background-color: #EFEFEF; */
 	padding: 6px !important;
@@ -379,6 +425,9 @@ table.topictable td, table.confirmform td, td.msg {
 	vertical-align: middle;
 }
 table.maintable td a:visited {
+	color: #555;
+}
+table.topicListTable td a:visited {
 	color: #555;
 }
 table.topictable td a:visited {
@@ -409,6 +458,9 @@ td.formcontrols .postformshortcut {
 table.maintable th.icon {
 	width: 25px;
 }
+table.topicListTable th.icon {
+	width: 25px;
+}
 table.topictable th.icon {
 	width: 25px;
 }
@@ -416,11 +468,24 @@ table.maintable td.icon {
 	background-color: #E8E8E8;
 	width: 25px;
 }
+table.topicListTable td.icon {
+	background-color: #E8E8E8;
+	width: 25px;
+}
+table.topicListTable th.icon {
+/*	background-color: #E8E8E8;*/
+	width: 25px;
+}
 table.topictable td.icon {
 	background-color: #E8E8E8;
 	width: 25px;
 }
 table.maintable th.count, table.maintable td.count {
+	width: 1%;
+	text-align: center;
+	white-space: nowrap;
+}
+table.topicListTable th.count, table.maintable td.count {
 	width: 1%;
 	text-align: center;
 	white-space: nowrap;
@@ -436,12 +501,21 @@ table.maintable td.count {
 	font-weight: bold;
 	color: #333;
 }
+table.topicListTable td.count {
+	background-color: #fff;
+/*	background-color: #e8e8e8;*/
+	font-weight: bold;
+	color: #333;
+}
 table.topictable td.count {
 	background-color: #E8E8E8;
 	font-weight: bold;
 	color: #333;
 }
 table.maintable th.lastpostinfo, table.maintable td.lastpostinfo {
+	width: 200px;
+}
+table.topicListTable th.lastpostinfo, table.maintable td.lastpostinfo {
 	width: 200px;
 }
 table.topictable th.lastpostinfo, table.maintable td.lastpostinfo {
@@ -554,19 +628,31 @@ table.topictable td.stats-cell {
 	text-decoration: none !important;
 	padding: 3px 11px 3px 11px;
 	margin: 0 0 0 4px;
+	border-top: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	border-right: 1px solid #e8e8e8;
+/*
 	border-top: 1px solid #99b2cc;
 	border-left: 1px solid #99b2cc;
 	border-bottom: 1px solid #369;
 	border-right: 1px solid #369;
+*/
 	font-weight: bold;
 }
 #toolbartop a:hover, #toolbarbottom a:hover {
 	background-image: url(gfx/button_reverse.png);
 	background-color: #FFF;
+	border-top: 1px solid #e8e8e8;
+	border-left: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	border-right: 1px solid #e8e8e8;
+/*
 	border-top: 1px solid #369;
 	border-left: 1px solid #369;
 	border-bottom: 1px solid #99b2cc;
 	border-right: 1px solid #99b2cc;
+*/
 }
 #pagelinkstop {
 	float: left;
@@ -1014,3 +1100,5 @@ table#spamquestion {
 	border: 1px solid silver;
 	padding: 3px;
 }
+
+

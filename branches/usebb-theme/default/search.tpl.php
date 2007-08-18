@@ -66,7 +66,7 @@ $templates['search_form'] = '
 
 $templates['results_header'] = '
 	<p id="pagelinksothertop">{page_links}</p>
-	<table class="maintable">
+	<table class="topicListTable">
 		<tr>
 			<td colspan="7" class="forumcat">{l_SearchKeywords}: <em>{keywords}</em><div>{l_SearchMode}: {mode}</div></td>
 		</tr>

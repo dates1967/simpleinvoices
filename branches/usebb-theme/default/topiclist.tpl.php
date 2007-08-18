@@ -38,7 +38,7 @@ $templates['header'] = '
 	<p id="forummods">{forum_moderators}</p>
 	<p id="toolbartop">{new_topic_link}</p>
 	<p id="pagelinkstop">{page_links}</p>
-	<table class="maintable">
+	<table class="topicListTable">
 		<tr>
 			<th class="icon"></th>
 			<th>{l_Topic}</th>
