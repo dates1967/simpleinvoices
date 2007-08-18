@@ -100,6 +100,12 @@ $templates['normal_header'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Stri
 	<link rel="shortcut icon" href="{img_dir}usebb.ico" />
 	{rss_head_link}
 	<script type="text/javascript" src="sources/javascript.js"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1885246-1";
+urchinTracker();
+</script>
 </head>
 <body{js_onload}>
 	<div id="topmenu">
@@ -128,6 +134,20 @@ $templates['normal_header'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Stri
 	<p class="locationbar">
 		&bull; {location_bar}
 	</p>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2634629393845914";
+google_alternate_color = "FFFFFF";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2006-10-11: forum
+google_ad_channel ="3478315632";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 ';
 
 $templates['normal_footer'] = '
