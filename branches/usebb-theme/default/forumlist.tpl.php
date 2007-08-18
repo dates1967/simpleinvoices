@@ -38,9 +38,11 @@ $templates['header'] = '
 
 $templates['cat_header'] = '
 	<table class="topicListTable">
+<!--
 		<tr>
 			<td colspan="5" class="forumcat"><a href="{cat_url}" name="{cat_anchor}" rel="nofollow">&raquo;</a> {cat_name}</td>
 		</tr>
+-->
 		<tr>
 			<th class="icon"></th>
 			<th>{l_Forum}</th>
