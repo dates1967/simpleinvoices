@@ -51,25 +51,101 @@ Group: Include  {
    File: functions.php  (include/functions.php)
    File: jquery/jquery.datePicker.js  (include/jquery/jquery.datePicker.js)
    File: jquery/jquery1.1.js  (include/jquery/jquery1.1.js)
-   File: smarty_make_timestamp<br>  (include/smarty/plugins/shared.make_timestamp.php)
    }  # Group: Include
 
 Group: Lang  {
 
-   File: castellan_spanish.inc.php  (lang/castellano_spanish.inc.php)
-   File: catala_catalan.inc.php  (lang/catala_catalan.inc.php)
-   File: cestina_czech.inc.php  (lang/cestina_czech.inc.php)
-   File: duetsch_german.inc.php  (lang/deutsch_german.inc.php)
-   File: engligh_UK.inc.php  (lang/english_UK.inc.php)
-   File: francais_french.inc.php  (lang/francais_french.inc.php)
-   File: galego-galician.inc.php  (lang/galego_galician.inc.php)
-   File: nederland_dutch.inc.php  (lang/nederlands_dutch.inc.php)
-   File: portugues_portuguese_UK.inc.php  (lang/portugues_portuguese.inc.php)
-   File: romana_romanian.inc.php  (lang/romana_romanian.inc.php)
-   File: suomi_finnish.inc.php  (lang/suomi_finnish.inc.php)
+   File: castellan_spanish.inc.php  (lang/es/lang.php)
+   File: catala_catalan.inc.php  (lang/ca/lang.php)
+   File: cestina_czech.inc.php  (lang/cs/lang.php)
+   File: duetsch_german.inc.php  (lang/de/lang.php)
+   File: duetsch_german.inc.php  (lang/de-ch/lang.php)
+   File: engligh_UK.inc.php  (lang/en/lang.php)
+   File: francais_french.inc.php  (lang/fr/lang.php)
+   File: galego-galician.inc.php  (lang/gl/lang.php)
+   File: nederland_dutch.inc.php  (lang/nl/lang.php)
+   File: norwegian_NB_RC2.inc.php  (lang/no/lang.php)
+   File: portugues_portuguese_UK.inc.php  (lang/pt/lang.php)
+   File: romana_romanian.inc.php  (lang/ro/lang.php)
+   File: slovenščina_SI.inc.php  (lang/ls/lang.php)
+   File: suomi_finnish.inc.php  (lang/fi/lang.php)
    }  # Group: Lang
 
-File: db_peardb.php  (modules/reports/database/db_peardb.php)
+File: 'View Documentation',  (docs2.js)
+File: auto_complete_search.php  (auto_complete_search.php)
+File: extlib/.../jquery/jquery.js  (extlib/adapter/jquery/jquery.js)
+File: index.php  (index.php)
+File: login.php  (docs.php)
+File: login.php  (login.php)
+File: logout.php  (logout.php)
+
+Group: Modules  {
+
+   File: admin.php  (modules/admin/admin.php)
+
+   Group: Billers  {
+
+      File: add.php  (modules/billers/add.php)
+      File: details.php  (modules/billers/details.php)
+      File: manage.php  (modules/billers/manage.php)
+      File: save.php  (modules/billers/save.php)
+      }  # Group: Billers
+
+   File: cleanup.php  (modules/admin/cleanup.php)
+
+   Group: Custom_fields  {
+
+      File: details.php  (modules/custom_fields/details.php)
+      File: manage.php  (modules/custom_fields/manage.php)
+      File: save.php  (modules/custom_fields/save.php)
+      }  # Group: Custom_fields
+
+   Group: Customers  {
+
+      File: add.php  (modules/customers/add.php)
+      File: details.php  (modules/customers/details.php)
+      File: manage.php  (modules/customers/manage.php)
+      File: save.php  (modules/customers/save.php)
+      File: search.php  (modules/customers/search.php)
+      }  # Group: Customers
+
+   Group: CustomFields  {
+
+      File: CustomNumber.php  (modules/customFields/plugins/CustomNumber.php)
+      File: manageCustonFields.php  (modules/customFields/manageCustomFields.php)
+      File: TextCustomField.php  (modules/customFields/plugins/TextCustomField.php)
+      }  # Group: CustomFields
+
+   File: db_peardb.php  (modules/reports/database/db_peardb.php)
+
+   Group: Invoices  {
+
+      File: add_invoice_item.php  (modules/invoices/add_invoice_item.php)
+      File: consulting.php  (modules/invoices/consulting.php)
+      File: delete.php  (modules/invoices/delete.php)
+      File: details.php  (modules/invoices/details.php)
+      File: email.php  (modules/invoices/email.php)
+      File: invoice.php  (modules/invoices/invoice.php)
+      File: itemised.php  (modules/invoices/itemised.php)
+      File: manage.php  (modules/invoices/manage.php)
+      File: quick_view.php  (modules/invoices/quick_view.php)
+      File: save.php  (modules/invoices/save.php)
+      File: search.php  (modules/invoices/search.php)
+      File: template.php  (modules/invoices/template.php)
+      File: total.php  (modules/invoices/total.php)
+      }  # Group: Invoices
+
+   }  # Group: Modules
+
+File: quick_view.tpl  (phpinfo.php)
+
+Group: Templates  {
+
+   File: merge_address  (templates/invoices/default/plugins/function.merge_address.php)
+   File: merge_address  (templates/invoices/export/plugins/function.merge_address.php)
+   File: print_if_not_null  (templates/invoices/export/plugins/function.print_if_not_null.php)
+   File: print_if_not_null  (templates/invoices/default/plugins/function.print_if_not_null.php)
+   }  # Group: Templates
 
 Group: Index  {
 
