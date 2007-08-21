@@ -1,0 +1,81 @@
+Format: Development Release 02-10-2007 (1.35 base)
+
+
+# You can add a title and sub-title to your menu like this:
+# Title: [project name]
+# SubTitle: [subtitle]
+
+# You can add a footer to your documentation like this:
+# Footer: [text]
+# If you want to add a copyright notice, this would be the place to do it.
+
+# You can add a timestamp to your documentation like one of these:
+# Timestamp: Generated on month day, year
+# Timestamp: Updated mm/dd/yyyy
+# Timestamp: Last updated mon day
+#
+#   m     - One or two digit month.  January is "1"
+#   mm    - Always two digit month.  January is "01"
+#   mon   - Short month word.  January is "Jan"
+#   month - Long month word.  January is "January"
+#   d     - One or two digit day.  1 is "1"
+#   dd    - Always two digit day.  1 is "01"
+#   day   - Day with letter extension.  1 is "1st"
+#   yy    - Two digit year.  2006 is "06"
+#   yyyy  - Four digit year.  2006 is "2006"
+#   year  - Four digit year.  2006 is "2006"
+
+
+# --------------------------------------------------------------------------
+# 
+# Cut and paste the lines below to change the order in which your files
+# appear on the menu.  Don't worry about adding or removing files, Natural
+# Docs will take care of that.
+# 
+# You can further organize the menu by grouping the entries.  Add a
+# "Group: [name] {" line to start a group, and add a "}" to end it.
+# 
+# You can add text and web links to the menu by adding "Text: [text]" and
+# "Link: [name] ([URL])" lines, respectively.
+# 
+# The formatting and comments are auto-generated, so don't worry about
+# neatness when editing the file.  Natural Docs will clean it up the next
+# time it is run.  When working with groups, just deal with the braces and
+# forget about the indentation and comments.
+# 
+# --------------------------------------------------------------------------
+
+
+Group: Include  {
+
+   File: functions.php  (include/functions.php)
+   File: jquery/jquery.datePicker.js  (include/jquery/jquery.datePicker.js)
+   File: jquery/jquery1.1.js  (include/jquery/jquery1.1.js)
+   File: smarty_make_timestamp<br>  (include/smarty/plugins/shared.make_timestamp.php)
+   }  # Group: Include
+
+Group: Lang  {
+
+   File: castellan_spanish.inc.php  (lang/castellano_spanish.inc.php)
+   File: catala_catalan.inc.php  (lang/catala_catalan.inc.php)
+   File: cestina_czech.inc.php  (lang/cestina_czech.inc.php)
+   File: duetsch_german.inc.php  (lang/deutsch_german.inc.php)
+   File: engligh_UK.inc.php  (lang/english_UK.inc.php)
+   File: francais_french.inc.php  (lang/francais_french.inc.php)
+   File: galego-galician.inc.php  (lang/galego_galician.inc.php)
+   File: nederland_dutch.inc.php  (lang/nederlands_dutch.inc.php)
+   File: portugues_portuguese_UK.inc.php  (lang/portugues_portuguese.inc.php)
+   File: romana_romanian.inc.php  (lang/romana_romanian.inc.php)
+   File: suomi_finnish.inc.php  (lang/suomi_finnish.inc.php)
+   }  # Group: Lang
+
+File: db_peardb.php  (modules/reports/database/db_peardb.php)
+
+Group: Index  {
+
+   Index: Everything
+   File Index: Files
+   Function Index: Functions
+   Variable Index: Variables
+   }  # Group: Index
+
