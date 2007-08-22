@@ -21,8 +21,13 @@ urchinTracker();
 <!--
       <?php if ($logo) { ?><a id="logo" href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>"/></a><?php } ?>
 -->
+<br>
+      <a id="logo" href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img src="http://www.simpleinvoices.org/blog/themes/teleology/logo.png" alt="Simple Invoices blog"/></a>
+<br><br>	  
+<!--
       <?php if ($site_name) { ?><h1><a class="site-name" href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
       <?php if ($site_slogan) { ?><div class="site-slogan"><?php print $site_slogan ?></div><?php } ?>
+	  -->
     </div>
 <!--
     <div id="navigation">
