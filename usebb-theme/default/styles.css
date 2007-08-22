@@ -29,14 +29,14 @@ html, body {
 .comment-left-td1
 {
 	background: url(gfx/arrow-td1.gif) no-repeat;
-	background-position: right;
+	background-position: right top;
 	background-color: #fff;
 
 }
 .comment-left-td2
 {
 	background: url(gfx/arrow-td2.gif) no-repeat;
-	background-position: right;
+	background-position: right top;
 	background-color: #fff;
 
 }
