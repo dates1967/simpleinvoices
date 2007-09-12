@@ -5,7 +5,7 @@
 <p class=CParagraph>
 <?php
 
-                $fp = fopen("./demo/documentation/ReadMe.english_UK.html", "r" );
+                $fp = fopen("./demo/ReadMe.html", "r" );
                 if(!$fp)
                 {
                     echo "Couldn't open the data file. Try again later.";
