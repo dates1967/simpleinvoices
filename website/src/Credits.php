@@ -5,7 +5,7 @@
 <p class=CParagraph>
 <?php
 
-                $fp = fopen("./demo/documentation/en/general/Credits.html", "r" );
+                $fp = fopen("./demo/documentation/Credits.html", "r" );
                 if(!$fp)
                 {
                     echo "Couldn't open the data file. Try again later.";
