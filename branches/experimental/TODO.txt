@@ -1,0 +1,27 @@
+[Milestone]
+
+	0.2 	-- Estabilizar index
+	0.2.1 	-- Estabilizar Sales
+	0.2.2 	-- Estabilizar Purchases
+	0.2.3 	-- Estabilizar Customers
+	0.2.4 	-- Estabilizar Vendors
+	0.2.5 	-- Estabilizar Reports
+	0.2.6 	-- Estabilizar Products
+	0.3		-- Version estable
+
+[Principal]
+	@ 0.2
+	- Habilitar Login
+	- Habilitar pagina de entrada 
+
+[Detalles]
+	- Borrando referencias del invoice 0028 (Time Station):
+	1 TMCX02	221.00
+	1 TMCX07	221.00
+	1 TMCS05	208.00
+	1 TMY22		247.00
+	1 RSX05		161.20
+	1 RSX12		161.20
+	1 CSX02		156.00
+
+# vim:ft=cfg

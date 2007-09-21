@@ -1,0 +1,15 @@
+USE `genluStable`
+
+DELIMITER ;;
+/*!50003 SET SESSION SQL_MODE="NO_AUTO_VALUE_ON_ZERO" */;;
+/*!50003 CREATE */ /*!50017 DEFINER=`german`@`localhost` */ /*!50003 TRIGGER `updateQtyDown` AFTER INSERT ON `genlu_purchase_invoice_lines` FOR EACH ROW BEGIN
+  	UPDATE genlu_products SET qty_hand = qty_hand + NEW.quantity WHERE id = NEW.product_id;
+  END */;;
+
+/*!50003 SET SESSION SQL_MODE="NO_AUTO_VALUE_ON_ZERO" */;;
+/*!50003 CREATE */ /*!50017 DEFINER=`german`@`localhost` */ /*!50003 TRIGGER `deleteQtyDown` AFTER DELETE ON `genlu_purchase_invoice_lines` FOR EACH ROW BEGIN
+  	UPDATE genlu_products SET qty_hand = qty_hand - OLD.quantity WHERE id = OLD.product_id;
+  END */;;
+
+DELIMITER ;
+/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;

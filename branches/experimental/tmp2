@@ -1,0 +1,39 @@
+include/functions.php:119:# TODO: implementar esto
+include/functions.php:284:	# TODO: add tax stuff
+include/.svn/text-base/sql_queries.php.svn-base:477:// TODO: hay que agregar el website
+include/.svn/text-base/sql_queries.php.svn-base:516:	// TODO: hay que agregar el website
+include/.svn/text-base/sql_queries.php.svn-base:656:	/* TODO: implementar el tema del balance aca*/
+include/.svn/text-base/functions.php.svn-base:119:# TODO: implementar esto
+include/.svn/text-base/functions.php.svn-base:284:	# TODO: add tax stuff
+include/.svn/text-base/config.php.svn-base:14:$mysqltodotable = "todo";
+include/.svn/text-base/config.php.svn-base:15:$mysqltodopercenttable = "todo_percent";
+include/.svn/text-base/config.php.svn-base:16:$mysqltodocatergorytable = "todo_catergory";
+include/.svn/text-base/config.php.svn-base:17:$mysqltodoleveltable = "todo_level";
+include/.svn/text-base/config.php.svn-base:18:$mysqltodoprioritytable = "todo_priority";
+include/.svn/text-base/config.php.svn-base:19:$mysqltodostatustable = "todo_status";
+include/jquery/autocomplete.js:165:			results.appendChild(dataToDom(data));
+include/jquery/autocomplete.js:185:	function dataToDom(data) {
+include/jquery/jquery1.1.js:1963:		// TODO introduce global settings, allowing the client to modify them for all requests, not only timeout
+include/jquery/jquery.validate/demo-test/js/jquery.js:1681:		// TODO introduce global settings, allowing the client to modify them for all requests, not only timeout
+include/jquery/jquery.validate/demo-test/js/.svn/text-base/jquery.js.svn-base:1681:		// TODO introduce global settings, allowing the client to modify them for all requests, not only timeout
+include/jquery/.svn/text-base/autocomplete.js.svn-base:165:			results.appendChild(dataToDom(data));
+include/jquery/.svn/text-base/autocomplete.js.svn-base:185:	function dataToDom(data) {
+include/jquery/.svn/text-base/jquery1.1.js.svn-base:1963:		// TODO introduce global settings, allowing the client to modify them for all requests, not only timeout
+include/jquery/.svn/text-base/jquery.history.js.svn-base:110:        if (typeof _addHistory == 'function' && e.clientX) _addHistory(_hash); // add to history only if true click occured TODO check keyboard!
+include/jquery/.svn/text-base/jquery.history.js.svn-base:115:        //$.log((new Date().getTime()) + iframeDoc); TODO function is called four times, because location has to be set manually in IE!?
+include/jquery/.svn/text-base/jquery.history.js.svn-base:121:        if (location.hash && typeof _addHistory == 'undefined') jQuery('a.remote[@href$="' + location.hash + '"]').click(); // TODO filter remote links
+include/jquery/.svn/text-base/jquery.autocomplete.js.svn-base:150:			results.appendChild(dataToDom(data));
+include/jquery/.svn/text-base/jquery.autocomplete.js.svn-base:177:	function dataToDom(data) {
+include/jquery/jquery.autocomplete.js:150:			results.appendChild(dataToDom(data));
+include/jquery/jquery.autocomplete.js:177:	function dataToDom(data) {
+include/jquery/jquery.history.js:110:        if (typeof _addHistory == 'function' && e.clientX) _addHistory(_hash); // add to history only if true click occured TODO check keyboard!
+include/jquery/jquery.history.js:115:        //$.log((new Date().getTime()) + iframeDoc); TODO function is called four times, because location has to be set manually in IE!?
+include/jquery/jquery.history.js:121:        if (location.hash && typeof _addHistory == 'undefined') jQuery('a.remote[@href$="' + location.hash + '"]').click(); // TODO filter remote links
+include/config.php:14:$mysqltodotable = "todo";
+include/config.php:15:$mysqltodopercenttable = "todo_percent";
+include/config.php:16:$mysqltodocatergorytable = "todo_catergory";
+include/config.php:17:$mysqltodoleveltable = "todo_level";
+include/config.php:18:$mysqltodoprioritytable = "todo_priority";
+include/config.php:19:$mysqltodostatustable = "todo_status";
+include/js/jquery-1.1.3.1.js:1779:		// TODO introduce global settings, allowing the client to modify them for all requests, not only timeout
+include/js/.svn/text-base/jquery-1.1.3.1.js.sv

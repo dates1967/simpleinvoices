@@ -1,0 +1,59 @@
+/**
+ *	Reports
+ */
+div.reports	{
+	text-align:left;
+}
+.reports h3 {
+	font-size: 10pt;
+	border-bottom: 1px solid #000000;
+	padding: 0pt 0pt 5pt 0pt;
+	text-align:left;
+}
+.reports h4 {
+	text-align:left;
+	padding-left: 10px;
+}
+.reports table.main {
+	margin:	10px 0px 0px 50px;
+	margin-bottom:2px;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+.reports table.main th {
+	text-align: left;
+	background-color: #DADADA;
+	padding: 0px 0px 2px 5px;;
+}
+.reports table.main td {
+	padding-left: 5px;
+	background-color: #F5F5F5;
+
+}
+.reports .main table.radio {
+	margin: 10px 0;
+}
+.reports .main table.radio .col2 {
+	font-size: 11pt;
+	padding-left: 10px;
+}
+.reports input.submit {
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	font-size: 10pt;
+	font-weight: bold;
+	border-top: 1px solid #797979;
+	border-left: 1px solid #797979;
+	border-bottom: 1px solid #797979;
+	border-right: 1px solid #797979;
+}
+.reports table.main td.last {
+	text-align:right;
+	padding: 5px;
+}
+.reports table.period {
+	margin: 10px 0;
+}
+.reports table.period input {
+	width: 85px;
+}

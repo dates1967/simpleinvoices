@@ -1,0 +1,73 @@
+/**
+ * Header de los invoices
+ */
+table.header {
+	width:100%;
+	border-collapse: collapse;
+	border:0;
+}
+table.header td {
+	padding: 0 5px;
+}
+table.header td.module {
+	font-size: 16px;
+	font-weight: bold;
+	width: 40%;
+	color:white;
+}
+table.header td.view {
+	text-align: center;
+	width: 40%;
+	font-size: 16px;
+	font-weight: bold;
+}
+table.header td.action {
+
+}
+/* Module Specific */
+.sales {
+	background-color: #003366;	/* dark navy */
+}
+.purchases {
+	background-color:#9D0000;
+}
+/* Validation */
+input.invalid {
+	border: 1px solid red;
+	background-color: #FCFCC8;
+}
+#messageBox1 {
+	display: none;
+}
+#messageBox2 {
+	width: 100%;
+	text-align: left;
+}
+#messageBox2 ul {
+	width: 100%;
+}
+#messageBox2 ul li {
+	width: 75%;
+	list-style-position: outside;
+	list-style-type: disc;
+	background-color: red;
+	padding-left: 10px;
+}
+#messageBox2 label {
+	/* viene con float:left heredado */
+	float: none;
+	width: 100%;
+	padding: 5px 0px;
+	color: white;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	/* background-color: red; */
+	/* border: 2px solid yellow; */
+} 
+input.calendar {
+	width: 135px;
+}
+input {
+	width: 100%;
+}

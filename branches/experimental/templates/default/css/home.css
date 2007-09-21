@@ -1,0 +1,18 @@
+table.shortcut {
+	width: 100%;		
+}
+table.shortcut td {
+	/* border:1px solid black; */
+} 
+table.shortcut td.c1, td.c3 {
+	/* text-align: right; */
+}
+
+table.shortcut td.c2, td.c4 {
+	/* background-color: yellow; */
+	padding: 0px 5px;
+	width: 40%;
+} 
+table.shortcut a {
+	width: 100%;
+}

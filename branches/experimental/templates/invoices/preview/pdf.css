@@ -1,0 +1,307 @@
+*	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: white;
+	color: black;
+	font-style: normal;
+	font-size: 10pt;
+	font-family: Verdana, San-Serif, Arial;
+}
+
+a {
+	display: none;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+div#container	{
+	width:	90%;
+	margin: 20px auto;
+}
+.col1 { background-color: #EFEFEF; }
+
+.font1 { font-family: Arial; font-size: 34pt; }
+
+.font2 { color: #990000; font-size: 12pt; font-weight: bold; }
+
+.font3 { font-family: Arial; font-size: 8pt; }
+
+.tbl1 { border: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-left { border-left: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-right { border-right: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-bottom { border-bottom: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-top { border-top: #33628D 1px solid; border-collapse:collapse; }
+
+.left {
+ clear: left;
+}
+
+.right {
+ float: right;
+}
+
+/**
+*	MY CUSTOM STYLES
+*/
+
+.header01	{
+	font-family:	Arial;
+	font-size:		28pt;
+	line-height:	25pt;
+	font-weight:	bold;
+	padding-bottom:	5pt;
+/* 	background-color:	red; */
+}
+.header02	{
+	font-family:	Arial;
+	font-size:		28pt;
+	line-height:	24pt;
+	font-weight:	bold;
+	padding-bottom:	10pt;
+}
+.header03	{
+	font-family:	Arial;
+	font-size:		20pt;
+	font-weight:	bold;
+	padding-bottom:	10pt;
+}
+.header04	{
+	font-family:	Arial;
+	font-size:		20px;
+	font-weight:	bold;
+	padding-bottom:	5px;
+}
+.header05	{
+	/* Nombre Compania en Sold / Ship To */
+	font-family:	Arial;
+	font-size:		16px;
+	font-weight:	bold;
+	padding:		0px 0px 2px 5px;
+}
+.address01	{
+	font-family:	Arial;
+	font-size:		14pt;
+	padding-bottom:	3pt;
+}
+.address01 img	{
+	margin-bottom: 10px;
+	width:242px;
+	height:45px;
+}
+.address02	{
+	font-family:	Arial;
+	font-size:		12pt;
+	padding-bottom:	3pt;
+}
+.to_right	{
+	margin-right:	0;
+	margin-left:	auto;
+}
+table.to_right td	{
+	text-align:	right;
+}
+.line01		{
+	padding:		20px 0;
+}
+
+/*  Table Sold To: */
+
+.tbl_left	{
+	font-family:	Arial;
+	font-size:		14px;
+	padding:	0 10px 0 15px;
+}
+.tbl_right	{
+	font-family:	Arial;
+	font-size:		14px;
+}
+
+/**
+*	Estilos para la tabla principal del invoice (lines)
+**/
+table.invoice_header_center {
+	width:100%;
+	margin:0px auto;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.invoice_header_center td {
+	font-family:		Arial;
+	font-size:			14px;
+	padding:			0 5px;
+	border: 1px solid black;
+}
+table.invoice_header_center tr.black td {
+	font-size: 14px;
+	font-weight:bold;
+	padding: 3px 5px;
+	background-color: #F5F5F5;
+}
+table.invoice_header_center td.reference {
+	width:125px;
+}
+table.invoice_header_center td.description {
+}
+table.invoice_header_center td.qty {
+	width: 50px;
+	text-align:right;
+}
+table.invoice_header_center td.unit_price {
+	width: 100px;
+	text-align:right;
+}
+table.invoice_header_center td.amount {
+	width: 100px;
+	text-align:right;
+}
+
+table.invoice_header_center td.order {
+	width: 100px;
+	text-align:right;
+}
+/**
+ * Shipping Method & TERMS
+ */
+table.invoice_header_center td.terms_left {
+	width: 135px;
+	text-align:left;
+	font-weight: bold;
+	font-size: 9pt;
+	border:0;
+	padding: 3px 0px;
+}
+
+table.invoice_header_center td.terms_right {
+	width: 100px;
+	font-weight: bold;
+	font-size: 9pt;
+	border:0;
+	padding: 3px 0px;
+}
+
+
+table.invoice_header_center td.terms1 {
+	text-align:left;
+	font-size: 9pt;
+	border:0;
+}
+
+
+table.invoice_header_center td.terms2 {
+	width: 135px;
+	text-align:left;
+	font-size: 9pt;
+	border:0;
+}
+
+table.invoice_header_left {
+	float: left;
+	margin-bottom:10px;
+	border-collapse:collapse;
+}
+table.invoice_header_right {
+	float: right;
+	margin-bottom:10px;
+	margin-right: 50px;
+	border-collapse:collapse;
+}
+/**
+ *	Estilos para las tablas de totales
+ */
+table.invoice_totals {
+	float:right;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_totals td {
+	border:1px solid black;
+	font-size: 14px;
+	padding: 3px 5px;
+}
+td.total_col1 {
+	width: 100px;
+	font-weight:bold;
+	background-color: #F5F5F5;
+}
+td.total_col2 {
+	width: 100px;
+	text-align:right;
+}
+
+table.invoice_total_qty {
+	float:left;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_total_qty td {
+	font-size: 14px;
+	padding: 3px 5px;
+	border: 1px solid black;
+}
+table.invoice_total_qty td.total_qty_col1 {
+	width: 125px;
+	font-weight:bold;
+	background-color: #F5F5F5;
+}
+table.invoice_total_qty td.total_qty_col2 {
+	width: 100px;
+	font-weight:bold;
+	background-color: #FFFFFF;
+	text-align: right;
+}
+tr.null td {
+	border: 0;
+	background-color: #FFFFFF;
+}
+
+/**
+ * Note section
+ */
+
+table.summary_table {
+	width:100%;
+/* 	margin:0px auto; */
+	margin-bottom:2px;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+table.summary_table td {
+	font-size: 12px;
+	padding: 5px 25px;
+}
+table.summary_table td.header {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+/**
+ * End
+ */
+
+p.pagebreak {
+	page-break-after: always;
+	width: 100%;
+}
+
+p.separator	{
+	clear:both;
+	width:100%;
+	margin: 10px 0px 20px 0px;
+	height:2px;
+	background-color: black;
+	border: 0;
+}
+p.blank_separator	{
+	clear:both;
+	width:100%;
+	height:1px;
+	border: 0;
+	margin: 5px 0px;
+}
