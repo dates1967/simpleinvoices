@@ -1,7 +1,0 @@
-cvs -d:pserver:cvsread@cvs.php.net:/repository login
-pass: phpfi
-
-cvs -d:pserver:cvsread@cvs.php.net:/repository co -d [DIR] pear/[PACKAGE]
-
-ejemplo:
-cvs -d:pserver:cvsread@cvs.php.net:/repository co -d MDB2 pear/MDB2

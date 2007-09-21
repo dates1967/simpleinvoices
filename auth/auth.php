@@ -61,7 +61,7 @@ class Authentication {
       $this->logger->debug("########## " . __CLASS__ . "::" . __FUNCTION__ . " ##########");
       $this->logEnter(__CLASS__, __FUNCTION__);
       /* DB */
-      $this->dsn = "mysql://german:2921@localhost/genluStable";
+      $this->dsn = "mysql://user:pass@localhost/dbStable";
       $this->db =& MDB2::factory($this->dsn);
 		if (MDB2::isError($this->db))
 			die (__LINE__.$this->db->getMessage());
