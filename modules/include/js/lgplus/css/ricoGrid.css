@@ -6,7 +6,7 @@ table.ricoLiveGrid {
 
 div.ricoLG_outerDiv {
   position:relative;
-  /*border:thin solid blue;  /* for debugging */
+/*   border:thin solid blue;  /* for debugging */ */
 }
 
 div.ricoLG_innerDiv, div.ricoLG_frozenTabsDiv {
@@ -54,7 +54,7 @@ div.ricoLG_highlightDiv {
 
 .ricoLG_table td {
   border-left: 1px solid white;
-  /*border-left: 1px solid #D6D2C2;*/
+/*   border-left: 1px solid #D6D2C2; */
 }
 
 

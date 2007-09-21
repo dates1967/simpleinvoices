@@ -1,0 +1,479 @@
+*	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: white;
+	color: black;
+	font-style: normal;
+	font-size: 10pt;
+	font-family: Verdana, San-Serif, Arial;
+}
+
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+div#container	{
+	width:	90%;
+	margin: 20px auto;
+}
+.col1 { background-color: #EFEFEF; }
+
+.font1 { font-family: Arial; font-size: 34pt; }
+
+.font2 { color: #990000; font-size: 12pt; font-weight: bold; }
+
+.font3 { font-family: Arial; font-size: 8pt; }
+
+.tbl1 { border: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-left { border-left: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-right { border-right: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-bottom { border-bottom: #33628D 1px solid; border-collapse:collapse; }
+.tbl1-top { border-top: #33628D 1px solid; border-collapse:collapse; }
+
+.left {
+ clear: left;
+}
+
+.right {
+ float: right;
+}
+
+/**
+*	MY CUSTOM STYLES
+*/
+
+.header01	{
+	font-family:	Arial;
+	font-size:		34pt;
+	line-height:	30pt;
+	font-weight:	bold;
+	padding-bottom:	5pt;
+/* 	background-color:	red; */
+}
+.header02	{
+	font-family:	Arial;
+	font-size:		28pt;
+	line-height:	24pt;
+	font-weight:	bold;
+	padding-bottom:	10pt;
+}
+.header03	{
+	font-family:	Arial;
+	font-size:		20pt;
+	font-weight:	bold;
+	padding-bottom:	10pt;
+}
+.header04	{
+	font-family:	Arial;
+	font-size:		20px;
+	font-weight:	bold;
+	padding-bottom:	5px;
+}
+.header05	{
+	/* Nombre Compania en Sold / Ship To */
+	font-family:	Arial;
+	font-size:		16px;
+	font-weight:	bold;
+	padding:		0px 0px 2px 5px;
+}
+.address01	{
+	font-family:	Arial;
+	font-size:		14pt;
+	padding-bottom:	3pt;
+}
+.address01 img	{
+	margin-bottom: 10px;
+}
+.address02	{
+	font-family:	Arial;
+	font-size:		12pt;
+	padding-bottom:	3pt;
+}
+.to_right	{
+	margin-right:	0;
+	margin-left:	auto;
+}
+table.to_right td	{
+	text-align:	right;
+}
+.line01		{
+	padding:		20px 0;
+}
+
+/**
+ *	GENERAL
+ */
+.bold {
+	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+.bigger {
+	font-size: 12pt;
+}
+.padded {
+	padding: 5px;
+}
+
+/* Obsolete */
+.shipping {
+	font-size:10px;
+	font-weight:bold;
+	color:#700000;
+}
+td.my_details_screen {
+	border:1px solid #fff;
+	background-color:#F5F5F5;
+	border-color:#FFF;
+	border-width:1px;
+	width:150px;
+}
+td.shipping_header {
+	border:1px solid #fff;
+	border-color:#FFF;
+	border-width:1px;
+	font-size:10px;
+	font-weight:bold;
+}
+
+/*  Table Sold To: */
+
+.tbl_left	{
+	font-family:	Arial;
+	font-size:		14px;
+	padding:	0 10px 0 15px;
+}
+.tbl_right	{
+	font-family:	Arial;
+	font-size:		14px;
+}
+/**
+ *	Sold To / Ship To
+ */
+table.invoice_header_left {
+	float: left;
+	margin-bottom:10px;
+	border-collapse:collapse;
+}
+table.invoice_header_right {
+	float: right;
+	margin-bottom:10px;
+	margin-right: 50px;
+	border-collapse:collapse;
+}
+table.billto {
+	float: left;
+	width: 49%;
+	margin-bottom:10px;
+	border-collapse:collapse;
+}
+table.billto td.col1 {
+	width: 125px;
+	border:1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+table.billto td.col2 {
+
+}
+table.shipto {
+	float: right;
+	width: 49%;
+	margin-bottom:10px;
+	border-collapse:collapse;
+}
+table.shipto td.col1 {
+	width: 125px;
+	border:1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+table.shipto input{
+	width: 100%;
+	font-size: 12px;
+}
+/**
+ *	Div.invoice_standard --> contenedor para los invoices
+ */
+div.invoice_standard {
+	margin: 0 auto;
+	width: 85%;
+}
+/**
+ *	Estilos para la tabla principal del invoice (lines)
+ */
+table.invoice_header_center {
+	width:100%;
+	margin:0px auto;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.invoice_header_center td {
+	border:1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+table.invoice_header_center tr.black td {
+	color: #F5F5F5;
+	background-color:#252525;
+	font-size: 12px;
+	font-weight:bold;
+	padding: 3px 5px;
+}
+table.invoice_header_center tr.light td {
+	color: #252525;
+	background-color:#FFFEEE;
+	font-size: 10px;
+	font-weight:bold;
+	padding: 0px 5px;
+}
+table.invoice_header_center td.reference {
+	width:125px;
+}
+table.invoice_header_center tr td select {
+	width:100%;
+	color:blue;
+}
+table.invoice_header_center td.description {
+
+}
+table.invoice_header_center td.description input {
+	width: 98%;
+}
+table.invoice_header_center td.qty {
+	width: 50px;
+	text-align:right;
+}
+table.invoice_header_center td.unit_price {
+	width: 100px;
+	text-align:right;
+}
+table.invoice_header_center td.amount {
+	width: 100px;
+	text-align:right;
+}
+table.invoice_header_center td.order {
+	width: 100px;
+	text-align:right;
+}
+td.qty input {
+	text-align:right;
+	width: 50px;
+}
+td.unit_price input {
+	text-align:right;
+	width: 100px;
+}
+/**
+ *	Estilos para las tablas de totales
+ */
+table.invoice_totals {
+	float:right;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_totals td {
+	border:1px solid #FFFFFF;
+	font-size: 14px;
+	padding: 3px 5px;
+}
+td.total_col1 {
+	width: 100px;
+	font-weight:bold;
+	background-color: #F5F5F5;
+}
+td.total_col2 {
+	width: 100px;
+	text-align:right;
+}
+td.total_col2 input {
+	width: 100px;
+	text-align:right;
+	font-size:14px;
+}
+/**
+ *	Total Quantity
+ */
+table.invoice_total_qty {
+	float:left;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_total_qty td {
+	font-size: 14px;
+	padding: 3px 5px;
+	border: 1px solid #FFFFFF;
+}
+table.invoice_total_qty td.total_qty_col1 {
+	width: 125px;
+	font-weight:bold;
+	background-color: #F5F5F5;
+}
+table.invoice_total_qty td.total_qty_col2 {
+	width: 100px;
+	font-weight:bold;
+	background-color: #FFFFFF;
+	text-align: right;
+}
+tr.null td {
+	border: 0;
+	background-color: #FFFFFF;
+}
+
+/**
+ * Note section
+ */
+
+table.summary_table {
+	width:100%;
+/* 	margin:0px auto; */
+	margin-bottom:2px;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+table.summary_table td {
+	font-size: 12px;
+	padding: 5px 25px;
+}
+table.summary_table td.header {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+}
+/**
+ *	Tables In Create / Edit Mode
+ */
+table.notes {
+	float: left;
+	width: 70%;
+	margin: 5px 0px;
+
+}
+table.taxes {
+	float: right;
+	width: 25%;
+	margin: 5px 0px;
+}
+input.submit {
+	width: 125px;
+	background-color: white;
+	padding: 2px;
+	font-weight: bold;
+}
+table.terms {
+	width: 100%;
+}
+table.terms td.col1 {
+	width: 150px;
+	padding-left: 5px;
+}
+table.terms td.col2 {
+	text-align: right;
+}
+table.terms input {
+	width: 100%;
+}
+table.terms select {
+	width: 100%;
+}
+
+/**
+ *	Reports
+ */
+div.reports	{
+	text-align:left;
+}
+.reports h3 {
+	font-size: 10pt;
+	border-bottom: 1px solid #000000;
+	padding: 0pt 0pt 5pt 0pt;
+	text-align:left;
+}
+.reports h4 {
+	text-align:left;
+	padding-left: 10px;
+}
+.reports table.main {
+	margin:	10px 0px 0px 50px;
+	margin-bottom:2px;
+	border-collapse:collapse;
+	border: 1px solid black;
+}
+.reports table.main th {
+	text-align: left;
+	background-color: #DADADA;
+	padding: 0px 0px 2px 5px;;
+}
+.reports table.main td {
+	padding-left: 5px;
+	background-color: #F5F5F5;
+
+}
+.reports .main table.radio {
+	margin: 10px 0;
+}
+.reports .main table.radio .col2 {
+	font-size: 11pt;
+	padding-left: 10px;
+}
+.reports input.submit {
+	background-color: #FFFFFF;
+	padding: 0 5px;
+	font-size: 10pt;
+	font-weight: bold;
+	border-top: 1px solid #797979;
+	border-left: 1px solid #797979;
+	border-bottom: 1px solid #797979;
+	border-right: 1px solid #797979;
+}
+.reports table.main td.last {
+	text-align:right;
+	padding: 5px;
+}
+/**
+ * End
+ */
+p.pagebreak {
+	page-break-after: always;
+	width: 100%;
+	border-bottom:1px solid #DADADA;
+}
+
+p.separator	{
+	clear:both;
+	width:100%;
+	margin: 10px 0px 20px 0px;
+	height:2px;
+	background-color: black;
+	border: 0;
+}
+p.blank_separator	{
+	clear:both;
+	width:100%;
+	height:1px;
+	border: 0;
+	margin: 5px 0px;
+}
+/**
+ *	Fieldset stuff (products form)
+ */
+label.error {
+	color:red;
+	border: 2px solid red;
+}
+input.error {
+	background-color: red;
+	color: white;
+}
+input:focus {
+	border-color: black;
+}
+table.standard td {
+	padding: 5px;
+}
+.mceEditor td {
+	padding: 0;
+}

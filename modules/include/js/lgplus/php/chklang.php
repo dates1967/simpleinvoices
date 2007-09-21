@@ -4,7 +4,7 @@
 // and see if there is a match
 // -------------------------------------------------------------
 
-
+// Incluye un archivo localizado de Rico livegrid
 function setLang() {
   $jsDir="../js/";
   $lang=strtolower($_SERVER["HTTP_ACCEPT_LANGUAGE"]);
@@ -18,7 +18,7 @@ function setLang() {
     {
       echo "Rico.include('".$fname."');";
       break;
-    } 
+    }
   }
 }
 ?>

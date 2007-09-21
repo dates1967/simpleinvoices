@@ -1,0 +1,49 @@
+@import "module_common.css";
+
+* {
+	margin:  10px;
+	padding: 0;
+}
+
+div#container	{
+	width:	100%;
+	margin: 0;
+}
+
+
+
+table.invoice_header_center td {
+	padding:			3px 5px 0px 5px;
+	border: 1px solid black;
+}
+table.invoice_header_center tr.black td {
+	padding: 5px 5px 3px 5px;
+	background-color: #F5F5F5;
+}
+
+table.invoice_totals td {
+	border:1px solid black;
+	padding: 3px 5px 0px 5px;
+}
+
+table.invoice_total_qty td {
+	padding: 3px 5px 0px 5px;
+	border: 1px solid black;
+}
+
+p.pagebreak {
+	page-break-after: always;
+	display: none;
+}
+
+p.separator	{
+	margin: 10px 0px 10px 0px;
+	border: 1px solid black;
+}
+
+tr.null td {
+	border: 0;
+	padding: 4px 5px 1px 5px;
+	font-size: 14px;
+	background-color: #FFFFFF;
+}

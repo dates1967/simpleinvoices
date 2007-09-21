@@ -1,0 +1,59 @@
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+@media print {
+  	#noprint	{
+  		display: none;
+  	}
+}
+body {
+	font-size: 14pt;
+	font-family: Arial;
+}
+
+table.top {
+	margin: 50px auto;
+}
+table.top td {
+	text-align: center;
+	font-size: 14pt;
+}
+table.top th {
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+}
+table.bank {
+	margin: 25px auto;
+}
+table.bank td {
+	padding: 5px;
+	font-size: 16pt;
+}
+table.bank td.col1 {
+	font-weight: bold;
+	padding-right: 50px;
+}
+h3 {
+	text-align:center;
+	margin-top:20px;
+	padding-bottom:10px;
+	font-size: 18pt;
+}
+h4 {
+	padding: 10px;
+	text-align:center;
+	font-size: 14pt;
+}
+p.divider {
+	height: 2pt;
+	width: 100%;
+	margin: 10pt auto;
+	background-color: black;
+}
+#noprint {
+
+}

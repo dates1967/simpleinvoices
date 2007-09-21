@@ -1,19 +1,4 @@
 <?php
-
-/*
-* Script: login.php
-* 	Login page
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-
 // we must never forget to start the session
 /*
 CREATE TABLE si_users (
@@ -41,9 +26,8 @@ CREATE TABLE `si_auth_challenges` (
 define("BROWSE","browse");
 include 'config/config.php';
 include 'include/sql_queries.php';
-//include "lang/$language.inc.php";
+include "lang/$language.inc.php";
 include "include/md5/hmac_md5.php";
-
 session_start();
 
 $errorMessage = '';
@@ -53,39 +37,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
      mysql_select_db( $db_name, $conn);
 
     $userEmail   = $_POST['user'];
-    $password = $_POST['pass'];
-    
-    // check if the user id and password combination exist in database
-    $sql = "SELECT user_id 
-            FROM ".TB_PREFIX."users
-            WHERE user_email = '$userEmail' AND user_password = md5('$password')";
-    
-    $result = mysql_query($sql, $conn) or die('Query failed. ' . mysql_error()); 
-    
-    if (mysql_num_rows($result) == 1) {
-        // the user id and password match, 
-        // set the session
-        $_SESSION['db_is_logged_in'] = true;
-        
-        // after login we move to the main page
-	header('Location: .');
-        exit;
-    } else {
-        $errorMessage = 'Sorry, wrong user / password';
-    }
-    
-} 
-
-
-/**/
-
-if (isset($_POST['user']) && isset($_POST['pass'])) {
-
-    $conn = mysql_connect( $db_host, $db_user, $db_password);
-     mysql_select_db( $db_name, $conn);
-
-    $userEmail   = $_POST['user'];
-    if ($_POST['pass'] == $_POST['md5'] ){
+    if ($_POST['pass'] == $_POST['md5']){
         $password = $_POST['pass'];
     } 
     else {
@@ -95,7 +47,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
         $password = md5($_POST['pass']);
     }
     if ($ChallengeLife>0){
-    	$ChallengeKeySubmitted = $_POST['ChallengeKey'];
+    $ChallengeKeySubmitted = $_POST['ChallengeKey'];
     }
 
     // Grab Password from database
@@ -105,12 +57,12 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     
     $result = mysqlQuery($sql, $conn) or die('Query failed. ' . mysql_error()); 
     $credentials = mysql_fetch_array($result);
-    $storedPassword=$credentials['user_password'];
+    $storedPassword=$credentials[user_password];
 
 
 
     if ($ChallengeLife>0) {
-        $DeleteOldChallenges = 'DELETE FROM `si_auth_challenges` WHERE `challenges_timestamp` < DATE_SUB(now(),INTERVAL '.$ChallengeLife.' Minute)';
+        $DeleteOldChallenges = 'DELETE FROM `si_auth_challenges` WHERE `challenges_timestamp` < DATE_SUB(now(),INTERVAL $ChallengeLife Minute)';
         mysqlQuery($DeleteOldChallenges, $conn);
         $sql = "SELECT *
             FROM si_auth_challenges
@@ -120,7 +72,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
         if (mysql_num_rows($result) >= 1) {
             //Challenge was valid
 #            echo $ChallengeKeySubmitted;
-            $DeleteUSEDChallenge = 'DELETE FROM `si_auth_challenges` WHERE `challenges_key` = '.$ChallengeKeySubmitted.' limit 1';
+            $DeleteUSEDChallenge = 'DELETE FROM `si_auth_challenges` WHERE `challenges_key` = `$ChallengeKeySubmitted`limit 1';
             mysqlQuery($DeleteUSEDChallenge, $conn);
 #            echo "Deleted Used Key $ChallengeKeySubmitted";
             if($password==hmac_md5($ChallengeKeySubmitted, "$storedPassword")){ 
@@ -153,7 +105,6 @@ if($ChallengeLife>0) {
      mysql_select_db( $db_name, $conn);
      mysqlQuery("INSERT INTO si_auth_challenges (challenges_key) VALUES ($Challenge_Key)",$conn);
 }
-/**/
 
 ?>
 <html>
@@ -161,7 +112,7 @@ if($ChallengeLife>0) {
 
 <?php if($MD5Auth==True){?>
 
-    <script src="./include/md5/md5.js"></script> 
+    <script src="./include/md5/md5-2.2alpha.js"></script> -->
     <script language="JavaScript"><!--
 
     function login(f) {
@@ -233,22 +184,21 @@ if ($errorMessage != '') {
 
   	<dl>
   		<dt>Email:</dt>
-  		<dd><input name="user" type="text" id="user" value="" /></dd>
+  		<dd><input name="user" type="text" id="user" /></dd>
 
   		<dt>Password:</dt>
   		<dd>
-  		  <input name="pass" type="password" id="pass" value="" />
+  		  <input name="pass" type="password" id="pass" />
 			<!--
   		  <span>(<a href="login.php">I forgot my password/username</a>)</span>
 			-->
   		</dd>
-<!--TODO add language select drop down here -->
-<!--
+
       		<dd><input type="checkbox" name="remember_me" /> Remember me on this computer</dd>
--->
 		<dd> <input type="submit" value="login" /></dd>
-
-
+<!--
+		<dd>Powered by Simple Invoices</dd>
+-->
 <!--  		<dd><input type="submit" value="Sign in" /></dd> -->
 <!--
 	        <label for="username">Username</label>
@@ -274,7 +224,6 @@ if ($errorMessage != '') {
 
 	</div>
         
-		<dd>Powered by <a href="http://www.simpleinvoices.org">Simple Invoices</a></dd>
 
     </div>
 

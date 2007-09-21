@@ -1,22 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 2.9.2
--- http://www.phpmyadmin.net
--- 
--- Host: localhost
--- Generation Time: May 17, 2007 at 10:03 AM
--- Server version: 5.0.27
--- PHP Version: 5.2.1
--- 
--- Database: `simple_invoices`
--- 
+DROP DATABASE `genlu`;
+CREATE DATABASE `genlu`;
+USE `genlu`;
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_account_payments`
--- 
+--
+-- Table structure for table `genlu_account_payments`
+--
 
-CREATE TABLE `si_account_payments` (
+CREATE TABLE `genlu_account_payments` (
   `id` int(10) NOT NULL auto_increment,
   `ac_inv_id` varchar(10) collate utf8_unicode_ci NOT NULL,
   `ac_amount` double(25,2) NOT NULL,
@@ -26,21 +18,21 @@ CREATE TABLE `si_account_payments` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `si_account_payments`
--- 
+--
+-- Dumping data for table `genlu_account_payments`
+--
 
-INSERT INTO `si_account_payments` (`id`, `ac_inv_id`, `ac_amount`, `ac_notes`, `ac_date`, `ac_payment_type`) VALUES 
+INSERT INTO `genlu_account_payments` (`id`, `ac_inv_id`, `ac_amount`, `ac_notes`, `ac_date`, `ac_payment_type`) VALUES
 (1, '1', 410.00, 'payment - cheque 14526', '2006-08-25 12:09:14', 1),
 (2, '4', 255.75, '', '2006-08-25 12:13:53', 1);
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_biller`
--- 
+--
+-- Table structure for table `genlu_biller`
+--
 
-CREATE TABLE `si_biller` (
+CREATE TABLE `genlu_biller` (
   `id` int(10) NOT NULL auto_increment,
   `name` varchar(255) default NULL,
   `street_address` varchar(255) default NULL,
@@ -64,11 +56,11 @@ CREATE TABLE `si_biller` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
--- 
--- Dumping data for table `si_biller`
--- 
+--
+-- Dumping data for table `genlu_biller`
+--
 
-INSERT INTO `si_biller` (`id`, `name`, `street_address`, `street_address2`, `city`, `state`, `zip_code`, `country`, `phone`, `mobile_phone`, `fax`, `email`, `logo`, `footer`, `notes`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `enabled`) VALUES 
+INSERT INTO `genlu_biller` (`id`, `name`, `street_address`, `street_address2`, `city`, `state`, `zip_code`, `country`, `phone`, `mobile_phone`, `fax`, `email`, `logo`, `footer`, `notes`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `enabled`) VALUES
 (1, 'Mr Plough', '43 Evergreen Terace', '', 'Springfield', 'New York', '90245', '', '04 5689 0456', '0456 4568 8966', '04 5689 8956', 'homer@mrplough.com', 'ubuntulogo.png', '', '', '', '7898-87987-87', '', '', '1'),
 (2, 'Homer Simpson', '43 Evergreen Terace', NULL, 'Springfield', 'New York', '90245', NULL, '04 5689 0456', '0456 4568 8966', '04 5689 8956', 'homer@yahoo.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
 (3, 'The Beer Baron', '43 Evergreen Terace', NULL, 'Springfield', 'New York', '90245', NULL, '04 5689 0456', '0456 4568 8966', '04 5689 8956', 'beerbaron@yahoo.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
@@ -76,11 +68,11 @@ INSERT INTO `si_biller` (`id`, `name`, `street_address`, `street_address2`, `cit
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_custom_fields`
--- 
+--
+-- Table structure for table `genlu_custom_fields`
+--
 
-CREATE TABLE `si_custom_fields` (
+CREATE TABLE `genlu_custom_fields` (
   `cf_id` int(11) NOT NULL auto_increment,
   `cf_custom_field` varchar(255) collate utf8_unicode_ci default NULL,
   `cf_custom_label` varchar(255) collate utf8_unicode_ci default NULL,
@@ -88,11 +80,11 @@ CREATE TABLE `si_custom_fields` (
   PRIMARY KEY  (`cf_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
--- 
--- Dumping data for table `si_custom_fields`
--- 
+--
+-- Dumping data for table `genlu_custom_fields`
+--
 
-INSERT INTO `si_custom_fields` (`cf_id`, `cf_custom_field`, `cf_custom_label`, `cf_display`) VALUES 
+INSERT INTO `genlu_custom_fields` (`cf_id`, `cf_custom_field`, `cf_custom_label`, `cf_display`) VALUES
 (1, 'biller_cf1', NULL, '0'),
 (2, 'biller_cf2', 'Tax ID', '0'),
 (3, 'biller_cf3', NULL, '0'),
@@ -112,12 +104,13 @@ INSERT INTO `si_custom_fields` (`cf_id`, `cf_custom_field`, `cf_custom_label`, `
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_customers`
--- 
+--
+-- Table structure for table `genlu_customers`
+--
 
-CREATE TABLE `si_customers` (
+CREATE TABLE `genlu_customers` (
   `id` int(10) NOT NULL auto_increment,
+  `customer_short_id` varchar(255) NOT NULL,
   `attention` varchar(255) default NULL,
   `name` varchar(255) default NULL,
   `street_address` varchar(255) default NULL,
@@ -130,31 +123,41 @@ CREATE TABLE `si_customers` (
   `mobile_phone` varchar(255) default NULL,
   `fax` varchar(255) default NULL,
   `email` varchar(255) default NULL,
+  `website` varchar(255) default NULL,
+  `shipping_address` varchar(255) default NULL,
+  `shipping_address2` varchar(255) default NULL,
+  `shipping_city` varchar(255) default NULL,
+  `shipping_state` varchar(255) default NULL,
+  `shipping_zip_code` varchar(255) default NULL,
+  `shipping_country` varchar(255) default NULL,
+  `shipping_phone` varchar(255) default NULL,
+  `shipping_fax` varchar(255) default NULL,
+  `shipping_email` varchar(255) default NULL,
   `notes` text,
   `custom_field1` varchar(255) default NULL,
   `custom_field2` varchar(255) default NULL,
   `custom_field3` varchar(255) default NULL,
   `custom_field4` varchar(255) default NULL,
   `enabled` varchar(1) NOT NULL default '1',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY (`name`),
+  UNIQUE KEY (`customer_short_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `si_customers`
--- 
-
-INSERT INTO `si_customers` (`id`, `attention`, `name`, `street_address`, `street_address2`, `city`, `state`, `zip_code`, `country`, `phone`, `mobile_phone`, `fax`, `email`, `notes`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `enabled`) VALUES 
-(1, 'Moe Sivloski', 'Moes Tarvern', '45 Main Road', NULL, 'Springfield', 'New York', '65891', '', '04 1234 5698', NULL, '04 5689 4566', 'moe@moestavern.com', '<p><strong>Moe&#39;s Tavern</strong> is a fictional <a href="http://en.wikipedia.org/wiki/Bar_%28establishment%29" title="Bar (establishment)">bar</a> seen on <em><a href="http://en.wikipedia.org/wiki/The_Simpsons" title="The Simpsons">The Simpsons</a></em>. The owner of the bar is <a href="http://en.wikipedia.org/wiki/Moe_Szyslak" title="Moe Szyslak">Moe Szyslak</a>.</p> <p>In The Simpsons world, it is located on the corner of Walnut Street, neighboring King Toot&#39;s Music Store, across the street is the Moeview Motel, and a factory formerly owned by <a href="http://en.wikipedia.org/wiki/Bart_Simpson" title="Bart Simpson">Bart Simpson</a>, until it collapsed. The inside of the bar has a few pool tables and a dartboard. It is very dank and &quot;smells like <a href="http://en.wikipedia.org/wiki/Urine" title="Urine">tinkle</a>.&quot; Because female customers are so rare, Moe frequently uses the women&#39;s restroom as an office. Moe claimed that there haven&#39;t been any ladies at Moe&#39;s since <a href="http://en.wikipedia.org/wiki/1979" title="1979">1979</a> (though earlier episodes show otherwise). A jar of pickled eggs perpetually stands on the bar. Another recurring element is a rat problem. This can be attributed to the episode <a href="http://en.wikipedia.org/wiki/Homer%27s_Enemy" title="Homer&#39;s Enemy">Homer&#39;s Enemy</a> in which Bart&#39;s factory collapses, and the rats are then shown to find a new home at Moe&#39;s. In &quot;<a href="http://en.wikipedia.org/wiki/Who_Shot_Mr._Burns" title="Who Shot Mr. Burns">Who Shot Mr. Burns</a>,&quot; Moe&#39;s Tavern was forced to close down because Mr. Burns&#39; slant-drilling operation near the tavern caused unsafe pollution. It was stated in the &quot;<a href="http://en.wikipedia.org/wiki/Flaming_Moe%27s" title="Flaming Moe&#39;s">Flaming Moe&#39;s</a>&quot; episode that Moe&#39;s Tavern was on Walnut Street. The phone number would be 76484377, since in &quot;<a href="http://en.wikipedia.org/wiki/Homer_the_Smithers" title="Homer the Smithers">Homer the Smithers</a>,&quot; Mr. Burns tried to call Smithers but did not know his phone number. He tried the buttons marked with the letters for Smithers and called Moe&#39;s. In &quot;<a href="http://en.wikipedia.org/wiki/Principal_Charming" title="Principal Charming">Principal Charming</a>&quot; Bart is asked to call Homer by Principal Skinner, the number visible on the card is WORK: KLondike 5-6832 HOME: KLondike 5-6754 MOE&#39;S TAVERN: KLondike 5-1239 , Moe answers the phone and Bart asks for Homer Sexual. The bar serves <a href="http://en.wikipedia.org/wiki/Duff_Beer" title="Duff Beer">Duff Beer</a> and Red Tick Beer, a beer flavored with dogs.</p>', NULL, NULL, NULL, NULL, '1'),
-(2, 'Mr Burns', 'Springfield Power Plant', '4 Power Plant Drive', 'street2', 'Springfield', 'New York', '90210', '', '04 1235 5698', '', '04 5678 7899', 'mr.burn@spp.com', '<p><strong>Springfield Nuclear Power Plant</strong> is a fictional electricity generating facility in the <a href="http://en.wikipedia.org/wiki/Television" title="Television">television</a> <a href="http://en.wikipedia.org/wiki/Animated_cartoon" title="Animated cartoon">animated cartoon</a> series <em><a href="http://en.wikipedia.org/wiki/The_Simpsons" title="The Simpsons">The Simpsons</a></em>. The plant has a <a href="http://en.wikipedia.org/wiki/Monopoly" title="Monopoly">monopoly</a> on the city of <a href="http://en.wikipedia.org/wiki/Springfield_%28The_Simpsons%29" title="Springfield (The Simpsons)">Springfield&#39;s</a> energy supply, but is sometimes mismanaged and endangers much of the town with its presence.</p> <p>Based on the plant&#39;s appearance and certain episode plots, it likely houses only a single &quot;unit&quot; or reactor (although, judging from the number of <a href="http://en.wikipedia.org/wiki/Containment_building" title="Containment building">containment buildings</a> and <a href="http://en.wikipedia.org/wiki/Cooling_tower" title="Cooling tower">cooling towers</a>, there is a chance it may have two). In one episode an emergency occurs and Homer resorts to the manual, which begins &quot;Congratulations on your purchase of a Fissionator 1952 Slow-Fission Reactor&quot;.</p> <p>The plant is poorly maintained, largely due to owner Montgomery Burns&#39; miserliness. Its <a href="http://en.wikipedia.org/wiki/Nuclear_safety" title="Nuclear safety">safety record</a> is appalling, with various episodes showing luminous rats in the bowels of the building, pipes and drums leaking radioactive waste, the disposal of waste in a children&#39;s playground, <a href="http://en.wikipedia.org/wiki/Plutonium" title="Plutonium">plutonium</a> used as a paperweight, cracked cooling towers (fixed in one episode using a piece of <a href="http://en.wikipedia.org/wiki/Chewing_gum" title="Chewing gum">Chewing gum</a>), dangerously high <a href="http://en.wikipedia.org/wiki/Geiger_counter" title="Geiger counter">Geiger counter</a> readings around the perimeter of the plant, and even a giant spider. In the opening credits a bar of some <a href="http://en.wikipedia.org/wiki/Radioactive" title="Radioactive">radioactive</a> substance is trapped in Homer&#39;s overalls and later disposed of in the street.</p>', '13245-789798', '', '', '', '1'),
-(3, 'Kath Day-Knight', 'Kath and Kim Pty Ltd', '82 Fountain Drive', NULL, 'Fountain Lakes', 'VIC', '3567', 'Australia', '03 9658 7456', NULL, '03 9658 7457', 'kath@kathandkim.com.au', 'Kath Day-Knight (<a href="http://en.wikipedia.org/wiki/Jane_Turner" title="Jane Turner">Jane Turner</a>) is an &#39;empty nester&#39; divorc&eacute;e who wants to enjoy time with her &quot;hunk o&#39; spunk&quot; Kel Knight (<a href="http://en.wikipedia.org/wiki/Glenn_Robbins" title="Glenn Robbins">Glenn Robbins</a>), a local &quot;purveyor of fine meats&quot;, but whose lifestyle is often cramped by the presence of her self-indulgent and spoilt rotten twenty-something daughter Kim Craig <a href="http://en.wikipedia.org/wiki/List_of_French_phrases_used_by_English_speakers#I_.E2.80.93_Q" title="List of French phrases used by English speakers">n&eacute;e</a> Day (<a href="http://en.wikipedia.org/wiki/Gina_Riley" title="Gina Riley">Gina Riley</a>). Kim enjoys frequent and lengthy periods of spiteful estrangement from her forgiving husband Brett Craig (<a href="http://en.wikipedia.org/wiki/Peter_Rowsthorn" title="Peter Rowsthorn">Peter Rowsthorn</a>) for imagined slights and misdemeanors, followed by loving reconciliations with him. During Kim and Brett&#39;s frequent rough patches Kim usually seeks solace from her servile &quot;second best friend&quot; Sharon Strzelecki (<a href="http://en.wikipedia.org/wiki/Magda_Szubanski" title="Magda Szubanski">Magda Szubanski</a>), screaming abuse at Sharon for minor infractions while issuing her with intricately-instructed tasks, such as stalking Brett. Kim and Brett had a baby in the final episode of the second series whom they named Epponnee-Raelene Kathleen Darlene Charlene Craig, shortened to Epponnee-Rae.', NULL, NULL, NULL, NULL, '1');
+--
+-- Dumping data for table `genlu_customers`
+--
+INSERT INTO `genlu_customers` (`id`, `customer_short_id`, `attention`, `name`, `street_address`, `street_address2`, `city`, `state`, `zip_code`, `country`, `phone`, `mobile_phone`, `fax`, `email`, `website`, `shipping_address`, `shipping_address2`, `shipping_city`, `shipping_state`, `shipping_zip_code`, `shipping_country`, `shipping_phone`, `shipping_fax`, `shipping_email`, `notes`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `enabled`) VALUES
+(1, 'MI101', 'Salim', 'Watch Time Inc.', '121 E Flagler St.', NULL, 'Miami', 'FL', '33132', 'USA', '(305) 539-0515', NULL, '(305) 539-0515', 'sales@WatchTimeInc.com', 'http://www.watchtimeinc.com', '121 E Flagler St.', NULL, 'Miami', 'FL', '33132', 'USA', '(305) 539-0515', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1'),
+(2, 'MI102', 'Ali', 'Watch Plaza', '30 Ne 1st Avenue', NULL, 'Miami', 'FL', '33132', 'USA', '305-358-0440', NULL, NULL, NULL, NULL, '30 Ne 1st Avenue', NULL, 'Miami', 'FL', '33132', 'USA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_defaults`
--- 
+--
+-- Table structure for table `genlu_defaults`
+--
 
-CREATE TABLE `si_defaults` (
+CREATE TABLE `genlu_defaults` (
   `def_id` int(10) NOT NULL auto_increment,
   `def_biller` int(25) default NULL,
   `def_customer` int(25) default NULL,
@@ -166,119 +169,79 @@ CREATE TABLE `si_defaults` (
   PRIMARY KEY  (`def_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `si_defaults`
--- 
+--
+-- Dumping data for table `genlu_defaults`
+--
 
-INSERT INTO `si_defaults` (`def_id`, `def_biller`, `def_customer`, `def_tax`, `def_inv_preference`, `def_number_line_items`, `def_inv_template`, `def_payment_type`) VALUES 
+INSERT INTO `genlu_defaults` (`def_id`, `def_biller`, `def_customer`, `def_tax`, `def_inv_preference`, `def_number_line_items`, `def_inv_template`, `def_payment_type`) VALUES
 (1, 4, 3, 1, 1, 5, 'default', '1');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_invoice_items`
--- 
+--
+-- Table structure for table `genlu_invoice_items`
+--
 
-CREATE TABLE `si_invoice_items` (
-  `id` int(10) NOT NULL auto_increment,
-  `invoice_id` int(10) NOT NULL default '0',
-  `quantity` float NOT NULL default '0',
-  `product_id` int(10) default '0',
-  `unit_price` double(25,2) default '0.00',
-  `tax_id` varchar(25) NOT NULL default '0',
-  `tax` double(25,2) default '0.00',
-  `tax_amount` double(25,2) default NULL,
-  `gross_total` double(25,2) default '0.00',
-  `description` text,
-  `total` double(25,2) default '0.00',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
-
--- 
--- Dumping data for table `si_invoice_items`
--- 
-
-INSERT INTO `si_invoice_items` (`id`, `invoice_id`, `quantity`, `product_id`, `unit_price`, `tax_id`, `tax`, `tax_amount`, `gross_total`, `description`, `total`) VALUES 
-(1, 1, 1, 1, 150.00, '1', 10.00, 15.00, 150.00, '00', 165.00),
-(2, 1, 2, 3, 125.00, '1', 10.00, 25.00, 250.00, '00', 275.00),
-(3, 2, 1, 0, 0.00, '3', 10.00, 14.50, 145.00, 'For ploughing services for the period 01 Jan - 01 Feb 2006', 159.50),
-(4, 3, 2, 2, 140.00, '1', 10.00, 28.00, 280.00, 'Accounting services - basic bookkeeping', 308.00),
-(5, 3, 1, 2, 140.00, '1', 10.00, 14.00, 140.00, 'Accounting services - tax return for 2005', 154.00),
-(6, 3, 2, 2, 140.00, '1', 10.00, 28.00, 280.00, 'Accounting serverice - general ledger work', 308.00),
-(7, 4, 15, 4, 15.50, '4', 10.00, 23.25, 232.50, '00', 255.75),
-(8, 5, 1, 2, 140.00, '4', 10.00, 14.00, 140.00, 'Quote for accounting service - hours', 154.00),
-(9, 5, 2, 1, 150.00, '4', 10.00, 30.00, 300.00, 'Quote for new servers', 330.00),
-(10, 6, 1, 1, 150.00, '4', 10.00, 15.00, 150.00, '00', 165.00),
-(11, 6, 2, 4, 15.50, '4', 10.00, 3.10, 31.00, '00', 34.10),
-(12, 6, 4, 5, 125.00, '4', 10.00, 50.00, 500.00, '00', 550.00),
-(13, 7, 1, 2, 140.00, '1', 10.00, 14.00, 140.00, '00', 154.00),
-(14, 7, 2, 5, 125.00, '1', 10.00, 25.00, 250.00, '00', 275.00),
-(15, 8, 10, 5, 125.00, '1', 10.00, 125.00, 1250.00, '00', 1375.00),
-(16, 8, 10, 4, 15.50, '1', 10.00, 15.50, 155.00, '00', 170.50);
+CREATE TABLE `genlu_invoice_lines` (
+	`id` int(10) NOT NULL auto_increment,
+	`invoice_id` int(10) NOT NULL default '0',
+	`product_id` int(10) default '0',
+	`description` text,
+	`quantity` int NOT NULL default '0',
+	`unit_price` double(25,2) default '0.00',
+	PRIMARY KEY  (`id`),
+	KEY (`invoice_id`),
+	KEY (`product_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_invoice_type`
--- 
+--
+-- Table structure for table `genlu_invoice_type`
+--
 
-CREATE TABLE `si_invoice_type` (
+CREATE TABLE `genlu_invoice_type` (
   `inv_ty_id` int(11) NOT NULL auto_increment,
   `inv_ty_description` varchar(25) NOT NULL default '',
   PRIMARY KEY  (`inv_ty_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
--- 
--- Dumping data for table `si_invoice_type`
--- 
+--
+-- Dumping data for table `genlu_invoice_type`
+--
 
-INSERT INTO `si_invoice_type` (`inv_ty_id`, `inv_ty_description`) VALUES 
+INSERT INTO `genlu_invoice_type` (`inv_ty_id`, `inv_ty_description`) VALUES
 (1, 'Total'),
 (2, 'Itemised'),
 (3, 'Consulting');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_invoices`
--- 
+--
+-- Table structure for table `genlu_invoices`
+--
 
-CREATE TABLE `si_invoices` (
-  `id` int(10) NOT NULL auto_increment,
-  `biller_id` int(10) NOT NULL default '0',
-  `customer_id` int(10) NOT NULL default '0',
-  `type_id` int(10) NOT NULL default '0',
-  `preference_id` int(10) NOT NULL default '0',
-  `date` datetime NOT NULL default '0000-00-00 00:00:00',
-  `custom_field1` varchar(50) default NULL,
-  `custom_field2` varchar(50) default NULL,
-  `custom_field3` varchar(50) default NULL,
-  `custom_field4` varchar(50) default NULL,
-  `note` text,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+CREATE TABLE `genlu_invoices` (
+	`id` int(10) NOT NULL auto_increment,
+	`invoice_number` varchar(255) NOT NULL,
+	`biller_id` int(10) NOT NULL default '0',
+	`customer_id` int(10) NOT NULL default '0',
+	`ship_to_id` int(10) NOT NULL default '0',
+	`type_id` int(10) NOT NULL default '0',
+	`tax_id` varchar(25) NOT NULL default '0',
+	`freight` decimal(10,2) default '0.00',
+	`preference_id` int(10) NOT NULL default '0',
+	`date` datetime NOT NULL default '0000-00-00 00:00:00',
+	`note` text,
+	PRIMARY KEY  (`id`),
+	UNIQUE KEY (`invoice_number`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- 
--- Dumping data for table `si_invoices`
--- 
+--
+-- Table structure for table `genlu_log`
+--
 
-INSERT INTO `si_invoices` (`id`, `biller_id`, `customer_id`, `type_id`, `preference_id`, `date`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `note`) VALUES 
-(1, 4, 3, 2, 1, '2007-02-03 00:00:00', NULL, NULL, NULL, NULL, 'Will be delivered via certified post'),
-(2, 1, 2, 1, 1, '2007-01-01 00:00:00', NULL, NULL, NULL, NULL, ''),
-(3, 2, 3, 3, 1, '2007-02-04 00:00:00', NULL, NULL, NULL, NULL, ''),
-(4, 2, 1, 2, 4, '2006-08-25 12:12:17', NULL, NULL, NULL, NULL, 'Weekly bootleg deliveries'),
-(5, 4, 3, 3, 5, '2007-01-16 00:00:00', NULL, NULL, NULL, NULL, ''),
-(6, 4, 3, 2, 3, '2006-08-25 12:13:37', NULL, NULL, NULL, NULL, ''),
-(7, 2, 2, 2, 1, '2006-12-10 22:32:48', NULL, NULL, NULL, NULL, 'this is a test<br />'),
-(8, 4, 3, 2, 1, '2007-02-06 00:00:00', NULL, NULL, NULL, NULL, '');
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `si_log`
--- 
-
-CREATE TABLE `si_log` (
+CREATE TABLE `genlu_log` (
   `id` bigint(20) NOT NULL auto_increment,
   `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `userid` int(11) NOT NULL,
@@ -286,39 +249,39 @@ CREATE TABLE `si_log` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- 
--- Dumping data for table `si_log`
--- 
+--
+-- Dumping data for table `genlu_log`
+--
 
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_payment_types`
--- 
+--
+-- Table structure for table `genlu_payment_types`
+--
 
-CREATE TABLE `si_payment_types` (
+CREATE TABLE `genlu_payment_types` (
   `pt_id` int(10) NOT NULL auto_increment,
   `pt_description` varchar(250) collate utf8_unicode_ci NOT NULL,
   `pt_enabled` varchar(1) collate utf8_unicode_ci NOT NULL default '1',
   PRIMARY KEY  (`pt_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `si_payment_types`
--- 
+--
+-- Dumping data for table `genlu_payment_types`
+--
 
-INSERT INTO `si_payment_types` (`pt_id`, `pt_description`, `pt_enabled`) VALUES 
+INSERT INTO `genlu_payment_types` (`pt_id`, `pt_description`, `pt_enabled`) VALUES
 (1, 'Cash', '1'),
 (2, 'Credit Card', '1');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_preferences`
--- 
+--
+-- Table structure for table `genlu_preferences`
+--
 
-CREATE TABLE `si_preferences` (
+CREATE TABLE `genlu_preferences` (
   `pref_id` int(11) NOT NULL auto_increment,
   `pref_description` varchar(50) default NULL,
   `pref_currency_sign` varchar(50) default NULL,
@@ -335,11 +298,11 @@ CREATE TABLE `si_preferences` (
   PRIMARY KEY  (`pref_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
--- 
--- Dumping data for table `si_preferences`
--- 
+--
+-- Dumping data for table `genlu_preferences`
+--
 
-INSERT INTO `si_preferences` (`pref_id`, `pref_description`, `pref_currency_sign`, `pref_inv_heading`, `pref_inv_wording`, `pref_inv_detail_heading`, `pref_inv_detail_line`, `pref_inv_payment_method`, `pref_inv_payment_line1_name`, `pref_inv_payment_line1_value`, `pref_inv_payment_line2_name`, `pref_inv_payment_line2_value`, `pref_enabled`) VALUES 
+INSERT INTO `genlu_preferences` (`pref_id`, `pref_description`, `pref_currency_sign`, `pref_inv_heading`, `pref_inv_wording`, `pref_inv_detail_heading`, `pref_inv_detail_line`, `pref_inv_payment_method`, `pref_inv_payment_line1_name`, `pref_inv_payment_line1_value`, `pref_inv_payment_line2_name`, `pref_inv_payment_line2_value`, `pref_enabled`) VALUES
 (1, 'Invoice - default', '$', 'Invoice', 'Invoice', 'Details', 'Payment is to be made within 14 days of the invoice being sent', 'Electronic Funds Transfer', 'Account name:', 'H. & M. Simpson', 'Account number:', '0123-4567-7890', '1'),
 (2, 'Invoice - no payment details', '$', 'Invoice', 'Invoice', NULL, '', '', '', '', '', '', '1'),
 (3, 'Receipt - default', '$', 'Receipt', 'Receipt', 'Details', '<br>This transaction has been paid in full, please keep this receipt as proof of purchase.<br> Thank you', '', '', '', '', '', '1'),
@@ -348,41 +311,49 @@ INSERT INTO `si_preferences` (`pref_id`, `pref_description`, `pref_currency_sign
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_products`
--- 
+--
+-- Table structure for table `genlu_products`
+--
 
-CREATE TABLE `si_products` (
+CREATE TABLE `genlu_products` (
   `id` int(11) NOT NULL auto_increment,
+  `reference` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `unit_price` decimal(25,2) default NULL,
+  `type` varchar(255) NOT NULL,
+  `last_unit_cost` decimal(25,2) default NULL,
+  `us_retail` decimal(25,2) default NULL,
+  `price_level_A` decimal(25,2) default NULL,
+  `price_level_B` decimal(25,2) default NULL,
+  `price_level_C` decimal(25,2) default NULL,
+  `price_level_D` decimal(25,2) default NULL,
   `custom_field1` varchar(255) default NULL,
   `custom_field2` varchar(255) default NULL,
   `custom_field3` varchar(255) default NULL,
   `custom_field4` varchar(255) default NULL,
   `notes` text NOT NULL,
   `enabled` varchar(1) NOT NULL default '1',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `reference` (`reference`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
--- 
--- Dumping data for table `si_products`
--- 
-
-INSERT INTO `si_products` (`id`, `description`, `unit_price`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `notes`, `enabled`) VALUES 
-(1, 'IBM Netfinity 5000', 150.00, NULL, NULL, NULL, NULL, '', '1'),
-(2, 'Accouting services - Barney Gumball (hours)', 140.00, 'CVF1', '', '', '', '', '1'),
-(3, 'Weekly ploughing service', 125.00, NULL, NULL, NULL, NULL, '', '1'),
-(4, 'Bootleg homebrew', 15.50, NULL, NULL, NULL, NULL, '', '1'),
-(5, 'Accomadation', 125.00, NULL, NULL, NULL, NULL, '', '1');
+--
+-- Dumping data for table `genlu_products`
+--
+INSERT INTO `genlu_products` (`id`, `reference`, `description`, `type`, `last_unit_cost`, `us_retail`, `price_level_A`, `price_level_B`, `price_level_C`, `price_level_D`, `custom_field1`, `custom_field2`, `custom_field3`, `custom_field4`, `notes`, `enabled`) VALUES
+(1, 'CSX02', 'Technomarine Watch', 'technomarine', 126.00, 300.00, 180.00, 165.00, 0.00, 0.00, '', '', '', '', '', '1'),
+(2, 'CSX05', 'Technomarine Watch', 'technomarine', 126.00, 300.00, 180.00, 165.00, 0.00, 0.00, '', '', '', '', '', '1'),
+(3, 'CSX09', 'Technomarine Watch', 'technomarine', 126.00, 300.00, 180.00, 165.00, 0.00, 0.00, '', '', '', '', '', '1'),
+(4, 'RSX02', 'Technomarine Watch', 'technomarine', 130.20, 310.00, 186.00, 170.55, 0.00, 0.00, '', '', '', '', '', '1'),
+(5, 'RSX05', 'Technomarine Watch', 'technomarine', 130.20, 310.00, 186.00, 170.55, 0.00, 0.00, '', '', '', '', '', '1'),
+(6, 'RSX12', 'Technomarine Watch', 'technomarine', 130.20, 310.00, 186.00, 170.55, 0.00, 0.00, '', '', '', '', '', '1');
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_sql_patchmanager`
--- 
+--
+-- Table structure for table `genlu_sql_patchmanager`
+--
 
-CREATE TABLE `si_sql_patchmanager` (
+CREATE TABLE `genlu_sql_patchmanager` (
   `sql_id` int(11) NOT NULL auto_increment,
   `sql_patch_ref` varchar(50) NOT NULL default '',
   `sql_patch` varchar(255) NOT NULL,
@@ -391,12 +362,12 @@ CREATE TABLE `si_sql_patchmanager` (
   PRIMARY KEY  (`sql_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=124 ;
 
--- 
--- Dumping data for table `si_sql_patchmanager`
--- 
+--
+-- Dumping data for table `genlu_sql_patchmanager`
+--
 
-INSERT INTO `si_sql_patchmanager` (`sql_id`, `sql_patch_ref`, `sql_patch`, `sql_release`, `sql_statement`) VALUES 
-(1, '1', 'Create si_sql_patchmanger table', '20060514', 'CREATE TABLE si_sql_patchmanager (sql_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,sql_patch_ref VARCHAR( 50 ) NOT NULL ,sql_patch VARCHAR( 50 ) NOT NULL ,sql_release VARCHAR( 25 ) NOT NULL ,sql_statement TEXT NOT NULL) TYPE = MYISAM '),
+INSERT INTO `genlu_sql_patchmanager` (`sql_id`, `sql_patch_ref`, `sql_patch`, `sql_release`, `sql_statement`) VALUES
+(1, '1', 'Create genlu_sql_patchmanger table', '20060514', 'CREATE TABLE genlu_sql_patchmanager (sql_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,sql_patch_ref VARCHAR( 50 ) NOT NULL ,sql_patch VARCHAR( 50 ) NOT NULL ,sql_release VARCHAR( 25 ) NOT NULL ,sql_statement TEXT NOT NULL) TYPE = MYISAM '),
 (2, '2', 'Update invoice no details to have a default curren', '20060514', ''),
 (3, '3', 'Add a row into the defaults table to handle the de', '20060514', ''),
 (4, '4', 'Set the default number of line items to 5', '20060514', ''),
@@ -412,7 +383,7 @@ INSERT INTO `si_sql_patchmanager` (`sql_id`, `sql_patch_ref`, `sql_patch`, `sql_
 (14, '14', 'Add enabled to products', '20060815', ''),
 (15, '15', 'Add tax_id into invoice_items table', '20060815', ''),
 (16, '16', 'Add Payments table', '20060827', ''),
-(17, '17', 'Adjust data type of quantuty field', '20060827', ''),
+(17, '17', 'Adjust data type of quantity field', '20060827', ''),
 (18, '18', 'Create Payment Types table', '20060909', ''),
 (19, '19', 'Add info into the Payment Type table', '20060909', ''),
 (20, '20', 'Adjust accounts payments table to add a type field', '20060909', ''),
@@ -436,8 +407,8 @@ INSERT INTO `si_sql_patchmanager` (`sql_id`, `sql_patch_ref`, `sql_patch`, `sql_
 (38, '37', 'Reset invoice template to default due to new invoi', '20070325', ''),
 (39, '38', 'Alter custom field table - field length now 255 fo', '20070325', ''),
 (40, '39', 'Alter custom field table - field length now 255 fo', '20070325', ''),
-(41, '40', 'Alter field name in si_partchmanager', '20070424', ''),
-(42, '41', 'Alter field name in si_account_payments', '20070424', ''),
+(41, '40', 'Alter field name in genlu_partchmanager', '20070424', ''),
+(42, '41', 'Alter field name in genlu_account_payments', '20070424', ''),
 (43, '42', 'Alter field name b_name to name', '20070424', ''),
 (44, '43', 'Alter field name b_id to id', '20070430', ''),
 (45, '44', 'Alter field name b_street_address to street_address', '20070430', ''),
@@ -522,23 +493,23 @@ INSERT INTO `si_sql_patchmanager` (`sql_id`, `sql_patch_ref`, `sql_patch`, `sql_
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_system_defaults`
--- 
+--
+-- Table structure for table `genlu_system_defaults`
+--
 
-CREATE TABLE `si_system_defaults` (
+CREATE TABLE `genlu_system_defaults` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(30) NOT NULL,
   `value` varchar(30) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
--- 
--- Dumping data for table `si_system_defaults`
--- 
+--
+-- Dumping data for table `genlu_system_defaults`
+--
 
-INSERT INTO `si_system_defaults` (`id`, `name`, `value`) VALUES 
+INSERT INTO `genlu_system_defaults` (`id`, `name`, `value`) VALUES
 (1, 'biller', '4'),
 (2, 'customer', '3'),
 (3, 'tax', '1'),
@@ -563,11 +534,11 @@ INSERT INTO `si_system_defaults` (`id`, `name`, `value`) VALUES
 
 -- --------------------------------------------------------
 
--- 
--- Table structure for table `si_tax`
--- 
+--
+-- Table structure for table `genlu_tax`
+--
 
-CREATE TABLE `si_tax` (
+CREATE TABLE `genlu_tax` (
   `tax_id` int(11) NOT NULL auto_increment,
   `tax_description` varchar(50) default NULL,
   `tax_percentage` decimal(10,2) default NULL,
@@ -575,15 +546,10 @@ CREATE TABLE `si_tax` (
   PRIMARY KEY  (`tax_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
--- 
--- Dumping data for table `si_tax`
--- 
+--
+-- Dumping data for table `genlu_tax`
+--
 
-INSERT INTO `si_tax` (`tax_id`, `tax_description`, `tax_percentage`, `tax_enabled`) VALUES 
-(1, 'GST (AUS)', 10.00, '1'),
-(2, 'VAT (UK)', 10.00, '1'),
+INSERT INTO `genlu_tax` (`tax_id`, `tax_description`, `tax_percentage`, `tax_enabled`) VALUES
 (3, 'Sales Tax (USA)', 10.00, '1'),
-(4, 'GST (NZ)', 12.50, '1'),
-(5, 'No Tax', 0.00, '1'),
-(6, 'IVA', 20.00, '1'),
-(7, 'MWSt (DE)', 16.00, '1');
+(5, 'No Tax', 0.00, '1');

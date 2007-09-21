@@ -1,21 +1,5 @@
 <?php
 
-/*
-* Script: login.php
-* 	Login page
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*
-* Website:
-* 	http://www.simpleinvoices.org
- */
 $t = isset($_GET['t'])?$_GET['t']:null;
 $p = isset($_GET['p'])?$_GET['p']:null;
 
@@ -23,7 +7,6 @@ require_once("./include/smarty/Smarty.class.php");
 $smarty = new Smarty();
 $smarty -> compile_dir = "./cache/";
 include("./include/include_main.php");
-
 $smarty -> assign("LANG",$LANG);
 
 if(isset($_GET['lang'])) {
@@ -45,7 +28,7 @@ if($_GET['t'] == "help") {
 }
 else {
 
-$file = "./documentation/$lang/general/$_GET[p]";
+	$file = "./documentation/$lang/general/$_GET[p]";
 	
 	if(file_exists($file.".html")) {
 		$file = $file.".html";

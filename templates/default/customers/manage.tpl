@@ -1,22 +1,3 @@
-{*
-/*
-* Script: manage.tpl
-* 	 Customer manage template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*
-* Website:
-*	http://www.simpleinvoices.org
-*/
-*}
-
 {if $customers == null}
 	<P><em>{$LANG.no_customers}.</em></p>
 {else}
@@ -28,7 +9,7 @@
 <table align="center" id="rico_customer" class="ricoLiveGrid manage">
 <colgroup>
 <col style='width:10%;' />
-<col style='width:5%;' />
+<col style='width:10%;' />
 <col style='width:25%;' />
 <col style='width:15%;' />
 <col style='width:15%;' />
@@ -57,9 +38,9 @@
 
 	<tr class="index_table">
 	<td class="index_table"><a class="index_table"
-	 href="index.php?module=customers&view=details&id={$customer.id}&action=view">{$LANG.view}</a> ::
+	 href="index.php?module=customers&view=details&submit={$customer.id}">{$LANG.view}</a> ::
 	<a class="index_table"
-	 href="index.php?module=customers&view=details&id={$customer.id}&action=edit">{$LANG.edit}</a> </td>
+	 href="index.php?module=customers&view=edit&submit={$customer.id}">{$LANG.edit}</a> </td>
 	<td class="index_table">{$customer.id}</td>
 	<td class="index_table">{$customer.name}</td>
 	<!--

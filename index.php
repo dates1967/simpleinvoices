@@ -1,129 +1,69 @@
 <?php
 
-/*
-* Script: index.php
-* 	Main controller file for Simple Invoices
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-
-
 //stop browsing to files directly - all viewing to be handled by index.php
 //if browse not defined then the page will exit
 define("BROWSE","browse");
+if(!defined('SIX_ROOT')) {
+	define('SIX_ROOT', dirname(__FILE__));
+};
+if(!defined('SIX_LIB_DIR')) {
+	define('SIX_LIB_DIR', SIX_ROOT . '/lib');
+};
 
-//keeps the old path
-set_include_path(get_include_path() . PATH_SEPARATOR . "./include");
+require_once(SIX_LIB_DIR . '/six.class.php');
+require_once(SIX_LIB_DIR . '/sixinvoice.class.php');
+require_once(SIX_LIB_DIR . '/sixcustomers.class.php');
+require_once(SIX_LIB_DIR . '/sixproducts.class.php');
+require_once(SIX_LIB_DIR . '/sixpayments.class.php');
+require_once(SIX_LIB_DIR . '/six.module.class.php');
+include_once(SIX_LIB_DIR . "/sixreports.class.php");
 
 $module = isset($_GET['module'])?$_GET['module']:null;
 $view = isset($_GET['view'])?$_GET['view']:null;
 $action = isset($_GET['case'])?$_GET['case']:null;
 
+$six = new Six();
 
-require_once("smarty/Smarty.class.php");
+if(isset($module)){
+	if($six->module == 'reports'){
+		if(!empty($_REQUEST['request'])){
+			if($_REQUEST['request'] == 'price_list'){
+				$six->focus = new SIXPriceList();
+			} elseif($_REQUEST['request'] == 'bank_info'){
+				$six->focus = new SIXReports();
+				$six->focus->render_info();
+			} elseif($_REQUEST['request'] == 'financial'){
+				$six->focus = new SIXFinancialReport(); 
+			} else {
+				$six->focus = new SIXReports();
+			}
+		} else {
+			$six->focus = new SIXReports();
+			//$six->focus->parseRequest();
+		}
+		//$six->focus = new SIXReports();
+		//$six->focus->run();
+	} elseif($six->module == 'sales' || $six->module == 'purchases') {
+		$six->focus = new SIXInvoice();
 
-$smarty = new Smarty();
+	} elseif($six->module == 'customers'){
+		$six->focus = new SIXCustomers();
 
-//cache directory. Have to be writeable (chmod 777)
-$smarty -> compile_dir = "cache";
+	} elseif($six->module == 'products'){
+		$six->focus = new SIXProducts();
 
-//adds own smarty plugins
-$smarty->plugins_dir = array("plugins","smarty_plugins");
+	} elseif($six->module == 'payments') {
+		$six->focus = new SIXPayment();
 
-include("./include/include_main.php");
+	} else {
 
-$smarty -> assign("module",$module);
-
-
-$smarty -> assign("LANG",$LANG);
-//For Making easy enabled pop-menus (see biller)
-$smarty -> assign("enabled",array($LANG['disabled'],$LANG['enabled']));
-
-$menu = true;
-$file = "home";
-
-
-if(getNumberOfPatches() > 0 ) {
-	$view = "database_sqlpatches";
-	$module = "options";
-	
-	if($action == "run") {
-		runPatches();
 	}
-	else {
-		listPatches();
-	}
-	$menu = false;
+	// $six->dump($six);
+	$six->focus->run();
+	// $six->run();
+} else {
+	// header("Location: index.php?module=sales&view=manage");
+	// exit();
+	$six->run();
 }
-
-
-
-/*dont include the header if requested file is an invoice template - for print preview etc.. header is not needed */
-if (($module == "invoices" ) && (strstr($view,"templates"))) {
-	//TODO: why is $view templates/template?...
-	if (file_exists("./modules/invoices/template.php")) {
-	        include("./modules/invoices/template.php");
-	}
-	else {
-		echo "The file that you requested doesn't exist";
-	}
-	
-	exit(0);
-}
-
-
-$path = "$module/$view";
-
-if(file_exists("./modules/$path.php")) {
-	
-	preg_match("/^[a-z|A-Z|_]+\/[a-z|A-Z|_]+/",$path,$res);
-
-	if(isset($res[0]) && $res[0] == $path) {
-		$file = $path;
-	}	
-}
-
-
-$smarty -> display("../templates/default/header.tpl");
-//temp added menu.tpl back in so we can easily design new menu system
-
-
-
-
-/*
-if($menu) {
-	getMenuStructure();
-	//$smarty -> display("../templates/modules/menu.tpl");
-}
-*/
-
-
-include_once("./modules/$file.php");
-
-$smarty -> display("../templates/default/menu.tpl");
-
-$smarty -> display("../templates/default/main.tpl");
-//Shouldn't be necessary anymore. Ist for old files without tempaltes...
-
-if(file_exists("./templates/default/$file.tpl")) {
-	
-	$path = "../templates/default/$module/";
-	$smarty->assign("path",$path);
-	$smarty -> display("../templates/default/$file.tpl");
-}
-// If no smarty template - add message - onyl uncomment for dev - commented out for release
-else {
-	error_log("NOTEMPLATE!!!");
-}
-
-$smarty -> display("../templates/default/footer.tpl");
-
-
 ?>

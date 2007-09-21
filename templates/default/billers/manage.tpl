@@ -1,18 +1,3 @@
-{*
-/*
-* Script: manage.tpl
-* 	Biller manage template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-*}
 {if $billers == null}
 <P><em>{$LANG.no_billers}.</em></p>
 {else}
@@ -42,9 +27,9 @@
 	{foreach from=$billers item=biller}
 	<tr class='index_table'>
 		<td class='index_table'><a class='index_table'
-			href='index.php?module=billers&view=details&id={$biller.id}&action=view'>
+			href='index.php?module=billers&view=details&submit={$biller.id}&action=view'>
 		{$LANG.view} </a> :: <a class='index_table'
-			href='index.php?module=billers&view=details&id={$biller.id}&action=edit'>
+			href='index.php?module=billers&view=details&submit={$biller.id}&action=edit'>
 		{$LANG.edit} </a></td>
 		<td class='index_table'>{$biller.id}</td>
 		<td class='index_table'>{$biller.name}</td>

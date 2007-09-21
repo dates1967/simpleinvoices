@@ -1,0 +1,197 @@
+*	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: white;
+	color: black;
+	font-style: normal;
+	font-size: 10pt;
+	font-family: Verdana, San-Serif, Arial;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+
+
+div#container	{
+	page-break-after: always;
+}
+
+
+/**
+*	MY CUSTOM STYLES
+*/
+
+.header01	{
+	font-family:	Arial;
+	font-size:		28pt;
+	line-height:	25pt;
+	font-weight:	bold;
+	padding-bottom:	5pt;
+/* 	background-color:	red; */
+}
+
+.header03	{
+	font-family:	Arial;
+	font-size:		20pt;
+	font-weight:	bold;
+	padding-bottom:	10pt;
+	text-align: 	right;
+}
+
+.address01	{
+	font-family:	Arial;
+	font-size:		14pt;
+	padding-bottom:	3pt;
+}
+.address01 img	{
+	margin-bottom: 10px;
+}
+
+.data02	{
+	font-family:	Arial;
+	font-size:		13pt;
+	padding: 3pt 1pt 3pt 5pt;
+	text-align: right;
+}
+
+/* Biller */
+div.top	{
+	height: auto;
+	background-color: brown;
+	margin-bottom: 30px;
+}
+
+.biller	{
+	float: left;
+	margin-bottom: 20px;
+}
+.biller_right	{
+	float: right;
+	margin-bottom: 20px;
+}
+
+
+/**
+*	Estilos para la tabla principal del invoice (lines)
+**/
+table.invoice_header_center {
+	width:100%;
+	margin:5pt auto 2pt auto;
+	border-collapse:collapse;
+	clear: both;
+	border-top: 3px solid black;
+}
+table.invoice_header_center td {
+	font-family:		Arial;
+	font-size:			14px;
+	padding:			3px 5px 0px 5px;
+	border: 1px solid black;
+}
+table.invoice_header_center tr.total {
+	font-size: 18px;
+	padding: 5px 5px 3px 5px;
+	background-color: #F5F5F5;
+}
+table.invoice_header_center tr.total td {
+	font-size: 16px;
+	font-weight: bold;
+}
+table.invoice_header_center tr.black td {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px 5px 3px 5px;
+	background-color: #F5F5F5;
+}
+
+table.invoice_header_center td.numeric {
+	width: 90px;
+	text-align: right;
+}
+table.invoice_header_center td.cost {
+	width: 125px;
+	text-align: right;
+}
+table.invoice_header_center td.inv {
+	width: 110px;
+}
+table.invoice_header_center td.date {
+	width: 110px;
+}
+table.invoice_header_center td.name {
+}
+
+table.invoice_header_center td.reference {
+	width:125px;
+}
+table.invoice_header_center td.description {
+}
+table.invoice_header_center td.qty {
+	width: 50px;
+	text-align:right;
+}
+table.invoice_header_center td.unit_price {
+	width: 125px;
+	text-align:right;
+}
+table.invoice_header_center td.order {
+	width: 100px;
+	text-align:right;
+}
+
+table.invoice_header_left {
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-collapse:collapse;
+}
+table.invoice_header_right {
+	float: right;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 75px;
+	border-collapse:collapse;
+}
+
+/**
+ * Note section
+ */
+
+table.summary_table {
+	width:	100%;
+	margin:	10px auto;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+table.summary_table td.fill {
+	height: 35pt;
+}
+table.summary_table td.header {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5pt;
+}
+
+div.separator	{
+	clear: both;
+	width:100%;
+	height:2px;
+	border: 0;
+	margin: 0px;
+	background-color: white;
+}
+
+div.blank_separator	{
+	clear: both;
+	width:100%;
+	height: 5px;
+	border: 0;
+	margin: 0px;
+	background-color: white;
+}
+

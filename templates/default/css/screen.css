@@ -9,7 +9,7 @@ body, .dialog {
 	font-family:"Lucida Grande", verdana, arial, helvetica, sans-serif;
 	font-size:14px;
 	color:#333; }
-	
+
 table.manage {
 	font-size:12px; }
 
@@ -40,29 +40,255 @@ td.details_screen {
 	border-color:#FFF;
 	border-width:1px; }
 
-/* Credits.html
--------------------------------------------------*/
-.credit_names li {
-	font-weight:700;
-}
-.credit_names li ul {
-	font-weight:normal;
-	padding:0.2em 0 1.3em 0;
+/**
+*	CUSTOM Styles
+**/
+
+.test	{
+	font-weight: bold;
 }
 
-.solutionTable {
-	margin:20px 0;
+/*.shipping {
+	font-size:10px;
+	font-weight:bold;
+	color:#700000;
+}
+td.my_details_screen {
+	border:1px solid #fff;
+	background-color:#F5F5F5;
+	border-color:#FFF;
+	border-width:1px;
+	width:150px;
+}
+td.shipping_header {
+	border:1px solid #fff;
+	border-color:#FFF;
+	border-width:1px;
+	font-size:10px;
+	font-weight:bold;
+}
+p.separator	{
+	clear:both;
+	width:100%;
+	height:3px;
+	background-color:#DCEBFF;
+	border-bottom: 2px solid black;
+	margin: 5px 0px;
+}*/
+
+
+/**	table summary se usa para el resumen del
+*	estado de cuenta de los clientes.
+**/
+.summary	{
+	float:right;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.summary td.header	{
+	font-family:verdana, arial, sans-serif;
+	font-weight:bold;
+	text-align:center;
+}
+table.summary td.subtotal {
+	width:75px;
+	text-align:right;
+	font-size:14px;
+	background-color:#F5F5F5;
+	border:1px solid #fff;
+}
+table.summary td.total {
+	font-weight:bold;
+	text-decoration:underline;
+}
+/**
+*	Div.invoice_standard --> contenedor para los invoices
+**/
+
+/*table.invoice_header_left {
+	float: left;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.invoice_header_right {
+	float: right;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}*/
+/**
+*	Estilos para la tabla principal del invoice (lines)
+**/
+/*
+table.invoice_header_center tr.light td {
+	color: #252525;
+	background-color:#FFFEEE;
+	font-size: 10px;
+	font-weight:bold;
+	padding: 0px 5px;
+}
+table.invoice_header_center tr td select {
+	width:100%;
+	color:blue;
+}
+table.invoice_header_center td.reference {
+	width:125px;
+}
+table.invoice_header_center td.description {
+}
+table.invoice_header_center td.qty {
+	width: 50px;
+	text-align:right;
+}
+table.invoice_header_center td.unit_price {
+	width: 100px;
+	text-align:right;
+}
+table.invoice_header_center td.amount {
+	width: 100px;
+	text-align:right;
+}*/
+
+
+/**
+ *	Estilos para las tablas de totales
+ */
+/*table.invoice_totals {
+	float:right;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_totals td {
+	border:1px solid #fff;
+	background-color:#F5F5F5;
+}
+td.total_col1 {
+	width: 100px;
+	font-weight:bold;
+}
+td.total_col2 {
+	width: 100px;
+	text-align:right;
+}
+table.invoice_total_qty {
+	float:left;
+	border-collapse:collapse;
+	margin-bottom: 2px;
+}
+table.invoice_total_qty td {
+	border:1px solid #ffffff;
+	background-color:#F5F5F5;
+}
+tr.null td {
+	border:0;
+	background-color:#ffffff;
+}
+td.total_col2 input {
+	width: 100px;
+	text-align:right;
+	font-size:14px;
+}*/
+
+/**
+ *	Estilos Quick View, seccion Information
+ */
+table.quick_header_center {
+	width:100%;
+	margin:0px auto;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.quick_header_center td {
+	font-size:12px;
+	padding: 0px 5px;
+}
+table.summary_right {
+	float:right;
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.summary_right .left {
+	width: 105px;
+	border:1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+table.summary_right .right {
+	width: 105px;
+	border:1px solid #FFFFFF;
+	background-color:#F5F5F5;
+	text-align: right;
+	font-weight: bold;
+}
+td.info_header {
+	font-size:12px;
+	font-weight:bold;
+	background-color: #ffffff;
 }
 
-.solutionTable td, .solutionTable th  {
-	padding:3px 10px;
+td.customer_col_1 {
+	border:1px solid #fff;
+	background-color:#F5F5F5;
+	border-color:#FFF;
+	border-width:1px;
+	width:150px;
 }
-
-/* GLOBALS & GENERAL CASES
+td.customer_col_1 {
+}
+td.balance_col_1 {
+	background-color:#F5F5F5;
+}
+td.balance_col_2 {
+	text-align: right;
+	width: 75px;
+	border-left: 1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+td.balance_total {
+	border-top: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+.totals		{
+	padding: 0px 5px;
+	font-size: 12px;
+	border-left: 1px solid #FFFFFF;
+	background-color:#F5F5F5;
+}
+.numeric	{
+	text-align: right;
+	width: 100px;
+}
+.small	{
+	font-size: 10px;
+}
+.bold	{
+	font-weight: bold;
+}
+.right	{
+	text-align: right;
+}
+table.summary_table {
+	width:100%;
+/* 	margin:0px auto; */
+	margin-bottom:2px;
+	border-collapse:collapse;
+}
+table.summary_table .right {
+	width:100px;
+	font-weight: bold;
+	text-align: right;
+}
+table.summary_table td {
+	font-size: 10px;
+}
+/*-------------------------------------------------
+GLOBALS & GENERAL CASES
 -------------------------------------------------*/
 .print_only {
 	display:none; }
-
+/*ok*/
+a {
+	color:#03c;
+	padding:1px; }
+/*ok*/
 a:hover {
 	color:#fff;
 	background-color:#900;
@@ -130,7 +356,7 @@ h2 {
 	font-size:18px;
 	font-family:helvetica;
 	margin:0 0 15px; }
-	
+
 h3 {
 	font-size:1em;
 	text-align:center;
@@ -185,7 +411,7 @@ code,pre {
 
 table {
 	border-collapse:collapse; }
-	
+
 table.reportTable {
 	border:1px solid #000; }
 
@@ -200,7 +426,7 @@ table.reportTable {
 *+html table.reportTable tr {
 	border:1px solid #000;
 	border-collapse:separate; }
-	
+
 table.reportTable td.PAGE_LAYER {
 	background-color:#ccc;
 	border-color:#000; }
@@ -208,7 +434,7 @@ table.reportTable td.PAGE_LAYER {
 /*
 tr {
 	border:1px solid #fff; }
-	
+
 td {
 	border:1px solid #fff; }
 
@@ -218,10 +444,11 @@ Work around IE/Win code size bug - courtesy Jesper, waffle.wootest.net  */
 
 /* STRUCTURE
 -------------------------------------------------*/
+div#Wrapper {
+	padding:0 23px 0 30px; }
 
 div#Container {
-	margin:13px auto 0;
-	padding:0 23px 0 30px; }
+	margin:13px auto 0; }
 
 .ClearAll {
 	clear:both;
@@ -243,35 +470,21 @@ div#Container {
 	margin:0;
 	padding:0; }
 
-/* FOR PROPORTIONAL WIDTH 
+/* FOR PROPORTIONAL WIDTH
 --------------------------*/
 .col {
 	text-align:center;
-	padding:0 20px; 
-	min-height:352px;
-	}
+	padding:0 20px; }
 
-.contentLeft {
-background:transparent url(../../../images/common/bgLeft.png) top left no-repeat;
-margin-left:-10px;
-padding-left:10px;
-
-}
-.contentRight {
-background:transparent url(../../../images/common/bgRight.png) top right no-repeat;
-padding-right:10px;
-min-height:400px;
-}
 .Left .col,.Full .col {
-	background:#fff;
-padding:10px 30px 20px 20px; 
-}
-	
+	background:#fff url(../../../images/common/right-bg.gif) right repeat-y;
+	padding:10px 30px 20px 20px; }
+
 .Left .col .showhide {
 	margin-top:8px; }
 
 .Full .bottom,.Left .bottom {
-/*	background:url(../../../images/common/bottom-bg.gif) top right no-repeat; */}
+	background:url(../../../images/common/bottom-bg.gif) top right no-repeat; }
 
 body.lobby .Full .bottom {
 	margin-bottom:0; }
@@ -306,9 +519,9 @@ th.sortable {
 
 * html #accordian {
 	height:22em; }
-	
+
 #accordian td {
-	width:10%;
+	/* width:10%; */
 	height:3em;
 }
 #list1 {
@@ -317,23 +530,23 @@ th.sortable {
 
 * html #list1 {
 		width:49% }
-		
+
 *+html #list1 {
 		width:49% }
-		
+
 #list2 {
 	width:49%;
 	float:left; }
 
 * html #list2 {
 		width:50% }
-		
+
 *+html #list2 {
 		width:50% }
-		
+
 /*
  * Accordian css - end
- * 
+ *
 
  * left rigth - define text align for tables here
  * */

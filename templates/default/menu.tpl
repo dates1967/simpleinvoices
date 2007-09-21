@@ -1,106 +1,79 @@
 
-<div id="Header"><!--<h2 class="title_menu">Simple Invoices</h2>-->
-		<ul class="adxm menu">
-			<li { if $pageActive == null} id="active" {/if}><a href="index.php">{$LANG.home}</a></li>
-			<li { if $pageActive == 'invoices'} id="active" {/if}><a href="index.php?module=invoices&view=manage">{$LANG.invoices} +</a>
-				<ul>
-					<li><a href="index.php?module=invoices&view=manage">{$LANG.manage_invoices}</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=invoices&view=total">{$LANG.new_invoice_total}</a></li>
-					<li><a href="index.php?module=invoices&view=itemised">{$LANG.new_invoice_itemised}</a></li>
-					<li><a href="index.php?module=invoices&view=consulting">{$LANG.new_invoice_consulting}</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=invoices&view=search">Search invoices</a></li>
-				</ul>
-			</li>
-			<li { if $pageActive == 'customers'} id="active" {/if} ><a href="index.php?module=customers&view=manage">{$LANG.customers} +</a>
+<div id="Header">
+	<div id="Tabs">
+		<ul id="navmenu">
+			<li><a href="index.php">{$LANG.home}</a></li>
+			<li><a href="index.php?module=customers&view=manage">{$LANG.customers} +</a>
 				<ul>
 					<li><a href="index.php?module=customers&view=manage">{$LANG.manage_customers}</a></li>
 					<li><a href="index.php?module=customers&view=add">{$LANG.add_customer}</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=customers&view=search">Search customer</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'products'} id="active" {/if} ><a href="index.php?module=products&view=manage">{$LANG.products} +</a>
+			<li><a href="index.php?module=vendors&view=manage">Vendors +</a>
+				<ul>
+					<li><a href="index.php?module=vendors&view=manage">Manage Vendors</a></li>
+					<li><a href="index.php?module=vendors&view=add">Add new Vendor</a></li>
+				</ul>
+			</li>
+			<li><a href="index.php?module=sales&view=manage">Sales +</a>
+				<ul>
+					<li><a href="index.php?module=sales&view=manage">{$LANG.manage_invoices}</a></li>
+					<li></li>
+					<li><a href="index.php?module=sales&view=create">Invoice :: New</a></li>
+					<li><a href="index.php?module=sales&view=manage">Manage Sales Orders</a></li>
+					<li><a href="index.php?module=sales&view=create">Sales Order :: New</a></li>
+				</ul>
+			</li>
+			<li><a href="index.php?module=purchases&view=manage">Purchases +</a>
+				<ul>
+					<li><a href="index.php?module=purchases&view=manage">Manage Purchases</a></li>
+					<li><a href="index.php?module=purchases&view=create">Purchase Order :: New</a></li>
+					<li><a href="index.php?module=purchases&view=enter">Purchase :: Receive</a></li>
+				</ul>
+			</li>
+
+			<li><a href="index.php?module=products&view=manage">Inventory +</a>
 				<ul>
 					<li><a href="index.php?module=products&view=manage">{$LANG.manage_products}</a></li>
 					<li><a href="index.php?module=products&view=add">{$LANG.add_product}</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'billers'} id="active" {/if}> <a href="index.php?module=billers&view=manage">{$LANG.billers} +</a>
-				<ul>
-					<li><a href="index.php?module=billers&view=manage">{$LANG.manage_billers}</a></li>
-					<li><a href="index.php?module=billers&view=add">{$LANG.add_biller}</a></li>
-				</ul>
-			</li>
-			<li { if $pageActive == 'payments'} id="active" {/if}> <a href="index.php?module=payments&view=manage">{$LANG.payments} +</a>
+
+			<li><a href="index.php?module=payments&view=manage">{$LANG.payments} +</a>
 				<ul>
 					<li><a href="index.php?module=payments&view=manage">{$LANG.manage_payments}</a></li>
 					<li><a href="index.php?module=payments&view=process&op=pay_invoice">{$LANG.process_payment}</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'reports'} id="active" {/if} ><a href="#">{$LANG.reports} +</a>
-				<ul>
-					<li><a href="index.php?module=reports&view=report_sales_total">{$LANG.sales} +</a>
-						<ul>
-							<li><a href="index.php?module=reports&view=report_sales_total">{$LANG.total_sales}</a></li>
-						</ul>
-					</li>
-					<li><a href="index.php?module=reports&view=report_sales_customers_total">{$LANG.sales_by_customers} +</a>
-						<ul>
-							<li><a href="./index.php?module=reports&view=report_sales_customers_total">{$LANG.total_sales_by_customer}</a>
-							</li>
-						</ul>
-					</li>
-					<li><a href="./index.php?module=reports&view=report_tax_total">{$LANG.tax} +</a>
-						<ul>
-							<li><a href="./index.php?module=reports&view=report_tax_total">{$LANG.total_taxes}</a></li>
-						</ul>
-					</li>
-					<li><a href="index.php?module=reports&view=report_products_sold_total">{$LANG.product_sales} +</a>
-						<ul>
-							<li><a href="./index.php?module=reports&view=report_products_sold_total">{$LANG.products_sold_total}</a>
-							</li>
-						</ul>
-					</li>
-					<li><a href="./index.php?module=reports&view=report_products_sold_by_customer">{$LANG.products_by_customer} +</a>
-						<ul>
-							<li><a href="./index.php?module=reports&view=report_products_sold_by_customer">{$LANG.products_sold_customer_total}</a>
-							</li>
-						</ul>
-					</li>
-					<li><a href="index.php?module=reports&view=report_biller_total">{$LANG.biller_sales} +</a>
-						<ul>
-							<li><a href="index.php?module=reports&view=report_biller_total">{$LANG.biller_sales_total}</a></li>
-							<li><a href="./index.php?module=reports&view=report_biller_by_customer">{$LANG.biller_sales_by_customer_totals}</a>
-							</li>
-						</ul>
-					</li>
-					<li><a href="./index.php?module=reports&view=report_debtors_by_amount">{$LANG.debtors} +</a>
-						<ul>
-							<li><a href="./index.php?module=reports&view=report_debtors_by_amount">{$LANG.debtors_by_amount_owed}</a>
-							</li>
-							<li><a href="./index.php?module=reports&view=report_debtors_by_aging">{$LANG.debtors_by_aging_periods}</a>
-							</li>
-							<li><a href="./index.php?module=reports&view=report_debtors_owing_by_customer">{$LANG.total_owed_per_customer}</a>
-							</li>
-							<li><a href="./index.php?module=reports&view=report_debtors_aging_total">{$LANG.total_by_aging_periods}</a>
-							</li>
-						</ul>
-					</li>
-					<li class="separation"></li>
-					<li><a href="./index.php?module=reports&view=database_log">Database Log</a></li>
-				</ul>
-			</li>
-			<li  { if $pageActive == 'options'} id="active" {/if} ><a href="#">{$LANG.options} +</a>
+			<li>
+			<a href="index.php?module=reports&view=show">{$LANG.reports} +</a>
 				<ul>
 					<li>
-						<a href="./index.php?module=system_defaults&view=manage">System {$LANG.preferences}</a>
+<a href="index.php?module=reports&view=show&request=price_list&param=A">Price List Level A</a>
+					</li>
+					<li>
+<a href="index.php?module=reports&view=show&request=price_list&filter=swiss&param=A">Swiss Army Level A</a>
+					</li>
+					<li>
+<a href="index.php?module=reports&view=show&request=price_list&filter=swiss&param=B">Swiss Army Level B</a>
+					</li>
+					<li>
+<a href="index.php?module=reports&view=show&request=price_list&filter=swiss&param=C">Swiss Army Level C</a>
+					</li>
+					<li>
+<a href="index.php?module=reports&view=show&request=bank_info">Company Bank Information</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#">{$LANG.options} +</a>
+				<ul>
+					<li>
+						<a href="./index.php?module=system_defaults&view=manage">{$LANG.system_defaults}</a>
 					</li>
 					<li>
 						<a href="./index.php?module=custom_fields&view=manage">{$LANG.custom_fields_upper}</a>
 					</li>
-					<li class="separation"></li>
+					<li></li>
 					<li>
 						<a href="./index.php?module=tax_rates&view=manage">{$LANG.tax_rates} +</a>
 						<ul>
@@ -134,21 +107,14 @@
 							</li>
 						</ul>
 					</li>
-					<li class="separation"></li>
+					<li></li>
 					<li>
 						<a href="./index.php?module=options&view=manage_sqlpatches">{$LANG.database_upgrade_manager}</a>
 					</li>
 					<li>
 						<a href="./index.php?module=options&view=backup_database">{$LANG.backup_database}</a>
 					</li>
-<!--
-					<li>
-						<a href="./index.php?module=options&view=sanity_check">{$LANG.sanity_check}</a>
-					</li>
--->
-				</ul>
-			<li > <a href="#"><img src="./images/common/help-small.png"></a>
-				<ul>
+					<li></li>
 					<li>
 						<a href="docs.php?p=ReadMe">{$LANG.help} +</a>
 						<ul>
@@ -182,5 +148,6 @@
 				<li><a href="logout.php">{$LANG.logout}</a></li>
 			{/if}
 		</ul>
-</div>
-<div id="Header_shadow"></div>
+
+</div id="Tabs">
+</div id="Header">

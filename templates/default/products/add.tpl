@@ -1,62 +1,82 @@
+<form name="frmpost" id="form" ACTION="index.php?module=products&view=save" METHOD="POST">
 
-{* if bill is updated or saved.*}
-
-{if $smarty.post.description != "" && $smarty.post.id != null } 
-	{include file="../templates/default/products/save.tpl"}
+{if $edit}
+	<div id="top"><h3>Edit Product</h3></div>
+	<input type="hidden" id="mode" value="edit" />
 {else}
-{* if  name was inserted *} 
-	{if $smarty.post.id !=null} 
-		<div class="validation_alert"><img src="./images/common/important.png"</img>
-		You must enter a description for the product</div>
-		<hr />
-	{/if}
-<form name="frmpost" ACTION="index.php?module=products&view=add" METHOD="POST">
+	<div id="top"><h3>{$LANG.product_to_add}</h3></div>
+	<input type="hidden" id="mode" value="add" />
+{/if}
 
-<div id="top"><h3>&nbsp;{$LANG.product_to_add}&nbsp;</h3></div>
- <hr />
+<hr />
 
-<table align=center>
+<table class="standard">
 	<tr>
-		<td class="details_screen">{$LANG.product_description} <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=text name="description" value="{$smarty.post.description}" size=50></td>
+		<td><label for="reference">Reference</label></td>
+		<td><input type="text" name="reference" id="reference" value="{$product.reference}" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.product_unit_price}</td>
-		<td><input type=text name="unit_price" value="{$smarty.post.unit_price}"  size=25></td>
+		<td><label for="type">Type</label></td>
+		<td><input type="text" name="type" id="type" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field1" value="{$smarty.post.custom_field1}"  size=50></td>
+		<td><label for="last_unit_cost">Unit Cost</label></td>
+		<td><input type="text" name="last_unit_cost" id="last_unit_cost" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field2" value="{$smarty.post.custom_field2}" size=50></td>
+		<td><label for="us_retail">US Retail Price</label></td>
+		<td><input type="text" name="us_retail" id="us_retail" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field3" value="{$smarty.post.custom_field3}" size=50></td>
+		<td><label for="price_level_A">Price Level A</label></td>
+		<td><input type="text" name="price_level_A" id="price_level_A" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=50></td>
+		<td><label for="price_level_B">Price Level B</label></td>
+		<td><input type="text" name="price_level_B" id="price_level_B" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td><textarea input type=text name='notes' rows=8 cols=50>{$smarty.post.notes}</textarea></td>
+		<td><label for="price_level_C">Price Level C</label></td>
+		<td><input type="text" name="price_level_C" id="price_level_C" /></td>
+		<td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.product_enabled}</td>
+		<td><label for="price_level_D">Price Level D</label></td>
+		<td><input type="text" name="price_level_D" id="price_level_D" /></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><label for="description">Description</label></td>
+		<td><textarea name="description" id="description" rows="4" cols="50"></textarea></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><label for="notes">Notes</label></td>
+		<td><textarea name="notes" id="notes" rows="4" cols="50"></textarea></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><label for="enabled">Enabled</label></td>
 		<td>
-			{html_options name=enabled options=$enabled selected=1}
+			<select id="enabled" name="enabled">
+				<option value="0" label="Disabled">Disabled</option>
+				<option selected="selected" value="1" label="Enabled">Enabled</option>
+			</select>
 		</td>
+		<td></td>
 	</tr>
-		{showCustomFields categorieId="3" itemId=""}
 </table>
 <!-- </div> -->
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="id" value="{$LANG.insert_product}">
-	<input type="hidden" name="op" value="insert_product">
+	<input class="submit" type="reset" id="reset" name="reset" value="Clear" />
+	<input class="submit" type="submit" id="submit" name="submit" value="Submit" />
+	<input type="hidden" name="id" id="id" />
 </div>
 </form>
-	{/if}

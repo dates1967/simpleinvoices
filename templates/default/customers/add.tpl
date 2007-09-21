@@ -1,119 +1,127 @@
-{*
-/*
-* Script: add.tpl
-* 	 Customers add template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-*}
-
-{* if customer is updated or saved.*} 
-
-{if $smarty.post.name != "" && $smarty.post.customer != null } 
-	{include file="../templates/default/customers/save.tpl"}
-
-{else}
-{* if  name was inserted *} 
-	{if $smarty.post.customer !=null} 
-		<div class="validation_alert"><img src="./images/common/important.png"</img>
-		You must enter a Customer name</div>
-		<hr />
-	{/if}
-<form name="frmpost" ACTION="index.php?module=customers&view=add" METHOD="post"><h3>{$LANG.customer_add}</h3>
+<form name="frmpost" ACTION="index.php?module=customers&view=save" METHOD="POST">
 <hr />
+{if $edit}
+	<div id="top"><h3>Edit Customer</h3></div>
+	<input type="hidden" id="mode" value="edit" />
+{else}
+	<div id="top"><h3>{$LANG.customer_add}</h3></div>
+	<input type="hidden" id="mode" value="add" />
+{/if}
+
 <table align=center>
 	<tr>
-		<td class="details_screen">{$LANG.customer_name} <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=text name="name" value="{$smarty.post.name}" size=25></td>
+		<td class="details_screen">{$LANG.customer_name}</td>
+		<td>
+			<input type=text name="name" value="{$customer.name}" size=25>
+		</td>
 	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.customer_contact}</td>
+		<td><input type=text name="attention" size=25 value="{$customer.attention}"></td>
 	</tr>
-	<td class="details_screen">{$LANG.customer_contact} <a
-		href="docs.php?t=help&p=customer_contact"
-		rel="gb_page_center[450, 450]"><img
-		src="./images/common/help-small.png"></img></a></td>
-	<td><input type=text name="attention" size=25 value="{$smarty.post.attention}"></td>
+	<tr>
+		<td class="details_screen">Customer ID</td>
+		<td><input type=text name="customer_short_id" value="{$customer.customer_short_id}" size=25></td>
+	</tr>
+<!-- Billing Address -->
+	<tr>
+		<td colspan="1" class="details_screen" style="font-weight:bold;font-size:small;padding-left:20px">
+			Billing Address
+		</td><td></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.street}</td>
-		<td><input type=text name="street_address" value="{$smarty.post.street_address}" size=25></td>
+		<td><input type=text name="street_address" value="{$customer.street_address}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.street2} <a
 			href="docs.php?t=help&p=street2"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="street_address2" value="{$smarty.post.street_address2}" size=25></td>
+		<td><input type=text name="street_address2" value="{$customer.street_address2}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.city}</td>
-		<td><input type=text name="city" value="{$smarty.post.city}" size=25></td>
+		<td><input type=text name="city" value="{$customer.city}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.state}</td>
-		<td><input type=text name="state" value="{$smarty.post.state}" size=25></td>
+		<td><input type=text name="state" value="{$customer.state}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.zip}</td>
-		<td><input type=text name="zip_code" value="{$smarty.post.zip_code}" size=25></td>
+		<td><input type=text name="zip_code" value="{$customer.zip_code}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.country}</td>
-		<td><input type=text name="country" value="{$smarty.post.country}" size=50></td>
+		<td><input type=text name="country" value="{$customer.country}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.phone}</td>
-		<td><input type=text name="phone" value="{$smarty.post.phone}" size=25></td>
+		<td><input type=text name="phone" value="{$customer.phone}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.mobile_phone}</td>
-		<td><input type=text name="mobile_phone" value="{$smarty.post.mobile_phone}" size=25></td>
+		<td><input type=text name="mobile_phone" value="{$customer.mobile_phone}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.fax}</td>
-		<td><input type=text name="fax" value="{$smarty.post.fax}" size=25></td>
+		<td><input type=text name="fax" value="{$customer.fax}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.email}</td>
-		<td><input type=text name="email" value="{$smarty.post.email}" size=25></td>
+		<td><input type=text name="email" value="{$customer.email}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf1} <a
-			href="docs.php?t=help&p=custom_fields"
-			rel="gb_page_center[450, 450]"><img
-			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field1" value="{$smarty.post.custom_field1}" size=25></td>
+		<td class="details_screen">Website</td>
+		<td><input type=text name="website" value="{$customer.website}" size=25></td>
+	</tr>
+<!-- Shipping Address -->
+	<tr>
+		<td colspan="1" class="details_screen" style="font-weight:bold;font-size:small;padding-left:20px">
+			Shipping Address
+		</td><td></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf2} <a
-			href="docs.php?t=help&p=custom_fields"
-			rel="gb_page_center[450, 450]"><img
-			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field2" value="{$smarty.post.custom_field2}" size=25></td>
+		<td class="details_screen">Street Address <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_address" value="{$customer.shipping_address}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf3} <a
-			href="docs.php?t=help&p=custom_fields"
-			rel="gb_page_center[450, 450]"><img
-			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field3" value="{$smarty.post.custom_field3}" size=25></td>
+		<td class="details_screen">Street Address 2 <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_address2" value="{$customer.shipping_address2}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf4} <a
-			href="docs.php?t=help&p=custom_fields"
-			rel="gb_page_center[450, 450]"><img
-			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=25></td>
+		<td class="details_screen">City <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_city" value="{$customer.shipping_city}" size=25></td>
 	</tr>
+	<tr>
+		<td class="details_screen">State <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_state" value="{$customer.shipping_state}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.zip} <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_zip_code" value="{$customer.shipping_zip_code}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.country} <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_country" value="{$customer.shipping_country}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.phone} <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_phone" value="{$customer.shipping_phone}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.fax} <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_fax" value="{$customer.shipping_fax}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.email} <span class="shipping">(shipping)</span></td>
+		<td><input type=text name="shipping_email" value="{$customer.shipping_email}" size=25></td>
+	</tr>
+
 	<tr>
 		<td class="details_screen">{$LANG.notes}</td>
-		<td><textarea name='notes' rows=8 cols=50>{$smarty.post.notes}</textarea></td>
+		<td><textarea name='notes' rows=8 cols=50>{$customer.notes}</textarea></td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.enabled}</td>
@@ -121,14 +129,10 @@
 			{html_options name=enabled options=$enabled selected=1}
 		</td>
 	</tr>
-	
-	{showCustomFields categorieId="2"}
-
 </table>
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="customer" value="{$LANG.insert_customer}">
-	<input type="hidden" name="op" value="insert_customer">
+	<input type=submit class="submit" name="submit" value="{$LANG.insert_customer}">
+	<input type="hidden" name="id" id="id" />
 </div>
 </form>
-{/if}

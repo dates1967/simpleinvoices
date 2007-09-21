@@ -1,19 +1,3 @@
-{*
-/*
-* Script: add.tpl
-* 	Biller add template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-*}
-
 {* if bill is updated or saved.*}
 
 {if $smarty.post.name != "" && $smarty.post.submit != null } 
@@ -144,7 +128,6 @@ You must enter a Biller name</div>
 			{html_options name=enabled options=$enabled selected=1}
 		</td>
 	</tr>
-	{showCustomFields categorieId="1" itemId=""}
 	</div>
 	</div>
 	</div>
@@ -152,8 +135,8 @@ You must enter a Biller name</div>
 </table>
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="submit" value="{$LANG.insert_biller}" />
-	<input type="hidden" name="op" value="insert_biller" />
+	<input type="submit" name="submit" value="{$LANG.insert_biller}" /> <input
+	type="hidden" name="op" value="insert_biller" />
 </div>
 </form>
 {/if}

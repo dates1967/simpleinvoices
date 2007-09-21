@@ -1,25 +1,13 @@
-{*
-/*
-* Script: details.tpl
-* 	Biller details template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
-* License:
-*	 GPL v2 or above
-*/
-*}
-<form name="frmpost" action="index.php?module=billers&view=save&id={$smarty.get.id}" method="post">
+
+<form name="frmpost"
+	action="index.php?module=billers&view=save&submit={$smarty.get.submit}"
+	method="post">
 
 
 {if $smarty.get.action== 'view' }
 
 <b>{$LANG.biller} :: <a
-	href="index.php?module=billers&view=details&id={$biller.id}&action=edit">{$LANG.edit}</a></b>
+	href="index.php?module=billers&view=details&submit={$biller.id}&action=edit">{$LANG.edit}</a></b>
 <hr></hr>
 <table align="center">
 	<tr>
@@ -116,7 +104,6 @@
 		<td class="details_screen">{$LANG.notes}</td>
 		<td>{$biller.notes}</td>
 	</tr>
-		{showCustomFields categorieId="1" itemId=$smarty.get.id }
 	<tr>
 		<td class="details_screen">{$LANG.enabled}</td>
 		<td>{$biller.wording_for_enabled}</td>
@@ -127,7 +114,7 @@
 
 {if $smarty.get.action== 'view' }
 <hr></hr>
-<a href="?module=billers&view=details&action=edit&id={$biller.id}">{$LANG.edit}</a>
+<a href="?module=billers&view=details&action=edit&submit={$biller.id}">{$LANG.edit}</a>
 {/if}
 
 
@@ -173,7 +160,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.country}</td>
-		<td><input type=text name="country" value="{$biller.country}"
+		<td><input type=text name="country" value="{$biller.b_coutry}"
 			size=50 /></td>
 	</tr>
 	<tr>
@@ -250,8 +237,6 @@
 		{html_options name=enabled options=$enabled selected=$biller.enabled}
 		</td>
 	</tr>
-		{showCustomFields categorieId="1" itemId=$smarty.get.id}
-
 </table>
 {/if} 
 {if $smarty.get.action== 'edit' }
@@ -259,6 +244,5 @@
 		<input type="submit" name="cancel" value="{$LANG.cancel}" /> 
 		<input type="submit" name="save_biller" value="{$LANG.save_biller}" /> 
 		<input type="hidden" name="op" value="edit_biller" /> 
-		<input type="hidden" name="categorie" value="1" />
 	{/if}
 </form>

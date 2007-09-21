@@ -5,8 +5,8 @@
 
    <div class="bottom"><br /></div>
 
-   </div>
-   </div>
-
+   </div class="Full">
+   </div id="Container">
+   </div id="Wrapper">
 </body>
 </html>
