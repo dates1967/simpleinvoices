@@ -3,6 +3,8 @@
 //stop browsing to files directly - all viewing to be handled by index.php
 //if browse not defined then the page will exit
 define("BROWSE","browse");
+ini_set('include_path',ini_get('include_path').':'.SIX_ROOT.'/include/pear:');
+
 if(!defined('SIX_ROOT')) {
 	define('SIX_ROOT', dirname(__FILE__));
 };
