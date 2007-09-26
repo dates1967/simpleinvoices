@@ -7,9 +7,9 @@ To contact Simple Invoices either post a message in our Forum (refer Get Involve
 <br><br>
 email: justin@kelly.org.au
 <br><br>
-jabber: justin@jabber.org.au<br>
-gtalk: linuxppc@gmail.com<br>
+google talk: justin@kelly.org.au<br>
 msn: justinjameskelly@hotmail.com<br>
+aim: justin@kelly.org.au<br>
 yahoo im: justinjameskelly<br>
 icq: 202893989<br>
 
