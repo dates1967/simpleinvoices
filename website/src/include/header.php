@@ -26,8 +26,41 @@ urchinTracker();
 
 <h1 class=CTitle align=right><a name="Simple Invoices"></a><a href="index.php" class="title">Simple Invoices</a></h1>
 
+
+
+
 <h4 class=CHeading align=center><a href="http://www.simpleinvoices.org/demo">Online demo</a> :: <a href="http://sourceforge.net/project/showfiles.php?group_id=164303">Download</a> :: <a href="index.php?page=GetInvolved">Get Involved</a> :: <a href="http://www.simpleinvoices.org/forum">Forum</a> :: <a href="http://www.simpleinvoices.org/blog">Blog</a> :: <a href="http://www.simpleinvoices.org/wiki">Wiki</a></h4>
 
+
+<!-- Google CSE code begins -->
+<form style="float:right; margin-top:8px ; margin-right:10px;" id="searchbox_013949097017464247928:nuq_tpa0tce" onsubmit="return false;">
+  <input type="text" name="q" size="40"/>
+  <input type="submit" value="Search"/>
+</form>
+<script src="http://google.com/coop/cse/brand?form=searchbox_013949097017464247928:nuq_tpa0tce"></script>
+
+<div id="results_013949097017464247928:nuq_tpa0tce" style="display:none">
+  <div class="cse-closeResults"> 
+    <a>&times; close</a>
+  </div>
+  <div class="cse-resultsContainer"></div>
+</div>
+
+<style type="text/css">
+@import url(http://google.com/cse/api/overlay.css);
+</style>
+
+<script src="http://www.google.com/uds/api?file=uds.js&v=1.0&key=ABQIAAAAB07EJ2SGgmgVPIhHGSt2PRSleZ42L7UWsUL7gk-C8REn4YEkQxTYhB6bsVOElz2FYVvZo3Yt2-iIfA" type="text/javascript"></script>
+<script src="http://google.com/cse/api/overlay.js"></script>
+<script type="text/javascript">
+function OnLoad() {
+  new CSEOverlay("013949097017464247928:nuq_tpa0tce",
+                 document.getElementById("searchbox_013949097017464247928:nuq_tpa0tce"),
+                 document.getElementById("results_013949097017464247928:nuq_tpa0tce"));
+}
+GSearch.setOnLoadCallback(OnLoad);
+</script>
+<!-- Google CSE Code ends -->
 
 <!-- Flags and translation -->
 <!--
