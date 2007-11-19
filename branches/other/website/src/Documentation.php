@@ -5,13 +5,13 @@
 <p class=CParagraph>
 <?php
 
-                $fp = fopen("./demo/ReadMe.html", "r" );
+                $fp = fopen("./demo/documentation/en-gb/general/ReadMe.html", "r" );
                 if(!$fp)
                 {
                     echo "Couldn't open the data file. Try again later.";
                     exit;
                 }
-                $filename ="./demo/documentation/ReadMe.english_UK.html";
+                $filename ="./demo/documentation/en-gb/general/ReadMe.html";
                 $display_block .= fread( $fp, filesize( $filename ) );
 
                 echo $display_block;
