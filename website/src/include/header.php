@@ -24,7 +24,7 @@ urchinTracker();
 <!-- Content start -->
 <div id=Content>
 
-<h1 class=CTitle align=right><a name="Simple Invoices"></a><a href="index.php" class="title">Simple Invoices</a></h1>
+<h1 class=CTitle align=middle><a name="Simple Invoices"></a><a href="index.php" class="logo"><img class="logo" src="./files/Simple_Invoices_Logo.jpg" alt="Simple Invoices" /> </a></h1>
 
 
 

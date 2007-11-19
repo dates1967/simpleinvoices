@@ -5,7 +5,7 @@
 <p class=CParagraph>
 <?php
 
-                $fp = fopen("./demo/ChangeLog.html", "r" );
+                $fp = fopen("./demo/documentation/en/general/ChangeLog.html", "r" );
                 if(!$fp)
                 {
                     echo "Couldn't open the data file. Try again later.";
