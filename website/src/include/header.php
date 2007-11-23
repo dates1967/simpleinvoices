@@ -29,7 +29,7 @@ urchinTracker();
 
 
 
-<h4 class=CHeading align=center><a href="http://www.simpleinvoices.org/demo">Online demo</a> :: <a href="http://sourceforge.net/project/showfiles.php?group_id=164303">Download</a> :: <a href="index.php?page=GetInvolved">Get Involved</a> :: <a href="http://www.simpleinvoices.org/forum">Forum</a> :: <a href="http://www.simpleinvoices.org/blog">Blog</a> :: <a href="http://www.simpleinvoices.org/wiki">Wiki</a></h4>
+<h4 class=CHeading align=center><a href="http://www.simpleinvoices.org/demo">Online demo</a> :: <a href="http://sourceforge.net/project/showfiles.php?group_id=164303">Download</a> :: <a href="index.php?page=GetInvolved">Get Involved</a> :: <a href="http://www.simpleinvoices.org/forum">Forum</a> :: <a href="http://www.simpleinvoices.org/blog">Blog</a> :: <a href="index.php?page=MarketPlace">Market Place</a> :: <a href="http://www.simpleinvoices.org/wiki">Wiki</a></h4>
 
 
 <!-- Google CSE code begins -->

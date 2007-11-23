@@ -18,6 +18,7 @@
 	<div class="MFile MEntry"><a href="http://sourceforge.net/project/showfiles.php?group_id=164303">Download</a></div>
 	<div class="MFile MEntry"><a href="index.php?page=Features">Features</a></div>
 	<div class="MFile MEntry"><a href="index.php">Home</a></div>
+	<div class="MFile MEntry"><a href="index.php?page=MarketPlace">Market Place</a></div>
 
 	<!-- Selected Code -->
 	<!--
