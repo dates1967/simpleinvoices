@@ -12,7 +12,7 @@ SixHQ was started by Justin Kelly, the founder and still one of the current deve
 Available services:
 <ul>
 	<li>
-		Simple Invoics hosting	
+		Simple Invoices hosting	
 	</li>
 	<li>
 		Modifications	
