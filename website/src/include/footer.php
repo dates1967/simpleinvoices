@@ -16,7 +16,7 @@
 	<div class="MFile MEntry"><a href="index.php?page=Contact">Contact</a></div>
 	<div class="MFile MEntry"><a href="index.php?page=Documentation">Documentation</a></div>
 	<div class="MFile MEntry"><a href="http://sourceforge.net/project/showfiles.php?group_id=164303">Download</a></div>
-	<div class="MFile MEntry"><a href="index.php?page=Features">Features</a></div>
+	<div class="MFile MEntry"><a href="index.php?page=tour#features">Features</a></div>
 	<div class="MFile MEntry"><a href="index.php">Home</a></div>
 	<div class="MFile MEntry"><a href="index.php?page=MarketPlace">Market Place</a></div>
 
@@ -27,6 +27,7 @@
 
 	<div class="MFile MEntry"><a href="http://wwww.simpleinvoices.org/demo">Online Demo</a></div>
 	<div class="MFile MEntry"><a href="index.php?page=Philosophy">Philosophy</a></div></div></div>
+	<div class="MFile MEntry"><a href="index.php?page=tour">Tour</a></div>
 
 <div class="MGroup MEntry"><a href="javascript:ToggleMenu('MGroupContent1')">Community</a><div class=MGroupContent id=MGroupContent1>
 	<div class="MFile MEntry"><a href="http://www.simpleinvoices.org/blog">Blog</a></div>
@@ -40,7 +41,9 @@
 	<div class="MFile MEntry"><a href="http://simpleinvoices.org/wiki/doku.php?id=faqs">Dev FAQs</a></div>
 	<div class="MFile MEntry"><a href="http://code.google.com/p/simpleinvoices/">Dev Site</a></div>
 	<div class="MFile MEntry"><a href="index.php?page=LangCheck">Lang Check</a></div>
+<!--
 	<div class="MFile MEntry"><a href="http://code.google.com/p/simpleinvoices/issues/list?can=2&q=&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary">Issue Tracker</a></div>
+-->
 </div></div>
 
 

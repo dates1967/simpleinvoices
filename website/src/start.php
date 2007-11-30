@@ -6,7 +6,9 @@ a simple web based invoicing system designed to get the job done, Free/Open sour
 <h4 class=CHeading align=center>
 <a href="index.php?page=About">Read more &gt;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+<a href="index.php?page=tour">Quick Tour ></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+<!--
 	<a href="./src/include/images/imagebox/si_easy_invoice.png" title="
 
 <b>Easy invoice creation</b>
@@ -76,7 +78,7 @@ As Simple Invoices is Free/Open-source software its developmented in an open env
 <br><br>
 Theres still more to Simple Invoices, read the website, documentation and forums to find out more or go to the online demo site to give Simple Invoices a try - no install or downloads required
 " rel="imagebox-bw"></a>
-
+-->
 <a href="http://www.simpleinvoices.org/demo">Online demo &gt;</a></p></h4></div></div>
 </p>
 

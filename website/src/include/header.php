@@ -1,10 +1,28 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 
 <html><head><title>Simple Invoices</title><link rel="stylesheet" type="text/css" href="./styles/main.css"><script language=JavaScript src="./javascript/main.js"></script><script language=JavaScript src="./javascript/searchdata.js"></script>
+<!--
 <script type="text/javascript" src="./src/include/jquery.js"></script>
 <script type="text/javascript" src="./src/include/interface.js"></script>
 <link rel="stylesheet" type="text/css" href="./src/include/tour.css">
-</head><body id=ContentPage onLoad="NDOnLoad()"><script language=JavaScript><!--
+-->
+<!-- lightbox start-->
+<!--
+<script type="text/javascript" src="./src/include/lightbox/js/prototype.js"></script>
+<script type="text/javascript" src="./src/include/lightbox/js/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="./src/include/lightbox/js/lightbox.js"></script>
+
+<link rel="stylesheet" href="./src/include/lightbox/css/lightbox.css" type="text/css" media="screen" />
+-->
+<!-- lightbox end-->
+
+<!-- thickbox -->
+<script type="text/javascript" src="./src/include/thickbox/jquery-latest.pack.js"></script>
+<script type="text/javascript" src="./src/include/thickbox/thickbox.js"></script>
+<link rel="stylesheet" href="./src/include/thickbox/thickbox.css" type="text/css" media="screen" />
+<!-- thickbox end -->
+</head>
+<body id=ContentPage onLoad="NDOnLoad()"><script language=JavaScript><!--
 if (browserType) {document.write("<div id=" + browserType + ">");if (browserVer) {document.write("<div id=" + browserVer + ">"); }}// --></script>
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
