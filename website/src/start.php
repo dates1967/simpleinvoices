@@ -82,19 +82,6 @@ Theres still more to Simple Invoices, read the website, documentation and forums
 <a href="http://www.simpleinvoices.org/demo">Online demo &gt;</a></p></h4></div></div>
 </p>
 
-<script type="text/javascript">
-$(document).ready(
-	function()
-	{
-		$.ImageBox.init(
-			{
-				loaderSRC: './src/include/images/imagebox/loading.gif',
-				closeHTML: '<img class="tour" src="./src/include/images/imagebox/close.jpg" />'
-			}
-		);
-	}
-);
-</script>
 		<script language="JavaScript" type="text/javascript">var client_id = 1;</script>
 
 

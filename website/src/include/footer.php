@@ -26,8 +26,8 @@
 	-->
 
 	<div class="MFile MEntry"><a href="http://wwww.simpleinvoices.org/demo">Online Demo</a></div>
-	<div class="MFile MEntry"><a href="index.php?page=Philosophy">Philosophy</a></div></div></div>
-	<div class="MFile MEntry"><a href="index.php?page=tour">Tour</a></div>
+	<div class="MFile MEntry"><a href="index.php?page=Philosophy">Philosophy</a></div>
+	<div class="MFile MEntry"><a href="index.php?page=tour">Tour</a></div></div></div>
 
 <div class="MGroup MEntry"><a href="javascript:ToggleMenu('MGroupContent1')">Community</a><div class=MGroupContent id=MGroupContent1>
 	<div class="MFile MEntry"><a href="http://www.simpleinvoices.org/blog">Blog</a></div>
