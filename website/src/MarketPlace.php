@@ -66,13 +66,16 @@ Though the Simple Invoices Forums rock and provide the level of support that mos
 <br><br>
 What also became evident was a need to provide a clear path for development of extensions or modifications and other services for Simple Invoices for specific people on a for $ basis 
 <br><br>
+The main aim of the Market Place is to create an ecosystem around Simple Invoices where for $ work can be done without interfering with the natural open-source development and support of Simple Invoices
+<br><br>
 For more on why the Market Place was started refer: <a href="http://www.sixhq.com/#why" title="Simple Invoices eXtended HQ">http://www.sixhq.com/#why</a>
 </p>
 <br>
-
 <h4 class=CHeading>How to join</h4>
 <p class=CParagraph>
 If you would like your company listed here as a Simple Invoices service provider please contact Justin Kelly on justin@kelly.org.au
+<br><br>
+If you have any queries about the Market Place feel free to post on the <a href="http://simpleinvoices.org/forum/forum-8.html">Market Place forum</a>
 </p>
 </div></div>
 
