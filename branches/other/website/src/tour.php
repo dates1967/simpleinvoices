@@ -221,7 +221,7 @@ user more flexibility without compromising simplicity
 <ul>
   <li>Quick and nice looking invoices without having to set up to much stuff.  Just install
 the software, enter a biller, a customer and go nuts creating invoices<br>
-  <li>PDF export
+  <li>Export to PDF
   <li>Export to Word
   <li>Export to Excel (albeit basic and a total hack byt it works :) )
      <li>Multiple invoice types
@@ -243,15 +243,7 @@ each customer owes you etc..
   <li>Reports
   <li>Translations
      <ul>
-       <li>Simple Invoices been translated in numberous languages, the current list is
-below, and if its not in your language it very easily to translate it - refer the wiki
-        <li>Castellano :: Spanish
-        <li>Catala :: Catalan
-        <li>Deutsch :: German
-        <li>English
-        <li>Galego :: Galician
-        <li>Português :: Portuguese
-        <li>Suomi :: Finnish
+       <li>Simple Invoices been translated in numberous languages, the current list is in the <a href="http://www.simpleinvoices.org/index.php?page=LangCheck">LangCheck</a> page. If the language your after is not thereSimple Invoices is easily to translate it - refer the <a href="http://www.simpleinvoices.org/index.php?page=GetInvolved">Get Involved</a> page for details on translations
      </ul>      
   <li>Free/Open souce software
     <ul>
