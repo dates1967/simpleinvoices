@@ -3,18 +3,12 @@
 <div class="CFile CTopic" id=MainTopic><h1 class=CTitle><a name="Credits"></a>Credits</h1><div class=CBody>
 
 <p class=CParagraph>
+
+
 <?php
 
-                $fp = fopen("./demo/documentation/en-gb/general/Credits.html", "r" );
-                if(!$fp)
-                {
-                    echo "Couldn't open the data file. Try again later.";
-                    exit;
-                }
-                $filename ="./demo/documentation/en-gb/general/Credits.html";
-                $display_block .= fread( $fp, filesize( $filename ) );
-
-                echo $display_block;
+	$contents = include("http://simpleinvoices.googlecode.com/svn/trunk/documentation/en-gb/general/Credits.html");
+	echo $contents;
 ?>
 
 
