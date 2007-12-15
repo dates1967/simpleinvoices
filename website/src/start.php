@@ -168,6 +168,44 @@ Theres still more to Simple Invoices, read the website, documentation and forums
 ?>
 
 
+<h4 class=CHeading>Mailing list</h4>         
+<?php
+        require_once('src/include/rss_fetch.inc');
+		$display_block ="";
+	require_once('src/include/rss_fetch.inc');
+                define('MAGPIE_CACHE_DIR', '/var/cache');
+                $rss = fetch_rss('http://feeds.feedburner.com/SimpleInvoicesGoogleGroup');
+
+			//print_r($rss->items);
+		if ( $rss ) {
+                $display_block .= "<ul class=CBulletList>";
+                $items = array_slice($rss->items, 0, 5);
+                foreach ($items as $item) {
+                        $href = $item['link'];
+                        $title = $item['title'];
+                        $desc = $item['description'];
+			$date = $item['pubdate'];
+			$published = substr($date,5,6);
+                        $display_block .=  "<li><a href=\"$href\">$published: ";
+
+                       if($title)
+                                if (strlen($title) >= 123)
+                        {
+                                $title = substr($title,0,123)."...";
+                        }
+
+                        $display_block .=  $title;
+                        $display_block .=  "</a><br>";
+                }
+
+                 $display_block .=  "</ul><p class=CParagraph><a href =\"http://groups.google.com/group/simpleinvoices/topics/\">Read More</a></p>";
+		}
+
+            else {
+                    echo "An error occured! - Could grab the rss feed ";
+                }
+		echo $display_block;
+?>
 
 <h4 class=CHeading>Simple Invoices news via RSS or Email</h4>         
 <table class=CDescriptionList>
