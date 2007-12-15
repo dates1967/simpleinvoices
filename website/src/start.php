@@ -121,7 +121,10 @@ Theres still more to Simple Invoices, read the website, documentation and forums
 		}
 
 		else {
-		    echo "An error occured! - Could grab the rss feed "; 
+		    echo "An error occured! - Couldn't grab the Blog rss feed
+					<br>
+					http://feeds.feedburner.com/SimpleInvoicesBlog	
+			";
 		}
 
 
@@ -162,7 +165,10 @@ Theres still more to Simple Invoices, read the website, documentation and forums
 		}
 
             else {
-                    echo "An error occured! - Could grab the rss feed ";
+                    echo "An error occured! - Couldn't grab the Forum rss feed
+					<br>
+					http://feeds.feedburner.com/SimpleInvoicesForum	
+					";
                 }
 		echo $display_block;
 ?>
@@ -202,7 +208,10 @@ Theres still more to Simple Invoices, read the website, documentation and forums
 		}
 
             else {
-                    echo "An error occured! - Could grab the rss feed ";
+                    echo "An error occured! - Couldn't grab the Mailing list rss feed
+					<br>
+					http://feeds.feedburner.com/SimpleInvoicesGoogleGroup	
+					 ";
                 }
 		echo $display_block;
 ?>
