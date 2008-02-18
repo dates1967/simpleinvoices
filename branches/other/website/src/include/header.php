@@ -51,6 +51,7 @@ urchinTracker();
 
 
 <!-- Google CSE code begins -->
+<!--
 <form style="float:right; margin-top:8px ; margin-right:10px;" id="searchbox_013949097017464247928:nuq_tpa0tce" onsubmit="return false;">
   <input type="text" name="q" size="40"/>
   <input type="submit" value="Search"/>
@@ -70,6 +71,8 @@ urchinTracker();
 
 <script src="http://www.google.com/uds/api?file=uds.js&v=1.0&key=ABQIAAAAB07EJ2SGgmgVPIhHGSt2PRSleZ42L7UWsUL7gk-C8REn4YEkQxTYhB6bsVOElz2FYVvZo3Yt2-iIfA" type="text/javascript"></script>
 <script src="http://google.com/cse/api/overlay.js"></script>
+
+
 <script type="text/javascript">
 function OnLoad() {
   new CSEOverlay("013949097017464247928:nuq_tpa0tce",
@@ -78,6 +81,8 @@ function OnLoad() {
 }
 GSearch.setOnLoadCallback(OnLoad);
 </script>
+-->
+
 <!-- Google CSE Code ends -->
 
 <!-- Flags and translation -->
