@@ -2,10 +2,11 @@
 
 <div class="CFile CTopic" id=MainTopic><h1 class=CTitle><a name="Home"></a>Home</h1><div class=CBody><p class=CParagraph>Simple Invoices</p><p class=CParagraph>
 a simple web based invoicing system designed to get the job done, Free/Open source software, community developed, no hype, no buzz words, and no whizzbang features you're never going to use.</p>
+
+<h4 class=CHeading align=center><a href="index.php?page=tour">Why Simple Invoices?</a></h4>
 <p class=CParagraph style="width:100%">
-<h4 class=CHeading align=center>Why Simple Invoices?</h4>
-<a href="./src/include/images/imagebox/si_pretty_big.gif" class="thickbox" title="" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_pretty_small.gif" alt="Pretty" /></a> 
-<a href="./src/include/images/imagebox/si_easy_invoice.jpg" class="thickbox" title="Simple to use, just a couple of clicks and you;ve got yourself an invoice" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_easy_invoice_small.gif" alt="Simple" /></a> 
+<a href="./src/include/images/imagebox/si_pretty_big.gif" class="thickbox" title="We do what we can to make it look all spiffy for you" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_pretty_small.gif" alt="Pretty" /></a> 
+<a href="./src/include/images/imagebox/si_easy_invoice.jpg" class="thickbox" title="Simple to use, just a couple of clicks and you've got yourself an invoice" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_easy_invoice_small.gif" alt="Simple" /></a> 
 <a href="./src/include/images/imagebox/si_nice.jpg" class="thickbox" title="Pretty looking invoices to impress your clients with" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_nice_small.gif" alt="Pretty Invoices" /></a> 
 <a href="./src/include/images/imagebox/si_email.png" class="thickbox" title="Easily email an invoice as PDF to your client" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/si_email_small.gif" alt="Email as PDF" /></a>
 <a href="./src/include/images/imagebox/no_money_big.gif" class="thickbox" title="Simple Invoices is free!, costs nothing and its free/open source" class="thickbox" rel="gallery-plants"><img class="logo" src="./src/include/images/imagebox/no_money_small.gif" alt="costs nothing" /></a>
