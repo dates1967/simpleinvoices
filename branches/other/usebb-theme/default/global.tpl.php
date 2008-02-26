@@ -110,7 +110,7 @@ urchinTracker();
 <body{js_onload}>
 	<div id="topmenu">
 		<ul>
-			<li class="menuInactive"><a class="menuInactive" href="http://www.simpleinvoices.org">Simple Invoices.org</a></li><li class="menuInactive"><a href="http://www.simpleinvoices.org/blog">Blog</a></li><li class="menuActive"><a href="http://www.simpleinvoices.org/forum">Forum</a></li><li class="menuInactive"><a href="http://www.simpleinvoices.org/wiki">Wiki</a></li>
+			<li class="menuInactive"><a class="amenuInactive" href="http://www.simpleinvoices.org">Simple Invoices.org</a></li><li class="menuInactive"><a class="amenuInactive"  href="http://www.simpleinvoices.org/blog">Blog</a></li><li class="menuActive"><a href="http://www.simpleinvoices.org/forum">Forum</a></li><li class="menuInactive"><a href="http://www.simpleinvoices.org/wiki">Wiki</a></li>
 		</ul>
 	</div>
 	

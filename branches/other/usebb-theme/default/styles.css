@@ -10,6 +10,7 @@ html, body {
 	background-image: url(gfx/body_bg.png);
 	background-color: #CCC;
 	*/
+	background-color: #fff;
 	cursor: default;
 	color: #000;
 }
@@ -76,14 +77,20 @@ html, body {
 a img {
 	border: 0;
 }
+/*
 a:link, a:active, a:visited {
 	color: #369;
 	text-decoration: underline;
 }
+*/
+/*
 a:hover {
 	color: #7F0000 !important;
 	text-decoration: none;
 }
+*/
+
+
 a.administrator:link, a.administrator:active, a.administrator:visited {
 	color: #B20000 !important;
 }
@@ -203,21 +210,35 @@ h2#boarddescr {
 #subtopmenu * {
 	text-align: left;
 }
+/*
 #topmenu {
 	clear: both;
-	/*float: left;*/
+	
 	width: 100%;
 	background-color: #545047;
 	color:#fff;
 	border-top: 10px solid #545047;
 	border-bottom: 5px solid #76736B;
 	padding-bottom: 5px;
+
+}
+*/
+#topmenu {
+	clear: both;
+	/*float: left;*/
+	width: 100%;
+	color:#fff;
+	padding-bottom: 5px;
 	/*padding: .5em 0px .5em 0px;*/
 	/*
 	padding-bottom: 5px;
 	margin: 5px 0 0 0;
 	*/
+	background-color:#003366;
+	border-bottom:5px solid #FFCC00;
+	border-top:10px solid #003366;
 }
+
 #subtopmenu {
 	clear: both;
 	float: left;
@@ -273,16 +294,19 @@ h2#boarddescr {
 	border-left: 0px solid #369;
 }
 #topmenu ul li a:link, #topmenu ul li a:visited {
-	color: #fff;
+	/*color: #fff;*/
 }
 #subtopmenu ul li a:link, #subtopmenu ul li a:visited {
-	color: #369;
+	color:#2244BB;
 }
 #topmenu ul li a:active, #topmenu ul li a:hover {
-	color: #7F0000;
+	/*color: #7F0000;*/
 /*	background-image: url(gfx/topmenu_bg_reverse.png);*/
 	background-repeat: repeat-x;
 /*	background-color: #FFF;*/
+}
+#topmenu ul li.menuInactive a:hover {
+color:#FFCC00
 }
 
 #subtopmenu ul li a:active, #subtopmenu ul li a:hover {
@@ -302,7 +326,7 @@ h2#boarddescr {
 	margin: 0 0 15px 0;
 	width: 100%; /* Be nice to Safari */
 }
-
+/*
 li.menuInactive {
 	background-color: #9C9791;
 	border-bottom: 5px solid #76736B;
@@ -313,6 +337,43 @@ li.menuActive {
 	border-bottom: 5px solid #76736B;
 	padding-bottom:5px;
 }
+*/
+li.menuInactive {
+	background-color:#255480;
+	border-bottom:5px solid #FFCC00;
+	padding-bottom:5px;
+}
+li.menuActive {
+	background-color:#FFCC00;
+	border-bottom:5px solid #FFCC00;
+	padding-bottom:5px;
+}
+
+li.menuActive:hover {
+background-color:#0868A0;
+color:#FFCC00;
+}
+li.menuInactive:hover {
+background-color:#0868A0;
+color:#FFCC00;
+}
+
+.menuActive a{
+color:#003366;
+}
+.menuActive a:hover{
+background-color:#0868A0;
+color:#FFCC00;
+}
+.menuInactive a{
+
+color:#FFF;
+}
+.menuInactive a:hover{
+background-color:#0868A0;
+color:#FFCC00;
+}
+
 
 p.locationbar {
 	clear: both;
@@ -425,13 +486,13 @@ table.topictable td, table.confirmform td, td.msg {
 	vertical-align: middle;
 }
 table.maintable td a:visited {
-	color: #555;
+	color:#2244BB;
 }
 table.topicListTable td a:visited {
-	color: #555;
+	color:#2244BB;
 }
 table.topictable td a:visited {
-	color: #555;
+	color:#2244BB;
 }
 td.fieldtitle {
 	background-color: #E8E8E8 !important;
@@ -573,6 +634,7 @@ table.topictable td.forumcat {
 	font-size: 9pt;
 }
 .forumdescr {
+	color:#666666;
 	margin: 3px 0 0 3px;
 }
 table.maintable td.online {
@@ -1102,3 +1164,17 @@ table#spamquestion {
 }
 
 
+a {
+color:#2244BB;
+}
+/*
+a:hover {
+	background-color:#990000;
+	color:#FFF;
+	text-decoration:none;
+}
+a:link, a:visited, a:visited {
+	color:#2244BB;
+	text-decoration:none;
+}
+*/
