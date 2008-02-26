@@ -46,19 +46,24 @@ $templates['cat_header'] = '
 		<tr>
 			<th class="icon"></th>
 			<th>{l_Forum}</th>
+			<!--
 			<th class="count">{l_Topics}</th>
 			<th class="count">{l_Posts}</th>
-			<th class="lastpostinfo">{l_LatestPost}</th>
+			-->
+			<th class="lastpostinfo"><!-- {l_LatestPost} --></th>
 		</tr>
 ';
 
 $templates['forum'] = '
 		<tr>
 			<td class="icon"><img src="{img_dir}{forum_icon}" alt="{forum_status}" /></td>
-			<td><div class="forumname">{forum_name}</div><div class="forumdescr">{forum_descr}</div></td>
+			<td><div class="forumname">{forum_name}</div><div class="forumdescr">{total_topics} topics, {total_posts} posts</div><div class="forumdescr">{forum_descr}</div></td>
+			<!--
 			<td class="count">{total_topics}</td>
 			<td class="count">{total_posts}</td>
 			<td class="lastpostinfo">{latest_post}<div>{by_author}</div><div>{on_date}</div></td>
+			-->
+			<td class="lastpostinfo">Latest post {latest_post_date}</div><div>by {latest_post_author}</div></td>
 		</tr>
 ';
 

@@ -66,7 +66,10 @@ $templates['topic'] = '
 			</td>
 			<td class="count">{replies}</td>
 			<td class="count">{views}</td>
+			<!--
 			<td class="lastpostinfo">{by_author} <a href="{last_post_url}" rel="nofollow">&gt;&gt;</a><div>{on_date}</div></td>
+			-->
+			<td class="lastpostinfo">Latest post {latest_post_date}</div><div>by {latest_post_author}</div></td>
 		</tr>
 ';
 
