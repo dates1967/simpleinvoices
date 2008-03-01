@@ -17,6 +17,7 @@
 <!-- lightbox end-->
 
 <!-- thickbox -->
+<link REL="SHORTCUT ICON" HREF="./src/includes/images/favicon.ico">
 <script type="text/javascript" src="./src/include/thickbox/jquery-latest.pack.js"></script>
 <script type="text/javascript" src="./src/include/thickbox/thickbox.js"></script>
 <link rel="stylesheet" href="./src/include/thickbox/thickbox.css" type="text/css" media="screen" />
