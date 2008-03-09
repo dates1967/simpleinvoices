@@ -91,7 +91,7 @@
 					<li>The first step is to make the pdf exports directory writeable by the webserver
 						<ul>
 							<li>To do this the cachce directory in your Simple Invoices folder must be writeable, in unix cd to the Simple Invoices directory (<i>cd /var/www/html/simpleinvoices</i>) and chown the cache directory to the apache (webserver user) (<i>chown apache:apache cache</i>), in windows just browse to the cache folder and make sure its writeable by all users.
-                                                        <li>We also need to make the pdf fonts directory writeable. To do this in unix chown the pdf/fpdf directory to the apache(web server) user (<i>chmown apache:apache pdf/fpdf/*</i>), in windows just browse to the fdpf folder(in the pdf folder) and make sure its writeable by all users.
+                                                        <li>We also need to make the pdf fonts directory writeable. To do this in unix chown the ./library/pdf/fpdf directory to the apache(web server) user (<i>chmown apache:apache library/pdf/fpdf/*</i>), in windows just browse to the fdpf folder(in the pdf folder) and make sure its writeable by all users.
 						</ul>
 					<li><i>gd2</i> Once this cache folder has been made writeable the next step is to test if version of PHP has GD2 support
 						<ul>
@@ -107,7 +107,7 @@ GD Version 	2.0 or higher
 						</ul>						
 					<li>Once you have confirmed your PHP has GD2 support we must test if your php.ini file needs to be altered to enable pdf creation
 						<ul>
-							<li>To test if you need to modify your php.ini file open your internet browser and go to your Simple Invoices directory <a href="pdf">pdf/</a> (<i>http://localhost/simpleinvoices/pdf</i>)
+							<li>To test if you need to modify your php.ini file open your internet browser and go to your Simple Invoices directory <a href="pdf">./library/pdf/</a> (<i>http://localhost/simpleinvoices/library/pdf</i>)
 							<li>This page 'html2ps/pdf demo' is used to test if your system is capable of generating pdf files
 							<li>The 'Source' area the 'Single URL' is set to www.google.com by default, if you are connected to the internet just leave this as is but if your currently not connected to the internet change this to a valid webpage on your system ie. <i>http://localhost/simpleinvoices</i> and scroll to the bottom of the page and click the 'Convert File' button
 							<li>If all goes well a pdf of www.google.com homepage(or the valid url you entered) will be created and displayed in your pdf viewer
