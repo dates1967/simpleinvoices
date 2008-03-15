@@ -76,6 +76,36 @@ $pdf_top_margin = 15;
 #bottom margin of the pdf
 $pdf_bottom_margin = 15;
 
+
+####################
+/* Exntesions */
+####################
+//1 = enabled 0 = disabled
+//name is the director in ./extensions which it lives
+$extension['gene']['name'] = "gene";
+$extension['gene']['description'] = "gene's purchase order based system extension";
+$extension['gene']['enabled'] = "0";
+$extension['test']['name'] = "test extension";
+$extension['test']['description'] = "this is a test";
+$extension['test']['enabled'] = "0";
+// dev guys to enable extensions via your local.config.php file
+
+####################
+/* Environment*/
+####################
+/*
+This allows you to have another local config file for your dev or other purposes
+ie. dev.config.php 
+any config.php setting in this extra file(which wont be kept in svn) will overwrite config.php values
+- this way everyone can have there own conf setting without messing with anyones setting
+RELEASE TODO: make sure $environment is set back to live
+*/
+$environment = "local"; //test,staging,dev,live etc..
+if($environment != "live")
+{
+	@include("./config/".htmlspecialchars($environment).".config.php");
+}
+
 ####################
 /* Other stuff*/
 ####################

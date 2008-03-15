@@ -70,7 +70,7 @@
 {/if}
 
 </td>
-	
+	sdas
 <tr>
 	<td align=left>
 		<a href="docs.php?t=help&p=invoice_custom_fields" rel="gb_page_center[450, 450]">{$LANG.want_more_fields}<img src="./images/common/help-small.png"></img></a>
