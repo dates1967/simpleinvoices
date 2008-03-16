@@ -40,6 +40,9 @@ if ($_POST['action'] == "insert" ) {
 		$saved = true;
 	}
 
+	/*
+	* 1 = Total Invoices
+	*/
 	if($type==1) {
 		insertProduct(0,0);
 		$product_id = mysql_insert_id();
@@ -53,8 +56,14 @@ if ($_POST['action'] == "insert" ) {
 	}
 	else {
 		for($i=0;!empty($_POST["quantity$i"]) && $i < $_POST['max_items']; $i++) {
-	
-			if (insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"]) ) {
+
+		/*
+		* TODO - Justin fix this up
+		*/
+		//$invoice_class_name ="gene_invoice";
+		$invoice_class_name ="invoice";
+		$insertII = new $invoice_class_name;
+			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"]) ) {
 				//$saved = true;
 			} else {
 				die(mysql_error());

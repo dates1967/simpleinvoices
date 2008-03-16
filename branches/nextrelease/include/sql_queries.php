@@ -808,6 +808,8 @@ function updateInvoice($invoice_id) {
 	return mysqlQuery($sql);
 }
 
+class invoice {
+
 function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="") {
 	
 	$tax = getTaxRate($tax_id);
@@ -825,6 +827,7 @@ function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$descriptio
 	//echo $sql;
 	return mysqlQuery($sql);
 
+}
 }
 
 function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description) {
