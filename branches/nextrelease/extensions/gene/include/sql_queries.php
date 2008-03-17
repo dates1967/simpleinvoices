@@ -2,7 +2,7 @@
 
 class gene_invoice extends invoice {
 
-function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="") {
+function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="",$unit_cost) {
 	
 	$tax = getTaxRate($tax_id);
 	$product = getProduct($product_id);
@@ -14,7 +14,7 @@ function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$descriptio
 	$total = $total_invoice_item * $quantity;
 	$gross_total = $product['unit_price']  * $quantity;
 	
-	$sql = "INSERT INTO ".TB_PREFIX."invoice_items (`invoice_id`,`quantity`,`product_id`,`unit_price`,`tax_id`,`tax`,`tax_amount`,`gross_total`,`description`,`total`) VALUES ($invoice_id,$quantity,$product_id,$product[unit_price],'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total)";
+	$sql = "INSERT INTO ".TB_PREFIX."invoice_items (`invoice_id`,`quantity`,`product_id`,`unit_price`,`tax_id`,`tax`,`tax_amount`,`gross_total`,`description`,`total`,`unit_cost`) VALUES ($invoice_id,$quantity,$product_id,$product[unit_price],'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total,$unit_cost)";
 
 	//echo $sql;
 	return mysqlQuery($sql);

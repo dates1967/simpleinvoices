@@ -76,9 +76,8 @@ $pdf_top_margin = 15;
 #bottom margin of the pdf
 $pdf_bottom_margin = 15;
 
-
 ####################
-/* Exntesions */
+/* Extensions */
 ####################
 //1 = enabled 0 = disabled
 //name is the director in ./extensions which it lives
@@ -89,6 +88,7 @@ $extension['test']['name'] = "test extension";
 $extension['test']['description'] = "this is a test";
 $extension['test']['enabled'] = "0";
 // dev guys to enable extensions via your local.config.php file
+
 
 ####################
 /* Environment*/

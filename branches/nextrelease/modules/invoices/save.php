@@ -58,12 +58,11 @@ if ($_POST['action'] == "insert" ) {
 		for($i=0;!empty($_POST["quantity$i"]) && $i < $_POST['max_items']; $i++) {
 
 		/*
-		* TODO - Justin fix this up
+		* If an extension has set an alternate class name use that - else use the stardard class of invoice
 		*/
-		//$invoice_class_name ="gene_invoice";
-		$invoice_class_name ="invoice";
+		$invoice_class_name = empty($extension['invoice_class_name']) ? "invoice" : $extension['invoice_class_name'] ;
 		$insertII = new $invoice_class_name;
-			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"]) ) {
+			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_cost$i"]) ) {
 				//$saved = true;
 			} else {
 				die(mysql_error());

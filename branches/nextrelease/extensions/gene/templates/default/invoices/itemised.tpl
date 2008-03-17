@@ -55,7 +55,7 @@
 				                				                
                 </td>
 				<td>
-					<input type=text name="quantity{$smarty.section.line.cost}" size="5"></td>
+					<input type=text name="unit_cost{$smarty.section.line.index}" size="5"></td>
 				</td>		
 </tr>
 
@@ -70,11 +70,11 @@
 
 
 <tr>
-        <td colspan=2 class="details_screen">{$LANG.notes}</td>
+        <td colspan=3 class="details_screen">{$LANG.notes}</td>
 </tr>
 
 <tr>
-        <td colspan=2><textarea input type=text name="note" rows=5 cols=70 WRAP=nowrap></textarea></td>
+        <td colspan=3><textarea input type=text name="note" rows=5 cols=70 WRAP=nowrap></textarea></td>
 </tr>
 
 <tr><td class="details_screen">{$LANG.tax}</td>
