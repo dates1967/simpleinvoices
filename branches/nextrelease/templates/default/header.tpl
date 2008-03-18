@@ -26,7 +26,7 @@
 <script type='text/javascript' src='include/jquery/jquery.autocomplete.conf.js'></script>
 <script type="text/javascript" src="./include/jquery/jquery.accordian.js"></script>
 <script type="text/javascript" src="./include/jquery/jquery.tabs.js"></script>
-
+{$extension_jquery_files}
 {literal}
 	<!-- Menu header -->
 	<!--[if lte IE 6]>

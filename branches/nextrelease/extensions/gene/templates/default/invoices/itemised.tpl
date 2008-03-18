@@ -17,11 +17,17 @@
 */
 *}
 
+{*
+<form action="" method="">
+*}
 <form name="frmpost" action="index.php?module=invoices&view=save" method=POST onsubmit="return frmpost_Validator(this)">
-
-<h3>{$LANG.inv} {$LANG.inv_itemised}</h3>
-
+<h3>{$LANG.inv} {$LANG.inv_itemised}
+<div id="gmail_loading" class="gmailLoader" style="float:right; display: none;">
+        	<img src="images/common/gmail-loader.gif" alt="Loading ..."/> Loading ...
+</div>
+</h3>
 {include file="$path/header.tpl" }
+
 
 <tr>
 	<td class="details_screen">
@@ -45,7 +51,7 @@
 			{if $products == null }
 				<p><em>{$LANG.no_products}</em></p>
 			{else}
-				<select name="products{$smarty.section.line.index}">
+				<select id="country" name="products{$smarty.section.line.index}" onchange="change_state($(this).val(),{$smarty.section.line.index} );" >
 					<option value=""></option>
 				{foreach from=$products item=product}
 					<option {if $product.id == $defaults.product} selected {/if} value="{$product.id}">{$product.description}</option>
@@ -55,7 +61,8 @@
 				                				                
                 </td>
 				<td>
-					<input type=text name="unit_cost{$smarty.section.line.index}" size="5"></td>
+					<input id="state{$smarty.section.line.index}" value=""></input>
+					 -- <input type=text name="unit_cost{$smarty.section.line.index}" size="5"></td>
 				</td>		
 </tr>
 
