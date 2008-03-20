@@ -116,43 +116,47 @@ $path = "$module/$view";
 * Include the php file for the requested page section - start
 */
 
-/*Local the requested php file for the module*/
-if(file_exists("./modules/$path.php")) 
-{
-	preg_match("/^[a-z|A-Z|_]+\/[a-z|A-Z|_]+/",$path,$res);
+		/*Local the requested php file for the module*/
+		preg_match("/^[a-z|A-Z|_]+\/[a-z|A-Z|_]+/",$path,$res);
 
-	if(isset($res[0]) && $res[0] == $path) 
-	{
-		$file = $path;
-	}	
-}
+		if(isset($res[0]) && $res[0] == $path) 
+		{
+			$file = $path;
+		}	
+		
+		/*
+		* If extension is enabled load the extension php file for the module	
+		* Note: this system is probably slow - if you got a better method for handling extensions let me know
+		*/
+		$extensionPHPFile = 0;
+		foreach($extension as $key=>$value)
+		{
+			/*
+			* If extension is enabled then continue and include the requested file for that extension if it exists
+			*/	
+			if($value['enabled'] == "1")
+			{
+				//echo "Enabled:".$value['name']."<br><br>";
+				if(file_exists("./extensions/$value[name]/modules/$path.php")) {
+			
+					preg_match("/^[a-z|A-Z|_]+\/[a-z|A-Z|_]+/",$path,$res);
 
-include_once("./modules/$file.php");
+					if(isset($res[0]) && $res[0] == $path) {
+						$file = $path;
+					}	
 
-/*
-* If extension is enabled load the extension php file for the module	
-* Note: this system is probably slow - if you got a better method for handling extensions let me know
-*/
-foreach($extension as $key=>$value)
-{
-	/*
-	* If extension is enabled then continue and include the requested file for that extension if it exists
-	*/	
-	if($value['enabled'] == "1")
-	{
-		//echo "Enabled:".$value['name']."<br><br>";
-		if(file_exists("./extensions/$value[name]/modules/$path.php")) {
-	
-			preg_match("/^[a-z|A-Z|_]+\/[a-z|A-Z|_]+/",$path,$res);
-
-			if(isset($res[0]) && $res[0] == $path) {
-				$file = $path;
-			}	
-
-			include_once("./extensions/$key[name]/modules/$file.php");
+					include_once("./extensions/$value[name]/modules/$file.php");
+					$extensionPHPFile++;
+				}
+			}
 		}
-	}
-}
+		/*
+		* If no extension php file for requested file load the normal php file if it exists
+		*/
+		if( ($extensionPHPFile == 0) AND (file_exists("./modules/$file.php")) ) 
+		{
+			include_once("./modules/$file.php");
+		}
 
 /*
 * Include the php file for the requested page section - end

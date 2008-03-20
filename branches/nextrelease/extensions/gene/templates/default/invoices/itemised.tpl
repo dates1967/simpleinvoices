@@ -37,7 +37,7 @@
 		{$LANG.description}
 	</td>
 	<td class="details_screen">
-		Line Cost
+		Unit Price
 	</td>
 </tr>
 
@@ -61,8 +61,10 @@
 				                				                
                 </td>
 				<td>
-					<input id="state{$smarty.section.line.index}" value=""></input>
+					<input id="state{$smarty.section.line.index}" name="unit_price{$smarty.section.line.index}" size="7" value=""></input>
+				{*
 					 -- <input type=text name="unit_cost{$smarty.section.line.index}" size="5"></td>
+				*}
 				</td>		
 </tr>
 
