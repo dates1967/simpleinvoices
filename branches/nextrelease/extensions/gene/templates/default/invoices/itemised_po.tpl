@@ -21,7 +21,7 @@
 <form action="" method="">
 *}
 <form name="frmpost" action="index.php?module=invoices&view=save" method=POST onsubmit="return frmpost_Validator(this)">
-<h3>{$LANG.inv} {$LANG.inv_itemised}
+<h3>Purchase Order
 <div id="gmail_loading" class="gmailLoader" style="float:right; display: none;">
         	<img src="images/common/gmail-loader.gif" alt="Loading ..."/> Loading ...
 </div>
@@ -37,7 +37,7 @@
 		{$LANG.description}
 	</td>
 	<td class="details_screen">
-		Unit Price
+		Unit Cost
 	</td>
 </tr>
 
@@ -51,7 +51,7 @@
 			{if $products == null }
 				<p><em>{$LANG.no_products}</em></p>
 			{else}
-				<select id="country" name="products{$smarty.section.line.index}" onchange="invoice_product_change_price($(this).val(),{$smarty.section.line.index} );" >
+				<select id="country" name="products{$smarty.section.line.index}" onchange="invoice_product_change_cost($(this).val(),{$smarty.section.line.index} );" >
 					<option value=""></option>
 				{foreach from=$products item=product}
 					<option {if $product.id == $defaults.product} selected {/if} value="{$product.id}">{$product.description}</option>
@@ -61,7 +61,7 @@
 				                				                
                 </td>
 				<td>
-					<input id="unit_price{$smarty.section.line.index}" name="unit_price{$smarty.section.line.index}" size="7" value=""></input>
+					<input id="unit_cost{$smarty.section.line.index}" name="unit_cost{$smarty.section.line.index}" size="7" value=""></input>
 				{*
 					 -- <input type=text name="unit_cost{$smarty.section.line.index}" size="5"></td>
 				*}

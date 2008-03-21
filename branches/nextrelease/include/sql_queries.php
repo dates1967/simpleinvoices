@@ -291,49 +291,63 @@ function getProduct($id) {
 	return mysqlQuery($sql);
 }*/
 
+class product{
 
-function insertProduct($enabled=1,$visible=1) {
-	if(isset($_POST['enabled'])) {
-		$enabled=$_POST['enabled'];
-	}
-	
-	$sql = "INSERT into
-			".TB_PREFIX."products
-		VALUES
-			(	
-				NULL,
-				'$_POST[description]',
-				'$_POST[unit_price]',
-				'$_POST[custom_field1]',
-				'$_POST[custom_field2]',
-				'$_POST[custom_field3]',
-				'$_POST[custom_field4]',
-				'$_POST[notes]',
-				'$enabled',
-				'$visible'
-			)";
-	return mysqlQuery($sql);
-}
-
-
-function updateProduct() {
-	
-	$sql = "UPDATE ".TB_PREFIX."products
-			SET
-				description = '$_POST[description]',
-				enabled = '$_POST[enabled]',
-				notes = '$_POST[notes]',
-				custom_field1 = '$_POST[custom_field1]',
-				custom_field2 = '$_POST[custom_field2]',
-				custom_field3 = '$_POST[custom_field3]',
-				custom_field4 = '$_POST[custom_field4]',
-				unit_price = '$_POST[unit_price]'
-			WHERE
-				id = '$_GET[id]'";
-
-	return mysqlQuery($sql);
-}
+		function insertProduct($enabled=1,$visible=1) {
+			if(isset($_POST['enabled'])) {
+				$enabled=$_POST['enabled'];
+			}
 			
+			$sql = "INSERT into
+					".TB_PREFIX."products
+				(	
+					id,
+					description,
+					unit_price,
+					custom_field1,
+					custom_field2,
+					custom_field3,
+					custom_field4,
+					notes,
+					enabled,
+					visible
+				)			
+				VALUES
+					(	
+						NULL,
+						'$_POST[description]',
+						'$_POST[unit_price]',
+						'$_POST[custom_field1]',
+						'$_POST[custom_field2]',
+						'$_POST[custom_field3]',
+						'$_POST[custom_field4]',
+						'$_POST[notes]',
+						'$enabled',
+						'$visible'
+					)";
+			return mysqlQuery($sql);
+		}
+
+
+		function updateProduct() {
+			
+			$sql = "UPDATE ".TB_PREFIX."products
+					SET
+						description = '$_POST[description]',
+						enabled = '$_POST[enabled]',
+						notes = '$_POST[notes]',
+						custom_field1 = '$_POST[custom_field1]',
+						custom_field2 = '$_POST[custom_field2]',
+						custom_field3 = '$_POST[custom_field3]',
+						custom_field4 = '$_POST[custom_field4]',
+						unit_price = '$_POST[unit_price]'
+					WHERE
+						id = '$_GET[id]'";
+
+			return mysqlQuery($sql);
+		}
+					
+}
 
 function getProducts() {
 	global $LANG;

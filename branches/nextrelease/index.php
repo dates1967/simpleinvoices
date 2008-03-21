@@ -197,9 +197,35 @@ else
 	$smarty -> display("../templates/default/header.tpl");
 //temp added menu.tpl back in so we can easily design new menu system
 
-
-
-$smarty -> display("../templates/default/menu.tpl");
+/*
+* Menu : If extension has custom menu use it else use default - start
+*/
+	
+	$extensionMenu = 0;
+	foreach($extension as $tplKey=>$tplValue)
+	{
+		/*
+		* If extension is enabled then continue and include the requested file for that extension if it exists
+		*/	
+		if($tplValue['enabled'] == "1")
+		{
+			if(file_exists("./extensions/$tplValue[name]/templates/default/menu.tpl")) 
+			{
+				$smarty -> display("../extensions/$tplValue[name]/templates/default/menu.tpl");
+				$extensionMenu++;
+			}
+		}
+	}
+	/*
+	* If no extension php file for requested file load the normal php file if it exists
+	*/
+	if($extensionMenu == 0) 
+	{
+		$smarty -> display("../templates/default/menu.tpl");
+	}
+/*
+* Menu : If extension has custom menu use it else use default - end
+*/
 
 $smarty -> display("../templates/default/main.tpl");
 //Shouldn't be necessary anymore. Is for old files without templates...

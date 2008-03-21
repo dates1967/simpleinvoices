@@ -13,7 +13,7 @@ $saved = false;
 
 if (  $op === 'insert_product' ) {
 	
-	$insertProductClass = new product;
+	$insertProductClass = new gene_product;
 	if($id = $insertProductClass->insertProduct()) {
  		$saved = true;
 // 		saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
@@ -21,8 +21,8 @@ if (  $op === 'insert_product' ) {
 }
 
 if ($op === 'edit_product' ) {
-	$insertProductClass = new product;
-	if (isset($_POST['save_product']) && $insertProductClass->updateProduct()) {
+	$editProductClass = new gene_product;
+	if (isset($_POST['save_product']) && $editProductClass->updateProduct()) {
 		$saved = true;
 //		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
 	}
