@@ -2,19 +2,26 @@
 
 class gene_invoice extends invoice {
 
-		function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="",$unit_price) {
+		function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="",$unit_price, $unit_cost) {
 			
 			$tax = getTaxRate($tax_id);
-			//$product = getProduct($product_id);
-			//print_r($product);
+			$product = getProduct($product_id);
+			
+			/*
+			* If a unit cost or price is empty then get from products table
+			*/
+			empty($unit_price) ? $unit_price = $product['unit_price'] : $unit_price = $unit_price;
+			empty($unit_cost) ? $unit_cost = $product['unit_cost'] :  $unit_cost = $unit_cost;
+
 			$actual_tax = $tax['tax_percentage']  / 100 ;
 			$total_invoice_item_tax = $unit_price * $actual_tax;
 			$tax_amount = $total_invoice_item_tax * $quantity;
 			$total_invoice_item = $total_invoice_item_tax + $unit_price ;	
 			$total = $total_invoice_item * $quantity;
 			$gross_total = $unit_price  * $quantity;
+
 			
-			$sql = "INSERT INTO ".TB_PREFIX."invoice_items (invoice_id,quantity,product_id,unit_price,tax_id,tax,tax_amount,gross_total,description,total) VALUES ($invoice_id,$quantity,$product_id,$unit_price,'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total)";
+			$sql = "INSERT INTO ".TB_PREFIX."invoice_items (invoice_id,quantity,product_id,unit_price,unit_cost,tax_id,tax,tax_amount,gross_total,description,total) VALUES ($invoice_id,$quantity,$product_id,$unit_price,$unit_cost,'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total)";
 
 			//echo $sql;
 			return mysqlQuery($sql);
