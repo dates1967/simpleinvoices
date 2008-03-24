@@ -34,4 +34,9 @@ $pageActive = "invoices";
 
 include('./modules/invoices/invoice.php');
 
+/*
+* 5 = Purchase order - orig Quote
+*/
+$defaults['preference'] = 5;
+$smarty -> assign("defaults",$defaults);
 ?>

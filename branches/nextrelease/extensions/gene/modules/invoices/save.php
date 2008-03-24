@@ -55,14 +55,30 @@ if ($_POST['action'] == "insert" ) {
 		}
 	}
 	else {
+
+		/*
+		* Gene Load calc section: shipping / totaly quantity
+		* Add this figure onto the cost of each product
+		*/
+		$gene_shipping = empty($_POST['customField1']) ? 0 : $_POST['customField1'];
+		$gene_totalQuantity = 0;
+		for($l=0;!empty($_POST["quantity$l"]) && $l < $_POST['max_items']; $l++) {
+			$gene_totalQuantity += $_POST["quantity$l"];
+		}
+		//echo "Total Qty:". $gene_totalQuantity."<br>";
+		$gene_load = $gene_shipping / $gene_totalQuantity;
+
+		//echo "Total Load:". $gene_load."<br>";
+
 		for($i=0;!empty($_POST["quantity$i"]) && $i < $_POST['max_items']; $i++) {
 
+		$gene_load_unit_cost = $_POST["unit_cost$i"] + $gene_load;
 		/*
 		* If an extension has set an alternate class name use that - else use the stardard class of invoice
 		*/
 		//$invoice_class_name = empty($extension['invoice_class_name']) ? "invoice" : $extension['invoice_class_name'] ;
 		$insertII = new gene_invoice;
-			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"]) ) {
+			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$gene_load_unit_cost) ) {
 				//$saved = true;
 			} else {
 				die(mysql_error());
