@@ -17,8 +17,20 @@
  */
 
 
-if(isset($_POST['submit'])) {
-	insertInvoiceItem($_POST['invoice_id'],$_POST['quantity'],$_POST['product'],$_POST['tax_id'],$_POST['description']);
+if(isset($_POST['submit'])) 
+{
+	$product = getProduct($_POST['product']);
+	
+	/*
+	* If a unit cost or price is empty then get from products table
+	*/
+	empty($unit_price) ? $unit_price = $product['unit_price'] : $unit_price = $unit_price;
+	empty($unit_cost) ? $unit_cost = $product['unit_cost'] :  $unit_cost = $unit_cost;
+	empty($unit_load_cost) ? $unit_load_cost = $product['unit_cost'] :  $unit_load_cost = $unit_load_cost;
+
+	$insertII = new gene_invoice;
+	//$insertII->insertInvoiceItem($_POST['invoice_id'],$_POST['quantity'],$_POST['product'],$_POST['tax_id'],$_POST['description']);
+	  $insertII->insertInvoiceItem($_POST['invoice_id'],$_POST['quantity'],$_POST['product'],$_POST['tax_id'],$_POST['description'],$unit_price,$unit_cost,$unit_load_cost);
 }
 else {
 

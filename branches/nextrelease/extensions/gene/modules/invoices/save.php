@@ -121,7 +121,17 @@ if ( $_POST['action'] == "edit") {
 		$gene_load_unit_cost = $_POST["unit_cost$i"] + $gene_load;
 		
 		$updateII = new gene_invoice;
-		if ($updateII->updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_pr    ice$i"],$_POST["unit_cost$i"],$gene_load_unit_cost)) {
+		if (
+			$updateII->updateInvoiceItem(
+				$_POST["id$i"],
+				$_POST["quantity$i"],
+				$_POST["products$i"],
+				$_POST['tax_id'],
+				$_POST["description$i"],
+				$_POST["unit_price$i"],
+				$_POST["unit_cost$i"],
+				$gene_load_unit_cost)
+			) {
 			//$saved =  true;
 		}
 		else {

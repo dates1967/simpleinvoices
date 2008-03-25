@@ -29,7 +29,7 @@ class gene_invoice extends invoice {
 
 		}
 
-		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description,$unit_price, $unit_cost, $unit_load_cost) {
+		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description,$unit_price,$unit_cost,$unit_load_cost) {
 
 			$product = getProduct($product_id);
 			$tax = getTaxRate($tax_id);
