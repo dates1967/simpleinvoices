@@ -78,7 +78,7 @@ if ($_POST['action'] == "insert" ) {
 		*/
 		//$invoice_class_name = empty($extension['invoice_class_name']) ? "invoice" : $extension['invoice_class_name'] ;
 		$insertII = new gene_invoice;
-			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$gene_load_unit_cost) ) {
+			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				//$saved = true;
 			} else {
 				die(mysql_error());
@@ -103,10 +103,25 @@ if ( $_POST['action'] == "edit") {
 		$sql = "UPDATE ".TB_PREFIX."products SET `unit_price` = $_POST[unit_price], `description` = '$_POST[description0]' WHERE id = $_POST[products0]";
 		mysqlQuery($sql);
 	}
+		
+		/*
+		* Gene Load calc section: shipping / totaly quantity
+		* Add this figure onto the cost of each product
+		*/
+		$gene_shipping = empty($_POST['customField1']) ? 0 : $_POST['customField1'];
+		$gene_totalQuantity = 0;
+		for($l=0;!empty($_POST["quantity$l"]) && $l < $_POST['max_items']; $l++) {
+			$gene_totalQuantity += $_POST["quantity$l"];
+		}
+		//echo "Total Qty:". $gene_totalQuantity."<br>";
+		$gene_load = $gene_shipping / $gene_totalQuantity;
 
 	for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
 		
-		if (updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"])) {
+		$gene_load_unit_cost = $_POST["unit_cost$i"] + $gene_load;
+		
+		$updateII = new gene_invoice;
+		if ($updateII->updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_pr    ice$i"],$_POST["unit_cost$i"],$gene_load_unit_cost)) {
 			//$saved =  true;
 		}
 		else {

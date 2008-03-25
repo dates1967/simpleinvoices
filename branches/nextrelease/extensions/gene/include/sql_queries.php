@@ -2,7 +2,7 @@
 
 class gene_invoice extends invoice {
 
-		function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="",$unit_price, $unit_cost) {
+		function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="",$unit_price, $unit_cost, $unit_load_cost) {
 			
 			$tax = getTaxRate($tax_id);
 			$product = getProduct($product_id);
@@ -12,6 +12,7 @@ class gene_invoice extends invoice {
 			*/
 			empty($unit_price) ? $unit_price = $product['unit_price'] : $unit_price = $unit_price;
 			empty($unit_cost) ? $unit_cost = $product['unit_cost'] :  $unit_cost = $unit_cost;
+			empty($unit_load_cost) ? $unit_load_cost = $product['unit_cost'] :  $unit_load_cost = $unit_load_cost;
 
 			$actual_tax = $tax['tax_percentage']  / 100 ;
 			$total_invoice_item_tax = $unit_price * $actual_tax;
@@ -21,16 +22,24 @@ class gene_invoice extends invoice {
 			$gross_total = $unit_price  * $quantity;
 
 			
-			$sql = "INSERT INTO ".TB_PREFIX."invoice_items (invoice_id,quantity,product_id,unit_price,unit_cost,tax_id,tax,tax_amount,gross_total,description,total) VALUES ($invoice_id,$quantity,$product_id,$unit_price,$unit_cost,'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total)";
+			$sql = "INSERT INTO ".TB_PREFIX."invoice_items (invoice_id,quantity,product_id,unit_price,unit_cost,unit_load_cost,tax_id,tax,tax_amount,gross_total,description,total) VALUES ($invoice_id,$quantity,$product_id,$unit_price,$unit_cost,$unit_load_cost,'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total)";
 
 			//echo $sql;
 			return mysqlQuery($sql);
 
 		}
-		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description) {
+
+		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description,$unit_price, $unit_cost, $unit_load_cost) {
 
 			$product = getProduct($product_id);
 			$tax = getTaxRate($tax_id);
+			
+			/*
+			* If a unit cost or price is empty then get from products table
+			*/
+			empty($unit_price) ? $unit_price = $product['unit_price'] : $unit_price = $unit_price;
+			empty($unit_cost) ? $unit_cost = $product['unit_cost'] :  $unit_cost = $unit_cost;
+			empty($unit_load_cost) ? $unit_load_cost = $product['unit_cost'] :  $unit_load_cost = $unit_load_cost;
 			
 			$total_invoice_item_tax = $product['unit_price'] * $tax['tax_percentage'] / 100;	//:100?
 			$tax_amount = $total_invoice_item_tax * $quantity;
@@ -43,7 +52,9 @@ class gene_invoice extends invoice {
 			$sql = "UPDATE ".TB_PREFIX."invoice_items 
 			SET `quantity` =  '$quantity',
 			`product_id` = '$product_id',
-			`unit_price` = '$product[unit_price]',
+			`unit_price` = '$unit_price',
+			`unit_cost` = '$unit_cost',
+			`unit_load_cost` = '$unit_load_cost',
 			`tax_id` = '$tax_id',
 			`tax` = '$tax[tax_percentage]',
 			`tax_amount` = '$tax_amount',
