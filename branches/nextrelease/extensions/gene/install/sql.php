@@ -15,7 +15,7 @@
 		$patch['gene']['2']['patch'] = "ALTER TABLE ".TB_PREFIX."products ADD unit_cost DOUBLE( 25, 6 ) NULL AFTER unit_price ;";
 	}
 	$patch['gene']['2']['date'] = "20080321";
-	//ALTER TABLE `si_products` ADD `unit_cost` DOUBLE( 25, 6 ) NULL AFTER `unit_price` ;
+	//ALTER TABLE si_products ADD unit_cost DOUBLE( 25, 6 ) NULL AFTER unit_price ;
 
 
 	$patch['gene']['3']['name'] = "Add unit_load_cost to invoice items table";
