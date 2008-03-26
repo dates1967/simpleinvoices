@@ -3,6 +3,9 @@ Hello User’s Name Today is Day of Week Today date is dd-mm-yyyy
 
 Home | Inv/Charges+ | Students+ | Courses+ | Products+ | Billers+ | Payments+ | Reports+ | Teachers+ | Certificates+ | To-Do Items+ | Options/Set | Log In/Out
 
+Manage Students::Add New Student::Copy To New Student::Fast Search Student::Extended Search Student
+
+Manage Courses::Add New Course::Copy to New Course::Find Course
 *}
 <div id="Header">
 		<ul class="adxm menu">
@@ -12,19 +15,27 @@ Home | Inv/Charges+ | Students+ | Courses+ | Products+ | Billers+ | Payments+ | 
 					<li><a href="index.php?module=invoices&view=manage">{$LANG.manage_invoices}</a></li>
 					<li class="separation"></li>
 					<li><a href="index.php?module=invoices&view=itemised">{$LANG.new_invoice_itemised}</a></li>
-					<li><a href="index.php?module=invoices&view=itemised_po">New Purchase Order</a></li>
+					<li><a href="index.php?module=invoices&view=consulting">{$LANG.new_invoice_consulting}</a></li>
+					<li><a href="index.php?module=invoices&view=total">{$LANG.new_invoice_total}</a></li>
 				</ul>
 			</li>
 			<li { if $pageActive == 'customers'} id="active" {/if} ><a href="index.php?module=customers&view=manage">Students +</a>
 				<ul>
-					<li><a href="index.php?module=customers&view=manage">{$LANG.manage_customers}</a></li>
-					<li><a href="index.php?module=customers&view=add">{$LANG.add_customer}</a></li>
+					<li><a href="index.php?module=customers&view=manage">Manage Students</a></li>
+					<li class="separation"></li>
+					<li><a href="index.php?module=customers&view=add">Add New Student</a></li>
+					<li><a href="index.php?module=customers&view=add">Copy to New Student</a></li>
+					<li><a href="index.php?module=customers&view=add">Fast Search Student</a></li>
+					<li><a href="index.php?module=customers&view=add">Extended Search Student</a></li>
 				</ul>
 			</li>
 			<li { if $pageActive == 'courses'} id="active" {/if} ><a href="index.php?module=courses&view=manage">Courses +</a>
 				<ul>
-					<li><a href="index.php?module=products&view=manage">{$LANG.manage_products}</a></li>
-					<li><a href="index.php?module=products&view=add">{$LANG.add_product}</a></li>
+					<li><a href="index.php?module=products&view=manage">Manage Courses</a></li>
+					<li class="separation"></li>
+					<li><a href="index.php?module=products&view=add">Add New Course</a></li>
+					<li><a href="index.php?module=products&view=add">Copy to New Course</a></li>
+					<li><a href="index.php?module=products&view=add">Find Course</a></li>
 				</ul>
 			</li>
 			<li { if $pageActive == 'products'} id="active" {/if} ><a href="index.php?module=products&view=manage">{$LANG.products} +</a>
@@ -98,14 +109,21 @@ Home | Inv/Charges+ | Students+ | Courses+ | Products+ | Billers+ | Payments+ | 
 			</li>
 			<li { if $pageActive == 'teachers'} id="active" {/if}> <a href="index.php?module=billers&view=manage">Teachers +</a>
 				<ul>
-					<li><a href="index.php?module=teachers&view=manage">{$LANG.manage_billers}</a></li>
-					<li><a href="index.php?module=teachers&view=add">{$LANG.add_biller}</a></li>
+					<li><a href="index.php?module=teachers&view=manage">Manage Teachers</a></li>
+					<li class="separation"></li>
+					<li><a href="index.php?module=teachers&view=add">Add New Teacher</a></li>
+					<li><a href="index.php?module=teachers&view=add">Copy to New Teacher</a></li>
+					<li><a href="index.php?module=teachers&view=add">Find Teacher</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'billers'} id="active" {/if}> <a href="index.php?module=billers&view=manage">Certificates +</a>
+Manage Certificates::Add New Certificate::Copy to New Certificate::Find Certificate
+			<li { if $pageActive == 'certificates'} id="active" {/if}> <a href="index.php?module=certificates&view=manage">Certificates +</a>
 				<ul>
-					<li><a href="index.php?module=billers&view=manage">{$LANG.manage_billers}</a></li>
-					<li><a href="index.php?module=billers&view=add">{$LANG.add_biller}</a></li>
+					<li><a href="index.php?module=certificates&view=manage">Manage Certificates</a></li>
+					<li class="separation"></li>
+					<li><a href="index.php?module=certificates&view=add">Add New Certificates</a></li>
+					<li><a href="index.php?module=certificates&view=copy">Copy to New Certificates</a></li>
+					<li><a href="index.php?module=certificates&view=find">Find Certificates</a></li>
 				</ul>
 			</li>
 			<li { if $pageActive == 'billers'} id="active" {/if}> <a href="index.php?module=billers&view=manage">To-do items +</a>
