@@ -121,7 +121,103 @@
 	<div id="section-2" class="fragment">
 <p>
 	<table align=center>
-	Guardian stuff here
+	<tr>
+		<td class="details_screen" colspan=2>Parent or Guardian </td>
+	</tr>
+	<tr>
+		<td class="details_screen">Relationship (TODO: drop down with list of relationship types)</td>
+		<td><input type=text name="guardian1_relationship" value="{$smarty.post.guardian1_relationship}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">First name</td>
+		<td><input type=text name="guardian1_first_name" value="{$smarty.post.guardian1_first_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td><input type=text name="guardian1_last_name" value="{$smarty.post.guardian1_middle_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Last Name</td>
+		<td><input type=text name="guardian1_last_name" value="{$smarty.post.guardian1_last_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home phone</td>
+		<td><input type=text name="guardian1_home_phone" value="{$smarty.post.guardian1_home_phone}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Cell phone</td>
+		<td><input type=text name="guardian1_cell_phone" value="{$smarty.post.guardian1_cell_phone}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Email</td>
+		<td><input type=text name="guardian1_email" value="{$smarty.post.guardian1_email}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport number</td>
+		<td><input type=text name="guardian1_passport_number" value="{$smarty.post.guardian1_passport_number}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued at</td>
+		<td><input type=text name="guardian1_passport_issued_at" value="{$smarty.post.guardian1_passport_issued_at}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued on</td>
+		<td><input type=text name="guardian1_passport_issued_on" value="{$smarty.post.guardian1_passport_issued_on}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home address</td>
+		<td><input type=text name="guardian1_home_address" value="{$smarty.post.guardian1_home_address}" size=25></td>
+	</tr>
+
+	<tr>
+		<td class="details_screen" colspan=2>Parent or Guardian 2</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Relationship (TODO: drop down with list of relationship types)</td>
+		<td><input type=text name="guardian2_relationship" value="{$smarty.post.guardian2_relationship}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">First name</td>
+		<td><input type=text name="guardian2_first_name" value="{$smarty.post.guardian2_first_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td><input type=text name="guardian2_last_name" value="{$smarty.post.guardian2_middle_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Last Name</td>
+		<td><input type=text name="guardian2_last_name" value="{$smarty.post.guardian2_last_name}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home phone</td>
+		<td><input type=text name="guardian2_home_phone" value="{$smarty.post.guardian2_home_phone}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Cell phone</td>
+		<td><input type=text name="guardian2_cell_phone" value="{$smarty.post.guardian2_cell_phone}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Email</td>
+		<td><input type=text name="guardian2_email" value="{$smarty.post.guardian2_email}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport number</td>
+		<td><input type=text name="guardian2_passport_number" value="{$smarty.post.guardian2_passport_number}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued at</td>
+		<td><input type=text name="guardian2_passport_issued_at" value="{$smarty.post.guardian2_passport_issued_at}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued on</td>
+		<td><input type=text name="guardian2_passport_issued_on" value="{$smarty.post.guardian2_passport_issued_on}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home address</td>
+		<td><input type=text name="guardian2_home_address" value="{$smarty.post.guardian2_home_address}" size=25></td>
+	</tr>
+
+	
 	</table>
 	</p>
 	</div>
@@ -181,7 +277,7 @@
 </div>
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="customer" value="{$LANG.insert_customer}">
+	<input type="submit" name="customer" value="Add Student">
 	<input type="hidden" name="op" value="insert_customer">
 </div>
 </form>

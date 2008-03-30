@@ -8,7 +8,8 @@ function invoice_product_change_price(si_product,row_number, quantity)
 		success: function(data){
 			$('#gmail_loading').hide();
 			/*$('#state').html(data);*/
-			if ( (quantity.length==0) || (quantity.value==null) ) 
+			/*if ( (quantity.length==0) || (quantity.value==null) ) */
+			if (quantity=="") 
 			{	
 				$("#quantity"+row_number).attr("value","1");
 			}
@@ -27,7 +28,8 @@ function invoice_product_change_cost(si_product,row_number,quantity)
 		success: function(data){
 			$('#gmail_loading').hide();
 			/*$('#state').html(data);*/
-			if ( (quantity.length==0) || (quantity.value==null) ) 
+			/*if ( (quantity.length==0) || (quantity.value==null) ) */
+			if (quantity=="")
 			{	
 				$("#quantity"+row_number).attr("value","1");
 			}
