@@ -120,4 +120,31 @@ ADD `passport_issued_on` DATE NULL ,
 ADD `cell_phone` VARCHAR( 255 ) NULL ;
 */
 
+/*
+ALTER TABLE 
+	`si_customers` 
+		ADD `guardian1_relationship` VARCHAR(11) NOT NULL AFTER `id`, 
+		ADD `guardian1_first_name` VARCHAR(255) NULL AFTER `guardian1_relationship`, 
+		ADD `guardian1_middle_name` VARCHAR(255) NULL AFTER `guardian1_first_name`, 
+		ADD `guardian1_last_name` VARCHAR(255) NULL AFTER `guardian1_middle_name`, 
+		ADD `guardian1_home_phone` VARCHAR(255) NULL AFTER `guardian1_last_name`, 
+		ADD `guardian1_cell_phone` VARCHAR(255) NULL AFTER `guardian1_home_phone`, 
+		ADD `guardian1_email` VARCHAR(255) NULL AFTER `guardian1_cell_phone`, 
+		ADD `guardian1_passport_number` VARCHAR(255) NULL AFTER `guardian1_email`, 
+		ADD `guardian1_passport_issued_at` VARCHAR(255) NULL AFTER `guardian1_passport_number`, 
+		ADD `guardian1_passport_issued_on` VARCHAR(255) NULL AFTER `guardian1_passport_issued_at`, 
+		ADD `guardian1_address` VARCHAR(255) NULL AFTER `guardian1_passport_issued_on`, 
+		ADD `guardian2_relationship` VARCHAR(11) NULL AFTER `guardian1_address`, 
+		ADD `guardian2_first_name` VARCHAR(255) NULL AFTER `guardian2_relationship`, 
+		ADD `guardian2_middle_name` VARCHAR(255) NULL AFTER `guardian2_first_name`, 
+		ADD `guardian2_last_name` VARCHAR(255) NULL AFTER `guardian2_middle_name`, 
+		ADD `guardian2_home_phone` VARCHAR(255) NULL AFTER `guardian2_last_name`, 
+		ADD `guardian2_cell_phone` VARCHAR(255) NULL AFTER `guardian2_home_phone`, 
+		ADD `guardian2_email` VARCHAR(255) NULL AFTER `guardian2_cell_phone`, 
+		ADD `guardian2_passport_number` VARCHAR(255) NULL AFTER `guardian2_email`, 
+		ADD `guardian2_passport_issued_at` VARCHAR(255) NULL AFTER `guardian2_passport_number`, 
+		ADD `guardian2_passport_issued_on` VARCHAR(255) NULL AFTER `guardian2_passport_issued_at`, 
+		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`
+;
+*/
 ?>
