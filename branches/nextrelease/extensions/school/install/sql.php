@@ -147,4 +147,17 @@ ALTER TABLE
 		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`
 ;
 */
+
+
+
+
+
+
+
+/*TEST DATA
+//branches
+insert into si_branch value (null,'Moscow');
+insert into si_branch value (null,'Stalingrad');
+
+*/
 ?>

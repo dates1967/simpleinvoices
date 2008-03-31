@@ -40,15 +40,31 @@
 <p>
 <table align=center>
 	<tr>
-		<td class="details_screen">Place of Enrolment (TODO: drop down with list of braches)</td>
+		<td class="details_screen">Place of Enrolment</td>
+		<td>
+			<select name="place_of_enrolment">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+{*
 		<td><input type=text name="place_of_enrolment" value="{$smarty.post.place_of_enrolment}" size=25></td>
+*}
 	</tr>
 	<tr>
-		<td class="details_screen">Place of Lessons (TODO: drop down with list of braches)</td>
-		<td><input type=text name="place_of_lesson" value="{$smarty.post.place_of_lesson}" size=25></td>
+		<td class="details_screen">Place of Lessons</td>
+		<td>
+			<select name="place_of_lesson">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+{*		<td><input type=text name="place_of_lesson" value="{$smarty.post.place_of_lesson}" size=25></td> *}
 	</tr>
 	<tr>
-		<td class="details_screen">Date (TODO: date selector here)</td>
+		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
 		<td><input type=text name="date" value="{$smarty.post.date}" size=25></td>
 	</tr>
 	<tr>
@@ -125,8 +141,17 @@
 		<td class="details_screen" colspan=2>Parent or Guardian </td>
 	</tr>
 	<tr>
-		<td class="details_screen">Relationship (TODO: drop down with list of relationship types)</td>
+		<td class="details_screen">Relationship</td>
+		<td>
+			<select name="guardian1_relationship">
+			{foreach from=$relation item=relation_row}
+				<option {if $relation_row.id == "1"} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
+			{/foreach}
+			</select>
+		</td>
+	{*
 		<td><input type=text name="guardian1_relationship" value="{$smarty.post.guardian1_relationship}" size=25></td>
+	*}
 	</tr>
 	<tr>
 		<td class="details_screen">First name</td>
@@ -173,8 +198,17 @@
 		<td class="details_screen" colspan=2>Parent or Guardian 2</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Relationship (TODO: drop down with list of relationship types)</td>
+		<td class="details_screen">Relationship</td>
+		<td>
+			<select name="guardian2_relationship">
+			{foreach from=$relation item=relation_row}
+				<option {if $relation_row.id == "1"} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
+			{/foreach}
+			</select>
+		</td>
+		{*
 		<td><input type=text name="guardian2_relationship" value="{$smarty.post.guardian2_relationship}" size=25></td>
+		*}
 	</tr>
 	<tr>
 		<td class="details_screen">First name</td>
