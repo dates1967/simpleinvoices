@@ -16,12 +16,12 @@
 
 {* if customer is updated or saved.*} 
 
-{if $smarty.post.name != "" && $smarty.post.customer != null } 
+{if $smarty.post.last_name != "" && $smarty.post.customer != null } 
 	{include file="../templates/default/customers/save.tpl"}
 
 {else}
 {* if  name was inserted *} 
-	{if $smarty.post.customer !=null} 
+	{if $smarty.post.last_name !=null} 
 		<div class="validation_alert"><img src="./images/common/important.png"</img>
 		You must enter a Customer name</div>
 		<hr />

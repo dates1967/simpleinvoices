@@ -5,12 +5,14 @@
 	<title>Simple Invoices</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+
 <script type="text/javascript">
     var GB_ROOT_DIR = "./modules/include/js/";
 </script>
 
 	<link rel="stylesheet" type="text/css" href="./templates/default/css/menu_header.css" media="screen" />
 
+	
 	<link rel="stylesheet" type="text/css" href="./templates/default/css/screen.css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="./templates/default/css/print.css" media="print"/>
 
@@ -18,6 +20,10 @@
 <script language="javascript" type="text/javascript" src="include/tiny-mce.conf.js"></script>
 <script type="text/javascript" src="include/jquery/jquery.js"></script>
 <script type="text/javascript" src="include/jquery/jquery.dom_creator.js"></script>
+
+
+
+
 
 <script type="text/javascript" src="./include/jquery/jquery.tabs.js"></script>
 
@@ -43,7 +49,18 @@
 	    }
 	</style>
 	<![endif]-->
-
+	
+	<script type="text/javascript">//<![CDATA[
+	    $(document).ready(function() {
+		$('#container-1').tabs();
+		$('#trigger-tab').after('<p><a href="#" onclick="$(\'#container-1\').triggerTab(3); return false;">Activate third tab</a></p>');
+		$('#custom-tab-by-hash').title('New window').click(function() {
+		    var win = window.open(this.href, '', 'directories,location,menubar,resizable,scrollbars,status,toolbar');
+		    win.focus();
+		});
+	    });
+	//]]></script>
+	
 {/literal}
 
 

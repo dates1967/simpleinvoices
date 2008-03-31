@@ -11,7 +11,7 @@ $install_path = $path['dirname'];
 
 include_once('./config/config.php');
 
-include_once("./include/sql_queries.php");
+include("./include/sql_queries.php");
 
 include_once('./include/language.php');
 
