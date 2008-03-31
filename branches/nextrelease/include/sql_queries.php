@@ -642,50 +642,53 @@ function updateBiller() {
 	return mysqlQuery($sql);
 }
 
-function updateCustomer() {
+class customer {
 
-	$sql = "
-			UPDATE
-				".TB_PREFIX."customers
-			SET
-				name = '$_POST[name]',
-				attention = '$_POST[attention]',
-				street_address = '$_POST[street_address]',
-				street_address2 = '$_POST[street_address2]',
-				city = '$_POST[city]',
-				state = '$_POST[state]',
-				zip_code = '$_POST[zip_code]',
-				country = '$_POST[country]',
-				phone = '$_POST[phone]',
-				mobile_phone = '$_POST[mobile_phone]',
-				fax = '$_POST[fax]',
-				email = '$_POST[email]',
-				notes = '$_POST[notes]',
-				custom_field1 = '$_POST[custom_field1]',
-				custom_field2 = '$_POST[custom_field2]',
-				custom_field3 = '$_POST[custom_field3]',
-				custom_field4 = '$_POST[custom_field4]',
-				enabled = '$_POST[enabled]'
-			WHERE
-				id = " . $_GET['id'];
+		function updateCustomer() {
 
-	return mysqlQuery($sql);
+			$sql = "
+					UPDATE
+						".TB_PREFIX."customers
+					SET
+						name = '$_POST[name]',
+						attention = '$_POST[attention]',
+						street_address = '$_POST[street_address]',
+						street_address2 = '$_POST[street_address2]',
+						city = '$_POST[city]',
+						state = '$_POST[state]',
+						zip_code = '$_POST[zip_code]',
+						country = '$_POST[country]',
+						phone = '$_POST[phone]',
+						mobile_phone = '$_POST[mobile_phone]',
+						fax = '$_POST[fax]',
+						email = '$_POST[email]',
+						notes = '$_POST[notes]',
+						custom_field1 = '$_POST[custom_field1]',
+						custom_field2 = '$_POST[custom_field2]',
+						custom_field3 = '$_POST[custom_field3]',
+						custom_field4 = '$_POST[custom_field4]',
+						enabled = '$_POST[enabled]'
+					WHERE
+						id = " . $_GET['id'];
+
+			return mysqlQuery($sql);
+		}
+
+		function insertCustomer() {
+			
+			extract( $_POST );
+			$sql = "INSERT INTO ".TB_PREFIX."customers VALUES (NULL,'$attention', '$name','$street_address','$street_address2','$city','$state','$zip_code','$country','$phone', '$mobile_phone', '$fax', '$email', '$notes', '$custom_field1', '$custom_field2', '$custom_field3', '$custom_field4', '$enabled')";
+			
+			return mysqlQuery($sql);
+			
+		}
+
+		function searchCustomers($search) {
+			$sql = "SELECT * FROM  `".TB_PREFIX."customers` WHERE  `name` LIKE  '%$search%'";
+
+			return sql2array($sql);
+		}	
 }
-
-function insertCustomer() {
-	
-	extract( $_POST );
-	$sql = "INSERT INTO ".TB_PREFIX."customers VALUES (NULL,'$attention', '$name','$street_address','$street_address2','$city','$state','$zip_code','$country','$phone', '$mobile_phone', '$fax', '$email', '$notes', '$custom_field1', '$custom_field2', '$custom_field3', '$custom_field4', '$enabled')";
-	
-	return mysqlQuery($sql);
-	
-}
-
-function searchCustomers($search) {
-	$sql = "SELECT * FROM  `".TB_PREFIX."customers` WHERE  `name` LIKE  '%$search%'";
-
-	return sql2array($sql);
-}	
 
 function getInvoices(&$query) {
 	global $config;
