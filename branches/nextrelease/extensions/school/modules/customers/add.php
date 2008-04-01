@@ -22,8 +22,10 @@ checkLogin();
 $customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
-if ($_POST['name'] != "" ) {
-	include("./modules/customers/save.php");
+if ($_POST['last_name'] != "" ) {
+
+	include("./extensions/school/modules/customers/save.php");
+
 }
 
 

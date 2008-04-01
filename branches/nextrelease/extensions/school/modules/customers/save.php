@@ -33,6 +33,8 @@ if ($op === "insert_customer") {
 	if ($iCustomer->insertCustomer()) {
 		$saved = true;
 //		 saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
+	}else {
+				die(mysql_error());
 	}
 }
 

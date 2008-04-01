@@ -79,7 +79,7 @@ if ($_POST['action'] == "insert" ) {
 		//$invoice_class_name = empty($extension['invoice_class_name']) ? "invoice" : $extension['invoice_class_name'] ;
 		$insertII = new gene_invoice;
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
-				//$saved = true;
+				$saved = true;
 			} else {
 				die(mysql_error());
 			}

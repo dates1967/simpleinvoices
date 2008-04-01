@@ -5,8 +5,7 @@ class school_student extends customer {
 function insertCustomer() {
 	
 	extract( $_POST );
-	$sql = "INSERT 
-				INTO ".TB_PREFIX."customers 
+	$sql = "INSERT INTO ".TB_PREFIX."customers 
 				(
 					attention,
 					name,

@@ -16,7 +16,7 @@
 
 {* if customer is updated or saved.*} 
 
-{if $smarty.post.last_name != "" && $smarty.post.customer != null } 
+{if $smarty.post.last_name != "" && $smarty.post.first_name != null } 
 	{include file="../templates/default/customers/save.tpl"}
 
 {else}
@@ -102,7 +102,7 @@
 		<td><input type=text name="state" value="{$smarty.post.state}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.zip}</td>
+		<td class="details_screen">Post code</td>
 		<td><input type=text name="zip_code" value="{$smarty.post.zip_code}" size=25></td>
 	</tr>
 	<tr>
@@ -114,7 +114,7 @@
 		<td><input type=text name="phone" value="{$smarty.post.phone}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.mobile_phone}</td>
+		<td class="details_screen">Cell phone</td>
 		<td><input type=text name="mobile_phone" value="{$smarty.post.mobile_phone}" size=25></td>
 	</tr>
 	<tr>
