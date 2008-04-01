@@ -110,14 +110,12 @@ ADD `place_of_lesson` INT( 11 ) NULL ,
 ADD `date` DATE NULL ,
 ADD `first_name` VARCHAR( 255 ) NULL ,
 ADD `middle_name` VARCHAR( 255 ) NULL ,
-ADD `last_name` VARCHAR( 255 ) NULL ,
 ADD `birthday` DATE NULL ,
 ADD `gender` VARCHAR( 255 ) NULL ,
-ADD `age` VARCHAR( 255 ) NULL ,
 ADD `passport_number` VARCHAR( 255 ) NULL ,
 ADD `passport_issued_at` VARCHAR( 255 ) NULL ,
-ADD `passport_issued_on` DATE NULL ,
-ADD `cell_phone` VARCHAR( 255 ) NULL ;
+ADD `passport_issued_on` DATE NULL ;
+
 */
 
 /*

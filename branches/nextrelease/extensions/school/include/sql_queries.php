@@ -7,7 +7,7 @@ function insertCustomer() {
 	extract( $_POST );
 	$sql = "INSERT INTO ".TB_PREFIX."customers 
 				(
-					attention,
+				
 					name,
 					street_address,
 					street_address2,
@@ -38,7 +38,7 @@ function insertCustomer() {
 					passport_number,
 					passport_issued_at,
 					passport_issued_on, 
-					cell_phone,
+					
 								
 								
 				
@@ -70,7 +70,7 @@ function insertCustomer() {
 				VALUES 
 				(
 					
-					'$attention', 
+					
 					'$name',
 					'$street_address',
 					'$street_address2',
@@ -101,7 +101,7 @@ function insertCustomer() {
 					'$passport_number',
 					'$passport_issued_at',
 					'$passport_issued_on', 
-					'$cell_phone',
+					
 								
 								
 				

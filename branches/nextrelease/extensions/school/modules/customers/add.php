@@ -22,7 +22,7 @@ checkLogin();
 $customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
-if ($_POST['last_name'] != "" ) {
+if ($_POST['name'] != "" ) {
 
 	include("./extensions/school/modules/customers/save.php");
 
@@ -44,5 +44,7 @@ $sql_rel = "select * from ".TB_PREFIX."student_relation";
 $rel_sql = sql2array($sql_rel);
 $smarty -> assign('relation',$rel_sql);
 
+/* Gender */
+$smarty->assign('gender', array('Male','Female'));
 
 ?>

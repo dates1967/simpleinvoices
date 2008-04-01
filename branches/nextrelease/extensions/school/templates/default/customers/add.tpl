@@ -16,16 +16,19 @@
 
 {* if customer is updated or saved.*} 
 
-{if $smarty.post.last_name != "" && $smarty.post.first_name != null } 
+{if $smarty.post.name != "" && $smarty.post.name != null } 
 	{include file="../templates/default/customers/save.tpl"}
 
 {else}
 {* if  name was inserted *} 
-	{if $smarty.post.last_name !=null} 
+	{if $smarty.post.customer } 
 		<div class="validation_alert"><img src="./images/common/important.png"</img>
-		You must enter a Customer name</div>
+		You must enter a students name</div>
 		<hr />
 	{/if}
+	
+
+	
 <form name="frmpost" ACTION="index.php?module=customers&view=add" METHOD="post"><h3>Add New Student</h3>
 <hr />
 	
@@ -68,20 +71,48 @@
 		<td><input type=text name="date" value="{$smarty.post.date}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">Last Name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=text name="last_name" value="{$smarty.post.last_name}" size=25></td>
+		<td class="details_screen">Last name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td><input type=text name="name" value="{$smarty.post.name}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">First Name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td class="details_screen">First name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
 		<td><input type=text name="first_name" value="{$smarty.post.first_name}" size=25></td>
 	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td><input type=text name="middle_name" value="{$smarty.post.middle_name}" size=25></td>
 	</tr>
-	<td class="details_screen">{$LANG.customer_contact} <a
-		href="docs.php?t=help&p=customer_contact"
-		rel="gb_page_center[450, 450]"><img
-		src="./images/common/help-small.png"></img></a></td>
-	<td><input type=text name="attention" size=25 value="{$smarty.post.attention}"></td>
+	<tr>
+		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
+		<td><input type=text name="birthday" value="{$smarty.post.birthday}" size=25></td>
 	</tr>
+	<tr>
+		<td class="details_screen">Gender</td>
+		<td>
+		<select name="gender">
+			{html_options values=$gender output=$gender}
+		</select>
+		</td>
+		{* <td><input type=text name="birthday" value="{$smarty.post.birthday}" size=25></td> *}
+	</tr>
+	
+	<tr>
+		<td class="details_screen" colspan="2">Passport details:</td>
+	</tr>
+	<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport number</td>
+		<td><input type=text name="passport_number" value="{$smarty.post.passport_number}" size=25></td>
+	</tr>
+		<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued at</td>
+		<td><input type=text name="passport_issued_at" value="{$smarty.post.passport_issued_at}" size=25></td>
+	</tr>
+		<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued on (dd/mm/yyyy)</td>
+		<td><input type=text name="passport_issued_on" value="{$smarty.post.passport_issued_on}" size=25></td>
+	</tr>
+	
+	
 	<tr>
 		<td class="details_screen">{$LANG.street}</td>
 		<td><input type=text name="street_address" value="{$smarty.post.street_address}" size=25></td>
@@ -125,12 +156,14 @@
 		<td class="details_screen">{$LANG.email}</td>
 		<td><input type=text name="email" value="{$smarty.post.email}" size=25></td>
 	</tr>
-
-
 	<tr>
-		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
-		<td><input type=text name="birthday" value="{$smarty.post.birthday}" size=25></td>
+		<td class="details_screen">{$LANG.enabled}</td>
+		<td>
+			{html_options name=enabled options=$enabled selected=1}
+		</td>
 	</tr>
+
+
 	</table>
 </p>
 	</div>
@@ -159,7 +192,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Middle name</td>
-		<td><input type=text name="guardian1_last_name" value="{$smarty.post.guardian1_middle_name}" size=25></td>
+		<td><input type=text name="guardian1_middle_name" value="{$smarty.post.guardian1_middle_name}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Last Name</td>
@@ -191,7 +224,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Home address</td>
-		<td><input type=text name="guardian1_home_address" value="{$smarty.post.guardian1_home_address}" size=25></td>
+		<td><input type=text name="guardian1_address" value="{$smarty.post.guardian1_home_address}" size=25></td>
 	</tr>
 
 	<tr>
@@ -216,7 +249,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Middle name</td>
-		<td><input type=text name="guardian2_last_name" value="{$smarty.post.guardian2_middle_name}" size=25></td>
+		<td><input type=text name="guardian2_middle_name" value="{$smarty.post.guardian2_middle_name}" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Last Name</td>
@@ -248,7 +281,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Home address</td>
-		<td><input type=text name="guardian2_home_address" value="{$smarty.post.guardian2_home_address}" size=25></td>
+		<td><input type=text name="guardian2_address" value="{$smarty.post.guardian2_home_address}" size=25></td>
 	</tr>
 
 	
@@ -296,12 +329,7 @@
 		<td class="details_screen">{$LANG.notes}</td>
 		<td><textarea name='notes' rows=8 cols=50>{$smarty.post.notes}</textarea></td>
 	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.enabled}</td>
-		<td>
-			{html_options name=enabled options=$enabled selected=1}
-		</td>
-	</tr>
+
 {*
 	{showCustomFields categorieId="2"}
 *}
