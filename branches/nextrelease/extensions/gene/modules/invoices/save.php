@@ -48,9 +48,10 @@ if ($_POST['action'] == "insert" ) {
 		$product_id = mysql_insert_id();
 
 		if (insertInvoiceItem($invoice_id,1,$product_id,$_POST['tax_id'],$_POST['description'])) {
-			//$saved = true;
+			$saved = true;
 		}
 		else {
+			$saved = false;
 			die(mysql_error());
 		}
 	}
@@ -81,6 +82,7 @@ if ($_POST['action'] == "insert" ) {
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				$saved = true;
 			} else {
+				$saved = false;
 				die(mysql_error());
 			}
 		}
@@ -110,14 +112,23 @@ if ( $_POST['action'] == "edit") {
 		*/
 		$gene_shipping = empty($_POST['customField1']) ? 0 : $_POST['customField1'];
 		$gene_totalQuantity = 0;
-		for($l=0;!empty($_POST["quantity$l"]) && $l < $_POST['max_items']; $l++) {
-			$gene_totalQuantity += $_POST["quantity$l"];
+		for($l=0;$l < $_POST['max_items']; $l++) {
+			$qty = $_POST["quantity$l"];
+			if($_POST["delete$l"] == "yes"){
+				$qty = 0;
+			}
+			echo $gene_totalQuantity =+  $gene_totalQuantity + $qty;
 		}
-		//echo "Total Qty:". $gene_totalQuantity."<br>";
+		echo "Total Qty:". $gene_totalQuantity ."<br>";
 		$gene_load = $gene_shipping / $gene_totalQuantity;
 
 	for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
 		
+		if($_POST["delete$i"] == "yes")
+		{
+			delete('invoice_items','id',$_POST["id$i"]);
+		}
+
 		$gene_load_unit_cost = $_POST["unit_cost$i"] + $gene_load;
 		
 		$updateII = new gene_invoice;
@@ -132,9 +143,10 @@ if ( $_POST['action'] == "edit") {
 				$_POST["unit_cost$i"],
 				$gene_load_unit_cost)
 			) {
-			//$saved =  true;
+			$saved =  true;
 		}
 		else {
+			$saved = false;
 			die(mysql_error());
 		}
 	}

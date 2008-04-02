@@ -125,7 +125,9 @@
 		
 		
 	        <tr>
-			<td><input type="text" id='quantity{$line}' name='quantity{$line}' value='{$invoiceItem.quantity}' size="10">
+			<td>
+			<input type="text" id='delete{$line}' name='delete{$line}' size="3">
+			<input type="text" id='quantity{$line}' name='quantity{$line}' value='{$invoiceItem.quantity}' size="10">
 			<input type="hidden" name='id{$line}' value='{$invoiceItem.id}' size="10"> </td>
 			
 	                <td>
