@@ -44,10 +44,10 @@ if ($_POST['action'] == "insert" ) {
 	* 1 = Total Invoices
 	*/
 	if($type==1) {
-		insertProduct(0,0);
+		product::insertProduct(0,0);
 		$product_id = mysql_insert_id();
 
-		if (insertInvoiceItem($invoice_id,1,$product_id,$_POST['tax_id'],$_POST['description'])) {
+		if (invoice::insertInvoiceItem($invoice_id,1,$product_id,$_POST['tax_id'],$_POST['description'])) {
 			//$saved = true;
 		}
 		else {
