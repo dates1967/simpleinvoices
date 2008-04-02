@@ -27,7 +27,7 @@
 		<li><a href="#section-1">General Info</a></li>
 		<li><a href="#section-2">Additional Info</a></li>
 		<li><a href="#section-3">Custom Fields</a></li>
-		<li><a href="#section-4">Invoice listings</a></li>
+		<li><a href="#section-4">Ledger</a></li>
 		<li><a href="#section-5">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
@@ -36,15 +36,18 @@
 	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-		{$customer.place_of_enrolment}
+			{$place_of_enrolment}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Place of Lessons</td>
 		<td>
-		{$customer.place_of_lesson}
+			{$place_of_lesson}
 		</td>
-{*		<td><input type=text name="place_of_lesson" value="{$smarty.post.place_of_lesson}" size=25></td> *}
+	</tr>
+	<tr>
+		<td class="details_screen">Student {$LANG.id}</td>
+		<td>{$customer.id}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
@@ -117,7 +120,7 @@
 	<tr>
 		<td class="details_screen">{$LANG.street2}</td>
 		<td>
-			{$customer.street_address}
+			{$customer.street_address2}
 		</td>
 	</tr>
 	<tr>
@@ -189,7 +192,7 @@
 	<tr>
 		<td class="details_screen">Relationship</td>
 		<td>
-			{$customer.guardian1_relationship}
+			{$guardian1_relationship}
 		</td>
 	{*
 		<td><input type=text name="guardian1_relationship" value="{$smarty.post.guardian1_relationship}" size=25></td>
@@ -261,7 +264,7 @@
 	<tr>
 		<td class="details_screen">Relationship</td>
 		<td>
-			{$customer.guardian2_relationship}
+			{$guardian2_relationship}
 		</td>
 	{*
 		<td><input type=text name="guardian1_relationship" value="{$smarty.post.guardian1_relationship}" size=25></td>
@@ -376,8 +379,23 @@
 	
 	
 	<div id="section-4" class="fragment">
-		<h4><u>{$LANG.invoice_listings}</u></h4>
+		<h4><u>Ledger</u></h4>
 		<p >
+		<table align="center">
+		<tr>
+			<td  colspan="6" class="details_screen">
+				Summary of accounts:
+			</td>
+		</tr>
+		<tr>
+			<td class="details_screen">Total charges</td>
+			<td style="text-align:right">{$stuff.total|number_format:2}</td>
+			<td class="details_screen">Total payments</td>
+			<td style="text-align:right">{$stuff.paid|number_format:2}</td>
+			<td class="details_screen">Balace</td>
+			<td style="text-align:right"><u>{$stuff.owing|number_format:2}</u></td>
+		</tr>
+		</table><br>
 		<table width="100%" align="center">
 			<tr class="sortHeader">
 
@@ -585,7 +603,443 @@
 
 <div id="top"><b>{$LANG.customer_edit}</b></div>
 <hr></hr>
+<div id="container-1">
+	<ul class="anchors">
+		<li><a href="#section-1">General Info</a></li>
+		<li><a href="#section-2">Additional Info</a></li>
+		<li><a href="#section-3">Custom Fields</a></li>
+		<li><a href="#section-4">Ledger</a></li>
+		<li><a href="#section-5">{$LANG.notes}</a></li>
+	</ul>
+	<div id="section-1" class="fragment">
+<p>
 <table align="center">
+
+<tr>
+		<td class="details_screen">Place of Enrolment</td>
+		<td>
+		TODO: {$customer.place_of_enrolment}
+		<select name="place_of_enrolment">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == $customer.place_of_enrolment} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Place of Lessons</td>
+		<td>
+		TODO: {$customer.place_of_lesson}
+					<select name="place_of_lesson">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == $customer.place_of_lesson} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+{*		<td><input type=text name="place_of_lesson" value="{$smarty.post.place_of_lesson}" size=25></td> *}
+	</tr>
+	<tr>
+		<td class="details_screen">Student {$LANG.id}</td>
+		<td>{$customer.id}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
+		<td>
+			<input type=text name="date" value="{$customer.date}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Last name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td>
+			<input type=text name="name" value="{$customer.name}" size=25>
+		</td>
+		
+	</tr>
+	<tr>
+		<td class="details_screen">First name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td>
+			<input type=text name="first_name" value="{$customer.first_name}" size=25>
+		</td>
+		
+	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td>
+			<input type=text name="middle_name" value="{$customer.middle_name}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
+		<td>
+			<input type=text name="birthday" value="{$customer.birthday}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Gender</td>
+		<td>
+		TODO: {$customer.gender}
+		<select name="gender">
+			{html_options values=$gender output=$gender selected=$customer.gender}
+		</select>
+		</td>
+	</tr>
+	{* <input type=text name=" " value="{$customer. }" size=25> *}
+	<tr>
+		<td class="details_screen" colspan="2">Passport details:</td>
+	</tr>
+	<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport number</td>
+		<td>
+			<input type=text name="passport_number" value="{$customer.passport_number}" size=25>
+		</td>
+	</tr>
+		<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued at</td>
+		<td>
+			<input type=text name="passport_issued_at" value="{$customer.passport_issued_at}" size=25>
+		</td>
+	</tr>
+		<tr>
+		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued on (dd/mm/yyyy)</td>
+		<td>
+			<input type=text name="passport_issued_on" value="{$customer.passport_issued_on}" size=25>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td class="details_screen">{$LANG.street}</td>
+		<td>
+			<input type=text name="street_address" value="{$customer.street_address}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.street2}</td>
+		<td>
+			<input type=text name="street_address2" value="{$customer.street_address2}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.city}</td>
+		<td>
+			<input type=text name="city" value="{$customer.city}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.state}</td>
+		<td>
+			<input type=text name="state" value="{$customer.state}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Post code</td>
+		<td>
+			<input type=text name="zip_code" value="{$customer.zip_code}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.country}</td>
+		<td>
+			<input type=text name="country" value="{$customer.country}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.phone}</td>
+		<td>
+			<input type=text name="phone" value="{$customer.phone}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Cell phone</td>
+		<td>
+			<input type=text name="mobile_phone" value="{$customer.mobile_phone}" size=25>
+		</td>	
+	<tr>
+		<td class="details_screen">{$LANG.fax}</td>
+		<td>
+			<input type=text name="fax" value="{$customer.fax}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.email}</td>
+		<td>
+			<input type=text name="email" value="{$customer.email}" size=25>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="details_screen">{$LANG.enabled}</td>
+		<td>
+			TODO : {$customer.enabled} {html_options name=enabled options=$enabled selected=$customer.enabled}
+		</td>
+	</tr>
+
+
+	</table>
+</p>
+	</div>
+	<div id="section-2" class="fragment">
+<p>
+	<table align=center>
+	<tr>
+		<td class="details_screen" colspan=2>Parent or Guardian </td>
+	</tr>
+	<tr>
+		<td class="details_screen">Relationship</td>
+		<td>
+			TODO: {$customer.guardian1_relationship}
+			<select name="guardian1_relationship">
+			{foreach from=$relation item=relation_row}
+				<option {if $relation_row.id == $customer.guardian1_relationship} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
+			{/foreach}
+			</select>
+		</td>
+	{*
+		<td><input type=text name="guardian1_relationship" value="{$smarty.post.guardian1_relationship}" size=25></td>
+	*}
+	</tr>
+	<tr>
+		<td class="details_screen">First name</td>
+		<td>
+			<input type=text name="guardian1_first_name" value="{$customer.guardian1_first_name}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td>
+			<input type=text name="guardian1_middle_name" value="{$customer.guardian1_middle_name}" size=25>
+		</td>	
+	</tr>
+	<tr>
+		<td class="details_screen">Last Name</td>
+		<td>
+			<input type=text name="guardian1_last_name" value="{$customer.guardian1_last_name}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home phone</td>
+		<td>
+			<input type=text name="guardian1_home_phone" value="{$customer.guardian1_home_phone}" size=25>
+		</td>	</tr>
+	<tr>
+		<td class="details_screen">Cell phone</td>
+		<td>
+			<input type=text name="guardian1_cell_phone" value="{$customer.guardian1_cell_phone}" size=25>
+		</td>	
+	</tr>
+	<tr>
+		<td class="details_screen">Email</td>
+			<td>
+			<input type=text name="guardian1_email" value="{$customer.guardian1_email}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport number</td>
+		<td>
+			<input type=text name="guardian1_passport_number" value="{$customer.guardian1_passport_number}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued at</td>
+		<td>
+			<input type=text name="guardian1_passport_issued_at" value="{$customer.guardian1_passport_issued_at}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued on</td>
+		<td>
+			<input type=text name="guardian1_passport_issued_on" value="{$customer.guardian1_passport_issued_on}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home address</td>
+			<td>
+			<input type=text name="guardian1_address" value="{$customer.guardian1_address}" size=25>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="details_screen" colspan=2>Parent or Guardian 2</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Relationship</td>
+		<td>
+			TODO: {$customer.guardian2_relationship}
+			<select name="guardian2_relationship">
+			{foreach from=$relation item=relation_row}
+				<option {if $relation_row.id == $customer.guardian2_relationship} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
+			{/foreach}
+			</select>
+		</td>
+	{*
+		<td><input type=text name="guardian2_relationship" value="{$smarty.post.guardian2_relationship}" size=25></td>
+	*}
+	</tr>
+	<tr>
+		<td class="details_screen">First name</td>
+		<td>
+			<input type=text name="guardian2_first_name" value="{$customer.guardian2_first_name}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Middle name</td>
+		<td>
+			<input type=text name="guardian2_middle_name" value="{$customer.guardian2_middle_name}" size=25>
+		</td>	
+	</tr>
+	<tr>
+		<td class="details_screen">Last Name</td>
+		<td>
+			<input type=text name="guardian2_last_name" value="{$customer.guardian2_last_name}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home phone</td>
+		<td>
+			<input type=text name="guardian2_home_phone" value="{$customer.guardian2_home_phone}" size=25>
+		</td>	</tr>
+	<tr>
+		<td class="details_screen">Cell phone</td>
+		<td>
+			<input type=text name="guardian2_cell_phone" value="{$customer.guardian2_cell_phone}" size=25>
+		</td>	
+	</tr>
+	<tr>
+		<td class="details_screen">Email</td>
+			<td>
+			<input type=text name="guardian2_email" value="{$customer.guardian2_email}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport number</td>
+		<td>
+			<input type=text name="guardian2_passport_number" value="{$customer.guardian2_passport_number}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued at</td>
+		<td>
+			<input type=text name="guardian2_passport_issued_at" value="{$customer.guardian2_passport_issued_at}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Passport issued on</td>
+		<td>
+			<input type=text name="guardian2_passport_issued_on" value="{$customer.guardian2_passport_issued_on}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Home address</td>
+			<td>
+			<input type=text name="guardian2_address" value="{$customer.guardian2_address}" size=25>
+		</td>
+	</tr>
+
+	
+	</table>
+	</p>
+	</div>
+	<div id="section-3" class="fragment">
+	<p>
+	<table align=center>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.customer_cf1} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td>
+			<input type=text name="custom_field1" value="{$customer.custom_field1}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.customer_cf2} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td>
+			<input type=text name="custom_field2" value="{$customer.custom_field2}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.customer_cf3} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td>
+			<input type=text name="custom_field3" value="{$customer.custom_field3}" size=25>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.customer_cf4} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td>
+			<input type=text name="custom_field4" value="{$customer.custom_field4}" size=25>
+		</td>
+	</tr>
+	</table>
+	</p>
+	</div>
+	
+	
+	<div id="section-4" class="fragment">
+		<h4><u>Ledger</u></h4>
+		<p >
+		<table align="center">
+		<tr>
+			<td  colspan="6" class="details_screen">
+				Summary of accounts:
+			</td>
+		</tr>
+		<tr>
+			<td class="details_screen">Total charges</td>
+			<td style="text-align:right">{$stuff.total|number_format:2}</td>
+			<td class="details_screen">Total payments</td>
+			<td style="text-align:right">{$stuff.paid|number_format:2}</td>
+			<td class="details_screen">Balace</td>
+			<td style="text-align:right"><u>{$stuff.owing|number_format:2}</u></td>
+		</tr>
+		</table><br>
+		<table width="100%" align="center">
+			<tr class="sortHeader">
+
+				<th class="sortable">{$LANG.id}</th>
+				<th class="sortable">{$LANG.total}</th>
+				<th class="sortable">{$LANG.paid}</th>
+				<th class="sortable">{$LANG.owing}</th>
+				<th class="sortable">{$LANG.date_created}</th>
+
+			</tr>
+		
+			{foreach from=$invoices item=invoice}
+	
+			<tr class="index_table">
+				<td class="details_screen"><a href="index.php?module=invoices&view=quick_view&invoice={$invoice.id}">{$invoice.id}</a></td>
+				<td class="details_screen">{$invoice.total|number_format:2}</td>
+				<td class="details_screen">{$invoice.paid|number_format:2}</td>
+				<td class="details_screen">{$invoice.owing|number_format:2}</td>
+				<td class="details_screen">{$invoice.date}</td>
+			</tr>
+
+			{/foreach}
+		</table>	
+		</p>
+	</div>
+	
+	<div id="section-5" class="fragment">
+	<p>
+	<table align=center>
+	<tr>
+		<td class="details_screen">{$LANG.notes}</td>
+		<td>
+			<textarea name='notes' rows=8 cols=50>{$customer.notes}</textarea>
+		</td>
+	</tr>
+
+
+<!--
+{*
 	<tr>
 		<td class="details_screen">{$LANG.customer} {$LANG.id}</td>
 		<td>{$customer.id}</td>
@@ -678,11 +1132,13 @@
 			{html_options name=enabled options=$enabled selected=$customer.enabled}
 		</td>
 	</tr>
+*}
+-->
 </table>
-
-
-<hr></hr>
-<input type="submit" name="cancel" value="{$LANG.cancel}" />
+</div>
+</div>
+<br>
+<!-- <input type="submit" name="cancel" value="{$LANG.cancel}" /> -->
 <input type="submit" name="save_customer" value="{$LANG.save_customer}" />
 <input type="hidden" name="op" value="edit_customer" />
 
