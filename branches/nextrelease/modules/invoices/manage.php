@@ -24,10 +24,10 @@ checkLogin();
 EOD;*/
 
 $sql = "SELECT	iv.id, b.name As biller, c.name As customer, 
-	(CASE	WHEN datediff(now(),date) <= 14 THEN '0-14' 
-			WHEN datediff(now(),date) <= 30 THEN '15-30'
-			WHEN datediff(now(),date) <= 60 THEN '31-60'
-			WHEN datediff(now(),date) <= 60 THEN '61-90'
+	(CASE	WHEN datediff(now(),iv.date) <= 14 THEN '0-14' 
+			WHEN datediff(now(),iv.date) <= 30 THEN '15-30'
+			WHEN datediff(now(),iv.date) <= 60 THEN '31-60'
+			WHEN datediff(now(),iv.date) <= 60 THEN '61-90'
 			ELSE '90+' END ) as overdue,
 	iv.type_id,
 	pf.pref_inv_wording,
