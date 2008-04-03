@@ -122,11 +122,13 @@
 	        </tr>
 	
 {foreach key=line from=$invoiceItems item=invoiceItem name=line_item_number}
-		
-		
-	        <tr>
+		{*
+		$('.row{$line}').hide(); $('#delete{$line}').attr('value','yes');
+		*}
+	        <tr class="row{$line}">
 			<td>
-			<input type="text" id='delete{$line}' name='delete{$line}' size="3">
+			<a title="Delete line item"onclick="delete_line_item({$line}); " class="show-customer" href="#" style="display: inline;"><img src="./images/common/delete.png" /></a>
+			<input type="hidden" id='delete{$line}' name='delete{$line}' size="3">
 			<input type="text" id='quantity{$line}' name='quantity{$line}' value='{$invoiceItem.quantity}' size="10">
 			<input type="hidden" name='id{$line}' value='{$invoiceItem.id}' size="10"> </td>
 			

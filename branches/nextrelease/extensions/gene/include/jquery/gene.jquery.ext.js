@@ -40,3 +40,10 @@ function invoice_product_change_cost(si_product,row_number,quantity)
 		}
 	});
 }
+
+function delete_line_item(row_number)
+{
+	$('.row'+row_number).hide(); 
+	$('#delete'+row_number).attr('value','yes');
+}
+
