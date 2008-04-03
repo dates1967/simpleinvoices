@@ -107,7 +107,7 @@
 		<td colspan=6>
 		<table>
 		<tr>
-        	        <td class='details_screen'>{$LANG.quantity_short}</td><td class='details_screen'>{$LANG.description}</td>
+        	        <td class='details_screen'>&nbsp;&nbsp;&nbsp;&nbsp;{$LANG.quantity_short}</td><td class='details_screen'>{$LANG.description}</td>
 	     {if $invoice.preference_id == 1 }
 			<td class='details_screen'> 
 				Unit Price		
@@ -127,7 +127,7 @@
 		*}
 	        <tr class="row{$line}">
 			<td>
-			<a title="Delete line item"onclick="delete_line_item({$line}); " class="show-customer" href="#" style="display: inline;"><img src="./images/common/delete.png" /></a>
+			<a title="Delete this line item"onclick="delete_line_item({$line}); " class="show-customer" href="#" style="display: inline;"><img src="./images/common/delete.png" /></a>
 			<input type="hidden" id='delete{$line}' name='delete{$line}' size="3">
 			<input type="text" id='quantity{$line}' name='quantity{$line}' value='{$invoiceItem.quantity}' size="10">
 			<input type="hidden" name='id{$line}' value='{$invoiceItem.id}' size="10"> </td>
