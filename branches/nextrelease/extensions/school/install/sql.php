@@ -130,7 +130,7 @@ ALTER TABLE
 		ADD `guardian1_email` VARCHAR(255) NULL AFTER `guardian1_cell_phone`, 
 		ADD `guardian1_passport_number` VARCHAR(255) NULL AFTER `guardian1_email`, 
 		ADD `guardian1_passport_issued_at` VARCHAR(255) NULL AFTER `guardian1_passport_number`, 
-		ADD `guardian1_passport_issued_on` VARCHAR(255) NULL AFTER `guardian1_passport_issued_at`, 
+		ADD `guardian1_passport_issued_on` DATE NULL AFTER `guardian1_passport_issued_at`, 
 		ADD `guardian1_address` VARCHAR(255) NULL AFTER `guardian1_passport_issued_on`, 
 		ADD `guardian2_relationship` VARCHAR(11) NULL AFTER `guardian1_address`, 
 		ADD `guardian2_first_name` VARCHAR(255) NULL AFTER `guardian2_relationship`, 
@@ -141,7 +141,7 @@ ALTER TABLE
 		ADD `guardian2_email` VARCHAR(255) NULL AFTER `guardian2_cell_phone`, 
 		ADD `guardian2_passport_number` VARCHAR(255) NULL AFTER `guardian2_email`, 
 		ADD `guardian2_passport_issued_at` VARCHAR(255) NULL AFTER `guardian2_passport_number`, 
-		ADD `guardian2_passport_issued_on` VARCHAR(255) NULL AFTER `guardian2_passport_issued_at`, 
+		ADD `guardian2_passport_issued_on` DATE NULL AFTER `guardian2_passport_issued_at`, 
 		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`
 ;
 */

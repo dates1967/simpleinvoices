@@ -78,13 +78,19 @@
 	<tr>
 		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
 		<td>
-			{$customer.birthday}
+			{$customer_birthday.day }/{$customer_birthday.month}/{$customer_birthday.year}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Gender</td>
 		<td>
 			{$customer.gender}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Age</td>
+		<td>
+			{$age}
 		</td>
 	</tr>
 	
@@ -106,7 +112,7 @@
 		<tr>
 		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued on (dd/mm/yyyy)</td>
 		<td>
-			{$customer.passport_issued_on}
+			{$customer_passport_issued_on.day }/{$customer_passport_issued_on.month}/{$customer_passport_issued_on.year}
 		</td>
 	</tr>
 	
@@ -173,9 +179,7 @@
 	<tr>
 		<td class="details_screen">{$LANG.enabled}</td>
 		<td>
-		<td>
-			{$customer.enabled}
-		</td>
+			{$customer.wording_for_enabled}
 		</td>
 	</tr>
 
@@ -248,7 +252,7 @@
 	<tr>
 		<td class="details_screen">Passport issued on</td>
 		<td>
-			{$customer.guardian1_passport_issued_on}
+			{$customer_guardian1_passport_issued_on.day }/{$customer_guardian1_passport_issued_on.month}/{$customer_guardian1_passport_issued_on.year}
 		</td>
 	</tr>
 	<tr>
@@ -320,7 +324,7 @@
 	<tr>
 		<td class="details_screen">Passport issued on</td>
 		<td>
-			{$customer.guardian2_passport_issued_on}
+			{$customer_guardian2_passport_issued_on.day }/{$customer_guardian2_passport_issued_on.month}/{$customer_guardian2_passport_issued_on.year}
 		</td>
 	</tr>
 	<tr>
@@ -618,7 +622,6 @@
 <tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-		TODO: {$customer.place_of_enrolment}
 		<select name="place_of_enrolment">
 			{foreach from=$branch item=branch_row}
 				<option {if $branch_row.id == $customer.place_of_enrolment} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
@@ -629,7 +632,6 @@
 	<tr>
 		<td class="details_screen">Place of Lessons</td>
 		<td>
-		TODO: {$customer.place_of_lesson}
 					<select name="place_of_lesson">
 			{foreach from=$branch item=branch_row}
 				<option {if $branch_row.id == $customer.place_of_lesson} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
@@ -671,16 +673,29 @@
 	<tr>
 		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
 		<td>
-			<input type=text name="birthday" value="{$customer.birthday}" size=25>
+		<select name="birthday_day">
+			{html_options values=$day output=$day selected=$customer_birthday.day}
+		</select>
+		<select name="birthday_month">
+			{html_options options=$month selected=$customer_birthday.month}
+		</select>
+		<select name="birthday_year">
+			{html_options values=$year output=$year selected=$customer_birthday.year}
+		</select>
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Gender</td>
 		<td>
-		TODO: {$customer.gender}
 		<select name="gender">
 			{html_options values=$gender output=$gender selected=$customer.gender}
 		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Age</td>
+		<td>
+			{$age}
 		</td>
 	</tr>
 	{* <input type=text name=" " value="{$customer. }" size=25> *}
@@ -702,7 +717,15 @@
 		<tr>
 		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued on (dd/mm/yyyy)</td>
 		<td>
-			<input type=text name="passport_issued_on" value="{$customer.passport_issued_on}" size=25>
+		<select name="passport_issued_on_day">
+			{html_options values=$day output=$day selected=$customer_passport_issued_on.day}
+		</select>
+		<select name="passport_issued_on_month">
+			{html_options options=$month selected=$customer_passport_issued_on.month}
+		</select>
+		<select name="passport_issued_on_year">
+			{html_options values=$year output=$year selected=$customer_passport_issued_on.year}
+		</select>
 		</td>
 	</tr>
 	
@@ -770,7 +793,7 @@
 	<tr>
 		<td class="details_screen">{$LANG.enabled}</td>
 		<td>
-			TODO : {$customer.enabled} {html_options name=enabled options=$enabled selected=$customer.enabled}
+			{html_options name=enabled options=$enabled selected=$customer.enabled}
 		</td>
 	</tr>
 
@@ -787,7 +810,6 @@
 	<tr>
 		<td class="details_screen">Relationship</td>
 		<td>
-			TODO: {$customer.guardian1_relationship}
 			<select name="guardian1_relationship">
 			{foreach from=$relation item=relation_row}
 				<option {if $relation_row.id == $customer.guardian1_relationship} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
@@ -848,7 +870,15 @@
 	<tr>
 		<td class="details_screen">Passport issued on</td>
 		<td>
-			<input type=text name="guardian1_passport_issued_on" value="{$customer.guardian1_passport_issued_on}" size=25>
+		<select name="guardian1_passport_issued_on_day">
+			{html_options values=$day output=$day selected=$customer_guardian1_passport_issued_on.day}
+		</select>
+		<select name="guardian1_passport_issued_on_month">
+			{html_options options=$month selected=$customer_birthday.month}
+		</select>
+		<select name="guardian1_passport_issued_on_year">
+			{html_options values=$year output=$year selected=$customer_guardian1_passport_issued_on.year}
+		</select>
 		</td>
 	</tr>
 	<tr>
@@ -864,7 +894,6 @@
 	<tr>
 		<td class="details_screen">Relationship</td>
 		<td>
-			TODO: {$customer.guardian2_relationship}
 			<select name="guardian2_relationship">
 			{foreach from=$relation item=relation_row}
 				<option {if $relation_row.id == $customer.guardian2_relationship} selected {/if} value="{$relation_row.id}">{$relation_row.relation}</option>
@@ -925,7 +954,15 @@
 	<tr>
 		<td class="details_screen">Passport issued on</td>
 		<td>
-			<input type=text name="guardian2_passport_issued_on" value="{$customer.guardian2_passport_issued_on}" size=25>
+		<select name="guardian2_passport_issued_on_day">
+			{html_options values=$day output=$day selected=$customer_guardian2_passport_issued_on.day}
+		</select>
+		<select name="guardian2_passport_issued_on_month">
+			{html_options options=$month selected=$customer_guardian2_passport_issued_on.month}
+		</select>
+		<select name="guardian2_passport_issued_on_year">
+			{html_options values=$year output=$year selected=$customer_guardian2_passport_issued_on.year}
+		</select>
 		</td>
 	</tr>
 	<tr>

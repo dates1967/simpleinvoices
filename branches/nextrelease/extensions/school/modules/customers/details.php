@@ -63,8 +63,13 @@ $invoices = sql2array($sSQL);
 $pageActive = "customers";
 $smarty->assign('pageActive', $pageActive);
 
+
 $smarty -> assign("stuff",$stuff);
 $smarty -> assign('customer',$customer);
+$smarty -> assign('customer_birthday',$customer_birthday = format_date($customer['birthday']) );
+$smarty -> assign('customer_passport_issued_on',$customer_passport_issued_on = format_date($customer['passport_issued_on']) );
+$smarty -> assign('customer_guardian1_passport_issued_on',$customer_guardian1_passport_issued_on = format_date($customer['guardian1_passport_issued_on']) );
+$smarty -> assign('customer_guardian2_passport_issued_on',$customer_guardian2_passport_issued_on = format_date($customer['guardian2_passport_issued_on']) );
 $smarty -> assign('invoices',$invoices);
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
@@ -98,5 +103,16 @@ $smarty -> assign('guardian2_relationship',$g2_rel_sql->relation);
 
 /* Gender */
 $smarty->assign('gender', array('Male','Female'));
+
+/* date selctors */
+$smarty -> assign('year',$year = year());
+$smarty -> assign('year_now',$year_now = date('Y') );
+$smarty -> assign('month',$month = month());
+$smarty -> assign('day',$day = day());
+
+/* Age */
+$calc_month = $customer_birthday['month'] ; $calc_day = $customer_birthday['day']; $calc_year = $customer_birthday['year'] ;
+
+$smarty -> assign('age',$calc_age = calc_age($calc_month, $calc_day, $calc_year));
 
 ?>

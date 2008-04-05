@@ -92,11 +92,11 @@ class school_student extends customer {
 						'$date',
 						'$first_name',
 						'$middle_name',
-						'$birthday',
+						'$birthday_year-$birthday_month-$birthday_day', 
 						'$gender',
 						'$passport_number',
 						'$passport_issued_at',
-						'$passport_issued_on', 
+						'$passport_issued_on_year-$passport_issued_on_month-$passport_issued_on_day', 
 						
 									
 									
@@ -110,7 +110,7 @@ class school_student extends customer {
 						'$guardian1_email',
 						'$guardian1_passport_number',
 						'$guardian1_passport_issued_at',
-						'$guardian1_passport_issued_on',
+						'$guardian1_passport_issued_on_year-$guardian1_passport_issued_on_month-$guardian1_passport_issued_on_day', 
 						'$guardian1_address',
 						'$guardian2_relationship',
 						'$guardian2_first_name',
@@ -121,7 +121,7 @@ class school_student extends customer {
 						'$guardian2_email',
 						'$guardian2_passport_number',
 						'$guardian2_passport_issued_at',
-						'$guardian2_passport_issued_on',
+						'$guardian2_passport_issued_on_year-$guardian2_passport_issued_on_month-$guardian2_passport_issued_on_day', 
 						'$guardian2_address'
 					)
 				";
@@ -159,11 +159,11 @@ class school_student extends customer {
 						date = '$_POST[date]',
 						first_name = '$_POST[first_name]',
 						middle_name = '$_POST[middle_name]',
-						birthday = '$_POST[birthday]',
+						birthday = '$_POST[birthday_year]-$_POST[birthday_month]-$_POST[birthday_day]',
 						gender = '$_POST[gender]', 
 						passport_number = '$_POST[passport_number]',
 						passport_issued_at = '$_POST[passport_issued_at]',
-						passport_issued_on = '$_POST[passport_issued_on]', 
+						passport_issued_on = '$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]', 
 						
 									
 									
@@ -177,7 +177,7 @@ class school_student extends customer {
 						guardian1_email = '$_POST[guardian1_email]',
 						guardian1_passport_number = '$_POST[guardian1_passport_number]',
 						guardian1_passport_issued_at = '$_POST[guardian1_passport_issued_at]',
-						guardian1_passport_issued_on = '$_POST[guardian1_passport_issued_on]',
+						guardian1_passport_issued_on = '$_POST[guardian1_passport_issued_on_year]-$_POST[guardian1_passport_issued_on_month]-$_POST[guardian1_passport_issued_on_day]',
 						guardian1_address = '$_POST[guardian1_address]',
 						guardian2_relationship = '$_POST[guardian2_relationship]',
 						guardian2_first_name = '$_POST[guardian2_first_name]',
@@ -188,7 +188,7 @@ class school_student extends customer {
 						guardian2_email = '$_POST[guardian2_email]',
 						guardian2_passport_number = '$_POST[guardian2_passport_number]',
 						guardian2_passport_issued_at = '$_POST[guardian2_passport_issued_at]',
-						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on]',
+						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on_year]-$_POST[guardian2_passport_issued_on_month]-$_POST[guardian2_passport_issued_on_day]',
 						guardian2_address = '$_POST[guardian2_address]'
 						
 					WHERE
@@ -214,5 +214,77 @@ class school_student extends customer {
 			WHERE  `id` = '$id'";
 		*/	
 }
+
+
+
+
+function year()
+{
+	$i = array();
+	$y = 1930;
+	$i[1930] = $y;
+		while($y < 2020)
+		{
+			$y++;
+			$i[] = $y;
+		}
+
+	return $i;
+
+}
+
+function month()
+{
+	$i = array();
+	$i[01] = 'Jan';
+	$i[02] = 'Feb';
+	$i[03] = 'Mar';
+	$i[04] = 'Apr';
+	$i[05] = 'May';
+	$i[06] = 'Jun';
+	$i[07] = 'Jul';
+	$i[08] = 'Aug';
+	$i[09] = 'Sep';
+	$i[10] = 'Oct';
+	$i[11] = 'Nov';
+	$i[12] = 'Dec';
+
+	return $i;
+
+}
+
+function day()
+{
+	$i = array();
+	$y = 01;
+	$i[01] = $y;
+		while($y < 31)
+		{
+			$y++;
+			$i[] = $y;
+		}
+
+	return $i;
+}
+
+function format_date($date)
+{
+	$date_array = array();
+	$date_array['year'] = substr($date, 0, 4);
+	$date_array['month'] = substr($date, 5, 2);
+	$date_array['day'] = substr($date, 8, 2);
+
+	return $date_array;
+}
+
+function calc_age($month, $day, $year)
+{
+ (checkdate($month, $day, $year)==0) ? die("no such date.") : "";
+ $y=gmstrftime("%Y");
+ $m=gmstrftime("%m");
+ $d=gmstrftime("%d");
+ $age=$y-$year;
+ return (($m<=$month)&&($d<=$day)) ? $age-1 : $age;
+} 
 
 ?>

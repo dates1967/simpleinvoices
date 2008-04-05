@@ -83,8 +83,19 @@
 		<td><input type=text name="middle_name" value="{$smarty.post.middle_name}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">Birthday (dd/mm/yyyy)</td>
-		<td><input type=text name="birthday" value="{$smarty.post.birthday}" size=25></td>
+		<td class="details_screen">Birthday</td>
+		<td>
+	{* <input type=text name="birthday" value="{$smarty.post.birthday}" size=25> *}
+		<select name="birthday_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="birthday_month">
+			{html_options options=$month}
+		</select>
+		<select name="birthday_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Gender</td>
@@ -109,7 +120,18 @@
 	</tr>
 		<tr>
 		<td class="details_screen">&nbsp;&nbsp;&nbsp;Passport issued on (dd/mm/yyyy)</td>
-		<td><input type=text name="passport_issued_on" value="{$smarty.post.passport_issued_on}" size=25></td>
+		<td>
+		{* <input type=text name="passport_issued_on" value="{$smarty.post.passport_issued_on}" size=25> *}
+		<select name="passport_issued_on_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="passport_issued_on_month">
+			{html_options options=$month}
+		</select>
+		<select name="passport_issued_on_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
 	</tr>
 	
 	
@@ -220,7 +242,18 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Passport issued on</td>
-		<td><input type=text name="guardian1_passport_issued_on" value="{$smarty.post.guardian1_passport_issued_on}" size=25></td>
+		<td>
+		{* <input type=text name="guardian1_passport_issued_on" value="{$smarty.post.guardian1_passport_issued_on}" size=25> *}
+		<select name="guardian1_passport_issued_on_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="guardian1_passport_issued_on_month">
+			{html_options options=$month}
+		</select>
+		<select name="guardian1_passport_issued_on_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		<td>
 	</tr>
 	<tr>
 		<td class="details_screen">Home address</td>
@@ -277,7 +310,18 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Passport issued on</td>
-		<td><input type=text name="guardian2_passport_issued_on" value="{$smarty.post.guardian2_passport_issued_on}" size=25></td>
+		<td>
+		{* <input type=text name="guardian2_passport_issued_on" value="{$smarty.post.guardian2_passport_issued_on}" size=25> *}
+		<select name="guardian2_passport_issued_on_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="guardian2_passport_issued_on_month">
+			{html_options options=$month}
+		</select>
+		<select name="guardian2_passport_issued_on_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Home address</td>
