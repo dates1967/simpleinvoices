@@ -81,6 +81,9 @@ if ($_POST['action'] == "insert" ) {
 		$insertII = new gene_invoice;
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				$saved = true;
+				
+				gene_product::updateQty($_POST["products$i"],$_POST["quantity$i"],$type);
+
 			} else {
 				$saved = false;
 				die(mysql_error());

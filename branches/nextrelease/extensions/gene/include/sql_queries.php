@@ -128,5 +128,54 @@ class gene_product{
 			return mysqlQuery($sql);
 		}
 					
+		function updateQty($product_id,$product_qty,$invoice_type,$edit='' )
+		{
+
+			echo "Prod:".$product_id."Qty:".$product_qty."Type:".$invoice_type."Edit:".$edit."<br>";
+			$product = getProduct($product_id);
+
+			echo "Existing Qty:".$product['qty']."<br>" ;
+			/*If coming from new invoice/po screen*/
+			if ($edit == '')
+			{
+					/*if invoice reduce qty*/
+					if ($invoice_type==1)
+					{
+						 $newQty = ($product['qty'] - $product_qty);
+					}
+					/*if po increase qty*/
+					if ($invoice_type==5)
+					{
+						$newQty = ($product['qty'] + $product_qty);
+					}
+			}
+			/*If editing invoice/po*/
+			if ($edit != '')
+			{
+					/*if invoice reduce qty*/
+					if ($invoice_type==1)
+					{
+						$newQty = ($product['qty'] - $product_qty);
+					}
+					/*if po increase qty*/
+					if ($invoice_type==5)
+					{
+						$newQty = $product['qty'] + $product_qty;
+					}
+			}
+		
+			echo "New Qty:".$newQty."<br>";
+
+			$sql = "UPDATE ".TB_PREFIX."products
+					SET
+						qty = '$newQty'
+					WHERE
+						id = '$product_id'";
+
+			return mysqlQuery($sql);
+
+		}
+
 }
+
 ?>
