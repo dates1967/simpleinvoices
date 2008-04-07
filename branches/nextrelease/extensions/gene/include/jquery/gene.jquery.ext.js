@@ -44,7 +44,7 @@ function invoice_product_change_cost(si_product,row_number,quantity)
 function delete_line_item(row_number)
 {
 	$('.row'+row_number).hide(); 
+	$('#quantity'+row_number).attr('value','0');
 	$('#delete'+row_number).attr('value','yes');
-	$('#qty'+row_number).attr('value',0);
 }
 

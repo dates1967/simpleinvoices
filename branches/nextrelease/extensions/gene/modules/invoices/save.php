@@ -130,6 +130,8 @@ if ( $_POST['action'] == "edit") {
 		
 		/*If users blanks the qty then set it to 0*/
 		$_POST["quantity$i"]=="" ? $_POST["quantity$i"]==0 : $_POST["quantity$i"]==$_POST["quantity$i"] ;
+		
+		gene_product::updateQty($_POST["id$i"],$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],"edit");
 
 		if($_POST["delete$i"] == "yes")
 		{
@@ -139,11 +141,7 @@ if ( $_POST['action'] == "edit") {
 		$gene_load_unit_cost = $_POST["unit_cost$i"] + $gene_load;
 		
 		$updateII = new gene_invoice;
-		if (
-			gene_product::updateQty($_POST["id$i"],$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],"edit")
-			)
-		{
-			$updateII->updateInvoiceItem(
+		if ($updateII->updateInvoiceItem(
 				$_POST["id$i"],
 				$_POST["quantity$i"],
 				$_POST["products$i"],
@@ -151,8 +149,9 @@ if ( $_POST['action'] == "edit") {
 				$_POST["description$i"],
 				$_POST["unit_price$i"],
 				$_POST["unit_cost$i"],
-				$gene_load_unit_cost);
-
+				$gene_load_unit_cost)
+			)
+		{
 			$saved =  true;
 		}
 		else {

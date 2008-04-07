@@ -182,12 +182,43 @@ class gene_product{
 				$origItemQty = $invoiceItem['quantity'];
 
 				/*
-				* If edited an product changed, reduce qty by the original amount for that product
+				* If edited an product changed, reduce qty by the original amount for that product, then do the normal stuff for the new product
 				*/
 				//TODO code this section
-				if ($invoiceItem['product'] != $product_id)
-				{
 
+				if ($invoiceItem['product_id'] != $product_id)
+				{
+					echo "New Product added in edit<br>";
+					$productOrig = getProduct($product_id);
+					$productOrigQty = $productOrig['qty'];
+
+					//TODO this is for PO what about Invoics!
+					$newProductQty = $productOrigQty - $origItemQty ;
+					$sql = "UPDATE ".TB_PREFIX."products
+						SET
+							qty = $newProductQty
+						WHERE
+							id = ".$invoiceItem['product_id']."";
+
+					mysqlQuery($sql);
+					
+					//get NEW prod orig tqy then add new qty to it
+
+					if ($preference_id=="1")
+					{
+						$newQty = $product['qty'] - $product_qty;					
+					}
+					if ($preference_id=="5")
+					{
+						$newQty = $product['qty'] + $product_qty;					
+					}
+					$sql2 = "UPDATE ".TB_PREFIX."products
+						SET
+							qty = '$newQty'
+						WHERE
+							id = '$product_id'";
+	
+					return mysqlQuery($sql2);
 				}
 					
 				/*
@@ -209,19 +240,20 @@ class gene_product{
 						$differenceQty = $product_qty - $origItemQty;
 						$newQty = $product['qty'] + $differenceQty ;
 					}
+			
+					$sql = "UPDATE ".TB_PREFIX."products
+						SET
+							qty = '$newQty'
+						WHERE
+							id = '$product_id'";
+	
+					return mysqlQuery($sql);
 				}
 
 			}
 		
 			echo "Pref:".$preference_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
 
-			$sql = "UPDATE ".TB_PREFIX."products
-					SET
-						qty = '$newQty'
-					WHERE
-						id = '$product_id'";
-
-			return mysqlQuery($sql);
 
 		}
 
