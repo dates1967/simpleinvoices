@@ -45,5 +45,6 @@ function delete_line_item(row_number)
 {
 	$('.row'+row_number).hide(); 
 	$('#delete'+row_number).attr('value','yes');
+	$('#qty'+row_number).attr('value',0);
 }
 

@@ -68,6 +68,15 @@ class gene_invoice extends invoice {
 			return mysqlQuery($sql);
 		}
 
+
+		function getInvoiceItem($id) {
+			
+			$sql = "SELECT * FROM ".TB_PREFIX."invoice_items WHERE id =$id";
+			$query = mysqlQuery($sql);
+			return mysql_fetch_array($query);
+		}
+
+
 }
 class gene_product{
 
@@ -129,7 +138,7 @@ class gene_product{
 		}
 					
 /*
-* Function updateQty
+* Function: updateQty
 * Description: Basic inventory function for Simple Invoices. Created for the Gene extension
 * Parameters:
 * - $product_id: the id of the product 
@@ -139,10 +148,10 @@ class gene_product{
 * - $action: this details from what type of page the user came from, ie. edit invoice or new invoice creation. 
 *
 */		
-		function updateQty($product_id,$product_qty,$preference_id,$action )
+		function updateQty($item_id,$product_id,$product_qty,$preference_id,$action)
 		{
 
-			//echo "Prod:".$product_id."Qty:".$product_qty."Type:".$invoice_type."Action:".$action."<br>";
+			echo "Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."<br>";
 			$product = getProduct($product_id);
 			//echo "Existing Qty:".$product['qty']."<br>" ;
 			/*If coming from new invoice/po screen*/
@@ -160,28 +169,51 @@ class gene_product{
 					}
 			}
 			/*If editing invoice/po*/
-			if ($action == 'edit')
+			if ($action == "edit")
 			{
-		
+
+
+
 				/*	
 				* If invoice edited and qty adjusted add or substract the difference between old qty and new qty to the product qty record
 				*/
-				$invoiceItems = getInvoiceItems($id);
+
+				$invoiceItem = gene_invoice::getInvoiceItem($item_id);
+				$origItemQty = $invoiceItem['quantity'];
+
+				/*
+				* If edited an product changed, reduce qty by the original amount for that product
+				*/
+				//TODO code this section
+				if ($invoiceItem['product'] != $product_id)
+				{
+
+				}
+					
+				/*
+				* If invoice edited and product not changes (which is good :) ) the do this
+				*/
+				if ($invoiceItem['product'] == $product_id)
+				{
 
 
 					/*if invoice reduce qty*/
-					if ($preference_id==1)
+					if ($preference_id=="1")
 					{
-						$newQty = ($product['qty'] - $product_qty);
+						$differenceQty = $product_qty - $origItemQty;
+						$newQty = $product['qty'] - $differenceQty ;
 					}
 					/*if po increase qty*/
-					if ($preferece_id==5)
+					if ($preference_id=="5")
 					{
-						$newQty = $product['qty'] + $product_qty;
+						$differenceQty = $product_qty - $origItemQty;
+						$newQty = $product['qty'] + $differenceQty ;
 					}
+				}
+
 			}
 		
-			//echo "New Qty:".$newQty."<br>";
+			echo "Pref:".$preference_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
 
 			$sql = "UPDATE ".TB_PREFIX."products
 					SET

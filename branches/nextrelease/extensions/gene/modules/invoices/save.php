@@ -82,7 +82,7 @@ if ($_POST['action'] == "insert" ) {
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				$saved = true;
 				
-				gene_product::updateQty($_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],'creation');
+				gene_product::updateQty('',$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],'creation');
 
 			} else {
 				$saved = false;
@@ -120,13 +120,17 @@ if ( $_POST['action'] == "edit") {
 			if($_POST["delete$l"] == "yes"){
 				$qty = 0;
 			}
-			echo $gene_totalQuantity =+  $gene_totalQuantity + $qty;
+			//echo $gene_totalQuantity =+  $gene_totalQuantity + $qty;
 		}
-		echo "Total Qty:". $gene_totalQuantity ."<br>";
+		//echo "Total Qty:". $gene_totalQuantity ."<br>";
 		$gene_load = $gene_shipping / $gene_totalQuantity;
 
-	for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
+	//for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
+	for($i=0;$i < $_POST['max_items'];$i++) {
 		
+		/*If users blanks the qty then set it to 0*/
+		$_POST["quantity$i"]=="" ? $_POST["quantity$i"]==0 : $_POST["quantity$i"]==$_POST["quantity$i"] ;
+
 		if($_POST["delete$i"] == "yes")
 		{
 			delete('invoice_items','id',$_POST["id$i"]);
@@ -136,6 +140,9 @@ if ( $_POST['action'] == "edit") {
 		
 		$updateII = new gene_invoice;
 		if (
+			gene_product::updateQty($_POST["id$i"],$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],"edit")
+			)
+		{
 			$updateII->updateInvoiceItem(
 				$_POST["id$i"],
 				$_POST["quantity$i"],
@@ -144,8 +151,8 @@ if ( $_POST['action'] == "edit") {
 				$_POST["description$i"],
 				$_POST["unit_price$i"],
 				$_POST["unit_cost$i"],
-				$gene_load_unit_cost)
-			) {
+				$gene_load_unit_cost);
+
 			$saved =  true;
 		}
 		else {
