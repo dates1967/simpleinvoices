@@ -82,7 +82,7 @@ if ($_POST['action'] == "insert" ) {
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				$saved = true;
 				
-				gene_product::updateQty($_POST["products$i"],$_POST["quantity$i"],$type);
+				gene_product::updateQty($_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],'creation');
 
 			} else {
 				$saved = false;

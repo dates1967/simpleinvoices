@@ -128,43 +128,60 @@ class gene_product{
 			return mysqlQuery($sql);
 		}
 					
-		function updateQty($product_id,$product_qty,$invoice_type,$edit='' )
+/*
+* Function updateQty
+* Description: Basic inventory function for Simple Invoices. Created for the Gene extension
+* Parameters:
+* - $product_id: the id of the product 
+* - $product_qty: the quantity of the product
+* - $preference_id: the invoice preference used for this invoice
+* -- different actions are based on different invoice preferences - ie. purchase Orders get handled differently then Invoices
+* - $action: this details from what type of page the user came from, ie. edit invoice or new invoice creation. 
+*
+*/		
+		function updateQty($product_id,$product_qty,$preference_id,$action )
 		{
 
-			echo "Prod:".$product_id."Qty:".$product_qty."Type:".$invoice_type."Edit:".$edit."<br>";
+			//echo "Prod:".$product_id."Qty:".$product_qty."Type:".$invoice_type."Action:".$action."<br>";
 			$product = getProduct($product_id);
-
-			echo "Existing Qty:".$product['qty']."<br>" ;
+			//echo "Existing Qty:".$product['qty']."<br>" ;
 			/*If coming from new invoice/po screen*/
-			if ($edit == '')
+			if ($action == "creation")
 			{
 					/*if invoice reduce qty*/
-					if ($invoice_type==1)
+					if ($preference_id==1)
 					{
-						 $newQty = ($product['qty'] - $product_qty);
+						 $newQty = $product['qty'] - $product_qty;
 					}
 					/*if po increase qty*/
-					if ($invoice_type==5)
+					if ($preference_id==5)
 					{
-						$newQty = ($product['qty'] + $product_qty);
+						$newQty = $product['qty'] + $product_qty;
 					}
 			}
 			/*If editing invoice/po*/
-			if ($edit != '')
+			if ($action == 'edit')
 			{
+		
+				/*	
+				* If invoice edited and qty adjusted add or substract the difference between old qty and new qty to the product qty record
+				*/
+				$invoiceItems = getInvoiceItems($id);
+
+
 					/*if invoice reduce qty*/
-					if ($invoice_type==1)
+					if ($preference_id==1)
 					{
 						$newQty = ($product['qty'] - $product_qty);
 					}
 					/*if po increase qty*/
-					if ($invoice_type==5)
+					if ($preferece_id==5)
 					{
 						$newQty = $product['qty'] + $product_qty;
 					}
 			}
 		
-			echo "New Qty:".$newQty."<br>";
+			//echo "New Qty:".$newQty."<br>";
 
 			$sql = "UPDATE ".TB_PREFIX."products
 					SET
