@@ -39,4 +39,10 @@ include('./modules/invoices/invoice.php');
 */
 $defaults['preference'] = 5;
 $smarty -> assign("defaults",$defaults);
+
+$smarty->assign('po_received', array('Not Received','Received'));
+
+$cf_label = getCustomFieldLabels();
+$smarty->assign('custom_field_labels', $cf_label);
+
 ?>

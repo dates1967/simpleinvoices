@@ -71,7 +71,19 @@
 
         {/section}
 	{$show_custom_field.1}
+			<tr>
+			<td class="details_screen">
+				{$custom_field_labels.invoice_cf2}
+			</td>
+			<td>
+			<select name="customField2" >
+				{html_options values=$po_received  output=$po_received }
+			</select>
+			</td>
+			</tr>
+{*
 	{$show_custom_field.2}
+*}
 	{$show_custom_field.3}
 	{$show_custom_field.4}
 {*

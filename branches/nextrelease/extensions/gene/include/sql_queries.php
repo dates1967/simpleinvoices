@@ -148,10 +148,10 @@ class gene_product{
 * - $action: this details from what type of page the user came from, ie. edit invoice or new invoice creation. 
 *
 */		
-		function updateQty($item_id,$product_id,$product_qty,$preference_id,$action)
+		function updateQty($invoice_id,$item_id,$product_id,$product_qty,$preference_id,$action,$flag)
 		{
 
-			echo "Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."<br>";
+			echo "Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."Flag:".$flag."<br>";
 			$product = getProduct($product_id);
 			//echo "Existing Qty:".$product['qty']."<br>" ;
 			/*If coming from new invoice/po screen*/
@@ -163,7 +163,7 @@ class gene_product{
 						 $newQty = $product['qty'] - $product_qty;
 					}
 					/*if po increase qty*/
-					if ($preference_id==5)
+					if ( ($preference_id==5) && ($flag=="Received") )
 					{
 						$newQty = $product['qty'] + $product_qty;
 					}
@@ -172,8 +172,9 @@ class gene_product{
 			if ($action == "edit")
 			{
 
-
-
+			$invoice = getInvoice($invoice_id);
+			$orig_flag_value = $invoice['custom_field2'];
+			echo "Orig Flag:".$orig_flag_value."<br>";
 				/*	
 				* If invoice edited and qty adjusted add or substract the difference between old qty and new qty to the product qty record
 				*/
@@ -208,7 +209,7 @@ class gene_product{
 					{
 						$newQty = $product['qty'] - $product_qty;					
 					}
-					if ($preference_id=="5")
+					if ( ($preference_id=="5") && ($flag =="Received") && ($orig_flag_value=="Not Received") );
 					{
 						$newQty = $product['qty'] + $product_qty;					
 					}
@@ -224,9 +225,10 @@ class gene_product{
 				/*
 				* If invoice edited and product not changes (which is good :) ) the do this
 				*/
-				if ($invoiceItem['product'] == $product_id)
+				if ($invoiceItem['product_id'] == $product_id)
 				{
 
+					echo "No Product added in edit<br>";
 
 					/*if invoice reduce qty*/
 					if ($preference_id=="1")
@@ -235,12 +237,17 @@ class gene_product{
 						$newQty = $product['qty'] - $differenceQty ;
 					}
 					/*if po increase qty*/
-					if ($preference_id=="5")
+					if ( ($preference_id=="5") && ($flag=="Received") && ($orig_flag_value=="Received") );
 					{
+						echo "Recevied & REceived<br>";
 						$differenceQty = $product_qty - $origItemQty;
 						$newQty = $product['qty'] + $differenceQty ;
 					}
-			
+					if ( ($preference_id=="5") && ($flag=="Received") && ($orig_flag_value=="Not Received") );
+					{
+						echo "Recevied & Not Received<br>";
+						$newQty = $product['qty'] + $product_qty ;
+					}
 					$sql = "UPDATE ".TB_PREFIX."products
 						SET
 							qty = '$newQty'
@@ -252,7 +259,7 @@ class gene_product{
 
 			}
 		
-			echo "Pref:".$preference_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
+			echo "Pref:".$preference_id."Orig Prod ID:".$invoiceItem['product_id']."New Prod ID:".$product_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
 
 
 		}

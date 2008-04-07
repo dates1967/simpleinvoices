@@ -82,7 +82,7 @@ if ($_POST['action'] == "insert" ) {
 			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["unit_price$i"],$_POST["unit_cost$i"],$gene_load_unit_cost) ) {
 				$saved = true;
 				
-				gene_product::updateQty('',$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],'creation');
+				gene_product::updateQty('','',$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],'creation',$_POST[customField2]);
 
 			} else {
 				$saved = false;
@@ -131,7 +131,7 @@ if ( $_POST['action'] == "edit") {
 		/*If users blanks the qty then set it to 0*/
 		$_POST["quantity$i"]=="" ? $_POST["quantity$i"]==0 : $_POST["quantity$i"]==$_POST["quantity$i"] ;
 		
-		gene_product::updateQty($_POST["id$i"],$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],"edit");
+		gene_product::updateQty($_POST['invoice_id'],$_POST["id$i"],$_POST["products$i"],$_POST["quantity$i"],$_POST["preference_id"],"edit",$_POST["customField2"]);
 
 		if($_POST["delete$i"] == "yes")
 		{
