@@ -248,18 +248,19 @@ class gene_product{
 
 					/*if invoice reduce qty*/
 					if ($preference_id=="1")
-					{
+                    {
+                           echo "Invoice : prod = prod<br>";
 						$differenceQty = $product_qty - $origItemQty;
 						$newQty = $product['qty'] - $differenceQty ;
 					}
 					/*if po increase qty*/
-					if ( ($preference_id=="5") && ($flag=="Received") && ($orig_flag_value=="Received") );
+					if ( $preference_id=="5" AND $flag === "Received" AND $orig_flag_value === "Received" );
 					{
 						echo "Recevied & REceived<br>";
 						$differenceQty = $product_qty - $origItemQty;
 						$newQty = $product['qty'] + $differenceQty ;
 					}
-					if ( ($preference_id=="5") && ($flag=="Received") && ($orig_flag_value=="Not Received") );
+					if ( $preference_id== "5" AND $flag === "Received" AND $orig_flag_value === "Not Received" );
 					{
 						echo "Recevied & Not Received<br>";
 						$newQty = $product['qty'] + $product_qty ;
@@ -271,7 +272,7 @@ class gene_product{
 							id = '$product_id'";
 	
 			        echo "test<br>";
-                    echo "Pref:".$preference_id."Orig Prod ID:".$invoiceItem['product_id']."New Prod ID:".$product_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
+                    echo "Pref:".$preference_id."Orig Prod ID:".$invoiceItem['product_id']."New Prod ID:".$product_id."Item ID:".$item_id."Orig Item Qty:".$origItemQty."Product Orig Qty:".$product['qty']."Requested Item Qty:".$product_qty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
                     
                     return mysqlQuery($sql);
 				}
