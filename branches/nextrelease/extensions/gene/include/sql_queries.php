@@ -203,20 +203,36 @@ class gene_product{
 				*/
 				//TODO code this section
 
+				//invoiceItems[product-id] = old product id, product_id = new product
 				if ($invoiceItem['product_id'] != $product_id)
 				{
 					echo "New Product added in edit<br>";
-					$productOrig = getProduct($product_id);
+					$productOrig = getProduct($invoiceItem['product_id']);
 					$productOrigQty = $productOrig['qty'];
-
-					//TODO this is for PO what about Invoics!
-					$newProductQty = $productOrigQty - $origItemQty ;
-					$sql = "UPDATE ".TB_PREFIX."products
-						SET
-							qty = $newProductQty
-						WHERE
-							id = ".$invoiceItem['product_id']."";
-
+					echo "orig Prod Qty:".$productOrigQty."<br>";
+					echo "orig Item Qty:".$origItemQty."<br>";
+					
+					//Update the original items qty
+					if ($preference_id=="1")
+                    {
+						//TODO - think about this and test - its + code right????????
+						$newProductQty = $productOrigQty + $origItemQty ;
+						$sql = "UPDATE ".TB_PREFIX."products
+							SET
+								qty = $newProductQty
+							WHERE
+								id = ".$invoiceItem['product_id']."";
+					
+					}
+					if ($preference_id=="5")
+                    {
+						$newProductQty = $productOrigQty - $origItemQty ;
+						$sql = "UPDATE ".TB_PREFIX."products
+							SET
+								qty = $newProductQty
+							WHERE
+								id = ".$invoiceItem['product_id']."";
+					}
 					mysqlQuery($sql);
 					
 					//get NEW prod orig tqy then add new qty to it
