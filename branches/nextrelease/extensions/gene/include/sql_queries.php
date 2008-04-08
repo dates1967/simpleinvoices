@@ -151,7 +151,7 @@ class gene_product{
 		function updateQty($invoice_id,$item_id,$product_id,$product_qty,$preference_id,$action,$flag)
 		{
 
-			echo "Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."Flag:".$flag."<br>";
+			echo "<br>#######<br>Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."Flag:".$flag."<br>";
 			$product = getProduct($product_id);
 			//echo "Existing Qty:".$product['qty']."<br>" ;
 			/*If coming from new invoice/po screen*/
@@ -168,14 +168,21 @@ class gene_product{
 						$newQty = $product['qty'] + $product_qty;
 					}
                     
-                    
+                    /*if new po and not received then skip sql*/
+                    if (($flag == "Not Received") AND ($preference_id=="5"))
+                    {
+                        $skipSql = "true";
+                    }
+
+                    if ($skipSql != "true")
+                    {
                     $sql = "UPDATE ".TB_PREFIX."products
 						SET
 							qty = '$newQty'
 						WHERE
 							id = '$product_id'";
-	
 					return mysqlQuery($sql);
+	                }
 			}
 			/*If editing invoice/po*/
 			if ($action == "edit")
@@ -263,12 +270,14 @@ class gene_product{
 						WHERE
 							id = '$product_id'";
 	
-					return mysqlQuery($sql);
+			        echo "test<br>";
+                    echo "Pref:".$preference_id."Orig Prod ID:".$invoiceItem['product_id']."New Prod ID:".$product_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
+                    
+                    return mysqlQuery($sql);
 				}
 
 			}
 		
-			echo "Pref:".$preference_id."Orig Prod ID:".$invoiceItem['product_id']."New Prod ID:".$product_id."Item ID:".$item_id."Orig Qty:".$origItemQty."Differ Qty:".$differenceQty." New Qty:".$newQty."<br>";
 
 
 		}
