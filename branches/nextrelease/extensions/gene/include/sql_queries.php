@@ -167,6 +167,15 @@ class gene_product{
 					{
 						$newQty = $product['qty'] + $product_qty;
 					}
+                    
+                    
+                    $sql = "UPDATE ".TB_PREFIX."products
+						SET
+							qty = '$newQty'
+						WHERE
+							id = '$product_id'";
+	
+					return mysqlQuery($sql);
 			}
 			/*If editing invoice/po*/
 			if ($action == "edit")
