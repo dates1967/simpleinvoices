@@ -184,9 +184,20 @@
 	</tr>
 
 	 {$customFields.1}
+
+			<tr>
+				<td class="details_screen">
+					{$custom_field_labels.invoice_cf2}
+				</td>
+				<td>
+					{html_options name=customField2 values=$po_received output=$po_received selected=$invoice.custom_field2}
+				</td>	
+			</tr>
+{*
 	 {$customFields.2}
 	 {$customFields.3}
 	 {$customFields.4}
+*}
 {*
 	 	 {showCustomFields categorieId="4" itemId=$smarty.get.invoice}
 *}

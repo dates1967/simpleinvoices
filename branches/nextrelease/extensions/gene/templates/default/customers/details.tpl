@@ -242,7 +242,7 @@
 		<select name="custom_field1" >
 			{html_options values=$customerOrVendor  output=$customerOrVendor selected=$customer.custom_field1 }
 		</select>
-
+		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.customer_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>

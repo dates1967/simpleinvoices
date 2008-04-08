@@ -51,4 +51,9 @@ $smarty -> assign("products",$products);
 $smarty -> assign("customFields",$customFields);
 $smarty -> assign("lines",count($invoiceItems));
 
+$smarty->assign('po_received', array('Not Received','Received'));
+
+$cf_label = getCustomFieldLabels();
+$smarty->assign('custom_field_labels', $cf_label);
+
 ?>
