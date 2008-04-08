@@ -254,13 +254,13 @@ class gene_product{
 						$newQty = $product['qty'] - $differenceQty ;
 					}
 					/*if po increase qty*/
-					if ( $preference_id=="5" AND $flag === "Received" AND $orig_flag_value === "Received" );
+					if ( $preference_id=="5" AND $flag === "Received" AND $orig_flag_value === "Received" )
 					{
 						echo "Recevied & REceived<br>";
 						$differenceQty = $product_qty - $origItemQty;
 						$newQty = $product['qty'] + $differenceQty ;
 					}
-					if ( $preference_id== "5" AND $flag === "Received" AND $orig_flag_value === "Not Received" );
+					if ( $preference_id== "5" AND $flag === "Received" AND $orig_flag_value === "Not Received" )
 					{
 						echo "Recevied & Not Received<br>";
 						$newQty = $product['qty'] + $product_qty ;

@@ -99,10 +99,6 @@ if ( $_POST['action'] == "edit") {
 
 	$invoice_id = $_POST['invoice_id'];
 	
-	if (updateInvoice($_POST['invoice_id'])) {
-//		updateCustomFieldValues($_POST['categorie'],$_POST['invoice_id']);
-		$saved = true;
-	}
 
 	if($type == 1) {
 		$sql = "UPDATE ".TB_PREFIX."products SET `unit_price` = $_POST[unit_price], `description` = '$_POST[description0]' WHERE id = $_POST[products0]";
@@ -158,7 +154,12 @@ if ( $_POST['action'] == "edit") {
 			$saved = false;
 			die(mysql_error());
 		}
+	
 	}
+		if (updateInvoice($_POST['invoice_id'])) {
+//			updateCustomFieldValues($_POST['categorie'],$_POST['invoice_id']);
+			$saved = true;
+		}
 
 }
 
