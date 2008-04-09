@@ -27,6 +27,10 @@
 		<td>{$product.unit_cost|number_format:2}</td>
 	</tr>
 	<tr>
+		<td class="details_screen">Quantity</td>
+		<td>{$product.qty|number_format:2}</td>
+	</tr>
+	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
 		<td>{$product.custom_field1}</td>
 	</tr>
@@ -78,7 +82,11 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Product Unit Cost</td>
-		<td><input type="text" name="unit_cost" size="25" value="{$product.unit_cost}" /></td>
+		<td><input type="text" name="unit_cost" size="25" value="{$product.unit_cost|number_format:2}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Quantity</td>
+		<td>{$product.qty|number_format:2}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>

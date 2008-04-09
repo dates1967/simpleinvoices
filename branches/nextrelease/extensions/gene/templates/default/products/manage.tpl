@@ -10,9 +10,10 @@
 <table align="center" class="ricoLiveGrid" id="rico_product">
 <colgroup>
 	<col style='width:10%;' />
-	<col style='width:10%;' />
+	<col style='width:5%;' />
 	<col style='width:50%;' />
 	<col style='width:20%;' />
+	<col style='width:10%;' />
 	<col style='width:10%;' />
 </colgroup>
 <thead>
@@ -20,8 +21,9 @@
 	<th class="noFilter sortable">{$LANG.actions}</th>
 	<th class="index_table sortable">{$LANG.product_id}</th>
 	<th class="index_table sortable">{$LANG.product_description}</th>
-	<th class="index_table sortable">{$LANG.product_unit_price}</th>
-	<th class="index_table sortable">Product Unit Cost</th>
+	<th class="index_table sortable">Unit Price</th>
+	<th class="index_table sortable">Unit Cost</th>
+	<th class="index_table sortable">Qty</th>
 	<th class="noFilter index_table sortable">{$LANG.enabled}</th>
 </tr>
 </thead>
@@ -38,6 +40,7 @@
 	<td class="index_table">{$product.description}</td>
 	<td class="index_table">{$product.unit_price}</td>
 	<td class="index_table">{$product.unit_cost}</td>
+	<td class="index_table">{$product.qty}</td>
 	<td class="index_table">{$product.enabled}</td>
 	</tr>
 
