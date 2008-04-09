@@ -151,7 +151,7 @@ class gene_product{
 		function updateQty($invoice_id,$item_id,$product_id,$product_qty,$preference_id,$action,$flag)
 		{
 
-			echo "<br>#######<br>Invoice If:".$invoice_id."Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."Flag:".$flag."<br>";
+			//echo "<br>#######<br>Invoice If:".$invoice_id."Item ID:".$item_id."Prod:".$product_id."Qty:".$product_qty."Pref ID:".$preference_id."Action:".$action."Flag:".$flag."<br>";
 			$product = getProduct($product_id);
 			//echo "Existing Qty:".$product['qty']."<br>" ;
 			/*If coming from new invoice/po screen*/
