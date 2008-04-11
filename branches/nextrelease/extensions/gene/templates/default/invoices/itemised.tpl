@@ -135,7 +135,8 @@
 <!-- </div> -->
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="cancel" value="{$LANG.cancel}" />
+
+	<a href="javascript:history.go(-1)" onClick="history.go(-1)">Cancel</a> 
 	<input type=hidden name="max_items" value="{$smarty.section.line.index}">
 	<input type=submit name="submit" value="{$LANG.save_invoice}">
 	<input type=hidden name="type" value="2">

@@ -51,7 +51,7 @@ function delete_line_item(row_number)
 function add_line_item(row_number)
 {
 /*    $("#line tr:last").clone().append("#line tr:last");*/
-    $("#line"+row_number).clone().append("#line"+row_number");*/
+    $("#line"+row_number).clone().append("#line"+row_number);
 /*    $("#line :last").hide();*/
     /*
     $('#line'+row_number).after('<tr id><td>THIS IS A TEST<td><tr>');
