@@ -44,7 +44,7 @@
 
         {section name=line start=0 loop=$dynamic_line_items step=1}
 
-			<tr>
+			<tr id=line class="line{$smarty.section.line.index}"> 
 				<td><input id="quantity{$smarty.section.line.index}" type=text value="" name="quantity{$smarty.section.line.index}" size="5"></td>
 				<td>
 				                
@@ -70,6 +70,9 @@
 </tr>
 
         {/section}
+        {*
+        <a href="#" onclick="add_line_item(4)">add lint item</a>
+           *}
 	{$show_custom_field.1}
 			<tr>
 			<td class="details_screen">
