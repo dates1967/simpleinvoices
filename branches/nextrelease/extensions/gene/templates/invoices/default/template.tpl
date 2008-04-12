@@ -176,7 +176,7 @@
 	{print_if_not_null label=$LANG.mobile_short field=$customer.mobile_phone class1='tbl1-left' class2='tbl1-right' colspan="3"}
 	{print_if_not_null label=$LANG.email field=$customer.email class1='tbl1-left' class2='tbl1-right' colspan="3"}
 	
-	{print_if_not_null label=$customFieldLabels.customer_cf1 field=$customer.custom_field1 class1='tbl1-left' class2='tbl1-right' colspan="3"}
+{*	{print_if_not_null label=$customFieldLabels.customer_cf1 field=$customer.custom_field1 class1='tbl1-left' class2='tbl1-right' colspan="3"} *}
 	{print_if_not_null label=$customFieldLabels.customer_cf2 field=$customer.custom_field2 class1='tbl1-left' class2='tbl1-right' colspan="3"}
 	{print_if_not_null label=$customFieldLabels.customer_cf3 field=$customer.custom_field3 class1='tbl1-left' class2='tbl1-right' colspan="3"}
 	{print_if_not_null label=$customFieldLabels.customer_cf4 field=$customer.custom_field4 class1='tbl1-left' class2='tbl1-right' colspan="3"}

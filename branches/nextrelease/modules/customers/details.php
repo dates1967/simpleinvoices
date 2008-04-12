@@ -30,10 +30,10 @@ $customer['wording_for_enabled'] = $customer['enabled']==1?$LANG['enabled']:$LAN
 
 //TODO: Perhaps possible a bit nicer?
 $stuff = null;
-$stuff['total'] = calc_customer_total($customer['id']);
+$stuff['total'] = customer::calc_customer_total($customer['id']);
 
 #amount paid calc - start
-$stuff['paid'] = calc_customer_paid($customer['id']);;
+$stuff['paid'] = customer::calc_customer_paid($customer['id']);;
 #amount paid calc - end
 
 #amount owing calc - start

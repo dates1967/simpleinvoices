@@ -155,7 +155,7 @@ class gene_invoice extends invoice {
 
 
 }
-class gene_product{
+class gene_product {
 
 		function insertProduct($enabled=1,$visible=1) {
 			if(isset($_POST['enabled'])) {
@@ -380,6 +380,98 @@ class gene_product{
 
 		}
 
+}
+
+class gene_customer extends customer
+{
+
+		function calc_customer_total($customer_id) {
+			global $LANG;
+			
+				$sql ="
+				SELECT
+					IF ( ISNULL( SUM(".TB_PREFIX."invoice_items.total)) ,  '0', SUM(".TB_PREFIX."invoice_items.total)) AS total 
+				FROM
+					".TB_PREFIX."invoice_items, ".TB_PREFIX."invoices 
+				WHERE  
+					".TB_PREFIX."invoices.customer_id  = $customer_id  
+				AND 
+					".TB_PREFIX."invoices.id = ".TB_PREFIX."invoice_items.invoice_id
+				";
+				
+				$query = mysqlQuery($sql) or die(mysql_error());
+				
+				$invoice = mysql_fetch_array($query);
+
+				$sql2 ="
+				SELECT
+					IF ( ISNULL( SUM(".TB_PREFIX."invoices.custom_field1)) ,  '0', SUM(".TB_PREFIX."invoices.custom_field1)) AS shipping
+				FROM
+					".TB_PREFIX."invoices 
+				WHERE  
+					".TB_PREFIX."invoices.customer_id  = $customer_id  
+				";
+				
+				$query2 = mysqlQuery($sql2) or die(mysql_error());
+				
+				$invoice2 = mysql_fetch_array($query2);
+				
+			$calc_customer_total = $invoice['total'] + $invoice2['shipping'];
+			return $calc_customer_total ;
+		}
+
+		function calc_customer_paid($customer_id) {
+			global $LANG;
+				
+		#amount paid calc - start
+			$sql = "
+			SELECT IF ( ISNULL( sum(ac_amount)) ,  '0', sum(ac_amount)) AS amount 
+			FROM ".TB_PREFIX."account_payments, ".TB_PREFIX."invoices 
+			WHERE ".TB_PREFIX."account_payments.ac_inv_id = ".TB_PREFIX."invoices.id 
+			AND ".TB_PREFIX."invoices.customer_id = $customer_id";  	
+			
+			$query = mysqlQuery($sql);
+			$invoice = mysql_fetch_array($query);
+
+			return $invoice['amount'];
+		}
+
+		function getCustomers() {
+				
+			global $LANG;
+			
+			$customer = null;
+			
+			$sql = "SELECT * FROM ".TB_PREFIX."customers ORDER BY name";
+			$result = mysqlQuery($sql) or die(mysql_error());
+
+			$customers = null;
+
+			for($i=0;$customer = mysql_fetch_array($result);$i++) {
+				if ($customer['enabled'] == 1) {
+					$customer['enabled'] = $LANG['enabled'];
+				} else {
+					$customer['enabled'] = $LANG['disabled'];
+				}
+
+				#invoice total calc - start
+				$customer['total'] = gene_customer::calc_customer_total($customer['id']);
+				#invoice total calc - end
+
+				#amount paid calc - start
+				$customer['paid'] = gene_customer::calc_customer_paid($customer['id']);
+				#amount paid calc - end
+
+				#amount owing calc - start
+				$customer['owing'] = $customer['total'] - $customer['paid'];
+				
+				#amount owing calc - end
+				$customers[$i] = $customer;
+
+			}
+			
+			return $customers;
+		}
 }
 
 ?>

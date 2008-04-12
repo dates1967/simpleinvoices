@@ -645,6 +645,83 @@ class customer {
 
 			return sql2array($sql);
 		}	
+
+
+		function calc_customer_total($customer_id) {
+			global $LANG;
+			
+				$sql ="
+				SELECT
+					IF ( ISNULL( SUM(".TB_PREFIX."invoice_items.total)) ,  '0', SUM(".TB_PREFIX."invoice_items.total)) AS total 
+				FROM
+					".TB_PREFIX."invoice_items, ".TB_PREFIX."invoices 
+				WHERE  
+					".TB_PREFIX."invoices.customer_id  = $customer_id  
+				AND 
+					".TB_PREFIX."invoices.id = ".TB_PREFIX."invoice_items.invoice_id
+				";
+				
+				$query = mysqlQuery($sql) or die(mysql_error());
+				
+				$invoice = mysql_fetch_array($query);
+
+			return $invoice['total'];
+		}
+
+		function calc_customer_paid($customer_id) {
+			global $LANG;
+				
+		#amount paid calc - start
+			$sql = "
+			SELECT IF ( ISNULL( sum(ac_amount)) ,  '0', sum(ac_amount)) AS amount 
+			FROM ".TB_PREFIX."account_payments, ".TB_PREFIX."invoices 
+			WHERE ".TB_PREFIX."account_payments.ac_inv_id = ".TB_PREFIX."invoices.id 
+			AND ".TB_PREFIX."invoices.customer_id = $customer_id";  	
+			
+			$query = mysqlQuery($sql);
+			$invoice = mysql_fetch_array($query);
+
+			return $invoice['amount'];
+		}
+
+
+		function getCustomers() {
+				
+			global $LANG;
+			
+			$customer = null;
+			
+			$sql = "SELECT * FROM ".TB_PREFIX."customers ORDER BY name";
+			$result = mysqlQuery($sql) or die(mysql_error());
+
+			$customers = null;
+
+			for($i=0;$customer = mysql_fetch_array($result);$i++) {
+				if ($customer['enabled'] == 1) {
+					$customer['enabled'] = $LANG['enabled'];
+				} else {
+					$customer['enabled'] = $LANG['disabled'];
+				}
+
+				#invoice total calc - start
+				$customer['total'] = customer::calc_customer_total($customer['id']);
+				#invoice total calc - end
+
+				#amount paid calc - start
+				$customer['paid'] = customer::calc_customer_paid($customer['id']);
+				#amount paid calc - end
+
+				#amount owing calc - start
+				$customer['owing'] = $customer['total'] - $customer['paid'];
+				
+				#amount owing calc - end
+				$customers[$i] = $customer;
+
+			}
+			
+			return $customers;
+		}
+
 }
 
 
@@ -656,42 +733,6 @@ function getCustomerInvoices($id) {
 	return sql2array($sql);
 }
 
-function getCustomers() {
-		
-	global $LANG;
-	
-	$customer = null;
-	
-	$sql = "SELECT * FROM ".TB_PREFIX."customers ORDER BY name";
-	$result = mysqlQuery($sql) or die(mysql_error());
-
-	$customers = null;
-
-	for($i=0;$customer = mysql_fetch_array($result);$i++) {
-		if ($customer['enabled'] == 1) {
-			$customer['enabled'] = $LANG['enabled'];
-		} else {
-			$customer['enabled'] = $LANG['disabled'];
-		}
-
-		#invoice total calc - start
-		$customer['total'] = calc_customer_total($customer['id']);
-		#invoice total calc - end
-
-		#amount paid calc - start
-		$customer['paid'] = calc_customer_paid($customer['id']);
-		#amount paid calc - end
-
-		#amount owing calc - start
-		$customer['owing'] = $customer['total'] - $customer['paid'];
-		
-		#amount owing calc - end
-		$customers[$i] = $customer;
-
-	}
-	
-	return $customers;
-}
 
 function getActiveCustomers() {
 	

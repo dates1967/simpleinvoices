@@ -30,10 +30,10 @@ $customer['wording_for_enabled'] = $customer['enabled']==1?$LANG['enabled']:$LAN
 
 //TODO: Perhaps possible a bit nicer?
 $stuff = null;
-$stuff['total'] = calc_customer_total($customer['id']);
+$stuff['total'] = gene_customer::calc_customer_total($customer['id']);
 
 #amount paid calc - start
-$stuff['paid'] = calc_customer_paid($customer['id']);;
+$stuff['paid'] = gene_customer::calc_customer_paid($customer['id']);;
 #amount paid calc - end
 
 #amount owing calc - start
@@ -58,6 +58,14 @@ ORDER BY iv.id DESC";
 
 $invoices = sql2array($sSQL);
 
+$numrecs = count($invoices);
+
+for($i = 0; $i < $numrecs; $i++) {
+	
+	$invoices[$i]['gene_total'] = gene_invoice::getInvoiceTotal($invoices[$i]['id']);
+	$invoices[$i]['gene_owing'] = $invoices[$i]['gene_total'] - calc_invoice_paid($invoices[$i]['id']);
+	$invoices[$i]['gene_paid'] = calc_invoice_paid($invoices[$i]['id']);
+}
 
 //$customFieldLabel = getCustomFieldLabels("biller");
 $pageActive = "customers";

@@ -146,9 +146,9 @@
 	
 			<tr class="index_table">
 				<td class="details_screen"><a href="index.php?module=invoices&view=quick_view&invoice={$invoice.id}">{$invoice.id}</a></td>
-				<td class="details_screen">{$invoice.total|number_format:2}</td>
-				<td class="details_screen">{$invoice.paid|number_format:2}</td>
-				<td class="details_screen">{$invoice.owing|number_format:2}</td>
+				<td class="details_screen">{$invoice.gene_total|number_format:2}</td>
+				<td class="details_screen">{$invoice.gene_paid|number_format:2}</td>
+				<td class="details_screen">{$invoice.gene_owing|number_format:2}</td>
 				<td class="details_screen">{$invoice.date}</td>
 			</tr>
 

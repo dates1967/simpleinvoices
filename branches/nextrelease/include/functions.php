@@ -154,42 +154,6 @@ $x1 = "SELECT IF ( ISNULL(SUM(ac_amount)) , '0', SUM(ac_amount)) AS amount FROM 
 }
 
 
-function calc_customer_total($customer_id) {
-	global $LANG;
-	
-        $sql ="
-		SELECT
-			IF ( ISNULL( SUM(".TB_PREFIX."invoice_items.total)) ,  '0', SUM(".TB_PREFIX."invoice_items.total)) AS total 
-		FROM
-			".TB_PREFIX."invoice_items, ".TB_PREFIX."invoices 
-		WHERE  
-			".TB_PREFIX."invoices.customer_id  = $customer_id  
-		AND 
-			".TB_PREFIX."invoices.id = ".TB_PREFIX."invoice_items.invoice_id
-		";
-		
-        $query = mysqlQuery($sql) or die(mysql_error());
-		
-		$invoice = mysql_fetch_array($query);
-
-	return $invoice['total'];
-}
-
-function calc_customer_paid($customer_id) {
-	global $LANG;
-		
-#amount paid calc - start
-	$sql = "
-	SELECT IF ( ISNULL( sum(ac_amount)) ,  '0', sum(ac_amount)) AS amount 
-	FROM ".TB_PREFIX."account_payments, ".TB_PREFIX."invoices 
-	WHERE ".TB_PREFIX."account_payments.ac_inv_id = ".TB_PREFIX."invoices.id 
-	AND ".TB_PREFIX."invoices.customer_id = $customer_id";  	
-	
-	$query = mysqlQuery($sql);
-	$invoice = mysql_fetch_array($query);
-
-	return $invoice['amount'];
-}
 
 
 
