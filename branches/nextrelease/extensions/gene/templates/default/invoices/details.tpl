@@ -185,6 +185,7 @@
 
 	 {$customFields.1}
 
+        {if $invoice.preference_id == 5}
 			<tr>
 				<td class="details_screen">
 					{$custom_field_labels.invoice_cf2}
@@ -193,6 +194,7 @@
 					{html_options name=customField2 values=$po_received output=$po_received selected=$invoice.custom_field2}
 				</td>	
 			</tr>
+		{/if}
 {*
 	 {$customFields.2}
 	 {$customFields.3}

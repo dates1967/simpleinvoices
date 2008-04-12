@@ -265,7 +265,7 @@ class gene_product {
 			if ($action == "edit")
 			{
 
-			$invoice = getInvoice($invoice_id);
+			$invoice = gene_invoice::getInvoice($invoice_id);
 			$orig_flag_value = $invoice['custom_field2'];
 			//echo "Orig Flag:".$orig_flag_value."<br>";
 				/*	
