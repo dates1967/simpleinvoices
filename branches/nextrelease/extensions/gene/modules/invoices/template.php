@@ -59,7 +59,7 @@ if (isset($_GET['export'])) {
 /* End Export code */
 
 	
-$templatePath = "./templates/invoices/${template}/template.tpl";
+$templatePath = "./extensions/gene/templates/invoices/${template}/template.tpl";
 $template_path = "../templates/invoices/${template}";
 $css = "./templates/invoices/${template}/style.css";
 $pluginsdir = "./templates/invoices/${template}/plugins/";

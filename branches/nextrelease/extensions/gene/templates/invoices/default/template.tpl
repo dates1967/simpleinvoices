@@ -35,12 +35,6 @@
 				<td class="tbl1-right" colspan="3">{$invoice.date}</td>
 		</tr>
 	<!-- Show the Invoice Custom Fields if valid -->
-		{ if $invoice.custom_field1 != null}
-		<tr>
-				<td nowrap class="tbl1-left">{$customFieldLabels.invoice_cf1}:</td>
-				<td class="tbl1-right" colspan="3">{$invoice.custom_field1}</td>
-		</tr>
-		{/if}
 		{ if $invoice.custom_field2 != null}
 		<tr>
 				<td nowrap class="tbl1-left">{$customFieldLabels.invoice_cf2}:</td>
@@ -323,7 +317,7 @@
 		</tr>
 		<tr>
 			<td class="tbl1-left tbl1-right" colspan="6">{$invoice.note}</td>
-		</tr>
+			</tr>
 
 {/if}
 
@@ -331,6 +325,14 @@
 		<td class="tbl1-left tbl1-right" colspan="6" ><br></td>
 	</tr>
 	
+	</tr>	
+	{ if $invoice.custom_field1 != null}
+		<tr class="tbl1-left tbl1-right">
+			<td class="tbl1-left" colspan="2"></td>
+			<td align="right" colspan="3">{$customFieldLabels.invoice_cf1}</td>
+			<td align="right" class="tbl1-right" >{$preference.pref_currency_sign}{$invoice.custom_field1|number_format:2}</td>
+		</tr>
+	{/if}
 	<tr>
 		<td class="tbl1-left" colspan="2"></td>
 		<td align="right" colspan="3">{$LANG.gross_total}</td>
@@ -340,7 +342,6 @@
 {else}
 		<td align="right" class="tbl1-right">{$preference.pref_currency_sign}{$invoice_gross_total|number_format:2}</td>
 {/if}
-	</tr>	
 	<tr class="tbl1-left tbl1-right">
 		<td class="tbl1-left" colspan="2"></td>
 		<td align="right" colspan="3">{$LANG.tax_total}</td>
