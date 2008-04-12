@@ -15,7 +15,7 @@ jsEnd();
 $payment = getPayment($_GET['id']);
 
 /*Code to get the Invoice preference - so can link from this screen back to the invoice - START */
-$invoice = invoice::getInvoice($payment['ac_inv_id']);
+$invoice = gene_invoice::getInvoice($payment['ac_inv_id']);
 $invoiceType = getInvoiceType($invoice['type_id']);
 $paymentType = getPaymentType($payment['ac_payment_type']);
 

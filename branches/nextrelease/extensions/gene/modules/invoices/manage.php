@@ -60,6 +60,8 @@ for($i = 0; $i < $numrecs; $i++) {
 
 	$invoices[$i]['url_for_pdf'] = $url_for_pdf;
 
+	$invoices[$i]['gene_total'] = gene_invoice::getInvoiceTotal($invoices[$i]['id']);
+	$invoices[$i]['gene_owing'] = $invoices[$i]['gene_total'] - calc_invoice_paid($invoices[$i]['id']);
 }
 
 $pageActive = "invoices";

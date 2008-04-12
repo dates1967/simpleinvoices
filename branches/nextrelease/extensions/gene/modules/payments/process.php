@@ -24,7 +24,7 @@ $master_invoice_id = $_GET['invoice'];
 $invoice = null;
 
 if(isset($_GET['invoice'])) {
-	$invoice = invoice::getInvoice($master_invoice_id);
+	$invoice = gene_invoice::getInvoice($master_invoice_id);
 }
 else {
 	$query = mysqlQuery("SELECT * FROM ".TB_PREFIX."invoices");

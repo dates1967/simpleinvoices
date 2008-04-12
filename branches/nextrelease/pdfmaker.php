@@ -13,7 +13,7 @@ require_once("./include/functions.php");	// for calc_invoice_paid function used 
 // $defaults = getSystemDefaults(); // Not required as of now.
 
 $invoice_id = $_GET['id'];
-$invoice = getInvoice($invoice_id);
+$invoice = invoice::getInvoice($invoice_id);
 
 $preference = getPreference($invoice['preference_id']);
 $pdfname = trim($preference['pref_inv_wording']) . $invoice_id;

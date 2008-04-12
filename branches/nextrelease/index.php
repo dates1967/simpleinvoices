@@ -100,13 +100,37 @@ if (($module == "options") && ($view == "database_sqlpatches")) {
 */
 if (($module == "invoices" ) && (strstr($view,"templates"))) {
 	//TODO: why is $view templates/template?...
-	if (file_exists("./modules/invoices/template.php")) {
-	        include("./modules/invoices/template.php");
-	}
-	else {
-		echo "The file that you requested doesn't exist";
-	}
-	
+
+
+		/*
+		* If extension is enabled load the extension php file for the module	
+		* Note: this system is probably slow - if you got a better method for handling extensions let me know
+		*/
+		$extensionInvoiceTemplateFile = 0;
+		foreach($extension as $key=>$value)
+		{
+			/*
+			* If extension is enabled then continue and include the requested file for that extension if it exists
+			*/	
+			if($value['enabled'] == "1")
+			{
+				//echo "Enabled:".$value['name']."<br><br>";
+				if(file_exists("./extensions/$value[name]/modules/invoices/template.php")) {
+			
+					include_once("./extensions/$value[name]/modules/invoices/template.php");
+					$extensionInvoiceTemplateFile++;
+				}
+			}
+		}
+		/*
+		* If no extension php file for requested file load the normal php file if it exists
+		*/
+		if( ($extensionInvoiceTemplateFile == 0) AND (file_exists("./modules/invoices/template.php")) ) 
+		{
+			include_once("./modules/invoices/template.php");
+		}
+
+
 	exit(0);
 }
 

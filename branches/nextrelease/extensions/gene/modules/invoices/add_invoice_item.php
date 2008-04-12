@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
 	empty($unit_cost) ? $unit_cost = $product['unit_cost'] :  $unit_cost = $unit_cost;
 	empty($unit_load_cost) ? $unit_load_cost = $product['unit_cost'] :  $unit_load_cost = $unit_load_cost;
 
-	$invoice = getInvoice($_POST['invoice_id']);
+	$invoice = gene_invoice::getInvoice($_POST['invoice_id']);
 
 	gene_product::updateQty($_POST['invoice_id'],$_POST["id$i"],$_POST["product"],$_POST["quantity"],$invoice["preference_id"],"creation",$invoice["custom_field2"]);
 	$insertII = new gene_invoice;

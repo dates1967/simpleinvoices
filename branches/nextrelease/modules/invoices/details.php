@@ -23,7 +23,7 @@ checkLogin();
 #get the invoice id
 $master_invoice_id = $_GET['invoice'];
 
-$invoice = getInvoice($master_invoice_id);
+$invoice = invoice::getInvoice($master_invoice_id);
 $invoiceItems = getInvoiceItems($master_invoice_id);
 $customers = getActiveCustomers();
 $preference = getPreference($invoice['preference_id']);

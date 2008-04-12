@@ -76,6 +76,83 @@ class gene_invoice extends invoice {
 			return mysql_fetch_array($query);
 		}
 
+		function getInvoiceTotal($invoice_id) {
+			global $LANG;
+			
+			$sql ="SELECT SUM(total) AS total FROM ".TB_PREFIX."invoice_items WHERE invoice_id = $invoice_id";
+			$query = mysqlQuery($sql);
+			$res = mysql_fetch_array($query);
+			//echo "TOTAL".$res['total'];
+			
+			$sql2 ="SELECT custom_field1 FROM ".TB_PREFIX."invoices WHERE id = $invoice_id";
+			$query2 = mysqlQuery($sql2);
+			$res2 = mysql_fetch_array($query2);
+
+			$invoice_total = $res['total'] + $res2['custom_field1'];
+			return $invoice_total;
+		}
+
+		function getInvoice($id) {
+
+				global $config;
+
+				$sql = "SELECT * FROM ".TB_PREFIX."invoices WHERE id = $id";
+				//echo $sql;
+
+				$query  = mysqlQuery($sql) or die(mysql_error());
+
+				//print_r($query);
+				$invoice = mysql_fetch_array($query);
+
+				//print_r($invoice);
+				//exit();
+
+				$invoice['date'] = date( $config['date_format'], strtotime( $invoice['date'] ) );
+				$invoice['calc_date'] = date('Y-m-d', strtotime( $invoice['date'] ) );
+				$invoice['total'] = gene_invoice::getInvoiceTotal($invoice['id']);
+				$invoice['total_format'] = round($invoice['total'],2);
+				$invoice['paid'] = calc_invoice_paid($invoice['id']);
+				$invoice['paid_format'] = round($invoice['paid'],2);
+				$invoice['owing'] = $invoice['total'] - $invoice['paid'];
+
+
+				#invoice total tax
+				$sql ="SELECT SUM(tax_amount) AS total_tax, SUM(total) AS total FROM ".TB_PREFIX."invoice_items WHERE invoice_id =$id";
+				$query = mysqlQuery($sql) or die(mysql_error());
+				$result = mysql_fetch_array($query);
+				//$invoice['total'] = round($result['total'],2);
+				$invoice['total_tax'] = round($result['total_tax'],2);
+
+				return $invoice;
+		}
+
+		function getInvoices(&$query) {
+			global $config;
+			$invoice = null;
+
+			if($invoice =  mysql_fetch_array($query)) {
+
+				$invoice['calc_date'] = date( 'Y-m-d', strtotime( $invoice['date'] ) );
+				$invoice['date'] = date( $config['date_format'], strtotime( $invoice['date'] ) );
+					
+				#invoice total total - start
+				$invoice['total'] = gene_invoice::getInvoiceTotal($invoice['id']);
+				$invoice['total_format'] = round($invoice['total'],2);
+				#invoice total total - end
+				
+				#amount paid calc - start
+				$invoice['paid'] = calc_invoice_paid($invoice['id']);
+				$invoice['paid_format'] = round($invoice['paid'],2);
+				#amount paid calc - end
+				
+				#amount owing calc - start
+				$invoice['owing'] = $invoice['total'] - $invoice['paid'];
+				$invoice['owing_format'] = round($invoice['total'] - $invoice['paid'],2);
+				#amount owing calc - end
+			}
+			return $invoice;
+		}
+
 
 }
 class gene_product{

@@ -32,7 +32,7 @@ $q = strtolower($_GET["q"]);
 if (!$q) return;
 
 
-while ($invoice = getInvoices($result)) {
+while ($invoice = invoice::getInvoices($result)) {
 
 	$biller = getBiller($invoice['biller_id']);
 	$customer = getCustomer($invoice['customer_id']);

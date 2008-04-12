@@ -21,7 +21,7 @@ checkLogin();
 #get the invoice id
 $invoice_id = $_GET['invoice'];
 
-$invoice = invoice::getInvoice($invoice_id);
+$invoice = gene_invoice::getInvoice($invoice_id);
 $preference = getPreference($invoice['preference_id']);
 
 $defaults = getSystemDefaults();

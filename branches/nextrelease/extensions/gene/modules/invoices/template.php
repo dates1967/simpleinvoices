@@ -24,7 +24,7 @@ $invoiceID = $_GET['invoice'];
 $conn = mysql_connect( $db_host, $db_user, $db_password );
 mysql_select_db( $db_name, $conn );
 
-$invoice = invoice::getInvoice($invoiceID);
+$invoice = gene_invoice::getInvoice($invoiceID);
 $customer = getCustomer($invoice['customer_id']);
 $biller = getBiller($invoice['biller_id']);
 $preference = getPreference($invoice['preference_id']);
