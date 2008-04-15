@@ -87,6 +87,8 @@ insert into si_course_start_reason values (null,'Re-Entry after Dropping Out');
 */
 /*
 create table si_course_enrol ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , course_id INT NOT NULL , student_id INT NOT NULL);
+ALTER TABLE `si_course_enrol` ADD `dropped_reaon_id` INT( 11 ) NULL DEFAULT NULL ;
+
 */
 
 /*
@@ -157,5 +159,78 @@ ALTER TABLE
 insert into si_branch value (null,'Moscow');
 insert into si_branch value (null,'Stalingrad');
 
+*/
+
+/*
+CREATE TABLE `si_course` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`description` VARCHAR( 255 ) NOT NULL ,
+`branch_id` INT( 11 ) NOT NULL ,
+`subject_id` INT( 11 ) NOT NULL ,
+`age` VARCHAR( 255 ) NULL ,
+`level_id` INT( 11 ) NULL ,
+`type` VARCHAR( 255 ) NULL ,
+`status` VARCHAR( 255 ) NULL ,
+`intensity` VARCHAR( 255 ) NULL ,
+`start_date` DATE NULL ,
+`time` VARCHAR( 255 ) NULL ,
+`duration` VARCHAR( 255 ) NULL ,
+`area` VARCHAR( 255 ) NULL ,
+`rooms` VARCHAR( 255 ) NULL ,
+`teacher_id` INT( 11 ) NULL ,
+`repeat_type` VARCHAR( 255 ) NULL ,
+`end_date` DATE NULL ,
+`repeat_day` VARCHAR( 255 ) NULL ,
+`number_of_weels` INT( 11 ) NULL ,
+`book` VARCHAR( 255 ) NULL ,
+`teaching_hours` VARBINARY( 255 ) NULL
+)
+*/
+
+
+/*
+CREATE TABLE `si_teacher` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`last_name` VARCHAR( 255 ) NULL ,
+`first_name` VARCHAR( 255 ) NULL ,
+`middle_name` VARCHAR( 255 ) NULL ,
+`place_of_registration` INT( 11 ) NULL ,
+`palce_of_lesson` BIGINT( 11 ) NULL ,
+`date` DATE NULL ,
+`birthday` DATE NULL ,
+`gender` VARCHAR( 255 ) NULL ,
+`passport_number` VARCHAR( 255 ) NULL ,
+`passport_issued_at` VARCHAR( 255 ) NULL ,
+`passport_issued_on` DATE NULL ,
+`street` VARCHAR( 255 ) NULL ,
+`street2` VARCHAR( 255 ) NULL ,
+`city` VARCHAR( 255 ) NULL ,
+`post_code` VARCHAR( 255 ) NULL ,
+`state` VARCHAR( 255 ) NULL ,
+`country` VARCHAR( 255 ) NULL ,
+`home_phone` VARCHAR( 255 ) NULL ,
+`cell_phone` VARCHAR( 255 ) NULL ,
+`fax` VARCHAR( 255 ) NULL ,
+`email` VARCHAR( 255 ) NULL ,
+`custom_field1` VARCHAR( 255 ) NULL ,
+`custom_field2` VARCHAR( 255 ) NULL ,
+`custom_field3` VARCHAR( 255 ) NULL ,
+`custom_field4` VARCHAR( 255 ) NULL ,
+`note` TEXT NULL
+)
+*/
+
+/*
+CREATE TABLE `si_level` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+*/
+
+/*
+CREATE TABLE `si_subject` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
 */
 ?>

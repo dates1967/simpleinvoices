@@ -25,10 +25,11 @@
 <div id="container-1">
 	<ul class="anchors">
 		<li><a href="#section-1">General Info</a></li>
-		<li><a href="#section-2">Additional Info</a></li>
-		<li><a href="#section-3">Custom Fields</a></li>
-		<li><a href="#section-4">Ledger</a></li>
-		<li><a href="#section-5">{$LANG.notes}</a></li>
+		<li><a href="#section-2">Courses</a></li>
+		<li><a href="#section-3">Additional Info</a></li>
+		<li><a href="#section-4">Custom Fields</a></li>
+		<li><a href="#section-5">Ledger</a></li>
+		<li><a href="#section-6">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -188,6 +189,32 @@
 </p>
 	</div>
 	<div id="section-2" class="fragment">
+	<p>
+	<table align=center>
+	<tr>
+		<td class="details_screen">Enrol : Add Course</td>
+		<td>
+		</td>
+	</tr>
+{foreach from=$course_enrol item=courses}
+	<tr>
+		<td>
+			{$courses.id}
+		</td>
+		<td>
+			{$courses.course_id}
+		</td>
+		<td>
+			{$courses.student_id}
+		</td>
+		<td>
+			{$courses.dropped_reason_id}
+		</td>
+{/foreach}
+	</table>
+	</p>
+	</div>
+	<div id="section-3" class="fragment">
 <p>
 	<table align=center>
 	<tr>
@@ -338,7 +365,7 @@
 	</table>
 	</p>
 	</div>
-	<div id="section-3" class="fragment">
+	<div id="section-4" class="fragment">
 	<p>
 	<table align=center>
 	<tr>
@@ -382,7 +409,7 @@
 	</div>
 	
 	
-	<div id="section-4" class="fragment">
+	<div id="section-5" class="fragment">
 		<h4><u>Ledger</u></h4>
 		<p >
 		<table align="center">
@@ -426,7 +453,7 @@
 		</p>
 	</div>
 	
-	<div id="section-5" class="fragment">
+	<div id="section-6" class="fragment">
 	<p>
 	<table align=center>
 	<tr>
