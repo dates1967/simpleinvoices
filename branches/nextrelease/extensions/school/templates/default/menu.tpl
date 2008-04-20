@@ -29,13 +29,13 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=customers&view=add">Extended Search Student</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'courses'} id="active" {/if} ><a href="index.php?module=courses&view=manage">Courses +</a>
+			<li { if $pageActive == 'course'} id="active" {/if} ><a href="index.php?module=course&view=manage">Courses +</a>
 				<ul>
-					<li><a href="index.php?module=products&view=manage">Manage Courses</a></li>
+					<li><a href="index.php?module=course&view=manage">Manage Courses</a></li>
 					<li class="separation"></li>
-					<li><a href="index.php?module=products&view=add">Add New Course</a></li>
-					<li><a href="index.php?module=products&view=add">Copy to New Course</a></li>
-					<li><a href="index.php?module=products&view=add">Find Course</a></li>
+					<li><a href="index.php?module=course&view=add">Add New Course</a></li>
+					<li><a href="index.php?module=course&view=add">Copy to New Course</a></li>
+					<li><a href="index.php?module=course&view=add">Find Course</a></li>
 				</ul>
 			</li>
 			<li { if $pageActive == 'products'} id="active" {/if} ><a href="index.php?module=products&view=manage">{$LANG.products} +</a>

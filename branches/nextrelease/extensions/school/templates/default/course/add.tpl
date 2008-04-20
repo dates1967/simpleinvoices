@@ -21,6 +21,78 @@
 		<td><input type=text name="description" value="{$smarty.post.description}" size=50></td>
 	</tr>
 	<tr>
+		<td class="details_screen">Place of Enrolment</td>
+		<td>
+			<select name="place_of_enrolment">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Subject</td>
+		<td>
+			<select name="subject">
+				<option  selected value=""></option>
+			{foreach from=$subject item=subject_row}
+				<option value="{$subject_row.id}">{$subject_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Age</td>
+		<td>
+			<select name="age">
+				<option  selected value=""></option>
+				{html_options values=$age output=$age}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Level</td>
+		<td>
+			<select name="level">
+				<option  selected value=""></option>
+			{foreach from=$level item=level_row}
+				<option value="{$level_row.id}">{$level_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Type</td>
+		<td>
+			<select name="type">
+				<option  selected value=""></option>
+				{html_options values=$type output=$type}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Status</td>
+		<td>
+			<select name="status">
+				<option  selected value=""></option>
+				{html_options values=$status output=$status}
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="details_screen">Teacher</td>
+		<td>
+			<select name="teacher">
+				<option  selected value=""></option>
+			{foreach from=$teacher item=teacher_row}
+				<option value="{$teacher_row.id}">{$teacher_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+
+	<tr>
 		<td class="details_screen">{$LANG.product_unit_price}</td>
 		<td><input type=text name="unit_price" value="{$smarty.post.unit_price}"  size=25></td>
 	</tr>

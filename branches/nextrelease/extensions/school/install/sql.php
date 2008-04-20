@@ -217,7 +217,11 @@ CREATE TABLE `si_teacher` (
 `custom_field3` VARCHAR( 255 ) NULL ,
 `custom_field4` VARCHAR( 255 ) NULL ,
 `note` TEXT NULL
-)
+);
+
+
+
+
 */
 
 /*
@@ -225,6 +229,55 @@ CREATE TABLE `si_level` (
 `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `name` VARCHAR( 255 ) NOT NULL
 ) ENGINE = MYISAM ;
+
+INSERT INTO `simple_invoices_school`.`si_level` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Beginner'
+), (
+NULL , 'Elementary'
+), (
+NULL , 'Pre-Intermediate'
+), (
+NULL , 'Intermediate'
+), (
+NULL , 'Upper-Intermediate'
+), (
+NULL , 'Advanced'
+), (
+NULL , 'Upper-Advanced,'
+), (
+NULL , 'Zap A'
+), (
+NULL , 'Zap B'
+), (
+NULL , 'Zabadoo 1'
+), (
+NULL , 'Zabadoo 2'
+), (
+NULL , 'Zabadoo 3'
+), (
+NULL , 'Zabadoo Plus'
+), (
+NULL , 'Project 1'
+), (
+NULL , 'Project 2'
+), (
+NULL , 'Project 3'
+), (
+NULL , 'Project 4'
+), (
+NULL , 'Project Plus'
+), (
+NULL , 'A1'
+), (
+NULL , 'A2'
+), (
+NULL , 'B1'
+);
+
 */
 
 /*
@@ -232,5 +285,32 @@ CREATE TABLE `si_subject` (
 `id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `name` VARCHAR( 255 ) NOT NULL
 ) ENGINE = MYISAM ;
+
+INSERT INTO `simple_invoices_school`.`si_subject` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'English'
+), (
+NULL , 'German'
+), (
+NULL , 'Spanish'
+), (
+NULL , 'Italian'
+), (
+NULL , 'French'
+), (
+NULL , 'Japanese'
+), (
+NULL , 'Chinese'
+), (
+NULL , 'Greek'
+), (
+NULL , 'Russian for Foreigners'
+);
+
 */
+
+
 ?>
