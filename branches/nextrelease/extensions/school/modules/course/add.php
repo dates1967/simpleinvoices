@@ -47,13 +47,43 @@ $smarty -> assign('type',$type);
 
 /*Status*/
 $status = array();
-$status[] = "Group";
-$status[] = "One to one";
+$status[] = "Started";
+$status[] = "Waitlisted";
+$status[] = "Stopped";
+$status[] = "Graduated";
+$status[] = "Archived";
 $smarty -> assign('status',$status);
 
 /*Teacher function*/
 $sql_teacher = "select * from ".TB_PREFIX."teacher"; 
 $teacher = sql2array($sql_teacher);
 $smarty -> assign('teacher',$teacher);
+
+/*Intensity*/
+$intensity = array();
+$intensity[] = "3 times/week-Mo-We-Fr";
+$intensity[] = "5 times/week-Mo-till-Fr";
+$intensity[] = "Weekends";
+$smarty -> assign('intensity',$intensity);
+
+$smarty -> assign('year',$year = year());
+$smarty -> assign('year_now',$year_now = date('Y') );
+$smarty -> assign('month',$month = month());
+$smarty -> assign('day',$day = day());
+
+/*Duration*/
+$duration_type = array();
+$duration_type[] = "minutes";
+$duration_type[] = "hours";
+$duration_type[] = "days";
+$smarty -> assign('duration_type',$duration_type);
+
+/*Course part of day*/
+$part_of_day = array();
+$part_of_day[] = "Morning";
+$part_of_day[] = "Afternoon";
+$part_of_day[] = "Evening";
+$smarty -> assign('part_of_day',$part_of_day);
+
 
 ?>

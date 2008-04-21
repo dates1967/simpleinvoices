@@ -10,9 +10,9 @@
 		You must enter a description for the product</div>
 		<hr />
 	{/if}
-<form name="frmpost" ACTION="index.php?module=products&view=add" METHOD="POST">
+<form name="frmpost" ACTION="index.php?module=course&view=add" METHOD="POST">
 
-<div id="top"><h3>&nbsp;{$LANG.product_to_add}&nbsp;</h3></div>
+<div id="top"><h3>&nbsp;Course to add &nbsp;</h3></div>
  <hr />
 
 <table align=center>
@@ -86,11 +86,86 @@
 			<select name="teacher">
 				<option  selected value=""></option>
 			{foreach from=$teacher item=teacher_row}
-				<option value="{$teacher_row.id}">{$teacher_row.name}</option>
+				<option value="{$teacher_row.id}">{$teacher_row.last_name}, {$teacher_row.first_name}</option>
 			{/foreach}
 			</select>
 		</td>
 	</tr>
+	<tr>
+		<td class="details_screen">Intensity</td>
+		<td>
+			<select name="intensity">
+				<option  selected value=""></option>
+				{html_options values=$intensity output=$intensity}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Start</td>
+		<td>
+		<select name="start_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="start_month">
+			{html_options options=$month}
+		</select>
+		<select name="start_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Duration</td>
+		<td>
+		<input type=text name="duration" value="{$smarty.post.duration}" size=5>
+			<select name="duration_type">
+				<option  selected value=""></option>
+				{html_options values=$duration_type output=$duration_type}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Start time</td>
+		<td>
+			<input type=text name="start_time" value="{$smarty.post.start_time}" size=5>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Part of day</td>
+		<td>
+			<select name="part_of_day">
+				<option  selected value=""></option>
+				{html_options values=$part_of_day output=$part_of_day}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">End</td>
+		<td>
+		<select name="end_day">
+			{html_options values=$day output=$day}
+		</select>
+		<select name="end_month">
+			{html_options options=$month}
+		</select>
+		<select name="end_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td class="details_screen">Area</td>
+		<td><input type=text name="area" value="{$smarty.post.area}" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Rooms</td>
+		<td><input type=text name="rooms" value="{$smarty.post.rooms}" size=50></td>
+	</tr>
+
+
+
 
 	<tr>
 		<td class="details_screen">{$LANG.product_unit_price}</td>

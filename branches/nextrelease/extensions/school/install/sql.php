@@ -175,6 +175,7 @@ CREATE TABLE `si_course` (
 `start_date` DATE NULL ,
 `time` VARCHAR( 255 ) NULL ,
 `duration` VARCHAR( 255 ) NULL ,
+`duration_type` VARCHAR( 255 ) NULL ,
 `area` VARCHAR( 255 ) NULL ,
 `rooms` VARCHAR( 255 ) NULL ,
 `teacher_id` INT( 11 ) NULL ,
