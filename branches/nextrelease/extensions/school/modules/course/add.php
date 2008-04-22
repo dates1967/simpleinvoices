@@ -55,7 +55,7 @@ $status[] = "Archived";
 $smarty -> assign('status',$status);
 
 /*Teacher function*/
-$sql_teacher = "select * from ".TB_PREFIX."teacher"; 
+$sql_teacher = "select * from ".TB_PREFIX."teacher where enabled = 1"; 
 $teacher = sql2array($sql_teacher);
 $smarty -> assign('teacher',$teacher);
 
@@ -84,6 +84,29 @@ $part_of_day[] = "Morning";
 $part_of_day[] = "Afternoon";
 $part_of_day[] = "Evening";
 $smarty -> assign('part_of_day',$part_of_day);
+
+/*Repeat type*/
+$repeat_type = array();
+$repeat_type[] = "None";
+$repeat_type[] = "Daily";
+$repeat_type[] = "Weekly";
+$repeat_type[] = "Monthly";
+$repeat_type[] = "Yearly";
+$repeat_type[] = "Monthly, corresponding day";
+$repeat_type[] = "n-Weekly";
+$smarty -> assign('repeat_type',$repeat_type);
+
+/*Repeat day*/
+$repeat_day = array();
+$repeat_day[] = "Monday";
+$repeat_day[] = "Tuesday";
+$repeat_day[] = "Wednesday";
+$repeat_day[] = "Thursday";
+$repeat_day[] = "Friday";
+$repeat_day[] = "Saturday";
+$repeat_day[] = "Sunday";
+$smarty -> assign('repeat_day',$repeat_day);
+
 
 
 ?>

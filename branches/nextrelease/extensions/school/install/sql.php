@@ -217,6 +217,7 @@ CREATE TABLE `si_teacher` (
 `custom_field2` VARCHAR( 255 ) NULL ,
 `custom_field3` VARCHAR( 255 ) NULL ,
 `custom_field4` VARCHAR( 255 ) NULL ,
+`enabled` INT( 1 ) NULL ,
 `note` TEXT NULL
 );
 

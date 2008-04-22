@@ -153,8 +153,29 @@
 		</select>
 		</td>
 	</tr>
-
-
+	<tr>
+		<td class="details_screen">Repeat type</td>
+		<td>
+			<select name="repeat_type">
+				{html_options values=$repeat_type output=$repeat_type}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Repeat day (for n-weekly)</td>
+		<td>
+			<select name="repeat_day">
+				<option  selected value=""></option>
+				{html_options values=$repeat_day output=$repeat_day}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Number of weeks</td>
+		<td>
+			<input type=text name="number_of_weeks" value="{$smarty.post.number_of_weeks}" size=5>
+		</td>
+	</tr>
 	<tr>
 		<td class="details_screen">Area</td>
 		<td><input type=text name="area" value="{$smarty.post.area}" size=50></td>
@@ -163,6 +184,21 @@
 		<td class="details_screen">Rooms</td>
 		<td><input type=text name="rooms" value="{$smarty.post.rooms}" size=50></td>
 	</tr>
+
+<!-- TODO make this a seond tabe - Course Additional Info -->
+	<tr>
+		<td class="details_screen">Course book</td>
+		<td>
+			<input type=text name="course_book" value="{$smarty.post.course_book}" size=50>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Teaching hours</td>
+		<td>
+			<input type=text name="teaching_hours" value="{$smarty.post.teaching_hours}" size=5>
+		</td>
+	</tr>
+
 
 
 
