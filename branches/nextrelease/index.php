@@ -96,6 +96,24 @@ if (($module == "options") && ($view == "database_sqlpatches")) {
 }
 
 /*
+* Prep the page - load the header stuff - start
+*/
+
+	// To remove the js error due to multiple document.ready.function() 
+	// 	in jquery.datePicker.js, jquery.autocomplete.conf.js and jquery.accordian.js 
+	//	 without instances in manage pages - Ap.Muthu
+	/*
+	* TODO: fix the javascript or move datapicker to extjs to fix this hack - not nice
+	*/
+	if ($view == "manage") 
+		$smarty -> display("../templates/default/headerm.tpl");
+	else
+		$smarty -> display("../templates/default/header.tpl");
+/*
+* Prep the page - load the header stuff - end
+*/
+
+/*
 * dont include the header if requested file is an invoice template - for print preview etc.. header is not needed 
 */
 if (($module == "invoices" ) && (strstr($view,"templates"))) {
@@ -209,16 +227,6 @@ $smarty -> assign("extension_jquery_files",$extension_jquery_files);
 * If extension is enabled load its javascript files	- end
 */
 
-// To remove the js error due to multiple document.ready.function() 
-// 	in jquery.datePicker.js, jquery.autocomplete.conf.js and jquery.accordian.js 
-//	 without instances in manage pages - Ap.Muthu
-/*
-* TODO: fix the javascript or move datapicker to extjs to fix this hack - not nice
-*/
-if ($view == "manage") 
-	$smarty -> display("../templates/default/headerm.tpl");
-else
-	$smarty -> display("../templates/default/header.tpl");
 //temp added menu.tpl back in so we can easily design new menu system
 
 /*
