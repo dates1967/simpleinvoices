@@ -56,8 +56,8 @@ $word_processor = "doc"; #MS Word format
 #$word_processor = "odt"; #Open Document Format text
 
 /* Version Info*/
-$version = "20080309 stable";
-$versionFriendlyName ="Patch release 9th March 08 of 2008 03 03 release";
+$version = "20080512 stable";
+$versionFriendlyName ="Minor patches + new extension system of the 2008 03 09 release";
 $versionSeries = "200708 series";
 
 #################
@@ -103,7 +103,7 @@ any config.php setting in this extra file(which wont be kept in svn) will overwr
 - this way everyone can have there own conf setting without messing with anyones setting
 RELEASE TODO: make sure $environment is set back to live
 */
-$environment = "local"; //test,staging,dev,live etc..
+$environment = "live"; //test,staging,dev,live etc..
 if($environment != "live")
 {
 	@include("./config/".htmlspecialchars($environment).".config.php");
