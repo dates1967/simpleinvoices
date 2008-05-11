@@ -56,8 +56,8 @@ $word_processor = "doc"; #MS Word format
 #$word_processor = "odt"; #Open Document Format text
 
 /* Version Info*/
-$version = "20080512 stable";
-$versionFriendlyName ="Minor patches + new extension system of the 2008 03 09 release";
+$version = "20080511 stable";
+$versionFriendlyName ="Minor patches + new extension system of the 2008 03 09 release - aka mother day release";
 $versionSeries = "200708 series";
 
 #################
