@@ -22,7 +22,6 @@ $sql = "INSERT into
 	VALUES
 		(	
 			NULL,
-			'1',
 			'$_POST[pt_description]',
 			'$_POST[pt_enabled]'
 		)";
