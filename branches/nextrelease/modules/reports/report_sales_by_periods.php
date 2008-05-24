@@ -99,6 +99,8 @@ while ( $year <= $this_year )
 		}
 
 	$years[]=$year ;
+
+	//TODO: years not working 100 right - need to fix this up
 	$year++;
 }
 /*
