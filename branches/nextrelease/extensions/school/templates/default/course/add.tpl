@@ -2,7 +2,7 @@
 {* if bill is updated or saved.*}
 
 {if $smarty.post.description != "" && $smarty.post.id != null } 
-	{include file="../templates/default/products/save.tpl"}
+	{include file="../extensions/school/templates/default/course/save.tpl"}
 {else}
 {* if  name was inserted *} 
 	{if $smarty.post.id !=null} 
@@ -18,6 +18,7 @@
 	<ul class="anchors">
 		<li><a href="#section-1">Course General Info</a></li>
 		<li><a href="#section-2">Course Additional Info</a></li>
+		<li><a href="#section-3">Custom Fields</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -27,9 +28,13 @@
 		<td><input type=text name="description" value="{$smarty.post.description}" size=50></td>
 	</tr>
 	<tr>
+		<td class="details_screen">Price</td>
+		<td><input type=text name="unit_price" value="{$smarty.post.price}" size=10></td>
+	</tr>
+	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-			<select name="place_of_enrolment">
+			<select name="branch_id">
 			{foreach from=$branch item=branch_row}
 				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
@@ -39,7 +44,7 @@
 	<tr>
 		<td class="details_screen">Subject</td>
 		<td>
-			<select name="subject">
+			<select name="subject_id">
 				<option  selected value=""></option>
 			{foreach from=$subject item=subject_row}
 				<option value="{$subject_row.id}">{$subject_row.name}</option>
@@ -59,7 +64,7 @@
 	<tr>
 		<td class="details_screen">Level</td>
 		<td>
-			<select name="level">
+			<select name="level_id">
 				<option  selected value=""></option>
 			{foreach from=$level item=level_row}
 				<option value="{$level_row.id}">{$level_row.name}</option>
@@ -145,7 +150,7 @@
 	<tr>
 		<td class="details_screen">Teacher</td>
 		<td>
-			<select name="teacher">
+			<select name="teacher_id">
 				<option  selected value=""></option>
 			{foreach from=$teacher item=teacher_row}
 				<option value="{$teacher_row.id}">{$teacher_row.last_name}, {$teacher_row.first_name}</option>
@@ -202,7 +207,7 @@
 	<tr>
 		<td class="details_screen">Course book</td>
 		<td>
-			<input type=text name="course_book" value="{$smarty.post.course_book}" size=50>
+			<input type=text name="book" value="{$smarty.post.course_book}" size=50>
 		</td>
 	</tr>
 	<tr>
@@ -215,7 +220,43 @@
 
 
 </table>
-<!-- </div> -->
+	</p>
+	</div>
+	<div id="section-3" class="fragment">
+	<p>
+	<table align=center>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.product_cf1} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field1" value="{$smarty.post.custom_field1}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.product_cf2} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field2" value="{$smarty.post.custom_field2}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.product_cf3} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field3" value="{$smarty.post.custom_field3}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.product_cf4} <a
+			href="docs.php?t=help&p=custom_fields"
+			rel="gb_page_center[450, 450]"><img
+			src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=25></td>
+	</tr>
+	</table>
+	</p>
+	</div>
+ </div>
 <hr />
 <div style="text-align:center;">
 	<input type="submit" name="id" value="{$LANG.insert_product}">

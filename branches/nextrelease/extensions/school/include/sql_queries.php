@@ -1,5 +1,84 @@
 <?php
 
+class school_product extends product {
+
+		function insertProduct($enabled=1,$visible=1) {
+			if(isset($_POST['enabled'])) {
+				$enabled=$_POST['enabled'];
+			}
+			
+			$sql = "INSERT into
+					".TB_PREFIX."products
+				(	
+					id,
+					description,
+					unit_price,
+					custom_field1,
+					custom_field2,
+					custom_field3,
+					custom_field4,
+					notes,
+					enabled,
+					visible,
+					branch_id,
+					subject_id,
+					age,
+					level_id,
+					type,
+					status,
+					intensity,
+					start_date,
+					part_of_day,
+					start_time,
+					duration,
+					duration_type,
+					area,
+					rooms,
+					teacher_id,
+					repeat_type,
+					end_date,
+					repeat_day,
+					number_of_weeks,
+					book,
+					teaching_hours
+				)			
+				VALUES
+					(	
+						NULL,
+						'$_POST[description]',
+						'$_POST[unit_price]',
+						'$_POST[custom_field1]',
+						'$_POST[custom_field2]',
+						'$_POST[custom_field3]',
+						'$_POST[custom_field4]',
+						'$_POST[notes]',
+						'$enabled',
+						'$visible',
+						'$_POST[branch_id]',
+						'$_POST[subject_id]',
+						'$_POST[age]',
+						'$_POST[level_id]',
+						'$_POST[type]',
+						'$_POST[status]',
+						'$_POST[intensity]',
+						'$_POST[start_year]-$_POST[start_month]-$_POST[start_day]',
+						'$_POST[part_of_day]',
+						'$_POST[start_time]',
+						'$_POST[duration]',
+						'$_POST[duration_type]',
+						'$_POST[area]',
+						'$_POST[rooms]',
+						'$_POST[teacher_id]',
+						'$_POST[repeat_type]',
+						'$_POST[end_year]-$_POST[end_month]-$_POST[end_day]',
+						'$_POST[repeat_day]',
+						'$_POST[number_of_weeks]',
+						'$_POST[book]',
+						'$_POST[teaching_hours]'
+					)";
+			return mysqlQuery($sql);
+		}
+}
 class school_student extends customer {
 
 	function insertCustomer() {
