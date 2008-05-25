@@ -40,7 +40,8 @@ class school_product extends product {
 					repeat_day,
 					number_of_weeks,
 					book,
-					teaching_hours
+					teaching_hours,
+					iscourse
 				)			
 				VALUES
 					(	
@@ -74,7 +75,8 @@ class school_product extends product {
 						'$_POST[repeat_day]',
 						'$_POST[number_of_weeks]',
 						'$_POST[book]',
-						'$_POST[teaching_hours]'
+						'$_POST[teaching_hours]',
+						'$_POST[iscourse]'
 					)";
 			return mysqlQuery($sql);
 		}

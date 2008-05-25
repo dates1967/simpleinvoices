@@ -253,6 +253,10 @@
 			src="./images/common/help-small.png"></img></a></td>
 		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=25></td>
 	</tr>
+	<tr>
+		<td class="details_screen">Is Course</td>
+		<td><input type=text name="iscourse" disabled value="1" size=25></td>
+	</tr>
 	</table>
 	</p>
 	</div>

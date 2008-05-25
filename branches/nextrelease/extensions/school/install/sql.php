@@ -185,7 +185,8 @@ ADD `end_date` DATE NULL ,
 ADD `repeat_day` VARCHAR( 255 ) NULL ,
 ADD `number_of_weeks` INT( 11 ) NULL ,
 ADD `book` VARCHAR( 255 ) NULL ,
-ADD `teaching_hours` VARCHAR ( 255 ) NULL
+ADD `teaching_hours` VARCHAR ( 255 ) NULL,
+ADD `iscourse` INT( 1 ) NOT NULL DEFAULT '0'  
 )
 
 
