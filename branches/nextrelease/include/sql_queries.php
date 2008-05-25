@@ -1,5 +1,10 @@
 <?php
 
+/*
+* 1 = Enabled
+* 0 = Disabled
+*/
+
 if(LOGGING) {
 	//Logging connection to prevent mysql_insert_id problems. Need to be called before the second connect...
 	$log = mysql_connect( $db_host, $db_user, $db_password );
