@@ -80,6 +80,52 @@ class school_product extends product {
 					)";
 			return mysqlQuery($sql);
 		}
+
+
+	function getProducts() {
+		global $LANG;
+		
+		$sql = "SELECT * FROM ".TB_PREFIX."products WHERE visible = 1 AND iscourse = 0 ORDER BY description";
+		$query = mysqlQuery($sql) or die(mysql_error());
+		
+		$products = null;
+		
+		for($i=0;$product = mysql_fetch_array($query);$i++) {
+			
+			if ($product['enabled'] == 1) {
+				$product['enabled'] = $LANG['enabled'];
+			} else {
+				$product['enabled'] = $LANG['disabled'];
+			}
+
+			$products[$i] = $product;
+		}
+		
+		return $products;
+	}
+
+	function getCourses() 
+	{
+		global $LANG;
+		
+		$sql = "SELECT * FROM ".TB_PREFIX."products WHERE visible = 1 AND iscourse = 1 ORDER BY description";
+		$query = mysqlQuery($sql) or die(mysql_error());
+		
+		$products = null;
+		
+		for($i=0;$product = mysql_fetch_array($query);$i++) {
+			
+			if ($product['enabled'] == 1) {
+				$product['enabled'] = $LANG['enabled'];
+			} else {
+				$product['enabled'] = $LANG['disabled'];
+			}
+
+			$products[$i] = $product;
+		}
+		
+		return $products;
+	}
 }
 class school_student extends customer {
 
