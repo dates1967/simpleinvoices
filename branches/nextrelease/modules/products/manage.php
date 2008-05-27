@@ -3,7 +3,7 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$products = getProducts();
+$products = product::getProducts();
 
 $pageActive = "products";
 
