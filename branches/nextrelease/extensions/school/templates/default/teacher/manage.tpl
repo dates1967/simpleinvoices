@@ -3,7 +3,7 @@
 {else}
 
 
-<h3>{$LANG.manage_products} :: <a href="index.php?module=products&view=add">{$LANG.add_new_product}</a></h3>
+<h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">{$LANG.add_new_product}</a></h3>
 
  <hr />
 
@@ -26,17 +26,17 @@
 </thead>
 
 
-{foreach from=$products item=product}
+{foreach from=$teachers item=teacher}
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$product.id}&action=view">{$LANG.view}</a> ::
+	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=view">{$LANG.view}</a> ::
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$product.id}&action=edit">{$LANG.edit}</a> </td>
-	<td class="index_table">{$product.id}</td>
-	<td class="index_table">{$product.description}</td>
-	<td class="index_table">{$product.unit_price}</td>
-	<td class="index_table">{$product.enabled}</td>
+	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
+	<td class="index_table">{$teacher.id}</td>
+	<td class="index_table">{$teacher.description}</td>
+	<td class="index_table">{$teacher.unit_price}</td>
+	<td class="index_table">{$teacher.enabled}</td>
 	</tr>
 
 {/foreach}

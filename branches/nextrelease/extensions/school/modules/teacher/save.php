@@ -11,12 +11,84 @@ $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
 #insert product
 $saved = false;
 
-if (  $op === 'insert_product' ) {
+if (  $op === 'insert_teacher' ) {
 	
-	$insertProductClass = new product;
-	if($id = $insertProductClass->insertProduct()) {
+	function insertTeacher() {
+		
+		$sql = "INSERT INTO ".TB_PREFIX."teacher 
+					(
+					
+						last_name,
+						first_name,
+						middle_name,
+						place_of_registration,
+						place_of_lesson,
+						street_address,
+						street_address2,
+						city,
+						state, 
+						post_code,
+						country,
+						home_phone,
+						cell_phone,
+						fax,
+						email,
+						note,
+						custom_field1,
+						custom_field2,
+						custom_field3,
+						custom_field4,
+						enabled,
+						
+						date,
+						birthday,
+						gender,
+						passport_number,
+						passport_issued_at,
+						passport_issued_on
+				
+					)
+					VALUES 
+					(
+						
+						
+						'$_POST[last_name]',
+						'$_POST[first_name]',
+						'$_POST[middle_name]',
+						'$_POST[place_of_registration]',
+						'$_POST[place_of_lesson]',
+						'$_POST[street_address]',
+						'$_POST[street_address2]',
+						'$_POST[city]',
+						'$_POST[state]',
+						'$_POST[post_code]',
+						'$_POST[country]',
+						'$_POST[home_phone]', 
+						'$_POST[mobile_phone]', 
+						'$_POST[fax]', 
+						'$_POST[email]', 
+						'$_POST[note]', 
+						'$_POST[custom_field1]', 
+						'$_POST[custom_field2]', 
+						'$_POST[custom_field3]', 
+						'$_POST[custom_field4]', 
+						'$_POST[enabled]',
+						
+						'$_POST[date]',
+						'$_POST[birthday_year]-$_POST[birthday_month]-$_POST[birthday_day]', 
+						'$_POST[gender]',
+						'$_POST[passport_number]',
+						'$_POST[passport_issued_at]',
+						'$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]'
+						
+					)
+				";
+		
+		return mysqlQuery($sql);
+		
+	}
+	if( insertTeacher() ) {
  		$saved = true;
-// 		saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
  	}
 }
 
@@ -71,7 +143,7 @@ else if (  $op === 'edit_product' ) {
 $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
-$pageActive = "products";
+$pageActive = "teacher";
 //$smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 
