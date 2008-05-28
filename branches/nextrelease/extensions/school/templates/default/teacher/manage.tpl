@@ -1,4 +1,4 @@
-{if $products == null }
+{if $teachers == null }
 	<P><em>{$LANG.no_products}</em></p>
 {else}
 
@@ -7,7 +7,7 @@
 
  <hr />
 
-<table align="center" class="ricoLiveGrid" id="rico_product">
+<table align="center" class="ricoLiveGrid" id="rico_teacher">
 <colgroup>
 	<col style='width:10%;' />
 	<col style='width:10%;' />
@@ -25,7 +25,7 @@
 </tr>
 </thead>
 
-
+sdas
 {foreach from=$teachers item=teacher}
 	<tr class="index_table">
 	<td class="index_table">
