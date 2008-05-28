@@ -21,11 +21,10 @@ function getTeachers()
 		$teachers[$i] = $teacher;
 	}
 	
-	return $teacher;
+	return $teachers;
 
 }
 $teachers = getTeachers();
-print_r($teachers);
 $pageActive = "teacher";
 
 $smarty->assign('pageActive', $pageActive);

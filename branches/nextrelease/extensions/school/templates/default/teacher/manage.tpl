@@ -25,7 +25,6 @@
 </tr>
 </thead>
 
-sdas
 {foreach from=$teachers item=teacher}
 	<tr class="index_table">
 	<td class="index_table">
