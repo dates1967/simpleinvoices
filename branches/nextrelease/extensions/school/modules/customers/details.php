@@ -111,11 +111,12 @@ $smarty -> assign('month',$month = month());
 $smarty -> assign('day',$day = day());
 
 /* Age */
-$calc_month = $customer_birthday['month'] ; $calc_day = $customer_birthday['day']; $calc_year = $customer_birthday['year'] ;
+$calc_month = $customer_birthday['month']; 
+$calc_day = $customer_birthday['day']; 
+$calc_year = $customer_birthday['year'];
 
 $smarty -> assign('age',$calc_age = calc_age($calc_month, $calc_day, $calc_year));
-
-/* Cousrse*/
+/* Course*/
 
 $course_sql = "select * from si_course_enrol where student_id = ".$customer_id."";
 $course_sql_result = mysql_fetch_object(mysqlQuery($course_sql));
