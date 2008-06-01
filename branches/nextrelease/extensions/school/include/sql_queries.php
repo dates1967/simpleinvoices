@@ -342,7 +342,18 @@ class school_student extends customer {
 		*/	
 }
 
-
+class school_enrol
+{
+	function getStudentEnrollment($student_id)
+	{
+		global $LANG;
+		
+		$sql = "SELECT * FROM ".TB_PREFIX."course_enrol WHERE student_id = ".$student_id." ORDER BY course_id";
+		$query = mysqlQuery($sql) or die(mysql_error());
+		//$query = mysql_fetch_object(mysqlQuery($sql));
+		return $query;
+	}
+}
 
 
 function year()

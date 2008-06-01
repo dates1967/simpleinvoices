@@ -90,6 +90,8 @@ insert into si_course_start_reason values (null,'Re-Entry after Dropping Out');
 
 create table si_course_enrol ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , course_id INT NOT NULL , student_id INT NOT NULL);
 ALTER TABLE `si_course_enrol` ADD `dropped_reaon_id` INT( 11 ) NULL DEFAULT NULL ;
+ALTER TABLE `si_course_enrol` ADD `dropped_date` DATE NULL; 
+ALTER TABLE `si_course_enrol` ADD `start_date` DATE NULL; 
 
 
 

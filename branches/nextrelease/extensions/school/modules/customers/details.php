@@ -118,15 +118,21 @@ $calc_year = $customer_birthday['year'];
 $smarty -> assign('age',$calc_age = calc_age($calc_month, $calc_day, $calc_year));
 /* Course*/
 
+/*
 $course_sql = "select * from si_course_enrol where student_id = ".$customer_id."";
 $course_sql_result = mysql_fetch_object(mysqlQuery($course_sql));
-
+*/
+$course_enrol = school_enrol::getStudentEnrollment($customer_id);
+print_r($course_enrol);
+//$smarty->register_object("course_enrol",$course_sql_result);
 /*
 $course_dropped_sql = "select * from si_course_dropped_reason where id = ".$cource_sql_result['dropped_reason_id']."";
 $course_dropped_sql_result = mysql_fetch_object(mysqlQuery($course_dropped_sql));
 $course_sql_result['dropped_reaon'] = 
 */
-$smarty -> assign('course_enrol',$course_sql_result);
+$smarty -> assign('course_enrol',$course_sql_enrol);
+
+
 
 
 ?>
