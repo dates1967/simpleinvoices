@@ -3,7 +3,7 @@
 {else}
 
 
-<h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">{$LANG.add_new_product}</a></h3>
+<h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">Add New Teacher</a></h3>
 
  <hr />
 
@@ -12,15 +12,13 @@
 	<col style='width:10%;' />
 	<col style='width:10%;' />
 	<col style='width:50%;' />
-	<col style='width:20%;' />
-	<col style='width:10%;' />
+	<col style='width:30%;' />
 </colgroup>
 <thead>
 <tr class="sortHeader">
 	<th class="noFilter sortable">{$LANG.actions}</th>
-	<th class="index_table sortable">{$LANG.product_id}</th>
-	<th class="index_table sortable">{$LANG.product_description}</th>
-	<th class="index_table sortable">{$LANG.product_unit_price}</th>
+	<th class="index_table sortable">ID</th>
+	<th class="index_table sortable">Teacher name</th>
 	<th class="noFilter index_table sortable">{$LANG.enabled}</th>
 </tr>
 </thead>
@@ -33,8 +31,7 @@
 	<a class="index_table"
 	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$teacher.id}</td>
-	<td class="index_table">{$teacher.description}</td>
-	<td class="index_table">{$teacher.unit_price}</td>
+	<td class="index_table">{$teacher.last_name}, {$teacher.middle_name}, {$teacher.first_name}</td>
 	<td class="index_table">{$teacher.enabled}</td>
 	</tr>
 
