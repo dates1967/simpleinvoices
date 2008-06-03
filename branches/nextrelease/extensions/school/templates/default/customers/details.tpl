@@ -192,26 +192,86 @@
 	<p>
 	<table align=center>
 	<tr>
+		<!--
 		<td class="details_screen">Enrol : Add Course</td>
 		<td>
 		</td>
+		-->
+	</tr>
+	<tr class="sortHeader">
+		<th class="sortable">
+			Course ID
+		</td>
+		<th class="sortable">
+			Course branch
+		</td>
+		<th class="sortable">
+			Course subject
+		</td>
+		<th class="sortable">
+			Course age
+		</td>
+		<th class="sortable">
+			Course level
+		</td>
+		<th class="sortable">
+			Course type
+		</td>
+		<th class="sortable">
+			Course status
+		</td>
+		<th class="sortable">
+			Date of first lesson
+		</td>
+		<th class="sortable">
+			Start reason
+		</td>
+		<th class="sortable">
+			Dropped
+		</td>
+		<th class="sortable">
+			Dropped reason
+		</td>
 	</tr>
 {foreach from=$course_enrol item=courses}
-	<tr>
-		<td>
+	<tr class="index_table">
+		<td class="details_screen">
 			{$courses.id}
 		</td>
-		<td>
-			{$courses.course_id}
+		<td class="details_screen">
+			{$courses.branch_name}
 		</td>
-		<td>
-			{$courses.student_id}
+		<td class="details_screen">
+			{$courses.subject_name}
 		</td>
-		<td>
-			{$courses.dropped_reason_id}
+		<td class="details_screen">
+			{$courses.age}
 		</td>
+		<td class="details_screen">
+			{$courses.level_name}
+		</td>
+		<td class="details_screen">
+			{$courses.type}
+		</td>
+		<td class="details_screen">
+			{$courses.status}
+		</td>
+		<td class="details_screen">
+			{$courses.start_date}
+		</td>
+		<td class="details_screen">
+			{$courses.start_reason}
+		</td>
+		<td class="details_screen">
+			{$courses.dropped_date}
+		</td>
+		<td class="details_screen">
+			{$courses.dropped_reason}
+		</td>
+	</tr>
 {/foreach}
 	</table>
+<br>
 	</p>
 	</div>
 	<div id="section-3" class="fragment">

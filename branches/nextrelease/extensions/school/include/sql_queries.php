@@ -348,10 +348,13 @@ class school_enrol
 	{
 		global $LANG;
 		
-		$sql = "SELECT * FROM ".TB_PREFIX."course_enrol WHERE student_id = ".$student_id." ORDER BY course_id";
-		$query = mysqlQuery($sql) or die(mysql_error());
+		//$sql = "SELECT * FROM ".TB_PREFIX."course_enrol WHERE student_id = ".$student_id." ORDER BY course_id";
+		$sql = "select e.student_id, p.id, b.name as branch_name , s.name as subject_name, p.age, l.name as level_name, p.type, p.status, p.start_date, start.reason as start_reason, e.dropped_date, dropped.reason as dropped_reason from ".TB_PREFIX."course_enrol e, ".TB_PREFIX."products p, ".TB_PREFIX."subject s, ".TB_PREFIX."branch b, ".TB_PREFIX."level l, ".TB_PREFIX."course_start_reason start, ".TB_PREFIX."course_dropped_reason dropped where e.course_id = p.id and p.subject_id = s.id and p.branch_id =b.id and p.level_id = l.id and e.dropped_reason_id = dropped.id and e.start_reason_id = start.id and e.student_id = ".$student_id."";
+		//$query = mysqlQuery($sql) or die(mysql_error());
 		//$query = mysql_fetch_object(mysqlQuery($sql));
-		return $query;
+ 
+
+		return sql2array($sql);
 	}
 }
 
