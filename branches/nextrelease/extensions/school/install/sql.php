@@ -93,6 +93,8 @@ ALTER TABLE `si_course_enrol` ADD `start_reason_id` INT( 11 ) NULL DEFAULT NULL 
 ALTER TABLE `si_course_enrol` ADD `dropped_reason_id` INT( 11 ) NULL DEFAULT NULL ;
 ALTER TABLE `si_course_enrol` ADD `dropped_date` DATE NULL; 
 ALTER TABLE `si_course_enrol` ADD `start_date` DATE NULL; 
+ALTER TABLE `si_course_enrol` ADD `invoice_id` INT( 11 ) NULL DEFAULT NULL; 
+ALTER TABLE `si_course_enrol` ADD `invoice_item_id` INT( 11 ) NULL DEFAULT NULL; 
 
 
 
@@ -317,6 +319,10 @@ NULL , 'Greek'
 NULL , 'Russian for Foreigners'
 );
 
+ALTER TABLE `si_invoice_items` ADD `student_id` INT( 11 ) NULL DEFAULT NULL);
+ALTER TABLE `si_invoice_items` ADD `start_reason_id` INT( 11 ) NULL DEFAULT NULL ;
+ALTER TABLE `si_invoice_items` ADD `dropped_reason_id` INT( 11 ) NULL DEFAULT NULL ;
+ALTER TABLE `si_invoice_items` ADD `dropped_date` DATE NULL; 
 */
 
 

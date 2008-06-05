@@ -349,7 +349,7 @@ class school_enrol
 		global $LANG;
 		
 		//$sql = "SELECT * FROM ".TB_PREFIX."course_enrol WHERE student_id = ".$student_id." ORDER BY course_id";
-		$sql = "select e.student_id, p.id, b.name as branch_name , s.name as subject_name, p.age, l.name as level_name, p.type, p.status, p.start_date, start.reason as start_reason, e.dropped_date, dropped.reason as dropped_reason from ".TB_PREFIX."course_enrol e, ".TB_PREFIX."products p, ".TB_PREFIX."subject s, ".TB_PREFIX."branch b, ".TB_PREFIX."level l, ".TB_PREFIX."course_start_reason start, ".TB_PREFIX."course_dropped_reason dropped where e.course_id = p.id and p.subject_id = s.id and p.branch_id =b.id and p.level_id = l.id and e.dropped_reason_id = dropped.id and e.start_reason_id = start.id and e.student_id = ".$student_id."";
+		$sql = "select e.student_id, p.id, b.name as branch_name , s.name as subject_name, p.age, l.name as level_name, p.type, p.status, p.start_date, start.reason as start_reason, e.dropped_date, dropped.reason as dropped_reason from ".TB_PREFIX."invoice_items e, ".TB_PREFIX."products p, ".TB_PREFIX."subject s, ".TB_PREFIX."branch b, ".TB_PREFIX."level l, ".TB_PREFIX."course_start_reason start, ".TB_PREFIX."course_dropped_reason dropped where e.product_id = p.id and p.subject_id = s.id and p.branch_id =b.id and p.level_id = l.id and e.dropped_reason_id = dropped.id and e.start_reason_id = start.id and e.student_id = ".$student_id."";
 		//$query = mysqlQuery($sql) or die(mysql_error());
 		//$query = mysql_fetch_object(mysqlQuery($sql));
  
@@ -358,6 +358,30 @@ class school_enrol
 	}
 }
 
+class school_invoice extends invoice{
+
+		
+		function insertinvoiceitem($invoice_id,$quantity,$product_id,$tax_id,$description="", $student_id, $start_reason_id, $dropped_reason_id, $dropped_date) 
+		{
+		
+			global $LANG;
+			$tax = gettaxrate($tax_id);
+			$product = getproduct($product_id);
+			//print_r($product);
+			$actual_tax = $tax['tax_percentage']  / 100 ;
+			$total_invoice_item_tax = $product['unit_price'] * $actual_tax;
+			$tax_amount = $total_invoice_item_tax * $quantity;
+			$total_invoice_item = $total_invoice_item_tax + $product['unit_price'] ;	
+			$total = $total_invoice_item * $quantity;
+			$gross_total = $product['unit_price']  * $quantity;
+			
+			$sql = "insert into ".TB_PREFIX."invoice_items (`invoice_id`,`quantity`,`product_id`,`unit_price`,`tax_id`,`tax`,`tax_amount`,`gross_total`,`description`,`total`,`student_id`,`start_reason_id`,`dropped_reason_id`,`dropped_date`) values ($invoice_id,$quantity,$product_id,$product[unit_price],'$tax[tax_id]',$tax[tax_percentage],$tax_amount,$gross_total,'$description',$total, '$student_id', '$start_reason_id', '$dropped_reason_id', '$dropped_date')";
+
+			//echo $sql;
+			return mysqlQuery($sql);
+
+		}
+}
 
 function year()
 {
