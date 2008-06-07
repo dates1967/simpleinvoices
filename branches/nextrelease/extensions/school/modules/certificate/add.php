@@ -8,10 +8,10 @@ checkLogin();
 $customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
-if ($_POST['description'] != "" ) {
-	include("./modules/products/save.php");
+if ($_POST['name'] != "" ) {
+	include("./extensions/school/modules/certificate/save.php");
 }
-$pageActive = "products";
+$pageActive = "certificate";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('customFieldLabel',$customFieldLabel);

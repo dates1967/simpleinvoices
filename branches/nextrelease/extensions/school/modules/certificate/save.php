@@ -13,11 +13,9 @@ $saved = false;
 
 if (  $op === 'insert_product' ) {
 	
-	$insertProductClass = new product;
-	if($id = $insertProductClass->insertProduct()) {
- 		$saved = true;
-// 		saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
- 	}
+	$sql = "insert into ".TB_PREFIX."certificate (id, name) VALUES (NULL,'$_POST[name]')";
+	// Execute our query
+	if (mysqlQuery($sql)) $saved=true;
 }
 
 if ($op === 'edit_product' ) {
