@@ -227,13 +227,15 @@
 	<table align=center>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf1} <a
+			tabindex="-1"
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
 		<td><input type=text name="custom_field1" value="{$smarty.post.custom_field1}" size=25></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf2} <a
+		<td class="details_screen">{$customFieldLabel.product_cf2} <a 
+			tabindex="-1"
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
@@ -241,6 +243,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf3} <a
+			tabindex="-1"
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
@@ -248,6 +251,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf4} <a
+			tabindex="-1"
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
@@ -255,7 +259,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Is Course</td>
-		<td><input type=text name="iscourse" disabled value="1" size=25></td>
+		<td><input type=text name="iscourse" readonly value="1" size=25></td>
 	</tr>
 	</table>
 	</p>

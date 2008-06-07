@@ -52,7 +52,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Is Course</td>
-		<td><input type=text name="iscourse" disabled value="0" size=25></td>
+		<td><input type=text name="iscourse" readonly value="0" size=25></td>
 	</tr>
 {*
 		{showCustomFields categorieId="3" itemId=""}

@@ -103,7 +103,7 @@ any config.php setting in this extra file(which wont be kept in svn) will overwr
 - this way everyone can have there own conf setting without messing with anyones setting
 RELEASE TODO: make sure $environment is set back to live
 */
-$environment = "live"; //test,staging,dev,live etc..
+$environment = "local"; //test,staging,dev,live etc..
 if($environment != "live")
 {
 	@include("./config/".htmlspecialchars($environment).".config.php");
@@ -120,6 +120,6 @@ if($environment != "live")
 #error_reporting(0);
 
 //To turn logging on set the below to true - not needed as it is set in System Defaults
-#define("LOGGING",false);
+define("LOGGING",false);
 #define("LOGGING",true);
 ?>
