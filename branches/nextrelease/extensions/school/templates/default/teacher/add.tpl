@@ -29,7 +29,7 @@
 	
 
 	
-<form name="frmpost" ACTION="index.php?module=teacher&view=add" METHOD="post"><h3>Add New Student</h3>
+<form name="frmpost" ACTION="index.php?module=teacher&view=add" METHOD="post"><h3>Add New Teacher</h3>
 <hr />
 	
 <div id="container-1">

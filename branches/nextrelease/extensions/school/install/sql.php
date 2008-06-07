@@ -170,8 +170,8 @@ insert into si_branch value (null,'Stalingrad');
 
 
 ALTER TABLE `si_products` (
-ADD `branch_id` INT( 11 ) NOT NULL ,
-ADD `subject_id` INT( 11 ) NOT NULL ,
+ADD `branch_id` INT( 11 ) NULL ,
+ADD `subject_id` INT( 11 ) NULL ,
 ADD `age` VARCHAR( 255 ) NULL ,
 ADD `level_id` INT( 11 ) NULL ,
 ADD `type` VARCHAR( 255 ) NULL ,
@@ -323,6 +323,10 @@ ALTER TABLE `si_invoice_items` ADD `student_id` INT( 11 ) NULL DEFAULT NULL);
 ALTER TABLE `si_invoice_items` ADD `start_reason_id` INT( 11 ) NULL DEFAULT NULL ;
 ALTER TABLE `si_invoice_items` ADD `dropped_reason_id` INT( 11 ) NULL DEFAULT NULL ;
 ALTER TABLE `si_invoice_items` ADD `dropped_date` DATE NULL; 
+
+
+create table si_certificate ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , course_id INT NOT NULL , name VARCHAR( 255 ) NOT NULL);
+
 */
 
 
