@@ -10,7 +10,7 @@ $product = getProduct($product_id);
 #get custom field labels
 $customFieldLabel = getCustomFieldLabels();
 
-$pageActive = "products";
+$pageActive = "certificate";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('product',$product);
