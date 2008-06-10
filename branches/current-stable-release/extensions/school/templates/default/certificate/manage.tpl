@@ -26,9 +26,9 @@
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
+	 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
+	 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$cert.id}</td>
 	<td class="index_table">{$cert.name}</td>
 	</tr>
