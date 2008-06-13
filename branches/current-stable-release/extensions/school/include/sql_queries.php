@@ -153,7 +153,7 @@ class school_student extends customer {
 						custom_field4,
 						enabled,
 						
-						place_of_enrolment,
+						place_of_registration,
 						place_of_lesson,
 						date,
 						first_name,
@@ -188,14 +188,11 @@ class school_student extends customer {
 						guardian2_passport_number,
 						guardian2_passport_issued_at,
 						guardian2_passport_issued_on,
-						guardian2_address
-						
-				
+						guardian2_address,
+						person_type
 					)
 					VALUES 
 					(
-						
-						
 						'$name',
 						'$street_address',
 						'$street_address2',
@@ -249,7 +246,8 @@ class school_student extends customer {
 						'$guardian2_passport_number',
 						'$guardian2_passport_issued_at',
 						'$guardian2_passport_issued_on_year-$guardian2_passport_issued_on_month-$guardian2_passport_issued_on_day', 
-						'$guardian2_address'
+						'$guardian2_address',
+						1
 					)
 				";
 		
@@ -316,12 +314,22 @@ class school_student extends customer {
 						guardian2_passport_number = '$_POST[guardian2_passport_number]',
 						guardian2_passport_issued_at = '$_POST[guardian2_passport_issued_at]',
 						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on_year]-$_POST[guardian2_passport_issued_on_month]-$_POST[guardian2_passport_issued_on_day]',
-						guardian2_address = '$_POST[guardian2_address]'
+						guardian2_address = '$_POST[guardian2_address]',
+						person_type = '1'
 						
 					WHERE
 						id = " . $_GET['id'];
 
 			return mysqlQuery($sql);
+		}
+
+
+		function getCustomer($id) 
+		{
+	
+			$print_customer = "SELECT * FROM ".TB_PREFIX."customers WHERE id = $id AND person_type = '1'";
+			$result_print_customer = mysqlQuery($print_customer) or die(mysql_error());
+			return mysql_fetch_array($result_print_customer);
 		}
 		/*	
 			
@@ -340,6 +348,42 @@ class school_student extends customer {
 			`total` = '$total'			
 			WHERE  `id` = '$id'";
 		*/	
+		function getCustomers() {
+				
+			global $LANG;
+			
+			$customer = null;
+			
+			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE person_type ='1' ORDER BY name";
+			$result = mysqlQuery($sql) or die(mysql_error());
+
+			$customers = null;
+
+			for($i=0;$customer = mysql_fetch_array($result);$i++) {
+				if ($customer['enabled'] == 1) {
+					$customer['enabled'] = $LANG['enabled'];
+				} else {
+					$customer['enabled'] = $LANG['disabled'];
+				}
+
+				#invoice total calc - start
+				$customer['total'] = customer::calc_customer_total($customer['id']);
+				#invoice total calc - end
+
+				#amount paid calc - start
+				$customer['paid'] = customer::calc_customer_paid($customer['id']);
+				#amount paid calc - end
+
+				#amount owing calc - start
+				$customer['owing'] = $customer['total'] - $customer['paid'];
+				
+				#amount owing calc - end
+				$customers[$i] = $customer;
+
+			}
+			
+			return $customers;
+		}
 }
 
 class school_enrol

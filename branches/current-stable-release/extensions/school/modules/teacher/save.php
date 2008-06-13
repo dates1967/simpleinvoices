@@ -15,7 +15,7 @@ if (  $op === 'insert_teacher' ) {
 	
 	function insertTeacher() {
 		
-		$sql = "INSERT INTO ".TB_PREFIX."teacher 
+		$sql = "INSERT INTO ".TB_PREFIX."customer 
 					(
 					
 						last_name,
@@ -45,7 +45,8 @@ if (  $op === 'insert_teacher' ) {
 						gender,
 						passport_number,
 						passport_issued_at,
-						passport_issued_on
+						passport_issued_on,
+						person_type
 				
 					)
 					VALUES 
@@ -79,7 +80,8 @@ if (  $op === 'insert_teacher' ) {
 						'$_POST[gender]',
 						'$_POST[passport_number]',
 						'$_POST[passport_issued_at]',
-						'$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]'
+						'$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
+						'2'
 						
 					)
 				";

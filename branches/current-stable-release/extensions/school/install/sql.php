@@ -114,7 +114,8 @@ insert into si_student_relation values (null,'Guardian');
 
 
 
-ALTER TABLE `si_customers` ADD `place_of_enrolment` INT( 255 ) NULL ,
+ALTER TABLE `si_customers` 
+ADD `place_of_registration` INT( 255 ) NULL ,
 ADD `place_of_lesson` INT( 11 ) NULL ,
 ADD `date` DATE NULL ,
 ADD `first_name` VARCHAR( 255 ) NULL ,
@@ -151,7 +152,8 @@ ALTER TABLE
 		ADD `guardian2_passport_number` VARCHAR(255) NULL AFTER `guardian2_email`, 
 		ADD `guardian2_passport_issued_at` VARCHAR(255) NULL AFTER `guardian2_passport_number`, 
 		ADD `guardian2_passport_issued_on` DATE NULL AFTER `guardian2_passport_issued_at`, 
-		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`
+		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`,
+		ADD `person_type` VARCHAR(255) NULL AFTER `cell_phone`
 ;
 
 

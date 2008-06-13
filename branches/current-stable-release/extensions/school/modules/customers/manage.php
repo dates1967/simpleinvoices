@@ -19,7 +19,7 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$customers = customer::getCustomers();
+$customers = school_student::getCustomers();
 
 $pageActive = "customers";
 
