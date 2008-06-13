@@ -3,17 +3,22 @@
 checkLogin();
 
 #get the invoice id
-$product_id = $_GET['id'];
+$id = $_GET['id'];
 
-$product = getProduct($product_id);
-
-#get custom field labels
-$customFieldLabel = getCustomFieldLabels();
+function getCertificate($id) {
+	
+	global $LANG;
+	$sql = "SELECT * FROM ".TB_PREFIX."certificate WHERE id = $id";
+	$query = mysqlQuery($sql) or die(mysql_error());
+	$product = mysql_fetch_array($query);
+	//	$product['wording_for_enabled'] = $product['enabled']==1?$LANG['enabled']:$LANG['disabled'];
+	return $product;
+}
 
 $pageActive = "certificate";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign('product',$product);
+$smarty -> assign('certificate',$getCert = getCertificate($id));
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
 ?>

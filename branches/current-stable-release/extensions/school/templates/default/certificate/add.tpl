@@ -24,8 +24,8 @@
 <!-- </div> -->
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="id" value="{$LANG.insert_product}">
-	<input type="hidden" name="op" value="insert_product">
+	<input type="submit" name="id" value="Insert Certificate">
+	<input type="hidden" name="op" value="insert_certificate">
 </div>
 </form>
 	{/if}

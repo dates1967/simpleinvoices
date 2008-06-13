@@ -11,66 +11,25 @@ $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
 #insert product
 $saved = false;
 
-if (  $op === 'insert_product' ) {
-	
+if (  $op === 'insert_certificate' ) 
+{
 	$sql = "insert into ".TB_PREFIX."certificate (id, name) VALUES (NULL,'$_POST[name]')";
 	// Execute our query
 	if (mysqlQuery($sql)) $saved=true;
 }
 
-if ($op === 'edit_product' ) {
-	$insertProductClass = new product;
-	if (isset($_POST['save_product']) && $insertProductClass->updateProduct()) {
-		$saved = true;
-//		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
-	}
+if ($op === 'edit_certificate' ) 
+{
+	$sql = "update ".TB_PREFIX."certificate set name = \"$_POST[name]\" where id = \"$_GET[id]\" ";
+	// Execute our query
+	if (mysqlQuery($sql)) $saved=true;
 }
-
-
-
-/*if (mysqlQuery($sql, $conn)) {
-	$display_block = $LANG['save_product_success'];
-	 saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
-
-} else {
-	$display_block = $LANG['save_product_failure'];
-}
-
-	$refresh_total = "<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=products&view=manage>";
-}
-
-
-
-/*#edit product
-
-else if (  $op === 'edit_product' ) {
-
-
-	if (isset($_POST['save_product'])) {
-		
-		if (mysqlQuery($sql, $conn)) {
-			 updateCustomFieldValues($_POST['categorie'],mysql_insert_id());
-
-			$display_block = $LANG['save_product_success'];
-		} else {
-			$display_block = $LANG['save_product_failure'];
-		}
-
-		$refresh_total = "<META HTTP-EQUIV=REFRESH CONTENT=0;URL=index.php?module=products&view=manage>";
-		}
-
-	else if (isset($_POST['cancel'])) {
-	
-		$refresh_total = "<META HTTP-EQUIV=REFRESH CONTENT=0;URL=index.php?module=products&view=manage>";
-	}
-}*/
-
 
 $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
-$pageActive = "products";
-//$smarty->assign('pageActive', $pageActive);
+$pageActive = "certificate";
+$smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 
 //$smarty -> assign('refresh_total',$refresh_total); 
