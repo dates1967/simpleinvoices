@@ -6,7 +6,7 @@ checkLogin();
 function getTeachers()
 {
 	global $LANG;
-			$sql = "SELECT * FROM ".TB_PREFIX."teacher ORDER BY last_name";
+			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE person_type ='2' ORDER BY last_name";
 			$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$teahers = null;

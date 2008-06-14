@@ -15,7 +15,7 @@ if (  $op === 'insert_teacher' ) {
 	
 	function insertTeacher() {
 		
-		$sql = "INSERT INTO ".TB_PREFIX."customer 
+		$sql = "INSERT INTO ".TB_PREFIX."customers 
 					(
 					
 						last_name,
@@ -27,13 +27,13 @@ if (  $op === 'insert_teacher' ) {
 						street_address2,
 						city,
 						state, 
-						post_code,
+						zip_code,
 						country,
-						home_phone,
+						phone,
 						cell_phone,
 						fax,
 						email,
-						note,
+						notes,
 						custom_field1,
 						custom_field2,
 						custom_field3,

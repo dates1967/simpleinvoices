@@ -206,6 +206,9 @@
 			Course branch
 		</td>
 		<th class="sortable">
+			Course name
+		</td>
+		<th class="sortable">
 			Course subject
 		</td>
 		<th class="sortable">
@@ -240,6 +243,9 @@
 		</td>
 		<td class="details_screen">
 			{$courses.branch_name}
+		</td>
+		<td class="details_screen">
+			{$courses.course_name}
 		</td>
 		<td class="details_screen">
 			{$courses.subject_name}

@@ -78,7 +78,7 @@ $sql = "select * from ".TB_PREFIX."branch";
 $branch_sql = sql2array($sql);
 $smarty -> assign('branch',$branch_sql);
 
-$sql_enrol = "select name from ".TB_PREFIX."branch where id = ".$customer['place_of_enrolment'] ; 
+$sql_enrol = "select name from ".TB_PREFIX."branch where id = ".$customer['place_of_registration'] ; 
 $enrol_sql = mysql_fetch_object(mysqlQuery($sql_enrol));
 $smarty -> assign('place_of_enrolment',$enrol_sql->name);
 

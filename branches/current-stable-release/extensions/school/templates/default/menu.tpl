@@ -141,6 +141,17 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					</li>
 					<li class="separation"></li>
 					<li>
+						<a href="./index.php?module=subject&view=manage">Subjects +</a>
+						<ul>
+							<li>
+								<a href="./index.php?module=subject&view=manage">Mange Subjects</a>
+							</li>
+							<li>
+								<a href="./index.php?module=subject&view=add">Add Subject</a>
+							</li>
+						</ul>
+					</li>
+					<li>
 						<a href="./index.php?module=tax_rates&view=manage">{$LANG.tax_rates} +</a>
 						<ul>
 							<li>

@@ -52,7 +52,9 @@ $smarty -> assign('year',$year = year());
 $smarty -> assign('year_now',$year_now = date('Y') );
 
 $smarty -> assign('month',$month = month());
+$smarty -> assign('month_now',$month = date('m') );
 
 $smarty -> assign('day',$day = day());
+$smarty -> assign('day_now',$day = date('d') );
 
 ?>

@@ -55,7 +55,7 @@ $status[] = "Archived";
 $smarty -> assign('status',$status);
 
 /*Teacher function*/
-$sql_teacher = "select * from ".TB_PREFIX."teacher where enabled = 1"; 
+$sql_teacher = "select * from ".TB_PREFIX."customers where enabled = '1' AND person_type = '2'"; 
 $teacher = sql2array($sql_teacher);
 $smarty -> assign('teacher',$teacher);
 

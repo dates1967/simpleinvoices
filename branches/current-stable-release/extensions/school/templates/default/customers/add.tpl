@@ -68,7 +68,18 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
-		<td><input type=text name="date" value="{$smarty.post.date}" size=25></td>
+		<td>
+		{*<input type=text name="date" value="{$smarty.post.date}" size=25></td>*}
+		<select name="date_day">
+			{html_options values=$day output=$day selected=$day_now}
+		</select>
+		<select name="date_month">
+			{html_options options=$month  selected=$month_now}  
+		</select>
+		<select name="date_year">
+			{html_options values=$year output=$year selected=$year_now}
+		</select>
+		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Last name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
