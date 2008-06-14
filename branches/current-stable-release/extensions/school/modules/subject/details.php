@@ -3,17 +3,18 @@
 checkLogin();
 
 #get the invoice id
-$product_id = $_GET['id'];
+$id = $_GET['id'];
 
-$product = getProduct($product_id);
 
-#get custom field labels
-$customFieldLabel = getCustomFieldLabels();
+	$sql = "SELECT * FROM ".TB_PREFIX."subject where id = $id";
+	$query = mysqlQuery($sql) or die(mysql_error());
+			
+	$subject = mysql_fetch_array($query);
+		
 
-$pageActive = "products";
+$pageActive = "options";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign('product',$product);
-$smarty -> assign('customFieldLabel',$customFieldLabel);
+$smarty -> assign('subject',$subject);
 
 ?>

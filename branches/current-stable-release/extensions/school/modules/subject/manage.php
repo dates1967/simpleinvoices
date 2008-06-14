@@ -3,10 +3,10 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-function getTeachers()
+function getSubjects()
 {
 	global $LANG;
-			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE person_type ='2' ORDER BY last_name";
+			$sql = "SELECT * FROM ".TB_PREFIX."subject";
 			$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$teahers = null;
@@ -24,12 +24,12 @@ function getTeachers()
 	return $teachers;
 
 }
-$teachers = getTeachers();
+$subjects = getSubjects();
 $pageActive = "teacher";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign("teachers",$teachers);
+$smarty -> assign("subjects",$subjects);
 
-getRicoLiveGrid("rico_teacher","{ type:'number', decPlaces:0, ClassName:'alignleft' },,{ type:'number', decPlaces:2, ClassName:'alignleft' }");
+getRicoLiveGrid("rico_subject","{ type:'number', decPlaces:0, ClassName:'alignleft' },,{ type:'number', decPlaces:2, ClassName:'alignleft' }");
 
 ?>

@@ -1,38 +1,35 @@
-{if $teachers == null }
+{if $subjects == null }
 	<P><em>{$LANG.no_products}</em></p>
 {else}
 
 
-<h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">Add New Teacher</a></h3>
+<h3>Manage Subjects :: <a href="index.php?module=subject&view=add">Add New Subject</a></h3>
 
  <hr />
 
-<table align="center" class="ricoLiveGrid" id="rico_teacher">
+<table align="center" class="ricoLiveGrid" id="rico_subject">
 <colgroup>
 	<col style='width:10%;' />
 	<col style='width:10%;' />
-	<col style='width:50%;' />
-	<col style='width:30%;' />
+	<col style='width:80%;' />
 </colgroup>
 <thead>
 <tr class="sortHeader">
 	<th class="noFilter sortable">{$LANG.actions}</th>
 	<th class="index_table sortable">ID</th>
-	<th class="index_table sortable">Teacher name</th>
-	<th class="noFilter index_table sortable">{$LANG.enabled}</th>
+	<th class="index_table sortable">Subject name</th>
 </tr>
 </thead>
 
-{foreach from=$teachers item=teacher}
+{foreach from=$subjects item=subject}
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=view">{$LANG.view}</a> ::
+	 href="index.php?module=subject&view=details&id={$subject.id}&action=view">{$LANG.view}</a> ::
 	<a class="index_table"
-	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
-	<td class="index_table">{$teacher.id}</td>
-	<td class="index_table">{$teacher.last_name}, {$teacher.middle_name}, {$teacher.first_name}</td>
-	<td class="index_table">{$teacher.enabled}</td>
+	 href="index.php?module=subject&view=details&id={$subject.id}&action=edit">{$LANG.edit}</a> </td>
+	<td class="index_table">{$subject.id}</td>
+	<td class="index_table">{$subject.name}</td>
 	</tr>
 
 {/foreach}
