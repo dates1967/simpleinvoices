@@ -11,37 +11,49 @@ $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
 #insert product
 $saved = false;
 
-if (  $op === 'insert_subject' ) {
+if (  $op === 'insert_user' ) {
 	
-	function insertSubject() {
+	function insertUser() {
 		
-		$sql = "INSERT INTO ".TB_PREFIX."subject
+		$sql = "INSERT INTO ".TB_PREFIX."customers
 					(
-						name
+						id,
+						username,
+						password,
+						person_type
 					)
 					VALUES 
 					(
-						'$_POST[name]'
+						null,
+						'$_POST[username]',
+						'$_POST[password]',
+						'$_POST[person_type]'
 					)
 				";
 		
 		return mysqlQuery($sql);
 		
 	}
-	if( insertSubject() ) {
+	if( insertUsert() ) {
  		$saved = true;
  	}
 }
 
-if ($op === 'edit_subject' ) {
+if ($op === 'edit_user' ) {
 
-	function editSubject() {
+	function editUser() {
 		
-		$sql = "UPDATE ".TB_PREFIX."subject
+		$sql = "UPDATE ".TB_PREFIX."customers
 					SET
-						name
+						username
 						=
-						'$_POST[name]'
+						'$_POST[username]',
+						password
+						=
+						'$_POST[password]',
+						person_type
+						=
+						'$_POST[person_type]'
 					WHERE
 						id
 						=
@@ -52,7 +64,7 @@ if ($op === 'edit_subject' ) {
 		return mysqlQuery($sql);
 		
 	}
-	if( editSubject() ) {
+	if( editUser() ) {
  		$saved = true;
  	}
 }

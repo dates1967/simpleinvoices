@@ -47,7 +47,7 @@
 			<select name="person_type">
 				<option  selected value=""></option>
 			{foreach from=$person_type key=pid item=ptype}
-				<option value="{$pid}">{$type}</option>
+				<option value="{$pid}">{$ptype}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -56,8 +56,8 @@
 
 <hr />
 <div style="text-align:center;">
-	<input type="submit" name="subject" value="Add Subject">
-	<input type="hidden" name="op" value="insert_subject">
+	<input type="submit" name="subject" value="Add User">
+	<input type="hidden" name="op" value="insert_user">
 </div>
 </form>
 {/if}

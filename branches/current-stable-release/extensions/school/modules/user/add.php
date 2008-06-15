@@ -15,11 +15,10 @@ $pageActive = "options";
 
 /*age*/
 $person_type = array();
-$person_type[1] = "student";
-$person_type[2] = "teacher";
-$person_type[3] = "other";
+$person_type[1] = "Student";
+$person_type[2] = "Teacher";
+$person_type[3] = "Other";
 
-print_r($person_type);
 $smarty -> assign('person_type',$person_type);
 
 $smarty->assign('pageActive', $pageActive);
