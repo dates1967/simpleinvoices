@@ -25,7 +25,7 @@ function getSubjects()
 
 }
 $subjects = getSubjects();
-$pageActive = "teacher";
+$pageActive = "options";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign("subjects",$subjects);

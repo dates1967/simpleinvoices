@@ -153,7 +153,9 @@ ALTER TABLE
 		ADD `guardian2_passport_issued_at` VARCHAR(255) NULL AFTER `guardian2_passport_number`, 
 		ADD `guardian2_passport_issued_on` DATE NULL AFTER `guardian2_passport_issued_at`, 
 		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`,
-		ADD `person_type` VARCHAR(255) NULL AFTER `cell_phone`
+		ADD `person_type` VARCHAR(255) NULL AFTER `cell_phone`,
+		ADD `username` VARCHAR(255) NULL AFTER `person_type`,
+		ADD `password` VARCHAR(255) NULL AFTER `username`
 ;
 
 
