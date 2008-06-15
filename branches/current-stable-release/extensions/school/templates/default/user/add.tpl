@@ -16,12 +16,12 @@
 
 {* if customer is updated or saved.*} 
 
-{if $smarty.post.name != "" && $smarty.post.name != null } 
-	{include file="../extensions/school/templates/default/subject/save.tpl"}
+{if $smarty.post.username != "" && $smarty.post.username != null } 
+	{include file="../extensions/school/templates/default/user/save.tpl"}
 
 {else}
 {* if  name was inserted *} 
-	{if $smarty.post.name } 
+	{if $smarty.post.username } 
 		<div class="validation_alert"><img src="./images/common/important.png"</img>
 		You must enter a teachers name</div>
 		<hr />
@@ -29,13 +29,28 @@
 	
 
 	
-<form name="frmpost" ACTION="index.php?module=subject&view=add" METHOD="post"><h3>Add New Subject</h3>
+<form name="frmpost" ACTION="index.php?module=user&view=add" METHOD="post"><h3>Add New User</h3>
 <hr />
 	
 <table align=center>
 	<tr>
-		<td class="details_screen">Subject name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=text name="name" value="{$smarty.post.name}" size=25></td>
+		<td class="details_screen">User name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td><input type=text name="username" value="{$smarty.post.username}" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Password <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td><input type=text name="password" value="{$smarty.post.password}" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">User Type</td>
+		<td>
+			<select name="person_type">
+				<option  selected value=""></option>
+			{foreach from=$person_type key=pid item=ptype}
+				<option value="{$pid}">{$type}</option>
+			{/foreach}
+			</select>
+		</td>
 	</tr>
 </table>
 

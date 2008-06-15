@@ -152,6 +152,17 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 						</ul>
 					</li>
 					<li>
+						<a href="./index.php?module=user&view=manage">Users +</a>
+						<ul>
+							<li>
+								<a href="./index.php?module=user&view=manage">Mange Users</a>
+							</li>
+							<li>
+								<a href="./index.php?module=user&view=add">Add User</a>
+							</li>
+						</ul>
+					</li>
+					<li>
 						<a href="./index.php?module=tax_rates&view=manage">{$LANG.tax_rates} +</a>
 						<ul>
 							<li>
