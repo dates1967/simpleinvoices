@@ -48,7 +48,6 @@ $smarty -> assign('relation',$rel_sql);
 $smarty->assign('gender', array('Male','Female'));
 
 $smarty -> assign('year',$year = year());
-
 $smarty -> assign('year_now',$year_now = date('Y') );
 
 $smarty -> assign('month',$month = month());

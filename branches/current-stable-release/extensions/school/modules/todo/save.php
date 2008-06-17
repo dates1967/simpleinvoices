@@ -6,22 +6,29 @@ checkLogin();
 # Deal with op and add some basic sanity checking
 
 $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
+$person_id = !empty( $_POST['person_id'] ) ? addslashes( $_POST['person_id'] ) : "1";
 
 
 #insert product
 $saved = false;
 
-if (  $op === 'insert_subject' ) {
+if (  $op === 'insert_todo' ) {
 	
 	function insertSubject() {
 		
-		$sql = "INSERT INTO ".TB_PREFIX."subject
+		$sql = "INSERT INTO ".TB_PREFIX."todo
 					(
-						name
+						person_id,
+						date,
+						description,
+						note
 					)
 					VALUES 
 					(
-						'$_POST[name]'
+						'$person_id',
+						'$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
+						'$_POST[description]',
+						'$_POST[note]'
 					)
 				";
 		
@@ -33,19 +40,18 @@ if (  $op === 'insert_subject' ) {
  	}
 }
 
-if ($op === 'edit_subject' ) {
+if ($op === 'edit_todo' ) {
 
 	function editSubject() {
 		
-		$sql = "UPDATE ".TB_PREFIX."subject
+		$sql = "UPDATE ".TB_PREFIX."todo
 					SET
-						name
-						=
-						'$_POST[name]'
+						person_id = '$person_id',
+						date = '$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
+						description = '$_POST[description]',
+						note = '$_POST[note]'
 					WHERE
-						id
-						=
-						'$_GET[id]'
+						id = '$_GET[id]'
 						
 				";
 		
@@ -61,7 +67,7 @@ if ($op === 'edit_subject' ) {
 $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
-$pageActive = "options";
+$pageActive = "todo";
 $smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 

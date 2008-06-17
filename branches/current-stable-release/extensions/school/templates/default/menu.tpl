@@ -125,10 +125,10 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=certificate&view=find">Find Certificates</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'billers'} id="active" {/if}> <a href="index.php?module=billers&view=manage">To-do items +</a>
+			<li { if $pageActive == 'todo'} id="active" {/if}> <a href="index.php?module=todo&view=manage">ToDo Items +</a>
 				<ul>
-					<li><a href="index.php?module=billers&view=manage">{$LANG.manage_billers}</a></li>
-					<li><a href="index.php?module=billers&view=add">{$LANG.add_biller}</a></li>
+					<li><a href="index.php?module=todo&view=manage">Manage ToDo Items</a></li>
+					<li><a href="index.php?module=todo&view=add">Add ToDo Item</a></li>
 				</ul>
 			</li>
 			<li  { if $pageActive == 'options'} id="active" {/if} ><a href="#">{$LANG.options} +</a>

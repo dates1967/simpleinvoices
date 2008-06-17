@@ -8,12 +8,21 @@ checkLogin();
 //$customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
-if ($_POST['name'] != "" ) {
-	include("./extensions/school/modules/subject/save.php");
+if ($_POST['description'] != "" ) {
+	include("./extensions/school/modules/todo/save.php");
 }
-$pageActive = "options";
+$pageActive = "todo";
 
 $smarty->assign('pageActive', $pageActive);
 //$smarty -> assign('customFieldLabel',$customFieldLabel);
 $smarty -> assign('save',$save);
+
+$smarty -> assign('year',$year = year());
+$smarty -> assign('year_now',$year_now = date('Y') );
+
+$smarty -> assign('month',$month = month());
+$smarty -> assign('month_now',$month = date('m') );
+
+$smarty -> assign('day',$day = day());
+$smarty -> assign('day_now',$day = date('d') );
 ?>
