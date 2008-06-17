@@ -331,6 +331,13 @@ ALTER TABLE `si_invoice_items` ADD `dropped_date` DATE NULL;
 
 create table si_certificate ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , course_id INT NOT NULL , name VARCHAR( 255 ) NOT NULL);
 
+CREATE TABLE `si_todo` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`person_id` INT( 11 ) NULL ,
+`date` DATE NULL ,
+`description` VARCHAR( 255 ) NULL ,
+`note` TEXT NULL 
+);
 */
 
 

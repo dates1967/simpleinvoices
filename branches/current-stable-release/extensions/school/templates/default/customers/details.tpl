@@ -239,7 +239,7 @@
 {foreach from=$course_enrol item=courses}
 	<tr class="index_table">
 		<td class="details_screen">
-			{$courses.id}
+			<a href="index.php?module=course&view=detail&action=view&id={$courses.id}">{$courses.id}</a>
 		</td>
 		<td class="details_screen">
 			{$courses.branch_name}
