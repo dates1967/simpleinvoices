@@ -170,7 +170,7 @@
 					</select>
 				</td>
         		<td>
-					<input type="text" class="date-picker" name="date_dropped{$line}" id="date1" value='{$invoiceItem.dropped_date}'></input>
+					<input type="text" class="date-picker"  name="dropped_date{$line}" value='{$invoiceItem.dropped_date}'></input>
 				</td>
 	        </tr>
 		

@@ -19,7 +19,7 @@
 
 
 if(isset($_POST['submit'])) {
-	school_invoice::insertInvoiceItem($_POST['invoice_id'],$_POST['quantity'],$_POST['product'],$_POST['tax_id'],$_POST['description'], $_POST['customer_id'],$_POST['start_reason_id'],"","");
+	school_invoice::insertInvoiceItem($_POST['invoice_id'],$_POST['quantity'],$_POST['product'],$_POST['tax_id'],$_POST['description'], $_POST['customer_id'],$_POST['start_reason_id'],"1","");
 }
 
 else {
