@@ -30,6 +30,6 @@ $pageActive = "todo";
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign("todos",$todos);
 
-getRicoLiveGrid("rico_subject","{ type:'number', decPlaces:0, ClassName:'alignleft' },,{ type:'number', decPlaces:2, ClassName:'alignleft' }");
+getRicoLiveGrid("rico_subject","{ type:'number', decPlaces:0, ClassName:'alignleft' },,");
 
 ?>

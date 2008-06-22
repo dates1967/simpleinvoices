@@ -15,6 +15,10 @@
 		<td class="details_screen">User ID</td><td>{$user.id}</td>
 	</tr>
 	<tr>
+		<td class="details_screen">Name</td>
+		<td>{$user.name}, {$user.first_name} {$user.middle_name}</td>
+	</tr>
+	<tr>
 		<td class="details_screen">User Name</td>
 		<td>{$user.username}</td>
 	</tr>
@@ -41,6 +45,10 @@
 	<table align="center">
 	<tr>
 		<td class="details_screen">User ID</td><td>{$user.id}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Name</td>
+		<td>{$user.name}, {$user.first_name} {$user.middle_name}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Name</td>

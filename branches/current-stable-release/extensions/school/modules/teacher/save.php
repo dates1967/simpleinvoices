@@ -18,7 +18,7 @@ if (  $op === 'insert_teacher' ) {
 		$sql = "INSERT INTO ".TB_PREFIX."customers 
 					(
 					
-						last_name,
+						name,
 						first_name,
 						middle_name,
 						place_of_registration,

@@ -5,7 +5,7 @@ checkLogin();
 #get the invoice id
 $id = $_GET['id'];
 
-	$sql = "SELECT id, username, password, person_type FROM ".TB_PREFIX."customers where id = $id";
+	$sql = "SELECT id, name, first_name, middle_name, username, password, person_type FROM ".TB_PREFIX."customers where id = $id";
 	$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$user = mysql_fetch_array($query);
