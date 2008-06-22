@@ -112,7 +112,7 @@ EOD;
 else if ($_GET["submit"] == "customer") {
 
 	$default = "customer";
-	$customers = getActiveCustomers();
+	$customers = invoice::getActiveCustomers();
 
 	if ($customers == null) {
 		//no records

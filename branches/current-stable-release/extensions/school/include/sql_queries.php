@@ -426,7 +426,7 @@ class school_invoice extends invoice{
 
 		}
 
-		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description, $start_reason_id, $dropped_reason_id, $dropped_date) {
+		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description, $student_id, $start_reason_id, $dropped_reason_id, $dropped_date) {
 
 			$product = getProduct($product_id);
 			$tax = getTaxRate($tax_id);
@@ -449,6 +449,7 @@ class school_invoice extends invoice{
 			`gross_total` = '$gross_total',
 			`description` = '$description',
 			`total` = '$total',			
+			`student_id` = '$student_id',			
 			`start_reason_id` = '$start_reason_id',			
 			`dropped_reason_id` = '$dropped_reason_id',			
 			`dropped_date` = '$dropped_date'			
@@ -457,6 +458,14 @@ class school_invoice extends invoice{
 			//echo $sql;
 				
 			return mysqlQuery($sql);
+		}
+
+		function getActiveCustomers() {
+	
+			global $LANG; // must this be here?	
+		
+			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE enabled != 0 AND person_type = 1 ORDER BY name";
+			return sql2array($sql);
 		}
 
 }

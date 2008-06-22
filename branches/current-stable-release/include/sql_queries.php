@@ -727,6 +727,13 @@ class customer {
 			return $customers;
 		}
 
+		function getActiveCustomers() {
+	
+			global $LANG; // must this be here?	
+		
+			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE enabled != 0 ORDER BY name";
+			return sql2array($sql);
+		}
 }
 
 
@@ -739,13 +746,6 @@ function getCustomerInvoices($id) {
 }
 
 
-function getActiveCustomers() {
-	
-	global $LANG; // must this be here?	
-	
-	$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE enabled != 0 ORDER BY name";
-	return sql2array($sql);
-}
 
 function insertInvoice($type) {
 	
