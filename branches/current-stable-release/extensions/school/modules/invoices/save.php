@@ -90,7 +90,7 @@ if ( $_POST['action'] == "edit") {
 
 	for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
 		
-		if (invoice::updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"])) {
+		if (school_invoice::updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["start_reason_id$i"],$_POST["dropped_reason_id$i"],$_POST["dropped_date$i"])) {
 			//$saved =  true;
 		}
 		else {

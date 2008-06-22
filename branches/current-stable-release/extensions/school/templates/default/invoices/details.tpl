@@ -110,6 +110,15 @@
 				<td class='details_screen'>
 					{$LANG.description}
 				</td>
+        	    <td class='details_screen'>
+					Start Reason
+				</td>
+				<td class='details_screen'>
+					Dropped Reason
+				</td>
+				<td class='details_screen'>
+					Dropped Date
+				</td>
 	        </tr>
 	{/if}
 
@@ -147,18 +156,21 @@
 					{/if}
 	            </td>
 				<td>
-					<select name="start_reason_id{$smarty.section.line.index}">
+					<select name="start_reason_id{$line}">
 					{foreach from=$start_reasons item=start_reason}
-						<option {if $start_reason.id == "1"} selected {/if} value="{$start_reason.id}">{$start_reason.reason}</option>
+						<option {if $start_reason.id == $invoiceItem.start_reason_id} selected {/if} value="{$start_reason.id}">{$start_reason.reason}</option>
 					{/foreach}
 					</select>
 				</td>
 				<td>
-					<select name="dropped_reason_id{$smarty.section.line.index}">
+					<select name="dropped_reason_id{$line}">
 					{foreach from=$dropped_reasons item=dropped_reason}
-						<option {if $dropped_reason.id == "1"} selected {/if} value="{$dropped_reason.id}">{$dropped_reason.reason}</option>
+						<option {if $dropped_reason.id == $invoiceItem.dropped_reason_id} selected {/if} value="{$dropped_reason.id}">{$dropped_reason.reason}</option>
 					{/foreach}
 					</select>
+				</td>
+        		<td>
+					<input type="text" class="date-picker" name="date_dropped{$line}" id="date1" value='{$invoiceItem.dropped_date}'></input>
 				</td>
 	        </tr>
 		

@@ -51,4 +51,13 @@ $smarty -> assign("products",$products);
 $smarty -> assign("customFields",$customFields);
 $smarty -> assign("lines",count($invoiceItems));
 
+/*Start reason*/
+$sql_start = "select * from ".TB_PREFIX."course_start_reason"; 
+$start_sql = sql2array($sql_start);
+$smarty -> assign('start_reasons',$start_sql);
+
+/*Dropped reason*/
+$sql_drop = "select * from ".TB_PREFIX."course_dropped_reason"; 
+$drop_sql = sql2array($sql_drop);
+$smarty -> assign('dropped_reasons',$drop_sql);
 ?>

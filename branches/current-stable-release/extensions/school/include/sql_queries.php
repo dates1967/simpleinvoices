@@ -425,7 +425,42 @@ class school_invoice extends invoice{
 			return mysqlQuery($sql);
 
 		}
+
+		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description, $start_reason_id, $dropped_reason_id, $dropped_date) {
+
+			$product = getProduct($product_id);
+			$tax = getTaxRate($tax_id);
+			
+			$total_invoice_item_tax = $product['unit_price'] * $tax['tax_percentage'] / 100;	//:100?
+			$tax_amount = $total_invoice_item_tax * $quantity;
+			$total_invoice_item = $total_invoice_item_tax + $product['unit_price'];
+			$total = $total_invoice_item * $quantity;
+			$gross_total = $product['unit_price'] * $quantity;
+			
+			
+			
+			$sql = "UPDATE ".TB_PREFIX."invoice_items 
+			SET `quantity` =  '$quantity',
+			`product_id` = '$product_id',
+			`unit_price` = '$product[unit_price]',
+			`tax_id` = '$tax_id',
+			`tax` = '$tax[tax_percentage]',
+			`tax_amount` = '$tax_amount',
+			`gross_total` = '$gross_total',
+			`description` = '$description',
+			`total` = '$total',			
+			`start_reason_id` = '$start_reason_id',			
+			`dropped_reason_id` = '$dropped_reason_id',			
+			`dropped_date` = '$dropped_date'			
+			WHERE  `id` = '$id'";
+			
+			//echo $sql;
+				
+			return mysqlQuery($sql);
+		}
+
 }
+
 
 function year()
 {
