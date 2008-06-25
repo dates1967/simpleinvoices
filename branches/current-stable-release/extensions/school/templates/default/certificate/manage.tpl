@@ -6,6 +6,15 @@
 <h3>Manage Certificates :: <a href="index.php?module=certificate&view=add">Add New Certificate</a></h3>
 
  <hr />
+{if $smarty.get.action == "search"}
+
+Certificates filtered by 
+	{if $smarty.get.id != ""}Certificate ID = {$smarty.get.id}{/if}
+	{if $smarty.get.name != ""}Certificate Name like '{$smarty.get.name}'{/if}
+ <a href="index.php?module=certificate&view=manage">Clear filer</a> :: <a href="index.php?module=certificate&view=search">Search again</a>
+<br>
+<hr />
+{/if}
 
 <table align="center" class="ricoLiveGrid" id="rico_product">
 <colgroup>

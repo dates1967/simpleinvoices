@@ -3,7 +3,23 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$sql = "SELECT * FROM ".TB_PREFIX."certificate ORDER BY name";
+	$search_sql ="";
+	$i = 0;
+if (!empty($_GET['action']))
+{
+	$search_sql =" WHERE";
+}
+	if (!empty($_GET['id'])) {
+		$id = $_GET['id'];
+		$search_sql .= " id = $id ";
+		$i++;
+	}
+	if (!empty($_GET['name'])) {
+		$i == 1 ? $and = "AND" : $and="";
+		$search_sql .= " $and name like '%".$_GET['name']."%'";
+	}
+
+$sql = "SELECT * FROM ".TB_PREFIX."certificate $search_sql ORDER BY name";
 
 $certificate = sql2array($sql) or die(mysql_error());
 

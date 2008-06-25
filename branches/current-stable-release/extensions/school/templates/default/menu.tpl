@@ -121,17 +121,22 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=teacher&view=manage">Manage Teachers</a></li>
 					<li class="separation"></li>
 					<li><a href="index.php?module=teacher&view=add">Add New Teacher</a></li>
+					<li><a href="index.php?module=search&view=add">Search Teachers</a></li>
+{*
 					<li><a href="index.php?module=teacher&view=add">Copy to New Teacher</a></li>
 					<li><a href="index.php?module=teacher&view=add">Find Teacher</a></li>
+*}
 				</ul>
 			</li>
 			<li { if $pageActive == 'certificate'} id="active" {/if}> <a href="index.php?module=certificate&view=manage">Certificates +</a>
 				<ul>
 					<li><a href="index.php?module=certificate&view=manage">Manage Certificates</a></li>
 					<li class="separation"></li>
-					<li><a href="index.php?module=certificate&view=add">Add New Certificates</a></li>
-					<li><a href="index.php?module=certificate&view=copy">Copy to New Certificates</a></li>
+					<li><a href="index.php?module=certificate&view=add">Add New Certificate</a></li>
+					<li><a href="index.php?module=certificate&view=search">Search Certificates</a></li>
+{*					<li><a href="index.php?module=certificate&view=copy">Copy to New Certificates</a></li>
 					<li><a href="index.php?module=certificate&view=find">Find Certificates</a></li>
+*}
 				</ul>
 			</li>
 			<li { if $pageActive == 'todo'} id="active" {/if}> <a href="index.php?module=todo&view=manage">ToDo Items +</a>

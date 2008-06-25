@@ -30,13 +30,13 @@ if (empty($_GET['action']))
 		$search_sql .= " AND id = $id ";
 	}
 	if (!empty($_GET['first_name'])) {
-		$search_sql .= " AND first_name = '".$_GET['first_name']."'";
+		$search_sql .= " AND first_name like '%".$_GET['first_name']."%'";
 	}
 	if (!empty($_GET['middle_name'])) {
-		$search_sql .= " AND middle_name = '".$_GET['middle_name']."'";
+		$search_sql .= " AND middle_name like '%".$_GET['middle_name']."%'";
 	}
 	if (!empty($_GET['last_name'])) {
-		$search_sql .= " AND last_name = '".$_GET['last_name']."'";
+		$search_sql .= " AND last_name like '%".$_GET['last_name']."%'";
 	}
 	$customers = school_student::getCustomers($search_sql);
 }

@@ -6,6 +6,18 @@
 <h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">Add New Teacher</a></h3>
 
  <hr />
+{if $smarty.get.action == "search"}
+
+Teacherss filtered by 
+	{if $smarty.get.id != ""}Teacher ID = {$smarty.get.id}{/if}
+	{if $smarty.get.first_name != ""}First Name like '{$smarty.get.first_name}'{/if}
+	{if $smarty.get.middle_name != ""}Middle Name like '{$smarty.get.middle_name}'{/if}
+	{if $smarty.get.last_name != ""}Last Name like '{$smarty.get.last_name}'{/if}
+ <a href="index.php?module=teacher&view=manage">Clear filer</a> :: <a href="index.php?module=teacher&view=search">Search again</a>
+<br>
+<hr />
+{/if}
+
 
 <table align="center" class="ricoLiveGrid" id="rico_teacher">
 <colgroup>
@@ -31,7 +43,7 @@
 	<a class="index_table"
 	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$teacher.id}</td>
-	<td class="index_table">{$teacher.last_name}, {$teacher.middle_name}, {$teacher.first_name}</td>
+	<td class="index_table">{$teacher.last_name}, {$teacher.middle_name} {$teacher.first_name}</td>
 	<td class="index_table">{$teacher.enabled}</td>
 	</tr>
 
