@@ -19,7 +19,27 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$customers = school_student::getCustomers();
+if (empty($_GET['action']))
+{
+	$customers = school_student::getCustomers();
+
+} else {
+	//$search_sql =" AND ";
+	if (!empty($_GET['id'])) {
+		$id = $_GET['id'];
+		$search_sql .= " AND id = $id ";
+	}
+	if (!empty($_GET['first_name'])) {
+		$search_sql .= " AND first_name = '".$_GET['first_name']."'";
+	}
+	if (!empty($_GET['middle_name'])) {
+		$search_sql .= " AND middle_name = '".$_GET['middle_name']."'";
+	}
+	if (!empty($_GET['last_name'])) {
+		$search_sql .= " AND last_name = '".$_GET['last_name']."'";
+	}
+	$customers = school_student::getCustomers($search_sql);
+}
 
 $pageActive = "customers";
 

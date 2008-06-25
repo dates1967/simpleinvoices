@@ -24,6 +24,17 @@
 
 <h3>{$LANG.manage_customers} :: <a href="index.php?module=customers&view=add">{$LANG.customer_add}</a></h3>
 <hr />
+{if $smarty.get.action == "search"}
+
+Students filtered by 
+	{if $smarty.get.id != ""}Student ID = {$smarty.get.id}{/if}
+	{if $smarty.get.first_name != ""}First Name = {$smarty.get.first_name}{/if}
+	{if $smarty.get.middle_name != ""}Middle Name = {$smarty.get.middle_name}{/if}
+	{if $smarty.get.last_name != ""}Last Name = {$smarty.get.last_name}{/if}
+ <a href="index.php?module=customers&view=manage">Clear filer</a> :: <a href="index.php?module=customers&view=search">Search again</a>
+<br>
+<hr />
+{/if}
 
 <table align="center" id="rico_customer" class="ricoLiveGrid manage">
 <colgroup>
