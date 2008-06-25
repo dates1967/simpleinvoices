@@ -104,11 +104,11 @@ class school_product extends product {
 		return $products;
 	}
 
-	function getCourses() 
+	function getCourses($search_sql="") 
 	{
 		global $LANG;
 		
-		$sql = "SELECT * FROM ".TB_PREFIX."products WHERE visible = 1 AND iscourse = 1 ORDER BY description";
+		$sql = "SELECT * FROM ".TB_PREFIX."products WHERE visible = 1 AND iscourse = 1 $search_sql ORDER BY description";
 		$query = mysqlQuery($sql) or die(mysql_error());
 		
 		$products = null;

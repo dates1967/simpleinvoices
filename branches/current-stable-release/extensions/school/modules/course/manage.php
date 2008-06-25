@@ -3,7 +3,22 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$courses = school_product::getCourses();
+if (empty($_GET['action']))
+{
+	$courses = school_product::getCourses();
+} else {
+	//$search_sql =" AND ";
+	if (!empty($_GET['id'])) {
+		$id = $_GET['id'];
+		$search_sql .= " AND id = $id ";
+	}
+	if (!empty($_GET['name'])) {
+		$search_sql .= " AND description like '%".$_GET['name']."%'";
+	}
+	$courses = school_product::getCourses($search_sql);
+}
+
+
 $pageActive = "course";
 
 $smarty->assign('pageActive', $pageActive);

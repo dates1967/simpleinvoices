@@ -27,9 +27,12 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=customers&view=manage">Manage Students</a></li>
 					<li class="separation"></li>
 					<li><a href="index.php?module=customers&view=add">Add New Student</a></li>
+					<li><a href="index.php?module=customers&view=search">Search Students</a></li>
+{*
 					<li><a href="index.php?module=customers&view=add">Copy to New Student</a></li>
 					<li><a href="index.php?module=customers&view=add">Fast Search Student</a></li>
 					<li><a href="index.php?module=customers&view=add">Extended Search Student</a></li>
+*}
 				</ul>
 			</li>
 			<li { if $pageActive == 'course'} id="active" {/if} ><a href="index.php?module=course&view=manage">Courses +</a>
@@ -37,8 +40,11 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=course&view=manage">Manage Courses</a></li>
 					<li class="separation"></li>
 					<li><a href="index.php?module=course&view=add">Add New Course</a></li>
+					<li><a href="index.php?module=course&view=search">Search Courses</a></li>
+{*
 					<li><a href="index.php?module=course&view=add">Copy to New Course</a></li>
 					<li><a href="index.php?module=course&view=add">Find Course</a></li>
+*}
 				</ul>
 			</li>
 			<li { if $pageActive == 'products'} id="active" {/if} ><a href="index.php?module=products&view=manage">{$LANG.products} +</a>

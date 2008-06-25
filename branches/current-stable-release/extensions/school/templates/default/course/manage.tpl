@@ -6,6 +6,15 @@
 <h3>{$LANG.manage_products} :: <a href="index.php?module=products&view=add">{$LANG.add_new_product}</a></h3>
 
  <hr />
+{if $smarty.get.action == "search"}
+
+Courses filtered by 
+	{if $smarty.get.id != ""}Course ID = {$smarty.get.id}{/if}
+	{if $smarty.get.name != ""}Course Name like '{$smarty.get.name}'{/if}
+ <a href="index.php?module=course&view=manage">Clear filer</a> :: <a href="index.php?module=course&view=search">Search again</a>
+<br>
+<hr />
+{/if}
 <table align="center" class="ricoLiveGrid" id="rico_courses">
 <colgroup>
 	<col style='width:10%;' />

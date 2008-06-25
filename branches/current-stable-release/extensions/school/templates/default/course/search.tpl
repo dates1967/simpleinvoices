@@ -17,55 +17,31 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=invoices&view=manage&action=search&invoice_id={$invoice_id}&student_id={$student_id}&biller_id={$biller_id}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=course&view=manage&action=search&id={$id}&name={$name}>
 	<br><br>
-		Searching invoices ...
+		Searching courses ...
 	<br><br>
 {else}
-<div id="top"><h3>Search Invoices</h3></div>
+<div id="top"><h3>Search Courses</h3></div>
  <hr />
 <form name="add_invoice_item" action="#" method="post">
 	<table align="center">
 			<tr>
 				<td class="details_screen">
-					ID
+					Course ID
 				</td>
 				<td>
-					<input type=text name="invoice_id" size="5">
+					<input type=text name="id" size="5">
 				</td>
 			</tr>
 			<tr>
 				<td class="details_screen">
-					Student
+					Course name
 				</td>
-				<td input type=text name="description">
-				                
-				{if $students == null }
-					<p><em>There are no students in the database</em></p>
-				{else}
-					<select name="student_id">
-						<option value=""></option>
-					{foreach from=$students item=student}
-						<option value="{$student.id}">{$student.name}, {$student.first_name} {$student.middle_name}</option>
-					{/foreach}
-					</select>
-				{/if}
-					                				                
+				<td>
+					<input type=text name="name" size="50">
                 </td>
 			</tr>
-			<tr>
-				<td class="details_screen">
-					Biller
-				</td>
-				<td>
-					<select name="biller_id">
-						<option value=""></option>
-					{foreach from=$billers item=biller}
-						<option value="{$biller.id}">{$biller.name}</option>
-					{/foreach}
-					</select>
-				</td>
- 			</tr>
 </table>
 <hr />
 <div style="text-align:center;">

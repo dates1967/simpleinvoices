@@ -24,7 +24,7 @@
 <p>
 <table align=center>
 	<tr>
-		<td class="details_screen">{$LANG.product_description} <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
+		<td class="details_screen">Course name <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
 		<td><input type=text name="description" value="{$smarty.post.description}" size=50></td>
 	</tr>
 	<tr>
@@ -32,7 +32,7 @@
 		<td><input type=text name="unit_price" value="{$smarty.post.price}" size=10></td>
 	</tr>
 	<tr>
-		<td class="details_screen">Place of Enrolment</td>
+		<td class="details_screen">Place of enrolment</td>
 		<td>
 			<select name="branch_id">
 			{foreach from=$branch item=branch_row}

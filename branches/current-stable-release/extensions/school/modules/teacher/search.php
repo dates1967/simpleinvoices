@@ -19,10 +19,10 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$pageActive = "course";
+$pageActive = "invoices";
 
 $smarty -> assign('pageActive', $pageActive);
-/*
+
 
 $sql_start = "select * from ".TB_PREFIX."customers where person_type = 1"; 
 $students = sql2array($sql_start);
@@ -31,8 +31,9 @@ $smarty -> assign('students', $students);
 $sql_start = "select * from ".TB_PREFIX."biller"; 
 $billers = sql2array($sql_start);
 $smarty -> assign('billers', $billers);
-*/
 
-$smarty -> assign('id', $_POST['id']);
-$smarty -> assign('name', $_POST['name']);
+
+$smarty -> assign('invoice_id', $_POST['invoice_id']);
+$smarty -> assign('student_id', $_POST['student_id']);
+$smarty -> assign('biller_id', $_POST['biller_id']);
 ?>
