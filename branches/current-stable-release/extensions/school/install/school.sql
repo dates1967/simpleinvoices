@@ -1,88 +1,17 @@
-<?php
-
-
-$patch['school']['1']['name'] = "Create branches table";
-$patch['school']['1']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."si_branch (
+	CREATE TABLE  si_branch (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 	name VARCHAR( 255 ) NOT NULL
-	) 
-";
-if ($db_server == "pgsql") {
-$patch['school']['1']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."si_branch (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	name VARCHAR( 255 ) NOT NULL
-	)
-"; 
-}
-$patch['school']['1']['date'] = "20080325";
-
-/*
-CREATE TABLE `si_branch` (
-`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`name` VARCHAR( 255 ) NOT NULL
-) 
-*/
-
-
-$patch['school']['2']['name'] = "Create course start reaosn table";
-$patch['school']['2']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."course_start_reason (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	reason VARCHAR( 255 ) NOT NULL
-)	
-";
-if ($db_server == "pgsql") {
-$patch['school']['2']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."course_start_reason (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	reason VARCHAR( 255 ) NOT NULL
-	)
-"; 
-}
-$patch['school']['2']['date'] = "20080325";
-/*
-CREATE TABLE `si_course_start_reason` (
-`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`reason` VARCHAR( 255 ) NOT NULL
-)
-*/
-
-
-$patch['school']['3']['name'] = "Create course dropped reaosn table";
-$patch['school']['3']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."course_dropped_reason (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	reason VARCHAR( 255 ) NOT NULL
-)	
-";
-if ($db_server == "pgsql") {
-$patch['school']['3']['patch'] = "
-	CREATE TABLE  ".TB_PREFIX."course_dropped_reason (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	reason VARCHAR( 255 ) NOT NULL
-	)
-"; 
-}
-$patch['school']['3']['date'] = "20080325";
-
-
-/*
-	CREATE TABLE  si_si_branch (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-	name VARCHAR( 255 ) NOT NULL
-	) 
+	); 
 
 	CREATE TABLE  si_course_start_reason (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 	reason VARCHAR( 255 ) NOT NULL
-)	
+);	
 
 CREATE TABLE `si_course_dropped_reason` (
 `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `reason` VARCHAR( 255 ) NOT NULL
-)
+);
 
 
 insert into si_course_dropped_reason values (null,'N/A');
@@ -141,7 +70,7 @@ ADD `passport_issued_on` DATE NULL ;
 
 ALTER TABLE 
 	`si_customers` 
-		ADD `guardian1_relationship` VARCHAR(11) NOT NULL AFTER `id`, 
+		ADD `guardian1_relationship` VARCHAR(11) NOT NULL AFTER `passport_issued_on`, 
 		ADD `guardian1_first_name` VARCHAR(255) NULL AFTER `guardian1_relationship`, 
 		ADD `guardian1_middle_name` VARCHAR(255) NULL AFTER `guardian1_first_name`, 
 		ADD `guardian1_last_name` VARCHAR(255) NULL AFTER `guardian1_middle_name`, 
@@ -163,7 +92,7 @@ ALTER TABLE
 		ADD `guardian2_passport_issued_at` VARCHAR(255) NULL AFTER `guardian2_passport_number`, 
 		ADD `guardian2_passport_issued_on` DATE NULL AFTER `guardian2_passport_issued_at`, 
 		ADD `guardian2_address` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`,
-		ADD `person_type` VARCHAR(255) NULL AFTER `cell_phone`,
+		ADD `person_type` VARCHAR(255) NULL AFTER `guardian2_passport_issued_on`,
 		ADD `username` VARCHAR(255) NULL AFTER `person_type`,
 		ADD `password` VARCHAR(255) NULL AFTER `username`
 ;
@@ -183,7 +112,7 @@ insert into si_branch value (null,'Stalingrad');
 
 
 
-ALTER TABLE `si_products` (
+ALTER TABLE `si_products` 
 ADD `branch_id` INT( 11 ) NULL ,
 ADD `subject_id` INT( 11 ) NULL ,
 ADD `age` VARCHAR( 255 ) NULL ,
@@ -206,7 +135,7 @@ ADD `number_of_weeks` INT( 11 ) NULL ,
 ADD `book` VARCHAR( 255 ) NULL ,
 ADD `teaching_hours` VARCHAR ( 255 ) NULL,
 ADD `iscourse` INT( 1 ) NOT NULL DEFAULT '0'  
-)
+;
 
 
 
@@ -253,7 +182,7 @@ CREATE TABLE `si_level` (
 `name` VARCHAR( 255 ) NOT NULL
 ) ENGINE = MYISAM ;
 
-INSERT INTO `simple_invoices_school`.`si_level` (
+INSERT INTO `si_level` (
 `id` ,
 `name`
 )
@@ -309,7 +238,7 @@ CREATE TABLE `si_subject` (
 `name` VARCHAR( 255 ) NOT NULL
 ) ENGINE = MYISAM ;
 
-INSERT INTO `simple_invoices_school`.`si_subject` (
+INSERT INTO `si_subject` (
 `id` ,
 `name`
 )
@@ -333,7 +262,7 @@ NULL , 'Greek'
 NULL , 'Russian for Foreigners'
 );
 
-ALTER TABLE `si_invoice_items` ADD `student_id` INT( 11 ) NULL DEFAULT NULL);
+ALTER TABLE `si_invoice_items` ADD `student_id` INT( 11 ) NULL DEFAULT NULL;
 ALTER TABLE `si_invoice_items` ADD `start_reason_id` INT( 11 ) NULL DEFAULT NULL ;
 ALTER TABLE `si_invoice_items` ADD `dropped_reason_id` INT( 11 ) NULL DEFAULT NULL ;
 ALTER TABLE `si_invoice_items` ADD `dropped_date` DATE NULL; 
@@ -348,7 +277,4 @@ CREATE TABLE `si_todo` (
 `description` VARCHAR( 255 ) NULL ,
 `note` TEXT NULL 
 );
-*/
 
-
-?>

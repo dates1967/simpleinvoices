@@ -30,7 +30,7 @@ if (  $op === 'insert_teacher' ) {
 						zip_code,
 						country,
 						phone,
-						cell_phone,
+						mobile_phone,
 						fax,
 						email,
 						notes,
