@@ -279,7 +279,7 @@ class school_student extends customer {
 						custom_field4 = '$_POST[custom_field4]',
 						enabled = '$_POST[enabled]',
 						
-						place_of_enrolment = '$_POST[place_of_enrolment]',
+						place_of_registration = '$_POST[place_of_enrolment]',
 						place_of_lesson = '$_POST[place_of_lesson]',
 						date = '$_POST[date]',
 						first_name = '$_POST[first_name]',

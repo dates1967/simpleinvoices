@@ -43,7 +43,7 @@ Teacherss filtered by
 	<a class="index_table"
 	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$teacher.id}</td>
-	<td class="index_table">{$teacher.last_name}, {$teacher.middle_name} {$teacher.first_name}</td>
+	<td class="index_table">{$teacher.name}, {$teacher.middle_name} {$teacher.first_name}</td>
 	<td class="index_table">{$teacher.enabled}</td>
 	</tr>
 

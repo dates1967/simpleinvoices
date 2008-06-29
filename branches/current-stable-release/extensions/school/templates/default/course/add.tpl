@@ -153,7 +153,7 @@
 			<select name="teacher_id">
 				<option  selected value=""></option>
 			{foreach from=$teacher item=teacher_row}
-				<option value="{$teacher_row.id}">{$teacher_row.last_name}, {$teacher_row.first_name}</option>
+				<option value="{$teacher_row.id}">{$teacher_row.name}, {$teacher_row.first_name} {$teacher_row.middle_name}</option>
 			{/foreach}
 			</select>
 		</td>
