@@ -25,7 +25,7 @@ EOD;*/
 
 if (empty($_GET['action']))
 {
-	$sql = "SELECT	iv.id, b.name As biller, c.name As customer, 
+	$sql = "SELECT	iv.id, b.name As biller, c.name As customer,  c.first_name as first_name, c.middle_name as middle_name, 
 		(CASE	WHEN datediff(now(),iv.date) <= 14 THEN '0-14' 
 				WHEN datediff(now(),iv.date) <= 30 THEN '15-30'
 				WHEN datediff(now(),iv.date) <= 60 THEN '31-60'
@@ -60,7 +60,7 @@ if (empty($_GET['action']))
 		$search_sql .= " AND b.id = $biller_id ";
 	}
 
-	$sql = "SELECT	iv.id, b.name As biller, c.name As customer, 
+	$sql = "SELECT	iv.id, b.name As biller, c.name As customer, c.first_name as customer_first_name, c.middle_name as customer_middle_name, 
 		(CASE	WHEN datediff(now(),iv.date) <= 14 THEN '0-14' 
 				WHEN datediff(now(),iv.date) <= 30 THEN '15-30'
 				WHEN datediff(now(),iv.date) <= 60 THEN '31-60'

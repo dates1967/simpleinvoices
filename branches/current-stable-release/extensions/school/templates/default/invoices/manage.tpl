@@ -22,10 +22,8 @@
 {else}
 
 <div style="text-align:center;">
-<b>{$LANG.manage_invoices}</b> :: {$LANG.add_new_invoice} 
-<a href="index.php?module=invoices&view=total"> {$LANG.total_style}</a> ::
-<a href="index.php?module=invoices&view=itemised"> {$LANG.itemised_style}</a> ::
-<a href="index.php?module=invoices&view=consulting"> {$LANG.consulting_style} </a>
+<b>{$LANG.manage_invoices}</b> ::
+<a href="index.php?module=invoices&view=itemised"> {$LANG.add_new_invoice}</a>
 
 </div>
 <hr />
@@ -111,7 +109,7 @@ Invoices filtered by
 	</td>
 	<td class="index_table">{$invoice.id}</td>
 	<td class="index_table">{$invoice.biller}</td>
-	<td class="index_table">{$invoice.customer}</td>
+	<td class="index_table">{$invoice.customer}, {$invoice.first_name} {$invoice.middle_name} </td>
 	<td class="index_table">{$invoice.total}</td>
 	<!--
 	<td class="index_table">{$invoice.paid|number_format:2}</td>
