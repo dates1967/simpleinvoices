@@ -59,6 +59,18 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=billers&view=add">{$LANG.add_biller}</a></li>
 				</ul>
 			</li>
+			<li { if $pageActive == 'enrollment'} id="active" {/if}> <a href="index.php?module=enrollment&view=manage">Enrollment +</a>
+				<ul>
+					<li><a href="index.php?module=teacher&view=manage">Manage Enrollments</a></li>
+					<li class="separation"></li>
+					<li><a href="index.php?module=enrollment&view=add">Add New Enrollment</a></li>
+					<li><a href="index.php?module=enrollment&view=add">Search Enrollment</a></li>
+{*
+					<li><a href="index.php?module=teacher&view=add">Copy to New Teacher</a></li>
+					<li><a href="index.php?module=teacher&view=add">Find Teacher</a></li>
+*}
+				</ul>
+			</li>
 			<li { if $pageActive == 'payments'} id="active" {/if}> <a href="index.php?module=payments&view=manage">{$LANG.payments} +</a>
 				<ul>
 					<li><a href="index.php?module=payments&view=manage">{$LANG.manage_payments}</a></li>
