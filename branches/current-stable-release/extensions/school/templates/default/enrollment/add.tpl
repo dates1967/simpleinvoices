@@ -16,20 +16,13 @@
 
 {* if customer is updated or saved.*} 
 
-{if $smarty.post.last_name != "" && $smarty.post.last_name != null } 
+{if $smarty.post.op != null } 
 	{include file="../extensions/school/templates/default/enrollment/save.tpl"}
 
 {else}
 {* if  name was inserted *} 
-	{if $smarty.post.last_name } 
-		<div class="validation_alert"><img src="./images/common/important.png"</img>
-		You must enter a teachers name</div>
-		<hr />
-	{/if}
-	
 
-	
-<form name="frmpost" ACTION="index.php?module=teacher&view=add" METHOD="post"><h3>Add New Teacher</h3>
+<form name="frmpost" ACTION="index.php?module=enrollment&view=add" METHOD="post"><h3>Add New Teacher</h3>
 <hr />
 	
 <table align=center>
@@ -56,7 +49,7 @@
 	<tr>
 		<td class="details_screen">Start Reason</td>
 		<td>
-			<select name="start_reason">
+			<select name="start_reason_id">
 			{foreach from=$start_reasons item=start_reason}
 				<option {if $start_reason.id == "1"} selected {/if} value="{$start_reason.id}">{$start_reason.reason}</option>
 			{/foreach}
@@ -66,7 +59,7 @@
 	<tr>
 		<td class="details_screen">Dropped Reason</td>
 		<td>
-			<select name="start_reason">
+			<select name="dropped_reason_id">
 			{foreach from=$dropped_reasons item=dropped_reason}
 				<option {if $dropped_reason.id == "1"} selected {/if} value="{$dropped_reason.id}">{$dropped_reason.reason}</option>
 			{/foreach}

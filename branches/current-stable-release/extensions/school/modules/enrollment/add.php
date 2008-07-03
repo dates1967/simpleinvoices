@@ -7,7 +7,7 @@ checkLogin();
 #get custom field labels
 
 //if valid then do save
-if ($_POST['last_name'] != "" ) {
+if ($_POST['op'] != "" ) {
 	include("./extensions/school/modules/enrollment/save.php");
 }
 $pageActive = "enrollment";
