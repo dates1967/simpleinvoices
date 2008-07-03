@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&first_name={$first_name}&middle_name={$middle_name}&last_name={$last_name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&student_id={$student_id}&first_name={$first_name}&middle_name={$middle_name}&last_name={$last_name}>
 	<br><br>
 		Searching students ...
 	<br><br>
@@ -26,6 +26,25 @@
  <hr />
 <form name="add_invoice_item" action="#" method="post">
 	<table align="center">
+			<tr>
+				<td class="details_screen">
+					Student
+				</td>
+				<td input type=text name="description">
+				                
+				{if $students == null }
+					<p><em>There are no students in the database</em></p>
+				{else}
+					<select name="student_id">
+						<option value=""></option>
+					{foreach from=$students item=student}
+						<option value="{$student.id}">{$student.first_name} {$student.middle_name} {$student.name}</option>
+					{/foreach}
+					</select>
+				{/if}
+					                				                
+                </td>
+			</tr>
 			<tr>
 				<td class="details_screen">
 					Student ID

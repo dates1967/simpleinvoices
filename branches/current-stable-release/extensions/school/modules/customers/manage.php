@@ -29,6 +29,10 @@ if (empty($_GET['action']))
 		$id = $_GET['id'];
 		$search_sql .= " AND id = $id ";
 	}
+	if (!empty($_GET['student_id'])) {
+		$student_id = $_GET['student_id'];
+		$search_sql .= " AND id = $student_id ";
+	}
 	if (!empty($_GET['first_name'])) {
 		$search_sql .= " AND first_name like '%".$_GET['first_name']."%'";
 	}
