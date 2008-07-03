@@ -2,7 +2,7 @@
 
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
-
+/*
 function getTeachers($search_sql="")
 {
 	global $LANG;
@@ -38,12 +38,14 @@ function getTeachers($search_sql="")
 	if (!empty($_GET['last_name'])) {
 		$search_sql .= " AND last_name like '%".$_GET['last_name']."%'";
 	}
-$teachers = getTeachers($search_sql);
-$pageActive = "teacher";
+$enrollments = school_enroll::getStudentEnrollments($search_sql);
+*/
+$enrollments = school_enrol::getStudentEnrollments();
+$pageActive = "enrollment";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign("teachers",$teachers);
+$smarty -> assign("enrollments",$enrollments);
 
-getRicoLiveGrid("rico_teacher","{ type:'number', decPlaces:0, ClassName:'alignleft' },,{ type:'number', decPlaces:2, ClassName:'alignleft' }");
+getRicoLiveGrid("rico_teacher","");
 
 ?>

@@ -1,9 +1,9 @@
-{if $teachers == null }
+{if $enrollments == null }
 	<P><em>{$LANG.no_products}</em></p>
 {else}
 
 
-<h3>Manage Teachers :: <a href="index.php?module=teacher&view=add">Add New Teacher</a></h3>
+<h3>Manage Enrollments :: <a href="index.php?module=enrollment&view=add">Add New Enrollment</a></h3>
 
  <hr />
 {if $smarty.get.action == "search"}
@@ -21,32 +21,58 @@ Teacherss filtered by
 
 <table align="center" class="ricoLiveGrid" id="rico_teacher">
 <colgroup>
+	<col style='width:5%;' />
+	<col style='width:15%;' />
+	<col style='width:5%;' />
+	<col style='width:15%;' />
+	<col style='width:20%;' />
 	<col style='width:10%;' />
 	<col style='width:10%;' />
-	<col style='width:50%;' />
-	<col style='width:30%;' />
+	<col style='width:20%;' />
 </colgroup>
 <thead>
-<tr class="sortHeader">
-	<th class="noFilter sortable">{$LANG.actions}</th>
-	<th class="index_table sortable">ID</th>
-	<th class="index_table sortable">Teacher name</th>
-	<th class="noFilter index_table sortable">{$LANG.enabled}</th>
-</tr>
+	<tr class="sortHeader">
+		<th class="noFilter sortable">Action</th>
+		<th class="index_table sortable">Student</th>
+		<th class="index_table sortable">Course ID</th>
+		<th class="index_table sortable">Course branch</th>
+		<th class="index_table sortable">Course name</th>
+		<th class="index_table sortable">Course subject</th>
+		<th class="index_table sortable">Course status</th>
+		<th class="index_table sortable">Date of first lesson</th>
+	</tr>
 </thead>
 
-{foreach from=$teachers item=teacher}
-	<tr class="index_table">
-	<td class="index_table">
-	<a class="index_table"
-	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=view">{$LANG.view}</a> ::
-	<a class="index_table"
-	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
-	<td class="index_table">{$teacher.id}</td>
-	<td class="index_table">{$teacher.name}, {$teacher.middle_name} {$teacher.first_name}</td>
-	<td class="index_table">{$teacher.enabled}</td>
-	</tr>
+{foreach from=$enrollments item=courses}
 
+	<tr class="index_table">
+		<td class="details_screen">
+			<a href="index.php?module=course&view=detail&action=view&id={$courses.id}">View</a>
+		</td>
+		<td class="details_screen">
+			{$courses.last_name}, {$courses.first_name} {$courses.middle_name}
+		</td>
+		<td class="details_screen">
+			<a href="index.php?module=course&view=detail&action=view&id={$courses.id}">{$courses.id}</a>
+		</td>
+		<td class="details_screen">
+			{$courses.branch_name}
+		</td>
+		<td class="details_screen">
+			{$courses.course_name}
+		</td>
+		<td class="details_screen">
+			{$courses.subject_name}
+		</td>
+		<td class="details_screen">
+			{$courses.status}
+		</td>
+		<td class="details_screen">
+			{$courses.start_date}
+		</td>
+	</tr>
+	
+	
 {/foreach}
 
 	</table>
