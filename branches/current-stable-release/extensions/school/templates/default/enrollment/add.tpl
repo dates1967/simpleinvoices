@@ -31,7 +31,7 @@
 		<td>
 			<select name="student_id">
 			{foreach from=$students item=student}
-				<option {if $student.id == "1"} selected {/if} value="{$student.id}">{$student.name}, {$student.first_name} {$student.middle_name}</option>
+				<option {if $student.id == $student_id} selected {/if} value="{$student.id}">{$student.name}, {$student.first_name} {$student.middle_name}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -68,7 +68,7 @@
 	</tr>
 </table>
 <p>
-</div>
+
 <hr />
 <div style="text-align:center;">
 	<input type="submit" name="customer" value="Add Enrollment">

@@ -190,14 +190,8 @@
 	</div>
 	<div id="section-2" class="fragment">
 	<p>
+	<h3><a href="index.php?module=enrollment&view=add&id={$customer.id}">Enroll student into course</a></h3>
 	<table align=center>
-	<tr>
-		<!--
-		<td class="details_screen">Enrol : Add Course</td>
-		<td>
-		</td>
-		-->
-	</tr>
 	<tr class="sortHeader">
 		<th class="sortable">
 			Course ID

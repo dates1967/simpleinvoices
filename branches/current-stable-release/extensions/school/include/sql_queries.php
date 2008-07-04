@@ -420,6 +420,8 @@ class school_enrol
 					".TB_PREFIX."course_start_reason start, 
 					".TB_PREFIX."course_dropped_reason dropped 
 				where 
+					c.id = e.student_id 
+					and
 					e.course_id = p.id 
 					and 
 					p.subject_id = s.id 

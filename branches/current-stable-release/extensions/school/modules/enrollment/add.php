@@ -3,7 +3,7 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-
+$student_id = $_GET['id'];
 #get custom field labels
 
 //if valid then do save
@@ -13,7 +13,7 @@ if ($_POST['op'] != "" ) {
 $pageActive = "enrollment";
 
 $students = school_invoice::getActiveCustomers();
-$courses = getActiveProducts();
+$courses = school_product::getCourses();
 
 /*Start reason*/
 $sql_start = "select * from ".TB_PREFIX."course_start_reason"; 
@@ -39,6 +39,7 @@ $smarty -> assign('day',$day = day());
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('students',$students);
+$smarty -> assign('student_id',$student_id);
 $smarty -> assign('courses',$courses);
 $smarty -> assign('save',$save);
 ?>
