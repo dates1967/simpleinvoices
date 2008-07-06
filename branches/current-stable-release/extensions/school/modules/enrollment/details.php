@@ -3,17 +3,15 @@
 checkLogin();
 
 #get the invoice id
-$product_id = $_GET['id'];
+$id = $_GET['id'];
 
-$product = getProduct($product_id);
+$enrollment = school_enrol::getEnrollment($id);
+$student = school_student::getCustomer($enrollment[0]["student_id"]);
 
-#get custom field labels
-$customFieldLabel = getCustomFieldLabels();
-
-$pageActive = "products";
+$pageActive = "enrollment";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign('product',$product);
-$smarty -> assign('customFieldLabel',$customFieldLabel);
+$smarty -> assign('enrollment',$enrollment);
+$smarty -> assign('student',$student);
 
 ?>

@@ -1,52 +1,70 @@
 <form name="frmpost"
-	action="index.php?module=products&view=save&id={$smarty.get.id}"
+	action="index.php?module=enrollment&view=save&id={$smarty.get.id}"
 	method="post">
 
 
 {if $smarty.get.action== 'view' }
 
-	<b>{$LANG.products} ::
-	<a href="index.php?module=products&view=details&id={$product.id}&action=edit">{$LANG.edit}</a></b>
+	<b>Enrollment ::
+	<a href="index.php?module=enrollment&view=details&id={$enrollment.enrollment_id}&action=edit">{$LANG.edit}</a></b>
 	
  	<hr></hr>
 
 	<table align="center">
 	<tr>
-		<td class="details_screen">{$LANG.product_id}</td><td>{$product.id}</td>
+		<td class="details_screen">ID</td><td>{$enrollment.0.enrollment_id}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.product_description}</td>
-		<td>{$product.description}</td>
+		<td class="details_screen">Student</td>
+		<td>{$enrollment.0.first_name} {$enrollment.0.middle_name} {$enrollment.0.last_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.product_unit_price}</td>
-		<td>{$product.unit_price|number_format:2}</td>
+		<td class="details_screen">Course</td>
+		<td><a href="index.php?module=course&view=details&id={$enrollment.0.id}&action=view">{$enrollment.0.course_name}</a></td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td>{$product.custom_field1}</td>
+		<td class="details_screen">Course branch</td>
+		<td>{$enrollment.0.branch_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td>{$product.custom_field2}</td>
+		<td class="details_screen">Course subject</td>
+		<td>{$enrollment.0.subject_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td>{$product.custom_field3}</td>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td>{$product.custom_field4}</td>
-	</tr>
-{*
-		{showCustomFields categorieId="3" itemId=$smarty.get.id }
-*}
-	<tr>
-		<td class="details_screen">{$LANG.notes}</td><td>{$product.notes}</td>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.product_enabled}</td>
-		<td>{$product.wording_for_enabled}</td>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>{$enrollment.0.course_name}</td>
 	</tr>
 	</table>
 
