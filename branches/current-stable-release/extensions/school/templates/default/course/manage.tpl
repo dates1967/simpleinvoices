@@ -37,9 +37,9 @@ Courses filtered by
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$course.id}&action=view">{$LANG.view}</a> ::
+	 href="index.php?module=course&view=details&id={$course.id}&action=view">{$LANG.view}</a> ::
 	<a class="index_table"
-	 href="index.php?module=products&view=details&id={$course.id}&action=edit">{$LANG.edit}</a> </td>
+	 href="index.php?module=course&view=details&id={$course.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$course.id}</td>
 	<td class="index_table">{$course.description}</td>
 	<td class="index_table">{$course.unit_price}</td>
