@@ -22,10 +22,10 @@ $sql = "select * from ".TB_PREFIX."branch";
 $branch_sql = sql2array($sql);
 $smarty -> assign('branch',$branch_sql);
 
-/*Place of enrolment function*/
-$sql = "select * from ".TB_PREFIX."branch where id = $course['branch_id']"; 
-$branch_sql = sql2array($sql);
-$smarty -> assign('branch',$branch_sql);
+/*Place of enrolment function - selected*/
+$sql_selected = "select * from ".TB_PREFIX."branch where id = $course[branch_id]"; 
+$branch_sql_selected = sql2array($sql_selected);
+$smarty -> assign('branch_selected',$branch_sql_selected);
 
 
 
@@ -33,6 +33,11 @@ $smarty -> assign('branch',$branch_sql);
 $sql_sub = "select * from ".TB_PREFIX."subject"; 
 $sub_sql = sql2array($sql_sub);
 $smarty -> assign('subject',$sub_sql);
+
+/*Subject function*/
+$sql_sub_sel = "select * from ".TB_PREFIX."subject where id"; 
+$sub_sql_sel = sql2array($sql_sub_sel);
+$smarty -> assign('subject_selected',$sub_sql_sel);
 
 /*Age*/
 $age = array();
@@ -73,10 +78,18 @@ $intensity[] = "5 times/week-Mo-till-Fr";
 $intensity[] = "Weekends";
 $smarty -> assign('intensity',$intensity);
 
+/* Date */
 $smarty -> assign('year',$year = year());
-$smarty -> assign('year_now',$year_now = date('Y') );
+$smarty -> assign('year_selected', substr( $course['start_date'],0,4 ) );
+$smarty -> assign('end_year_selected', substr( $course['end_date'],0,4 ) );
+
 $smarty -> assign('month',$month = month());
+$smarty -> assign('month_selected', substr( $course['start_date'],5,2 ) );
+$smarty -> assign('end_month_selected', substr( $course['end_date'],5,2 ) );
+
 $smarty -> assign('day',$day = day());
+$smarty -> assign('day_selected', substr( $course['start_date'],8,2 ) );
+$smarty -> assign('end_day_selected', substr( $course['end_date'],8,2 ) );
 
 /*Duration*/
 $duration_type = array();

@@ -43,13 +43,18 @@ if ($op === 'edit_enrollment' ) {
 
 	function updateEnrollment() {
 		
+		if(!empty($_POST['date']))
+		{
+			$date = "dropped_date = '$_POST[date]',";
+
+		} 
 		$sql = "UPDATE ".TB_PREFIX."course_enrol 
 				SET
 					course_id = $_POST[course_id],
 					student_id = $_POST[student_id],
+					$date
 					dropped_reason_id = $_POST[dropped_reason_id],
-					start_reason_id = $_POST[start_reason_id],
-					dropped_date = '$_POST[date]'
+					start_reason_id = $_POST[start_reason_id]
 				WHERE id =  " . $_GET['id'];
 				
 		return mysqlQuery($sql);
@@ -104,8 +109,8 @@ else if (  $op === 'edit_product' ) {
 $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
-$pageActive = "teacher";
-//$smarty->assign('pageActive', $pageActive);
+$pageActive = "enrollment";
+$smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 
 //$smarty -> assign('refresh_total',$refresh_total); 

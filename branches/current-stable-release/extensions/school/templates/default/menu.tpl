@@ -64,7 +64,7 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=enrollment&view=manage">Manage Enrollments</a></li>
 					<li class="separation"></li>
 					<li><a href="index.php?module=enrollment&view=add">Add New Enrollment</a></li>
-					<li><a href="index.php?module=enrollment&view=add">Search Enrollment</a></li>
+					<li><a href="index.php?module=enrollment&view=search">Search Enrollment</a></li>
 {*
 					<li><a href="index.php?module=teacher&view=add">Copy to New Teacher</a></li>
 					<li><a href="index.php?module=teacher&view=add">Find Teacher</a></li>

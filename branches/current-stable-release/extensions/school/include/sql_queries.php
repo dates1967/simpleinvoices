@@ -554,6 +554,59 @@ class school_enrol
 		return sql2array($sql);
 	}
 	
+	function searchStudentEnrollments($search_sql)
+	{
+		global $LANG;
+		
+		//$sql = "SELECT * FROM ".TB_PREFIX."course_enrol WHERE student_id = ".$student_id." ORDER BY course_id";
+		$sql = "select 
+					e.id as enrollment_id, 
+					c.name as last_name,
+					c.first_name as first_name,
+					c.middle_name as middle_name,
+					e.student_id, 
+					p.id, 
+					b.name as branch_name, 
+					p.description as course_name, 
+					s.name as subject_name, 
+					p.age, 
+					l.name as level_name, 
+					p.type, 
+					p.status, 
+					p.start_date, 
+					start.reason as start_reason, 
+					e.dropped_date, 
+					dropped.reason as dropped_reason 
+				from
+					".TB_PREFIX."customers c, 				
+					".TB_PREFIX."course_enrol e, 
+					".TB_PREFIX."products p, 		
+					".TB_PREFIX."subject s, 
+					".TB_PREFIX."branch b, 
+					".TB_PREFIX."level l, 
+					".TB_PREFIX."course_start_reason start, 
+					".TB_PREFIX."course_dropped_reason dropped 
+				where 
+					c.id = e.student_id 
+					and
+					e.course_id = p.id 
+					and 
+					p.subject_id = s.id 
+					and 	
+					p.branch_id =b.id 
+					and 
+					p.level_id = l.id 
+					and 
+					e.dropped_reason_id = dropped.id 
+					and 
+					e.start_reason_id = start.id 
+					$search_sql
+					";
+		//$query = mysqlQuery($sql) or die(mysql_error());
+		//$query = mysql_fetch_object(mysqlQuery($sql));
+
+		return sql2array($sql);
+	}
 	
 }
 

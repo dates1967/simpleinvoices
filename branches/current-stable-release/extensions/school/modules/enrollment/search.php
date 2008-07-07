@@ -19,9 +19,13 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
-$pageActive = "teacher";
+$pageActive = "enrollment";
+
+$students = school_invoice::getActiveCustomers();
+$courses = school_product::getCourses();
 
 $smarty -> assign('pageActive', $pageActive);
+
 /*
 
 $sql_start = "select * from ".TB_PREFIX."customers where person_type = 1"; 
@@ -37,8 +41,10 @@ $smarty -> assign('invoice_id', $_POST['invoice_id']);
 $smarty -> assign('student_id', $_POST['student_id']);
 $smarty -> assign('biller_id', $_POST['biller_id']);
 */
-$smarty -> assign('id', $_POST['invoice_id']);
-$smarty -> assign('first_name', $_POST['first_name']);
-$smarty -> assign('middle_name', $_POST['middle_name']);
-$smarty -> assign('last_name', $_POST['last_name']);
+$smarty -> assign('course_id', $_POST['course_id']);
+$smarty -> assign('student_id', $_POST['student_id']);
+$smarty -> assign('students', $students);
+$smarty -> assign('student', $student);
+$smarty -> assign('courses', $courses);
+$smarty -> assign('course', $course);
 ?>

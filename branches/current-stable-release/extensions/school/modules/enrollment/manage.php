@@ -24,27 +24,33 @@ function getTeachers($search_sql="")
 	return $teachers;
 
 }
-	$search_sql ="";
-	if (!empty($_GET['id'])) {
-		$id = $_GET['id'];
-		$search_sql .= " AND id = $id ";
-	}
-	if (!empty($_GET['first_name'])) {
-		$search_sql .= " AND first_name like '%".$_GET['first_name']."%'";
-	}
-	if (!empty($_GET['middle_name'])) {
-		$search_sql .= " AND middle_name like '%".$_GET['middle_name']."%'";
-	}
-	if (!empty($_GET['last_name'])) {
-		$search_sql .= " AND last_name like '%".$_GET['last_name']."%'";
-	}
-$enrollments = school_enroll::getStudentEnrollments($search_sql);
 */
-$enrollments = school_enrol::getStudentEnrollments();
+	$search_sql ="";
+	if (!empty($_GET['student_id'])) {
+		$student_id = $_GET['student_id'];
+		$search_sql .= " AND e.student_id = $student_id ";
+		$student_id = $_GET['student_id'];
+		$student = school_student::getCustomer($student_id);
+	}
+	if (!empty($_GET['course_id'])) {
+		$course_id = $_GET['course_id'];
+		$search_sql .= " AND e.course_id = $course_id ";
+		$course_id = $_GET['course_id'];
+		$course = getProduct($course_id);
+	}
+
+$enrollments = school_enrol::searchStudentEnrollments($search_sql);
+/*$enrollments = school_enrol::getStudentEnrollments();*/
+
 $pageActive = "enrollment";
+
+
+#get the invoice id
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign("enrollments",$enrollments);
+$smarty -> assign("course",$course);
+$smarty -> assign("student",$student);
 
 getRicoLiveGrid("rico_teacher","");
 

@@ -8,12 +8,10 @@
  <hr />
 {if $smarty.get.action == "search"}
 
-Teacherss filtered by 
-	{if $smarty.get.id != ""}Teacher ID = {$smarty.get.id}{/if}
-	{if $smarty.get.first_name != ""}First Name like '{$smarty.get.first_name}'{/if}
-	{if $smarty.get.middle_name != ""}Middle Name like '{$smarty.get.middle_name}'{/if}
-	{if $smarty.get.last_name != ""}Last Name like '{$smarty.get.last_name}'{/if}
- <a href="index.php?module=teacher&view=manage">Clear filer</a> :: <a href="index.php?module=teacher&view=search">Search again</a>
+Enrollments filtered by 
+	{if $smarty.get.course_id != ""}Course = {$course.description}{/if}
+	{if $smarty.get.student_id != ""}Student = {$student.first_name} {$student.middle_name} {$student.name}{/if}
+ <a href="index.php?module=enrollment&view=manage">Clear filer</a> :: <a href="index.php?module=enrollment&view=search">Search again</a>
 <br>
 <hr />
 {/if}
