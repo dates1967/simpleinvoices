@@ -6,7 +6,7 @@
 {if $smarty.get.action== 'view' }
 
 	<b>Enrollment ::
-	<a href="index.php?module=enrollment&view=details&id={$enrollment.enrollment_id}&action=edit">{$LANG.edit}</a></b>
+	<a href="index.php?module=enrollment&view=details&id={$enrollment.0.enrollment_id}&action=edit">{$LANG.edit}</a></b>
 	
  	<hr></hr>
 
@@ -31,100 +31,95 @@
 		<td>{$enrollment.0.subject_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
+		<td class="details_screen">Status</td>
+		<td>{$enrollment.0.status}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
+		<td class="details_screen">Date of first leason</td>
+		<td>{$enrollment.0.start_date}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
+		<td class="details_screen">Start reason</td>
+		<td>{$enrollment.0.start_reason}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
+		<td class="details_screen">Dropped data</td>
+		<td>{$enrollment.0.dropped_date}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Course</td>
-		<td>{$enrollment.0.course_name}</td>
+		<td class="details_screen">Dropped reason</td>
+		<td>{$enrollment.0.dropped_reason}</td>
 	</tr>
 	</table>
 
 <hr></hr>
-<a href="index.php?module=products&view=details&id={$product.id}&action=edit">{$LANG.edit}</a>
+<a href="index.php?module=enrollment&view=details&id={$enrollment.0.enrollment_id}&action=edit">{$LANG.edit}</a>
 {/if}
 
 
 {if $smarty.get.action== 'edit' }
 
-	<b>{$LANG.product_edit}</b>
+	<b>Edit Enrollment</b>
 	<hr></hr>
 
 	<table align="center">
-	<tr>
-		<td class="details_screen">{$LANG.product_id}</td><td>{$product.id}</td>
+		<tr>
+		<td class="details_screen">ID</td><td>{$enrollment.0.enrollment_id}</td>
 	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.product_description}</td>
-		<td><input type="text" name="description" size="50" value="{$product.description}" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.product_unit_price}</td>
-		<td><input type="text" name="unit_price" size="25" value="{$product.unit_price}" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type="text" name="custom_field1" size="50" value="{$product.custom_field1}" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type="text" name="custom_field2" size="50" value="{$product.custom_field2}" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type="text" name="custom_field3" size="50" value="{$product.custom_field3}" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.product_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
-		<td><input type="text" name="custom_field4" size="50" value="{$product.custom_field4}" /></td>
-	</tr>
-{*
-		{showCustomFields categorieId="3" itemId=$smarty.get.id }
-*}
-	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td><textarea name="notes" rows="8" cols="50">{$product.notes}</textarea></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.product_enabled}</td>
+		<tr>
+		<td class="details_screen">Student</td>
 		<td>
-			{html_options name=enabled options=$enabled selected=$product.enabled}
+			<select name="student_id">
+			{foreach from=$students item=student}
+				<option {if $student.id == $enrollment.0.student_id} selected {/if} value="{$student.id}">{$student.name}, {$student.first_name} {$student.middle_name}</option>
+			{/foreach}
+			</select>
 		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>
+			<select name="course_id">
+			{foreach from=$courses item=course}
+				<option {if $course.id == $enrollment.0.course_id} selected {/if} value="{$course.id}">{$course.description}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Start Reason</td>
+		<td>
+			<select name="start_reason_id">
+			{foreach from=$start_reasons item=start_reason}
+				<option {if $start_reason.id == $enrollment.0.start_id} selected {/if} value="{$start_reason.id}">{$start_reason.reason}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Dropped Reason</td>
+		<td>
+			<select name="dropped_reason_id">
+			{foreach from=$dropped_reasons item=dropped_reason}
+				<option {if $dropped_reason.id == $enrollment.0.dropped_id} selected {/if} value="{$dropped_reason.id}">{$dropped_reason.reason}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+	
+		<td class="details_screen">Dropped date</td>
+		<td>
+                 <input type="text" class="date-picker" name="date" id="date1" value='{$enrollment.0.dropped_date|date_format:"%Y-%m-%d"}'></input>
+        </td>
+		
 	</tr>
 	</table>
 {/if} 
 {if $smarty.get.action== 'edit' }
 	<hr></hr>
 		<input type="submit" name="cancel" value="{$LANG.cancel}" /> 
-		<input type="submit" name="save_product" value="{$LANG.save_product}" /> 
-		<input type="hidden" name="op" value="edit_product" /> 
+		<input type="submit" name="save_enrollment" value="Save Enrollment" /> 
+		<input type="hidden" name="op" value="edit_enrollment" /> 
 	{/if}
 </form>

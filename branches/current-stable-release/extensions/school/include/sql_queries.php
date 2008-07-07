@@ -400,6 +400,7 @@ class school_enrol
 					c.middle_name as middle_name,
 					e.student_id as student_id, 
 					p.id, 
+					p.id as course_id,
 					b.name as branch_name, 
 					p.description as course_name, 
 					s.name as subject_name, 
@@ -409,7 +410,9 @@ class school_enrol
 					p.status, 
 					p.start_date, 
 					start.reason as start_reason, 
-					e.dropped_date, 
+					start.id as start_id,
+					e.dropped_date as dropped_date, 
+					dropped.id as dropped_id,
 					dropped.reason as dropped_reason 
 				from 
 					".TB_PREFIX."customers c, 

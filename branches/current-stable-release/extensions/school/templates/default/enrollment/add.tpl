@@ -22,7 +22,7 @@
 {else}
 {* if  name was inserted *} 
 
-<form name="frmpost" ACTION="index.php?module=enrollment&view=add" METHOD="post"><h3>Add New Teacher</h3>
+<form name="frmpost" ACTION="index.php?module=enrollment&view=add" METHOD="post"><h3>Add New Enrollment</h3>
 <hr />
 	
 <table align=center>

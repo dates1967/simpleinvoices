@@ -39,12 +39,26 @@ if (  $op === 'insert_enrollment' ) {
  	}
 }
 
-if ($op === 'edit_product' ) {
-	$insertProductClass = new product;
-	if (isset($_POST['save_product']) && $insertProductClass->updateProduct()) {
-		$saved = true;
-//		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
+if ($op === 'edit_enrollment' ) {
+
+	function updateEnrollment() {
+		
+		$sql = "UPDATE ".TB_PREFIX."course_enrol 
+				SET
+					course_id = $_POST[course_id],
+					student_id = $_POST[student_id],
+					dropped_reason_id = $_POST[dropped_reason_id],
+					start_reason_id = $_POST[start_reason_id],
+					dropped_date = '$_POST[date]'
+				WHERE id =  " . $_GET['id'];
+				
+		return mysqlQuery($sql);
+		
 	}
+	if( updateEnrollment() ) {
+ 		$saved = true;
+ 	}
+
 }
 
 
