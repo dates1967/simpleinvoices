@@ -47,145 +47,97 @@
 	<tr>
 		<td class="details_screen">Age</td>
 		<td>
-			<select name="age">
-				<option  selected value=""></option>
-				{html_options values=$age output=$age}
-			</select>
+			{$course.age}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Level</td>
 		<td>
-			<select name="level_id">
-				<option  selected value=""></option>
-			{foreach from=$level item=level_row}
-				<option value="{$level_row.id}">{$level_row.name}</option>
-			{/foreach}
-			</select>
+			{$level_select.0.name}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Type</td>
 		<td>
-			<select name="type">
-				<option  selected value=""></option>
-				{html_options values=$type output=$type}
-			</select>
+			{$course.type}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Status</td>
 		<td>
-			<select name="status">
-				<option  selected value=""></option>
-				{html_options values=$status output=$status}
-			</select>
+			{$course.status}
 		</td>
 	</tr>
 
 	<tr>
 		<td class="details_screen">Intensity</td>
 		<td>
-			<select name="intensity">
-				<option  selected value=""></option>
-				{html_options values=$intensity output=$intensity}
-			</select>
+			{$course.intensity}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Course start date</td>
 		<td>
-		<select name="start_day">
-			{html_options values=$day output=$day}
-		</select>
-		<select name="start_month">
-			{html_options options=$month}
-		</select>
-		<select name="start_year">
-			{html_options values=$year output=$year selected=$year_now}
-		</select>
+			{$course.start_date}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Course time (part of day)</td>
 		<td>
-			<select name="part_of_day">
-				<option  selected value=""></option>
-				{html_options values=$part_of_day output=$part_of_day}
-			</select>
+			{$course.part_of_day}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Start time</td>
 		<td>
-			<input type=text name="start_time" value="{$smarty.post.start_time}" size=5>
+			{$course.start_time}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Duration</td>
 		<td>
-		<input type=text name="duration" value="{$smarty.post.duration}" size=5>
-			<select name="duration_type">
-				<option  selected value=""></option>
-				{html_options values=$duration_type output=$duration_type}
-			</select>
+			{$course.duration} {$course.duration_type}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Area</td>
-		<td><input type=text name="area" value="{$smarty.post.area}" size=50></td>
+		<td>
+			{$course.area}
+		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Rooms</td>
-		<td><input type=text name="rooms" value="{$smarty.post.rooms}" size=50></td>
+		<td>{$course.rooms}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Teacher</td>
 		<td>
-			<select name="teacher_id">
-				<option  selected value=""></option>
-			{foreach from=$teacher item=teacher_row}
-				<option value="{$teacher_row.id}">{$teacher_row.name}, {$teacher_row.first_name} {$teacher_row.middle_name}</option>
-			{/foreach}
-			</select>
+			{$teacher_selected.0.name}, {$teacher_selected.0.first_name} {$teacher_selected.0.middle_name}</option>
 		</td>
 	</tr>
 
 	<tr>
 		<td class="details_screen">End</td>
 		<td>
-		<select name="end_day">
-			{html_options values=$day output=$day}
-		</select>
-		<select name="end_month">
-			{html_options options=$month}
-		</select>
-		<select name="end_year">
-			{html_options values=$year output=$year selected=$year_now}
-		</select>
+			{$course.end_date}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Repeat type</td>
 		<td>
-			<select name="repeat_type">
-				{html_options values=$repeat_type output=$repeat_type}
-			</select>
+			{$course.repeat_type}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Repeat day (for n-weekly)</td>
 		<td>
-			<select name="repeat_day">
-				<option  selected value=""></option>
-				{html_options values=$repeat_day output=$repeat_day}
-			</select>
+			{$course.repeat_day}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Number of weeks</td>
 		<td>
-			<input type=text name="number_of_weeks" value="{$smarty.post.number_of_weeks}" size=5>
+			{$course.number_of_weeks}
 		</td>
 	</tr>
 
@@ -199,13 +151,13 @@
 	<tr>
 		<td class="details_screen">Course book</td>
 		<td>
-			<input type=text name="book" value="{$smarty.post.course_book}" size=50>
+			{$course.book}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Teaching hours</td>
 		<td>
-			<input type=text name="teaching_hours" value="{$smarty.post.teaching_hours}" size=5>
+			{$course.teaching_hours}
 		</td>
 	</tr>
 
@@ -223,7 +175,7 @@
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field1" value="{$smarty.post.custom_field1}" size=25></td>
+		<td>{$course.custom_field1}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf2} <a 
@@ -231,7 +183,7 @@
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field2" value="{$smarty.post.custom_field2}" size=25></td>
+		<td>{$course.custom_field2}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf3} <a
@@ -239,7 +191,7 @@
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field3" value="{$smarty.post.custom_field3}" size=25></td>
+		<td>{$course.custom_field3}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$customFieldLabel.product_cf4} <a
@@ -247,19 +199,22 @@
 			href="docs.php?t=help&p=custom_fields"
 			rel="gb_page_center[450, 450]"><img
 			src="./images/common/help-small.png"></img></a></td>
-		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=25></td>
+		<td>{$course.custom_field4}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Is Course</td>
-		<td><input type=text name="iscourse" readonly value="1" size=25></td>
+		<td class="details_screen">Enabled</td>
+		<td>
+			{$course.wording_for_enabled}
+		</td>
 	</tr>
+
 	</table>
 	</p>
 	</div>
  </div>
 
 <hr></hr>
-<a href="index.php?module=course&view=details&id={$product.id}&action=edit">{$LANG.edit}</a>
+<a href="index.php?module=course&view=details&id={$course.id}&action=edit">{$LANG.edit}</a>
 {/if}
 
 
@@ -489,6 +444,12 @@
 	<tr>
 		<td class="details_screen">Is Course</td>
 		<td><input type=text name="iscourse" readonly value="1" size=25></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.enabled}</td>
+		<td>
+		{html_options name=enabled options=$enabled selected=$course.enabled}
+		</td>
 	</tr>
 	</table>
 	</p>

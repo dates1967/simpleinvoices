@@ -20,9 +20,9 @@ if (  $op === 'insert_product' ) {
  	}
 }
 
-if ($op === 'edit_product' ) {
-	$insertProductClass = new school_product;
-	if (isset($_POST['save_product']) && $insertProductClass->updateProduct()) {
+if ($op === 'edit_course' ) {
+	$updateProductClass = new school_product;
+	if (isset($_POST['save_course']) && $updateProductClass->updateProduct()) {
 		$saved = true;
 //		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
 	}
@@ -72,7 +72,7 @@ $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
 $pageActive = "course";
-//$smarty->assign('pageActive', $pageActive);
+$smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 
 //$smarty -> assign('refresh_total',$refresh_total); 

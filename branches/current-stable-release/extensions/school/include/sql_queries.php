@@ -81,6 +81,45 @@ class school_product extends product {
 			return mysqlQuery($sql);
 		}
 
+		
+		function updateProduct($enabled=1,$visible=1) {
+
+			$sql = "UPDATE
+					".TB_PREFIX."products
+				SET	
+					
+					description = '$_POST[description]',
+					unit_price = '$_POST[unit_price]',
+					custom_field1 = '$_POST[custom_field1]',
+					custom_field2 = '$_POST[custom_field2]',
+					custom_field3 = '$_POST[custom_field3]',
+					custom_field4 = '$_POST[custom_field4]',
+					notes = '$_POST[notes]',
+					enabled = '$_POST[enabled]' ,
+					branch_id = '$_POST[branch_id]',
+					subject_id = '$_POST[subject_id]',
+					age = '$_POST[age]',
+					level_id = '$_POST[level_id]',
+					type = '$_POST[type]',
+					status = '$_POST[status]',
+					intensity = '$_POST[intensity]',
+					start_date = '$_POST[start_year]-$_POST[start_month]-$_POST[start_day]',
+					part_of_day = '$_POST[part_of_day]',
+					start_time = '$_POST[start_time]',
+					duration = '$_POST[duration]',
+					duration_type = '$_POST[duration_type]',
+					area = '$_POST[area]',
+					rooms = '$_POST[rooms]',
+					teacher_id = '$_POST[teacher_id]',
+					repeat_type = '$_POST[repeat_type]',
+					end_date = '$_POST[end_year]-$_POST[end_month]-$_POST[end_day]',
+					repeat_day = '$_POST[repeat_day]',
+					number_of_weeks = '$_POST[number_of_weeks]',
+					book = '$_POST[book]',
+					teaching_hours = '$_POST[teaching_hours]'
+				";
+			return mysqlQuery($sql);
+		}
 
 	function getProducts() {
 		global $LANG;

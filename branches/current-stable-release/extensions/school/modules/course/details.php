@@ -7,6 +7,8 @@ $course_id = $_GET['id'];
 
 $course = getProduct($course_id);
 
+$course['wording_for_enabled'] = $course['enabled']==1?$LANG['enabled']:$LANG['disabled'];
+
 #get custom field labels
 $customFieldLabel = getCustomFieldLabels();
 
@@ -27,15 +29,13 @@ $sql_selected = "select * from ".TB_PREFIX."branch where id = $course[branch_id]
 $branch_sql_selected = sql2array($sql_selected);
 $smarty -> assign('branch_selected',$branch_sql_selected);
 
-
-
 /*Subject function*/
 $sql_sub = "select * from ".TB_PREFIX."subject"; 
 $sub_sql = sql2array($sql_sub);
 $smarty -> assign('subject',$sub_sql);
 
 /*Subject function*/
-$sql_sub_sel = "select * from ".TB_PREFIX."subject where id"; 
+$sql_sub_sel = "select * from ".TB_PREFIX."subject where id = ".$course['subject_id']; 
 $sub_sql_sel = sql2array($sql_sub_sel);
 $smarty -> assign('subject_selected',$sub_sql_sel);
 
@@ -46,10 +46,14 @@ $age[] = "Teens";
 $age[] = "Adults";
 $smarty -> assign('age',$age);
 
-/*Subject function*/
+/*Level function*/
 $sql_level = "select * from ".TB_PREFIX."level"; 
 $level = sql2array($sql_level);
 $smarty -> assign('level',$level);
+
+$sql_level_sel = "select * from ".TB_PREFIX."level where id = ".$course['level_id']; 
+$level_sel = sql2array($sql_level_sel);
+$smarty -> assign('level_select',$level_sel);
 
 /*Type*/
 $type = array();
@@ -70,6 +74,11 @@ $smarty -> assign('status',$status);
 $sql_teacher = "select * from ".TB_PREFIX."customers where enabled = '1' AND person_type = '2'"; 
 $teacher = sql2array($sql_teacher);
 $smarty -> assign('teacher',$teacher);
+
+$sql_teacher_sel = "select * from ".TB_PREFIX."customers where id = ".$course['teacher_id']; 
+$teacher_sel = sql2array($sql_teacher_sel);
+$smarty -> assign('teacher_selected',$teacher_sel);
+
 
 /*Intensity*/
 $intensity = array();
