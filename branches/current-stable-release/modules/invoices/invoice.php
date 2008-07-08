@@ -20,7 +20,7 @@ checkLogin();
 
 
 $billers = getActiveBillers();
-$customers = invoice::getActiveCustomers();
+$customers = customer::getActiveCustomers();
 $taxes = getTaxes();
 $products = getActiveProducts();
 $preferences = getActivePreferences();
