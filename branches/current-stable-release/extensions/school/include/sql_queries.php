@@ -370,6 +370,7 @@ class school_student extends customer {
 			$result_print_customer = mysqlQuery($print_customer) or die(mysql_error());
 			return mysql_fetch_array($result_print_customer);
 		}
+		
 		/*	
 			
 			
@@ -425,6 +426,16 @@ class school_student extends customer {
 		}
 }
 
+class school_teacher
+{
+		function getTeacher($id) 
+		{
+	
+			$print_customer = "SELECT * FROM ".TB_PREFIX."customers WHERE id = $id AND person_type = '2'";
+			$result_print_customer = mysqlQuery($print_customer) or die(mysql_error());
+			return mysql_fetch_array($result_print_customer);
+		}
+}
 class school_enrol
 {
 	function getEnrollment($id)
@@ -735,21 +746,22 @@ function year()
 
 function month()
 {
-	$i = array();
-	$i[01] = 'Jan';
-	$i[02] = 'Feb';
-	$i[03] = 'Mar';
-	$i[04] = 'Apr';
-	$i[05] = 'May';
-	$i[06] = 'Jun';
-	$i[07] = 'Jul';
-	$i[08] = 'Aug';
-	$i[09] = 'Sep';
-	$i[10] = 'Oct';
-	$i[11] = 'Nov';
-	$i[12] = 'Dec';
+	
+	$m = array();
+	$m[1] = 'Jan';
+	$m[2] = 'Feb';
+	$m[3] = 'Mar';
+	$m[4] = 'Apr';
+	$m[5] = 'May';
+	$m[6] = 'Jun';
+	$m[7] = 'Jul';
+	$m[8] = 'Aug';
+	$m[9] = 'Sep';
+	$m[10] = 'Oct';
+	$m[11] = 'Nov';
+	$m[12] = 'Dec';
 
-	return $i;
+	return $m;
 
 }
 

@@ -75,7 +75,7 @@ if (  $op === 'insert_teacher' ) {
 						'$_POST[custom_field4]', 
 						'$_POST[enabled]',
 						
-						'$_POST[date]',
+						'$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
 						'$_POST[birthday_year]-$_POST[birthday_month]-$_POST[birthday_day]', 
 						'$_POST[gender]',
 						'$_POST[passport_number]',
