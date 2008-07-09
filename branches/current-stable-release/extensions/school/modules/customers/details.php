@@ -3,9 +3,6 @@
 * Script: details.php
 * 	Customers details page
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
 * Last edited:
 * 	 2007-07-19
 *
@@ -66,6 +63,7 @@ $smarty->assign('pageActive', $pageActive);
 
 $smarty -> assign("stuff",$stuff);
 $smarty -> assign('customer',$customer);
+$smarty -> assign('customer_date',$customer_date = format_date($customer['date']) );
 $smarty -> assign('customer_birthday',$customer_birthday = format_date($customer['birthday']) );
 $smarty -> assign('customer_passport_issued_on',$customer_passport_issued_on = format_date($customer['passport_issued_on']) );
 $smarty -> assign('customer_guardian1_passport_issued_on',$customer_guardian1_passport_issued_on = format_date($customer['guardian1_passport_issued_on']) );

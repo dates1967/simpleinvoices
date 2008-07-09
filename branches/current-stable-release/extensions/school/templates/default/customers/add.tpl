@@ -3,9 +3,6 @@
 * Script: add.tpl
 * 	 Customers add template
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
 * Last edited:
 * 	 2007-07-18
 *
@@ -45,15 +42,13 @@
 	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-			<select name="place_of_enrolment">
+			<select name="place_of_registration">
 			{foreach from=$branch item=branch_row}
 				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>
-{*
-		<td><input type=text name="place_of_enrolment" value="{$smarty.post.place_of_enrolment}" size=25></td>
-*}
+
 	</tr>
 	<tr>
 		<td class="details_screen">Place of Lessons</td>

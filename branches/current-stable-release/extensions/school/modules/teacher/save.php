@@ -62,9 +62,9 @@ if (  $op === 'insert_teacher' ) {
 						'$_POST[street_address2]',
 						'$_POST[city]',
 						'$_POST[state]',
-						'$_POST[post_code]',
+						'$_POST[zip_code]',
 						'$_POST[country]',
-						'$_POST[home_phone]', 
+						'$_POST[phone]', 
 						'$_POST[mobile_phone]', 
 						'$_POST[fax]', 
 						'$_POST[email]', 
@@ -94,12 +94,50 @@ if (  $op === 'insert_teacher' ) {
  	}
 }
 
-if ($op === 'edit_product' ) {
-	$insertProductClass = new product;
-	if (isset($_POST['save_product']) && $insertProductClass->updateProduct()) {
-		$saved = true;
-//		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
+if ($op === 'edit_teacher' ) {
+
+	function editTeacher() {
+		
+		$sql = "UPDATE ".TB_PREFIX."customers 
+					SET
+						name = '$_POST[name]',
+						first_name = '$_POST[first_name]',
+						middle_name = '$_POST[middle_name]',
+						place_of_registration = '$_POST[place_of_registration]',
+						place_of_lesson = '$_POST[place_of_lesson]',
+						street_address = '$_POST[street_address]',
+						street_address2 = '$_POST[street_address2]',
+						city = '$_POST[city]',
+						state =  '$_POST[state]',
+						zip_code = '$_POST[zip_code]',
+						country = '$_POST[country]',
+						phone = '$_POST[phone]',
+						mobile_phone = '$_POST[mobile_phone]',
+						fax = '$_POST[fax]', 
+						email = '$_POST[email]',
+						notes = '$_POST[note]', 
+						custom_field1 = '$_POST[custom_field1]',
+						custom_field2 = '$_POST[custom_field2]',
+						custom_field3 = '$_POST[custom_field3]',
+						custom_field4 = '$_POST[custom_field4]',
+						enabled = '$_POST[enabled]',
+						
+						date = '$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
+						birthday = '$_POST[birthday_year]-$_POST[birthday_month]-$_POST[birthday_day]',
+						gender = '$_POST[gender]',
+						passport_number = '$_POST[passport_number]',
+						passport_issued_at = '$_POST[passport_issued_at]',
+						passport_issued_on = '$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
+						person_type = '2'
+					WHERE
+						id = " . $_GET['id'];
+		
+		return mysqlQuery($sql);
+		
 	}
+	if( editTeacher() ) {
+ 		$saved = true;
+ 	}
 }
 
 
@@ -146,7 +184,7 @@ $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
 $pageActive = "teacher";
-//$smarty->assign('pageActive', $pageActive);
+$smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 
 //$smarty -> assign('refresh_total',$refresh_total); 

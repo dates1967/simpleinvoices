@@ -275,7 +275,7 @@
 <tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-		<select name="place_of_enrolment">
+		<select name="place_of_registration">
 			{foreach from=$branch item=branch_row}
 				<option {if $branch_row.id == $customer.place_of_enrolment} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
@@ -524,8 +524,8 @@
 </div>
 <br>
 <!-- <input type="submit" name="cancel" value="{$LANG.cancel}" /> -->
-<input type="submit" name="save_customer" value="{$LANG.save_customer}" />
-<input type="hidden" name="op" value="edit_customer" />
+<input type="submit" name="save_teacher" value="{$LANG.save_customer}" />
+<input type="hidden" name="op" value="edit_teacher" />
 
 
 </form>

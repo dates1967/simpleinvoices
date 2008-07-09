@@ -3,9 +3,6 @@
 * Script: details.tpl
 * 	 Customer details template
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
 * Last edited:
 * 	 2007-07-18
 *
@@ -709,9 +706,9 @@
 <tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
-		<select name="place_of_enrolment">
+		<select name="place_of_registration">
 			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == $customer.place_of_enrolment} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+				<option {if $branch_row.id == $customer.place_of_registration} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 		</select>
 		</td>
@@ -734,7 +731,15 @@
 	<tr>
 		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
 		<td>
-			<input type=text name="date" value="{$customer.date}" size=25>
+		<select name="date_day">
+			{html_options values=$day output=$day selected=$customer_date.day}
+		</select>
+		<select name="date_month">
+			{html_options options=$month  selected=$customer_date.month}  
+		</select>
+		<select name="date_year">
+			{html_options values=$year output=$year selected=$customer_date.year}
+		</select>
 		</td>
 	</tr>
 	<tr>

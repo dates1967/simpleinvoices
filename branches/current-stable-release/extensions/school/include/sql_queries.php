@@ -250,9 +250,9 @@ class school_student extends customer {
 						'$custom_field4', 
 						'$enabled',
 						
-						'$place_of_enrolment',
+						'$place_of_registration',
 						'$place_of_lesson',
-						'$date',
+						'$date_year-$date_month-$date_day', 
 						'$first_name',
 						'$middle_name',
 						'$birthday_year-$birthday_month-$birthday_day', 
@@ -320,7 +320,7 @@ class school_student extends customer {
 						
 						place_of_registration = '$_POST[place_of_enrolment]',
 						place_of_lesson = '$_POST[place_of_lesson]',
-						date = '$_POST[date]',
+						date =  '$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
 						first_name = '$_POST[first_name]',
 						middle_name = '$_POST[middle_name]',
 						birthday = '$_POST[birthday_year]-$_POST[birthday_month]-$_POST[birthday_day]',
