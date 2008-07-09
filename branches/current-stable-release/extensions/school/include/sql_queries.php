@@ -117,7 +117,9 @@ class school_product extends product {
 					number_of_weeks = '$_POST[number_of_weeks]',
 					book = '$_POST[book]',
 					teaching_hours = '$_POST[teaching_hours]'
-				";
+				WHERE
+					id = " . $_GET['id'];
+			
 			return mysqlQuery($sql);
 		}
 
@@ -722,7 +724,7 @@ class school_invoice extends invoice{
 	
 			global $LANG; // must this be here?	
 		
-			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE enabled != 0 AND person_type = 1 ORDER BY name";
+			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE enabled != 0 AND person_type = '1' ORDER BY name";
 			return sql2array($sql);
 		}
 
