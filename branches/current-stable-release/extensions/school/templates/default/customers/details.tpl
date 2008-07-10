@@ -15,7 +15,7 @@
 *}
 
 {if $smarty.get.action == 'view' }
-<b>{$LANG.customer} :: <a href="index.php?module=customers&view=details&id={$customer.id}&action=edit">{$LANG.edit}</a>
+<b>Students :: <a href="index.php?module=customers&view=details&id={$customer.id}&action=edit">{$LANG.edit}</a>
 </b>
 <hr></hr>
 	
@@ -689,7 +689,7 @@
 	action="index.php?module=customers&view=save&id={$customer.id}"
 	method="post">
 
-<div id="top"><b>{$LANG.customer_edit}</b></div>
+<div id="top"><b>Edit Student</b></div>
 <hr></hr>
 <div id="container-1">
 	<ul class="anchors">

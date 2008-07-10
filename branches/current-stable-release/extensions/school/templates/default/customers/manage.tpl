@@ -22,7 +22,7 @@
 {else}
 
 
-<h3>{$LANG.manage_customers} :: <a href="index.php?module=customers&view=add">{$LANG.customer_add}</a></h3>
+<h3>Manage Students :: <a href="index.php?module=customers&view=add">Add New Student</a></h3>
 <hr />
 {if $smarty.get.action == "search"}
 

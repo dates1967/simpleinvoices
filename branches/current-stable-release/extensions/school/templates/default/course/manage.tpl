@@ -3,7 +3,7 @@
 {else}
 
 
-<h3>{$LANG.manage_products} :: <a href="index.php?module=products&view=add">{$LANG.add_new_product}</a></h3>
+<h3>Manage Courses :: <a href="index.php?module=course&view=add">Add New Course</a></h3>
 
  <hr />
 {if $smarty.get.action == "search"}

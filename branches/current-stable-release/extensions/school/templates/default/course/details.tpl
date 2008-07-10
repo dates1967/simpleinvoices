@@ -220,7 +220,7 @@
 
 {if $smarty.get.action== 'edit' }
 
-	<b>{$LANG.product_edit}</b>
+	<b>Edit Course</b>
 	<hr></hr>
 
 <div id="container-1">
