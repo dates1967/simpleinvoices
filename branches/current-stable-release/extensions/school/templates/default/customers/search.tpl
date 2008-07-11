@@ -74,7 +74,7 @@
 					Last Name
 				</td>
 				<td>
-					<input type=text name="last_name" size="50">
+					<input type=text name="name" size="50">
 				</td>
 			</tr>
 </table>
