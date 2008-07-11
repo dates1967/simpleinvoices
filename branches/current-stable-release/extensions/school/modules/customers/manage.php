@@ -39,7 +39,7 @@ if (empty($_GET['action']))
 	if (!empty($_GET['middle_name'])) {
 		$search_sql .= " AND middle_name like '%".$_GET['middle_name']."%'";
 	}
-	if (!empty($_GET['last_name'])) {
+	if (!empty($_GET['name'])) {
 		$search_sql .= " AND name like '%".$_GET['name']."%'";
 	}
 	$customers = school_student::getCustomers($search_sql);

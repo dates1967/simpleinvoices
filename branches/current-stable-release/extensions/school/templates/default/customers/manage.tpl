@@ -31,7 +31,7 @@ Students filtered by
 	{if $smarty.get.student_id != ""}Student Name =  {$customers.0.first_name} {$customers.0.middle_name} {$customers.0.name}{/if}
 	{if $smarty.get.first_name != ""}First Name like '{$smarty.get.first_name}'{/if}
 	{if $smarty.get.middle_name != ""}Middle Name like '{$smarty.get.middle_name}'{/if}
-	{if $smarty.get.last_name != ""}Last Name like '{$smarty.get.last_name}'{/if}
+	{if $smarty.get.name != ""}Last Name like '{$smarty.get.name}'{/if}
  <a href="index.php?module=customers&view=manage">Clear filer</a> :: <a href="index.php?module=customers&view=search">Search again</a>
 <br>
 <hr />

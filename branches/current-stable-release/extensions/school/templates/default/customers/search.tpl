@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&student_id={$student_id}&first_name={$first_name}&middle_name={$middle_name}&last_name={$last_name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&student_id={$student_id}&first_name={$first_name}&middle_name={$middle_name}&name={$last_name}>
 	<br><br>
 		Searching students ...
 	<br><br>
@@ -74,7 +74,7 @@
 					Last Name
 				</td>
 				<td>
-					<input type=text name="name" size="50">
+					<input type=text name="last_name" size="50">
 				</td>
 			</tr>
 </table>
