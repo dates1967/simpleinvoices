@@ -23,7 +23,7 @@ $action = isset($_GET['case'])?$_GET['case']:null;
 /*
 * The include configs and requirements stuff section - start
 */
-require_once("./include/include_main.php");
+require_once("./include/init.php");
 
 foreach($extension as $key=>$value)
 {
@@ -33,9 +33,9 @@ foreach($extension as $key=>$value)
 	if($value['enabled'] == "1")
 	{
 		//echo "Enabled:".$value['name']."<br><br>";
-		if(file_exists("./extensions/$value[name]/include/include_main.php"))
+		if(file_exists("./extensions/$value[name]/include/init.php"))
 		{
-			require_once("./extensions/$value[name]/include/include_main.php");
+			require_once("./extensions/$value[name]/include/init.php");
 		}
 	}
 }
