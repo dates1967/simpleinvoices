@@ -4,14 +4,8 @@
 * Script: index.php
 * 	Main controller file for Simple Invoices
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
 * License:
-*	 GPL v2 or above
+*	 GPL v3 or above
 */
 
 //stop browsing to files directly - all viewing to be handled by index.php
@@ -19,27 +13,12 @@
 define("BROWSE","browse");
 
 //keeps the old path
-set_include_path(get_include_path() . PATH_SEPARATOR . "./include");
 
 $module = isset($_GET['module'])?$_GET['module']:null;
 $view = isset($_GET['view'])?$_GET['view']:null;
 $action = isset($_GET['case'])?$_GET['case']:null;
 
-require_once("smarty/Smarty.class.php");
-
-
-$smarty = new Smarty();
-
-//cache directory. Have to be writeable (chmod 777)
-$smarty -> compile_dir = "cache";
-if(!is_writable($smarty -> compile_dir)) {
-	exit("Simple Invoices Error : The folder <i>".$smarty -> compile_dir."</i> has to be writeable");
-}
-
-
-
-//adds own smarty plugins
-$smarty->plugins_dir = array("plugins","smarty_plugins");
+ 
 
 /*
 * The include configs and requirements stuff section - start

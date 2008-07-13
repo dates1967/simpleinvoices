@@ -17,39 +17,120 @@
 // we must never forget to start the session
 //so config.php works ok without using index.php define browse
 define("BROWSE","browse");
+
+set_include_path(get_include_path() . PATH_SEPARATOR . "./library/");
+require_once './library/Zend/Loader.php';
+Zend_Loader::loadClass('Zend_Db_Table');
+Zend_Loader::loadClass('Zend_Debug');
+Zend_Loader::loadClass('Zend_Auth');
+Zend_Loader::loadClass('Zend_Session');
+Zend_Loader::loadClass('Zend_Config_Ini');
+
+Zend_Session::start();
+
+$config = new Zend_Config_Ini('./config/config.ini', 'production');
 include 'config/config.php';
 include 'include/sql_queries.php';
 
-session_start();
+
+// Create an in-memory SQLite database connection
+require_once 'Zend/Db/Adapter/Pdo/Mysql.php';
+//$dbAdapter = new Zend_Db_Adapter_Pdo_Mysql(array('dbname' => ':memory:'));
+
+$dbAdapter = new Zend_Db_Adapter_Pdo_Mysql(array(
+    'host'     => $config->database->params->host,
+    'username' => $config->database->params->username,
+    'password' => $config->database->params->password,
+    'dbname'   => $config->database->params->dbname
+));
+
+
+
 
 $errorMessage = '';
 if (isset($_POST['user']) && isset($_POST['pass'])) {
 
+	require_once 'Zend/Auth/Adapter/DbTable.php';
+
+	// Configure the instance with constructor parameters...
+	//$authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter, 'users', 'username', 'password');
+
+	// ...or configure the instance with setter methods
+	$authAdapter = new Zend_Auth_Adapter_DbTable($dbAdapter);
+	$authAdapter->setTableName(TB_PREFIX.'users')
+				->setIdentityColumn('user_email')
+				->setCredentialColumn('user_password')
+				->setCredentialTreatment('MD5(?)');
+
+/*
     $conn = mysql_connect( $db_host, $db_user, $db_password);
      mysql_select_db( $db_name, $conn);
-
+*/
     $userEmail   = $_POST['user'];
     $password = $_POST['pass'];
-    
+
+	// Set the input credential values (e.g., from a login form)
+	$authAdapter->setIdentity($userEmail)
+	            ->setCredential($password);
+
+	// Perform the authentication query, saving the result
+	$result = $authAdapter->authenticate();
+    /*
     // check if the user id and password combination exist in database
     $sql = "SELECT user_id 
             FROM ".TB_PREFIX."users
             WHERE user_email = '$userEmail' AND user_password = md5('$password')";
     
     $result = mysql_query($sql, $conn) or die('Query failed. ' . mysql_error()); 
-    
+
+// do the authentication
+$auth = Zend_Auth::getInstance();
+$result = $auth->authenticate($authAdapter);
+if ($result->isValid()) {
+    // success: store database row to auth's storage
+    // system. (Not the password though!)
+    $data = $authAdapter->getResultRowObject(null,
+            'password');
+    $auth->getStorage()->write($data);
+    $this->_redirect('/');
+} else {
+
+
+    */
+
+	if ($result->isValid()) {
+		//$defaultNamespace = new Zend_Session_Namespace('Default');
+		Zend_Session::start();
+		//$authNamespace = new Zend_Session_Namespace('Zend_Auth');
+		//$authNamespace->user = "myusername";
+	    // store the identity as an object where only the username and real_name have been returned
+	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(array('username', 'real_name')));
+	
+	    // store the identity as an object where the password column has been omitted
+	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(null, 'user_password'));
+
+	    /* ... */
+
+       // $_SESSION['db_is_logged_in'] = true;
+		header('Location: .');
+
+	} else {
+	
+        $errorMessage = 'Sorry, wrong user / password';
+	
+	}
+/*
     if (mysql_num_rows($result) == 1) {
         // the user id and password match, 
         // set the session
         $_SESSION['db_is_logged_in'] = true;
         
         // after login we move to the main page
-	header('Location: .');
         exit;
     } else {
         $errorMessage = 'Sorry, wrong user / password';
     }
-    
+  */  
 } 
 ?>
 <html>

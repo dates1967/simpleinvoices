@@ -7,8 +7,7 @@
 // This file must be in the root of the application folder where the index.php resides
 
 require_once("./config/config.php");		// for pdf variables
-require_once("./include/sql_queries.php");	// for getInvoice() and getPreference()
-require_once("./include/functions.php");	// for calc_invoice_paid function used in getInvoice()
+require_once("./include/include_main.php");	// for getInvoice() and getPreference()
 
 // $defaults = getSystemDefaults(); // Not required as of now.
 
@@ -31,12 +30,12 @@ $myloc .= "&renderfields=1";
 $myloc .= "&renderlinks=1";
 $myloc .= "&renderimages=1";
 $myloc .= "&scalepoints=1";
-$myloc .= "&pixels=" 		. $pdf_screen_size;
-$myloc .= "&media=" 		. $pdf_paper_size;
-$myloc .= "&leftmargin=" 	. $pdf_left_margin;
-$myloc .= "&rightmargin="	. $pdf_right_margin;
-$myloc .= "&topmargin=" 	. $pdf_top_margin;
-$myloc .= "&bottommargin=" 	. $pdf_bottom_margin;
+$myloc .= "&pixels=" 		. $config->export->pdf->screensize;
+$myloc .= "&media=" 		. $config->export->pdf->papersize;
+$myloc .= "&leftmargin=" 	. $config->export->pdf->leftmargin;
+$myloc .= "&rightmargin="	. $config->export->pdf->rightmargin;
+$myloc .= "&topmargin=" 	. $config->export->pdf->topmargin;
+$myloc .= "&bottommargin=" 	. $config->export->pdf->bottommargin;
 $myloc .= "&transparency_workaround=1";
 $myloc .= "&imagequality_workaround=1";
 $myloc .= "&output=1";

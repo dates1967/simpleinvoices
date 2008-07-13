@@ -185,13 +185,13 @@
 	</table>
 </p>
 	</div>
-	<div id="section-2" class="fragment">
+	<div id="section-2" class="fragment schooltab">
 	<p>
 	<h3><a href="index.php?module=enrollment&view=add&id={$customer.id}">Enroll student into course</a></h3>
 	<table align=center>
 	<tr class="sortHeader">
 		<th class="sortable">
-			Course ID
+			Action
 		</td>
 		<th class="sortable">
 			Course branch
@@ -230,13 +230,15 @@
 {foreach from=$course_enrol item=courses}
 	<tr class="index_table">
 		<td class="details_screen">
-			<a href="index.php?module=course&view=detail&action=view&id={$courses.id}">{$courses.id}</a>
+			<a href="index.php?module=enrollment&view=details&action=view&id={$courses.enrollment_id}">View</a> 
+			:: 
+			 <a href="index.php?module=enrollment&view=details&action=edit&id={$courses.enrollment_id}">Edit</a>
 		</td>
 		<td class="details_screen">
 			{$courses.branch_name}
 		</td>
 		<td class="details_screen">
-			{$courses.course_name}
+			<a href="index.php?module=course&view=details&action=view&id={$courses.id}">{$courses.course_name}</a>
 		</td>
 		<td class="details_screen">
 			{$courses.subject_name}
@@ -695,9 +697,10 @@
 	<ul class="anchors">
 		<li><a href="#section-1">General Info</a></li>
 		<li><a href="#section-2">Additional Info</a></li>
-		<li><a href="#section-3">Custom Fields</a></li>
-		<li><a href="#section-4">Ledger</a></li>
-		<li><a href="#section-5">{$LANG.notes}</a></li>
+		<li><a href="#section-3">Courses</a></li>
+		<li><a href="#section-4">Custom Fields</a></li>
+		<li><a href="#section-5">Ledger</a></li>
+		<li><a href="#section-6">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -1068,7 +1071,95 @@
 	</table>
 	</p>
 	</div>
-	<div id="section-3" class="fragment">
+	<div id="section-3" class="fragment schooltab">
+	<p>
+	<h3><a href="index.php?module=enrollment&view=add&id={$customer.id}">Enroll student into course</a></h3>
+	<table align=center>
+	<tr class="sortHeader">
+		<th class="sortable">
+			Action
+		</td>
+		<th class="sortable">
+			Course branch
+		</td>
+		<th class="sortable">
+			Course name
+		</td>
+		<th class="sortable">
+			Course subject
+		</td>
+		<th class="sortable">
+			Course age
+		</td>
+		<th class="sortable">
+			Course level
+		</td>
+		<th class="sortable">
+			Course type
+		</td>
+		<th class="sortable">
+			Course status
+		</td>
+		<th class="sortable">
+			Date of first lesson
+		</td>
+		<th class="sortable">
+			Start reason
+		</td>
+		<th class="sortable">
+			Dropped
+		</td>
+		<th class="sortable">
+			Dropped reason
+		</td>
+	</tr>
+{foreach from=$course_enrol item=courses}
+	<tr class="index_table">
+		<td class="details_screen">
+			<a href="index.php?module=enrollment&view=details&action=view&id={$courses.enrollment_id}">View</a> 
+			:: 
+			 <a href="index.php?module=enrollment&view=details&action=edit&id={$courses.enrollment_id}">Edit</a>
+		</td>
+		<td class="details_screen">
+			{$courses.branch_name}
+		</td>
+		<td class="details_screen">
+			<a href="index.php?module=course&view=details&action=view&id={$courses.id}">{$courses.course_name}</a>
+		</td>
+		<td class="details_screen">
+			{$courses.subject_name}
+		</td>
+		<td class="details_screen">
+			{$courses.age}
+		</td>
+		<td class="details_screen">
+			{$courses.level_name}
+		</td>
+		<td class="details_screen">
+			{$courses.type}
+		</td>
+		<td class="details_screen">
+			{$courses.status}
+		</td>
+		<td class="details_screen">
+			{$courses.start_date}
+		</td>
+		<td class="details_screen">
+			{$courses.start_reason}
+		</td>
+		<td class="details_screen">
+			{$courses.dropped_date}
+		</td>
+		<td class="details_screen">
+			{$courses.dropped_reason}
+		</td>
+	</tr>
+{/foreach}
+	</table>
+<br>
+	</p>
+	</div>
+	<div id="section-4" class="fragment">
 	<p>
 	<table align=center>
 	<tr>
@@ -1112,7 +1203,7 @@
 	</div>
 	
 	
-	<div id="section-4" class="fragment">
+	<div id="section-5" class="fragment">
 		<h4><u>Ledger</u></h4>
 		<p >
 		<table align="center">
@@ -1156,7 +1247,7 @@
 		</p>
 	</div>
 	
-	<div id="section-5" class="fragment">
+	<div id="section-6" class="fragment">
 	<p>
 	<table align=center>
 	<tr>

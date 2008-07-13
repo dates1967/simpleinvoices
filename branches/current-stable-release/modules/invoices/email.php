@@ -47,13 +47,13 @@ if ($_GET['stage'] == 2 ) {
 	                  'draw_page_border' => false
 	                  );
 
-	$media = Media::predefined($pdf_paper_size);
+	$media = Media::predefined($config->export->pdf->papersize);
 	$media->set_landscape(false);
-	$media->set_margins(array('left'   => $pdf_left_margin,
-        	                  'right'  => $pdf_right_margin,
-                	          'top'    => $pdf_top_margin,
-                	          'bottom' => $pdf_bottom_margin));
-	$media->set_pixels($pdf_screen_size);
+	$media->set_margins(array('left'   => $config->export->pdf->leftmargin,
+        	                  'right'  => $config->export->pdf->rightmargin,
+                	          'top'    => $config->export->pdf->topmargin,
+                	          'bottom' => $config->export->pdf->bottommargin));
+	$media->set_pixels($config->export->pdf->screensize);
 
 	$g_px_scale = mm2pt($media->width() - $media->margins['left'] - $media->margins['right']) / $media->pixels;
 	$g_pt_scale = $g_px_scale * 1.43; 

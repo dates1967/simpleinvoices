@@ -1,22 +1,14 @@
 <?php
-//checkLogin();
 
-######################
-/* Database connection info
-/* Enter your database information */
-######################
-$db_host = "localhost";
-$db_name = "simple_invoices";
-$db_user = "root";
-$db_password = "";
+$environment = "dev"; //test,staging,dev,live etc..
+
 define("TB_PREFIX","si_"); // default table prefix si_ -  Old variable: $tb_prefix = "si_";
 
 #####################
 /* Authentication options */
 #####################
 //if you want to make Simple Invoices secure and require a username and password set this to true
-//$authenticationOn = "true";
-$authenticationOn = "false";
+$authenticationOn = "false"; // "true"
 
 //if you are using a .httaccess file
 $http_auth = ""; //value: "name:password@"
@@ -41,40 +33,12 @@ $email_ack = false;   // true means sender's EMail ID will be used as the Return
 ####################
 /* General configs */
 ####################
-$config['date_format']  = 'Y-m-d'; #International format just the date
-#$config['date_format']  = 'Y-m-d h:m'; #Internalional format date and time 
-#$config['date_format']  = 'm-d-Y'; #US format just date 
-#$config['date_format']  = 'm-d-Y h:m'; #US format with date and time
-#$config['date_format']  = 'd-m-Y'; #UK format just date 
-#$config['date_format']  = 'd-m-Y h:m'; #UK format with date and time
-#$config['date_format']  = 'j.n.Y'; #CZ format
-
-/*Export to excel/word/openoffice etc. config*/
-$spreadsheet = "xls"; #MS Excel format
-#$spreadsheet = "ods"; #Open Document Format spreadsheet
-$word_processor = "doc"; #MS Word format
-#$word_processor = "odt"; #Open Document Format text
 
 /* Version Info*/
 $version = "20080511 stable";
 $versionFriendlyName ="Minor patches + new extension system of the 2008 03 09 release - aka mother day release";
 $versionSeries = "200708 series";
 
-#################
-/* PDF config options */
-#################
-#size in pixels (640,800,1024)
-$pdf_screen_size = 800;
-#paper size (Letter,Legal,Executive,A0Oversize,A0,A1,A2,A3,A4,A5,B5,Folio,A6,A7,A8,A9,A10)
-$pdf_paper_size = "A4";
-#left margin of the pdf
-$pdf_left_margin = 15;
-#right margin of the pdf
-$pdf_right_margin = 15;
-#top margin of the pdf
-$pdf_top_margin = 15;
-#bottom margin of the pdf
-$pdf_bottom_margin = 15;
 
 ####################
 /* Extensions */
@@ -93,21 +57,6 @@ $extension['test']['enabled'] = "0";
 // dev guys to enable extensions via your local.config.php file
 
 
-####################
-/* Environment*/
-####################
-/*
-This allows you to have another local config file for your dev or other purposes
-ie. dev.config.php 
-any config.php setting in this extra file(which wont be kept in svn) will overwrite config.php values
-- this way everyone can have there own conf setting without messing with anyones setting
-RELEASE TODO: make sure $environment is set back to live
-*/
-$environment = "local"; //test,staging,dev,live etc..
-if($environment != "live")
-{
-	@include("./config/".htmlspecialchars($environment).".config.php");
-}
 
 ####################
 /* Other stuff*/

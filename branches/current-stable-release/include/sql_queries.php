@@ -10,9 +10,18 @@ if(LOGGING) {
 	$log = mysql_connect( $db_host, $db_user, $db_password );
 	mysql_select_db( $db_name, $log );
 }
+$conn = mysql_connect( 
+		$config->database->params->host, 
+		$config->database->params->username, 
+		$config->database->params->password,
+		true 
+);
 
-$conn = mysql_connect( $db_host, $db_user, $db_password,true );
-$db = mysql_select_db( $db_name, $conn );
+$db = mysql_select_db( 
+		$config->database->params->dbname, 
+		$conn 
+);
+
 $mysql = mysql_get_server_info();	//mysql_version
 
 /**
@@ -217,7 +226,7 @@ function getPayment($id) {
 
 	$query = mysqlQuery($sql) or die(mysql_error());
 	$payment = mysql_fetch_array($query);
-	$payment['date'] = date( $config['date_format'], strtotime( $payment['ac_date'] ) );
+	$payment['date'] = date( $config->date->format, strtotime( $payment['ac_date'] ) );
 	return $payment;
 }
 
@@ -880,7 +889,7 @@ class invoice {
 			//exit();
 			
 			$invoice['calc_date'] = date('Y-m-d', strtotime( $invoice['date'] ) );
-			$invoice['date'] = date( $config['date_format'], strtotime( $invoice['date'] ) );
+			$invoice['date'] = date( $config->date->format, strtotime( $invoice['date'] ) );
 			$invoice['total'] = invoice::getInvoiceTotal($invoice['id']);
 			$invoice['total_format'] = round($invoice['total'],2);
 			$invoice['paid'] = calc_invoice_paid($invoice['id']);
@@ -905,7 +914,7 @@ class invoice {
 			if($invoice =  mysql_fetch_array($query)) {
 
 				$invoice['calc_date'] = date( 'Y-m-d', strtotime( $invoice['date'] ) );
-				$invoice['date'] = date( $config['date_format'], strtotime( $invoice['date'] ) );
+				$invoice['date'] = date( $config->date_format, strtotime( $invoice['date'] ) );
 					
 				#invoice total total - start
 				$invoice['total'] = invoice::getInvoiceTotal($invoice['id']);
