@@ -13,6 +13,7 @@ $install_path = $path['dirname'];
 //include_once('./extensions/school/config/config.php');
 
 include_once("./extensions/school/include/sql_queries.php");
+include_once("./extensions/school/include/acl.php");
 /*
 include_once('./include/language.php');
 

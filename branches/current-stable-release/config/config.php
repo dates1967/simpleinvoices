@@ -71,4 +71,10 @@ $extension['test']['enabled'] = "0";
 //To turn logging on set the below to true - not needed as it is set in System Defaults
 define("LOGGING",false);
 #define("LOGGING",true);
+
+if($environment != "live")
+{
+    @include("./config/".htmlspecialchars($environment).".config.php");
+}
+
 ?>

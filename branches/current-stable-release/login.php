@@ -36,15 +36,26 @@ include 'include/sql_queries.php';
 // Create an in-memory SQLite database connection
 require_once 'Zend/Db/Adapter/Pdo/Mysql.php';
 //$dbAdapter = new Zend_Db_Adapter_Pdo_Mysql(array('dbname' => ':memory:'));
-
+/*
 $dbAdapter = new Zend_Db_Adapter_Pdo_Mysql(array(
     'host'     => $config->database->params->host,
     'username' => $config->database->params->username,
     'password' => $config->database->params->password,
     'dbname'   => $config->database->params->dbname
 ));
+*/
+$dbAdapter = Zend_Db::factory($config->database->adapter, array(
+    'host'     => $config->database->params->host,
+    'username' => $config->database->params->username,
+    'password' => $config->database->params->password,
+    'dbname'   => $config->database->params->dbname)
+);
 
-
+if (isset($_GET['logout']))
+{
+	Zend_Session::destroy(true);
+	header('Location: login.php');
+}
 
 
 $errorMessage = '';
@@ -104,10 +115,18 @@ if ($result->isValid()) {
 		//$authNamespace = new Zend_Session_Namespace('Zend_Auth');
 		//$authNamespace->user = "myusername";
 	    // store the identity as an object where only the username and real_name have been returned
-	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(array('username', 'real_name')));
+//	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(array('username', 'real_name')));
+
+
+//$db->setFetchMode(Zend_Db::FETCH_OBJ);
+
+	$result = $dbAdapter->fetchRow('SELECT user_id, user_email, user_name, user_group, user_domain FROM si_users WHERE user_email = ?', $userEmail);
 	
+	$authNamespace = new Zend_Session_Namespace('Zend_Auth');
+	$authNamespace->user = $result;
+
 	    // store the identity as an object where the password column has been omitted
-	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(null, 'user_password'));
+//	    Zend_Auth::getInstance()->getStorage()->write($authAdapter->getResultRowObject(null, 'user_password'));
 
 	    /* ... */
 
