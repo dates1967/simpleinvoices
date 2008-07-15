@@ -43,15 +43,6 @@ foreach($extension as $key=>$value)
 * The include configs and requirements stuff section - end
 */
 
-//Check permissions
-$denied="You are not allowed to view this page";
-
-$auth_session = new Zend_Session_Namespace('Zend_Auth');
-print_r($_SESSION);
-$checkPermission = $acl->isAllowed($auth_session['user_group'], null, $module) ?  "allowed" : "denied"; // allowed
-$checkPermission == "denied" ? exit($LANG['denied_page']) :"" ;
-
-
 $smarty -> assign("authenticationOn",$authenticationOn); // to toggle the login / logout button visibility in the menu
 $smarty -> assign("module",$module);
 

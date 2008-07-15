@@ -278,3 +278,21 @@ CREATE TABLE `si_todo` (
 `note` TEXT NULL 
 );
 
+CREATE TABLE `si_user_role` (
+	`id` INT NOT NULL AUTO_INCREMENT ,
+	`name` VARCHAR( 255 ) NOT NULL ,
+	PRIMARY KEY ( `id` )
+) 
+
+INSERT 
+	INTO `si_user_role` (
+		`id` ,
+		`name`
+	)
+	VALUES (
+		NULL , 'student',
+		NULL , 'branch_administrator',
+		NULL , 'administrator'
+	)
+;
+
