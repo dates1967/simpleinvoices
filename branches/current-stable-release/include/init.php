@@ -62,6 +62,8 @@ if($environemnt != 'live') {
 	 $config = new Zend_Config_Ini('./config/'.$environment.'.config.ini', $environment);
 }
 
+include_once('./include/include_auth.php');
+
 include_once("./include/sql_queries.php");
 
 include_once('./include/language.php');
@@ -70,7 +72,6 @@ include_once('./include/functions.php');
 
 checkConnection();
 
-include('./include/include_auth.php');
 include_once('./include/manageCustomFields.php');
 include_once("./include/validation.php");
 

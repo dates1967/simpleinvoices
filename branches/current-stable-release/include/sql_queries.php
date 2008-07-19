@@ -756,41 +756,6 @@ function getCustomerInvoices($id) {
 
 
 
-function insertInvoice($type) {
-	
-	$sql = "INSERT 
-			INTO
-		".TB_PREFIX."invoices (
-			id, 
-			biller_id, 
-			customer_id, 
-			type_id,
-			preference_id, 
-			date, 
-			note,
-			custom_field1,
-			custom_field2,
-			custom_field3,
-			custom_field4
-		)
-		VALUES
-		(
-			NULL,
-			'$_POST[biller_id]',
-			'$_POST[customer_id]',
-			'$type',
-			'$_POST[preference_id]',
-			'$_POST[date]',
-			'$_POST[note]',
-			'$_POST[customField1]',
-			'$_POST[customField2]',
-			'$_POST[customField3]',
-			'$_POST[customField4]'
-			)";
-	//echo $sql;
-	return mysqlQuery($sql);
-}
-
 function updateInvoice($invoice_id) {
 
 		$sql = "UPDATE
@@ -812,6 +777,41 @@ function updateInvoice($invoice_id) {
 }
 
 class invoice {
+
+		function insertInvoice($type) {
+			
+			$sql = "INSERT 
+					INTO
+				".TB_PREFIX."invoices (
+					id, 
+					biller_id, 
+					customer_id, 
+					type_id,
+					preference_id, 
+					date, 
+					note,
+					custom_field1,
+					custom_field2,
+					custom_field3,
+					custom_field4
+				)
+				VALUES
+				(
+					NULL,
+					'$_POST[biller_id]',
+					'$_POST[customer_id]',
+					'$type',
+					'$_POST[preference_id]',
+					'$_POST[date]',
+					'$_POST[note]',
+					'$_POST[customField1]',
+					'$_POST[customField2]',
+					'$_POST[customField3]',
+					'$_POST[customField4]'
+					)";
+			//echo $sql;
+			return mysqlQuery($sql);
+		}
 
 		function insertInvoiceItem($invoice_id,$quantity,$product_id,$tax_id,$description="") {
 			

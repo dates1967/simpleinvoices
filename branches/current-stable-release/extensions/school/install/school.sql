@@ -282,7 +282,7 @@ CREATE TABLE `si_user_role` (
 	`id` INT NOT NULL AUTO_INCREMENT ,
 	`name` VARCHAR( 255 ) NOT NULL ,
 	PRIMARY KEY ( `id` )
-) 
+); 
 
 INSERT 
 	INTO `si_user_role` (
@@ -296,3 +296,4 @@ INSERT
 	)
 ;
 
+ALTER TABLE `si_invoices` ADD `branch_id` INT( 11 ) NOT NULL ;

@@ -23,6 +23,12 @@ checkLogin();
 <title>{$title} :: {$LANG['manage_invoices']}</title>
 EOD;*/
 
+echo "Role:".$auth_session->role_name;
+if($auth_session->role_name == "branch_administrator")
+{
+	$limit = " AND iv.branch_id = ".$auth_session->user_domain;
+}
+
 if (empty($_GET['action']))
 {
 	$sql = "SELECT	iv.id, b.name As biller, c.name As customer,  c.first_name as first_name, c.middle_name as middle_name, 
@@ -42,7 +48,7 @@ if (empty($_GET['action']))
 		IF(isnull(@apmt), 0, @apmt) As paid_format,
 		(select (total - paid_format)) as owing
 	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf
-	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id
+	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $limit
 	GROUP BY iv.id 
 	ORDER BY iv.id DESC";
 } else {
@@ -77,7 +83,7 @@ if (empty($_GET['action']))
 		IF(isnull(@apmt), 0, @apmt) As paid_format,
 		(select (total - paid_format)) as owing
 	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf
-	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $search_sql
+	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $search_sql $limit
 	GROUP BY iv.id 
 	ORDER BY iv.id DESC";
 

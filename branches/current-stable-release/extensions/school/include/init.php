@@ -22,7 +22,6 @@ include_once('./include/functions.php');
 
 checkConnection();
 
-include('./include/include_auth.php');
 include_once('./include/manageCustomFields.php');
 include_once("./include/validation.php");
 */

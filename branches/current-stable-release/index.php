@@ -114,6 +114,7 @@ if (($module == "invoices" ) && (strstr($view,"templates"))) {
 	exit(0);
 }
 
+
 $path = "$module/$view";
 
 /*
@@ -126,10 +127,13 @@ $path = "$module/$view";
 	/*
 	* TODO: fix the javascript or move datapicker to extjs to fix this hack - not nice
 	*/
+if($module !== "auth")
+{
 	if ($view == "manage") 
 		$smarty -> display("../templates/default/headerm.tpl");
 	else
 		$smarty -> display("../templates/default/header.tpl");
+}
 /*
 * Prep the page - load the header stuff - end
 */
@@ -214,7 +218,9 @@ $smarty -> assign("extension_jquery_files",$extension_jquery_files);
 /*
 * Menu : If extension has custom menu use it else use default - start
 */
-	
+
+if($menu == "true")
+{	
 	$extensionMenu = 0;
 	foreach($extension as $tplKey=>$tplValue)
 	{
@@ -237,6 +243,7 @@ $smarty -> assign("extension_jquery_files",$extension_jquery_files);
 	{
 		$smarty -> display("../templates/default/menu.tpl");
 	}
+}
 /*
 * Menu : If extension has custom menu use it else use default - end
 */

@@ -34,7 +34,7 @@ $type = $_POST['type'];
 
 if ($_POST['action'] == "insert" ) {
 	
-	if(insertInvoice($type)) {
+	if(invoice::insertInvoice($type)) {
 		$invoice_id = mysql_insert_id();
 //		saveCustomFieldValues($_POST['categorie'],$invoice_id);
 		$saved = true;

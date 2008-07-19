@@ -664,6 +664,44 @@ class school_enrol
 
 class school_invoice extends invoice{
 
+		function insertInvoice($type) {
+			
+		global $auth_session;
+
+			$sql = "INSERT 
+					INTO
+				".TB_PREFIX."invoices (
+					id, 
+					biller_id, 
+					customer_id, 
+					type_id,
+					preference_id, 
+					date, 
+					note,
+					custom_field1,
+					custom_field2,
+					custom_field3,
+					custom_field4,
+					branch_id
+				)
+				VALUES
+				(
+					NULL,
+					'$_POST[biller_id]',
+					'$_POST[customer_id]',
+					'$type',
+					'$_POST[preference_id]',
+					'$_POST[date]',
+					'$_POST[note]',
+					'$_POST[customField1]',
+					'$_POST[customField2]',
+					'$_POST[customField3]',
+					'$_POST[customField4]',
+					'$auth_session->user_domain'
+					)";
+			//echo $sql;
+			return mysqlQuery($sql);
+		}
 		
 		function insertinvoiceitem($invoice_id,$quantity,$product_id,$tax_id,$description="", $student_id, $start_reason_id, $dropped_reason_id, $dropped_date) 
 		{
