@@ -20,13 +20,17 @@ if (  $op === 'insert_user' ) {
 						id,
 						username,
 						password,
-						person_type
+						person_type,
+						user_group,
+						user_branch
 					)
 					VALUES 
 					(
 						null,
 						'$_POST[username]',
-						'$_POST[password]',
+						MD5($_POST[password]),
+						'$_POST[person_type]',
+						'$_POST[person_type]',
 						'$_POST[person_type]'
 					)
 				";
