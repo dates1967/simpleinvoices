@@ -44,13 +44,6 @@ $dbAdapter = Zend_Db::factory($config->database->adapter, array(
     'dbname'   => $config->database->params->dbname)
 );
 
-if (isset($_GET['logout']))
-{
-	Zend_Session::destroy(true);
-	header('Location: index.php?module=auth&view=login');
-}
-
-
 $errorMessage = '';
 if (isset($_POST['user']) && isset($_POST['pass'])) {
 

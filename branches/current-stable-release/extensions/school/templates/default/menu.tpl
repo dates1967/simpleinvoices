@@ -266,9 +266,9 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 			</li>
 			{if $authenticationOn == "true"}
 				{if $smarty.session.Zend_Auth.user_id == null}
-					<li><a href="login.php">{$LANG.login}</a></li>
+					<li><a href="index.php?module=auth&view=login">{$LANG.login}</a></li>
 				{else}
-					<li><a href="login.php?logout">{$LANG.logout}</a></li>
+					<li><a href="index.php?module=auth&view=logout">{$LANG.logout}</a></li>
 				{/if}
 			{/if}
 		</ul>

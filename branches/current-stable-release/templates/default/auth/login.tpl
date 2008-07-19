@@ -5,7 +5,7 @@
 
 
 {if $errorMessage != ''}
-<p align="center"><strong><font color="#990000">{$errorMessage}</font></strong></p>
+	<p align="center"><strong><font color="#990000">{$errorMessage}</font></strong></p>
 {/if}
 <div id="Dialog">
 
@@ -24,7 +24,7 @@
 			<!--
   		  <span>(<a href="login.php">I forgot my password/username</a>)</span>
 			-->
-  		</dd>
+ 		</dd>
 <!--TODO add language select drop down here -->
 <!--
       		<dd><input type="checkbox" name="remember_me" /> Remember me on this computer</dd>
