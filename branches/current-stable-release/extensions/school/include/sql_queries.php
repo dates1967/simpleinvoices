@@ -768,6 +768,80 @@ class school_invoice extends invoice{
 
 }
 
+class school_biller extends biller
+{
+function insertBiller() {
+	
+	$sql = "INSERT into
+			".TB_PREFIX."biller
+		VALUES
+			(
+				NULL,
+				'$_POST[name]',
+				'$_POST[street_address]',
+				'$_POST[street_address2]',
+				'$_POST[city]',
+				'$_POST[state]',
+				'$_POST[zip_code]',
+				'$_POST[country]',
+				'$_POST[phone]',
+				'$_POST[mobile_phone]',
+				'$_POST[fax]',
+				'$_POST[email]',
+				'$_POST[logo]',
+				'$_POST[footer]',
+				'$_POST[notes]',
+				'$_POST[custom_field1]',
+				'$_POST[custom_field2]',
+				'$_POST[custom_field3]',
+				'$_POST[custom_field4]',
+				'$_POST[enabled]',
+				'$_POST[branch_id]'
+			 )";
+
+
+	return mysqlQuery($sql);
+	/*
+	if($query = mysqlQuery($sql)) {
+		
+		//error_log("iii:".mysql_insert_id());
+		return $query;
+	}
+	else {
+		return false;
+	}*/
+}
+
+function updateBiller() {
+	
+	$sql = "UPDATE
+				".TB_PREFIX."biller
+			SET
+				name = '$_POST[name]',
+				street_address = '$_POST[street_address]',
+				street_address2 = '$_POST[street_address2]',
+				city = '$_POST[city]',
+				state = '$_POST[state]',
+				zip_code = '$_POST[zip_code]',
+				country = '$_POST[country]',
+				phone = '$_POST[phone]',
+				mobile_phone = '$_POST[mobile_phone]',
+				fax = '$_POST[fax]',
+				email = '$_POST[email]',
+				logo = '$_POST[logo]',
+				footer = '$_POST[footer]',
+				notes = '$_POST[notes]',
+				custom_field1 = '$_POST[custom_field1]',
+				custom_field2 = '$_POST[custom_field2]',
+				custom_field3 = '$_POST[custom_field3]',
+				custom_field4 = '$_POST[custom_field4]',
+				enabled = '$_POST[enabled]',
+				branch_id = '$_POST[branch_id]'
+			WHERE
+				id = '$_GET[id]'";
+	return mysqlQuery($sql);
+}
+}
 
 function year()
 {

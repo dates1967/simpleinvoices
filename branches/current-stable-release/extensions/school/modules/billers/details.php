@@ -44,4 +44,14 @@ $smarty -> assign('enabled', array(
  */
 $smarty->assign('files', $files);
 $smarty->assign('customFieldLabel', $customFieldLabel);
+
+/*branch*/
+$sql = "select * from ".TB_PREFIX."branch"; 
+$branch_sql = sql2array($sql);
+$smarty -> assign('branch',$branch_sql);
+
+$sql_sel = "select name from ".TB_PREFIX."branch where id = ".$biller['branch_id']; 
+$branch_sql_sel = sql2array($sql_sel);
+$smarty -> assign('branch_selected',$branch_sql_sel);
+
 ?>

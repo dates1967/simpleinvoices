@@ -123,6 +123,12 @@
 		<td class="details_screen">{$LANG.enabled}</td>
 		<td>{$biller.wording_for_enabled}</td>
 	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			{$branch_selected.0.name}
+		</td>
+	</tr>
 </table>
 {/if}
 
@@ -250,6 +256,16 @@
 		<td class="details_screen">{$LANG.enabled}</td>
 		<td>
 		{html_options name=enabled options=$enabled selected=$biller.enabled}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="branch_is">
+			{foreach from=$branch item=branch_row}
+				<option  {if $branch_row.id == $biller.branch_id} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
 		</td>
 	</tr>
 {*

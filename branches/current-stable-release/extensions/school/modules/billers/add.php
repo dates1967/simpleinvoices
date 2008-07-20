@@ -27,7 +27,7 @@ $smarty->assign("files", $files);
 $customFieldLabel = getCustomFieldLabels();
 
 if ($_POST['name'] != "") {
-	include ("./modules/billers/save.php");
+	include ("./extensions/school/modules/billers/save.php");
 }
 
 $pageActive = "billers";
@@ -37,5 +37,9 @@ $smarty->assign('files', $files);
 $smarty->assign('customFieldLabel', $customFieldLabel);
 $smarty->assign('save', $save);
 
+/*branch*/
+$sql = "select * from ".TB_PREFIX."branch"; 
+$branch_sql = sql2array($sql);
+$smarty -> assign('branch',$branch_sql);
 
 ?>

@@ -144,6 +144,16 @@ You must enter a Biller name</div>
 			{html_options name=enabled options=$enabled selected=1}
 		</td>
 	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="branch_id">
+			{foreach from=$branch item=branch_row}
+				<option value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
 {*
 	{showCustomFields categorieId="1" itemId=""}
 *}
