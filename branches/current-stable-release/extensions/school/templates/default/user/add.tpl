@@ -39,15 +39,34 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Password <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=text name="password" value="{$smarty.post.password}" size=25></td>
+		<td><input type=password name="password_field" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Type</td>
 		<td>
 			<select name="person_type">
-				<option  selected value=""></option>
 			{foreach from=$person_type key=pid item=ptype}
 				<option value="{$pid}">{$ptype}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">User Group</td>
+		<td>
+			<select name="user_group">
+			{foreach from=$role item=role_row}
+				<option value="{$role_row.id}">{$role_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="user_branch">
+			{foreach from=$branch item=branch_row}
+				<option value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>

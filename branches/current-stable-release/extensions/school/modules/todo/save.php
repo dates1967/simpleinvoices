@@ -6,7 +6,6 @@ checkLogin();
 # Deal with op and add some basic sanity checking
 
 $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
-$person_id = !empty( $_POST['person_id'] ) ? addslashes( $_POST['person_id'] ) : "1";
 
 
 #insert product
@@ -15,6 +14,8 @@ $saved = false;
 if (  $op === 'insert_todo' ) {
 	
 	function insertSubject() {
+
+	global $auth_session;
 		
 		$sql = "INSERT INTO ".TB_PREFIX."todo
 					(
@@ -25,7 +26,7 @@ if (  $op === 'insert_todo' ) {
 					)
 					VALUES 
 					(
-						'$person_id',
+						'$auth_session->user_id',
 						'$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
 						'$_POST[description]',
 						'$_POST[note]'
@@ -44,9 +45,10 @@ if ($op === 'edit_todo' ) {
 
 	function editSubject() {
 		
+	global $auth_session;
 		$sql = "UPDATE ".TB_PREFIX."todo
 					SET
-						person_id = '$person_id',
+						person_id = '$auth_session->user_id',
 						date = '$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
 						description = '$_POST[description]',
 						note = '$_POST[note]'

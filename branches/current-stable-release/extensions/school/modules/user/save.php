@@ -22,23 +22,23 @@ if (  $op === 'insert_user' ) {
 						password,
 						person_type,
 						user_group,
-						user_branch
+						place_of_registration
 					)
 					VALUES 
 					(
 						null,
 						'$_POST[username]',
-						MD5($_POST[password]),
+						MD5('$_POST[password_field]'),
 						'$_POST[person_type]',
-						'$_POST[person_type]',
-						'$_POST[person_type]'
+						'$_POST[user_group]',
+						'$_POST[user_branch]'
 					)
 				";
 		
 		return mysqlQuery($sql);
 		
 	}
-	if( insertUsert() ) {
+	if( insertUser() ) {
  		$saved = true;
  	}
 }
@@ -47,17 +47,23 @@ if ($op === 'edit_user' ) {
 
 	function editUser() {
 		
+	empty($_POST[password_field]) ? $password = "" :  $password = "password = MD5('".$_POST[password_field]."'),"  ;
+
 		$sql = "UPDATE ".TB_PREFIX."customers
 					SET
 						username
 						=
 						'$_POST[username]',
-						password
-						=
-						'$_POST[password]',
+						$password
 						person_type
 						=
-						'$_POST[person_type]'
+						'$_POST[person_type]',
+						user_group
+						=
+						'$_POST[user_group]',
+						place_of_registration
+						=
+						'$_POST[user_branch]'
 					WHERE
 						id
 						=

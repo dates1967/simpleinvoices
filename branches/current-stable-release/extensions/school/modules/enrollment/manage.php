@@ -25,7 +25,14 @@ function getTeachers($search_sql="")
 
 }
 */
+
 	$search_sql ="";
+
+if($auth_session->role_name == "branch_administrator")
+{
+	$search_sql .= " AND c.place_of_registration = ".$auth_session->user_domain;
+}
+
 	if (!empty($_GET['student_id'])) {
 		$student_id = $_GET['student_id'];
 		$search_sql .= " AND e.student_id = $student_id ";
@@ -38,6 +45,7 @@ function getTeachers($search_sql="")
 		$course_id = $_GET['course_id'];
 		$course = getProduct($course_id);
 	}
+
 
 $enrollments = school_enrol::searchStudentEnrollments($search_sql);
 /*$enrollments = school_enrol::getStudentEnrollments();*/

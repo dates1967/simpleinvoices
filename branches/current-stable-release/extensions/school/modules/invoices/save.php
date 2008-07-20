@@ -4,14 +4,11 @@
 * Script: save.php
 * 	Invoice save file
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
 * License:
-*	 GPL v2 or above
+*	 GPL v3 or above
 *	 
 * Website:
-* 	http://www.simpleinvoices.or
+* 	http://www.simpleinvoices.org
 */
 
 
@@ -34,7 +31,7 @@ $type = $_POST['type'];
 
 if ($_POST['action'] == "insert" ) {
 	
-	if(school_invoice::insertInvoice($type)) {
+	if(invoice::insertInvoice($type)) {
 		$invoice_id = mysql_insert_id();
 //		saveCustomFieldValues($_POST['categorie'],$invoice_id);
 		$saved = true;

@@ -25,6 +25,12 @@ function getTeachers($search_sql="")
 
 }
 	$search_sql ="";
+
+	if($auth_session->role_name == "branch_administrator")
+	{
+		$search_sql .= " AND place_of_registration = ".$auth_session->user_domain;
+	}
+
 	if (!empty($_GET['id'])) {
 		$id = $_GET['id'];
 		$search_sql .= " AND id = $id ";

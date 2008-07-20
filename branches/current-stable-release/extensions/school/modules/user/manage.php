@@ -6,8 +6,15 @@ checkLogin();
 function getUsers()
 {
 	global $LANG;
+	global $auth_session;
 
-	$sql = "SELECT * FROM ".TB_PREFIX."customers";
+	
+	if($auth_session->role_name == "branch_administrator")
+	{
+		$limit = " AND place_of_registration = ".$auth_session->user_domain;
+	}
+
+	$sql = "SELECT * FROM ".TB_PREFIX."customers ".$limit;
 	$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$users = null;

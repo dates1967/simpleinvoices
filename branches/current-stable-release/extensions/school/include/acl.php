@@ -11,7 +11,7 @@ $acl->add(new Zend_Acl_Resource('auth'));
 $acl->add(new Zend_Acl_Resource('customers'));
 $acl->add(new Zend_Acl_Resource('invoices'));
 $acl->add(new Zend_Acl_Resource('course'));
-$acl->add(new Zend_Acl_Resource('biller'));
+$acl->add(new Zend_Acl_Resource('billers'));
 $acl->add(new Zend_Acl_Resource('products'));
 $acl->add(new Zend_Acl_Resource('enrollment'));
 $acl->add(new Zend_Acl_Resource('payments'));

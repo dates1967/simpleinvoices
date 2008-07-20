@@ -19,9 +19,14 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
+if($auth_session->role_name == "branch_administrator")
+{
+	$limit = " AND place_of_registration = ".$auth_session->user_domain;
+}
+
 if (empty($_GET['action']))
 {
-	$customers = school_student::getCustomers();
+	$customers = school_student::getCustomers($limit);
 
 } else {
 	//$search_sql =" AND ";
@@ -42,6 +47,7 @@ if (empty($_GET['action']))
 	if (!empty($_GET['name'])) {
 		$search_sql .= " AND name like '%".$_GET['name']."%'";
 	}
+	$search_sql .=  $limit;
 	$customers = school_student::getCustomers($search_sql);
 }
 

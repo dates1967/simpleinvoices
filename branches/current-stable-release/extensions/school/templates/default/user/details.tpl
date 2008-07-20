@@ -23,12 +23,24 @@
 		<td>{$user.username}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">User Name</td>
-		<td>{$user.password}</td>
+		<td class="details_screen">Password</td>
+		<td><i>User password is not displayed</i></td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Type</td>
 		<td>{$user.person_type_description}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">User Group</td>
+		<td>
+			{$role_selected.0.name}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			{$branch_selected.0.name}
+		</td>
 	</tr>
 	</table>
 
@@ -56,15 +68,34 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Password</td>
-		<td><input type="text" name="password" size="50" value="{$user.password}" /></td>
+		<td><input type="password" name="password_field" size="50"/></td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Type</td>
 		<td>
 			<select name="person_type">
-				<option selected value="{$user.person_type}">{$user.person_type_description}</option>
 			{foreach from=$person_type key=pid item=ptype}
-				<option value="{$pid}">{$ptype}</option>
+				<option  {if $pid == $user.person_type} selected {/if}  value="{$pid}">{$ptype}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">User Group</td>
+		<td>
+			<select name="user_group">
+			{foreach from=$role item=role_row}
+				<option {if $role_row.id == $user.user_group} selected {/if} value="{$role_row.id}">{$role_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="user_branch">
+			{foreach from=$branch item=branch_row}
+				<option  {if $branch_row.id == $user.user_branch} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>

@@ -23,10 +23,9 @@ checkLogin();
 <title>{$title} :: {$LANG['manage_invoices']}</title>
 EOD;*/
 
-echo "Role:".$auth_session->role_name;
 if($auth_session->role_name == "branch_administrator")
 {
-	$limit = " AND iv.branch_id = ".$auth_session->user_domain;
+	$limit = " AND b.branch_id = ".$auth_session->user_domain;
 }
 
 if (empty($_GET['action']))

@@ -78,11 +78,11 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 		*/
 		$result = $dbAdapter->fetchRow('
 			SELECT 
-				u.id as user_id, u.email, u.name as last_name, u.first_name as first_name, u.user_group, r.name as role_name, u.user_branch as user_domain 
+				u.id as user_id, u.email, u.name as last_name, u.first_name as first_name, u.user_group, r.name as role_name, u.place_of_registration as user_domain 
 			FROM 
 				si_customers u, si_user_role r 
 			WHERE 
-				user_email = ? AND u.user_group = r.id', $userEmail
+				username = ? AND u.user_group = r.id', $userEmail
 		);
 		
 		/*

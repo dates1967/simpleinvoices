@@ -6,7 +6,9 @@ checkLogin();
 function getModule()
 {
 	global $LANG;
-			$sql = "SELECT * FROM ".TB_PREFIX."todo";
+	global $auth_session;
+
+			$sql = "SELECT * FROM ".TB_PREFIX."todo where person_id = ".$auth_session->user_id;
 			$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$teahers = null;
