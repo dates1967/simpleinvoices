@@ -41,6 +41,17 @@
 <p>
 <table align=center>
 	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="branch_id">
+			{foreach from=$branch item=branch_row}
+				<option value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+
+	</tr>
+	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
 			<select name="place_of_registration">

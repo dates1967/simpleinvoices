@@ -93,7 +93,7 @@
 	<tr>
 		<td class="details_screen">Branch</td>
 		<td>
-			<select name="user_branch">
+			<select name="branch_id">
 			{foreach from=$branch item=branch_row}
 				<option  {if $branch_row.id == $user.user_branch} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}

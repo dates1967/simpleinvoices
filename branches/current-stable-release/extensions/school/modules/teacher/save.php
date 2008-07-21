@@ -46,7 +46,8 @@ if (  $op === 'insert_teacher' ) {
 						passport_number,
 						passport_issued_at,
 						passport_issued_on,
-						person_type
+						person_type,
+						branch_id
 				
 					)
 					VALUES 
@@ -81,7 +82,8 @@ if (  $op === 'insert_teacher' ) {
 						'$_POST[passport_number]',
 						'$_POST[passport_issued_at]',
 						'$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
-						'2'
+						'2',
+						'$_POST[branch_id]'
 						
 					)
 				";
@@ -128,7 +130,8 @@ if ($op === 'edit_teacher' ) {
 						passport_number = '$_POST[passport_number]',
 						passport_issued_at = '$_POST[passport_issued_at]',
 						passport_issued_on = '$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
-						person_type = '2'
+						person_type = '2',
+						branch_id = '$_POST[branch_id]'
 					WHERE
 						id = " . $_GET['id'];
 		

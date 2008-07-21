@@ -34,6 +34,12 @@
 <p>
 <table align=center>
 	<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			{$branch_id}
+		</td>
+	</tr>
+	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
 			{$place_of_enrolment}
@@ -737,6 +743,17 @@
 	<div id="section-1" class="fragment">
 <p>
 <table align="center">
+
+<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+		<select name="branch_id">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == $customer.branch_id} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+		</select>
+		</td>
+	</tr>
 
 <tr>
 		<td class="details_screen">Place of Enrolment</td>

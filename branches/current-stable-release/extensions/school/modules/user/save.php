@@ -22,7 +22,7 @@ if (  $op === 'insert_user' ) {
 						password,
 						person_type,
 						user_group,
-						place_of_registration
+						branch_id
 					)
 					VALUES 
 					(
@@ -31,7 +31,7 @@ if (  $op === 'insert_user' ) {
 						MD5('$_POST[password_field]'),
 						'$_POST[person_type]',
 						'$_POST[user_group]',
-						'$_POST[user_branch]'
+						'$_POST[branch_id]'
 					)
 				";
 		
@@ -61,9 +61,9 @@ if ($op === 'edit_user' ) {
 						user_group
 						=
 						'$_POST[user_group]',
-						place_of_registration
+						branch_id
 						=
-						'$_POST[user_branch]'
+						'$_POST[branch_id]'
 					WHERE
 						id
 						=

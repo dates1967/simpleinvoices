@@ -297,6 +297,7 @@ INSERT
 ;
 
 ALTER TABLE `si_customers` 
-	ADD `user_group` INT( 11 ) NOT NULL ;
+	ADD `user_group` INT( 11 ) NOT NULL,
+	ADD `branch_id` INT( 11 ) NOT NULL ;
 
 ALTER TABLE `si_biller` ADD `branch_id` INT( 11 ) NOT NULL ;

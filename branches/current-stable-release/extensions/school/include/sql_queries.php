@@ -232,7 +232,8 @@ class school_student extends customer {
 						guardian2_address,
 						person_type,
 						username,
-						password
+						password,
+						branch_id
 					)	
 					VALUES 
 					(
@@ -292,7 +293,8 @@ class school_student extends customer {
 						'$guardian2_address',
 						1,
 						'$username',
-						MD5('$password_field')
+						MD5('$password_field'),
+						'$branch_id',
 					)
 				";
 		
@@ -362,7 +364,8 @@ class school_student extends customer {
 						guardian2_address = '$_POST[guardian2_address]',
 						username = '$_POST[username]',
 						password = MD5('$_POST[password_field]'),
-						person_type = '1'
+						person_type = '1',
+						branch_id = MD5('$_POST[branch_id]')
 						
 					WHERE
 						id = " . $_GET['id'];

@@ -84,6 +84,10 @@ $sql_lesson = "select name from ".TB_PREFIX."branch where id = ".$customer[place
 $lesson_sql = mysql_fetch_object(mysqlQuery($sql_lesson));
 $smarty -> assign('place_of_lesson',$lesson_sql->name);
 
+$sql_branch = "select name from ".TB_PREFIX."branch where id = ".$customer[branch_id].""; 
+$branch_sql = mysql_fetch_object(mysqlQuery($sql_branch));
+$smarty -> assign('branch_id',$branch_sql->name);
+
 
 /*Relationship function*/
 $sql_rel = "select * from ".TB_PREFIX."student_relation"; 
