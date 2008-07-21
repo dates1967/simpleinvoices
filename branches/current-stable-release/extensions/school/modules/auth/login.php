@@ -94,7 +94,8 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 			$authNamespace->$key = $value;
 		}
 
-		header('Location: .');
+		$auth_session->role_name == "student" ? header('Location: index.php?module=customers&view=details&action=details&id='.$auth_session->user_id) : header('Location: .') ; 
+		//header('Location: .'); 
 
 	} else {
 	
