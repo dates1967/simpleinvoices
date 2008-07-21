@@ -29,14 +29,14 @@ $saved = false;
 
 if ( $op === 'insert_biller') {
 	
-	if($id = insertBiller()) {
+	if($id = biller::insertBiller()) {
  		$saved = true;
 // 		saveCustomFieldValues($_POST['categorie'],mysql_insert_id());
  	}
 }
 
 if ($op === 'edit_biller' ) {
-	if (isset($_POST['save_biller']) && updateBiller()) {
+	if (isset($_POST['save_biller']) && biller::updateBiller()) {
 		$saved = true;
 //		updateCustomFieldValues($_POST['categorie'],$_GET['id']);
 	}

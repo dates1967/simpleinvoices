@@ -543,6 +543,8 @@ function getInvoiceType($id) {
 	return mysql_fetch_array($query);
 }
 
+class biller
+{
 function insertBiller() {
 	
 	$sql = "INSERT into
@@ -611,6 +613,7 @@ function updateBiller() {
 			WHERE
 				id = '$_GET[id]'";
 	return mysqlQuery($sql);
+}
 }
 
 class customer {
