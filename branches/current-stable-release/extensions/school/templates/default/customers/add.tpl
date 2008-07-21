@@ -34,7 +34,8 @@
 		<li><a href="#section-1">General Info</a></li>
 		<li><a href="#section-2">Additional Info</a></li>
 		<li><a href="#section-3">Custom Fields</a></li>
-		<li><a href="#section-4">{$LANG.notes}</a></li>
+		<li><a href="#section-4">Logins details</a></li>
+		<li><a href="#section-5">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -373,19 +374,40 @@
 	</p>
 	</div>
 	<div id="section-4" class="fragment">
-	<p>
-	<table align=center>
+		<p>
+		<table align=center>
+		<tr>
 	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td><textarea name='notes' rows=8 cols=50>{$smarty.post.notes}</textarea></td>
+		<td class="details_screen">User name </td>
+		<td><input type=text name="username" value="{$smarty.post.username}" size=50></td>
 	</tr>
+	<tr>
+		<td class="details_screen">Password </a></td>
+		<td><input type=password name="password_field" size=25></td>
+	</tr>
+		</tr>
 
-{*
-	{showCustomFields categorieId="2"}
-*}
-</table>
-<p>
-</div>
+		{*
+			{showCustomFields categorieId="2"}
+		*}
+		</table>
+		<p>
+	</div>
+	<div id="section-5" class="fragment">
+		<p>
+		<table align=center>
+		<tr>
+			<td class="details_screen">{$LANG.notes}</td>
+			<td><textarea name='notes' rows=8 cols=50>{$smarty.post.notes}</textarea></td>
+		</tr>
+
+		{*
+			{showCustomFields categorieId="2"}
+		*}
+		</table>
+		<p>
+	</div>
+
 </div>
 <hr />
 <div style="text-align:center;">

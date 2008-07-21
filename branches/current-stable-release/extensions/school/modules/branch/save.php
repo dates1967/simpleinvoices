@@ -11,16 +11,16 @@ $op = !empty( $_POST['op'] ) ? addslashes( $_POST['op'] ) : NULL;
 #insert product
 $saved = false;
 
-if (  $op === 'insert_certificate' ) 
+if (  $op === 'insert_branch' ) 
 {
-	$sql = "insert into ".TB_PREFIX."certificate (id, name) VALUES (NULL,'$_POST[name]')";
+	$sql = "insert into ".TB_PREFIX."branch (id, name) VALUES (NULL,'$_POST[name]')";
 	// Execute our query
 	if (mysqlQuery($sql)) $saved=true;
 }
 
-if ($op === 'edit_certificate' ) 
+if ($op === 'edit_branch' ) 
 {
-	$sql = "update ".TB_PREFIX."certificate set name = \"$_POST[name]\" where id = \"$_GET[id]\" ";
+	$sql = "update ".TB_PREFIX."branch set name = \"$_POST[name]\" where id = \"$_GET[id]\" ";
 	// Execute our query
 	if (mysqlQuery($sql)) $saved=true;
 }
@@ -28,7 +28,7 @@ if ($op === 'edit_certificate' )
 $refresh_total = isset($refresh_total) ? $refresh_total : '&nbsp';
 
 
-$pageActive = "certificate";
+$pageActive = "options";
 $smarty->assign('pageActive', $pageActive);
 $smarty->assign('saved',$saved);
 //$smarty -> assign('display_block',$display_block); 

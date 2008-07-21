@@ -26,7 +26,9 @@
 		<li><a href="#section-3">Additional Info</a></li>
 		<li><a href="#section-4">Custom Fields</a></li>
 		<li><a href="#section-5">Ledger</a></li>
-		<li><a href="#section-6">{$LANG.notes}</a></li>
+		<li><a href="#section-6">Progress</a></li>
+		<li><a href="#section-7">Login details</a></li>
+		<li><a href="#section-8">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -513,21 +515,49 @@
 	</div>
 	
 	<div id="section-6" class="fragment">
-	<p>
-	<table align=center>
-	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td>
-			{$customer.notes}
-		</td>
-	</tr>
+		<p>
+		<table align=center>
+		</table>
+		<p>
+	</div>
+	<div id="section-7" class="fragment">
+		<p>
+		<table align=center>
+		<tr>
+			<td class="details_screen">User name</td>
+			<td>
+				{$customer.username}
+			</td>
+		</tr>
+		<tr>
+			<td class="details_screen">Password</td>
+			<td>
+				<i>The password is not displayed</i>
+			</td>
+		</tr>
 
-{*
-	{showCustomFields categorieId="2"}
-*}
-</table>
-<p>
-</div>
+		{*
+			{showCustomFields categorieId="2"}
+		*}
+		</table>
+		<p>
+	</div>
+	<div id="section-8" class="fragment">
+		<p>
+		<table align=center>
+		<tr>
+			<td class="details_screen">{$LANG.notes}</td>
+			<td>
+				{$customer.notes}
+			</td>
+		</tr>
+
+		{*
+			{showCustomFields categorieId="2"}
+		*}
+		</table>
+		<p>
+	</div>
 </div>
 
 
@@ -700,7 +730,9 @@
 		<li><a href="#section-3">Courses</a></li>
 		<li><a href="#section-4">Custom Fields</a></li>
 		<li><a href="#section-5">Ledger</a></li>
-		<li><a href="#section-6">{$LANG.notes}</a></li>
+		<li><a href="#section-6">Progress</a></li>
+		<li><a href="#section-7">Login details</a></li>
+		<li><a href="#section-8">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -1251,111 +1283,37 @@
 	<p>
 	<table align=center>
 	<tr>
+	</tr>
+	</table>
+	</p>
+	</div>
+	<div id="section-7" class="fragment">
+	<p>
+	<table align=center>
+		<tr>
+	<tr>
+		<td class="details_screen">User name </td>
+		<td><input type=text name="username" value="{$customer.username}" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Password </a></td>
+		<td><input type=password name="password_field" size=25></td>
+	</tr>
+	</table>
+	</p>
+	</div>
+	<div id="section-8" class="fragment">
+	<p>
+	<table align=center>
+	<tr>
 		<td class="details_screen">{$LANG.notes}</td>
 		<td>
 			<textarea name='notes' rows=8 cols=50>{$customer.notes}</textarea>
 		</td>
 	</tr>
-
-
-<!--
-{*
-	<tr>
-		<td class="details_screen">{$LANG.customer} {$LANG.id}</td>
-		<td>{$customer.id}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.customer_name}</td>
-		<td><input type="text" name="name" value="{$customer.name}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.attention_short} <a href="docs.php?t=help&p=customer_contact" rel="gb_page_center[450, 450]" ><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td><input type="text" name="attention" value="{$customer.attention}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.street}</td>
-		<td><input type="text" name="street_address" value="{$customer.street_address}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.street2} <a href="docs.php?t=help&p=street2" rel="gb_page_center[450, 450]" ><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td><input type="text" name="street_address2" value="{$customer.street_address2}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.city}</td>
-		<td><input type="text" name="city" value="{$customer.city}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.zip}</td>
-		<td><input type="text" name="zip_code" value="{$customer.zip_code}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.state}</td>
-		<td><input type="text" name="state" value="{$customer.state}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.country}</td>
-		<td><input type="text" name="country" value="{$customer.country}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.phone}</td>
-		<td><input type="text" name="phone" value="{$customer.phone}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.mobile_phone}</td>
-		<td><input type="text" name="mobile_phone" value="{$customer.mobile_phone}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.fax}</td>
-		<td><input type="text" name="fax" value="{$customer.fax}" size="50" /></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.email}</td>
-		<td>
-			<input type="text" name="email" value="{$customer.email}" size="50" /></td
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td>
-			<input type="text" name="custom_field1" value="{$customer.custom_field1}" size="50" /></td
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td>
-			<input type="text" name="custom_field2" value="{$customer.custom_field2}" size="50" /></td
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td>
-			<input type="text" name="custom_field3" value="{$customer.custom_field3}" size="50" /></td
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.customer_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td>
-			<input type="text" name="custom_field4" value="{$customer.custom_field4}" size="50" /></td
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td><textarea name="notes" rows="8" cols="50">{$customer.notes}</textarea></td>
-	</tr>
-{*
-		{showCustomFields categorieId="2" itemId=$smarty.get.id }
-*}
-	<tr>
-		<td class="details_screen">{$LANG.enabled}</td>
-		<td>
-			{html_options name=enabled options=$enabled selected=$customer.enabled}
-		</td>
-	</tr>
-*}
--->
-</table>
-</div>
+	</table>
+	</p>
+	</div>
 </div>
 <br>
 <!-- <input type="submit" name="cancel" value="{$LANG.cancel}" /> -->

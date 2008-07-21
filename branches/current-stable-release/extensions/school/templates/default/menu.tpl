@@ -169,7 +169,7 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 						<a href="./index.php?module=subject&view=manage">Subjects +</a>
 						<ul>
 							<li>
-								<a href="./index.php?module=subject&view=manage">Mange Subjects</a>
+								<a href="./index.php?module=subject&view=manage">Manage Subjects</a>
 							</li>
 							<li>
 								<a href="./index.php?module=subject&view=add">Add Subject</a>
@@ -180,10 +180,21 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 						<a href="./index.php?module=user&view=manage">Users +</a>
 						<ul>
 							<li>
-								<a href="./index.php?module=user&view=manage">Mange Users</a>
+								<a href="./index.php?module=user&view=manage">Manage Users</a>
 							</li>
 							<li>
 								<a href="./index.php?module=user&view=add">Add User</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="./index.php?module=branch&view=manage">Branches +</a>
+						<ul>
+							<li>
+								<a href="./index.php?module=branch&view=manage">Manage Branches</a>
+							</li>
+							<li>
+								<a href="./index.php?module=branch&view=add">Add Branch</a>
 							</li>
 						</ul>
 					</li>

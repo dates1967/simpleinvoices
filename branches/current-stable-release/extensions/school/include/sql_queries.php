@@ -230,8 +230,10 @@ class school_student extends customer {
 						guardian2_passport_issued_at,
 						guardian2_passport_issued_on,
 						guardian2_address,
-						person_type
-					)
+						person_type,
+						username,
+						password
+					)	
 					VALUES 
 					(
 						'$name',
@@ -288,7 +290,9 @@ class school_student extends customer {
 						'$guardian2_passport_issued_at',
 						'$guardian2_passport_issued_on_year-$guardian2_passport_issued_on_month-$guardian2_passport_issued_on_day', 
 						'$guardian2_address',
-						1
+						1,
+						'$username',
+						MD5('$password_field')
 					)
 				";
 		
@@ -356,6 +360,8 @@ class school_student extends customer {
 						guardian2_passport_issued_at = '$_POST[guardian2_passport_issued_at]',
 						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on_year]-$_POST[guardian2_passport_issued_on_month]-$_POST[guardian2_passport_issued_on_day]',
 						guardian2_address = '$_POST[guardian2_address]',
+						username = '$_POST[username]',
+						password = MD5('$_POST[password_field]'),
 						person_type = '1'
 						
 					WHERE

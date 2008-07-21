@@ -30,7 +30,7 @@ function getTeachers($search_sql="")
 
 if($auth_session->role_name == "branch_administrator")
 {
-	$search_sql .= " AND b.place_of_registration = ".$auth_session->user_domain;
+	$search_sql .= " AND (c.place_of_registration = ".$auth_session->user_domain." OR p.branch_id = ".$auth_session->user_domain.")";
 }
 
 	if (!empty($_GET['student_id'])) {

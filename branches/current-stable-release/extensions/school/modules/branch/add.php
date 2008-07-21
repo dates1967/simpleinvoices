@@ -9,9 +9,9 @@ $customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
 if ($_POST['name'] != "" ) {
-	include("./extensions/school/modules/certificate/save.php");
+	include("./extensions/school/modules/branch/save.php");
 }
-$pageActive = "certificate";
+$pageActive = "options";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('customFieldLabel',$customFieldLabel);

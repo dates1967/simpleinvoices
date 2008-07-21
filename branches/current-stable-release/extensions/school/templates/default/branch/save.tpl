@@ -1,13 +1,7 @@
 {*
 /*
 * Script: save.tpl
-* 	Biller save template
-*
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
+* 	Branch save template
 *
 * License:
 *	 GPL v2 or above
@@ -27,7 +21,7 @@
 {/if}
 
 {if $smarty.post.cancel == null }
-	<META HTTP-EQUIV=REFRESH CONTENT=2;URL=index.php?module=certificate&view=manage>
+	<META HTTP-EQUIV=REFRESH CONTENT=2;URL=index.php?module=branch&view=manage>
 {else}
-	<META HTTP-EQUIV=REFRESH CONTENT=0;URL=index.php?module=certificate&view=manage>
+	<META HTTP-EQUIV=REFRESH CONTENT=0;URL=index.php?module=branch&view=manage>
 {/if}
