@@ -44,8 +44,8 @@
 		<td class="details_screen">Branch</td>
 		<td>
 			<select name="branch_id">
-			{foreach from=$branch item=branch_row}
-				<option value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row1}
+				<option value="{$branch_row1.id}">{$branch_row1.name}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -55,8 +55,8 @@
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
 			<select name="place_of_registration">
-			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row2}
+				<option {if $branch_row2.id == "1"} selected {/if} value="{$branch_row2.id}">{$branch_row2.name}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -66,8 +66,8 @@
 		<td class="details_screen">Place of Lessons</td>
 		<td>
 			<select name="place_of_lesson">
-			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row3}
+				<option {if $branch_row3.id == "1"} selected {/if} value="{$branch_row3.id}">{$branch_row3.name}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -390,11 +390,11 @@
 		<tr>
 	<tr>
 		<td class="details_screen">User name </td>
-		<td><input type=text name="username" value="{$smarty.post.username}" size=50></td>
+		<td><input type=text name="username" size=50></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Password </a></td>
-		<td><input type=password name="password_field" size=25></td>
+		<td><input type=password name="password_field" value="" size=25></td>
 	</tr>
 		</tr>
 

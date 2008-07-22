@@ -47,7 +47,10 @@ if (  $op === 'insert_teacher' ) {
 						passport_issued_at,
 						passport_issued_on,
 						person_type,
-						branch_id
+						branch_id,
+						username,
+						password.
+						user_group
 				
 					)
 					VALUES 
@@ -83,7 +86,10 @@ if (  $op === 'insert_teacher' ) {
 						'$_POST[passport_issued_at]',
 						'$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
 						'2',
-						'$_POST[branch_id]'
+						'$_POST[branch_id]',
+						'$_POST[username]',
+						MD5('$_POST[password_field]',
+						'4'
 						
 					)
 				";
@@ -99,6 +105,9 @@ if (  $op === 'insert_teacher' ) {
 if ($op === 'edit_teacher' ) {
 
 	function editTeacher() {
+		
+		empty($_POST[password_field]) ? $password = "" :  $password = "password = MD5('".$_POST[password_field]."'),"  ;
+		
 		
 		$sql = "UPDATE ".TB_PREFIX."customers 
 					SET
@@ -131,7 +140,10 @@ if ($op === 'edit_teacher' ) {
 						passport_issued_at = '$_POST[passport_issued_at]',
 						passport_issued_on = '$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
 						person_type = '2',
-						branch_id = '$_POST[branch_id]'
+						username = '$_POST[username]'
+						$password
+						branch_id = '$_POST[branch_id]',
+						user_group = '4',
 					WHERE
 						id = " . $_GET['id'];
 		

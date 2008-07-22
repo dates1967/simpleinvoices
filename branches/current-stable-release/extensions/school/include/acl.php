@@ -6,6 +6,7 @@ $acl = new Zend_Acl();
 $acl->addRole(new Zend_Acl_Role('student'));
 $acl->addRole(new Zend_Acl_Role('branch_administrator'));
 $acl->addRole(new Zend_Acl_Role('administrator'));
+$acl->addRole(new Zend_Acl_Role('teacher'));
 
 $acl->add(new Zend_Acl_Resource('auth'));
 $acl->add(new Zend_Acl_Resource('customers'));
@@ -36,7 +37,10 @@ $acl->allow('guest', null, 'view');
 //$acl->allow('student', null, array('customers'));
 //$acl->deny('student');
 
+// everyone see auth page
 $acl->allow(null,'auth');
+
+//students only see student page
 $acl->allow('student', 'customers', 'view');
 
 // Editor inherits view, edit, submit, and revise privileges from staff,

@@ -33,7 +33,7 @@
 		<td>{$course.unit_price}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Place of enrolment</td>
+		<td class="details_screen">Branch</td>
 		<td>
 			{$branch_selected.0.name}
 		</td>
@@ -241,7 +241,7 @@
 		<td><input type=text name="unit_price" value="{$course.unit_price}" size=10></td>
 	</tr>
 	<tr>
-		<td class="details_screen">Place of enrolment</td>
+		<td class="details_screen">Branch</td>
 		<td>
 			<select name="branch_id">
 			{foreach from=$branch item=branch_row}

@@ -748,8 +748,8 @@
 		<td class="details_screen">Branch</td>
 		<td>
 		<select name="branch_id">
-			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == $customer.branch_id} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row1}
+				<option {if $branch_row1.id == $customer.branch_id} selected {/if} value="{$branch_row1.id}">{$branch_row1.name}</option>
 			{/foreach}
 		</select>
 		</td>
@@ -759,8 +759,8 @@
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
 		<select name="place_of_registration">
-			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == $customer.place_of_registration} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row2}
+				<option {if $branch_row2.id == $customer.place_of_registration} selected {/if} value="{$branch_row2.id}">{$branch_row2.name}</option>
 			{/foreach}
 		</select>
 		</td>
@@ -769,12 +769,12 @@
 		<td class="details_screen">Place of Lessons</td>
 		<td>
 					<select name="place_of_lesson">
-			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == $customer.place_of_lesson} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{foreach from=$branch item=branch_row3}
+				<option {if $branch_row3.id == $customer.place_of_lesson} selected {/if} value="{$branch_row3.id}">{$branch_row3.name}</option>
 			{/foreach}
 			</select>
 		</td>
-{*		<td><input type=text name="place_of_lesson" value="{$smarty.post.place_of_lesson}" size=25></td> *}
+
 	</tr>
 	<tr>
 		<td class="details_screen">Student {$LANG.id}</td>

@@ -36,7 +36,8 @@
 	<ul class="anchors">
 		<li><a href="#section-1">General Info</a></li>
 		<li><a href="#section-2">Custom Fields</a></li>
-		<li><a href="#section-3">{$LANG.notes}</a></li>
+		<li><a href="#section-3">Login details</a></li>
+		<li><a href="#section-4">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -44,22 +45,19 @@
 	<tr>
 		<td class="details_screen">Branch</td>
 		<td>
-			<select name="branch_id>
+			<select name="branch_id">
 			{foreach from=$branch item=branch_row}
 				<option value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>
-{*
-		<td><input type=text name="place_of_enrolment" value="{$smarty.post.place_of_enrolment}" size=25></td>
-*}
 	</tr>
 	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
 			<select name="place_of_registration">
 			{foreach from=$branch item=branch_row}
-				<option {if $branch_row.id == "1"} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+				<option value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>
@@ -246,6 +244,28 @@
 	</p>
 	</div>
 	<div id="section-3" class="fragment">
+		<p>
+		<table align=center>
+		<tr>
+	<tr>
+		<td class="details_screen">User name </td>
+		<td><input type=text name="username" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Password </a></td>
+		<td><input type=password name="password_field" value="" size=25></td>
+	</tr>
+		</tr>
+
+		{*
+			{showCustomFields categorieId="2"}
+		*}
+		</table>
+		<p>
+	</div>
+	
+	
+	<div id="section-4" class="fragment">
 	<p>
 	<table align=center>
 	<tr>

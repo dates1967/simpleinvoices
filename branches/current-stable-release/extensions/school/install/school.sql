@@ -301,3 +301,12 @@ ALTER TABLE `si_customers`
 	ADD `branch_id` INT( 11 ) NOT NULL ;
 
 ALTER TABLE `si_biller` ADD `branch_id` INT( 11 ) NOT NULL ;
+
+
+INSERT INTO `si_user_role` (
+	`id` ,
+	`name`
+)
+VALUES (
+	'4', 'teacher'
+);

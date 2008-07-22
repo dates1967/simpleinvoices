@@ -78,7 +78,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 		*/
 		$result = $dbAdapter->fetchRow('
 			SELECT 
-				u.id as user_id, u.email, u.name as last_name, u.first_name as first_name, u.user_group, r.name as role_name, u.place_of_registration as user_domain 
+				u.id as user_id, u.email, u.name as last_name, u.first_name as first_name, u.user_group, r.name as role_name, u.branch_id as user_domain 
 			FROM 
 				si_customers u, si_user_role r 
 			WHERE 
@@ -94,7 +94,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
 			$authNamespace->$key = $value;
 		}
 
-		$auth_session->role_name == "student" ? header('Location: index.php?module=customers&view=details&action=details&id='.$auth_session->user_id) : header('Location: .') ; 
+		$auth_session->role_name == "student" ? header('Location: index.php?module=customers&view=details&action=view&id='.$auth_session->user_id) : header('Location: .') ; 
 		//header('Location: .'); 
 
 	} else {

@@ -233,6 +233,7 @@ class school_student extends customer {
 						person_type,
 						username,
 						password,
+						user_group,
 						branch_id
 					)	
 					VALUES 
@@ -294,7 +295,8 @@ class school_student extends customer {
 						1,
 						'$username',
 						MD5('$password_field'),
-						'$branch_id',
+						1,
+						'$branch_id'
 					)
 				";
 		
@@ -303,6 +305,9 @@ class school_student extends customer {
 	}
 
 		function updateCustomer() {
+			
+			empty($_POST[password_field]) ? $password = "" :  $password = "password = MD5('".$_POST[password_field]."'),"  ;
+			
 
 			$sql = "
 					UPDATE
@@ -363,8 +368,9 @@ class school_student extends customer {
 						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on_year]-$_POST[guardian2_passport_issued_on_month]-$_POST[guardian2_passport_issued_on_day]',
 						guardian2_address = '$_POST[guardian2_address]',
 						username = '$_POST[username]',
-						password = MD5('$_POST[password_field]'),
+						$password
 						person_type = '1',
+						user_group = '1',
 						branch_id = MD5('$_POST[branch_id]')
 						
 					WHERE
