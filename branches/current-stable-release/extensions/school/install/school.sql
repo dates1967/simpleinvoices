@@ -290,8 +290,25 @@ INSERT
 		`name`
 	)
 	VALUES (
-		NULL , 'student',
-		NULL , 'branch_administrator',
+		NULL , 'student'
+	)
+;
+INSERT 
+	INTO `si_user_role` (
+		`id` ,
+		`name`
+	)
+	VALUES (
+
+		NULL , 'branch_administrator'
+	)
+;
+INSERT 
+	INTO `si_user_role` (
+		`id` ,
+		`name`
+	)
+	VALUES (
 		NULL , 'administrator'
 	)
 ;

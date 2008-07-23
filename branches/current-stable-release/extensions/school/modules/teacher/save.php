@@ -49,7 +49,7 @@ if (  $op === 'insert_teacher' ) {
 						person_type,
 						branch_id,
 						username,
-						password.
+						password,
 						user_group
 				
 					)
@@ -88,7 +88,7 @@ if (  $op === 'insert_teacher' ) {
 						'2',
 						'$_POST[branch_id]',
 						'$_POST[username]',
-						MD5('$_POST[password_field]',
+						MD5('$_POST[password_field]'),
 						'4'
 						
 					)
