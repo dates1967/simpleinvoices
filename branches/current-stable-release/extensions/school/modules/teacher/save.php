@@ -140,10 +140,10 @@ if ($op === 'edit_teacher' ) {
 						passport_issued_at = '$_POST[passport_issued_at]',
 						passport_issued_on = '$_POST[passport_issued_on_year]-$_POST[passport_issued_on_month]-$_POST[passport_issued_on_day]',
 						person_type = '2',
-						username = '$_POST[username]'
+						username = '$_POST[username]',
 						$password
 						branch_id = '$_POST[branch_id]',
-						user_group = '4',
+						user_group = '4'
 					WHERE
 						id = " . $_GET['id'];
 		

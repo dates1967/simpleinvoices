@@ -12,13 +12,9 @@
 //if browse not defined then the page will exit
 define("BROWSE","browse");
 
-//keeps the old path
-
 $module = isset($_GET['module'])?$_GET['module']:null;
 $view = isset($_GET['view'])?$_GET['view']:null;
 $action = isset($_GET['case'])?$_GET['case']:null;
-
- 
 
 /*
 * The include configs and requirements stuff section - start
@@ -190,6 +186,7 @@ if($module !== "auth")
 /*
 * Include the php file for the requested page section - end
 */
+		
 /*
 * If extension is enabled load its javascript files	- start
 * Note: this system is probably slow - if you got a better method for handling extensions let me know
