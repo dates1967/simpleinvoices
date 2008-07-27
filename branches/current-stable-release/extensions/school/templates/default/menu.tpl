@@ -58,18 +58,6 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					<li><a href="index.php?module=billers&view=add">{$LANG.add_biller}</a></li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'enrollment'} id="active" {/if}> <a href="index.php?module=enrollment&view=manage">Enrollment +</a>
-				<ul>
-					<li><a href="index.php?module=enrollment&view=manage">Manage Enrollments</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=enrollment&view=add">Add New Enrollment</a></li>
-					<li><a href="index.php?module=enrollment&view=search">Search Enrollment</a></li>
-{*
-					<li><a href="index.php?module=teacher&view=add">Copy to New Teacher</a></li>
-					<li><a href="index.php?module=teacher&view=add">Find Teacher</a></li>
-*}
-				</ul>
-			</li>
 			<li { if $pageActive == 'payments'} id="active" {/if}> <a href="index.php?module=payments&view=manage">{$LANG.payments} +</a>
 				<ul>
 					<li><a href="index.php?module=payments&view=manage">{$LANG.manage_payments}</a></li>
@@ -127,44 +115,39 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 					</li>
 				</ul>
 			</li>
-			<li { if $pageActive == 'teacher'} id="active" {/if}> <a href="index.php?module=teacher&view=manage">Teachers +</a>
+			<li  { if $pageActive == 'school'} id="active" {/if} ><a href="#">School +</a>
 				<ul>
-					<li><a href="index.php?module=teacher&view=manage">Manage Teachers</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=teacher&view=add">Add New Teacher</a></li>
-					<li><a href="index.php?module=search&view=add">Search Teachers</a></li>
-{*
-					<li><a href="index.php?module=teacher&view=add">Copy to New Teacher</a></li>
-					<li><a href="index.php?module=teacher&view=add">Find Teacher</a></li>
-*}
-				</ul>
-			</li>
-			<li { if $pageActive == 'certificate'} id="active" {/if}> <a href="index.php?module=certificate&view=manage">Certificates +</a>
-				<ul>
-					<li><a href="index.php?module=certificate&view=manage">Manage Certificates</a></li>
-					<li class="separation"></li>
-					<li><a href="index.php?module=certificate&view=add">Add New Certificate</a></li>
-					<li><a href="index.php?module=certificate&view=search">Search Certificates</a></li>
-{*					<li><a href="index.php?module=certificate&view=copy">Copy to New Certificates</a></li>
-					<li><a href="index.php?module=certificate&view=find">Find Certificates</a></li>
-*}
-				</ul>
-			</li>
-			<li { if $pageActive == 'todo'} id="active" {/if}> <a href="index.php?module=todo&view=manage">ToDo Items +</a>
-				<ul>
-					<li><a href="index.php?module=todo&view=manage">Manage ToDo Items</a></li>
-					<li><a href="index.php?module=todo&view=add">Add ToDo Item</a></li>
-				</ul>
-			</li>
-			<li  { if $pageActive == 'options'} id="active" {/if} ><a href="#">{$LANG.options} +</a>
-				<ul>
-					<li>
-						<a href="./index.php?module=system_defaults&view=manage">{$LANG.system_preferences}</a>
+					<li >
+						<a href="index.php?module=certificate&view=manage">Certificates +</a>
+						<ul>
+							<li><a href="index.php?module=certificate&view=manage">Manage Certificates</a></li>
+							<li class="separation"></li>
+							<li><a href="index.php?module=certificate&view=add">Add New Certificate</a></li>
+							<li><a href="index.php?module=certificate&view=search">Search Certificates</a></li>
+						</ul>
 					</li>
-					<li>
-						<a href="./index.php?module=custom_fields&view=manage">{$LANG.custom_fields_upper}</a>
+					<li > <a href="index.php?module=teacher&view=manage">Teachers +</a>
+						<ul>
+							<li><a href="index.php?module=teacher&view=manage">Manage Teachers</a></li>
+							<li class="separation"></li>
+							<li><a href="index.php?module=teacher&view=add">Add New Teacher</a></li>
+							<li><a href="index.php?module=search&view=add">Search Teachers</a></li>
+						</ul>
 					</li>
-					<li class="separation"></li>
+					<li > <a href="index.php?module=todo&view=manage">ToDo Items +</a>
+						<ul>
+							<li><a href="index.php?module=todo&view=manage">Manage ToDo Items</a></li>
+							<li><a href="index.php?module=todo&view=add">Add ToDo Item</a></li>
+						</ul>
+					</li>
+					<li ><a href="index.php?module=enrollment&view=manage">Enrollment +</a>
+						<ul>
+							<li><a href="index.php?module=enrollment&view=manage">Manage Enrollments</a></li>
+							<li class="separation"></li>
+							<li><a href="index.php?module=enrollment&view=add">Add New Enrollment</a></li>
+							<li><a href="index.php?module=enrollment&view=search">Search Enrollment</a></li>
+						</ul>
+					</li>
 					<li>
 						<a href="./index.php?module=subject&view=manage">Subjects +</a>
 						<ul>
@@ -198,6 +181,28 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 							</li>
 						</ul>
 					</li>
+					<li>
+						<a href="./index.php?module=test&view=manage">Tests +</a>
+						<ul>
+							<li>
+								<a href="./index.php?module=test&view=manage">Manage Tests</a>
+							</li>
+							<li>
+								<a href="./index.php?module=test&view=add">Add Test</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>	
+			<li  { if $pageActive == 'options'} id="active" {/if} ><a href="#">{$LANG.options} +</a>
+				<ul>
+					<li>
+						<a href="./index.php?module=system_defaults&view=manage">{$LANG.system_preferences}</a>
+					</li>
+					<li>
+						<a href="./index.php?module=custom_fields&view=manage">{$LANG.custom_fields_upper}</a>
+					</li>
+					<li class="separation"></li>
 					<li>
 						<a href="./index.php?module=tax_rates&view=manage">{$LANG.tax_rates} +</a>
 						<ul>

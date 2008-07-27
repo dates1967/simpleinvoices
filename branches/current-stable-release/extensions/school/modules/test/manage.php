@@ -19,11 +19,11 @@ if (!empty($_GET['action']))
 		$search_sql .= " $and name like '%".$_GET['name']."%'";
 	}
 
-$sql = "SELECT * FROM ".TB_PREFIX."branch $search_sql ORDER BY name";
+$sql = "SELECT * FROM ".TB_PREFIX."test $search_sql ORDER BY name";
 
 $module = sql2array($sql) or die(mysql_error());
 
-$pageActive = "options";
+$pageActive = "school";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign("module",$module);

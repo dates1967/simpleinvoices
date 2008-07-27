@@ -361,3 +361,7 @@ CREATE TABLE `si_test` (
 `name` VARCHAR( 255 ) NOT NULL
 ) ENGINE = MYISAM ;
 
+insert into si_test (name) values ('Stop and Check');
+
+insert into si_test (name) values ('Progress Test');
+

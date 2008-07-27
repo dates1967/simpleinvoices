@@ -28,6 +28,8 @@ $acl->add(new Zend_Acl_Resource('tax_rates'));
 $acl->add(new Zend_Acl_Resource('preferences'));
 $acl->add(new Zend_Acl_Resource('payment_types'));
 $acl->add(new Zend_Acl_Resource('branch'));
+$acl->add(new Zend_Acl_Resource('test'));
+$acl->add(new Zend_Acl_Resource('progress'));
 
 /* alternatively, the above could be written:
 $acl->allow('guest', null, 'view');
