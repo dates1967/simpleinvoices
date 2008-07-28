@@ -182,6 +182,17 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 						</ul>
 					</li>
 					<li>
+						<a href="./index.php?module=progress&view=manage">Progress +</a>
+						<ul>
+							<li>
+								<a href="./index.php?module=progress&view=manage">Manage Progress</a>
+							</li>
+							<li>
+								<a href="./index.php?module=progress&view=add">Add Progress</a>
+							</li>
+						</ul>
+					</li>
+					<li>
 						<a href="./index.php?module=test&view=manage">Tests +</a>
 						<ul>
 							<li>

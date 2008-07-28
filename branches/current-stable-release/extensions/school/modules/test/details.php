@@ -8,17 +8,17 @@ $id = $_GET['id'];
 function getBranch($id) {
 	
 	global $LANG;
-	$sql = "SELECT * FROM ".TB_PREFIX."branch WHERE id = $id";
+	$sql = "SELECT * FROM ".TB_PREFIX."test WHERE id = $id";
 	$query = mysqlQuery($sql) or die(mysql_error());
 	$product = mysql_fetch_array($query);
 	//	$product['wording_for_enabled'] = $product['enabled']==1?$LANG['enabled']:$LANG['disabled'];
 	return $product;
 }
 
-$pageActive = "options";
+$pageActive = "school";
 
 $smarty->assign('pageActive', $pageActive);
-$smarty -> assign('branch',$getModule = getBranch($id));
+$smarty -> assign('test',$getModule = getBranch($id));
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
 ?>
