@@ -15,7 +15,7 @@ $test_sql = sql2array($sql);
 $smarty -> assign('test',$test_sql);
 
 //if valid then do save
-if ($_POST['name'] != "" ) {
+if ($_POST['date'] != "" ) {
 	include("./extensions/school/modules/progress/save.php");
 }
 $pageActive = "school";

@@ -332,6 +332,7 @@ VALUES (
 CREATE TABLE `si_progress` (
 `id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 `course_id` INT( 11 ) NOT NULL ,
+`test_id` INT( 11 ) NOT NULL ,
 `student_id` INT( 11 ) NOT NULL ,
 `date` DATE NOT NULL ,
 `1` VARCHAR( 255 ) NOT NULL ,
