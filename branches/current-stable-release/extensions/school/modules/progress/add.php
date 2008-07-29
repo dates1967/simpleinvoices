@@ -9,7 +9,7 @@ $customFieldLabel = getCustomFieldLabels();
 
 $student = school_invoice::getActiveCustomers();
 $course = school_product::getCourses();
-/*Place of enrolment function*/
+/*test*/
 $sql = "select * from ".TB_PREFIX."test"; 
 $test_sql = sql2array($sql);
 $smarty -> assign('test',$test_sql);
