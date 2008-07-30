@@ -4,6 +4,12 @@
 checkLogin();
 
 	$search_sql ="";
+
+if($auth_session->role_name == "branch_administrator")
+{
+	$search_sql .= " AND (c.branch_id = ".$auth_session->user_domain." OR pd.branch_id = ".$auth_session->user_domain.")";
+}
+
 	if (!empty($_GET['student_id'])) {
 		$search_sql .= "AND pg.student_id = ".$_GET['student_id'];
 
