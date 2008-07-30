@@ -154,12 +154,13 @@ $progress_sql = "SELECT
 			pg.student_id = c.id
 			AND
 			pg.test_id = t.id
-			AND pgid = ".$customer_id."
+			AND pg.student_id = ".$customer_id."
 		GROUP BY 
-			pgid
+			pg.id
 ";
 
-$progress = sql2array($progress_sql) or die(mysql_error());
+$progress = sql2array($progress_sql);
+$smarty -> assign('progress',$progress);
 
 
 

@@ -4,19 +4,29 @@
 checkLogin();
 
 	$search_sql ="";
-	$i = 0;
-if (!empty($_GET['action']))
-{
-	$search_sql =" WHERE";
-}
-	if (!empty($_GET['id'])) {
-		$id = $_GET['id'];
-		$search_sql .= " id = $id ";
-		$i++;
+	if (!empty($_GET['student_id'])) {
+		$search_sql .= "AND pg.student_id = ".$_GET['student_id'];
+
+		$sql_student = "select * from ".TB_PREFIX."customers where id = ".$_GET['student_id']; 
+		$student_sel = sql2array($sql_student);
+		$smarty -> assign('student_sel',$student_sel);
+
 	}
-	if (!empty($_GET['name'])) {
-		$i == 1 ? $and = "AND" : $and="";
-		$search_sql .= " $and name like '%".$_GET['name']."%'";
+	if (!empty($_GET['course_id'])) {
+		$search_sql .= "AND pg.course_id = ".$_GET['course_id'];
+
+		$sql_course = "select * from ".TB_PREFIX."products where id = ".$_GET['course_id']; 
+		$course_sel = sql2array($sql_course);
+		$smarty -> assign('course_sel',$course_sel);
+
+	}
+	if (!empty($_GET['test_id'])) {
+		$search_sql .= "AND pg.test_id = ".$_GET['test_id'];
+
+		$sql_test = "select * from ".TB_PREFIX."test where id = ".$_GET['test_id']; 
+		$test_sel = sql2array($sql_test);
+		$smarty -> assign('test_sel',$test_sel);
+
 	}
 
 $sql = "SELECT 
@@ -39,6 +49,7 @@ $sql = "SELECT
 			pg.student_id = c.id
 			AND
 			pg.test_id = t.id
+			".$search_sql."
 		GROUP BY 
 			pgid
 ";

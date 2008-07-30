@@ -52,83 +52,83 @@
 	</tr>
 	<tr>
 		<td class="details_screen">1</td>
-		<td><input type=text name="1" value="{$smarty.post.1}" size=50></td>
+		<td><input type=text name="q1" value="{$smarty.post.q1}" size=50></td>
 	</tr>
 	<tr>
 		<td class="details_screen">2</td>
-		<td><input type=text name="2" value="{$smarty.post.2}" size=50></td>
+		<td><input type=text name="q2" value="{$smarty.post.q2}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">3</td>
-		<td><input type=text name="3" value="{$smarty.post.3}" size=50></td>
+		<td><input type=text name="q3" value="{$smarty.post.q3}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">4</td>
-		<td><input type=text name="4" value="{$smarty.post.4}" size=50></td>
+		<td><input type=text name="q4" value="{$smarty.post.q4}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">5</td>
-		<td><input type=text name="5" value="{$smarty.post.5}" size=50></td>
+		<td><input type=text name="q5" value="{$smarty.post.q5}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">6</td>
-		<td><input type=text name="6" value="{$smarty.post.6}" size=50></td>
+		<td><input type=text name="q6" value="{$smarty.post.q6}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">7</td>
-		<td><input type=text name="7" value="{$smarty.post.7}" size=50></td>
+		<td><input type=text name="q7" value="{$smarty.post.q7}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">8</td>
-		<td><input type=text name="8" value="{$smarty.post.8}" size=50></td>
+		<td><input type=text name="q8" value="{$smarty.post.q8}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">9</td>
-		<td><input type=text name="9" value="{$smarty.post.9}" size=50></td>
+		<td><input type=text name="q9" value="{$smarty.post.q9}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">10</td>
-		<td><input type=text name="10" value="{$smarty.post.10}" size=50></td>
+		<td><input type=text name="q10" value="{$smarty.post.q10}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">11</td>
-		<td><input type=text name="11" value="{$smarty.post.11}" size=50></td>
+		<td><input type=text name="q11" value="{$smarty.post.q11}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">12</td>
-		<td><input type=text name="12" value="{$smarty.post.12}" size=50></td>
+		<td><input type=text name="q12" value="{$smarty.post.q12}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">13</td>
-		<td><input type=text name="13" value="{$smarty.post.13}" size=50></td>
+		<td><input type=text name="q13" value="{$smarty.post.q13}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">14</td>
-		<td><input type=text name="14" value="{$smarty.post.14}" size=50></td>
+		<td><input type=text name="q14" value="{$smarty.post.q14}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">15</td>
-		<td><input type=text name="15" value="{$smarty.post.15}" size=50></td>
+		<td><input type=text name="q15" value="{$smarty.post.q15}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">16</td>
-		<td><input type=text name="16" value="{$smarty.post.16}" size=50></td>
+		<td><input type=text name="q16" value="{$smarty.post.q16}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">17</td>
-		<td><input type=text name="17" value="{$smarty.post.17}" size=50></td>
+		<td><input type=text name="q17" value="{$smarty.post.q17}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">18</td>
-		<td><input type=text name="18" value="{$smarty.post.18}" size=50></td>
+		<td><input type=text name="q18" value="{$smarty.post.q18}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">19</td>
-		<td><input type=text name="19" value="{$smarty.post.19}" size=50></td>
+		<td><input type=text name="q19" value="{$smarty.post.q19}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">20</td>
-		<td><input type=text name="20" value="{$smarty.post.20}" size=50></td>
+		<td><input type=text name="q20" value="{$smarty.post.q20}" size=50></td>
 	</tr>
 </table>
 <!-- </div> -->

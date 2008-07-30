@@ -190,6 +190,9 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 							<li>
 								<a href="./index.php?module=progress&view=add">Add Progress</a>
 							</li>
+							<li>
+								<a href="./index.php?module=progress&view=search">Search Progress</a>
+							</li>
 						</ul>
 					</li>
 					<li>

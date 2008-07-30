@@ -45,7 +45,7 @@ $smarty -> assign('middle_name',$student_sql->middle_name);
 $smarty -> assign('first_name',$student_sql->first_name);
 $smarty -> assign('student_id',$student_sql->id);
 
-$pageActive = "options";
+$pageActive = "school";
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('module',$module);

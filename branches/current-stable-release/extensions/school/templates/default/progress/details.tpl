@@ -36,83 +36,83 @@
 	</tr>
 	<tr>
 		<td class="details_screen">1</td>
-		<td>{$module.1}</td>
+		<td>{$module.q1}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">2</td>
-		<td>{$module.2}</td>
+		<td>{$module.q2}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">3</td>
-		<td>{$module.3}</td>
+		<td>{$module.q3}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">4</td>
-		<td>{$module.4}</td>
+		<td>{$module.q4}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">5</td>
-		<td>{$module.5}</td>
+		<td>{$module.q5}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">6</td>
-		<td>{$module.6}</td>
+		<td>{$module.q6}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">7</td>
-		<td>{$module.7}</td>
+		<td>{$module.q7}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">8</td>
-		<td>{$module.8}</td>
+		<td>{$module.q8}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">9</td>
-		<td>{$module.9}</td>
+		<td>{$module.q9}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">10</td>
-		<td>{$module.10}</td>
+		<td>{$module.q10}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">11</td>
-		<td>{$module.11}</td>
+		<td>{$module.q11}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">12</td>
-		<td>{$module.12}</td>
+		<td>{$module.q12}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">13</td>
-		<td>{$module.13}</td>
+		<td>{$module.q13}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">14</td>
-		<td>{$module.14}</td>
+		<td>{$module.q14}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">15</td>
-		<td>{$module.15}</td>
+		<td>{$module.q15}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">16</td>
-		<td>{$module.16}</td>
+		<td>{$module.q16}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">17</td>
-		<td>{$module.17}</td>
+		<td>{$module.q17}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">18</td>
-		<td>{$module.18}</td>
+		<td>{$module.q18}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">19</td>
-		<td>{$module.19}</td>
+		<td>{$module.q19}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">20</td>
-		<td>{$module.20}</td>
+		<td>{$module.q20}</td>
 	</tr>
 	</table>
 
@@ -163,83 +163,83 @@
 	</tr>
 	<tr>
 		<td class="details_screen">1</td>
-		<td><input type=text name="1" value="{$module.1}" size=50></td>
+		<td><input type=text name="q1" value="{$module.q1}" size=50></td>
 	</tr>
 	<tr>
 		<td class="details_screen">2</td>
-		<td><input type=text name="2" value="{$module.2}" size=50></td>
+		<td><input type=text name="q2" value="{$module.q2}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">3</td>
-		<td><input type=text name="3" value="{$module.3}" size=50></td>
+		<td><input type=text name="q3" value="{$module.q3}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">4</td>
-		<td><input type=text name="4" value="{$module.4}" size=50></td>
+		<td><input type=text name="q4" value="{$module.q4}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">5</td>
-		<td><input type=text name="5" value="{$module.5}" size=50></td>
+		<td><input type=text name="q5" value="{$module.q5}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">6</td>
-		<td><input type=text name="6" value="{$module.6}" size=50></td>
+		<td><input type=text name="q6" value="{$module.q6}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">7</td>
-		<td><input type=text name="7" value="{$module.7}" size=50></td>
+		<td><input type=text name="q7" value="{$module.q7}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">8</td>
-		<td><input type=text name="8" value="{$module.8}" size=50></td>
+		<td><input type=text name="q8" value="{$module.q8}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">9</td>
-		<td><input type=text name="9" value="{$module.9}" size=50></td>
+		<td><input type=text name="q9" value="{$module.q9}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">10</td>
-		<td><input type=text name="10" value="{$module.10}" size=50></td>
+		<td><input type=text name="q10" value="{$module.q10}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">11</td>
-		<td><input type=text name="11" value="{$module.11}" size=50></td>
+		<td><input type=text name="q11" value="{$module.q11}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">12</td>
-		<td><input type=text name="12" value="{$module.12}" size=50></td>
+		<td><input type=text name="q12" value="{$module.q12}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">13</td>
-		<td><input type=text name="13" value="{$module.13}" size=50></td>
+		<td><input type=text name="q13" value="{$module.q13}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">14</td>
-		<td><input type=text name="14" value="{$module.14}" size=50></td>
+		<td><input type=text name="q14" value="{$module.q14}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">15</td>
-		<td><input type=text name="15" value="{$module.15}" size=50></td>
+		<td><input type=text name="q15" value="{$module.q15}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">16</td>
-		<td><input type=text name="16" value="{$module.16}" size=50></td>
+		<td><input type=text name="q16" value="{$module.q16}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">17</td>
-		<td><input type=text name="17" value="{$module.17}" size=50></td>
+		<td><input type=text name="q17" value="{$module.q17}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">18</td>
-		<td><input type=text name="18" value="{$module.18}" size=50></td>
+		<td><input type=text name="q18" value="{$module.q18}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">19</td>
-		<td><input type=text name="19" value="{$module.19}" size=50></td>
+		<td><input type=text name="q19" value="{$module.q19}" size=50></td>
 	</tr>
 		<tr>
 		<td class="details_screen">20</td>
-		<td><input type=text name="20" value="{$module.20}" size=50></td>
+		<td><input type=text name="q20" value="{$module.q20}" size=50></td>
 	</tr>
 	</table>
 {/if} 

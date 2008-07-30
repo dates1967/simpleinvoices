@@ -8,9 +8,10 @@
  <hr />
 {if $smarty.get.action == "search"}
 
-Progreess filtered by 
-	{if $smarty.get.id != ""}Branch ID = {$smarty.get.id}{/if}
-	{if $smarty.get.name != ""}Branch Name like '{$smarty.get.name}'{/if}
+Progress filtered by 
+	{if $smarty.get.course_id != ""}Course = {$course_sel.0.description}{/if}
+	{if $smarty.get.test_id != ""}Test = '{$test_sel.0.name}'{/if}
+	{if $smarty.get.student_id != ""}Student = '{$student_sel.0.name},{$student_sel.0.first_name} {$student_sel.0.middle_name}   '{/if}
  <a href="index.php?module=progress&view=manage">Clear filer</a> :: <a href="index.php?module=progress&view=search">Search again</a>
 <br>
 <hr />

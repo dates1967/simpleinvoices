@@ -523,8 +523,10 @@
 	<div id="section-6" class="fragment">
 		<p>
 		<table align=center>	
-
-<table>
+<a href="index.php?module=progress&view=manage">Manage Progress</a> :: <a href="index.php?module=progress&view=add">Add Progress</a>
+<br>
+<br>
+<table width="100%">
 <tr class="sortHeader">
 	<th class="noFilter sortable">{$LANG.actions}</th>
 	<th class="index_table sortable">ID</th>
@@ -534,19 +536,17 @@
 	<th class="index_table sortable">Course</th>
 	<th class="index_table sortable">Total</th>
 </tr>
-{foreach from=$module item=module_row}
+{foreach from=$progress item=progress_row}
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=progress&view=details&id={$module_row.pgid}&action=view">{$LANG.view}</a> ::
-	<a class="index_table"
-	 href="index.php?module=progress&view=details&id={$module_row.pgid}&action=edit">{$LANG.edit}</a> </td>
-	<td class="index_table">{$module_row.pgid}</td>
-	<td class="index_table">{$module_row.date}</td>
-	<td class="index_table">{$module_row.last_name}, {$module_row.first_name} {$module_row.middle_name} </td>
-	<td class="index_table">{$module_row.test}</td>
-	<td class="index_table">{$module_row.course}</td>
-	<td class="index_table">{$module_row.total}</td>
+	 href="index.php?module=progress&view=details&id={$progress_row.pgid}&action=view">{$LANG.view}</a>
+	<td class="index_table">{$progress_row.pgid}</td>
+	<td class="index_table">{$progress_row.date}</td>
+	<td class="index_table">{$progress_row.last_name}, {$progress_row.first_name} {$progress_row.middle_name} </td>
+	<td class="index_table">{$progress_row.test}</td>
+	<td class="index_table">{$progress_row.course}</td>
+	<td class="index_table">{$progress_row.total}</td>
 	</tr>
 
 {/foreach}
