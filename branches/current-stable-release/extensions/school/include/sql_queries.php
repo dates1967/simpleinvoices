@@ -41,7 +41,18 @@ class school_product extends product {
 					number_of_weeks,
 					book,
 					teaching_hours,
-					iscourse
+					iscourse,
+					payment_period_1_end,
+					payment_period_2_start,
+					payment_period_2_end,
+					payment_period_3_start,
+					payment_period_3_end,
+					payment_period_4_start,
+					payment_period_4_end,
+					payment_period_5_start,
+					payment_period_5_end,
+					payment_period_6_start,
+					payment_period_6_end
 				)			
 				VALUES
 					(	
@@ -76,7 +87,18 @@ class school_product extends product {
 						'$_POST[number_of_weeks]',
 						'$_POST[book]',
 						'$_POST[teaching_hours]',
-						'$_POST[iscourse]'
+						'$_POST[iscourse]',
+						'$_POST[payment_period_1_end]',
+						'$_POST[payment_period_2_start]',
+						'$_POST[payment_period_2_end]',
+						'$_POST[payment_period_3_start]',
+						'$_POST[payment_period_3_1end]',
+						'$_POST[payment_period_4_start]',
+						'$_POST[payment_period_4_end]',
+						'$_POST[payment_period_5_start]',
+						'$_POST[payment_period_5_end]',
+						'$_POST[payment_period_6_start]',
+						'$_POST[payment_period_6_end]'
 					)";
 			return mysqlQuery($sql);
 		}
@@ -116,7 +138,18 @@ class school_product extends product {
 					repeat_day = '$_POST[repeat_day]',
 					number_of_weeks = '$_POST[number_of_weeks]',
 					book = '$_POST[book]',
-					teaching_hours = '$_POST[teaching_hours]'
+					teaching_hours = '$_POST[teaching_hours]',
+					payment_period_1_end = '$_POST[payment_period_1_end]',
+					payment_period_2_start = '$_POST[payment_period_2_start]',
+					payment_period_2_end = '$_POST[payment_period_2_end]',
+					payment_period_3_start = '$_POST[payment_period_3_start]',
+					payment_period_3_end = '$_POST[payment_period_3_end]',
+					payment_period_4_start = '$_POST[payment_period_4_start]',
+					payment_period_4_end = '$_POST[payment_period_4_end]',
+					payment_period_5_start = '$_POST[payment_period_5_start]',
+					payment_period_5_end = '$_POST[payment_period_5_end]',
+					payment_period_6_start = '$_POST[payment_period_6_start]',
+					payment_period_6_end = '$_POST[payment_period_6_end]'
 				WHERE
 					id = " . $_GET['id'];
 			

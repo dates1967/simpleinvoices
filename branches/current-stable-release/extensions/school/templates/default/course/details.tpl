@@ -47,7 +47,7 @@
 	<tr>
 		<td class="details_screen">Age</td>
 		<td>
-			{$course.age}
+			{$age_sel.0.name}
 		</td>
 	</tr>
 	<tr>
@@ -59,13 +59,13 @@
 	<tr>
 		<td class="details_screen">Type</td>
 		<td>
-			{$course.type}
+			{$type_sel.0.name}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Status</td>
 		<td>
-			{$course.status}
+			{$status_sel.0.name}
 		</td>
 	</tr>
 
@@ -158,6 +158,66 @@
 		<td class="details_screen">Teaching hours</td>
 		<td>
 			{$course.teaching_hours}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - start</td>
+		<td>
+			{$course.start_date}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - end</td>
+		<td>
+			{$course.payment_period_1_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - start</td>
+		<td>
+			{$course.payment_period_2_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - end</td>
+		<td>
+			{$course.payment_period_2_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - start</td>
+		<td>
+			{$course.payment_period_3_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - end</td>
+		<td>
+			{$course.payment_period_3_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - start</td>
+		<td>
+			{$course.payment_period_4_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - end</td>
+		<td>
+			{$course.payment_period_4_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 5 - start</td>
+		<td>
+			{$course.payment_period_5_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 6 - end</td>
+		<td>
+			{$course.payment_period_6_end}
 		</td>
 	</tr>
 
@@ -263,7 +323,11 @@
 	<tr>
 		<td class="details_screen">Age</td>
 		<td>
-				{html_options values=$age output=$age name=age selected=$course.age}
+			<select name="age">
+			{foreach from=$age item=age_row}
+				<option {if $age_row.id == $age_sel.0.id} selected {/if} value="{$age_row.id}">{$age_row.name}</option>
+			{/foreach}
+			</select>
 		</td>
 	</tr>
 	<tr>
@@ -279,13 +343,21 @@
 	<tr>
 		<td class="details_screen">Type</td>
 		<td>
-				{html_options name=type values=$type output=$type selected=$course.type}
+			<select name="type">
+			{foreach from=$type item=type_row}
+				<option {if $type_row.id == $course.type} selected {/if} value="{$type_row.id}">{$type_row.name}</option>
+			{/foreach}
+			</select>
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Status</td>
 		<td>
-				{html_options name=status values=$status output=$status selected=$course.status}
+				<select name="status">
+				{foreach from=$status item=status_row}
+					<option {if $status_row.id == $course.status} selected {/if} value="{$status_row.id}">{$status_row.name}</option>
+				{/foreach}
+				</select>
 		</td>
 	</tr>
 
@@ -400,6 +472,77 @@
 			<input type=text name="teaching_hours" value="{$course.teaching_hours}" size=5>
 		</td>
 	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - start</td>
+		<td class="details_screen"> = Course start date</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_1_end" value="{$course.payment_period_1_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_2_start" value="{$course.payment_period_2_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_2_end" value="{$course.payment_period_2_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_3_start" value="{$course.payment_period_3_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_3_end" value="{$course.payment_period_3_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_4_start" value="{$course.payment_period_4_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_4_end" value="{$course.payment_period_4_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 5 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_5_start" value="{$course.payment_period_5_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 5 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_5_end" value="{$course.payment_period_5_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 6 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_6_start" value="{$course.payment_period_6_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 6 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_6_end" value="{$course.payment_period_6_end}" size=10>
+		</td>
+	</tr>
+
 
 
 

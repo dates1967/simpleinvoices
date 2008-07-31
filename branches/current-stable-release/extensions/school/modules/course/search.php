@@ -21,6 +21,8 @@ checkLogin();
 
 $pageActive = "course";
 
+$courses = school_product::getCourses();
+$smarty -> assign('courses', $courses);
 $smarty -> assign('pageActive', $pageActive);
 /*
 
@@ -33,6 +35,11 @@ $billers = sql2array($sql_start);
 $smarty -> assign('billers', $billers);
 */
 
+/*Place of enrolment function*/
+$sql = "select * from ".TB_PREFIX."branch"; 
+$branch_sql = sql2array($sql);
+$smarty -> assign('branches',$branch_sql);
+
 $smarty -> assign('id', $_POST['id']);
-$smarty -> assign('name', $_POST['name']);
+$smarty -> assign('course_id', $_POST['course_id']);
 ?>

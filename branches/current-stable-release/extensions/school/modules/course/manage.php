@@ -17,8 +17,18 @@ if (empty($_GET['action']))
 		$id = $_GET['id'];
 		$search_sql .= " AND id = $id ";
 	}
-	if (!empty($_GET['name'])) {
-		$search_sql .= " AND description like '%".$_GET['name']."%'";
+	if (!empty($_GET['course_id'])) {
+		$search_sql .= " AND id = ".$_GET['course_id'];
+		$course_id = $_GET['course_id'];
+		$course_search = getProduct($course_id);
+	}
+	if (!empty($_GET['branch_id'])) {
+		$search_sql .= " AND branch_id = ".$_GET['branch_id'];
+
+		$sql = "select * from ".TB_PREFIX."branch where id = ".$_GET['branch_id'];; 
+		$branch_sql = sql2array($sql);
+		$smarty -> assign('branch_search',$branch_sql);
+
 	}
 	$search_sql .= $limit;
 	$courses = school_product::getCourses($search_sql);
@@ -28,6 +38,7 @@ if (empty($_GET['action']))
 $pageActive = "course";
 
 $smarty->assign('pageActive', $pageActive);
+$smarty -> assign("course_search",$course_search);
 $smarty -> assign("courses",$courses);
 
 getRicoLiveGrid("rico_courses","{ type:'number', decPlaces:0, ClassName:'alignleft' },,{ type:'number', decPlaces:2, ClassName:'alignleft' }");

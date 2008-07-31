@@ -40,11 +40,17 @@ $sub_sql_sel = sql2array($sql_sub_sel);
 $smarty -> assign('subject_selected',$sub_sql_sel);
 
 /*Age*/
-$age = array();
+/*$age = array();
 $age[] = "Kids";
 $age[] = "Teens";
 $age[] = "Adults";
 $smarty -> assign('age',$age);
+*/
+$sql_age = "select * from ".TB_PREFIX."age"; 
+$smarty -> assign('age',sql2array($sql_age));
+
+$sql_age_sel = "select * from ".TB_PREFIX."age where id = ".$course['age']; 
+$smarty -> assign('age_sel',sql2array($sql_age_sel));
 
 /*Level function*/
 $sql_level = "select * from ".TB_PREFIX."level"; 
@@ -56,19 +62,31 @@ $level_sel = sql2array($sql_level_sel);
 $smarty -> assign('level_select',$level_sel);
 
 /*Type*/
+/*
 $type = array();
 $type[] = "Group";
 $type[] = "One to one";
 $smarty -> assign('type',$type);
+*/
+$sql_type = "select * from ".TB_PREFIX."course_type"; 
+$smarty -> assign('type',sql2array($sql_type));
+
+$sql_type_sel = "select * from ".TB_PREFIX."course_type where id =".$course['type'];
+$smarty -> assign('type_sel',sql2array($sql_type_sel));
 
 /*Status*/
-$status = array();
+/*$status = array();
 $status[] = "Started";
 $status[] = "Waitlisted";
 $status[] = "Stopped";
 $status[] = "Graduated";
 $status[] = "Archived";
-$smarty -> assign('status',$status);
+$smarty -> assign('status',$status);*/
+$sql_status = "select * from ".TB_PREFIX."course_status"; 
+$smarty -> assign('status',sql2array($sql_status));
+
+$sql_status_sel = "select * from ".TB_PREFIX."course_status where id = ".$course['status']; 
+$smarty -> assign('status_sel',sql2array($sql_status_sel));
 
 /*Teacher function*/
 $sql_teacher = "select * from ".TB_PREFIX."customers where enabled = '1' AND person_type = '2'"; 

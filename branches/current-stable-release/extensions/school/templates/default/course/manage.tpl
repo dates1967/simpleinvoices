@@ -10,7 +10,8 @@
 
 Courses filtered by 
 	{if $smarty.get.id != ""}Course ID = {$smarty.get.id}{/if}
-	{if $smarty.get.name != ""}Course Name like '{$smarty.get.name}'{/if}
+	{if $smarty.get.course_id != ""}Course = '{$course_search.description}'{/if}
+	{if $smarty.get.branch_id != ""}Branch = '{$branch_search.0.name}'{/if}
  <a href="index.php?module=course&view=manage">Clear filer</a> :: <a href="index.php?module=course&view=search">Search again</a>
 <br>
 <hr />

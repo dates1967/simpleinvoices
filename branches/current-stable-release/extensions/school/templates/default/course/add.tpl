@@ -57,7 +57,9 @@
 		<td>
 			<select name="age">
 				<option  selected value=""></option>
-				{html_options values=$age output=$age}
+			{foreach from=$age item=age_row}
+				<option value="{$age_row.id}">{$age_row.name}</option>
+			{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -77,7 +79,9 @@
 		<td>
 			<select name="type">
 				<option  selected value=""></option>
-				{html_options values=$type output=$type}
+			{foreach from=$type item=type_row}
+				<option value="{$type_row.id}">{$type_row.name}</option>
+			{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -86,7 +90,9 @@
 		<td>
 			<select name="status">
 				<option  selected value=""></option>
-				{html_options values=$status output=$status}
+				{foreach from=$status item=status_row}
+					<option value="{$status_row.id}">{$status_row.name}</option>
+				{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -215,6 +221,54 @@
 		<td>
 			<input type=text name="teaching_hours" value="{$smarty.post.teaching_hours}" size=5>
 		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - start</td>
+		<td class="details_screen"> = Course start date</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 1 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_1_end"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - start</td>
+		<td><input type="text" class="date-picker" name="payment_period_2_start"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 2 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_2_end"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - start</td>
+		<td><input type="text" class="date-picker" name="payment_period_3_start"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 3 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_3_end"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - start</td>
+		<td><input type="text" class="date-picker" name="payment_period_4_start"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 4 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_4_end"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 5 - start</td>
+		<td><input type="text" class="date-picker" name="payment_period_5_start"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 5 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_5_end"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 6 - start</td>
+		<td><input type="text" class="date-picker" name="payment_period_6_start"  value="{$today}" /></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 6 - end</td>
+		<td><input type="text" class="date-picker" name="payment_period_6_end"  value="{$today}" /></td>
 	</tr>
 
 

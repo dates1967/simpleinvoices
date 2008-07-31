@@ -366,3 +366,104 @@ insert into si_test (name) values ('Stop and Check');
 
 insert into si_test (name) values ('Progress Test');
 
+
+ALTER TABLE `si_products` ADD `payment_period_1_end` DATE NOT NULL ,
+ADD `payment_period_2_start` DATE NOT NULL ,
+ADD `payment_period_2_end` DATE NOT NULL ,
+ADD `payment_period_3_start` DATE NOT NULL ,
+ADD `payment_period_3_end` DATE NOT NULL ,
+ADD `payment_period_4_start` DATE NOT NULL ,
+ADD `payment_period_4_end` DATE NOT NULL ,
+ADD `payment_period_5_start` DATE NOT NULL ,
+ADD `payment_period_5_end` DATE NOT NULL ,
+ADD `payment_period_6_start` DATE NOT NULL ,
+ADD `payment_period_6_end` DATE NOT NULL ;
+
+
+CREATE TABLE `si_age` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_age` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Kids'
+);
+
+INSERT INTO `si_age` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Teens'
+);
+
+INSERT INTO `si_age` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Adults'
+);
+
+
+CREATE TABLE `si_course_type` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+INSERT INTO `si_course_type` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Group'
+), (
+NULL , 'One on one'
+);
+
+
+
+CREATE TABLE `si_course_status` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+
+INSERT INTO `si_course_status` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Started'
+), (
+NULL , 'Waitlisted'
+), (
+NULL , 'Stopped'
+), (
+NULL , 'Graduated'
+), (
+NULL , 'Archived'
+);
+
+
+CREATE TABLE `si_course_intensity` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_course_intensity` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , '3 times/week-Mo-We-Fr'
+), (
+NULL , '5 times/week-Mo-till-Fr'
+), (
+NULL , 'Weekends'
+);

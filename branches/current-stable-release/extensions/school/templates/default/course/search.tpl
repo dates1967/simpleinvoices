@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=course&view=manage&action=search&id={$id}&name={$name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=course&view=manage&action=search&id={$id}&course_id={$course_id}&branch_id={$branch_id}>
 	<br><br>
 		Searching courses ...
 	<br><br>
@@ -35,12 +35,26 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="details_screen">
-					Course name
-				</td>
+				<td class="details_screen">Course</td>
 				<td>
-					<input type=text name="name" size="50">
-                </td>
+					<select name="course_id">
+						<option value=""></option>
+					{foreach from=$courses item=course}
+						<option {if $course.id == "1"} selected {/if} value="{$course.id}">{$course.description}</option>
+					{/foreach}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="details_screen">Branch</td>
+				<td>
+					<select name="branch_id">
+						<option value=""></option>
+					{foreach from=$branches item=branch}
+						<option {if $course.id == "1"} selected {/if} value="{$branch.id}">{$branch.name}</option>
+					{/foreach}
+					</select>
+				</td>
 			</tr>
 </table>
 <hr />

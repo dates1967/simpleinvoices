@@ -28,24 +28,26 @@ $sub_sql = sql2array($sql_sub);
 $smarty -> assign('subject',$sub_sql);
 
 /*Age*/
-$age = array();
-$age[] = "Kids";
-$age[] = "Teens";
-$age[] = "Adults";
-$smarty -> assign('age',$age);
+$sql_age = "select * from ".TB_PREFIX."age"; 
+$smarty -> assign('age',sql2array($sql_age));
 
-/*Subject function*/
+/*Level function*/
 $sql_level = "select * from ".TB_PREFIX."level"; 
 $level = sql2array($sql_level);
 $smarty -> assign('level',$level);
 
 /*Type*/
+/*
 $type = array();
 $type[] = "Group";
 $type[] = "One to one";
 $smarty -> assign('type',$type);
+*/
+$sql_type = "select * from ".TB_PREFIX."course_type"; 
+$smarty -> assign('type',sql2array($sql_type));
 
 /*Status*/
+/*
 $status = array();
 $status[] = "Started";
 $status[] = "Waitlisted";
@@ -53,6 +55,9 @@ $status[] = "Stopped";
 $status[] = "Graduated";
 $status[] = "Archived";
 $smarty -> assign('status',$status);
+*/
+$sql_status = "select * from ".TB_PREFIX."course_status"; 
+$smarty -> assign('status',sql2array($sql_status));
 
 /*Teacher function*/
 $sql_teacher = "select * from ".TB_PREFIX."customers where enabled = '1' AND person_type = '2'"; 
@@ -60,11 +65,15 @@ $teacher = sql2array($sql_teacher);
 $smarty -> assign('teacher',$teacher);
 
 /*Intensity*/
+/*
 $intensity = array();
 $intensity[] = "3 times/week-Mo-We-Fr";
 $intensity[] = "5 times/week-Mo-till-Fr";
 $intensity[] = "Weekends";
 $smarty -> assign('intensity',$intensity);
+*/
+$sql_intensity = "select * from ".TB_PREFIX."course_intensity"; 
+$smarty -> assign('intensity',sql2array($sql_intensity));
 
 $smarty -> assign('year',$year = year());
 $smarty -> assign('year_now',$year_now = date('Y') );
