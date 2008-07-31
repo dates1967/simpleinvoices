@@ -72,7 +72,7 @@
 	<tr>
 		<td class="details_screen">Intensity</td>
 		<td>
-			{$course.intensity}
+			{$intensity_sel.0.name}
 		</td>
 	</tr>
 	<tr>
@@ -84,7 +84,7 @@
 	<tr>
 		<td class="details_screen">Course time (part of day)</td>
 		<td>
-			{$course.part_of_day}
+			{$part_of_day_sel.0.name}
 		</td>
 	</tr>
 	<tr>
@@ -96,7 +96,7 @@
 	<tr>
 		<td class="details_screen">Duration</td>
 		<td>
-			{$course.duration} {$course.duration_type}
+			{$course.duration} {$duration_type_sel.0.name}
 		</td>
 	</tr>
 	<tr>
@@ -125,13 +125,13 @@
 	<tr>
 		<td class="details_screen">Repeat type</td>
 		<td>
-			{$course.repeat_type}
+			{$repeat_type_sel.0.name}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Repeat day (for n-weekly)</td>
 		<td>
-			{$course.repeat_day}
+			{$repeat_day_sel.0.name}
 		</td>
 	</tr>
 	<tr>
@@ -365,6 +365,11 @@
 		<td class="details_screen">Intensity</td>
 		<td>
 				{html_options values=$intensity output=$intensity selected=$course.intensity name=intensity}
+				<select name="intensity">
+				{foreach from=$intensity item=intensity_row}
+					<option {if $intensity_row.id == $course.intensity} selected {/if} value="{$intensity_row.id}">{$intensity_row.name}</option>
+				{/foreach}
+				</select>
 		</td>
 	</tr>
 	<tr>
@@ -384,7 +389,11 @@
 	<tr>
 		<td class="details_screen">Course time (part of day)</td>
 		<td>
-				{html_options values=$part_of_day output=$part_of_day selected=$course.part_of_day name="part_of_day"}
+				<select name="intensity">
+				{foreach from=$part_of_day item=part_of_day}
+					<option {if $part_of_day_row.id == $course.part_of_day} selected {/if} value="{$part_of_day.id}">{$part_of_day.name}</option>
+				{/foreach}
+				</select>
 		</td>
 	</tr>
 	<tr>
@@ -397,7 +406,11 @@
 		<td class="details_screen">Duration</td>
 		<td>
 		<input type=text name="duration" value="{$course.duration}" size=5>
-				{html_options values=$duration_type output=$duration_type selected=$course.duration_type name="duration_type"}
+				<select name="duration_type">
+				{foreach from=$duration_type item=duration_type_day}
+					<option {if $duration_type_row.id == $course.duration_type} selected {/if} value="{$duration_type.id}">{$duration_type.name}</option>
+				{/foreach}
+				</select>
 		</td>
 	</tr>
 	<tr>
@@ -436,13 +449,20 @@
 	<tr>
 		<td class="details_screen">Repeat type</td>
 		<td>
-				{html_options values=$repeat_type output=$repeat_type name="repeat_type" selected=$course.repeat_type}
+			<select name="repeat_type">
+			{foreach from=$repeat_type item=repeat_type_row}
+				<option {if $repeat_type_row.id == $course.repeat_type} selected {/if} value="{$repeat_type_row.id}">{$repeat_type_row.name}</option>
+			{/foreach}
+			</select>
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Repeat day (for n-weekly)</td>
 		<td>
-				{html_options values=$repeat_day output=$repeat_day name="repeat_day" selected=$course.repeat_day}
+			<select name="repeat_day">
+			{foreach from=$repeat_day item=repeat_day_row}
+				<option {if $repeat_day_row.id == $course.repeat_day} selected {/if} value="{$repeat_day_row.id}">{$repeat_day_row.name}</option>
+			{/foreach}
 			</select>
 		</td>
 	</tr>

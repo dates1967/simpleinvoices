@@ -467,3 +467,87 @@ NULL , '5 times/week-Mo-till-Fr'
 ), (
 NULL , 'Weekends'
 );
+
+CREATE TABLE `si_course_part_of_day` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_course_part_of_day` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Morning'
+), (
+NULL , 'Afternoon'
+), (
+NULL , 'Evening'
+);
+
+CREATE TABLE `si_course_duration` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_course_duration` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'minutes'
+), (
+NULL , 'hours'
+), (
+NULL , 'days'
+);
+
+CREATE TABLE `si_course_repeat_type` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_course_repeat_type` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'None'
+), (
+NULL , 'Daily'
+), (
+NULL , 'Weekly'
+), (
+NULL , 'Monthly'
+), (
+NULL , 'Yearly'
+), (
+NULL , 'Monthly, corresponding day'
+), (
+NULL , 'n-Weekly'
+);
+
+CREATE TABLE `si_course_repeat_day` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_course_repeat_day` (
+`id` ,
+`name`
+)
+VALUES (
+NULL , 'Monday'
+), (
+NULL , 'Tuesday'
+), (
+NULL , 'Wednesday'
+), (
+NULL , 'Thursday'
+), (
+NULL , 'Friday'
+), (
+NULL , 'Saturday'
+), (
+NULL , 'Sunday'
+);

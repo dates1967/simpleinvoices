@@ -102,7 +102,9 @@
 		<td>
 			<select name="intensity">
 				<option  selected value=""></option>
-				{html_options values=$intensity output=$intensity}
+				{foreach from=$intensity item=intensity_row}
+					<option value="{$intensity_row.id}">{$intensity_row.name}</option>
+				{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -125,7 +127,9 @@
 		<td>
 			<select name="part_of_day">
 				<option  selected value=""></option>
-				{html_options values=$part_of_day output=$part_of_day}
+				{foreach from=$part_of_day item=part_of_day_row}
+					<option value="{$part_of_day_row.id}">{$part_of_day_row.name}</option>
+				{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -141,7 +145,9 @@
 		<input type=text name="duration" value="{$smarty.post.duration}" size=5>
 			<select name="duration_type">
 				<option  selected value=""></option>
-				{html_options values=$duration_type output=$duration_type}
+				{foreach from=$duration_type item=duration_type_row}
+					<option value="{$duration_type_row.id}">{$duration_type_row.name}</option>
+				{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -183,7 +189,10 @@
 		<td class="details_screen">Repeat type</td>
 		<td>
 			<select name="repeat_type">
-				{html_options values=$repeat_type output=$repeat_type}
+				<option  selected value=""></option>
+			{foreach from=$repeat_type item=repeat_type_row}
+				<option value="{$repeat_type_row.id}">{$repeat_type_row.name}</option>
+			{/foreach}
 			</select>
 		</td>
 	</tr>
@@ -192,7 +201,9 @@
 		<td>
 			<select name="repeat_day">
 				<option  selected value=""></option>
-				{html_options values=$repeat_day output=$repeat_day}
+				{foreach from=$repeat_day item=repeat_day_row}
+					<option value="{$repeat_day_row.id}">{$repeat_day_row.name}</option>
+				{/foreach}
 			</select>
 		</td>
 	</tr>

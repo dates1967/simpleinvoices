@@ -99,11 +99,15 @@ $smarty -> assign('teacher_selected',$teacher_sel);
 
 
 /*Intensity*/
-$intensity = array();
+/*$intensity = array();
 $intensity[] = "3 times/week-Mo-We-Fr";
 $intensity[] = "5 times/week-Mo-till-Fr";
 $intensity[] = "Weekends";
-$smarty -> assign('intensity',$intensity);
+$smarty -> assign('intensity',$intensity);*/
+$sql_intensity = "select * from ".TB_PREFIX."course_intensity"; 
+$smarty -> assign('intensity',sql2array($sql_intensity));
+$sql_intensity_sel = "select * from ".TB_PREFIX."course_intensity where id = ".$course['intensity']; 
+$smarty -> assign('intensity_sel',sql2array($sql_intensity_sel));
 
 /* Date */
 $smarty -> assign('year',$year = year());
@@ -119,21 +123,30 @@ $smarty -> assign('day_selected', substr( $course['start_date'],8,2 ) );
 $smarty -> assign('end_day_selected', substr( $course['end_date'],8,2 ) );
 
 /*Duration*/
-$duration_type = array();
+/*$duration_type = array();
 $duration_type[] = "minutes";
 $duration_type[] = "hours";
 $duration_type[] = "days";
 $smarty -> assign('duration_type',$duration_type);
+*/
+$sql_duration = "select * from ".TB_PREFIX."course_duration"; 
+$smarty -> assign('duration_type',sql2array($sql_duration));
+$sql_duration_sel = "select * from ".TB_PREFIX."course_duration where id = ".$course['duration_type']; 
+$smarty -> assign('duration_type_sel',sql2array($sql_duration_sel));
 
 /*Course part of day*/
-$part_of_day = array();
+/*$part_of_day = array();
 $part_of_day[] = "Morning";
 $part_of_day[] = "Afternoon";
 $part_of_day[] = "Evening";
-$smarty -> assign('part_of_day',$part_of_day);
+$smarty -> assign('part_of_day',$part_of_day);*/
+$sql_part = "select * from ".TB_PREFIX."course_part_of_day"; 
+$smarty -> assign('part_of_day',sql2array($sql_part));
+$sql_part = "select * from ".TB_PREFIX."course_part_of_day where id = ".$course['part_of_day'] ; 
+$smarty -> assign('part_of_day_sel',sql2array($sql_part_sel));
 
 /*Repeat type*/
-$repeat_type = array();
+/*$repeat_type = array();
 $repeat_type[] = "None";
 $repeat_type[] = "Daily";
 $repeat_type[] = "Weekly";
@@ -141,10 +154,14 @@ $repeat_type[] = "Monthly";
 $repeat_type[] = "Yearly";
 $repeat_type[] = "Monthly, corresponding day";
 $repeat_type[] = "n-Weekly";
-$smarty -> assign('repeat_type',$repeat_type);
+$smarty -> assign('repeat_type',$repeat_type);*/
+$sql_repeat_type = "select * from ".TB_PREFIX."course_repeat_type"; 
+$smarty -> assign('repeat_type',sql2array($sql_repeat_type));
+$sql_repeat_type_sel = "select * from ".TB_PREFIX."course_repeat_type where id = ".$course['repeat_type'] ; 
+$smarty -> assign('repeat_type_sel',sql2array($sql_repeat_type_sel));
 
 /*Repeat day*/
-$repeat_day = array();
+/*$repeat_day = array();
 $repeat_day[] = "Monday";
 $repeat_day[] = "Tuesday";
 $repeat_day[] = "Wednesday";
@@ -152,10 +169,14 @@ $repeat_day[] = "Thursday";
 $repeat_day[] = "Friday";
 $repeat_day[] = "Saturday";
 $repeat_day[] = "Sunday";
-$smarty -> assign('repeat_day',$repeat_day);
+$smarty -> assign('repeat_day',$repeat_day);*/
 
 
+$sql_repeat_day = "select * from ".TB_PREFIX."course_repeat_day"; 
+$smarty -> assign('repeat_day',sql2array($sql_repeat_day));
 
+$sql_repeat_day_sel = "select * from ".TB_PREFIX."course_repeat_day where id = ".$course['repeat_day'] ; 
+$smarty -> assign('repeat_day_sel',sql2array($sql_repeat_day_sel));
 
 
 
