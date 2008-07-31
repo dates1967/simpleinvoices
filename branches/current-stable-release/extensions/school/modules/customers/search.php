@@ -32,11 +32,14 @@ $sql_start = "select * from ".TB_PREFIX."biller";
 $billers = sql2array($sql_start);
 $smarty -> assign('billers', $billers);
 */
+$courses = school_product::getCourses();
+$smarty -> assign('courses', $courses);
 
 $smarty -> assign('id', $_POST['invoice_id']);
 $smarty -> assign('first_name', $_POST['first_name']);
 $smarty -> assign('middle_name', $_POST['middle_name']);
 $smarty -> assign('last_name', $_POST['last_name']);
 $smarty -> assign('student_id', $_POST['student_id']);
+$smarty -> assign('course_id', $_POST['course_id']);
 $smarty -> assign('students', $students);
 ?>

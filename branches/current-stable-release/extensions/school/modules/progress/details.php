@@ -53,8 +53,8 @@ $smarty -> assign('customFieldLabel',$customFieldLabel);
 
 $student = school_invoice::getActiveCustomers();
 $smarty -> assign('student',$student);
-$course = school_product::getCourses();
-$smarty -> assign('course',$course);
+$courses = school_product::getCourses();
+$smarty -> assign('courses',$courses);
 /*test*/
 $sql = "select * from ".TB_PREFIX."test"; 
 $test_sql = sql2array($sql);

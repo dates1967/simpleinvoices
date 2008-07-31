@@ -142,7 +142,7 @@ $part_of_day[] = "Evening";
 $smarty -> assign('part_of_day',$part_of_day);*/
 $sql_part = "select * from ".TB_PREFIX."course_part_of_day"; 
 $smarty -> assign('part_of_day',sql2array($sql_part));
-$sql_part = "select * from ".TB_PREFIX."course_part_of_day where id = ".$course['part_of_day'] ; 
+$sql_part_sel = "select * from ".TB_PREFIX."course_part_of_day where id = ".$course['part_of_day'] ; 
 $smarty -> assign('part_of_day_sel',sql2array($sql_part_sel));
 
 /*Repeat type*/

@@ -155,7 +155,7 @@
 		<td class="details_screen">Course</td>
 		<td>
 			<select name="course_id">
-			{foreach from=$course item=course_row}
+			{foreach from=$courses item=course_row}
 				<option {if $course_row.id == $module.course_id} selected {/if} value="{$course_row.id}">{$course_row.description}</option>
 			{/foreach}
 			</select>

@@ -29,6 +29,7 @@
 Students filtered by 
 	{if $smarty.get.id != ""}Student ID = {$smarty.get.id}{/if}
 	{if $smarty.get.student_id != ""}Student Name =  {$customers.0.first_name} {$customers.0.middle_name} {$customers.0.name}{/if}
+	{if $smarty.get.course_id != ""}Course =  {$courses_search.0.description}{/if}
 	{if $smarty.get.first_name != ""}First Name like '{$smarty.get.first_name}'{/if}
 	{if $smarty.get.middle_name != ""}Middle Name like '{$smarty.get.middle_name}'{/if}
 	{if $smarty.get.name != ""}Last Name like '{$smarty.get.name}'{/if}

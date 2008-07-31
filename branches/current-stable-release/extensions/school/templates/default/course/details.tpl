@@ -364,7 +364,6 @@
 	<tr>
 		<td class="details_screen">Intensity</td>
 		<td>
-				{html_options values=$intensity output=$intensity selected=$course.intensity name=intensity}
 				<select name="intensity">
 				{foreach from=$intensity item=intensity_row}
 					<option {if $intensity_row.id == $course.intensity} selected {/if} value="{$intensity_row.id}">{$intensity_row.name}</option>
@@ -389,7 +388,7 @@
 	<tr>
 		<td class="details_screen">Course time (part of day)</td>
 		<td>
-				<select name="intensity">
+				<select name="part_of_day">
 				{foreach from=$part_of_day item=part_of_day}
 					<option {if $part_of_day_row.id == $course.part_of_day} selected {/if} value="{$part_of_day.id}">{$part_of_day.name}</option>
 				{/foreach}
@@ -407,8 +406,8 @@
 		<td>
 		<input type=text name="duration" value="{$course.duration}" size=5>
 				<select name="duration_type">
-				{foreach from=$duration_type item=duration_type_day}
-					<option {if $duration_type_row.id == $course.duration_type} selected {/if} value="{$duration_type.id}">{$duration_type.name}</option>
+				{foreach from=$duration_type item=duration_type_row}
+					<option {if $duration_type_row.id == $course.duration_type} selected {/if} value="{$duration_type_row.id}">{$duration_type_row.name}</option>
 				{/foreach}
 				</select>
 		</td>

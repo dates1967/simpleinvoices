@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&student_id={$student_id}&first_name={$first_name}&middle_name={$middle_name}&name={$last_name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=customers&view=manage&action=search&id={$id}&student_id={$student_id}&first_name={$first_name}&middle_name={$middle_name}&name={$last_name}&course_id={$course_id}>
 	<br><br>
 		Searching students ...
 	<br><br>
@@ -51,6 +51,20 @@
 				</td>
 				<td>
 					<input type=text name="id" size="5">
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="details_screen">
+					Course
+				</td>
+				<td>
+					<select name="course_id">
+						<option value=""></option>
+					{foreach from=$courses item=course}
+						<option value="{$course.id}">{$course.description}</option>
+					{/foreach}
+					</select>
 				</td>
 			</tr>
 			<tr>

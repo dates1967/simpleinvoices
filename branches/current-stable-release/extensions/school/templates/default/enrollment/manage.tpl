@@ -49,10 +49,10 @@ Enrollments filtered by
 			<a href="index.php?module=enrollment&view=details&action=edit&id={$courses.enrollment_id}">Edit</a>
 		</td>
 		<td class="details_screen">
-			{$courses.last_name}, {$courses.first_name} {$courses.middle_name}
+			<a href="index.php?module=customers&view=details&action=view&id={$courses.student_id}">{$courses.last_name}, {$courses.first_name} {$courses.middle_name}</a>
 		</td>
 		<td class="details_screen">
-			<a href="index.php?module=enrollment&view=detail&action=view&id={$courses.id}">{$courses.id}</a>
+			<a href="index.php?module=course&view=details&action=view&id={$courses.id}">{$courses.id}</a>
 		</td>
 		<td class="details_screen">
 			{$courses.branch_name}

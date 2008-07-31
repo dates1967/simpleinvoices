@@ -16,7 +16,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Student</td>
-		<td>{$enrollment.0.first_name} {$enrollment.0.middle_name} {$enrollment.0.last_name}</td>
+		<td><a href="index.php?module=customers&view=details&id={$enrollment.0.student_id}&action=view">{$enrollment.0.first_name} {$enrollment.0.middle_name} {$enrollment.0.last_name}</a></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Course</td>

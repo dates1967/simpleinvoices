@@ -438,13 +438,13 @@ class school_student extends customer {
 			`total` = '$total'			
 			WHERE  `id` = '$id'";
 		*/	
-		function getCustomers($search_sql = "") {
+		function getCustomers($search_sql = "", $extra="") {
 				
 			global $LANG;
 			
 			$customer = null;
 			
-			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE person_type ='1' $search_sql ORDER BY name";
+			$sql = "SELECT * FROM ".TB_PREFIX."customers $extra WHERE person_type ='1' $search_sql ORDER BY name";
 			$result = mysqlQuery($sql) or die(mysql_error());
 
 			$customers = null;
