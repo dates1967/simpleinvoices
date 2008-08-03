@@ -6,7 +6,6 @@
 
 // This file must be in the root of the application folder where the index.php resides
 
-require_once("./config/config.php");		// for pdf variables
 require_once("./include/init.php");	// for getInvoice() and getPreference()
 
 // $defaults = getSystemDefaults(); // Not required as of now.
