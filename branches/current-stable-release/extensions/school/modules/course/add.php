@@ -8,7 +8,7 @@ checkLogin();
 $customFieldLabel = getCustomFieldLabels();
 
 //if valid then do save
-if ($_POST['description'] != "" ) {
+if ($_POST['unit_price'] != "" ) {
 	include("./extensions/school/modules/course/save.php");
 }
 $pageActive = "course";

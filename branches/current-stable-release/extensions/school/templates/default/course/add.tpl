@@ -1,13 +1,13 @@
 
 {* if bill is updated or saved.*}
 
-{if $smarty.post.description != "" && $smarty.post.id != null } 
+{if $smarty.post.unit_price != "" && $smarty.post.id != null } 
 	{include file="../extensions/school/templates/default/course/save.tpl"}
 {else}
 {* if  name was inserted *} 
 	{if $smarty.post.id !=null} 
 		<div class="validation_alert"><img src="./images/common/important.png"</img>
-		You must enter a description for the product</div>
+		You must enter a price for the course</div>
 		<hr />
 	{/if}
 <form name="frmpost" ACTION="index.php?module=course&view=add" METHOD="POST">
@@ -29,7 +29,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Price</td>
-		<td><input type=text name="unit_price" value="{$smarty.post.price}" size=10></td>
+		<td><input type=text name="unit_price" value="{$smarty.post.unit_price}" size=10></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Branch</td>

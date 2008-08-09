@@ -18,15 +18,21 @@ Certificates filtered by
 
 <table align="center" class="ricoLiveGrid" id="rico_product">
 <colgroup>
+	<col style='width:10%;' />
+	<col style='width:10%;' />
 	<col style='width:20%;' />
+	<col style='width:30%;' />
+	<col style='width:10%;' />
 	<col style='width:20%;' />
-	<col style='width:60%;' />
 </colgroup>
 <thead>
 <tr class="sortHeader">
 	<th class="noFilter sortable">{$LANG.actions}</th>
 	<th class="index_table sortable">ID</th>
-	<th class="index_table sortable">Certificate name</th>
+	<th class="index_table sortable">Branch</th>
+	<th class="index_table sortable">Student</th>
+	<th class="index_table sortable">Date</th>
+	<th class="index_table sortable">Course</th>
 </tr>
 </thead>
 
@@ -39,7 +45,10 @@ Certificates filtered by
 	<a class="index_table"
 	 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$cert.id}</td>
-	<td class="index_table">{$cert.name}</td>
+	<td class="index_table">{$cert.branch}</td>
+	<td class="index_table">{$cert.student}</td>
+	<td class="index_table">{$cert.date}</td>
+	<td class="index_table">{$cert.course}</td>
 	</tr>
 
 {/foreach}

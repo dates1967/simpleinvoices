@@ -2,7 +2,53 @@
 
 class school_product extends product {
 
+			function course_make_name()
+			{
+				/*
+				If no course name then auto create one
+				*/
+
+				//last 2 letters of branch
+				/*Place of enrolment function - selected*/
+				$sql_selected = "select name from ".TB_PREFIX."branch where id = ".$_POST['branch_id']; 
+				$branch_sql_selected = mysql_fetch_array(mysqlQuery($sql_selected));
+				$cname_branch =  substr($branch_sql_selected['name'],-2);
+				//First three letters of Subject
+				/*Subject function*/
+				$sql_sub_sel = "select name from ".TB_PREFIX."subject where id = ".$_POST['subject_id']; 
+				$sub_sql_sel = mysql_fetch_array(mysqlQuery($sql_sub_sel));
+				$cname_subject  = substr($sub_sql_sel['name'],0,3);
+				//Level - use for Course name
+				$sql_level_sel = "select name from ".TB_PREFIX."level where id = ".$_POST['level_id']; 
+				$level_sel = mysql_fetch_array(mysqlQuery($sql_level_sel));
+				$cname_level = $level_sel['name'];
+
+				//Only first letter of Type
+				$sql_type_sel = "select name from ".TB_PREFIX."course_type where id =".$_POST['type'];
+				$cname_type_sql = mysql_fetch_array(mysqlQuery($sql_type_sel));
+				$cname_type = substr($cname_type_sql['name'],0,1);
+				//First four letters of Status
+				$sql_status_sel = "select name from ".TB_PREFIX."course_status where id = ".$_POST['status']; 
+				$cname_status_sql =  mysql_fetch_array(mysqlQuery($sql_status_sel));
+				$cname_status = substr( $cname_status_sql['name'],0,4);
+				//Last nine letters of Intensity
+				$sql_intensity_sel = "select name from ".TB_PREFIX."course_intensity where id = ".$_POST['intensity']; 
+				$cname_intensity_sql =  mysql_fetch_array(mysqlQuery($sql_intensity_sel));
+				$cname_intensity = (strlen($cname_intensity_sql['name']) < 9) ? $cname_intensity_sql['name'] : substr($cname_intensity_sql['name'],-9);
+
+				$sql_teacher_sel = "select * from ".TB_PREFIX."customers where id = ".$_POST['teacher_id']; 
+				$teacher_sel = mysql_fetch_array(mysqlQuery($sql_teacher_sel));
+				$cname_teacher = $teacher_sel['first_name']."_".substr($teacher_sel['name'],0,1);
+
+				$course_short_name = $cname_branch."-".$cname_subject."-".$cname_level."-".$cname_type."-".$cname_status."-".$cname_intensity."-".$_POST['start_time']."-".$cname_teacher ;
+				$course_name = (empty($_POST['description'])) ? $course_short_name : $_POST['description'] ;
+				return $course_name;
+			}
+
 		function insertProduct($enabled=1,$visible=1) {
+
+			$course_name = school_product::course_make_name();
+
 			if(isset($_POST['enabled'])) {
 				$enabled=$_POST['enabled'];
 			}
@@ -57,7 +103,7 @@ class school_product extends product {
 				VALUES
 					(	
 						NULL,
-						'$_POST[description]',
+						'$course_name',
 						'$_POST[unit_price]',
 						'$_POST[custom_field1]',
 						'$_POST[custom_field2]',
@@ -106,11 +152,13 @@ class school_product extends product {
 		
 		function updateProduct($enabled=1,$visible=1) {
 
+			$course_name = school_product::course_make_name();
+
 			$sql = "UPDATE
 					".TB_PREFIX."products
 				SET	
 					
-					description = '$_POST[description]',
+					description = '$course_name',
 					unit_price = '$_POST[unit_price]',
 					custom_field1 = '$_POST[custom_field1]',
 					custom_field2 = '$_POST[custom_field2]',

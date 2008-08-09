@@ -268,7 +268,7 @@ ALTER TABLE `si_invoice_items` ADD `dropped_reason_id` INT( 11 ) NULL DEFAULT NU
 ALTER TABLE `si_invoice_items` ADD `dropped_date` DATE NULL; 
 
 
-create table si_certificate ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY , course_id INT NOT NULL , name VARCHAR( 255 ) NOT NULL);
+create table si_certificate ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY );
 
 CREATE TABLE `si_todo` (
 `id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
@@ -550,4 +550,47 @@ NULL , 'Friday'
 NULL , 'Saturday'
 ), (
 NULL , 'Sunday'
+);
+
+ALTER TABLE `si_certificate` ADD `branch_id` INT( 11 ) NULL ,
+ADD `date` DATE NULL ,
+ADD `student_id` INT( 11 ) NULL ,
+ADD `course_id` INT( 11 ) NULL ,
+ADD `grade_id` INT( 11 ) NULL ,
+ADD `custom_field1` VARCHAR( 255 ) NULL ,
+ADD `custom_field2` VARCHAR( 255 ) NULL ,
+ADD `custom_field3` VARCHAR( 255 ) NULL ,
+ADD `custom_field4` VARCHAR( 255 ) NULL ;
+
+CREATE TABLE `si_grade` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `si_grade` (
+`id` ,
+`name`
+)
+VALUES (
+'1' , 'Grade A'
+), (
+'2' , 'Grade B'
+), (
+'3' , 'Grade C'
+);
+
+INSERT INTO `si_custom_fields` (
+`cf_id` ,
+`cf_custom_field` ,
+`cf_custom_label` ,
+`cf_display`
+)
+VALUES (
+NULL , 'certificate_cf1', NULL , '0'
+), (
+NULL , 'certificate_cf2', NULL , '0'
+), (
+NULL , 'certificate_cf3', NULL , '0'
+), (
+NULL , 'certificate_cf4', NULL , '0'
 );

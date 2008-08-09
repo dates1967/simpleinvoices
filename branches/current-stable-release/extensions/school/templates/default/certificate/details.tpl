@@ -15,6 +15,26 @@
 		<td class="details_screen">ID</td><td>{$certificate.id}</td>
 	</tr>
 	<tr>
+		<td class="details_screen">Issues at</td>
+		<td>{$branch_sel.0.name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Date</td>
+		<td>{$certificate.date}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Student</td>
+		<td>{$student_sel.0.name}, {$student_sel.0.first_name} {$student_sel.0.middle_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Grade</td>
+		<td>{$grade_sel.0.name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Certificate name</td>
+		<td>{$certificate.name}</td>
+	</tr>
+	<tr>
 		<td class="details_screen">Certificate name</td>
 		<td>{$certificate.name}</td>
 	</tr>

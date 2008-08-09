@@ -19,7 +19,7 @@ if (!empty($_GET['action']))
 		$search_sql .= " $and name like '%".$_GET['name']."%'";
 	}
 
-$sql = "SELECT * FROM ".TB_PREFIX."certificate $search_sql ORDER BY name";
+$sql = "SELECT * FROM ".TB_PREFIX."certificate $search_sql ORDER BY id";
 
 $certificate = sql2array($sql) or die(mysql_error());
 
