@@ -8,9 +8,11 @@ $id = $_GET['id'];
 function getCertificate($id) {
 	
 	global $LANG;
+	global $config;
 	$sql = "SELECT * FROM ".TB_PREFIX."certificate WHERE id = $id";
 	$query = mysqlQuery($sql) or die(mysql_error());
 	$product = mysql_fetch_array($query);
+	$product['date'] = date( $config->date->format, strtotime( $product['date'] ) );
 	//	$product['wording_for_enabled'] = $product['enabled']==1?$LANG['enabled']:$LANG['disabled'];
 	return $product;
 }
@@ -47,9 +49,21 @@ $smarty -> assign('student',$student);
 $courses = school_product::getCourses();
 $smarty -> assign('courses',$courses);
 
-$sql_course = "select * from ".TB_PREFIX."products where id = ".$getCert[0]['course_id']; 
+$sql_course = "select * from ".TB_PREFIX."products where id = ".$getCert['course_id']; 
 $course_sql = mysql_fetch_object(mysqlQuery($sql_course));
+$course_sql->start_date = date( $config->date->format, strtotime( $course_sql->start_date ) );
+$course_sql->payment_period_6_end = date( $config->date->format, strtotime( $course_sql->payment_period_6_end ) );
 $smarty -> assign('course_sel',$course_sql);
+
+//subject
+$sql_subject= "select * from ".TB_PREFIX."subject where id = ".$course_sql->subject_id; 
+$subject_sel = mysql_fetch_object(mysqlQuery($sql_subject));
+$smarty -> assign('subject_sel',$subject_sel);
+
+//level
+$sql_level = "select * from ".TB_PREFIX."level where id = ".$course_sql->level_id; 
+$level_sel = mysql_fetch_object(mysqlQuery($sql_level));
+$smarty -> assign('level_sel',$level_sel);
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('certificate',$getCert);

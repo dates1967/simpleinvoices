@@ -23,8 +23,36 @@
 		<td>{$certificate.date}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Student</td>
-		<td>{$student_sel.0.name}, {$student_sel.0.first_name} {$student_sel.0.middle_name}</td>
+		<td class="details_screen">Student ID</td>
+		<td>{$student_sel.0.id}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Student's Last Name</td>
+		<td>{$student_sel.0.name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Student's First Name</td>
+		<td>{$student_sel.0.first_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Student's Middle Name</td>
+		<td>{$student_sel.0.middle_name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course name</td>
+		<td>{$course_sel->description}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Subject</td>
+		<td>{$subject_sel->name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Level</td>
+		<td>{$level_sel->name}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Dates of course</td>
+		<td>{$course_sel->start_date} - {$course_sel->payment_period_6_end}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Grade</td>
