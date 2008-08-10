@@ -34,6 +34,13 @@ $smarty -> assign('billers', $billers);
 */
 
 $smarty -> assign('id', $_POST['id']);
-$smarty -> assign('name', $_POST['name']);
+$smarty -> assign('student_id', $_POST['student_id']);
+$smarty -> assign('course_id', $_POST['course_id']);
+
+$student = school_invoice::getActiveCustomers();
+$smarty -> assign('student',$student);
+
+$course = school_product::getCourses();
+$smarty -> assign('course',$course);
 
 ?>

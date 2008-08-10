@@ -53,6 +53,7 @@ $smarty -> assign('course_sel',$course_sql);
 
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('certificate',$getCert);
+$customFieldLabel = getCustomFieldLabels();
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
 ?>

@@ -9,8 +9,9 @@
 {if $smarty.get.action == "search"}
 
 Certificates filtered by 
-	{if $smarty.get.id != ""}Certificate ID = {$smarty.get.id}{/if}
-	{if $smarty.get.name != ""}Certificate Name like '{$smarty.get.name}'{/if}
+	{if $smarty.get.id != ""}Certificate ID like '{$smarty.get.id}'{/if}
+	{if $smarty.get.student_id != ""}Student = '{$student_sel.0.name}, {$student_sel.0.first_name}'{/if}
+	{if $smarty.get.course_id != ""}Course =  '{$course_sel.0.description}'{/if}
  <a href="index.php?module=certificate&view=manage">Clear filer</a> :: <a href="index.php?module=certificate&view=search">Search again</a>
 <br>
 <hr />
@@ -46,7 +47,7 @@ Certificates filtered by
 	 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$cert.id}</td>
 	<td class="index_table">{$cert.branch}</td>
-	<td class="index_table">{$cert.student}</td>
+	<td class="index_table">{$cert.name}, {$cert.first_name}</td>
 	<td class="index_table">{$cert.date}</td>
 	<td class="index_table">{$cert.course}</td>
 	</tr>

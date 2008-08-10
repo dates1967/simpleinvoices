@@ -31,12 +31,20 @@
 		<td>{$grade_sel.0.name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Certificate name</td>
-		<td>{$certificate.name}</td>
+		<td class="details_screen">{$customFieldLabel.certificate_cf1}</td>
+		<td>{$certificate.custom_field1}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Certificate name</td>
-		<td>{$certificate.name}</td>
+		<td class="details_screen">{$customFieldLabel.certificate_cf2}</td>
+		<td>{$certificate.custom_field2}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf3}</td>
+		<td>{$certificate.custom_field3}</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf4}</td>
+		<td>{$certificate.custom_field4}</td>
 	</tr>
 	</table>
 
@@ -52,11 +60,68 @@
 
 	<table align="center">
 	<tr>
-		<td class="details_screen">ID</td><td>{$certificate.id}</td>
+		<td class="details_screen">Certificate ID</td>
+		<td>{$certificate.id}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Certificate name</td>
-		<td><input type="text" name="name" size="50" value="{$certificate.name}" /></td>
+		<td class="details_screen">Issued at</td>
+		<td>
+			<select name="branch_id">
+			{foreach from=$branch item=branch_row}
+				<option {if $branch_row.id == $branch_sel.0.id } selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+			{/foreach}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Date</td>
+		<td><input type=text name="date" class="date-picker" value="{$certificate.date}" size=12></td>
+	</tr>
+	<tr>
+		<td class="details_screen">Student</td>
+		<td>
+		<select name="student_id">
+		{foreach from=$student item=student_row}
+			<option {if $student_row.id == $student_sel.0.id} selected {/if} value="{$student_row.id}">{$student_row.name}, {$student_row.first_name}</option>
+		{/foreach}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Course</td>
+		<td>
+		<select name="course_id">
+		{foreach from=$courses item=course_row}
+			<option {if $course_row.id == $course_sel.0.id} selected {/if} value="{$course_row.id}">{$course_row.description}</option>
+		{/foreach}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Grade</td>
+		<td>
+		<select name="grade_id">
+		{foreach from=$grade item=grade_row}
+			<option {if $grade_row.id == $grade_sel.0.id} selected {/if} value="{$grade_row.id}">{$grade_row.name}</option>
+		{/foreach}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field1" value="{$certificate.custom_field1}"  size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field2" value="{$certificate.custom_field2}" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field3" value="{$certificate.custom_field3}" size=50></td>
+	</tr>
+	<tr>
+		<td class="details_screen">{$customFieldLabel.certificate_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
+		<td><input type=text name="custom_field4" value="{$certificate.custom_field4}" size=50></td>
 	</tr>
 	</table>
 {/if} 

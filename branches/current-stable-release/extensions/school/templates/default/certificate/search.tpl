@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=certificate&view=manage&action=search&id={$id}&name={$name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=certificate&view=manage&action=search&id={$id}&student_id={$student_id}&course_id={$course_id}>
 	<br><br>
 		Searching certificates ...
 	<br><br>
@@ -28,20 +28,34 @@
 	<table align="center">
 			<tr>
 				<td class="details_screen">
-					ID
+					Certificate ID
 				</td>
 				<td>
 					<input type=text name="id" size="5">
 				</td>
 			</tr>
 			<tr>
-				<td class="details_screen">
-					Certificate name
-				</td>
+				<td class="details_screen">Student</td>
 				<td>
-					<input type=text name="name" size="50">
+				<select name="student_id">
+					<option value=""></option>
+				{foreach from=$student item=student_row}
+					<option {if $student_row.id == "1"} selected {/if} value="{$student_row.id}">{$student_row.name}, {$student_row.first_name}</option>
+				{/foreach}
+				</select>
 				</td>
- 			</tr>
+			</tr>
+			<tr>
+				<td class="details_screen">Course</td>
+				<td>
+				<select name="course_id">
+					<option value=""></option>
+				{foreach from=$course item=course_row}
+					<option {if $course_row.id == "1"} selected {/if} value="{$course_row.id}">{$course_row.description}</option>
+				{/foreach}
+				</select>
+				</td>
+			</tr>
 </table>
 <hr />
 <div style="text-align:center;">
