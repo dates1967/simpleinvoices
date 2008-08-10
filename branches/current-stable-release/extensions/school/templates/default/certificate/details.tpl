@@ -120,7 +120,7 @@
 		<td>
 		<select name="course_id">
 		{foreach from=$courses item=course_row}
-			<option {if $course_row.id == $course_sel.0.id} selected {/if} value="{$course_row.id}">{$course_row.description}</option>
+			<option {if $course_row.id == $course_sel->id} selected {/if} value="{$course_row.id}">{$course_row.description}</option>
 		{/foreach}
 		</select>
 		</td>

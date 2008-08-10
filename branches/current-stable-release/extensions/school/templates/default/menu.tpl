@@ -118,7 +118,7 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 			<li  { if $pageActive == 'school'} id="active" {/if} ><a href="#">School +</a>
 				<ul>
 					<li >
-						<a href="index.php?module=certificate&view=manage">Certificates +</a>
+						<a href="index.php?module=certificate&view=manage">Certificates/Grades +</a>
 						<ul>
 							<li><a href="index.php?module=certificate&view=manage">Manage Certificates</a></li>
 							<li class="separation"></li>
