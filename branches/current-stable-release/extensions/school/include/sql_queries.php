@@ -412,7 +412,7 @@ class school_student extends customer {
 						custom_field4 = '$_POST[custom_field4]',
 						enabled = '$_POST[enabled]',
 						
-						place_of_registration = '$_POST[place_of_enrolment]',
+						place_of_registration = '$_POST[place_of_registration]',
 						place_of_lesson = '$_POST[place_of_lesson]',
 						date =  '$_POST[date_year]-$_POST[date_month]-$_POST[date_day]',
 						first_name = '$_POST[first_name]',
@@ -452,7 +452,7 @@ class school_student extends customer {
 						$password
 						person_type = '1',
 						user_group = '1',
-						branch_id = MD5('$_POST[branch_id]')
+						branch_id = '$_POST[branch_id]'
 						
 					WHERE
 						id = " . $_GET['id'];

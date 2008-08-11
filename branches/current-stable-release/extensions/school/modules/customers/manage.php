@@ -21,7 +21,7 @@ checkLogin();
 
 if($auth_session->role_name == "branch_administrator")
 {
-	$limit = " AND place_of_registration = ".$auth_session->user_domain;
+	$limit = " AND branch_id = ".$auth_session->user_domain;
 }
 
 if (empty($_GET['action']))

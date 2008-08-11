@@ -95,7 +95,7 @@
 		<td>
 			<select name="branch_id">
 			{foreach from=$branch item=branch_row}
-				<option  {if $branch_row.id == $user.user_branch} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
+				<option  {if $branch_row.id == $user.branch_id} selected {/if} value="{$branch_row.id}">{$branch_row.name}</option>
 			{/foreach}
 			</select>
 		</td>
