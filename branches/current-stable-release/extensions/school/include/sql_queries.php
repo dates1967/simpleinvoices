@@ -492,7 +492,7 @@ class school_student extends customer {
 			
 			$customer = null;
 			
-			$sql = "SELECT * FROM ".TB_PREFIX."customers $extra WHERE person_type ='1' $search_sql ORDER BY name";
+			$sql = "SELECT c.id, c.name, c.first_name, c.middle_name, c.enabled FROM ".TB_PREFIX."customers c $extra WHERE person_type ='1' $search_sql ORDER BY name";
 			$result = mysqlQuery($sql) or die(mysql_error());
 
 			$customers = null;

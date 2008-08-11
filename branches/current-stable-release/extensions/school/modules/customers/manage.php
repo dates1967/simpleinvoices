@@ -48,8 +48,8 @@ if (empty($_GET['action']))
 		$search_sql .= " AND name like '%".$_GET['name']."%'";
 	}
 	if (!empty($_GET['course_id'])) {
-		$extra = "c, si_course_enrol e, si_products p";
-		$search_sql .= " AND c.id = e.student_id and e.course_id = p.id AND p.id = ".$_GET['course_id'];
+		$extra = ", si_course_enrol e, si_products p";
+		$search_sql .= " AND c.id = e.student_id and e.course_id = p.id AND e.course_id = ".$_GET['course_id'];
 		$course_id = $_GET['course_id'];
 		$courses_search = getProduct($course_id);
 		$smarty -> assign("courses_search",$courses_search);
