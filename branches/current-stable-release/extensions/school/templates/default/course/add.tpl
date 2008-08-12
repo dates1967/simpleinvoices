@@ -111,15 +111,7 @@
 	<tr>
 		<td class="details_screen">Course start date</td>
 		<td>
-		<select name="start_day">
-			{html_options values=$day output=$day}
-		</select>
-		<select name="start_month">
-			{html_options options=$month}
-		</select>
-		<select name="start_year">
-			{html_options values=$year output=$year selected=$year_now}
-		</select>
+		<input type=text class="date-picker" name="start_date" value="{$smarty.post.start_date}" size=12>
 		</td>
 	</tr>
 	<tr>
@@ -172,17 +164,11 @@
 	</tr>
 
 	<tr>
-		<td class="details_screen">End</td>
+		<td class="details_screen">
+			End
+		</td>
 		<td>
-		<select name="end_day">
-			{html_options values=$day output=$day}
-		</select>
-		<select name="end_month">
-			{html_options options=$month}
-		</select>
-		<select name="end_year">
-			{html_options values=$year output=$year selected=$year_now}
-		</select>
+			<input type=text class="date-picker" name="end_date" value="{$smarty.post.end_date}" size=12>
 		</td>
 	</tr>
 	<tr>

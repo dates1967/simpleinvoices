@@ -374,15 +374,7 @@
 	<tr>
 		<td class="details_screen">Course start date</td>
 		<td>
-		<select name="start_day">
-			{html_options values=$day output=$day selected=$day_selected}
-		</select>
-		<select name="start_month">
-			{html_options options=$month selected=$month_selected}
-		</select>
-		<select name="start_year">
-			{html_options values=$year output=$year selected=$year_selected}
-		</select>
+		<input type=text class="date-picker" name="start_date" value="{$course.start_date}" size=12>
 		</td>
 	</tr>
 	<tr>
@@ -434,15 +426,8 @@
 	<tr>
 		<td class="details_screen">End</td>
 		<td>
-		<select name="end_day">
-			{html_options values=$day output=$day selected=$end_day_selected}
-		</select>
-		<select name="end_month">
-			{html_options options=$month selected=$end_month_selected}
-		</select>
-		<select name="end_year">
-			{html_options values=$year output=$year selected=$end_year_selected}
-		</select>
+			<input type=text class="date-picker" name="end_date" value="{$course.end_date}" size=12>
+		
 		</td>
 	</tr>
 	<tr>
