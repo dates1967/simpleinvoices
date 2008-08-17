@@ -49,9 +49,9 @@
 		 <!-- EXPORT TO PDF -->
 		<a href='{$invoice.url_for_pdf }'>{$LANG.export_pdf}</a>
 		::
-		<a href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&export={$config->export->spreadsheet}">{$LANG.export_as} .{$config->export->spreadsheet}</a>
+		<a href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&export={$spreadsheet}">{$LANG.export_as} .{$spreadsheet}</a>
 		::
-		<a href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&export={$config->export->wordprocessor}">{$LANG.export_as} .{$config->export->wordprocessor} </a>
+		<a href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&export={$word_processor}">{$LANG.export_as} .{$word_processor} </a>
 		::
 		<a href="index.php?module=invoices&view=email&stage=1&invoice={$invoice.id}">{$LANG.email}</a>
 		{if $defaults.delete == '1'} 
@@ -85,7 +85,7 @@
 		<td class="account">{$LANG.total}:</td>
 		<td class="account">{$preference.pref_currency_sign}{$customerAccount.total|number_format:2}</td>
 		<td class="account"><a href='index.php?module=payments&view=manage&c_id={$customer.id}'>{$LANG.paid}:</a></td>
-		<td class="account">{$preference.pref_currency_sign}{$customerAccount.paid|number_format:2}</td>
+		<td class="account">{$preference.pref_currency_sign}{$customerAccount.paid|number_format:2} </td>
 		<td class="account">{$LANG.owing}:</td>
 		<td class="account"><u>{$preference.pref_currency_sign}{$customerAccount.owing|number_format:2}</u></td>
 	</tr>
@@ -124,7 +124,7 @@
 
 	<tr class='details_screen'>
 		<td class='details_screen'><b>{$LANG.biller}:</b></td>
-		<td  class='details_screen' colspan="3">{$biller.name}</td>
+		<td class='details_screen' colspan="3">{$biller.name}</td>
 		<td colspan="2" class='details_screen align_right'><a href='#' class="show-biller" onClick="$('.biller').show();$('.show-biller').hide();">{$LANG.show_details}</a><a href='#' class="biller" onClick="$('.biller').hide();$('.show-biller').show();">{$LANG.hide_details}</a></td>
 	</tr>
 	<tr class='details_screen biller'>
@@ -156,15 +156,17 @@
 	</tr>	
 	<tr class='details_screen biller'>
 		<td class='details_screen'>{$customFieldLabels.biller_cf4}:</td><td class='details_screen' colspan=5>{$biller.custom_field4}</td>
-	</tr>	
+	</tr>
+		{showCustomFields categorieId="1" itemId=$biller.id }
+
 	<tr>
 		<td colspan=5><br></td>
 	</tr>	
 	
 	<!-- Customer section -->
 	<tr class='details_screen'>
-		<td  class='details_screen' ><b>{$LANG.customer}:</b></td>
-		<td  class='details_screen' colspan="3">{$customer.name}</td>
+		<td class='details_screen'><b>{$LANG.customer}:</b></td>
+		<td class='details_screen' colspan="3">{$customer.name}</td>
 		<td colspan="2" class='details_screen align_right'><a href='#' class="show-customer" {literal} onClick="$('.customer').show(); $('.show-customer').hide(); {/literal}">{$LANG.show_details}</a> <a href='#' class="customer" {literal} onClick="$('.customer').hide(); $('.show-customer').show(); {/literal}">{$LANG.hide_details}</a></td>
 	</tr>	
 	<tr class='details_screen customer'>
@@ -201,6 +203,7 @@
 		<td class='details_screen'>{$customFieldLabels.customer_cf4}:</td><td class='details_screen' colspan=5>{$customer.custom_field4}</td>
 	</tr>	
 
+				{showCustomFields categorieId="2" itemId=$customer.id }
 
 <hr></hr>
 
@@ -246,7 +249,7 @@
 
 {/if}
 
-{if $invoice.type_id == 2 || $invoice.type_id == 3 }
+{if $invoice.type_id == 2 || $invoice.type_id == 3  || $invoice.type_id == 4}
 
         <tr>
                 <td colspan=6><br></td>
@@ -255,7 +258,7 @@
 		<td colspan="6">
 		<table width="100%"> 
 	
-	{if $invoice.type_id == 2 }
+	{if $invoice.type_id == 2 || $invoice.type_id == 4}
 
             <tr>
                     <td colspan="6" class="details_screen align_right"><a href='#' class="show-itemised" onClick="$('.itemised').show();$('.show-itemised').hide();">{$LANG.show_details}</a><a href='#' class="itemised" onClick="$('.itemised').hide();$('.show-itemised').show();">{$LANG.hide_details}</a></td>
@@ -289,16 +292,23 @@
 
 {foreach from=$invoiceItems item=invoiceItem }
 			
-		{if $invoice.type_id == 2 }
+		{if $invoice.type_id == 2 || $invoice.type_id == 4}
 	
 			<tr>
 	                <td>{$invoiceItem.quantity|number_format:2}</td>
-					<td>{$invoiceItem.product.description}</td>
+					<td colspan=5>{$invoiceItem.product.description} 
+						{if $invoiceItem.attr1.display != "" } ::{/if} {$invoiceItem.attr1.display}  {$invoiceItem.attr2.display} {$invoiceItem.attr3.display}
+					</td>
+			</tr>
+			<tr>
+	                <td colspan=2></td>
 					<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.unit_price|number_format:2}</td>
 					<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.gross_total|number_format:2}</td>
 					<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.tax_amount|number_format:2}</td>
 					<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.total|number_format:2}</td>
 	        </tr>
+	        
+
 			<tr class='itemised'>       
 				<td colspan="6">
 					<table width=100%>
@@ -313,7 +323,10 @@
 					</table>
 				</td>
 			</tr>
-		
+			 {*TODO: CustomField is normaly stored for a product. Here it needs to be added to the invoices Item
+			 	-> categorie 5 *}
+			 {showCustomFields categorieId="3" itemId=$invoiceItem.productId }
+
 	{/if}	
 	
 
@@ -321,7 +334,12 @@
 
 			<tr>
 	            <td>{$invoiceItem.quantity|number_format:2}</td>
-				<td>{$invoiceItem.product.description}</td>
+					<td colspan=5>{$invoiceItem.product.description} 
+						{if $invoiceItem.attr1.display != "" } ::{/if} {$invoiceItem.attr1.display}  {$invoiceItem.attr2.display} {$invoiceItem.attr3.display}
+					</td>
+			</tr>
+			<tr>
+				<td colspan=2></td>
 				<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.unit_price|number_format:2}</td>
 				<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.gross_total|number_format:2}</td>
 				<td style="text-align:right">{$preference.pref_currency_sign}{$invoiceItem.tax_amount|number_format:2}</td>
@@ -402,6 +420,8 @@
 		<td colspan="6"><b>{$preference.pref_inv_detail_heading}</b></td>
 	</tr>
 {/if}
+	
+	{showCustomFields categorieId="4" itemId=$invoice.id }
 
 
 

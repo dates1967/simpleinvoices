@@ -16,6 +16,8 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
+$smarty -> assign('auth_role_name',$auth_session->role_name);
+$smarty -> assign('auth_user_domain',$auth_session->user_domain);
 
 #get the invoice id
 $customer_id = $_GET['id'];

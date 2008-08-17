@@ -6,7 +6,7 @@ $auth_session = new Zend_Session_Namespace('Zend_Auth');
 
 $checkPermission = $acl->isAllowed($auth_session->role_name, $module, $_GET['action']) ?  "allowed" : "denied"; // allowed
 
-//student check 
+//student page check 
 if( ($auth_session->role_name =='student') AND ($module == 'customers') AND ($_GET['id'] != $auth_session->user_id) )
 {
 	$checkPermission = "denied";

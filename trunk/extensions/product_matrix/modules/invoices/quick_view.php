@@ -8,7 +8,7 @@
 *	 Justin Kelly, Nicolas Ruflin, Ap.Muthu
 *
 * Last edited:
-* 	 2008-01-04
+* 	 2008-01-03
 *
 * License:
 *	 GPL v2 or above
@@ -23,13 +23,13 @@ checkLogin();
 $invoice_id = $_GET['invoice'];
 
 
-$invoice = invoice::getInvoice($invoice_id);
+$invoice = getInvoice($invoice_id);
 $invoice_type =  getInvoiceType($invoice['type_id']);
 $customer = getCustomer($invoice['customer_id']);
 $biller = getBiller($invoice['biller_id']);
 $preference = getPreference($invoice['preference_id']);
 $defaults = getSystemDefaults();
-$invoiceItems = getInvoiceItems($invoice_id);
+$invoiceItems = matrix_invoice::getInvoiceItems($invoice_id);
 
 #Invoice Age - number of days - start
 if ($invoice['owing'] > 0 ) {
@@ -51,10 +51,11 @@ for($i=1;$i<=4;$i++) {
 }
 $pageActive = "invoices";
 
+
 //Customer accounts sections
 $customerAccount = null;
-$customerAccount['total'] = customer::calc_customer_total($customer['id']);
-$customerAccount['paid'] = customer::calc_customer_paid($customer['id']);;
+$customerAccount['total'] = calc_customer_total($customer['id']);
+$customerAccount['paid'] = calc_customer_paid($customer['id']);;
 $customerAccount['owing'] = $customerAccount['total'] - $customerAccount['paid'];
 
 $smarty -> assign('pageActive', $pageActive);
@@ -68,8 +69,9 @@ $smarty -> assign("biller",$biller);
 $smarty -> assign("customer",$customer);
 $smarty -> assign("invoice_type",$invoice_type);
 $smarty -> assign("invoice",$invoice);
+$smarty -> assign("word_processor",$word_processor);
+$smarty -> assign("spreadsheet",$spreadsheet);
 $smarty -> assign("customerAccount",$customerAccount);
-$smarty -> assign("config",$config);
 
 
 ?>

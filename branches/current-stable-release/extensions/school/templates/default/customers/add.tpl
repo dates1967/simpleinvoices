@@ -45,7 +45,14 @@
 		<td>
 			<select name="branch_id">
 			{foreach from=$branch item=branch_row1}
-				<option value="{$branch_row1.id}">{$branch_row1.name}</option>
+				{if $auth_role_name == "branch_administrator"}
+					{if $branch_row1.id == $auth_user_domain}
+						<option selected value="{$branch_row1.id}">{$branch_row1.name}</option>
+					{/if}
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					<option value="{$branch_row1.id}">{$branch_row1.name}</option>
+				{/if}
 			{/foreach}
 			</select>
 		</td>
@@ -56,7 +63,14 @@
 		<td>
 			<select name="place_of_registration">
 			{foreach from=$branch item=branch_row2}
-				<option {if $branch_row2.id == "1"} selected {/if} value="{$branch_row2.id}">{$branch_row2.name}</option>
+				{if $auth_role_name == "branch_administrator"}
+					{if $branch_row2.id == $auth_user_domain}
+						<option selected value="{$branch_row2.id}">{$branch_row2.name}</option>
+					{/if}
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					<option value="{$branch_row2.id}">{$branch_row2.name}</option>
+				{/if}
 			{/foreach}
 			</select>
 		</td>
@@ -67,7 +81,14 @@
 		<td>
 			<select name="place_of_lesson">
 			{foreach from=$branch item=branch_row3}
-				<option {if $branch_row3.id == "1"} selected {/if} value="{$branch_row3.id}">{$branch_row3.name}</option>
+				{if $auth_role_name == "branch_administrator"}
+					{if $branch_row3.id == $auth_user_domain}
+						<option selected value="{$branch_row3.id}">{$branch_row3.name}</option>
+					{/if}
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					<option value="{$branch_row3.id}">{$branch_row3.name}</option>
+				{/if}
 			{/foreach}
 			</select>
 		</td>
@@ -78,13 +99,28 @@
 		<td>
 		{*<input type=text name="date" value="{$smarty.post.date}" size=25></td>*}
 		<select name="date_day">
-			{html_options values=$day output=$day selected=$day_now}
+				{if $auth_role_name == "branch_administrator"}
+					<option value="{$day_now}">{$day_now}</option>
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					{html_options values=$day output=$day selected=$day_now}
+				{/if}
 		</select>
 		<select name="date_month">
-			{html_options options=$month  selected=$month_now}  
+				{if $auth_role_name == "branch_administrator"}
+					<option value="{$month_now}">{$month_now}</option>
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					{html_options options=$month  selected=$month_now}  
+				{/if}
 		</select>
 		<select name="date_year">
-			{html_options values=$year output=$year selected=$year_now}
+				{if $auth_role_name == "branch_administrator"}
+					<option value="{$year_now}">{$year_now}</option>
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					{html_options values=$year output=$year selected=$year_now}
+				{/if}
 		</select>
 		</td>
 	</tr>

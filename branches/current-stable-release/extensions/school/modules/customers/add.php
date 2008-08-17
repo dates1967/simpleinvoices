@@ -29,12 +29,14 @@ if ($_POST['name'] != "" ) {
 }
 
 
+$smarty -> assign('auth_role_name',$auth_session->role_name);
+$smarty -> assign('auth_user_domain',$auth_session->user_domain);
 
 $pageActive = "customers";
 $smarty->assign('pageActive', $pageActive);
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
-/*Place of enrolment function*/
+/*Branch function*/
 $sql = "select * from ".TB_PREFIX."branch"; 
 $branch_sql = sql2array($sql);
 $smarty -> assign('branch',$branch_sql);

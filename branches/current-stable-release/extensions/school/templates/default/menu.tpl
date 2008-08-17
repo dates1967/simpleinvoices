@@ -131,7 +131,7 @@ Manage Courses::Add New Course::Copy to New Course::Find Course
 							<li><a href="index.php?module=teacher&view=manage">Manage Teachers</a></li>
 							<li class="separation"></li>
 							<li><a href="index.php?module=teacher&view=add">Add New Teacher</a></li>
-							<li><a href="index.php?module=search&view=add">Search Teachers</a></li>
+							<li><a href="index.php?module=teacher&view=search">Search Teachers</a></li>
 						</ul>
 					</li>
 					<li > <a href="index.php?module=todo&view=manage">ToDo Items +</a>

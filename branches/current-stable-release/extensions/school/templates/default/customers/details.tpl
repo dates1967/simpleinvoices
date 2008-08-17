@@ -56,7 +56,7 @@
 		<td>{$customer.id}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
+		<td class="details_screen">Date</td>
 		<td>
 			{$customer.date}
 		</td>
@@ -776,32 +776,47 @@
 <tr>
 		<td class="details_screen">Branch</td>
 		<td>
-		<select name="branch_id">
-			{foreach from=$branch item=branch_row1}
-				<option {if $branch_row1.id == $customer.branch_id} selected {/if} value="{$branch_row1.id}">{$branch_row1.name}</option>
-			{/foreach}
-		</select>
+		{if $auth_role_name == "branch_administrator"}
+			{$branch_id}
+		{/if}		
+		{if $auth_role_name != "branch_administrator"}
+			<select name="branch_id">
+				{foreach from=$branch item=branch_row1}
+					<option {if $branch_row1.id == $customer.branch_id} selected {/if} value="{$branch_row1.id}">{$branch_row1.name}</option>
+				{/foreach}
+			</select>
+		{/if}
 		</td>
 	</tr>
 
 <tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>
+		{if $auth_role_name == "branch_administrator"}
+			{$place_of_enrolment}
+		{/if}		
+		{if $auth_role_name != "branch_administrator"}
 		<select name="place_of_registration">
 			{foreach from=$branch item=branch_row2}
 				<option {if $branch_row2.id == $customer.place_of_registration} selected {/if} value="{$branch_row2.id}">{$branch_row2.name}</option>
 			{/foreach}
 		</select>
+		{/if}
 		</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Place of Lessons</td>
 		<td>
+		{if $auth_role_name == "branch_administrator"}
+			{$place_of_lesson}
+		{/if}		
+		{if $auth_role_name != "branch_administrator"}
 					<select name="place_of_lesson">
 			{foreach from=$branch item=branch_row3}
 				<option {if $branch_row3.id == $customer.place_of_lesson} selected {/if} value="{$branch_row3.id}">{$branch_row3.name}</option>
 			{/foreach}
 			</select>
+		{/if}
 		</td>
 
 	</tr>
@@ -810,17 +825,22 @@
 		<td>{$customer.id}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Date (TODO: what date - awaiting answer from site)</td>
+		<td class="details_screen">Date</td>
 		<td>
-		<select name="date_day">
-			{html_options values=$day output=$day selected=$customer_date.day}
-		</select>
-		<select name="date_month">
-			{html_options options=$month  selected=$customer_date.month}  
-		</select>
-		<select name="date_year">
-			{html_options values=$year output=$year selected=$customer_date.year}
-		</select>
+		{if $auth_role_name == "branch_administrator"}
+			{$customer.date}
+		{/if}		
+		{if $auth_role_name != "branch_administrator"}
+				<select name="date_day">
+				{html_options values=$day output=$day selected=$customer_date.day}
+			</select>
+			<select name="date_month">
+				{html_options options=$month  selected=$customer_date.month}  
+			</select>
+			<select name="date_year">
+				{html_options values=$year output=$year selected=$customer_date.year}
+			</select>
+		{/if}
 		</td>
 	</tr>
 	<tr>

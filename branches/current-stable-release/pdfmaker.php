@@ -1,12 +1,28 @@
 <?php
-// Author 
-//		Ap.Muthu
-// Last Edited on 
-//		2008-01-04
 
 // This file must be in the root of the application folder where the index.php resides
 
+$module = "invoices";
+$view = "templates";
+
 require_once("./include/init.php");	// for getInvoice() and getPreference()
+foreach($extension as $key=>$value)
+{
+	/*
+	* If extension is enabled then continue and include the requested file for that extension if it exists
+	*/	
+	if($value['enabled'] == "1")
+	{
+		//echo "Enabled:".$value['name']."<br><br>";
+		if(file_exists("./extensions/$value[name]/include/init.php"))
+		{
+			require_once("./extensions/$value[name]/include/init.php");
+		}
+	}
+}
+/*
+* The include configs and requirements stuff section - end
+*/
 
 // $defaults = getSystemDefaults(); // Not required as of now.
 $invoice_id = $_GET['id'];

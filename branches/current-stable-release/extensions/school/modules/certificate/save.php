@@ -25,7 +25,8 @@ if (  $op === 'insert_certificate' )
 				custom_field1,
 				custom_field2,
 				custom_field3,
-				custom_field4
+				custom_field4,
+				text
 			) 
 			VALUES 
 			(
@@ -38,7 +39,8 @@ if (  $op === 'insert_certificate' )
 				'$_POST[custom_field1]',
 				'$_POST[custom_field2]',
 				'$_POST[custom_field3]',
-				'$_POST[custom_field4]'
+				'$_POST[custom_field4]',
+				'$_POST[text]'
 
 			)";
 	// Execute our query
@@ -58,7 +60,8 @@ if ($op === 'edit_certificate' )
 				 custom_field1 = \"$_POST[custom_field1]\",
 				 custom_field2 = \"$_POST[custom_field2]\",
 				 custom_field3 = \"$_POST[custom_field3]\",
-				 custom_field4 = \"$_POST[custom_field4]\"
+				 custom_field4 = \"$_POST[custom_field4]\",
+				 text = \"$_POST[text]\"
 			where 
 				id = \"$_GET[id]\" ";
 	// Execute our query

@@ -939,6 +939,143 @@ function updateBiller() {
 }
 }
 
+class school_custom_field {
+
+	/**
+	* Function: get_custom_field_name
+	* 
+	* Used by manage_custom_fields to get the name of the custom field and which section it relates to (ie, biller/product/customer)
+	*
+	* Arguments:
+	* field         - The custom field in question
+	**/
+
+
+	function get_custom_field_name($field) {
+
+			global $LANG;
+			
+
+		//grab the last character of the field variable
+			$get_cf_letter = $field[0].$field[1];
+			//grab the last character of the field variable
+			$get_cf_number = $field[strlen($field)-1];
+		
+		if ($get_cf_letter == "bi") {
+			$custom_field_name = $LANG['biller'];
+		}
+		if ($get_cf_letter == "cu") {
+			$custom_field_name = $LANG['customer'];
+		}
+		if ($get_cf_letter == "ce") {
+			$custom_field_name = "Certificate";
+		}
+		if ($get_cf_letter == "in") {
+			$custom_field_name = $LANG['invoice'];
+		}
+		if ($get_cf_letter == "pr") {
+			$custom_field_name = $LANG['product'];
+		}
+		
+		$custom_field_name .= " :: " . $LANG["custom_field"] . " " . $get_cf_number ;
+			return $custom_field_name;
+	}
+
+}
+
+class school_payment {
+
+
+	function getPayment($id) {
+		global $config;
+		$sql = "SELECT 
+					ap.*, 
+					c.name AS customer, 
+					b.name AS biller, 
+					br.name AS branch 
+				FROM 
+					".TB_PREFIX."account_payments ap, 
+					".TB_PREFIX."invoices iv, 
+					".TB_PREFIX."customers c, 
+					".TB_PREFIX."branch br, 
+					".TB_PREFIX."biller b  
+				WHERE 
+					ap.ac_inv_id = iv.id 
+					AND 
+					iv.customer_id = c.id 
+					AND 
+					br.id = ap.branch_id 
+					AND 
+					iv.biller_id = b.id AND ap.id=$id";
+
+		$query = mysqlQuery($sql) or die(mysql_error());
+		$payment = mysql_fetch_array($query);
+		$payment['date'] = date( $config->date->format, strtotime( $payment['ac_date'] ) );
+		return $payment;
+	}
+
+	function getInvoicePayments($id) {
+		$sql = "SELECT ap.*, c.name AS CNAME, b.name AS BNAME, pt.pt_description AS description FROM ".TB_PREFIX."account_payments ap, ".TB_PREFIX."invoices iv, ".TB_PREFIX."customers c, ".TB_PREFIX."biller b, ".TB_PREFIX."payment_types pt WHERE ap.ac_inv_id = iv.id and iv.customer_id = c.id and iv.biller_id = b.id AND ap.ac_payment_type = pt.pt_id AND ap.ac_inv_id = $id ORDER BY ap.id DESC";
+		return sql2array($sql);
+	}
+
+	function getCustomerPayments($id) {
+		$sql = "SELECT 
+					ap.*, 
+					c.name AS CNAME, 
+					b.name AS BNAME, 
+					pt.pt_description AS description 
+				FROM 
+					".TB_PREFIX."account_payments ap, 
+					".TB_PREFIX."invoices iv, 
+					".TB_PREFIX."customers c, 
+					".TB_PREFIX."biller b, 
+					".TB_PREFIX."payment_types pt 
+				WHERE 
+					ap.ac_inv_id = iv.id 
+					and 
+					iv.customer_id = c.id 
+					and 
+					iv.biller_id = b.id 
+					AND 
+					ap.ac_payment_type = pt.pt_id 
+					AND 
+					c.id = $id 
+				ORDER BY ap.id DESC";
+		return sql2array($sql);
+	}
+
+function getPayments($limit="") {
+	$sql = "SELECT 
+				ap.*, 
+				c.name AS CNAME, 
+				b.name AS BNAME, 
+				br.name as branch,
+				pt.pt_description AS description 
+			FROM 
+				".TB_PREFIX."account_payments ap, 
+				".TB_PREFIX."invoices iv, 
+				".TB_PREFIX."customers c, 
+				".TB_PREFIX."biller b, 
+				".TB_PREFIX."branch br, 
+				".TB_PREFIX."payment_types pt 
+			WHERE 
+				ap.ac_inv_id = iv.id 
+				AND 
+				iv.customer_id = c.id 
+				AND 
+				iv.biller_id = b.id 
+				AND 
+				ap.ac_payment_type = pt.pt_id 
+				AND 
+				br.id = ap.branch_id 
+				$limit
+			ORDER BY 
+				ap.id DESC";
+	return sql2array($sql);
+	}
+}
+
 function year()
 {
 	$i = array();

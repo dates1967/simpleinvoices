@@ -4,23 +4,18 @@
 * Script: auto_complete_search.php
 * 	Do the autocomplete of invoice id in the process payment page
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
 * License:
-*	 GPL v2 or above
+*	 GPL v3 or above
+*/
+
+/*
+* TODO - remove this file - make part of normal index.php actions
 */
 
 define("BROWSE","browse");
 //if this page has error with auth remove the above line and figure out how to do it right
-include_once('./include/include_main.php');
+include_once('./include/init.php');
 
-
-$conn = mysql_connect( $db_host, $db_user, $db_password );
-mysql_select_db( $db_name, $conn );
 
 $sql = "SELECT * FROM ".TB_PREFIX."invoices";
 

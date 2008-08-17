@@ -80,6 +80,11 @@
 		<td class="details_screen">{$customFieldLabel.certificate_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a></td>
 		<td><input type=text name="custom_field4" value="{$smarty.post.custom_field4}" size=50></td>
 	</tr>
+	<tr>
+		<td class="details_screen">{$LANG.notes}</td>
+		<td><textarea input type=text name="text"
+			 rows=8 cols=50>{$smarty.post.notes}</textarea></td>
+	</tr>
 </table>
 <!-- </div> -->
 <hr />
