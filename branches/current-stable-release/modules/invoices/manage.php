@@ -65,6 +65,7 @@ for($i = 0; $i < $numrecs; $i++) {
 $pageActive = "invoices";
 
 $smarty -> assign("invoices",$invoices);
+$smarty -> assign("config",$config);
 $smarty -> assign("spreadsheet",$spreadsheet);
 $smarty -> assign("word_processor",$word_processor);
 $smarty -> assign('pageActive', $pageActive);

@@ -12,7 +12,6 @@ if( ($auth_session->role_name =='student') AND ($module == 'customers') AND ($_G
 	$checkPermission = "denied";
 }
 
-
 //echo $module." :: ".$_GET['action'];
 $checkPermission == "denied" ? exit($LANG['denied_page']) :"" ;
 ?>

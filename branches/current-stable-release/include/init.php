@@ -75,4 +75,13 @@ checkConnection();
 include_once('./include/manageCustomFields.php');
 include_once("./include/validation.php");
 
+/*
+Array: Early_exit
+- Pages that don';t need header or exit prior to adding the template add in here
+*/
+$early_exit = array();
+$early_exit[] = "auth";
+$early_exit[] = "export";
+
+
 ?>

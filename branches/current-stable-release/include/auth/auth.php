@@ -24,4 +24,5 @@ if (!isset($_SESSION['Zend_Auth']['user_id']))
 	}
 
 }
+
 ?>

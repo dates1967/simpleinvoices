@@ -87,16 +87,16 @@ Invoices filtered by
  
 	<!-- EXPORT TO PDF -->
 	<a class="index_table" title="{$LANG.export_tooltip} {$invoice.pref_inv_wording} {$invoice.id} {$LANG.export_pdf_tooltip}"
-	href="{$invoice.url_for_pdf}"><img src="images/common/pdf.jpg" height="16" border="-5px" padding="-4px" valign="bottom" /><!-- pdf --></a>
+	href="index.php?module=export&view=pdf&id={$invoice.id}"><img src="images/common/pdf.jpg" height="16" border="-5px" padding="-4px" valign="bottom" /><!-- pdf --></a>
 
 	<!--XLS -->
 	<a class="index_table" title="{$LANG.export_tooltip} {$invoice.pref_inv_wording}{$invoice.id} {$LANG.export_xls_tooltip} {$spreadsheet} {$LANG.format_tooltip}"
-	href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&location=print&export={$spreadsheet}">
+	href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&location=print&export={$config->export->spreadsheet}">
 	<img src="images/common/xls.gif" height="16" border="0" padding="-4px" valign="bottom" /><!-- $spreadsheet --></a>
 
 	<!-- DOC -->
 	<a class="index_table" title="{$LANG.export_tooltip} {$invoice.pref_inv_wording} {$invoice.id} {$LANG.export_doc_tooltip} {$word_processor} {$LANG.format_tooltip}"
-	href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&location=print&export={$word_processor}">
+	href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&location=print&export={$config->export->wordprocessor}">
 	<img src="images/common/doc.png" height="16" border="0" padding="-4px" valign="bottom" /><!-- $word_processor --></a>
 
 	<!-- Payment -->

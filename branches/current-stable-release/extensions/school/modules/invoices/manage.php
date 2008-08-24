@@ -109,9 +109,8 @@ for($i = 0; $i < $numrecs; $i++) {
 
 $pageActive = "invoices";
 
+$smarty -> assign("config",$config);
 $smarty -> assign("invoices",$invoices);
-$smarty -> assign("spreadsheet",$spreadsheet);
-$smarty -> assign("word_processor",$word_processor);
 $smarty -> assign('pageActive', $pageActive);
 
 getRicoLiveGrid("ex1","	{ type:'number', decPlaces:0, ClassName:'alignleft' },,,

@@ -9,6 +9,7 @@ $acl->addRole(new Zend_Acl_Role('administrator'));
 $acl->addRole(new Zend_Acl_Role('teacher'));
 
 $acl->add(new Zend_Acl_Resource('auth'));
+$acl->add(new Zend_Acl_Resource('export'));
 $acl->add(new Zend_Acl_Resource('customers'));
 $acl->add(new Zend_Acl_Resource('invoices'));
 $acl->add(new Zend_Acl_Resource('course'));
@@ -41,6 +42,8 @@ $acl->allow('guest', null, 'view');
 
 // everyone see auth page
 $acl->allow(null,'auth');
+//TODO: not good !!! - no acl for invoiecs as can't get html2pdf to work with zend_auth :(
+$acl->allow(null,'invoices');
 
 //students only see student page
 $acl->allow('student', 'customers', 'view');
@@ -51,4 +54,5 @@ $acl->allow('branch_administrator');
 
 // Administrator inherits nothing, but is allowed all privileges
 $acl->allow('administrator');
+
 ?>

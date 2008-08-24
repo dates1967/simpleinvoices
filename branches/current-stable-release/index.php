@@ -74,7 +74,7 @@ if (($module == "options") && ($view == "database_sqlpatches")) {
 /*
 * dont include the header if requested file is an invoice template - for print preview etc.. header is not needed 
 */
-if (($module == "invoices" ) && (strstr($view,"templates"))) {
+if ( ($module == "invoices" ) && (strstr($view,"templates")) ) {
 	//TODO: why is $view templates/template?...
 
 
@@ -123,7 +123,8 @@ $path = "$module/$view";
 	/*
 	* TODO: fix the javascript or move datapicker to extjs to fix this hack - not nice
 	*/
-if($module !== "auth")
+
+if(!in_array($module, $early_exit))
 {
 	if ($view == "manage") 
 		$smarty -> display("../templates/default/headerm.tpl");
@@ -133,7 +134,6 @@ if($module !== "auth")
 /*
 * Prep the page - load the header stuff - end
 */
-
 
 /*
 * Include the php file for the requested page section - start
@@ -186,6 +186,11 @@ if($module !== "auth")
 /*
 * Include the php file for the requested page section - end
 */
+
+if($module == "export")
+{
+	exit(0);
+}
 		
 /*
 * If extension is enabled load its javascript files	- start

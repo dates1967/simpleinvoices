@@ -7,7 +7,7 @@
 * 	 2007-07-19
 *
 * License:
-*	 GPL v2 or above
+*	 GPL v3 or above
 *
 * Website:
 * 	http://www.simpleinvoices.org
@@ -166,6 +166,32 @@ $smarty -> assign('progress',$progress);
 
 
 
+/*Certificates*/
 
+$cert_sql = "select 
+			c.id as id, 
+			b.name as branch, 
+			s.name as name, 
+			s.first_name as first_name , 
+			c.date as date, 
+			p.description as course
+		from 
+			".TB_PREFIX."certificate c, 
+			".TB_PREFIX."branch b, 
+			".TB_PREFIX."customers s, 
+			".TB_PREFIX."products p 
+		where 
+			c.branch_id = b.id 
+			and 
+			c.student_id = s.id 
+			and 
+			c.course_id = p.id  
+			and
+			s.id = $customer_id
+		order by 
+			c.id";
+
+$certificate = sql2array($cert_sql) or die(mysql_error());
+$smarty -> assign("certificate",$certificate);
 
 ?>

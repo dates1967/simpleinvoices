@@ -27,8 +27,9 @@
 		<li><a href="#section-4">Custom Fields</a></li>
 		<li><a href="#section-5">Ledger</a></li>
 		<li><a href="#section-6">Progress</a></li>
-		<li><a href="#section-7">Login details</a></li>
-		<li><a href="#section-8">{$LANG.notes}</a></li>
+		<li><a href="#section-7">Certificates</a></li>
+		<li><a href="#section-8">Login details</a></li>
+		<li><a href="#section-9">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -522,40 +523,88 @@
 	
 	<div id="section-6" class="fragment">
 		<p>
-		<table align=center>	
-<a href="index.php?module=progress&view=manage">Manage Progress</a> :: <a href="index.php?module=progress&view=add">Add Progress</a>
-<br>
-<br>
-<table width="100%">
-<tr class="sortHeader">
-	<th class="noFilter sortable">{$LANG.actions}</th>
-	<th class="index_table sortable">ID</th>
-	<th class="index_table sortable">Date</th>
-	<th class="index_table sortable">Student</th>
-	<th class="index_table sortable">Test</th>
-	<th class="index_table sortable">Course</th>
-	<th class="index_table sortable">Total</th>
-</tr>
-{foreach from=$progress item=progress_row}
-	<tr class="index_table">
-	<td class="index_table">
-	<a class="index_table"
-	 href="index.php?module=progress&view=details&id={$progress_row.pgid}&action=view">{$LANG.view}</a>
-	<td class="index_table">{$progress_row.pgid}</td>
-	<td class="index_table">{$progress_row.date}</td>
-	<td class="index_table">{$progress_row.last_name}, {$progress_row.first_name} {$progress_row.middle_name} </td>
-	<td class="index_table">{$progress_row.test}</td>
-	<td class="index_table">{$progress_row.course}</td>
-	<td class="index_table">{$progress_row.total}</td>
-	</tr>
+		<table align=center>
+			<a href="index.php?module=progress&view=manage">Manage Progress</a> :: <a href="index.php?module=progress&view=add">Add Progress</a>
+			<br>
+			<br>
+			<table width="100%">
+			<tr class="sortHeader">
+				<th class="noFilter sortable">{$LANG.actions}</th>
+				<th class="index_table sortable">ID</th>
+				<th class="index_table sortable">Date</th>
+				<th class="index_table sortable">Student</th>
+				<th class="index_table sortable">Test</th>
+				<th class="index_table sortable">Course</th>
+				<th class="index_table sortable">Total</th>
+			</tr>
+			{foreach from=$progress item=progress_row}
+				<tr class="index_table">
+				<td class="index_table">
+				<a class="index_table"
+				 href="index.php?module=progress&view=details&id={$progress_row.pgid}&action=view">{$LANG.view}</a>
+				<td class="index_table">{$progress_row.pgid}</td>
+				<td class="index_table">{$progress_row.date}</td>
+				<td class="index_table">{$progress_row.last_name}, {$progress_row.first_name} {$progress_row.middle_name} </td>
+				<td class="index_table">{$progress_row.test}</td>
+				<td class="index_table">{$progress_row.course}</td>
+				<td class="index_table">{$progress_row.total}</td>
+				</tr>
 
-{/foreach}
+			{/foreach}
 
-	</table>
+				</table>
+					</table>
+					<p>
+				</div>
+
+				<div id="section-7" class="fragment">
+					<p>
+					<table  align=center>
+					<a href="index.php?module=certificate&view=manage">Manage Certificate</a> :: <a href="index.php?module=certificate&view=add">Add Progress</a>
+					<br>
+					<br>		
+			<table align="center"  width="100%" class="ricoLiveGrid" id="rico_product">
+			<colgroup>
+				<col style='width:10%;' />
+				<col style='width:10%;' />
+				<col style='width:20%;' />
+				<col style='width:30%;' />
+				<col style='width:10%;' />
+				<col style='width:20%;' />
+			</colgroup>
+			<thead>
+			<tr class="sortHeader">
+				<th class="noFilter sortable">{$LANG.actions}</th>
+				<th class="index_table sortable">ID</th>
+				<th class="index_table sortable">Branch</th>
+				<th class="index_table sortable">Student</th>
+				<th class="index_table sortable">Date</th>
+				<th class="index_table sortable">Course</th>
+			</tr>
+			</thead>
+
+
+			{foreach from=$certificate item=cert}
+				<tr class="index_table">
+				<td class="index_table">
+				<a class="index_table"
+				 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
+				<a class="index_table"
+				 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
+				<td class="index_table">{$cert.id}</td>
+				<td class="index_table">{$cert.branch}</td>
+				<td class="index_table">{$cert.name}, {$cert.first_name}</td>
+				<td class="index_table">{$cert.date}</td>
+				<td class="index_table">{$cert.course}</td>
+				</tr>
+
+			{/foreach}
+
+				</table>
 		</table>
 		<p>
 	</div>
-	<div id="section-7" class="fragment">
+	<div id="section-8" class="fragment">
 		<p>
 		<table align=center>
 		<tr>
@@ -577,7 +626,7 @@
 		</table>
 		<p>
 	</div>
-	<div id="section-8" class="fragment">
+	<div id="section-9" class="fragment">
 		<p>
 		<table align=center>
 		<tr>
@@ -594,157 +643,6 @@
 		<p>
 	</div>
 </div>
-
-
-
-
-
-<!--
-<table align="center">
-	<tr>
-		<td colspan="7" align="center"> </td>
-	</tr>
-	<tr>
-		<td colspan="4" align="center" class="align_center"><i>{$LANG.customer_details}</i></td>
-		<td width="10%"></td>
-		<td colspan="2" align="center" class="align_center"><i>{$LANG.summary_of_accounts}</i></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.customer} {$LANG.id}</td>
-		<td>{$customer.id}</td>
-		<td colspan="2"></td>
-		<td></td>
-		<td class="details_screen">{$LANG.total_invoices}</td>
-		<td style="text-align:right">{$stuff.total|number_format:2}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.customer_name}</td>
-		<td colspan="2">{$customer.name}</td>
-		<td colspan="2"></td>
-		<td class="details_screen">{$LANG.total_paid}</td>
-		<td style="text-align:right">{$stuff.paid|number_format:2}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.attention_short} <a href="docs.php?t=help&p=customer_contact" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td colspan="2">{$customer.attention}</td>
-		<td colspan=2></td>
-		<td class="details_screen">{$LANG.total_owing}</td>
-		<td style="text-align:right"><u>{$stuff.owing|number_format:2}</u></td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.street}</td>
-		<td>{$customer.street_address}</td>
-	</tr>
-	<tr>
-		<td class="details_screen" NOWRAP>{$LANG.street2} <a href="docs.php?t=help&p=street2" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-		</td>
-		<td>{$customer.street_address2}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.city}</td>
-		<td>{$customer.city}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.zip}</td>
-		<td>{$customer.zip_code}</td>
-		<td class="details_screen">{$LANG.phone}</td>
-		<td>{$customer.phone}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.state}</td>
-		<td>{$customer.state}</td>
-		<td class="details_screen" NOWRAP>{$LANG.mobile_phone}</td>
-		<td>{$customer.mobile_phone}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.country}</td>
-		<td>{$customer.country}</td>
-		<td class="details_screen">{$LANG.fax}</td>
-		<td>{$customer.fax}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$LANG.enabled}</td>
-		<td>{$customer.wording_for_enabled}</td>
-		<td class="details_screen">{$LANG.email}</td>
-		<td>{$customer.email}</td>
-	</tr>
-</table>
-<br />
-<div id="container-1">
-	<ul class="anchors">
-		<li><a href="#section-1">{$LANG.custom_fields}</a></li>
-		<li><a href="#section-2">{$LANG.customer} {$LANG.invoice_listings}</a></li>
-		<li><a href="#section-3">{$LANG.notes}</a></li>
-	</ul>
-	<div id="section-1" class="fragment">
-		<h4><u>{$LANG.customer} {$LANG.custom_fields}</u></h4>
-		<p>
-			<table>
-				<tr>
-					<td class="details_screen">{$customFieldLabel.customer_cf1} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-					</td>
-					<td>{$customer.custom_field1}</td>
-				</tr>
-				<tr>
-					<td class="details_screen">{$customFieldLabel.customer_cf2} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-					</td>
-					<td>{$customer.custom_field2}</td>
-				</tr>
-				<tr>
-					<td class="details_screen">{$customFieldLabel.customer_cf3} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-					</td>
-					<td>{$customer.custom_field3}</td>
-				</tr>
-				<tr>
-					<td class="details_screen">{$customFieldLabel.customer_cf4} <a href="docs.php?t=help&p=custom_fields" rel="gb_page_center[450, 450]"><img src="./images/common/help-small.png"></img></a>
-					</td>
-					<td>{$customer.custom_field4}</td>
-				</tr>
-{*
-					{showCustomFields categorieId="2" itemId=$smarty.get.id }
-*}
-			</table>
-		</p>
-	</div>
-	<div id="section-2" class="fragment">
-		<h4><u>{$LANG.invoice_listings}</u></h4>
-		<p >
-		<table width="100%" align="center">
-			<tr class="sortHeader">
-
-				<th class="sortable">{$LANG.id}</th>
-				<th class="sortable">{$LANG.total}</th>
-				<th class="sortable">{$LANG.paid}</th>
-				<th class="sortable">{$LANG.owing}</th>
-				<th class="sortable">{$LANG.date_created}</th>
-
-			</tr>
-		
-			{foreach from=$invoices item=invoice}
-	
-			<tr class="index_table">
-				<td class="details_screen"><a href="index.php?module=invoices&view=quick_view&invoice={$invoice.id}">{$invoice.id}</a></td>
-				<td class="details_screen">{$invoice.total|number_format:2}</td>
-				<td class="details_screen">{$invoice.paid|number_format:2}</td>
-				<td class="details_screen">{$invoice.owing|number_format:2}</td>
-				<td class="details_screen">{$invoice.date}</td>
-			</tr>
-
-			{/foreach}
-		</table>	
-		</p>
-	</div>
-	<div id="section-3" class="fragment">
-		<h4><u>{$LANG.customer} {$LANG.notes}</u></h4>
-		<p>
-			<div id="left">
-				{$customer.notes}
-			</div>
-		</p>
-	</div>
-</div>
--->
 
 <hr></hr>
 <a href="index.php?module=customers&view=details&id={$customer.id}&action=edit">{$LANG.edit}</a>
@@ -766,8 +664,9 @@
 		<li><a href="#section-4">Custom Fields</a></li>
 		<li><a href="#section-5">Ledger</a></li>
 		<li><a href="#section-6">Progress</a></li>
-		<li><a href="#section-7">Login details</a></li>
-		<li><a href="#section-8">{$LANG.notes}</a></li>
+		<li><a href="#section-7">Certificates</a></li>
+		<li><a href="#section-8">Login details</a></li>
+		<li><a href="#section-9">{$LANG.notes}</a></li>
 	</ul>
 	<div id="section-1" class="fragment">
 <p>
@@ -1382,6 +1281,53 @@
 	</p>
 	</div>
 	<div id="section-7" class="fragment">
+					<p>
+					<table  align=center>
+					<a href="index.php?module=certificate&view=manage">Manage Certificate</a> :: <a href="index.php?module=certificate&view=add">Add Progress</a>
+					<br>
+					<br>		
+			<table align="center"  width="100%" class="ricoLiveGrid" id="rico_product">
+			<colgroup>
+				<col style='width:10%;' />
+				<col style='width:10%;' />
+				<col style='width:20%;' />
+				<col style='width:30%;' />
+				<col style='width:10%;' />
+				<col style='width:20%;' />
+			</colgroup>
+			<thead>
+			<tr class="sortHeader">
+				<th class="noFilter sortable">{$LANG.actions}</th>
+				<th class="index_table sortable">ID</th>
+				<th class="index_table sortable">Branch</th>
+				<th class="index_table sortable">Student</th>
+				<th class="index_table sortable">Date</th>
+				<th class="index_table sortable">Course</th>
+			</tr>
+			</thead>
+
+
+			{foreach from=$certificate item=cert}
+				<tr class="index_table">
+				<td class="index_table">
+				<a class="index_table"
+				 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
+				<a class="index_table"
+				 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
+				<td class="index_table">{$cert.id}</td>
+				<td class="index_table">{$cert.branch}</td>
+				<td class="index_table">{$cert.name}, {$cert.first_name}</td>
+				<td class="index_table">{$cert.date}</td>
+				<td class="index_table">{$cert.course}</td>
+				</tr>
+
+			{/foreach}
+
+				</table>
+		</table>
+		</p>
+	</div>
+	<div id="section-8" class="fragment">
 	<p>
 	<table align=center>
 		<tr>
@@ -1396,7 +1342,7 @@
 	</table>
 	</p>
 	</div>
-	<div id="section-8" class="fragment">
+	<div id="section-9" class="fragment">
 	<p>
 	<table align=center>
 	<tr>
