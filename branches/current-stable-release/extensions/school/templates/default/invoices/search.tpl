@@ -17,7 +17,7 @@
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=invoices&view=manage&action=search&invoice_id={$invoice_id}&student_id={$student_id}&biller_id={$biller_id}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=invoices&view=manage&action=search&invoice_id={$invoice_id}&student_id={$student_id}&biller_id={$biller_id}&branch_id={$branch_id}>
 	<br><br>
 		Searching invoices ...
 	<br><br>
@@ -66,6 +66,25 @@
 					</select>
 				</td>
  			</tr>
+			<tr>
+				<td class="details_screen">
+					Branch
+				</td>
+				<td input type=text name="description">
+				                
+				{if $branches == null }
+					<p><em>There are no branhces in the database</em></p>
+				{else}
+					<select name="branch_id">
+						<option value=""></option>
+					{foreach from=$branches item=branch}
+						<option value="{$branch.id}">{$branch.name}</option>
+					{/foreach}
+					</select>
+				{/if}
+					                				                
+                </td>
+			</tr>
 </table>
 <hr />
 <div style="text-align:center;">

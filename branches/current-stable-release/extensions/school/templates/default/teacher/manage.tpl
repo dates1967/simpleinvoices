@@ -13,6 +13,7 @@ Teacherss filtered by
 	{if $smarty.get.first_name != ""}First Name like '{$smarty.get.first_name}'{/if}
 	{if $smarty.get.middle_name != ""}Middle Name like '{$smarty.get.middle_name}'{/if}
 	{if $smarty.get.last_name != ""}Last Name like '{$smarty.get.last_name}'{/if}
+	{if $smarty.get.branch_id != ""}Branch ID = '{$smarty.get.branch_id}'{/if}
  <a href="index.php?module=teacher&view=manage">Clear filer</a> :: <a href="index.php?module=teacher&view=search">Search again</a>
 <br>
 <hr />
@@ -23,14 +24,16 @@ Teacherss filtered by
 <colgroup>
 	<col style='width:10%;' />
 	<col style='width:10%;' />
-	<col style='width:50%;' />
 	<col style='width:30%;' />
+	<col style='width:30%;' />
+	<col style='width:20%;' />
 </colgroup>
 <thead>
 <tr class="sortHeader">
 	<th class="noFilter sortable">{$LANG.actions}</th>
 	<th class="index_table sortable">ID</th>
 	<th class="index_table sortable">Teacher name</th>
+	<th class="index_table sortable">Branch</th>
 	<th class="noFilter index_table sortable">{$LANG.enabled}</th>
 </tr>
 </thead>
@@ -44,6 +47,7 @@ Teacherss filtered by
 	 href="index.php?module=teacher&view=details&id={$teacher.id}&action=edit">{$LANG.edit}</a> </td>
 	<td class="index_table">{$teacher.id}</td>
 	<td class="index_table">{$teacher.name}, {$teacher.middle_name} {$teacher.first_name}</td>
+	<td class="index_table">{$teacher.branch}</td>
 	<td class="index_table">{$teacher.enabled}</td>
 	</tr>
 

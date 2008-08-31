@@ -55,4 +55,11 @@ $smarty -> assign("lines",count($invoiceItems));
 $sql = "select * from ".TB_PREFIX."branch"; 
 $branch_sql = sql2array($sql);
 $smarty -> assign('branch',$branch_sql);
+
+$sql_branch = "select name from ".TB_PREFIX."branch where id = ".$invoice[branch_id].""; 
+$branch_sql = mysql_fetch_object(mysqlQuery($sql_branch));
+$smarty -> assign('branch_id',$branch_sql->name);
+
+$smarty -> assign('auth_role_name',$auth_session->role_name);
+$smarty -> assign('auth_user_domain',$auth_session->user_domain);
 ?>

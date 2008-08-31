@@ -3,11 +3,8 @@
 * Script: manage.php
 * 	Manage Invoices page
 *
-* Authors:
-*	 Justin Kelly, Nicolas Ruflin, Ap.Muthu
-*
 * Last edited:
-* 	 2008-01-03
+* 	 2008-08-31
 *
 * License:
 *	 GPL v2 or above
@@ -25,7 +22,7 @@ EOD;*/
 
 if($auth_session->role_name == "branch_administrator")
 {
-	$limit = " AND b.branch_id = ".$auth_session->user_domain;
+	$limit = " AND iv.branch_id = ".$auth_session->user_domain;
 }
 
 if (empty($_GET['action']))
@@ -38,6 +35,7 @@ if (empty($_GET['action']))
 				ELSE '90+' END ) as overdue,
 		iv.type_id,
 		pf.pref_inv_wording,
+		branch.name as branch,
 		iv.date,
 		@invd:=(SELECT sum( IF(isnull(ivt.total), 0, ivt.total)) 
 			FROM ".TB_PREFIX."invoice_items ivt where ivt.invoice_id = iv.id) As invd,
@@ -46,8 +44,8 @@ if (empty($_GET['action']))
 		IF(isnull(@invd), 0, @invd) As total,
 		IF(isnull(@apmt), 0, @apmt) As paid_format,
 		(select (total - paid_format)) as owing
-	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf
-	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $limit
+	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf, ".TB_PREFIX."branch branch
+	WHERE iv.customer_id = c.id AND iv.branch_id = branch.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $limit
 	GROUP BY iv.id 
 	ORDER BY iv.id DESC";
 } else {
@@ -59,6 +57,10 @@ if (empty($_GET['action']))
 	if (!empty($_GET['student_id'])) {
 		$student_id = $_GET['student_id'];
 		$search_sql .= " AND c.id = $student_id ";
+	}
+	if (!empty($_GET['branch_id'])) {
+		$branch_id = $_GET['branch_id'];
+		$search_sql .= " AND iv.branch_id = $branch_id ";
 	}
 	if (!empty($_GET['biller_id'])) {
 		$biller_id = $_GET['biller_id'];
@@ -73,6 +75,7 @@ if (empty($_GET['action']))
 				ELSE '90+' END ) as overdue,
 		iv.type_id,
 		pf.pref_inv_wording,
+		branch.name as branch,
 		iv.date,
 		@invd:=(SELECT sum( IF(isnull(ivt.total), 0, ivt.total)) 
 			FROM ".TB_PREFIX."invoice_items ivt where ivt.invoice_id = iv.id) As invd,
@@ -81,8 +84,8 @@ if (empty($_GET['action']))
 		IF(isnull(@invd), 0, @invd) As total,
 		IF(isnull(@apmt), 0, @apmt) As paid_format,
 		(select (total - paid_format)) as owing
-	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf
-	WHERE iv.customer_id = c.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $search_sql $limit
+	FROM ".TB_PREFIX."invoices iv, ".TB_PREFIX."biller b, ".TB_PREFIX."customers c, ".TB_PREFIX."preferences pf, ".TB_PREFIX."branch branch
+	WHERE iv.customer_id = c.id AND iv.branch_id = branch.id AND iv.biller_id = b.id AND iv.preference_id = pf.pref_id $search_sql $limit
 	GROUP BY iv.id 
 	ORDER BY iv.id DESC";
 

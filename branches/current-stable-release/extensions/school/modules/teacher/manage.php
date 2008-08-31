@@ -6,7 +6,24 @@ checkLogin();
 function getTeachers($search_sql="")
 {
 	global $LANG;
-			$sql = "SELECT * FROM ".TB_PREFIX."customers WHERE person_type ='2' $search_sql ORDER BY name";
+			$sql = "SELECT 
+						c.id,
+						c.name,
+						c.first_name,
+						c.middle_name,
+						c.enabled,
+						b.name as branch
+			 
+					FROM 
+						".TB_PREFIX."customers c,
+						".TB_PREFIX."branch b 
+					WHERE 
+						c.person_type ='2' 
+						AND
+						c.branch_id = b.id
+						$search_sql
+					 ORDER BY 
+						c.name";
 			$query = mysqlQuery($sql) or die(mysql_error());
 			
 	$teahers = null;
@@ -28,12 +45,16 @@ function getTeachers($search_sql="")
 
 	if($auth_session->role_name == "branch_administrator")
 	{
-		$search_sql .= " AND place_of_registration = ".$auth_session->user_domain;
+		$search_sql .= " AND branch_id = ".$auth_session->user_domain;
 	}
 
 	if (!empty($_GET['id'])) {
 		$id = $_GET['id'];
 		$search_sql .= " AND id = $id ";
+	}
+	if (!empty($_GET['branch_id'])) {
+		$branch_id = $_GET['branch_id'];
+		$search_sql .= " AND branch_id = $branch_id ";
 	}
 	if (!empty($_GET['first_name'])) {
 		$search_sql .= " AND first_name like '%".$_GET['first_name']."%'";

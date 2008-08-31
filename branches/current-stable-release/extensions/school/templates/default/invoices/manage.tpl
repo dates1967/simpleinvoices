@@ -35,6 +35,7 @@ Invoices filtered by
 	{if $smarty.get.invoice_id != ""}Invoice ID = {$smarty.get.invoice_id}{/if}
 	{if $smarty.get.student_id != ""}Student ID = {$smarty.get.student_id}{/if}
 	{if $smarty.get.biller_id != ""}Biller ID = {$smarty.get.biller_id}{/if}
+	{if $smarty.get.branch_id != ""}Branch ID = {$smarty.get.branch_id}{/if}
  <a href="index.php?module=invoices&view=manage">Clear filer</a> :: <a href="index.php?module=invoices&view=search">Search again</a>
 <br>
 <hr />
@@ -44,10 +45,10 @@ Invoices filtered by
 	<col style='width:15%;' />
 	<col style='width:5%;'  />
 	<col style='width:10%;' />
-	<col style='width:10%;' />
-	<col style='width:10%;' />
-	<col style='width:10%;' />
 	<col style='width:5%;'  />
+	<col style='width:10%;' />
+	<col style='width:10%;' />
+	<col style='width:10%;' />
 	<col style='width:5%;'  />
 	<col style='width:10%;' />
 </colgroup>
@@ -56,11 +57,11 @@ Invoices filtered by
 		<th class="noFilter sortable">{$LANG.actions} </th>
 		<th class="noFilter sortable">{$LANG.id}</th>
 		<th class="selectFilter index_table sortable">{$LANG.biller}</th>
+		<th class="noFilter sortable">Branch</th>
 		<th class="selectFilter index_table sortable">{$LANG.customer}</th>
 		<th class="noFilter sortable">{$LANG.total}</th>
 		<th class="noFilter sortable">{$LANG.owing}</th>
 		<th class="selectFilter index_table sortable">{$LANG.aging}</th>
-		<th class="noFilter sortable">{$LANG.invoice_type}</th>
 		<th class="noFilter sortable">{$LANG.date_upper}</th>
 	</tr>
 </thead>
@@ -111,6 +112,7 @@ Invoices filtered by
 	</td>
 	<td class="index_table">{$invoice.id}</td>
 	<td class="index_table">{$invoice.biller}</td>
+	<td class="index_table">{$invoice.branch}</td>
 	<td class="index_table">{$invoice.customer}, {$invoice.first_name} {$invoice.middle_name} </td>
 	<td class="index_table">{$invoice.total}</td>
 	<!--
@@ -119,7 +121,6 @@ Invoices filtered by
 	<td class="index_table">{$invoice.owing}</td>
 	<td class="index_table">{if $invoice.owing > 0}{$invoice.overdue}{/if}</td>
 
-	<td class="index_table">{$invoice.pref_inv_wording}</td>
 	<td class="index_table">{$invoice.date}</td>
 	</tr>
 

@@ -3,21 +3,15 @@
 * Script: add_invoice_item.tpl
 * 	 Add new item to an existing invoice 
 *
-* Authors:
-*	 Nicolas Ruflin
-*
-* Last edited:
-* 	 2007-07-18
-*
 * License:
-*	 GPL v2 or above
+*	 GPL v3 or above
 *
 * Website:
 *	http://www.simpleinvoices.org
 */
 *}
 {if $smarty.post.submit != null}
-	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=teacher&view=manage&action=search&id={$id}&first_name={$first_name}&middle_name={$middle_name}&last_name={$last_name}>
+	<META HTTP-EQUIV=REFRESH CONTENT=1;URL=index.php?module=teacher&view=manage&action=search&id={$id}&first_name={$first_name}&middle_name={$middle_name}&last_name={$last_name}&branch_id={$branch_id}>
 	<br><br>
 		Searching teachers ...
 	<br><br>
@@ -57,6 +51,25 @@
 				<td>
 					<input type=text name="last_name" size="50">
 				</td>
+			</tr>
+			<tr>
+				<td class="details_screen">
+					Branch
+				</td>
+				<td input type=text name="description">
+				                
+				{if $branches == null }
+					<p><em>There are no branhces in the database</em></p>
+				{else}
+					<select name="branch_id">
+						<option value=""></option>
+					{foreach from=$branches item=branch}
+						<option value="{$branch.id}">{$branch.name}</option>
+					{/foreach}
+					</select>
+				{/if}
+					                				                
+                </td>
 			</tr>
 </table>
 <hr />

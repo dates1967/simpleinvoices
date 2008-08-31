@@ -41,4 +41,10 @@ $smarty -> assign('id', $_POST['invoice_id']);
 $smarty -> assign('first_name', $_POST['first_name']);
 $smarty -> assign('middle_name', $_POST['middle_name']);
 $smarty -> assign('last_name', $_POST['last_name']);
+$smarty -> assign('branch_id', $_POST['branch_id']);
+
+$sql_branch = "select * from ".TB_PREFIX."branch"; 
+$branches = sql2array($sql_branch);
+$smarty -> assign('branches', $branches);
+
 ?>
