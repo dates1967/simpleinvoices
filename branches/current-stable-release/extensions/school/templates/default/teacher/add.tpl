@@ -42,16 +42,22 @@
 	<div id="section-1" class="fragment">
 <p>
 <table align=center>
-	<tr>
+
+<tr>
 		<td class="details_screen">Branch</td>
 		<td>
+		{if $auth_role_name == "branch_administrator"}
+			{$branch_id}
+		{/if}		
+		{if $auth_role_name != "branch_administrator"}
 			<select name="branch_id">
-			{foreach from=$branch item=branch_row}
-				<option value="{$branch_row.id}">{$branch_row.name}</option>
-			{/foreach}
+				{foreach from=$branch item=branch_row1}
+					<option {if $branch_row1.id == $teacher.branch_id} selected {/if} value="{$branch_row1.id}">{$branch_row1.name}</option>
+				{/foreach}
 			</select>
+		{/if}
 		</td>
-	</tr>
+</tr>
 	<tr>
 		<td class="details_screen">Place of Enrolment</td>
 		<td>

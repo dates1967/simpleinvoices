@@ -112,7 +112,11 @@ $course_sql_result['dropped_reaon'] =
 */
 //$smarty -> assign('course_enrol',$course_enrol);
 
+$smarty -> assign('auth_role_name',$auth_session->role_name);
+$smarty -> assign('auth_user_domain',$auth_session->user_domain);
 
 
-
+$sql_branch = "select name from ".TB_PREFIX."branch where id = ".$customer[branch_id].""; 
+$branch_sql = mysql_fetch_object(mysqlQuery($sql_branch));
+$smarty -> assign('branch_id',$branch_sql->name);
 ?>
