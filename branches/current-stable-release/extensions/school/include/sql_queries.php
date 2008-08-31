@@ -762,8 +762,6 @@ class school_invoice extends invoice{
 
 		function insertInvoice($type) {
 			
-		global $auth_session;
-
 			$sql = "INSERT 
 					INTO
 				".TB_PREFIX."invoices (
@@ -793,12 +791,33 @@ class school_invoice extends invoice{
 					'$_POST[customField2]',
 					'$_POST[customField3]',
 					'$_POST[customField4]',
-					'$auth_session->user_domain'
+					'$_POST[branch_id]'
 					)";
 			//echo $sql;
 			return mysqlQuery($sql);
 		}
-		
+
+		function updateInvoice($invoice_id) {
+
+		$sql = "UPDATE
+			".TB_PREFIX."invoices
+		SET
+			biller_id = '$_POST[biller_id]',
+			customer_id = '$_POST[customer_id]',
+			preference_id = '$_POST[preference_id]',
+			date = '$_POST[date]',
+			note = '$_POST[note]',
+			custom_field1 = '$_POST[customField1]',
+			custom_field2 = '$_POST[customField2]',
+			custom_field3 = '$_POST[customField3]',
+			custom_field4 = '$_POST[customField4]',
+			branch_id = '$_POST[branch_id]'
+		WHERE
+			id = $invoice_id";
+			
+	return mysqlQuery($sql);
+}
+/*		
 		function insertinvoiceitem($invoice_id,$quantity,$product_id,$tax_id,$description="", $student_id, $start_reason_id, $dropped_reason_id, $dropped_date) 
 		{
 		
@@ -819,7 +838,8 @@ class school_invoice extends invoice{
 			return mysqlQuery($sql);
 
 		}
-
+*/
+/*
 		function updateInvoiceItem($id,$quantity,$product_id,$tax_id,$description, $student_id, $start_reason_id, $dropped_reason_id, $dropped_date) {
 
 			$product = getProduct($product_id);
@@ -853,7 +873,7 @@ class school_invoice extends invoice{
 				
 			return mysqlQuery($sql);
 		}
-
+*/
 		function getActiveCustomers() {
 	
 			global $LANG; // must this be here?	

@@ -598,3 +598,6 @@ NULL , 'certificate_cf4', NULL , '0'
 ALTER TABLE `si_certificate` ADD `text` TEXT NULL ;
 
 ALTER TABLE `si_account_payments` ADD `branch_id` INT NOT NULL ;
+
+
+ALTER TABLE `si_invoices` ADD `branch_id` INT NULL; 

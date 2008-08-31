@@ -31,7 +31,7 @@ $type = $_POST['type'];
 
 if ($_POST['action'] == "insert" ) {
 	
-	if(invoice::insertInvoice($type)) {
+	if(school_invoice::insertInvoice($type)) {
 		$invoice_id = mysql_insert_id();
 //		saveCustomFieldValues($_POST['categorie'],$invoice_id);
 		$saved = true;
@@ -75,7 +75,7 @@ if ( $_POST['action'] == "edit") {
 
 	$invoice_id = $_POST['invoice_id'];
 	
-	if (updateInvoice($_POST['invoice_id'])) {
+	if (school_invoice::updateInvoice($_POST['invoice_id'])) {
 //		updateCustomFieldValues($_POST['categorie'],$_POST['invoice_id']);
 		$saved = true;
 	}
