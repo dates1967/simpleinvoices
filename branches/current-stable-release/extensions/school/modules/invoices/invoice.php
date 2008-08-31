@@ -59,4 +59,8 @@ $smarty -> assign("show_custom_field",$show_custom_field);
 $smarty -> assign("defaults",$defaults);
 $smarty -> assign('pageActive', $pageActive);
 
+/*Branch function*/
+$sql = "select * from ".TB_PREFIX."branch"; 
+$branch_sql = sql2array($sql);
+$smarty -> assign('branch',$branch_sql);
 ?>

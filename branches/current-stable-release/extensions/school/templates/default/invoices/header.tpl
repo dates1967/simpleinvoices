@@ -3,14 +3,11 @@
 	* Script: header.tpl
 	* 	 Header file for invoice template
 	*
-	* Authors:
-	*	 Justin Kelly, Nicolas Ruflin
-	*
 	* Last edited:
-	* 	 2007-07-18
+	* 	 2008-08-31
 	*
 	* License:
-	*	 GPL v2 or above
+	*	 GPL v3 or above
 	*
 	* Website:
 	*	http://www.simpleinvoices.org
@@ -36,6 +33,23 @@
 {/if}
 
 	</td>
+</tr>
+<tr>
+		<td class="details_screen">Branch</td>
+		<td>
+			<select name="branch_id">
+			{foreach from=$branch item=branch_row1}
+				{if $auth_role_name == "branch_administrator"}
+					{if $branch_row1.id == $auth_user_domain}
+						<option selected value="{$branch_row1.id}">{$branch_row1.name}</option>
+					{/if}
+				{/if}
+				{if $auth_role_name != "branch_administrator"}
+					<option value="{$branch_row1.id}">{$branch_row1.name}</option>
+				{/if}
+			{/foreach}
+			</select>
+		</td>
 </tr>
 <tr>
 	<td class="details_screen">
