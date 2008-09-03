@@ -63,4 +63,8 @@ $smarty -> assign('pageActive', $pageActive);
 $sql = "select * from ".TB_PREFIX."branch"; 
 $branch_sql = sql2array($sql);
 $smarty -> assign('branch',$branch_sql);
+
+$smarty -> assign('auth_role_name',$auth_session->role_name);
+$smarty -> assign('auth_user_domain',$auth_session->user_domain);
+
 ?>
