@@ -72,7 +72,7 @@ $extension['test']['enabled'] = "0";
 define("LOGGING",false);
 #define("LOGGING",true);
 
-if($environment != "live")
+if($environment != "production")
 {
     @include("./config/".htmlspecialchars($environment).".config.php");
 }
