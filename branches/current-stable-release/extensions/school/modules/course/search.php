@@ -42,4 +42,5 @@ $smarty -> assign('branches',$branch_sql);
 
 $smarty -> assign('id', $_POST['id']);
 $smarty -> assign('course_id', $_POST['course_id']);
+$smarty -> assign('branch_id', $_POST['branch_id']);
 ?>

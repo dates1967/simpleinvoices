@@ -608,10 +608,10 @@ class school_enrol
 					b.name as branch_name, 
 					p.description as course_name, 
 					s.name as subject_name, 
-					p.age, 
+					ag.name as age, 
 					l.name as level_name, 
-					p.type, 
-					p.status, 
+					ty.name as type, 
+					st.name as status, 
 					p.start_date, 
 					start.reason as start_reason, 
 					e.dropped_date, 
@@ -624,6 +624,9 @@ class school_enrol
 					".TB_PREFIX."branch b, 
 					".TB_PREFIX."level l, 
 					".TB_PREFIX."course_start_reason start, 
+					".TB_PREFIX."course_type ty, 
+					".TB_PREFIX."course_status st, 
+					".TB_PREFIX."age ag, 
 					".TB_PREFIX."course_dropped_reason dropped 
 				where 
 					c.id = e.student_id 
@@ -640,7 +643,13 @@ class school_enrol
 					and 
 					e.start_reason_id = start.id 
 					and 
-				e.student_id = ".$student_id."";
+					p.type = ty.id 
+					and 
+					p.status = st.id 
+					and 
+					p.age = ag.id 
+					and 
+					e.student_id = ".$student_id."";
 		//$query = mysqlQuery($sql) or die(mysql_error());
 		//$query = mysql_fetch_object(mysqlQuery($sql));
  
