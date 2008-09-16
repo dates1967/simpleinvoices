@@ -583,7 +583,7 @@
 			</tr>
 			</thead>
 
-
+			{if $certificate !== ""}
 			{foreach from=$certificate item=cert}
 				<tr class="index_table">
 				<td class="index_table">
@@ -599,7 +599,7 @@
 				</tr>
 
 			{/foreach}
-
+			{/if}
 				</table>
 		</table>
 		<p>
@@ -1306,7 +1306,7 @@
 			</tr>
 			</thead>
 
-
+			{if $certificate !== ""}
 			{foreach from=$certificate item=cert}
 				<tr class="index_table">
 				<td class="index_table">
@@ -1322,6 +1322,7 @@
 				</tr>
 
 			{/foreach}
+			{/if}
 
 				</table>
 		</table>

@@ -120,20 +120,9 @@ $calc_day = $customer_birthday['day'];
 $calc_year = $customer_birthday['year'];
 
 $smarty -> assign('age',$calc_age = calc_age($calc_month, $calc_day, $calc_year));
-/* Course*/
 
-/*
-$course_sql = "select * from si_course_enrol where student_id = ".$customer_id."";
-$course_sql_result = mysql_fetch_object(mysqlQuery($course_sql));
-*/
 $course_enrol = school_enrol::getStudentEnrollment($customer_id);
-//print_r($course_enrol);
-//$smarty->register_object("course_enrol",$course_sql_result);
-/*
-$course_dropped_sql = "select * from si_course_dropped_reason where id = ".$cource_sql_result['dropped_reason_id']."";
-$course_dropped_sql_result = mysql_fetch_object(mysqlQuery($course_dropped_sql));
-$course_sql_result['dropped_reaon'] = 
-*/
+
 $smarty -> assign('course_enrol',$course_enrol);
 
 $progress_sql = "SELECT 
@@ -167,31 +156,47 @@ $smarty -> assign('progress',$progress);
 
 
 /*Certificates*/
-
-$cert_sql = "select 
-			c.id as id, 
-			b.name as branch, 
-			s.name as name, 
-			s.first_name as first_name , 
-			c.date as date, 
-			p.description as course
+//count number of certs
+$certs = "select
+			count(s.id) as count
 		from 
 			".TB_PREFIX."certificate c, 
-			".TB_PREFIX."branch b, 
-			".TB_PREFIX."customers s, 
-			".TB_PREFIX."products p 
-		where 
-			c.branch_id = b.id 
-			and 
-			c.student_id = s.id 
-			and 
-			c.course_id = p.id  
+			".TB_PREFIX."customers s
+		where  
+			c.student_id = s.id
 			and
-			s.id = $customer_id
-		order by 
-			c.id";
+			s.id = ".$customer_id;
 
-$certificate = sql2array($cert_sql) or die(mysql_error());
-$smarty -> assign("certificate",$certificate);
+$certs = sql2array($certs) or die(mysql_error());
+
+if($certs[0]['count'] > 0)
+{
+	$cert_sql = "select 
+				c.id as id, 
+				b.name as branch, 
+				s.name as name, 
+				s.first_name as first_name , 
+				c.date as date, 
+				p.description as course
+			from 
+				".TB_PREFIX."certificate c, 
+				".TB_PREFIX."branch b, 
+				".TB_PREFIX."customers s, 
+				".TB_PREFIX."products p 
+			where 
+				c.branch_id = b.id 
+				and 
+				c.student_id = s.id 
+				and 
+				c.course_id = p.id  
+				and
+				s.id = ".$customer_id."
+			order by 
+				c.id";
+	
+	//$certificate = sql2array($cert_sql) or die(mysql_error());
+}
+
+$smarty -> assign("certificate", $certificate);
 
 ?>

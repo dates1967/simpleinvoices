@@ -114,6 +114,29 @@ if ( ($module == "invoices" ) && (strstr($view,"templates")) ) {
 $path = "$module/$view";
 
 /*
+* If extension is enabled load its javascript files	- start
+* Note: this system is probably slow - if you got a better method for handling extensions let me know
+*/
+foreach($extension as $key=>$value)
+{
+	/*
+	* If extension is enabled then continue and include the requested file for that extension if it exists
+	*/	
+	if($value['enabled'] == "1")
+	{
+		//echo "Enabled:".$value['name']."<br><br>";
+		if(file_exists("./extensions/".$value['name']."/include/jquery/".$value['name'].".jquery.ext.js")) {
+			$extension_jquery_files .= "<script type=\"text/javascript\" src=\"./extensions/".$value['name']."/include/jquery/".$value['name'].".jquery.ext.js\"></script>";
+		}
+	}
+}
+
+$smarty -> assign("extension_jquery_files",$extension_jquery_files);
+/*
+* If extension is enabled load its javascript files	- end
+*/
+
+/*
 * Prep the page - load the header stuff - start
 */
 
@@ -192,29 +215,6 @@ if($module == "export")
 	exit(0);
 }
 		
-/*
-* If extension is enabled load its javascript files	- start
-* Note: this system is probably slow - if you got a better method for handling extensions let me know
-*/
-foreach($extension as $key=>$value)
-{
-	/*
-	* If extension is enabled then continue and include the requested file for that extension if it exists
-	*/	
-	if($value['enabled'] == "1")
-	{
-		//echo "Enabled:".$value['name']."<br><br>";
-		if(file_exists("./extensions/$value[name]/include/jquery/$value[name].jquery.ext.js")) {
-			$extension_jquery_files .= "<script type=\"text/javascript\" src=\"./extensions/$value[name]/include/jquery/$value[name].jquery.ext.js\"></script>";
-		}
-	}
-}
-
-$smarty -> assign("extension_jquery_files",$extension_jquery_files);
-/*
-* If extension is enabled load its javascript files	- end
-*/
-
 //temp added menu.tpl back in so we can easily design new menu system
 
 /*
