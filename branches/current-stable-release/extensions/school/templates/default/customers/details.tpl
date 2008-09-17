@@ -1334,11 +1334,11 @@
 		<tr>
 	<tr>
 		<td class="details_screen">User name </td>
-		<td><input type=text name="username" value="{$customer.username}" size=50></td>
+		<td><input type=text name="student_username" value="{$customer.username}" size=50></td>
 	</tr>
 	<tr>
 		<td class="details_screen">Password </a></td>
-		<td><input type=password name="password_field" size=25></td>
+		<td><input type=text name="student_password_field" size=25></td>
 	</tr>
 	</table>
 	</p>

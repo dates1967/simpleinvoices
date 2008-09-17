@@ -374,8 +374,8 @@ class school_student extends customer {
 						'$guardian2_passport_issued_on_year-$guardian2_passport_issued_on_month-$guardian2_passport_issued_on_day', 
 						'$guardian2_address',
 						1,
-						'$username',
-						MD5('$password_field'),
+						'$student_username',
+						MD5('$studnet_password_field'),
 						1,
 						'$branch_id'
 					)
@@ -387,7 +387,7 @@ class school_student extends customer {
 
 		function updateCustomer() {
 			
-			empty($_POST[password_field]) ? $password = "" :  $password = "password = MD5('".$_POST[password_field]."'),"  ;
+			empty($_POST[student_password_field]) ? $password = "" :  $password = "password = MD5('".$_POST[student_password_field]."'),"  ;
 			
 
 			$sql = "
@@ -448,7 +448,7 @@ class school_student extends customer {
 						guardian2_passport_issued_at = '$_POST[guardian2_passport_issued_at]',
 						guardian2_passport_issued_on = '$_POST[guardian2_passport_issued_on_year]-$_POST[guardian2_passport_issued_on_month]-$_POST[guardian2_passport_issued_on_day]',
 						guardian2_address = '$_POST[guardian2_address]',
-						username = '$_POST[username]',
+						username = '$_POST[student_username]',
 						$password
 						person_type = '1',
 						user_group = '1',
