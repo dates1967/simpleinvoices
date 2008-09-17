@@ -39,7 +39,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Password <a href="docs.php?t=help&p=required_field" rel="gb_page_center[350, 150]"><img src="./images/common/required-small.png"></img></a></td>
-		<td><input type=password name="password_field" size=25></td>
+		<td><input type=text name="password_field" size=25></td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Type</td>

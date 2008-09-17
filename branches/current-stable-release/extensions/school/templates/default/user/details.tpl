@@ -68,7 +68,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Password</td>
-		<td><input type="password" name="password_field" size="50"/></td>
+		<td><input type="text" name="password_field" size="50"/></td>
 	</tr>
 	<tr>
 		<td class="details_screen">User Type</td>
