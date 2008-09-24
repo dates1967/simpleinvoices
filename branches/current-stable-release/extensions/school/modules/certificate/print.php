@@ -55,6 +55,11 @@ $course_sql->start_date = date( $config->date->format, strtotime( $course_sql->s
 $course_sql->payment_period_6_end = date( $config->date->format, strtotime( $course_sql->payment_period_6_end ) );
 $smarty -> assign('course_sel',$course_sql);
 
+//duration type
+$sql_duration= "select * from ".TB_PREFIX."course_duration where id = ".$course_sql->duration_type; 
+$duration_sel = mysql_fetch_object(mysqlQuery($sql_duration));
+$smarty -> assign('duration_type',$duration_sel);
+
 //subject
 $sql_subject= "select * from ".TB_PREFIX."subject where id = ".$course_sql->subject_id; 
 $subject_sel = mysql_fetch_object(mysqlQuery($sql_subject));

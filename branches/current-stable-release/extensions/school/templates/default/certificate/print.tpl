@@ -21,36 +21,28 @@
 		<td>{$course_sel->description|upper} {$LANG.COURSE}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Subject</td>
-		<td>{$subject_sel->name}</td>
+		<td>{$LANG.at} {$level_sel->name|upper} {$LANG.level}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Level</td>
-		<td>{$level_sel->name} </td>
+		<td>{$grade_sel.0.name|upper}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Dates of course</td>
-		<td>{$course_sel->start_date} - {$course_sel->payment_period_6_end}</td>
+		<td>{$course_sel->duration} {$duration_type->name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Grade</td>
-		<td>{$grade_sel.0.name}</td>
+		<td>{$LANG.from} {$course_sel->start_date} {$LANG.to} {$course_sel->payment_period_6_end}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.certificate_cf1}</td>
-		<td>{$certificate.custom_field1}</td>
+		<td class="details_screen">{$LANG.date_of_issue}</td>
+		<td>{$certificate.date}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.certificate_cf2}</td>
-		<td>{$certificate.custom_field2}</td>
+		<td class="details_screen">{$LANG.place_of_issue}</td>
+		<td>{$certificate.text}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$customFieldLabel.certificate_cf3}</td>
-		<td>{$certificate.custom_field3}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">{$customFieldLabel.certificate_cf4}</td>
-		<td>{$certificate.custom_field4}</td>
+		<td class="details_screen">{$LANG.notes}</td>
+		<td>{$certificate.text}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.notes}</td>
