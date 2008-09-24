@@ -1,37 +1,24 @@
 	
  	<hr></hr>
 
-	<table align="center">
+	<table align="center" with="100%">
 	<tr>
-		<td class="details_screen">ID</td><td>{$certificate.id}</td>
+		<td>{$LANG.school_name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Issues at</td>
-		<td>{$branch_sel.0.name}</td>
+		<td>{$LANG.CERTIFICATE}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Date</td>
-		<td>{$certificate.date}</td>
+		<td>{$LANG.cert_this_is_to_certify}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Student ID</td>
-		<td>{$student_sel.0.id}</td>
+		<td>{$student_sel.0.first_name} {$student_sel.0.name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Student's Last Name</td>
-		<td>{$student_sel.0.name}</td>
+		<td>{$LANG.cert_followed_and_completed}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">Student's First Name</td>
-		<td>{$student_sel.0.first_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Student's Middle Name</td>
-		<td>{$student_sel.0.middle_name}</td>
-	</tr>
-	<tr>
-		<td class="details_screen">Course name</td>
-		<td>{$course_sel->description}</td>
+		<td>{$course_sel->description|upper} {$LANG.COURSE}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">Subject</td>
@@ -39,7 +26,7 @@
 	</tr>
 	<tr>
 		<td class="details_screen">Level</td>
-		<td>{$level_sel->name}</td>
+		<td>{$level_sel->name} </td>
 	</tr>
 	<tr>
 		<td class="details_screen">Dates of course</td>
