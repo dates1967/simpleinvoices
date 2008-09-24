@@ -6,7 +6,6 @@
 {if $smarty.get.action== 'view' }
 
 	<b>Certificate ::
-	<a href="index.php?module=certificate&view=print&id={$certificate.id}">Print</a></b> :: 
 	<a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a></b>
 	
  	<hr></hr>
@@ -82,7 +81,6 @@
 	</table>
 
 <hr></hr>
-<a href="index.php?module=certificate&view=print&id={$certificate.id}">Print</a> ::
 <a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a>
 {/if}
 
