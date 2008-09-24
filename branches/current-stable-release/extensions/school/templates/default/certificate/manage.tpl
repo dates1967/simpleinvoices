@@ -42,7 +42,7 @@ Certificates filtered by
 	<tr class="index_table">
 	<td class="index_table">
 	<a class="index_table"
-	 href="index.php?module=certificate&view=print&id={$cert.id}">Print</a> ::
+	 href="index.php?module=certificate&view=print&id={$cert.id}">{$LANG.Print}</a> ::
 	<a class="index_table"
 	 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
 	<a class="index_table"
