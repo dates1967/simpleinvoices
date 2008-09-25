@@ -32,21 +32,43 @@
 	<tr>
 		<td>{$LANG.from} {$course_sel->start_date} {$LANG.to} {$course_sel->payment_period_6_end}</td>
 	</tr>
+	<!-- bottom left -->
 	<tr>
 		<td class="details_screen">{$LANG.date_of_issue}</td>
 		<td>{$certificate.date}</td>
 	</tr>
 	<tr>
 		<td class="details_screen">{$LANG.place_of_issue}</td>
-		<td>{$certificate.text}</td>
+		<td>{$branch_sel.0.name}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td>{$certificate.text}</td>
+		<td class="details_screen">{$LANG.students_id}</td>
+		<td>{$student_sel.0.id}</td>
 	</tr>
 	<tr>
-		<td class="details_screen">{$LANG.notes}</td>
-		<td>{$certificate.text}</td>
+		<td class="details_screen">{$LANG.certificate_number}</td>
+		<td>{$certificate.0.id}</td>
 	</tr>
+
+	<!-- bottom right -->
+	<tr>
+		<td>Evgeny Lyzhko</td>
+	</tr>
+	<tr>
+		<td>{$LANG.school_director}</td>
+	</tr>
+
+	<!-- address -->
+	<tr>
+		<td>{$LANG.school_name}</td>
+	</tr>
+	<tr>
+		<td>{$LANG.school_address}</td>
+	</tr>
+	<tr>
+		<td>{$LANG.school_web_address}</td>
+	</tr>
+
+
 	</table>
 
