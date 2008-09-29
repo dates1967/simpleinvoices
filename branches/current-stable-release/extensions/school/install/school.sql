@@ -463,7 +463,14 @@ INSERT INTO `si_course_intensity` (
 VALUES (
 NULL , '3 times/week-Mo-We-Fr'
 ), (
-NULL , '5 times/week-Mo-till-Fr'
+NULL , '5 times/week-Mo----Fr'
+), (
+
+NULL , '2 times/week-Tue---Thu'
+), (
+NULL , '2 times/week-Sat---Sun'
+), (
+NULL , '3 times/week-Tu-Thu-Sa'
 ), (
 NULL , 'Weekends'
 );
@@ -483,6 +490,8 @@ NULL , 'Morning'
 NULL , 'Afternoon'
 ), (
 NULL , 'Evening'
+), (
+NULL , 'All'
 );
 
 CREATE TABLE `si_course_duration` (
