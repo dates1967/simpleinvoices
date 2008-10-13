@@ -25,6 +25,7 @@ else
 
 function getLanguageArray() {
 	global $language;
+	global $extension;
 	
 	//if statement for the 200709 release
 	if($language == "en")
@@ -41,6 +42,20 @@ function getLanguageArray() {
 
 	include($langPath.$language.$langFile);
 
+	foreach($extension as $key=>$value)
+	{
+		/*
+		* If extension is enabled then continue and include the requested file for that extension if it exists
+		*/	
+		$extension_lang_file = "./extensions/".$value['name']."/lang/".$language.$langFile;
+		if($value['enabled'] == "1")
+		{
+			//echo "Enabled:".$value['name']."<br><br>";
+			if(file_exists($extension_lang_file)) {
+				include($extension_lang_file);
+			}
+		}
+	}
 	/*
 	if(file_exists($langPath.substr($getLanguage,0,2).$langFile)) {
 		include($langPath.substr($getLanguage,0,2).$langFile);
