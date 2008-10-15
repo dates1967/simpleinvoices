@@ -23,10 +23,11 @@ else
 	$language = "en-gb";
 }  
 
-function getLanguageArray() {
+function getLanguageArray($override="") {
 	global $language;
 	global $extension;
 	
+	($override!="") ? $language = $override : $language = $language  ;
 	//if statement for the 200709 release
 	if($language == "en")
 	{
@@ -100,6 +101,7 @@ function getLanguageList() {
 	
 	return $languages;
 }
+
 
 $LANG = getLanguageArray();
 //TODO: if (getenv("HTTP_ACCEPT_LANGUAGE") != available language) AND (config lang != en) ) {
