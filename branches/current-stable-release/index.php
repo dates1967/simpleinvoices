@@ -147,7 +147,7 @@ $smarty -> assign("extension_jquery_files",$extension_jquery_files);
 	* TODO: fix the javascript or move datapicker to extjs to fix this hack - not nice
 	*/
 
-if(!in_array($module, $early_exit))
+if( !in_array($module."_".$view, $early_exit) )
 {
 	if ($view == "manage") 
 		$smarty -> display("../templates/default/headerm.tpl");

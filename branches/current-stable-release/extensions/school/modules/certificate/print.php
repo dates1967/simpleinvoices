@@ -1,5 +1,6 @@
 <?php
 //stop the direct browsing to this file - let index.php handle which files get displayed
+$menu = false;
 checkLogin();
 
 #get the invoice id

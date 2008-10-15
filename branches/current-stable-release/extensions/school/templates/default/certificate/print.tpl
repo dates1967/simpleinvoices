@@ -1,5 +1,4 @@
 	
- 	<hr></hr>
 
 	<table align="center" with="100%">
 	<tr>
