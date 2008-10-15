@@ -7,6 +7,11 @@
 
 	<b>Certificate ::
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}">{$LANG.Print}</a></b> :: 
+	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=fr">{$LANG.Print} fr</a></b> :: 
+	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=de">{$LANG.Print} de</a></b> :: 
+	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=it">{$LANG.Print} it</a></b> :: 
+	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=es">{$LANG.Print} es</a></b> :: 
+	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=en-gb">{$LANG.Print} en</a></b> :: 
 	<a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a></b>
 	
  	<hr></hr>

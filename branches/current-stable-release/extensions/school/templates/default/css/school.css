@@ -1,0 +1,36 @@
+
+.certTable{
+	text-align:middle;
+margin-left:auto; margin-right:auto;
+}
+.certMiddle
+{
+margin-left:auto; margin-right:auto;
+/*
+	text-align: left;
+	width: 80%;
+	margin:1em auto;
+*/
+}
+.certTitle {
+	font-size:46px;
+	color:red;
+
+}
+.width100{
+
+	width: 100%;
+}
+.certGreen {
+	font-size:16px;
+	color:green;
+}
+.certItalic {
+	font-style:italic;
+}
+.certBold {
+	font-weight:bold;
+}
+.certSmall {
+	font-size:12px;
+}
