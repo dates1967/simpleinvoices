@@ -26,5 +26,5 @@ include_once('./include/manageCustomFields.php');
 include_once("./include/validation.php");
 */
 $early_exit[] = "certificate_print";
-echo "<link rel='stylesheet' type='text/css' href='./extensions/school/templates/default/css/school.css' />";
+
 ?>

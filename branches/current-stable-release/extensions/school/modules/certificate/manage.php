@@ -3,6 +3,14 @@
 //stop the direct browsing to this file - let index.php handle which files get displayed
 checkLogin();
 
+//branch admin can only see there stuff
+$smarty->assign('role_name', $auth_session->role_name);
+if($auth_session->role_name == "branch_administrator")
+{
+	$limit = " AND c.branch_id = ".$auth_session->user_domain;
+}
+
+
 	$search_sql ="";
 	$i = 0;
 if (!empty($_GET['action']))
@@ -30,6 +38,7 @@ if (!empty($_GET['action']))
 		$smarty -> assign('course_sel',$course_sel);
 	}
 
+	$search_sql .= $limit;
 //$sql = "SELECT * FROM ".TB_PREFIX."certificate $search_sql ORDER BY id";
 $sql = "select 
 			c.id as id, 

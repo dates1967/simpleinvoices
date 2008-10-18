@@ -3,7 +3,10 @@
 {else}
 
 
-<h3>Manage Certificates :: <a href="index.php?module=certificate&view=add">Add New Certificate</a></h3>
+<h3>Manage Certificates 
+
+{if $role_name == "administrator"} :: <a href="index.php?module=certificate&view=add">Add New Certificate</a>{/if}
+</h3>
 
  <hr />
 {if $smarty.get.action == "search"}
@@ -44,9 +47,12 @@ Certificates filtered by
 	<a class="index_table"
 	 href="index.php?module=certificate&view=print&id={$cert.id}">{$LANG.Print}</a> ::
 	<a class="index_table"
-	 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a> ::
-	<a class="index_table"
-	 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a> </td>
+	 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a>
+	{if $role_name == "administrator"} 
+		:: <a class="index_table"
+		 href="index.php?module=certificate&view=details&id={$cert.id}&action=edit">{$LANG.edit}</a>
+	{/if}
+ </td>
 	<td class="index_table">{$cert.id}</td>
 	<td class="index_table">{$cert.branch}</td>
 	<td class="index_table">{$cert.name}, {$cert.first_name}</td>

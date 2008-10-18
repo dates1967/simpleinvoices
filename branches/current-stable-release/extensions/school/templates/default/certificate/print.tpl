@@ -1,4 +1,6 @@
 	
+<link rel='stylesheet' type='text/css' href='./extensions/school/templates/default/css/school.css' />
+
 	<table align="center" class="certTable" width="100%">
 	<tr>
 		<td align=center><div class="certGreen">{$LANG.school_name}</div></td>
