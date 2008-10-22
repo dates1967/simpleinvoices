@@ -15,6 +15,7 @@ $install_path = $path['dirname'];
 include_once("./extensions/school/include/sql_queries.php");
 include_once("./extensions/school/include/acl.php");
 include_once("./extensions/school/include/check_permissions.php");
+include_once("./extensions/school/include/number_to_ru.php");
 /*
 include_once('./include/language.php');
 

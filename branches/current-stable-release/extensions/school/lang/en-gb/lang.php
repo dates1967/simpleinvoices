@@ -17,5 +17,6 @@ $LANG['school_director'] = "School Director";
 $LANG['school_name'] = "KRASNODAR SCHOOL OF FOREIGN LANGUAGES";
 $LANG['students_id'] = "Student's ID";
 $LANG['to'] = "to";
+$LANG['total_services_rendered'] = "Total services rendered, to the amount of";
 
 ?>

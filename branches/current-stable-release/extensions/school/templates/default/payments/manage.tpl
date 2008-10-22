@@ -50,7 +50,11 @@
 
 
 	<tr class='index_table'>
-		<td class='index_table'><a class='index_table' href='index.php?module=payments&view=details&id={$payment.id}'>{$LANG.view}</a></td>
+		<td class='index_table'>
+			<a class='index_table' href='index.php?module=payments&view=details&id={$payment.id}'>{$LANG.view}</a>
+			::
+			<a class='index_table' href='index.php?module=payments&view=print&id={$payment.id}'>{$LANG.Print}</a>
+		</td>
 		<td class='index_table'>{$payment.id}</td>
 		<td class='index_table'>{$payment.ac_inv_id}</td>
 		<td class='index_table'>{$payment.CNAME}</td>

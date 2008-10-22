@@ -1020,6 +1020,8 @@ class school_payment {
 		$sql = "SELECT 
 					ap.*, 
 					c.name AS customer, 
+					c.first_name AS customer_first_name, 
+					c.middle_name AS customer_middle_name, 
 					b.name AS biller, 
 					br.name AS branch 
 				FROM 
