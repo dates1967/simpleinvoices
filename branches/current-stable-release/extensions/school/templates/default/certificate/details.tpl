@@ -5,7 +5,10 @@
 
 {if $smarty.get.action== 'view' }
 
-	<b>Certificate ::
+	<b>Certificate 
+
+	{if $role_name == "administrator"} 
+	::
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}">{$LANG.Print}</a></b> :: 
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=fr">{$LANG.Print} fr</a></b> :: 
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=de">{$LANG.Print} de</a></b> :: 
@@ -13,7 +16,7 @@
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=es">{$LANG.Print} es</a></b> :: 
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=en-gb">{$LANG.Print} en</a></b> :: 
 	<a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a></b>
-	
+	{/if}
  	<hr></hr>
 
 	<table align="center">
@@ -87,8 +90,10 @@
 	</table>
 
 <hr></hr>
+	{if $role_name == "administrator"} 
 <a href="index.php?module=certificate&view=print&id={$certificate.id}">{$LANG.Print}</a> ::
 <a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a>
+	{/if}
 {/if}
 
 

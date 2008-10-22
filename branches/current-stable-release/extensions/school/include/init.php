@@ -26,5 +26,6 @@ include_once('./include/manageCustomFields.php');
 include_once("./include/validation.php");
 */
 $early_exit[] = "certificate_print";
+$early_exit[] = "payments_print";
 
 ?>
