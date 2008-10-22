@@ -13,7 +13,7 @@ if( ($auth_session->role_name =='student') AND ($module == 'customers') AND ($_G
 }
 
 //certificate page check - only admin allows to add and edit
-if( ($auth_session->role_name !='administrator') AND ($module == 'certificate') AND (($view == 'add') OR ($_GET['action'] =="edit"))  )
+if( ($auth_session->role_name !='administrator') AND ($module == 'certificate') AND ( ($view == 'print') OR ($view == 'add') OR ($_GET['action'] =="edit"))  )
 {
 	$checkPermission = "denied";
 }

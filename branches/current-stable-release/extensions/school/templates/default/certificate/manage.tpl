@@ -44,8 +44,10 @@ Certificates filtered by
 {foreach from=$certificate item=cert}
 	<tr class="index_table">
 	<td class="index_table">
+	{if $role_name == "administrator"} 
 	<a class="index_table"
 	 href="index.php?module=certificate&view=print&id={$cert.id}">{$LANG.Print}</a> ::
+	{/if}
 	<a class="index_table"
 	 href="index.php?module=certificate&view=details&id={$cert.id}&action=view">{$LANG.view}</a>
 	{if $role_name == "administrator"} 
