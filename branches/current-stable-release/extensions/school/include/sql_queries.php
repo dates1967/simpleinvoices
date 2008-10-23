@@ -891,6 +891,35 @@ class school_invoice extends invoice{
 			return sql2array($sql);
 		}
 
+		function getInvoiceItems($id) {
+			
+			$sql = "SELECT * FROM ".TB_PREFIX."invoice_items WHERE invoice_id =$id";
+			$query = mysqlQuery($sql);
+			
+			$invoiceItems = null;
+			
+			for($i=0;$invoiceItem = mysql_fetch_array($query);$i++) {
+			
+		//		$invoiceItem['quantity_formatted'] = $invoiceItem['quantity'];
+				$invoiceItem['unit_price'] = round($invoiceItem['unit_price'],2);
+				$invoiceItem['tax_amount'] = round($invoiceItem['tax_amount'],2);
+				$invoiceItem['gross_total'] = round($invoiceItem['gross_total'],2);
+				$invoiceItem['total'] = round($invoiceItem['total'],2);
+				
+				$p_id = $invoiceItem['product_id'];
+				$invoiceItem['product'] = getProduct($p_id);	
+	
+				//subject
+				$sql_subject= "select * from ".TB_PREFIX."subject where id = ".$invoiceItem['product']['subject_id']; 
+				$invoiceItem['subject'] = mysql_fetch_array(mysqlQuery($sql_subject));
+
+				$invoiceItems[$i] = $invoiceItem;
+			}
+			
+			return $invoiceItems;
+		}
+
+
 }
 
 class school_biller extends biller

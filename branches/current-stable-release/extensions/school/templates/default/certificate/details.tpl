@@ -3,11 +3,11 @@
 	method="post">
 
 
-{if $smarty.get.action== 'view' }
+{if $smarty.get.action== 'view'}
 
 	<b>Certificate 
 
-	{if $role_name == "administrator"} 
+	{if $role_name == 'administrator'} 
 	::
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}">{$LANG.Print}</a></b> :: 
 	<a href="index.php?module=certificate&view=print&id={$certificate.id}&lang=fr">{$LANG.Print} fr</a></b> :: 
@@ -18,7 +18,6 @@
 	<a href="index.php?module=certificate&view=details&id={$certificate.id}&action=edit">{$LANG.edit}</a></b>
 	{/if}
  	<hr></hr>
-
 	<table align="center">
 	<tr>
 		<td class="details_screen">ID</td><td>{$certificate.id}</td>

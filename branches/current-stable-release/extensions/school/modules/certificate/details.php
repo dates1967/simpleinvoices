@@ -70,4 +70,5 @@ $smarty -> assign('certificate',$getCert);
 $customFieldLabel = getCustomFieldLabels();
 $smarty -> assign('customFieldLabel',$customFieldLabel);
 
+$smarty->assign('role_name', $auth_session->role_name);
 ?>

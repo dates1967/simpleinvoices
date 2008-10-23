@@ -26,20 +26,22 @@
 		<td>{$LANG.item}</td>
 		<td>{$LANG.description}</td>
 		<td>{$LANG.quantity_short}</td>
-		<td>????</td>
+		<td>{$LANG.unit}</td>
 		<td>{$LANG.unit_price}</td>
 		<td>{$LANG.total_taxes}</td>
 		<td>{$LANG.total_uppercase}</td>
 	</tr>
+	{foreach from=$invoiceItems item=invoiceItem name=invoiceItemLoop}
 	<tr>
-		<td>{$payment.ac_inv_id}</td>
-		<td>{$invoiceItems.0.product.description}</td>
-		<td>{$invoiceItems.0.quantity}</td>
-		<td>$$$$</td>
-		<td>{$invoiceItems.0.unit_price}</td>
-		<td>{$invoiceItems.0.tax_amount}</td>
-		<td>{$invoiceItems.0.total}</td>
+		<td>{$smarty.foreach.invoiceItemLoop.iteration}</td>
+		<td>{$invoiceItem.subject.name}</td>
+		<td>{$invoiceItem.quantity}</td>
+		<td>{$invoiceItem.product.teaching_hours} {$LANG.teaching_hours}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.unit_price}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.tax_amount}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.total}</td>
 	</tr>
+	{/foreach}
 	<tr>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
@@ -57,7 +59,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>{$LANG.total_uppercase}</td>
-		<td>{$invoice.total}</td>
+		<td>{$preference.pref_currency_sign}{$invoice.total}</td>
 	</tr>
 	<tr>
 	</tr>
