@@ -11,6 +11,7 @@ $LANG['from'] = "from";
 $LANG['level'] = "level";
 $LANG['place_of_issue'] = "Place of Issue";
 $LANG['Print'] = "Print";
+$LANG['russian'] = "Russian";
 $LANG['school_address'] = "164 Sedina Street, Krasnodar, Russia, 350015";
 $LANG['school_web_address'] = "www.krasnodarschool.ru";
 $LANG['school_director'] = "School Director";

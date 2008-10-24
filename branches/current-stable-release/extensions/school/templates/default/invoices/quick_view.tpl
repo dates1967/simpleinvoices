@@ -42,6 +42,8 @@
 {$LANG.actions}: 
 		<a title="{$LANG.print_preview_tooltip} {$preference.pref_inv_wording} {$invoice.id}" href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view"> {$LANG.print_preview}</a>
 		 :: 
+		<a title="{$LANG.russian} {$LANG.print_preview_tooltip} {$preference.pref_inv_wording} {$invoice.id}" href="index.php?module=invoices&view=print&id={$invoice.id}">{$LANG.russian} {$LANG.print_preview}</a>
+		 :: 
 		<a href="index.php?module=invoices&view=details&invoice={$invoice.id}&action=view"> {$LANG.edit}</a>
 		 ::
 		 <a href='index.php?module=payments&view=process&invoice={$invoice.id}&op=pay_selected_invoice'> {$LANG.process_payment} </a>

@@ -86,6 +86,11 @@ Invoices filtered by
 	href="index.php?module=invoices&view=templates/template&invoice={$invoice.id}&action=view&location=print">
 	<img src="images/common/printer.gif" height="16" border="-5px" padding="-4px" valign="bottom" /><!-- print --></a>
  
+	<!-- Russian Print View -->
+	<a class="index_table" title="{$LANG.russian} {$LANG.print_preview_tooltip} {$invoice.pref_inv_wording} {$invoice.id}"
+	href="index.php?module=invoices&view=print&id={$invoice.id}">
+	<img src="./extensions/school/images/ru.gif" /><!-- print --></a>
+ 
 	<!-- EXPORT TO PDF -->
 	<a class="index_table" title="{$LANG.export_tooltip} {$invoice.pref_inv_wording} {$invoice.id} {$LANG.export_pdf_tooltip}"
 	href="index.php?module=export&view=pdf&id={$invoice.id}"><img src="images/common/pdf.jpg" height="16" border="-5px" padding="-4px" valign="bottom" /><!-- pdf --></a>

@@ -2,10 +2,10 @@
 <table width="100%" align=center>
 	<tr>
 		<td>
-			{$LANG.invoice_id}: {$payment.ac_inv_id}
+			{$LANG.invoice_id}: {$invoice.id}
 		</td>
 		<td>
-			{$LANG.date_upper}: {$payment.date}
+			{$LANG.date_upper}: {$invoice.date}
 		</td>
 	</tr>
 </table>
@@ -13,10 +13,10 @@
 
 <table width="100%" align=center>
 	<tr>
-		<td class='details_screen'>{$LANG.biller}: {$payment.biller}</td>
+		<td class='details_screen'>{$LANG.biller}: {$biller.name}</td>
 	</tr>
 	<tr>
-		<td class='details_screen'>{$LANG.customer}: {$payment.customer}, {$payment.customer_first_name}, {$payment.customer_middle_name} </td>
+		<td class='details_screen'>{$LANG.customer}: {$customer.name}, {$customer.first_name}, {$customer.middle_name} </td>
 	</tr>
 
 </table>
@@ -37,9 +37,9 @@
 		<td>{$invoiceItem.subject.name}</td>
 		<td>{$invoiceItem.quantity}</td>
 		<td>{$invoiceItem.product.teaching_hours} {$LANG.teaching_hours}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.unit_price}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.tax_amount}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.total}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.unit_price|number_format:2}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.tax_amount|number_format:2}</td>
+		<td>{$preference.pref_currency_sign}{$invoiceItem.total|number_format:2}</td>
 	</tr>
 	{/foreach}
 	<tr>
@@ -59,7 +59,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>{$LANG.total_uppercase}</td>
-		<td>{$preference.pref_currency_sign}{$invoice.total}</td>
+		<td>{$preference.pref_currency_sign}{$invoice.total|number_format:2}</td>
 	</tr>
 	<tr>
 	</tr>
