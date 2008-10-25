@@ -88,7 +88,7 @@ Invoices filtered by
  
 	<!-- Russian Print View -->
 	<a class="index_table" title="{$LANG.russian} {$LANG.print_preview_tooltip} {$invoice.pref_inv_wording} {$invoice.id}"
-	href="index.php?module=invoices&view=print&id={$invoice.id}">
+	href="index.php?module=invoices&view=print&lang=ru&id={$invoice.id}">
 	<img src="./extensions/school/images/ru.gif" /><!-- print --></a>
  
 	<!-- EXPORT TO PDF -->

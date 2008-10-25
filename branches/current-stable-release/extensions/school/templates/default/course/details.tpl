@@ -161,6 +161,12 @@
 		</td>
 	</tr>
 	<tr>
+		<td class="details_screen">Number of payment periods</td>
+		<td>
+			{$course.number_of_payment_periods}
+		</td>
+	</tr>
+	<tr>
 		<td class="details_screen">Payment period - 1 - start</td>
 		<td>
 			{$course.start_date}
@@ -221,6 +227,54 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td class="details_screen">Payment period - 7 - start</td>
+		<td>
+			{$course.payment_period_7_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 7 - end</td>
+		<td>
+			{$course.payment_period_7_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 8 - start</td>
+		<td>
+			{$course.payment_period_8_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 8 - end</td>
+		<td>
+			{$course.payment_period_8_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 9 - start</td>
+		<td>
+			{$course.payment_period_9_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 9 - end</td>
+		<td>
+			{$course.payment_period_9_end}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 10 - start</td>
+		<td>
+			{$course.payment_period_10_start}
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 10 - end</td>
+		<td>
+			{$course.payment_period_10_end}
+		</td>
+	</tr>
 
 
 </table>
@@ -477,6 +531,12 @@
 		</td>
 	</tr>
 	<tr>
+		<td class="details_screen">Number of payment periods</td>
+		<td>
+			<input type=text name="number_of_payment_periods" value="{$course.number_of_payment_periods}" size=5>
+		</td>
+	</tr>
+	<tr>
 		<td class="details_screen">Payment period - 1 - start</td>
 		<td class="details_screen"> = Course start date</td>
 	</tr>
@@ -547,6 +607,54 @@
 		</td>
 	</tr>
 
+	<tr>
+		<td class="details_screen">Payment period - 7 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_7_start" value="{$course.payment_period_7_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 7 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_7_end" value="{$course.payment_period_7_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 8 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_8_start" value="{$course.payment_period_8_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 8 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_8_end" value="{$course.payment_period_8_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 9 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_9_start" value="{$course.payment_period_9_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 9 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_9_end" value="{$course.payment_period_9_end}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 10 - start</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_10_start" value="{$course.payment_period_10_start}" size=10>
+		</td>
+	</tr>
+	<tr>
+		<td class="details_screen">Payment period - 10 - end</td>
+		<td>
+			<input type=text class="date-picker" name="payment_period_10_end" value="{$course.payment_period_10_end}" size=10>
+		</td>
+	</tr>
 
 
 

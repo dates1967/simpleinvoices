@@ -610,3 +610,17 @@ ALTER TABLE `si_account_payments` ADD `branch_id` INT NOT NULL ;
 
 
 ALTER TABLE `si_invoices` ADD `branch_id` INT NULL; 
+
+--2008 10 stuff
+ALTER TABLE `si_products` ADD `number_of_payment_periods` VARCHAR( 255 ) NULL; 
+
+ALTER TABLE `si_products` 
+ADD `payment_period_7_start` DATE NOT NULL ,
+ADD `payment_period_7_end` DATE NOT NULL ,
+ADD `payment_period_8_start` DATE NOT NULL ,
+ADD `payment_period_8_end` DATE NOT NULL ,
+ADD `payment_period_9_start` DATE NOT NULL ,
+ADD `payment_period_9_end` DATE NOT NULL ,
+ADD `payment_period_10_start` DATE NOT NULL ,
+ADD `payment_period_10_end` DATE NOT NULL ;
+

@@ -5,10 +5,10 @@ checkLogin();
 
 #get the invoice id
 $id = $_GET['id'];
-unset($LANG);
-$print_language = (!empty($_GET['lang'])) ?  $_GET['lang'] : "en-gb" ;
-$LANG=getLanguageArray("$print_language");
-$smarty -> assign('LANG',$LANG);
+unset($lang);
+$print_language = (!empty($_get['lang'])) ?  $_get['lang'] : "en-gb" ;
+$lang=getlanguagearray("$print_language");
+$smarty -> assign('lang',$lang);
 
 function getCertificate($id) {
 	

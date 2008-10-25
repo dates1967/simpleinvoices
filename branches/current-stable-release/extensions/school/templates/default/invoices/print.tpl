@@ -33,13 +33,19 @@
 	</tr>
 	{foreach from=$invoiceItems item=invoiceItem name=invoiceItemLoop}
 	<tr>
-		<td>{$smarty.foreach.invoiceItemLoop.iteration}</td>
-		<td>{$invoiceItem.subject.name}</td>
-		<td>{$invoiceItem.quantity}</td>
-		<td>{$invoiceItem.product.teaching_hours} {$LANG.teaching_hours}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.unit_price|number_format:2}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.tax_amount|number_format:2}</td>
-		<td>{$preference.pref_currency_sign}{$invoiceItem.total|number_format:2}</td>
+		<td valign=top>{$smarty.foreach.invoiceItemLoop.iteration}</td>
+		{* <td>{$invoiceItem.subject.name}</td> *}
+		<td valign=top>
+			{$LANG.course_name}: {$invoiceItem.product.description} 
+			<br>{$LANG.payments_start}: {$invoiceItem.product.start_date}
+			<br>{$LANG.payments_end}: {$invoiceItem.product.end_date} 
+			<br>{$LANG.number_of_payment_periods}: {$invoiceItem.product.number_of_payment_periods} 
+		</td>
+		<td  valign=top >{$invoiceItem.quantity}</td>
+		<td valign=top>{$invoiceItem.product.teaching_hours} {$LANG.teaching_hours}</td>
+		<td valign=top>{$preference.pref_currency_sign}{$invoiceItem.unit_price|number_format:2}</td>
+		<td valign=top>{$preference.pref_currency_sign}{$invoiceItem.tax_amount|number_format:2}</td>
+		<td valign=top>{$preference.pref_currency_sign}{$invoiceItem.total|number_format:2}</td>
 	</tr>
 	{/foreach}
 	<tr>
@@ -67,6 +73,9 @@
 </table>
 {$LANG.total_services_rendered}<br>
 {$invoice_total_ru}
+
+<br><br>
+{$LANG.services_implemented_in_full}
 <hr />
 <br><br>
 

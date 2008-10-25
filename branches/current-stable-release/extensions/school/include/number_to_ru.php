@@ -226,7 +226,8 @@ function num2str($L)
 		$s.=$s1.$kopeek[$many]; 
 	} 
 	else { 
-		$s.=" 00 kopecks"; 
+//		$s.=" 00 kopecks"; 
+		$s.=" 00 копеек"; 
 	} 
 
 	return $s; 

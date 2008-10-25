@@ -38,4 +38,9 @@ $biller = getBiller($invoice['biller_id']);
 $smarty -> assign("customer",$customer);
 $smarty -> assign("biller",$biller);
 
+unset($LANG);
+$print_language = (!empty($_GET['lang'])) ?  $_GET['lang'] : "en-gb" ;
+$lang=getlanguagearray("$print_language");
+$smarty -> assign('LANG',$lang);
+
 ?>

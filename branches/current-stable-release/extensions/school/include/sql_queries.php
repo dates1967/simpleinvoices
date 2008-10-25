@@ -98,7 +98,8 @@ class school_product extends product {
 					payment_period_5_start,
 					payment_period_5_end,
 					payment_period_6_start,
-					payment_period_6_end
+					payment_period_6_end,
+					number_of_payment_periods
 				)			
 				VALUES
 					(	
@@ -144,7 +145,16 @@ class school_product extends product {
 						'$_POST[payment_period_5_start]',
 						'$_POST[payment_period_5_end]',
 						'$_POST[payment_period_6_start]',
-						'$_POST[payment_period_6_end]'
+						'$_POST[payment_period_6_end]',
+						'$_POST[payment_period_7_start]',
+						'$_POST[payment_period_7_1end]',
+						'$_POST[payment_period_8_start]',
+						'$_POST[payment_period_8_end]',
+						'$_POST[payment_period_9_start]',
+						'$_POST[payment_period_9_end]',
+						'$_POST[payment_period_10_start]',
+						'$_POST[payment_period_10_end]',
+						'$_POST[number_of_payment_periods]'
 					)";
 			return mysqlQuery($sql);
 		}
@@ -197,7 +207,16 @@ class school_product extends product {
 					payment_period_5_start = '$_POST[payment_period_5_start]',
 					payment_period_5_end = '$_POST[payment_period_5_end]',
 					payment_period_6_start = '$_POST[payment_period_6_start]',
-					payment_period_6_end = '$_POST[payment_period_6_end]'
+					payment_period_6_end = '$_POST[payment_period_6_end]',
+					payment_period_7_start = '$_POST[payment_period_7_start]',
+					payment_period_7_end = '$_POST[payment_period_7_end]',
+					payment_period_8_start = '$_POST[payment_period_8_start]',
+					payment_period_8_end = '$_POST[payment_period_8_end]',
+					payment_period_9_start = '$_POST[payment_period_9_start]',
+					payment_period_9_end = '$_POST[payment_period_9_end]',
+					payment_period_10_start = '$_POST[payment_period_10_start]',
+					payment_period_10_end = '$_POST[payment_period_10_end]',
+					number_of_payment_periods = '$_POST[number_of_payment_periods]'
 				WHERE
 					id = " . $_GET['id'];
 			
