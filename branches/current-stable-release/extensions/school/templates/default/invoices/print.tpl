@@ -2,7 +2,7 @@
 <table width="100%" align=center>
 	<tr>
 		<td>
-			{$LANG.invoice_id}: {$invoice.id}
+			{$LANG.invoice_id}: {$invoice.id} {$LANG.from}
 		</td>
 		<td>
 			{$LANG.date_upper}: {$invoice.date}

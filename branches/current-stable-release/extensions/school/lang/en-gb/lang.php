@@ -1,5 +1,7 @@
 <?php
 
+$LANG['from'] = ""; //"от"; <- russian
+
 $LANG['at'] = "at";
 $LANG['certificate_number'] = "Certificate Number";
 $LANG['cert_followed_and_completed'] = "has followed and successfully completed an";

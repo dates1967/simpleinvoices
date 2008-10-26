@@ -1,5 +1,7 @@
 <?php
 
+$LANG['invoice_id'] = "Акт №";
+
 $LANG['at'] = "at";
 $LANG['certificate_number'] = "Certificate Number";
 $LANG['cert_followed_and_completed'] = "has followed and successfully completed an";
@@ -8,7 +10,7 @@ $LANG['CERTIFICATE'] = "CERTIFICATE";
 $LANG['COURSE'] = "COURSE";
 $LANG['course_name'] = "Название курса"; //google translate
 $LANG['date_of_issue'] = "Date of Issue";
-$LANG['from'] = "from";
+$LANG['from'] = "от";
 $LANG['level'] = "level";
 $LANG['number_of_payment_periods'] = "Количество периодов выплат";//google translate
 $LANG['place_of_issue'] = "Place of Issue";
