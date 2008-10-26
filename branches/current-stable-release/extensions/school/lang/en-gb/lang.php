@@ -26,7 +26,7 @@ $LANG['students_id'] = "Student's ID";
 $LANG['teaching_hours'] = "Teaching Hours";
 $LANG['to'] = "to";
 $LANG['total_services_rendered'] = "Total services rendered, to the amount of";
-$LANG['services_implemented_in_full'] = "These services implemented in full and on time. Customer claims by volume, quality and timeliness of service delivery is not"; //Вышеперечисленные услуги выполнены полностью и в срок. Заказчик претензий по объему, качеству и срокам оказания услуг не имеет
+$LANG['services_implemented_in_full'] = "Above-listed services are rendered in full(wholly) and in time. Customer has no (reason for) complaint with quantity of units, quality and time"; //Вышеперечисленные услуги выполнены полностью и в срок. Заказчик претензий по объему, качеству и срокам оказания услуг не имеет
 $LANG['unit'] = "Unit"; //unit of measurement in payment form
 
 ?>

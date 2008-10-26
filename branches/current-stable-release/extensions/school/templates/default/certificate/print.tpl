@@ -33,7 +33,8 @@
 		<td align=center>&nbsp;</td>
 	</tr>
 	<tr>
-		<td align=center><div class="certBold" >{$course_sel->description|upper} {$LANG.COURSE}</div></td>
+{*		<td align=center><div class="certBold" >{$course_sel->description|upper} {$LANG.COURSE}</div></td>*}
+		<td align=center><div class="certBold" >{$subject_sel->name|upper} {$LANG.COURSE}</div></td>
 	</tr>
 	<tr>
 		<td align=center>&nbsp;</td>
