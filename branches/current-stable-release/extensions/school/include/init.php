@@ -29,5 +29,6 @@ include_once("./include/validation.php");
 $early_exit[] = "certificate_print";
 $early_exit[] = "payments_print";
 $early_exit[] = "invoices_print";
+$early_exit[] = "invoices_ajax";
 
 ?>

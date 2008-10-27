@@ -58,8 +58,8 @@ if ($_POST['action'] == "insert" ) {
 		* If an extension has set an alternate class name use that - else use the stardard class of invoice
 		*/
 		//$invoice_class_name = empty($extension['invoice_class_name']) ? "invoice" : $extension['invoice_class_name'] ;
-		$insertII = new invoice;
-			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"]) ) {
+		$insertII = new school_invoice;
+			if ($insertII->insertInvoiceItem($invoice_id,$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["attr1-$i"] ) ) {
 				//$saved = true;
 			} else {
 				die(mysql_error());
@@ -87,7 +87,7 @@ if ( $_POST['action'] == "edit") {
 
 	for($i=0;(!empty($_POST["quantity$i"]) && $i < $_POST['max_items']);$i++) {
 		
-		if (invoice::updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"])) {
+		if (school_invoice::updateInvoiceItem($_POST["id$i"],$_POST["quantity$i"],$_POST["products$i"],$_POST['tax_id'],$_POST["description$i"],$_POST["attr1-$i"] )) {
 			//$saved =  true;
 		}
 		else {

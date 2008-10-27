@@ -887,8 +887,6 @@ class invoice {
 
 			//print_r($query);
 			$invoice = mysql_fetch_array($query);
-			
-			//print_r($invoice);
 			//exit();
 			
 			$invoice['calc_date'] = date('Y-m-d', strtotime( $invoice['date'] ) );

@@ -111,6 +111,45 @@ if ( ($module == "invoices" ) && (strstr($view,"templates")) ) {
 }
 
 
+/*
+* xml or ajax page requeset - start
+*/
+
+    if( (strstr($view,"xml") OR (strstr($view,"ajax")) ) )
+    {
+        $extensionXml = 0;
+		foreach($extension as $key=>$value)
+        {
+            /*
+            * If extension is enabled then continue and include the requested file for that extension if it exists
+            */
+            if($value['enabled'] == "1")
+            {
+                if(file_exists("./extensions/$value[name]/modules/$module/$view.php"))
+                {
+                    include("./extensions/$value[name]/modules/$module/$view.php");
+                    $extensionXml++;
+                }
+            }
+        }
+        /*
+        * If no extension php file for requested file load the normal php file if it exists
+        */
+        if($extensionXml == 0)
+        {
+            include("./modules/$module/$view.php");
+        }
+
+        exit(0);
+    }
+/*
+* xml or ajax page request - end
+*/
+
+
+
+
+
 $path = "$module/$view";
 
 /*

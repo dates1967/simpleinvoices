@@ -37,9 +37,9 @@
 		{* <td>{$invoiceItem.subject.name}</td> *}
 		<td valign=top>
 			{$LANG.course_name}: {$invoiceItem.product.description} 
-			<br>{$LANG.payments_start}: {$invoiceItem.product.start_date}
-			<br>{$LANG.payments_end}: {$invoiceItem.product.end_date} 
-			<br>{$LANG.number_of_payment_periods}: {$invoiceItem.product.number_of_payment_periods} 
+			<br>{$LANG.payments_start}: {$invoiceItem.payment_period_start}
+			<br>{$LANG.payments_end}: {$invoiceItem.payment_period_end} 
+			<br>{$LANG.number_of_payment_periods}: {$invoiceItem.payment_period} 
 		</td>
 		<td  valign=top >{$invoiceItem.quantity}</td>
 		<td valign=top>{$invoiceItem.product.teaching_hours} {$LANG.teaching_hours}</td>

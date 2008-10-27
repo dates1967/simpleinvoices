@@ -9,7 +9,6 @@
 <script type="text/javascript">
     var GB_ROOT_DIR = "./modules/include/js/";
 </script>
-{$extension_jquery_files}
 	<link rel="stylesheet" type="text/css" href="./templates/default/css/menu_header.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="include/jquery/jquery.autocomplete.css" title="default" media="screen" />
 	<link rel="stylesheet" type="text/css" href="include/jquery/jquery.datePicker.css" title="default" media="screen" />

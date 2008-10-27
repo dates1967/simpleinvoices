@@ -31,13 +31,23 @@
         {section name=line start=0 loop=$dynamic_line_items step=1}
 
 			<tr>
-				<td><input type=text name="quantity{$smarty.section.line.index}" size="5"></td>
+				<td><input type=text name="quantity{$smarty.section.line.index}" size="5" id="quantity{$smarty.section.line.index}"></td>
 				<td>
 				                
 			{if $products == null }
 				<p><em>{$LANG.no_products}</em></p>
 			{else}
-				<select name="products{$smarty.section.line.index}">
+
+              <select
+                    class="product_select{$smarty.section.line.index} selector" 
+                    name="products{$smarty.section.line.index}"
+                    onchange="
+                        chain_select($(this).val(),'#attr1-'+{$smarty.section.line.index}, {$smarty.section.line.index}, {$smarty.section.line.index},  jQuery('#quantity{$smarty.section.line.index}').val() );
+                            "   
+                >
+
+
+
 					<option value=""></option>
 				{foreach from=$products item=product}
 					<option {if $product.id == $defaults.product} selected {/if} value="{$product.id}">{$product.description}</option>
@@ -45,7 +55,15 @@
 				</select>
 			{/if}
 				                				                
-                </td></tr>
+                </td>
+	            <td>
+	                <select id="attr1-{$smarty.section.line.index}" name="attr1-{$smarty.section.line.index}" class="linkSel" disabled="disabled">
+	                    <option value="">--  --</option>
+	                </select>
+	            </td>
+
+
+</tr>
 
         {/section}
 	{$show_custom_field.1}
