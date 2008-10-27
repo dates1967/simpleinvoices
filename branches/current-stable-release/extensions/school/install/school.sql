@@ -625,4 +625,4 @@ ADD `payment_period_10_start` DATE NOT NULL ,
 ADD `payment_period_10_end` DATE NOT NULL ;
 
 --2008 10 24
-ALTER TABLE `si_invoice_items` ADD `payment_periods` VARCHAR( 255 ) NULL; 
+ALTER TABLE `si_invoice_items` ADD `payment_period` VARCHAR( 255 ) NULL; 
