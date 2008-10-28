@@ -19,7 +19,13 @@
 
 <form name="frmpost" action="index.php?module=invoices&view=save" method=POST onsubmit="return frmpost_Validator(this)">
 
-<h3>{$LANG.inv} {$LANG.inv_itemised}</h3>
+<h3>{$LANG.inv} {$LANG.inv_itemised}
+
+<div id="gmail_loading" class="gmailLoader" style="float:right; display: none;">
+        	<img src="images/common/gmail-loader.gif" alt="Loading ..."/> Loading ...
+</div>
+
+</h3>
 
 {include file="$path/header.tpl" }
 

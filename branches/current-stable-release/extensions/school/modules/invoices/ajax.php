@@ -17,7 +17,7 @@ if($_GET['id'])
     $row = mysql_fetch_array($states);
 //    $output .= $states_sql;
 
-        	$json[] = array($row['row'] => $row['start']." to ".$row['end']);
+        	$json[] = array($row['row'] => $row['start']." to ".$row['end']." Period:".$row['row']  );
   //      	$json['end'] =  $row['end'];
    
 	}
