@@ -17,7 +17,9 @@
 */
 *}
 <b>You are editing {$preference.pref_inv_wording} {$invoice.id}</b>
-
+<div id="gmail_loading" class="gmailLoader" style="float:right; display: none;">
+        	<img src="images/common/gmail-loader.gif" alt="Loading ..."/> Loading ...
+</div>
  <hr></hr>
 
 <form name="frmpost" action="index.php?module=invoices&view=save" method="post">
@@ -121,8 +123,13 @@
 		<td colspan=6>
 		<table>
 		<tr>
-        	        <td class='details_screen'>{$LANG.quantity_short}</td><td class='details_screen'>{$LANG.description}</td>
-	        </tr>
+        	  <td class='details_screen'>
+        	  {$LANG.quantity_short}
+			 </td>
+        	  <td class='details_screen'>
+        	  {$LANG.description}
+        	  </td>
+	    </tr>
 	{/if}
 
         {if $invoice.type_id == 3}
@@ -146,7 +153,18 @@
 	                {if $products == null }
 	<p><em>{$LANG.no_products}</em></p>
 {else}
-	<select name="products{$line}">
+
+	              <select
+                    class="product_select{$smarty.section.line.index} selector" 
+                    name="products{$line}"
+                    onchange="
+                        chain_select($(this).val(),'#attr1-'+{$line}, {$line}, {$line},  jQuery('#quantity{$line}').val() );
+                            "   
+                >
+	
+	
+	
+	
 	{foreach from=$products item=product}
 		<option {if $product.id == $invoiceItem.product_id} selected {/if} value="{$product.id}">{$product.description}</option>
 	{/foreach}
@@ -156,6 +174,11 @@
 	                
 	                
 	                </td>
+	                	            <td>
+	                <select id="attr1-{$line}" name="attr1-{$line}" class="linkSel" disabled="disabled">
+	                    <option value="">{$invoiceItem.payment_period_start} to {$invoiceItem.payment_period_start} Period: {$invoiceItem.payment_period}</option>
+	                </select>
+	            </td>
 	        </tr>
 		
 

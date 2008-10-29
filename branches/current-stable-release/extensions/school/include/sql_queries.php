@@ -99,6 +99,14 @@ class school_product extends product {
 					payment_period_5_end,
 					payment_period_6_start,
 					payment_period_6_end,
+					payment_period_7_start,
+					payment_period_7_end,
+					payment_period_8_start,
+					payment_period_8_end,
+					payment_period_9_start,
+					payment_period_9_end,
+					payment_period_10_start,
+					payment_period_10_end,
 					number_of_payment_periods
 				)			
 				VALUES
