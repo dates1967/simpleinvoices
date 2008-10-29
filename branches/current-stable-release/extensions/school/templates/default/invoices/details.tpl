@@ -175,8 +175,8 @@
 	                
 	                </td>
 	                	            <td>
-	                <select id="attr1-{$line}" name="attr1-{$line}" class="linkSel" disabled="disabled">
-	                    <option value="">{$invoiceItem.payment_period_start} to {$invoiceItem.payment_period_start} Period: {$invoiceItem.payment_period}</option>
+	                <select id="attr1-{$line}" name="attr1-{$line}" class="linkSel" >
+	                    <option value="{$invoiceItem.payment_period}">{$invoiceItem.payment_period_start} to {$invoiceItem.payment_period_start} Period: {$invoiceItem.payment_period}</option>
 	                </select>
 	            </td>
 	        </tr>
