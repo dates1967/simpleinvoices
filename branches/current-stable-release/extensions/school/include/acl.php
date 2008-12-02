@@ -31,6 +31,7 @@ $acl->add(new Zend_Acl_Resource('payment_types'));
 $acl->add(new Zend_Acl_Resource('branch'));
 $acl->add(new Zend_Acl_Resource('test'));
 $acl->add(new Zend_Acl_Resource('progress'));
+$acl->add(new Zend_Acl_Resource('options'));
 
 /* alternatively, the above could be written:
 $acl->allow('guest', null, 'view');

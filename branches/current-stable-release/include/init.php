@@ -53,7 +53,6 @@ $path = pathinfo($_SERVER['REQUEST_URI']);
 $install_path = $path['dirname'];
 
 include_once('./config/config.php');
-
 $config = new Zend_Config_Ini('./config/config.ini', $environment);
 /*
  * Include another config file if required
