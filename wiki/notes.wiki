@@ -2,12 +2,7 @@
 
 || *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-_to be wiki-ified_
 
-{{{
-###############
-INFO SECTION
-###############
 1.
 > Hey Jakob,
 > 
@@ -22,6 +17,7 @@ try to look into Drupal source for SQL functions. If you are GNU/GPL too, you ca
 
 The point is, that EVERY user inputted string must go through some escaping function:
 
+{{{
 <?php
 
 $user = $_GET['user']; // $_POST['user'] // this is VERY vulnerable $result = MySQL_Query("SELECT * FROM users WHERE username = $user"); // this is NOT vulnerable $result = MySQL_Query("SELECT * FROM users WHERE username = '".mysql_real_escape_string($user)."'");
