@@ -93,7 +93,8 @@
 
 
 == DONE OLD STUFF ==
-
+_page to be wiki-ified_
+{{{
 - sql patch: reset default invoices template to default - Done
 - sql patch: change custom fields to 255 length - up from the current 50 - Done
 - sql patch: change sql_patch field to 255 length - up from the current 50 - Done
