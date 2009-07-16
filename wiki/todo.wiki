@@ -1,6 +1,6 @@
 #summary Simple Invoices todo list
 
-||[todo]||[done]||
+*Pages:* [todo] |[done] | [ideas]
 
 == 2009.2 :: Beta 2 ==
 
