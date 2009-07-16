@@ -1,6 +1,6 @@
 #summary Simple Invoices todo list
 
-|| *Pages:* ||[todo] ||[done] || [ideas]|| [[known issues]] || [[notes]] ||
+|| *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 
 == 2009.2 :: Beta 2 ==
