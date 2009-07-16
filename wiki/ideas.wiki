@@ -1,7 +1,8 @@
 #summary Simple Invoices ideas list
-_Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
 
-|| *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [[notes]] ||
+|| *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
+
+_Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
 
 == Sometime soon
 {{{
