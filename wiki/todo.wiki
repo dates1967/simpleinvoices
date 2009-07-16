@@ -1,9 +1,9 @@
-#summary Simple Invoices todo list
+﻿#summary Simple Invoices todo list
 
 || *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 
-== 2009.2 :: Beta 2 ==
+=== 2009.2 :: Beta 2 ===
 
 # really shoud
  * custom fields - domain id - stuff - JK
@@ -18,7 +18,7 @@
  * Reports - localise
  * database backup - export as XML - Hannes
 
-== 2009.2 :: Beta 1 ==
+=== 2009.2 :: Beta 1 ===
 
  * language and locale pre invoice preference
  * locale select in defaults 
@@ -30,7 +30,7 @@
  * Database log - review
 
 
-== 2009.1 :: Final  - Next major release ==
+=== 2009.1 :: Final  - Next major release ==-
  * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
  * Email - fix errors
  * Update UI of Manage Extensions
