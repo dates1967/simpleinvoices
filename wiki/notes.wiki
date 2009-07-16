@@ -2,8 +2,7 @@
 
 || *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-
-1.
+{{{
 > Hey Jakob,
 > 
 > a few other people have mentioned SQL injection as an issue but i 
@@ -11,6 +10,7 @@
 > 
 > do you know of any example php code  etc.. or best practices re sql 
 > injection? - it would be a great help cause i dont know much about it.
+}}}
 
 hi,
 try to look into Drupal source for SQL functions. If you are GNU/GPL too, you can even adopt it :-)
