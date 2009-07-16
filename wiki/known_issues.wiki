@@ -2,12 +2,8 @@
 
 || *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-{{{
-*************
-Simple Invoices known issues with released versions
-Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it
-*************
-}}}
+_Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
+
 
 = 2009.1 :: Beta 5 =
 
