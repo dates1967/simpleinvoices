@@ -5,7 +5,7 @@
 _Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
 
 
-= Sometime soon =
+=== Sometime soon ===
 
 # maybe some work(or thoughts/planning) has been done but needs to be complete
  * Email - if fail to send add error messages etc..
@@ -39,7 +39,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
 
 # Below here are mainly ideas we should look at but nothing(or little) has been done
 
-== SOMETIME IN THE NOT TOO DISTANT FUTURE TODOs ==
+=== Sometine in the not too distan futures - todos ===
 
  * blow up phpreports and implement our own reporting tools
  * reports : add export to .xls format 
@@ -51,7 +51,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
        * use in the installer and i'll think about it for the login page when/if i add a lang drop down box there
  * Localise - look into Zend Locale or similar to handle localising all the formatting of dates, currency etc.
 
-== SOMETIME IN THE FUTURE TODOs ==
+=== Sometime in the future todos ===
 
  * Reports
    * Date based reports : http://simpleinvoices.org/forum/topic-391.html ( payments received today, invoices made today etc..) - AP
