@@ -1,6 +1,6 @@
 #summary random notes for Simple Invoices
 
-|| *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
+|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 {{{
 > Hey Jakob,
