@@ -1,5 +1,5 @@
 ﻿#summary Simple Invoices release notes
-|| *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
+|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 == 2009.1 ==
  * Delete invoices - add delete line item taxes
