@@ -1,5 +1,7 @@
 #summary Simple Invoices todo list
 
+||[todo]||[done]||
+
 == 2009.2 :: Beta 2 ==
 
 # really shoud
