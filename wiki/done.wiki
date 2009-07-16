@@ -1,4 +1,4 @@
-||*Pages:* ||[todo] ||[done] || [ideas]||
+||*Pages:* ||[todo] ||[done] || [ideas]|| [[known issues]] || [[notes]]
 
 == 2009.1 ==
  * Delete invoices - add delete line item taxes
