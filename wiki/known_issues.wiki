@@ -2,7 +2,6 @@
 
 || *Pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-_page to be wiki-ified_
 {{{
 *************
 Simple Invoices known issues with released versions
