@@ -3,6 +3,7 @@
 
 == 2009.1 ==
  * Delete invoices - add delete line item taxes
+ * Fix email problem in beta 5
 
 == 2009.1 BETA 5 ==
  * Basic installer added

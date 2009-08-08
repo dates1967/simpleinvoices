@@ -32,6 +32,5 @@
 
 == 2009.1 :: Final  - Next major release ==
  * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
- * Email - fix errors
  * Update UI of Manage Extensions
  * redo home page - Recent Activity and Quick Stats
