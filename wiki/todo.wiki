@@ -28,7 +28,7 @@
  * add Manage SQL patches back in
  * add rerun SQL patch button
  * Database log - review
-
+ * Swap Gross for Nett - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
 
 == 2009.1 :: Final  - Next major release ==
  * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
