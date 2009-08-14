@@ -3,8 +3,8 @@
 = Introduction =
 
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml" border="0" /> 
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml" pref_url="www.theage.com.au" border="0" /> 
 
 Add your content here.
 
-<wiki:gadget url="http://www.google.com/ig/directory?type=gadgets&url=hosting.gmodules.com/ig/gadgets/file/110543442524307353585/include-gadget.xml" border="0" /> 
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml" iframeURL="http://www.google.com" border="0" /> 
