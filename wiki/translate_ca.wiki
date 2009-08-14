@@ -3,8 +3,14 @@
 = Introduction =
 
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml" pref_url="www.theage.com.au" border="0" /> 
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/110543442524307353585/include-gadget.xml?up_pref_url=http%3A%2F%2Fwww.google.com&amp;up_pref_title=Include%20gadget&amp;up_pref_height=400&amp;synd=open&amp;w=320&amp;h=400&amp;title=Include+gadget&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js" /> 
+kk
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/110543442524307353585/include-gadget.xml?up_pref_url=http%3A%2F%2Fwww.google.com" /> 
+
+kll;k
+
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml&amp;up_pref_url=http%3A%2F%2Fwww.google.com" up_pref_url="http://www.google.com" border="0" /> 
 
 Add your content here.
 
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml" iframeURL="http://www.google.com" border="0" /> 
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/106581606564100174314/iframe.xml?"iframeURL=www%3theage%3com%3au" iframeURL="http://www.google.com" border="0" /> 
