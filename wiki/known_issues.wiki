@@ -4,6 +4,9 @@
 
 _Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
 
+== 2009.1 :: Beta 5 ==
+
+ * French translation - the manage grids dont work
 
 == 2009.1 :: Beta 5 ==
 
@@ -15,7 +18,6 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * not all the extensions work
  * front page/dashboard not complete
  * Invoice edit needs work
-
 == 2009.1 :: Beta 4 ==
     
  * UI of Manage Extensions needs updating

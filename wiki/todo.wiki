@@ -23,6 +23,7 @@
  * language and locale pre invoice preference
  * locale select in defaults 
  * Update UI of System Preferences
+ * update french translation - not to use HTML characters
 
 #maybe
  * add Manage SQL patches back in
