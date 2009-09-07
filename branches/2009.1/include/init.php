@@ -81,14 +81,13 @@ include_once('./config/define.php');
 /*
  * Include another config file if required
  */
- echo en
-if( ($environment != 'production') AND (is_file('./config/'.$environment.'.config.ini') ) {
+if( ($environment != 'production') AND (is_file('./config/'.$environment.'.config.ini') ) ){
      $config = new Zend_Config_Ini('./config/'.$environment.'.config.ini', $environment,true);
 } else {
     $config = new Zend_Config_Ini('./config/config.ini', $environment,true);	//added 'true' to allow modifications from db
 }
 
-    $config = new Zend_Config_Ini('./config/config.ini', $environment,true);	//added 'true' to allow modifications from db
+
 //set up app with relevant php setting
 date_default_timezone_set($config->phpSettings->date->timezone);
 error_reporting($config->debug->error_reporting);
