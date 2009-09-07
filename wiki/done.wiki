@@ -1,7 +1,7 @@
 ﻿#summary Simple Invoices release notes
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-== 2009.1 ==
+== 2009.1 Release Candiate ==
  * Delete invoices - add delete line item taxes
  * Fix email problem in beta 5
 
