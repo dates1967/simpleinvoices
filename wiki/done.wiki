@@ -5,6 +5,7 @@
  * Delete invoices - add delete line item taxes
  * Fix email problem in beta 5
  * Config.ini change - display errors now on by default
+ * Expense extension added - refer: http://simpleinvoices.org/wiki/expense_extension
 
 == 2009.1 BETA 5 ==
  * Basic installer added
