@@ -2,7 +2,7 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-
+= 2009.2 =
 == 2009.2 :: Beta 2 ==
 
 #
@@ -39,3 +39,6 @@
  * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
  * Update UI of Manage Extensions
  * redo home page - Recent Activity and Quick Stats
+
+= Unscheduled =
+ * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
