@@ -2,7 +2,33 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
+<wiki:toc/>
+
+= 2009.1 =
+== 2009.1 :: Final Release ==
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_27 .htaccess - add back in]
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_32 add famfam extension image]
+
+
 = 2009.2 =
+
+== 2009.2 :: Beta 1 ==
+
+ * language and locale pre invoice preference
+ * locale select in defaults 
+ * Update UI of System Preferences
+ * update french translation - not to use HTML characters
+ * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
+
+#maybe
+ * add Manage SQL patches back in
+ * add rerun SQL patch button
+ * Database log - review
+ * Swap Gross for SubTotal - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
+ * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
+ * Update UI of Manage Extensions
+ * redo home page - Recent Activity and Quick Stats
+
 == 2009.2 :: Beta 2 ==
 
 #
@@ -24,27 +50,6 @@
  * Reports - localise
  * database backup - export as XML - Hannes
 
-== 2009.2 :: Beta 1 ==
-
- * language and locale pre invoice preference
- * locale select in defaults 
- * Update UI of System Preferences
- * update french translation - not to use HTML characters
- * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
-
-#maybe
- * add Manage SQL patches back in
- * add rerun SQL patch button
- * Database log - review
- * Swap Gross for SubTotal - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
- * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
- * Update UI of Manage Extensions
- * redo home page - Recent Activity and Quick Stats
-
-= 2009.1 =
-== 2009.1 :: Final Release ==
- * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_27 .htaccess - add back in]
- * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_32 add famfam extension image]
 
 = Unscheduled =
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
