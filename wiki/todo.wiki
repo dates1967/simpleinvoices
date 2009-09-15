@@ -1,7 +1,8 @@
 ﻿#summary Simple Invoices todo list
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
-#sidebar TableOfContents
+
+
 <wiki:toc/>
 
 = 2009.1 =
