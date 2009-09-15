@@ -41,5 +41,10 @@
  * Update UI of Manage Extensions
  * redo home page - Recent Activity and Quick Stats
 
+= 2009.1 =
+== 2009.1 :: Final Release ==
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_27 .htaccess - add back in]
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_32 add famfam extension image]
+
 = Unscheduled =
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
