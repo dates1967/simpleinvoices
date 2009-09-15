@@ -48,3 +48,4 @@
 
 = Unscheduled =
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
+ * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
