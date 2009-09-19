@@ -1,6 +1,14 @@
 ﻿#summary Simple Invoices release notes
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
+<wiki:toc/>
+
+= 2009.1 series =
+== 2009.1 ==
+ * Config file change
+ * Adjusted GUI colours
+ * Help link in header removed
+
 == 2009.1 Release Candiate ==
  * Delete invoices - add delete line item taxes
  * Fix email problem in beta 5
@@ -95,6 +103,7 @@
  * make $tb_prefix a global constant to be accessible in all functions (without global) - now as define
 
 
+= pre 2009.1 series =
 == DONE OLD STUFF ==
  *  sql patch: reset default invoices template to default - Done
  * sql patch: change custom fields to 255 length - up from the current 50 - Done

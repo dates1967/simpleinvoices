@@ -20,6 +20,7 @@
  * Update UI of System Preferences
  * update french translation - not to use HTML characters
  * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
+ * make help link in header
 
 #maybe
  * add Manage SQL patches back in

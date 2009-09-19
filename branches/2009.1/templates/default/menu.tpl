@@ -13,7 +13,7 @@
 	</div>
 *}
 	<div class="txt_right">
-		Hello {$smarty.session.Zend_Auth.email} | <a href="">Help</a>
+		Hello {$smarty.session.Zend_Auth.email} {*|  <a href="">Help</a> *}
 		{if $config->authentication->enabled == 1}
 			|
 			{if $smarty.session.Zend_Auth.id == null}
