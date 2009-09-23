@@ -6,8 +6,9 @@
 = 2009.1 series =
 == 2009.1 ==
  * Config file change
- * Adjusted GUI colours
- * Help link in header removed
+ * Minor adjustment to background colours
+ * Help link in header now points to http://www.simpleinvoices.org/help
+ * SQL file cleanup
 
 == 2009.1 Release Candiate ==
  * Delete invoices - add delete line item taxes
