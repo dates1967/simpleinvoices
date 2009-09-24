@@ -10,6 +10,7 @@
  * Help link in header now points to http://www.simpleinvoices.org/help
  * SQL file cleanup
  * Missing images added in 
+ * Minor installer change
 
 == 2009.1 Release Candiate ==
  * Delete invoices - add delete line item taxes
