@@ -7,6 +7,7 @@
 
 = 2009.1 =
 == 2009.1 :: Final Release ==
+ * Remove Database Upgrade link from Settings page
  * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_27 .htaccess - add back in]
  * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_32 add famfam extension image]
 
