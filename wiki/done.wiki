@@ -11,6 +11,7 @@
  * SQL file cleanup
  * Missing images added in 
  * Minor installer change
+ * Database upgrade removed from Settings page as no longer requried
 
 == 2009.1 Release Candiate ==
  * Delete invoices - add delete line item taxes
