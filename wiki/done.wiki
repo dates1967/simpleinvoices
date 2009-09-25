@@ -9,7 +9,7 @@
  * Minor adjustment to background colours
  * Help link in header now points to http://www.simpleinvoices.org/help
  * SQL file cleanup
- * Missing images added in 
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_32 Missing images added in]
  * Minor installer change
  * Link to install documentation added to installer pages
  * Database upgrade removed from Settings page as no longer required
