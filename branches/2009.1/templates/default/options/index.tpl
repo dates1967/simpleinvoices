@@ -76,14 +76,16 @@
                 {$LANG.backup_database}
             </a>
     	</td>
-		<td>
+{*	
+	<td>
     
            <a href="index.php?module=options&amp;view=manage_sqlpatches" class="">
                 <img src="./images/common/database.png" alt="" />
                  {$LANG.database_upgrade_manager}
             </a>
         </td>
-    </tr>    
+*} 
+   </tr>    
 </table>
 
 </td>
