@@ -19,6 +19,7 @@
  * update french translation - not to use HTML characters
  * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
  * make help link in header
+ * [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]
 
 #maybe
  * add Manage SQL patches back in
