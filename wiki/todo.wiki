@@ -7,6 +7,7 @@
 
 = 2009.1 =
 == 2009.1.01 ==
+ * [http://simpleinvoices.org/forum/discussion/888/invoice-amount-differs-from-financial-status-total/#Item_1 Rounding in invoices problem]
  * [http://simpleinvoices.org/forum/discussion/882/error-when-click-extensions-under-the-setting/#Item_2 fix extension when auth is on]
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
 
