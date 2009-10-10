@@ -4,6 +4,11 @@
 <wiki:toc/>
 
 = 2009.1 series =
+==2009.1.01==
+ * DB uft change
+ * Extensions - if login on problem fixed
+ * Expense extension - if login on problem fixed
+
 == 2009.1 ==
  * Config file change
  * Minor adjustment to background colours

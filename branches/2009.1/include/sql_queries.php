@@ -47,20 +47,24 @@ function db_connector() {
 				);
 				break;
 			
-		    case "mysql_utf8":
-			   	$connlink = new PDO(
-					'mysql:host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname, $config->database->params->username, $config->database->params->password,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;")
-					#'mysql:host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname, $config->database->params->username, $config->database->params->password,  array(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", PDO::MYSQL_ATTR_INIT_COMMAND=>"SET CHARACTER SET utf8;")
-				);
-				break;
-				
 		    case "mysql":
-		    default:
-		    	//mysql
-		    	$connlink = new PDO(
-					$pdoAdapter.':host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname,	$config->database->params->username, $config->database->params->password
-				);
-				break;
+                switch ($config->database->utf8)
+                {
+                    case true:
+    
+        			   	$connlink = new PDO(
+        					'mysql:host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname, $config->database->params->username, $config->database->params->password,  array( PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;")
+        				);
+		        		break;
+				
+        		    case false:
+		            default:
+        		    	$connlink = new PDO(
+        					$pdoAdapter.':host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname,	$config->database->params->username, $config->database->params->password
+		        		);
+    				break;
+                }
+    	    	break;
 		}
 		
 		

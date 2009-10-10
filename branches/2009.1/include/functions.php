@@ -356,6 +356,7 @@ function simpleInvoicesError($type,$info1 = "", $info2 = "")
             ===========================================<br />
             ");
         break;
+
         case "PDO":
         
             $error = exit("
@@ -373,7 +374,8 @@ function simpleInvoicesError($type,$info1 = "", $info2 = "")
             ===========================================<br />
             ");
         break;
-        case "PDO::mysql_attr":
+
+        case "PDO_mysql_attr":
         
             $error = exit("
             <br />
