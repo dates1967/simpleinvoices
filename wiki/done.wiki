@@ -6,7 +6,6 @@
 = 2009.1 series =
 ==2009.1.01==
  * DB uft change
- * Extensions - if login on problem fixed
  * [http://simpleinvoices.org/forum/discussion/888/invoice-amount-differs-from-financial-status-total/#Item_1 Rounding in invoices problem]
  * [http://simpleinvoices.org/forum/discussion/882/error-when-click-extensions-under-the-setting/#Item_2 Extensions - if login on problem fixed]
  * Expense extension - if login on problem fixed
