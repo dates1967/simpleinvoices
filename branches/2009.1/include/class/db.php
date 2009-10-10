@@ -49,13 +49,13 @@ class db
                     {
                         case true:
         
-                            $connlink = new PDO(
+                            $this->_db = new PDO(
                                 'mysql:host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname, $config->database->params->username, $config->database->params->password,  array( PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8;")
                             );
                             break;
                     
                         case false:
-                            $connlink = new PDO(
+                            $this->_db = new PDO(
                                 $pdoAdapter.':host='.$config->database->params->host.'; port='.$config->database->params->port.'; dbname='.$config->database->params->dbname,	$config->database->params->username, $config->database->params->password
                             );
                         break;
