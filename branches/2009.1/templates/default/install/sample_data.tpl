@@ -1,4 +1,4 @@
- img src="images/common/simple_invoices_logo.jpg"/>
+<img src="images/common/simple_invoices_logo.jpg"/>
 <br/>
 <br/>
 <table align="center">
