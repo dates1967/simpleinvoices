@@ -4,7 +4,7 @@
 <wiki:toc/>
 
 = 2009.1 series =
-==2009.1.01==
+==2009.1 update 1==
  * DB uft change
  * [http://simpleinvoices.org/forum/discussion/888/invoice-amount-differs-from-financial-status-total/#Item_1 Rounding in invoices problem]
  * [http://simpleinvoices.org/forum/discussion/882/error-when-click-extensions-under-the-setting/#Item_2 Extensions - if login on problem fixed]
