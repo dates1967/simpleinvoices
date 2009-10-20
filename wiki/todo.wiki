@@ -1,13 +1,12 @@
 ﻿#summary Simple Invoices todo list
- - list all current issues and planned features 
- - random iddeas and suggestion go in the [ideas] page
+ * list all current issues and planned features 
+ * random iddeas and suggestion go in the [ideas] page
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-
 <wiki:toc/>
 
-_Current issues and ideas with planned releases_
+= Current issues and features with planned releases =
 == 2009.1 ==
 ===2009.1 update 2 ===
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
