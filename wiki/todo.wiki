@@ -1,4 +1,6 @@
 ﻿#summary Simple Invoices todo list
+ - list all current issues and planned features 
+ - random iddeas and suggestion go in the [ideas] page
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
