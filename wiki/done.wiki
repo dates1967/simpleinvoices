@@ -115,6 +115,9 @@
 
 
 = pre 2009.1 series =
+
+Complete changelog refer: http://simpleinvoices.org/changelog
+
 == DONE OLD STUFF ==
  *  sql patch: reset default invoices template to default - Done
  * sql patch: change custom fields to 255 length - up from the current 50 - Done
