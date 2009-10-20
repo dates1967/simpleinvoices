@@ -36,11 +36,10 @@ _Current issues and ideas with planned releases_
 
 === 2009.2 :: Beta 2 ===
 
-#
  * add preference
-  * locale + language + index_group fix
-  * edit invoice - adjust label
-  * payments - adjust label
+ * locale + language + index_group fix
+ * edit invoice - adjust label
+ * payments - adjust label
 
 # really shoud
  * custom fields - domain id - stuff - JK
