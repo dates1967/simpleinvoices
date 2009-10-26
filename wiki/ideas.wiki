@@ -4,11 +4,6 @@
 
 _Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
 
-
-=== Sometime soon ===
-
-# maybe some work(or thoughts/planning) has been done but needs to be complete
-
  * Invoice history - ie. Invoice 5 was first Quote 5, then changed, then emailed, then paid etc..
  * Email - if fail to send add error messages etc..
    * Add to invoice history that it has been emailed
@@ -17,7 +12,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * Biller login
  * Customer payments - accept via Paypal etc..
  * Product Cost field - http://simpleinvoices.org/forum/discussion/687/product-cost-price-field 
- * Simple Invoices Errors - make a function and make look all pretty (ie cache read only, no PDO, no PHP5.2, can't connect to Db etc..) - AP
+ * Simple Invoices Errors - make look all pretty
  * Address fields in invoice templates - include comma after add 1 or 2 if other address field not null
  * users/groups/domains - make this happen!
  * preferences: move rest into db
@@ -25,10 +20,6 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * email :
    * email : html and no html option - maybe??
    * email: add default signature - maybe - set in biller details ??
-   * email: and add validation
- * customer view - add edit/export etc, back in
-   * old ones
- * replce checkLogin with CheckBrowse - check login name assumes something to do with login when its not - not urgent
  * validation:
    * Add validation to the edit screen
    * make a proper validation function/class
@@ -36,11 +27,6 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * apply aplysia new drop down list code to others (refer system default: biller)
  * index.php review input if is safe enought
  * Quick view - Note section: show the first 25 characters then follow with ... in the Hide View and full note in Show View
-
-# Below here are mainly ideas we should look at but nothing(or little) has been done
-
-=== Sometine in the not too distan futures - todos ===
-
  * blow up phpreports and implement our own reporting tools
  * reports : add export to .xls format 
  * choose automatic language (need to rename language files/subfolder). We should use this standards (first we can start with only 2 chars variant)
@@ -49,9 +35,6 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * sounds good - aim for NR+1
        * use in the installer and i'll think about it for the login page when/if i add a lang drop down box there
  * Localise - look into Zend Locale or similar to handle localising all the formatting of dates, currency etc.
-
-=== Sometime in the future todos ===
-
  * Reports
    * Date based reports : http://simpleinvoices.org/forum/topic-391.html ( payments received today, invoices made today etc..) - AP
    * Customer : Statement of Accounts : http://simpleinvoices.org/forum/topic-414.html - AP
