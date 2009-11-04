@@ -54,6 +54,7 @@
  * Reports - localise
 
 = All other current issues =
+ * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Comment_5074 Remove/edit the ReadMe.html file]
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
  * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
  * SimpleInvoices.org
