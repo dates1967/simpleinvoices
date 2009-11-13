@@ -12,7 +12,7 @@
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
  * Fix french translation problem with manage pages
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
-
+ * add set_include_path(get_include_path() . PATH_SEPARATOR . "./include/"); into init.php
 
 == 2009.2 ==
 
