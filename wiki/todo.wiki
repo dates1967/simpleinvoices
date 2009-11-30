@@ -13,6 +13,7 @@
  * Fix french translation problem with manage pages
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
  * add {{{set_include_path(get_include_path() . PATH_SEPARATOR . "./include/");}}} into init.php
+ * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
 
 == 2009.2 ==
 
