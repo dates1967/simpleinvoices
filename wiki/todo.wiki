@@ -15,6 +15,7 @@
  * add {{{set_include_path(get_include_path() . PATH_SEPARATOR . "./include/");}}} into init.php
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
  * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
+ * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
 
 == 2009.2 ==
 
