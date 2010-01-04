@@ -2,6 +2,11 @@
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 <wiki:toc/>
+= 2010 series =
+==2010.1 ==
+ * update Zend Framework to version 1.9.6
+ * add set_include_path(get_include_path() . PATH_SEPARATOR . "./include/"); into init.php 
+ * fix autoloader so works with ZF 1.9.6
 
 = 2009.1 series =
 ==2009.1 update 1==
