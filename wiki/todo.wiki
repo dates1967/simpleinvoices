@@ -64,6 +64,7 @@
  * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_0 IE - Manage Payments doesnt work]
  * Disabled Taxes are still displayed in new invoice creation
  * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid]
+ * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID] 
 
  * SimpleInvoices.org
    * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
