@@ -20,10 +20,9 @@ class db
 		*/
 		$pdoAdapter = substr($config->database->adapter, 4);
 		
-        
-		if(!defined('PDO::MYSQL_ATTR_INIT_COMMAND') AND $pdoAdapter == "mysql_utf8")
+		if(!defined('PDO::MYSQL_ATTR_INIT_COMMAND') AND $pdoAdapter == "mysql"  AND $config->database->utf8 == true)
 		{ 
-            simpleInvoicesError("PDO_mysql_attr");
+		      simpleInvoicesError("PDO_mysql_attr");
 		}
 
 		try
