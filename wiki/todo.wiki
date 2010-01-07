@@ -18,6 +18,7 @@
  * Fix french translation problem with manage pages
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
+   * [http://simpleinvoices.org/forum/discussion/267/report-showing-incorrect-amount/#Item_16 also review debtor owing by customer]
  * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
  * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
 
