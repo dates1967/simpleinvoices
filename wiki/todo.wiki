@@ -62,6 +62,7 @@
  * [http://simpleinvoices.org/forum/discussion/681/quotation-system/#Item_9 Product sorting - alpha - make sure this is the case]
  * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not write-able don't error - just no cache or logging]
  * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_0 IE - Manage Payments doesnt work]
+ * Disabled Taxes are still displayed in new invoice creation
 
  * SimpleInvoices.org
    * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
