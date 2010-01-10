@@ -44,7 +44,7 @@ var edit_tooltip = "{/literal}{$LANG.edit_view_tooltip} {$invoices.preference.pr
 			usepager: true,
 			/*title: 'Manage Custom Fields',*/
 			useRp: false,
-			rp: 25,
+			rp: 2,
 			showToggleBtn: false,
 			showTableToggleBtn: false,
 			height: 'auto'
