@@ -21,7 +21,7 @@ foreach ($extension_entries as $entry) {
 			$description = "DESCRIPTION not available (in $extension_dir/$entry/)";
 		}
 
-		$available_extensions[$entry] = array("name"=>$entry,"enabled"=>0, "registered"=>0, "description"=>$description);
+		$available_extensions[$entry] = array("name"=>$entry,"enabled"=>0, "registered"=>0, "description"=>$description , "id" =>"");
 	}
 }
 
@@ -36,8 +36,8 @@ if (!preg_match('/^(asc|desc)$/iD', $dir)) {
 	$dir = 'ASC';
 }
 
-$query = $_POST['query'];
-$qtype = $_POST['qtype'];
+$query = (isset($_POST['query'])) ? $_POST['query'] : "" ; ;
+$qtype = (isset($_POST['qtype'])) ? $_POST['qtype'] : "" ; ;
 
 $plugin[0] = " <img src='images/famfam/plugin_disabled.png' alt='Not registered' />";
 $plugin[1] = " <img src='images/famfam/plugin.png' alt='Registered' />";
@@ -56,7 +56,7 @@ if ($query) $where = " WHERE (domain_id = 0 OR domain_id = :domain_id) AND $qtyp
 $validFields = array('id', 'name','description','enabled');
 
 	$sql = "SELECT 
-				id, 
+				id as id, 
 				name,
 				description,
 				1 AS registered,
