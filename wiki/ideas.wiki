@@ -45,9 +45,11 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * in pop-down menus the preselected entry is always twice. change it with the selected option
    * i couldnt do this nicely :) if you could would be great
  * use utf-8 for e-mail sending - check this - AP
- * backup to a web directory is not really a good idea. Perhaps the download solution is a better one:
-   * just mod the existing backup script to dump to screen or download file - same as how phpmyadmin dumps to screeen - in a text box
-   * mod headers as in your example
+ * Backup
+   * backups sent via email : http://simpleinvoices.org/forum/discussion/1037/database-backup-sent-via-email-or-at-least-downloadable/#Item_0
+   * backup to a web directory is not really a good idea. Perhaps the download solution is a better one:
+     * just mod the existing backup script to dump to screen or download file - same as how phpmyadmin dumps to screeen - in a text box
+     * mod headers as in your example
 {{{
 		<?php
 		include('config.php');
