@@ -74,3 +74,4 @@
  * SimpleInvoices.org
    * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
    * update roadmap map to talk to google wiki: http://simpleinvoices.org/roadmap
+   * [http://simpleinvoices.org/forum/discussion/1059/setting-user-permissions/#Item_4 Update documentation to .htaccess - Allow Override]
