@@ -21,6 +21,7 @@
    * [http://simpleinvoices.org/forum/discussion/267/report-showing-incorrect-amount/#Item_16 also review debtor owing by customer]
  * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
  * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
+ * [http://simpleinvoices.org/forum/discussion/1097/too-many-zeros/#Item_0 apply reports zeros fix]
 
 == 2010.2 ==
 
