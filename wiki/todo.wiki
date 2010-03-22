@@ -72,6 +72,7 @@
  * [http://simpleinvoices.org/forum/discussion/1056/payment-types-not-showing-up/#Comment_5796 SQL patch problem - payment types]
  * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
+ * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
 
 
  * SimpleInvoices.org
