@@ -71,6 +71,7 @@
  * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid]
  * [http://simpleinvoices.org/forum/discussion/1056/payment-types-not-showing-up/#Comment_5796 SQL patch problem - payment types]
  * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
+ * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
 
 
  * SimpleInvoices.org
