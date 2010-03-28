@@ -3,6 +3,15 @@
 
 <wiki:toc/>
 = 2010 series =
+==2010.2 ==
+ * Added recurring invoices - refer http://simpleinvoices.org/wiki/recurrence
+ * Added support for Paypal - http://simpleinvoices.org/wiki/paypal 
+ * Added support for Eway payment gateway - http://simpleinvoices.org/wiki/eway
+ * Added invoice statements 
+ * [http://simpleinvoices.org/forum/discussion/996/new-20101-install-phpmyadminphpinfo-work-fine-blank-index/#Item_9 edit db class - only use mysql attr if available]
+ * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID - FIXED] 
+ * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Comment_5074 Removed the ReadMe.html file]
+ * Disabled Taxes are still displayed in new invoice creation - Fixed
 ==2010.1 ==
  * update Zend Framework to version 1.9.6
  * add set_include_path(get_include_path() . PATH_SEPARATOR . "./include/"); into init.php 
