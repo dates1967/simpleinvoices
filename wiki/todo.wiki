@@ -8,12 +8,8 @@
 
 = Current issues and features with planned release =
 == 2010.1 ==
- * [http://simpleinvoices.org/forum/discussion/996/new-20101-install-phpmyadminphpinfo-work-fine-blank-index/#Item_9 edit db class - only use mysql attr if available]
- * Disabled Taxes are still displayed in new invoice creation
- * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID] 
- * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Comment_5074 Remove/edit the ReadMe.html file]
 
-===20010.1 update 2 ===
+===2010.1 update 2 ===
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
  * Fix french translation problem with manage pages
  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
