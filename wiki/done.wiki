@@ -9,7 +9,7 @@
  * Added support for Eway payment gateway - http://simpleinvoices.org/wiki/eway
  * Added invoice statements 
  * Invoice numbering groups added - ie. multiple invoice numbergin ranges - refer http://simpleinvoices.org/wiki/invoice_numbering_groups
-* Swap Gross for SubTotal - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
+ * Swap Gross for SubTotal - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
  * [http://simpleinvoices.org/forum/discussion/996/new-20101-install-phpmyadminphpinfo-work-fine-blank-index/#Item_9 edit db class - only use mysql attr if available] - Fixed
  * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID] - Fixed 
  * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Comment_5074 Removed the ReadMe.html file]
