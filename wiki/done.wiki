@@ -8,10 +8,13 @@
  * Added support for Paypal - http://simpleinvoices.org/wiki/paypal 
  * Added support for Eway payment gateway - http://simpleinvoices.org/wiki/eway
  * Added invoice statements 
+ * Invoice numbering groups added - ie. multiple invoice numbergin ranges - refer http://simpleinvoices.org/wiki/invoice_numbering_groups
  * [http://simpleinvoices.org/forum/discussion/996/new-20101-install-phpmyadminphpinfo-work-fine-blank-index/#Item_9 edit db class - only use mysql attr if available]
- * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID - FIXED] 
+ * [http://simpleinvoices.org/forum/discussion/899/simple-invoices-20091-update-1-released/#Item_16 Manage Products not sorting - only by ID - Fixed] 
  * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Comment_5074 Removed the ReadMe.html file]
  * Disabled Taxes are still displayed in new invoice creation - Fixed
+* [http://simpleinvoices.org/forum/discussion/1097/too-many-zeros/#Item_0 apply reports zeros fix - Done]
+
 ==2010.1 ==
  * update Zend Framework to version 1.9.6
  * add set_include_path(get_include_path() . PATH_SEPARATOR . "./include/"); into init.php 
