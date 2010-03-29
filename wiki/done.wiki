@@ -18,6 +18,10 @@
  * Disabled Taxes are still displayed in new invoice creation - Fixed
  * [http://simpleinvoices.org/forum/discussion/1097/too-many-zeros/#Item_0 apply reports zeros fix - Done]
  * [http://simpleinvoices.org/forum/discussion/681/quotation-system/#Item_9 Manage products now sorts by alpha by default]
+ * Reports sql errors fixed
+  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
+  * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
+  * [http://simpleinvoices.org/forum/discussion/267/report-showing-incorrect-amount/#Item_16 also review debtor owing by customer]
 
 ==2010.1 ==
  * update Zend Framework to version 1.9.6
