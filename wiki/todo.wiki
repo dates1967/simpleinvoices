@@ -65,7 +65,6 @@
  * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
 
 
- * SimpleInvoices.org
-   * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
-   * update roadmap map to talk to google wiki: http://simpleinvoices.org/roadmap
-   * [http://simpleinvoices.org/forum/discussion/1059/setting-user-permissions/#Item_4 Update documentation to .htaccess - Allow Override]
+= SimpleInvoices.org =
+ * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
+ * [http://simpleinvoices.org/forum/discussion/1059/setting-user-permissions/#Item_4 Update documentation to .htaccess - Allow Override]
