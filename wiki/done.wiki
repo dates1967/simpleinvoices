@@ -7,7 +7,9 @@
  * Added recurring invoices - refer http://simpleinvoices.org/wiki/recurrence
  * Added support for Paypal - http://simpleinvoices.org/wiki/paypal 
  * Added support for Eway payment gateway - http://simpleinvoices.org/wiki/eway
- * Added invoice statements 
+ * Added invoice statements
+ * Predefined filters added to the Manage Invoices pages -http://simpleinvoices.org/wiki/filters
+ * Invoices can now have statuses - http://simpleinvoices.org/wiki/status
  * Invoice numbering groups added - ie. multiple invoice numbergin ranges - refer http://simpleinvoices.org/wiki/invoice_numbering_groups
  * Swap Gross for SubTotal - refer: http://simpleinvoices.org/forum/discussion/826/nett--tax-gross/#Item_1
  * [http://simpleinvoices.org/forum/discussion/996/new-20101-install-phpmyadminphpinfo-work-fine-blank-index/#Item_9 edit db class - only use mysql attr if available] - Fixed
