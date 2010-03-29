@@ -67,7 +67,7 @@
 
 = .org =
  
-#All things simpleinvoices.org
+_All things simpleinvoices.org_
 
  * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
  * [http://simpleinvoices.org/forum/discussion/1059/setting-user-permissions/#Item_4 Update documentation to .htaccess - Allow Override]
