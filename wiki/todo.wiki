@@ -12,9 +12,6 @@
 ===2010.1 update 2 ===
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
  * Fix french translation problem with manage pages
- * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
- * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
-   * [http://simpleinvoices.org/forum/discussion/267/report-showing-incorrect-amount/#Item_16 also review debtor owing by customer]
  * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
  * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
