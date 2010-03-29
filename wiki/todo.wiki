@@ -10,6 +10,7 @@
 == 2010.1 ==
 
 ===2010.1 update 2 ===
+ * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid]
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
  * Fix french translation problem with manage pages
  * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
@@ -58,7 +59,6 @@
  * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
  * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not write-able don't error - just no cache or logging]
  * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_0 IE - Manage Payments doesnt work]
- * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid]
  * [http://simpleinvoices.org/forum/discussion/1056/payment-types-not-showing-up/#Comment_5796 SQL patch problem - payment types]
  * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
