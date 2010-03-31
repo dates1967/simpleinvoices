@@ -10,6 +10,7 @@
 == 2010.1 ==
 
 ===2010.1 update 2 ===
+ * Upgrade to Zend 1.10
  * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid]
  * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
  * Fix french translation problem with manage pages
