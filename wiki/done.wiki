@@ -22,6 +22,8 @@
   * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_10 Total owed by customer in all reports is giving an sql query error pag]
   * [http://simpleinvoices.org/forum/discussion/877/simple-invoices-20091-released/#Item_35 Make all the reports work fine]
   * [http://simpleinvoices.org/forum/discussion/267/report-showing-incorrect-amount/#Item_16 also review debtor owing by customer]
+ * Upgrade to Zend 1.10
+ * [http://simpleinvoices.org/forum/discussion/981/solved-customer-name-has-wrong-charset/#Item_1 Look at removing uft8_enocde in manage grid] - Done
 
 ==2010.1 ==
  * update Zend Framework to version 1.9.6
