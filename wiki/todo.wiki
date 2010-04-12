@@ -12,6 +12,7 @@
 
 === 2010.2 :: Beta 1 ===
 
+ * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
  * Fix french translation problem with manage pages
  * language and locale pre invoice preference
  * locale select in defaults 
