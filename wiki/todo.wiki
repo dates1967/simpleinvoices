@@ -12,10 +12,10 @@
 
 === 2010.2 beta series ===
 
-== current bugs ==
+==== current bugs ====
 
 
-== plans ==
+==== plans ====
 
  * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
  * Fix french translation problem with manage pages
@@ -40,7 +40,7 @@
  * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
 
-=== 2010.3 ===
+== 2010.3 ==
 
  * add preference
  * locale + language + index_group fix
