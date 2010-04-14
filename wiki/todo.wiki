@@ -7,6 +7,17 @@
 <wiki:toc/>
 
 = Current issues and features with planned release =
+
+== current issues ==
+ * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
+ * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
+ * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not write-able don't error - just no cache or logging]
+ * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_0 IE - Manage Payments doesnt work]
+ * [http://simpleinvoices.org/forum/discussion/1056/payment-types-not-showing-up/#Comment_5796 SQL patch problem - payment types]
+ * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
+ * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
+ * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
+
  
 == 2010.2 ==
 
@@ -45,6 +56,8 @@
 
 == 2010.3 ==
 
+==== plans ====
+
  * add preference
  * locale + language + index_group fix
  * edit invoice - adjust label
@@ -60,17 +73,6 @@
  * move all configs (where possible) out of config.ini and into system_defaults
  * move date popup to jquery UI
  * Reports - localise
-
-= All other current issues =
- * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
- * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
- * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not write-able don't error - just no cache or logging]
- * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_0 IE - Manage Payments doesnt work]
- * [http://simpleinvoices.org/forum/discussion/1056/payment-types-not-showing-up/#Comment_5796 SQL patch problem - payment types]
- * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
- * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
- * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
-
 
 = .org =
  
