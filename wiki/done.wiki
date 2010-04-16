@@ -3,6 +3,13 @@
 
 <wiki:toc/>
 = 2010 series =
+==2010.2 Beta 3 ==
+ * Added Inventory - refer http://simpleinvoices.org/wiki/inventory
+ * fixed add user no role problem
+ * fixed decimal place - missing zeros problem
+ * fixed cron ACL issue
+ * fixed expense extension/2010.2 issues
+
 ==2010.2 Beta 2 ==
  * Fixed tax total and grouping on invoice print issue
  * Fixed issue with various 'manage pages grid not working
