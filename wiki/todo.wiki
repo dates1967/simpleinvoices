@@ -20,19 +20,9 @@
    * 0 size PDFs when being emaield
  * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 Zeros dropped off numbers]~~ Done
  * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 After clicking on the recurrence I got a white page.]~~ Done
- * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 Paypal IPN issue]
- * [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page]
+ * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 Paypal IPN issue] - needs testing
+ * [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page] - needs testing
 
- * Current Fixes
-   * Save preferences fix : make Language and Locale field NULL
-   * Custom fields fix : "update si_custom_fields set domain_id = '1';"
-   * Make manage payments sql faster
-{{{
-   ALTER TABLE `si_invoices` ADD INDEX(`domain_id`);
-   ALTER TABLE `si_invoices` ADD INDEX(`biller_id`);
-   ALTER TABLE `si_invoices` ADD INDEX(`customer_id`);
-   ALTER TABLE `si_payment` ADD INDEX(`domain_id`);
-}}}
 ==== plans ====
 
  * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
