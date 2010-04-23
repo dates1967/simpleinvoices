@@ -1,14 +1,11 @@
 ﻿#summary Simple Invoices todo list
  * list all current issues and planned features 
- * random iddeas and suggestion go in the [ideas] page
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-= Current issues and features with planned release =
-
-== 2010.2 ==
-
-=== 2010.2 beta series ===
+--- 
+2010.2 beta series
+---
 
  * current bugs
    * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
@@ -45,7 +42,7 @@
    * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
    * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
 
-== 2010.3 ==
+--- 2010.3 ---
 
  * plans
    * add preference
@@ -64,7 +61,8 @@
    * move date popup to jquery UI
    * Reports - localise
 
-== All other current issues ==
+--- All other current issues ---
+
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
  * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4 strip special characters from invoice name when emailing]
  * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not write-able don't error - just no cache or logging]
@@ -73,9 +71,8 @@
  * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
  * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
-= .org =
- 
-_All things simpleinvoices.org_
 
+--- simpleinvoices.org issues ---
+ 
  * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
  * [http://simpleinvoices.org/forum/discussion/1059/setting-user-permissions/#Item_4 Update documentation to .htaccess - Allow Override]
