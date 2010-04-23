@@ -28,8 +28,10 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * Config
    * [http://simpleinvoices.org/forum/discussion/928/number-of-invoices-on-one-page/#Item_1 Set number of rows in the manage grids as a config option]
    * preferences: move rest into db
+
  * Products
    * Product Cost field - http://simpleinvoices.org/forum/discussion/687/product-cost-price-field 
+   * Add Product full desctipion - this will auto populate teh item details section in new invioce refer http://simpleinvoices.org/forum/discussion/1191/description-of-product/#Item_1
 
  * Code
    * Simple Invoices Errors - make look all pretty
