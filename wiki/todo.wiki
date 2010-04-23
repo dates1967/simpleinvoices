@@ -4,8 +4,6 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-<wiki:toc/>
-
 = Current issues and features with planned release =
 
 == 2010.2 ==
