@@ -12,62 +12,59 @@
 
 === 2010.2 beta series ===
 
-==== current bugs ====
- * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
-   * ~~“Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference.~~ fixed
-   * ~~"User Management". If you do not assign a Role when adding a new user the user does not appear in the user list, effectively they are 'lost' to the system. The only way to bring them back is manually edit the database~~ Done
-   * I've created 3 documents; an invoice, an estimate and another invoice (in that order). Each document has its own numbering group so I have Invoice 1 and Invoice 2, and Estimate 1. However when I try to e-mail documents the auto-generated subject line is not using the numbering group i.e. when I e-mail Estimate 1 it shows the subject line as "Estimate 2" and Invoice 2 as "Invoice 3".
-   * 0 size PDFs when being emaield
- * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 Zeros dropped off numbers]~~ Done
- * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 After clicking on the recurrence I got a white page.]~~ Done
- * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 Paypal IPN issue] - needs testing
- * [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page] - needs testing
- * Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
+ * current bugs
+   * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
+     * ~~“Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference.~~ fixed
+     * ~~"User Management". If you do not assign a Role when adding a new user the user does not appear in the user list, effectively they are 'lost' to the system. The only way to bring them back is manually edit the database~~ Done
+     * I've created 3 documents; an invoice, an estimate and another invoice (in that order). Each document has its own numbering group so I have Invoice 1 and Invoice 2, and Estimate 1. However when I try to e-mail documents the auto-generated subject line is not using the numbering group i.e. when I e-mail Estimate 1 it shows the subject line as "Estimate 2" and Invoice 2 as "Invoice 3".
+     * 0 size PDFs when being emaield
+   * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 Zeros dropped off numbers]~~ Done
+   * ~~[http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 After clicking on the recurrence I got a white page.]~~ Done
+   * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3- released/#Item_10 Paypal IPN issue] - needs testing
+   * [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page] - needs testing
+   * Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
 
-==== plans ====
+ * plans 
+   * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
+   * Fix french translation problem with manage pages
+   * language and locale pre invoice preference
+   * locale select in defaults 
+   * Update UI of System Preferences
+   * update french translation - not to use HTML characters
+   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
+   * ~~make help link in header~~
+   * ~~[http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]~~
 
- * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
- * Fix french translation problem with manage pages
- * language and locale pre invoice preference
- * locale select in defaults 
- * Update UI of System Preferences
- * update french translation - not to use HTML characters
- * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
- * ~~make help link in header~~
- * ~~[http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]~~
-
-#maybe
- * add Manage SQL patches back in
- * add rerun SQL patch button
- * Database log - review
- * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
- * Update UI of Manage Extensions
- * redo home page - Recent Activity and Quick Stats
-
- * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
- * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0 User add - only admin role available]
- * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
- * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
+ * maybe
+   * add Manage SQL patches back in
+   * add rerun SQL patch button
+   * Database log - review
+   * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
+   * Update UI of Manage Extensions
+   * redo home page - Recent Activity and Quick Stats
+   * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
+   * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0  User add - only admin role available]
+   * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
+   * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
 
 == 2010.3 ==
 
-==== plans ====
+ * plans
+   * add preference
+   * locale + language + index_group fix
+   * edit invoice - adjust label
+   * payments - adjust label
 
- * add preference
- * locale + language + index_group fix
- * edit invoice - adjust label
- * payments - adjust label
+ * really shoud
+   * custom fields - domain id - stuff - JK
+   * make search in Manage pages work good for all pages
+   * Products - allow setting 2 or more default taxes pre product
+   * user - if user disbaled - if login attempt - give nice message
 
-# really shoud
- * custom fields - domain id - stuff - JK
- * make search in Manage pages work good for all pages
- * Products - allow setting 2 or more default taxes pre product
- * user - if user disbaled - if login attempt - give nice message
-
-#maybe
- * move all configs (where possible) out of config.ini and into system_defaults
- * move date popup to jquery UI
- * Reports - localise
+ * maybe
+   * move all configs (where possible) out of config.ini and into system_defaults
+   * move date popup to jquery UI
+   * Reports - localise
 
 == All other current issues ==
  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
