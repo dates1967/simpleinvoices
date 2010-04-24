@@ -3,6 +3,15 @@
 
 <wiki:toc/>
 = 2010 series =
+==2010.2 Beta 4 ==
+ * fixed preferences save problem with beta 3
+ * fixed products save problem with beta 3
+ * fixed email as PDF 0kb sized attachments issue
+   * note: some more work on this re utf8 needs to be done
+ * fixed issue with installer not importing the correct data in beta 3 which caused some issues re saving stuff
+ * minor edit to paypal code to make 
+ * added indexes on a few fields in the database to speed up the manage payments page when has 100s of records
+ 
 ==2010.2 Beta 3 ==
  * Added Inventory - refer http://simpleinvoices.org/wiki/inventory
  * fixed add user no role problem
