@@ -26,7 +26,7 @@
    * ~~Fix french translation problem with manage pages~~ fixed
    * locale select in defaults 
    * Update UI of System Preferences
-   * update french translation - not to use HTML characters
+   * ~~update french translation - not to use HTML characters~~ french should now be OK
    * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
    * ~~make help link in header~~
    * ~~[http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]~~
