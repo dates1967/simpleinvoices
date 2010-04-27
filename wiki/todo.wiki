@@ -19,9 +19,11 @@
    * Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
 
  * plans 
-   * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
-   * Fix french translation problem with manage pages
+   * Update Essential Data and Sample Data json import files
+   * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
    * language and locale pre invoice preference
+   * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]
+   * ~~Fix french translation problem with manage pages~~ fixed
    * locale select in defaults 
    * Update UI of System Preferences
    * update french translation - not to use HTML characters
