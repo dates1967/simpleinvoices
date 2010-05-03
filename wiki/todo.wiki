@@ -19,6 +19,7 @@
    * ~~Check that invoice custom field 1 still works OK - refer JohnMC comment on forum~~ done
    * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments - invoice numbering not working correctly]
    * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Invoice numbering - add some kind of valiadation so can;t be duplicated]
+   * [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 Test with 3 decimal place tax rate]
 
  * plans 
    * Update Essential Data and Sample Data json import files
