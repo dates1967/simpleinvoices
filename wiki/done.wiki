@@ -3,6 +3,18 @@
 
 <wiki:toc/>
 = 2010 series =
+==2010.2 Beta 5 ==
+ * fixed IE manage payments problem
+ * adjusted and fixed issue with login page
+ * fixed custom_field1 problem
+ * fixed export to Word in quick view problem
+ * fixed French translation so that the manage grids now work
+ * fixed preferences status save problem 
+ * fixed issue with blank Simple Invoices - now warns if cache folder not writeable
+ * change to config - just use config/custom.config.ini if you want a version of config.ini that is not in svn
+ * fixed issue with rounding number with lots of decimal places in invoice creation/editing
+ * fixed email as PDF invoice name/id
+
 ==2010.2 Beta 4 ==
  * fixed preferences save problem with beta 3
  * fixed products save problem with beta 3
