@@ -17,6 +17,8 @@
    * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3- released/#Item_10 Paypal IPN issue] - needs testing
    * ~~[http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page] - needs testing~~ fixed
    * ~~Check that invoice custom field 1 still works OK - refer JohnMC comment on forum~~ done
+   * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments - invoice numbering not working correctly]
+   * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Invoice numbering - add some kind of valiadation so can;t be duplicated]
 
  * plans 
    * Update Essential Data and Sample Data json import files
