@@ -12,6 +12,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * [http://simpleinvoices.org/forum/discussion/977/invoice-quick-view-next-and-prev-navigation/#Item_1 Next/Prev in Quick View of invoice]
    * [http://simpleinvoices.org/forum/discussion/1090/feature-request-ability-to-insert-rows-between-already-created-rows/#Item_0 ability to move invoice items around in new and edit screen]
    * [http://simpleinvoices.org/forum/discussion/1202/invoice-copy-feature/#Item_1 Copy/Clone invoice feature]
+   * [http://simpleinvoices.org/forum/discussion/1206/add-sum-total-at-the-bottom-of-the-invoice-list/#Comment_6528 Add total $ for all invoices in the Manage Invoices page]
 
  * Email
    * If fail to send add error messages etc..
