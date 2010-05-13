@@ -19,8 +19,8 @@
    * ~~Check that invoice custom field 1 still works OK - refer JohnMC comment on forum~~ done
    * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments - invoice numbering not working correctly]
    * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Invoice numbering - add some kind of valiadation so can;t be duplicated]
-   * [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 Test with 3 decimal place tax rate]
-      * [http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 more re decimal places and calculations ]
+   * ~~[http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 Test with 3 decimal place tax rate]~~ fixed
+      * ~~[http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 more re decimal places and calculations ]~~ fixed
    * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=138 - Update ACLs for statements etc.. ]~~ fixed
    * [http://code.google.com/p/simpleinvoices/issues/detail?id=139 - Review expense extension - make sure still works all OK]
    * Test installer with alternate table prefix - currently fails on essential data
