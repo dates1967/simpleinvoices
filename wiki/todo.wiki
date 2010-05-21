@@ -52,6 +52,8 @@
 --- 2010.3 ---
 
  * plans
+   * Add new kick ass PDF library -> http://code.google.com/p/wkhtmltopdf/
+     * http://simpleinvoices.org/forum/discussion/1222/
    * add preference
    * locale + language + index_group fix
    * edit invoice - adjust label
