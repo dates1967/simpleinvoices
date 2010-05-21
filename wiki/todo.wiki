@@ -27,7 +27,7 @@
    * [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 1 being added to css url - review ]
 
  * plans 
-   * Update Essential Data and Sample Data json import files
+   * ~~Update Essential Data and Sample Data json import files~~ done
    * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
    * language and locale pre invoice preference
    * ~~[http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]~~ fixed beta 5
@@ -40,9 +40,6 @@
    * ~~[http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]~~
 
  * maybe
-   * add Manage SQL patches back in
-   * add rerun SQL patch button
-   * Database log - review
    * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
    * Update UI of Manage Extensions
    * redo home page - Recent Activity and Quick Stats
