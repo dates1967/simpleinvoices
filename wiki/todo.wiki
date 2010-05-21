@@ -24,6 +24,7 @@
    * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=138 - Update ACLs for statements etc.. ]~~ fixed
    * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=139 - Review expense extension - make sure still works all OK]~~ expenses seem to be working all OK
    * Test installer with alternate table prefix - currently fails on essential data
+   * [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 1 being added to css url - review ]
 
  * plans 
    * Update Essential Data and Sample Data json import files
