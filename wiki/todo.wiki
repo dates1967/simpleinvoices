@@ -27,6 +27,7 @@
    * [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 1 being added to css url - review ]
    * [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 Zend mail utf8 change]
    * [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 Paid invoices issue]
+   * live 155 & 156 in invoice.php repeated 
 
  * plans 
    * ~~Update Essential Data and Sample Data json import files~~ done
