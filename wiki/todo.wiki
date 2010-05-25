@@ -27,7 +27,7 @@
    * Fixed: Zend mail utf8 change - [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 link]
    * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
-   * Steven: keep escaping templates (upto reports (from bottom))
+   * Steven: keep escaping templates (upto payment_types (from bottom))
 
  * plans 
    * Done: Update Essential Data and Sample Data json import files
