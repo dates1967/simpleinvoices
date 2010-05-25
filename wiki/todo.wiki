@@ -17,30 +17,28 @@
    * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3- released/#Item_10 Paypal IPN issue] - needs testing
    * Fixed: Login page isues - no values = blank page [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 link] - needs testing
    * Fixed: Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
-   * invoice numbering not working correctly [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments link]
-   * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Invoice numbering - add some kind of valiadation so can;t be duplicated]
+   * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
+   * Invoice numbering - add some kind of valiadation so can;t be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Fixed: Test with 3 decimal place tax rate [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 link]
-      * ~~[http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 more re decimal places and calculations ]~~ fixed
-   * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=138 - Update ACLs for statements etc.. ]~~ fixed
-   * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=139 - Review expense extension - make sure still works all OK]~~ expenses seem to be working all OK
+      * Fixed: more re decimal places and calculations [http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 link]
+   * Fixed: - Update ACLs for statements etc..  [http://code.google.com/p/simpleinvoices/issues/detail?id=138 link]
    * Test installer with alternate table prefix - currently fails on essential data
    * [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 1 being added to css url - review ]
    * [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 Zend mail utf8 change]
    * [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 Paid invoices issue]
-   * ~~line 155 & 156 in include/class/invoice.php repeated ~~ fixed
+   * Fixed: line 155 & 156 in include/class/invoice.php repeated
 
  * plans 
-   * ~~Update Essential Data and Sample Data json import files~~ done
+   * Done: Update Essential Data and Sample Data json import files
    * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
    * language and locale pre invoice preference
-   * ~~[http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 IE Payments page fix- need to apply]~~ fixed beta 5
-   * ~~Fix french translation problem with manage pages~~ fixed
+   * Fixed: IE Payments page fix [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 link]
+   * Fixed: Fix french translation problem with manage pages
    * locale select in defaults 
    * Update UI of System Preferences
-   * ~~update french translation - not to use HTML characters~~ french should now be OK
    * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
-   * ~~make help link in header~~
-   * ~~[http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 Zend_Loader::Zend_Loader::registerAutoload drama]~~
+   * Fixed: make help link in header
+   * Fixed: Zend_Loader::Zend_Loader::registerAutoload drama [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 link]
 
  * maybe
    * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
