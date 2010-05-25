@@ -25,7 +25,7 @@
    * Test installer with alternate table prefix - currently fails on essential data
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
    * Fixed: Zend mail utf8 change - [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 link]
-   * Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
+   * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
 
  * plans 
