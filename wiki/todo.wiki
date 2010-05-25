@@ -8,18 +8,18 @@
 
  * current bugs
    * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
-     * “Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference. - fixed
-     * "User Management". If you do not assign a Role when adding a new user the user does not appear in the user list, effectively they are 'lost' to the system. The only way to bring them back is manually edit the database - Done
-     * I've created 3 documents; an invoice, an estimate and another invoice (in that order). Each document has its own numbering group so I have Invoice 1 and Invoice 2, and Estimate 1. However when I try to e-mail documents the auto-generated subject line is not using the numbering group i.e. when I e-mail Estimate 1 it shows the subject line as "Estimate 2" and Invoice 2 as "Invoice 3". - fixed
+     * Fixed: “Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference.
+     * Fixed: "User Management". If you do not assign a Role when adding a new user the user does not appear in the user list, effectively they are 'lost' to the system. The only way to bring them back is manually edit the database
+     * Fixed: I've created 3 documents; an invoice, an estimate and another invoice (in that order). Each document has its own numbering group so I have Invoice 1 and Invoice 2, and Estimate 1. However when I try to e-mail documents the auto-generated subject line is not using the numbering group i.e. when I e-mail Estimate 1 it shows the subject line as "Estimate 2" and Invoice 2 as "Invoice 3"
      * 0 size PDFs when being emaield
-   * Zeros dropped off numbers - [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 link] - Fixed
-   * After clicking on the recurrence I got a white page [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 link] - Fixed
+   * Fixed: Zeros dropped off numbers - [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 link]
+   * Fixed: After clicking on the recurrence I got a white page [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 link]
    * [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3- released/#Item_10 Paypal IPN issue] - needs testing
-   * ~~[http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 Login page isues - no values = blank page] - needs testing~~ fixed
-   * ~~Check that invoice custom field 1 still works OK - refer JohnMC comment on forum~~ done
-   * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments - invoice numbering not working correctly]
+   * Fixed: Login page isues - no values = blank page [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 link] - needs testing
+   * Fixed: Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
+   * invoice numbering not working correctly [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Payments link]
    * [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 Invoice numbering - add some kind of valiadation so can;t be duplicated]
-   * ~~[http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 Test with 3 decimal place tax rate]~~ fixed
+   * Fixed: Test with 3 decimal place tax rate [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 link]
       * ~~[http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 more re decimal places and calculations ]~~ fixed
    * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=138 - Update ACLs for statements etc.. ]~~ fixed
    * ~~[http://code.google.com/p/simpleinvoices/issues/detail?id=139 - Review expense extension - make sure still works all OK]~~ expenses seem to be working all OK
