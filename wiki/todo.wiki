@@ -18,7 +18,7 @@
    * Fixed: Login page isues - no values = blank page [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 link] - needs testing
    * Fixed: Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
    * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
-   * Invoice numbering - add some kind of valiadation so can;t be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
+   * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Fixed: Test with 3 decimal place tax rate [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 link]
       * Fixed: more re decimal places and calculations [http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 link]
    * Fixed: - Update ACLs for statements etc..  [http://code.google.com/p/simpleinvoices/issues/detail?id=138 link]
@@ -27,7 +27,7 @@
    * Fixed: Zend mail utf8 change - [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 link]
    * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
-   * Steven: keep escaping templates (upto custom_Fields (from bottom))
+   * Steven: keep escaping templates (upto cron (from bottom))
    * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
 
  * plans 
