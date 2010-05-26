@@ -1,4 +1,5 @@
 #labels Security
+#Functions and methods of how to make data safe.
 = Templates =
 
   * |htmlsafe -> escape html
