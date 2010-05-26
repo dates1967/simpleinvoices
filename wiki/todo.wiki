@@ -28,6 +28,7 @@
    * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
    * Steven: keep escaping templates (upto payment_types (from bottom))
+   * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
 
  * plans 
    * Done: Update Essential Data and Sample Data json import files
