@@ -1,6 +1,6 @@
 ﻿#summary Simple Invoices todo list :: all current issues and planned features
 
-|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] || [escaping]
+|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] || [escaping] ||
 
 --- 
 2010.2 beta series
