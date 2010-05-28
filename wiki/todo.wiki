@@ -12,7 +12,7 @@
    * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
-   * Fixed: keep escaping templates
+   * Escaping templates and relevant php files
    * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
    * Dutch translation - apparently when dutch selected the Manage pages/grids not work - testing required
 
