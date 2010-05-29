@@ -33,6 +33,7 @@
    * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
    * Fixed: keep escaping templates
+   * minify and gzip js&css.
 
  * plans 
    * Done: Update Essential Data and Sample Data json import files
