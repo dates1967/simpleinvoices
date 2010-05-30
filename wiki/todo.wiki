@@ -18,6 +18,8 @@
    * Convert all inline javascript >2 lines into files.
    * minify and gzip js&css.
    * Try merge js into one file.
+     * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
+
  * fixed
    * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
      * Fixed: “Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference.
