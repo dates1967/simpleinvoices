@@ -15,6 +15,7 @@
    * Escaping templates and relevant php files
    * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
    * Dutch translation - apparently when dutch selected the Manage pages/grids not work - testing required
+   * Login not working with new regex [http://simpleinvoices.org/forum/discussion/1259/you-are-not-allowed-to-view-this-page/#Item_7 link]
    * Convert all inline javascript >2 lines into files.
    * minify and gzip js&css.
    * Try merge js into one file.
