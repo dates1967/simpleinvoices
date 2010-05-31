@@ -38,18 +38,18 @@
    * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
    * Fixed: line 155 & 156 in include/class/invoice.php repeated
    * Fixed: keep escaping templates
-
- * plans 
    * Done: Update Essential Data and Sample Data json import files
-   * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
-   * language and locale pre invoice preference
    * Fixed: IE Payments page fix [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 link]
    * Fixed: Fix french translation problem with manage pages
-   * locale select in defaults 
-   * Update UI of System Preferences
-   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files]
    * Fixed: make help link in header
    * Fixed: Zend_Loader::Zend_Loader::registerAutoload drama [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 link]
+
+ * plans 
+   * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
+   * language and locale pre invoice preference
+   * locale select in defaults 
+   * Update UI of System Preferences
+   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files] 
 
  * maybe
    * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
@@ -63,6 +63,7 @@
 --- 2010.3 ---
 
  * plans
+   * Customer, User, Viewer etc.. user types with working ACL/permissions etc..
    * Add new kick ass PDF library -> http://code.google.com/p/wkhtmltopdf/
      * http://simpleinvoices.org/forum/discussion/1222/
    * add preference
