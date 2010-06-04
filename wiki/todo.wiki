@@ -5,14 +5,17 @@
 --- 
 2010.2 beta series
 ---
- * must be fixed re 2010.2 stable release
+
+ * Once these are fixed 2010.2 stable will be released
   * Paypal IPN issue [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 link] - needs testing
   * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
   * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
   * Login not working with new regex [http://simpleinvoices.org/forum/discussion/1259/you-are-not-allowed-to-view-this-page/#Item_7 link]
   * Paid invoices issue [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link] - needs review
+  * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
 
--- below to be moved to 2010.3 --
+
+--- 2010.3 ---
 
  * current bugs
    * 0 size PDFs when being emaield - when file name character accented
@@ -27,25 +30,10 @@
    * Test xls/doc export from Manage Invoices page [http://simpleinvoices.org/forum/discussion/1266/i-cant-export-to-xls-or-doc-in-svn-revision/#Comment_6923 link]
    * Invoice Preference: Invoice detail line not displayed in the view page
 
- * plans 
-   * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
+ * plans
    * language and locale pre invoice preference
    * locale select in defaults 
    * Update UI of System Preferences
-   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files] 
-
- * maybe
-   * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
-   * Update UI of Manage Extensions
-   * redo home page - Recent Activity and Quick Stats
-   * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
-   * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0  User add - only admin role available]
-   * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
-   * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
-
---- 2010.3 ---
-
- * plans
    * Customer, User, Viewer etc.. user types with working ACL/permissions etc..
    * Add new kick ass PDF library -> http://code.google.com/p/wkhtmltopdf/
      * http://simpleinvoices.org/forum/discussion/1222/
@@ -53,6 +41,7 @@
    * locale + language + index_group fix
    * edit invoice - adjust label
    * payments - adjust label
+   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files] 
 
  * really shoud
    * custom fields - domain id - stuff - JK
@@ -64,6 +53,13 @@
    * move all configs (where possible) out of config.ini and into system_defaults
    * move date popup to jquery UI
    * Reports - localise
+   * invoice edit - notes - if note empty then have closed if not empty then display for edit - work-in-progress
+   * Update UI of Manage Extensions
+   * redo home page - Recent Activity and Quick Stats
+   * [http://simpleinvoices.org/forum/discussion/904/changes-in-email-out-functions/#Item_1 Email - update send function - so if email is diff from biller don't show Biller Name]
+   * [http://simpleinvoices.org/forum/discussion/955/no-roles-available-just-admin/#Item_0  User add - only admin role available]
+   * [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 PDF - minor edit to html2pdf]
+   * [http://code.google.com/p/simpleinvoices/issues/detail?id=135 Delete invoice not working in svn trunk]
 
 --- All other current issues ---
 
