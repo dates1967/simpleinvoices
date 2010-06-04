@@ -3,6 +3,47 @@
 
 <wiki:toc/>
 = 2010 series =
+
+==2010.2 Beta 5 ==
+ * Process payment page redone - no more crappy autocomplete
+ * Payments - updated to work with the new Invoice ID system
+ * Product unit price fomatting update to fix that tax calculation issue with 3+ decimal     * place product prices
+ * Updated French translation
+ * Upgraded Zend Framework to 1.10.4
+ * Add php logging option
+ * Upgrade to the SQL Patch system
+ * Minor Eway upgrade
+ * Statement upgrade - date filter and logging issues
+ * Inventory update
+ * Installer updated - now works with different table prefixes
+ * Installer json data and sql fiels updated
+ * Fixed lots of XSS flaws. Pretty much all output/data is now escaped.
+   * Refer http://code.google.com/p/simpleinvoices/wiki/Escaping for more info
+
+ * fixed
+   * http://simpleinvoices.org/forum/discussion/1176/feedback-20102-beta-2/
+     * Fixed: “Custom Fields” management is not working. I followed your instructions in the FAQ and modified the PHP error reporting level but this made no difference.
+     * Fixed: "User Management". If you do not assign a Role when adding a new user the user does not appear in the user list, effectively they are 'lost' to the system. The only way to bring them back is manually edit the database
+     * Fixed: I've created 3 documents; an invoice, an estimate and another invoice (in that order). Each document has its own numbering group so I have Invoice 1 and Invoice 2, and Estimate 1. However when I try to e-mail documents the auto-generated subject line is not using the numbering group i.e. when I e-mail Estimate 1 it shows the subject line as "Estimate 2" and Invoice 2 as "Invoice 3"
+   * Fixed: Zeros dropped off numbers - [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_2 link]
+   * Fixed: After clicking on the recurrence I got a white page [http://simpleinvoices.org/forum/discussion/1160/simple-invoices-20102-beta-2-released/#Item_5 link]
+   * Fixed: Login page isues - no values = blank page [http://simpleinvoices.org/forum/discussion/484/changing-title/#Item_10 link] - needs testing
+   * Fixed: Check that invoice custom field 1 still works OK - refer JohnMC comment on forum
+   * Fixed: Test with 3 decimal place tax rate [http://simpleinvoices.org/forum/discussion/732/tax-issue/#Item_16 link]
+      * Fixed: more re decimal places and calculations [http://simpleinvoices.org/forum/discussion/1192/tax-calculating-wrong-on-8510638-issueopen/#Item_15 link]
+   * Fixed: - Update ACLs for statements etc..  [http://code.google.com/p/simpleinvoices/issues/detail?id=138 link]
+   * Fixed: Test installer with alternate table prefix - currently fails on essential data
+   * Fixed: Zend mail utf8 change - [http://simpleinvoices.org/forum/discussion/1238/strange-chars-in-the-body-of-sent-email/#Item_2 link]
+   * Fixed: Paid invoices issue : [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link]
+   * Fixed: line 155 & 156 in include/class/invoice.php repeated
+   * Fixed: keep escaping templates
+   * Done: Update Essential Data and Sample Data json import files
+   * Fixed: IE Payments page fix [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an-object/#Item_2 link]
+   * Fixed: Fix french translation problem with manage pages
+   * Fixed: make help link in header
+   * Fixed: Zend_Loader::Zend_Loader::registerAutoload drama [http://simpleinvoices.org/forum/discussion/861/simple-invoices-20091-release-candidate-available/#Item_50 link]
+
+
 ==2010.2 Beta 5 ==
  * fixed IE manage payments problem
  * adjusted and fixed issue with login page
