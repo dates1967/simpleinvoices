@@ -5,24 +5,27 @@
 --- 
 2010.2 beta series
 ---
+ * must be fixed re 2010.2 stable release
+  * Paypal IPN issue [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 link] - needs testing
+  * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
+  * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
+  * Login not working with new regex [http://simpleinvoices.org/forum/discussion/1259/you-are-not-allowed-to-view-this-page/#Item_7 link]
+  * Paid invoices issue [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link] - needs review
+
+-- below to be moved to 2010.3 --
 
  * current bugs
    * 0 size PDFs when being emaield - when file name character accented
-   * Paypal IPN issue [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 link] - needs testing
-   * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
    * Escaping templates and relevant php files
-   * Biller sales report - status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
    * Dutch translation - apparently when dutch selected the Manage pages/grids not work - testing required
-   * Login not working with new regex [http://simpleinvoices.org/forum/discussion/1259/you-are-not-allowed-to-view-this-page/#Item_7 link]
    * Convert all inline javascript >2 lines into files.
    * minify and gzip js&css.
    * Try merge js into one file.
      * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
-   * Test xml/doc export from Manage Invoices page [http://simpleinvoices.org/forum/discussion/1266/i-cant-export-to-xls-or-doc-in-svn-revision/#Comment_6923 link]
+   * Test xls/doc export from Manage Invoices page [http://simpleinvoices.org/forum/discussion/1266/i-cant-export-to-xls-or-doc-in-svn-revision/#Comment_6923 link]
    * Invoice Preference: Invoice detail line not displayed in the view page
-   * Paid invoices issue [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link] - needs review
 
  * plans 
    * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
