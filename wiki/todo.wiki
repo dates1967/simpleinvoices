@@ -49,7 +49,7 @@
    * Customer, User, Viewer etc.. user types with working ACL/permissions etc..
    * Add new kick ass PDF library -> http://code.google.com/p/wkhtmltopdf/
      * http://simpleinvoices.org/forum/discussion/1222/
-   * add preference
+   * Rename 'Invoices Preferences' to 'Doc Type'
    * locale + language + index_group fix
    * edit invoice - adjust label
    * payments - adjust label
