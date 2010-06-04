@@ -7,7 +7,7 @@
 ==2010.2 Beta 5 ==
  * Process payment page redone - no more crappy autocomplete
  * Payments - updated to work with the new Invoice ID system
- * Product unit price fomatting update to fix that tax calculation issue with 3+ decimal     * place product prices
+ * Product unit price fomatting update to fix that tax calculation issue with 3+ decimal place product prices
  * Updated French translation
  * Upgraded Zend Framework to 1.10.4
  * Add php logging option
