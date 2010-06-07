@@ -3,8 +3,11 @@
 
 <wiki:toc/>
 = 2010 series =
-
-==2010.2 Beta 5 ==
+==2010.2 Beta 7 ==
+ * Issue with editing invoices in beta 6 fixed
+ * Issue with custom fields in beta 6 fixed
+ * Fixed biller sales report status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
+==2010.2 Beta 6 ==
  * Process payment page redone - no more crappy autocomplete
  * Payments - updated to work with the new Invoice ID system
  * Product unit price fomatting update to fix that tax calculation issue with 3+ decimal place product prices
