@@ -7,6 +7,7 @@
  * Issue with editing invoices in beta 6 fixed
  * Issue with custom fields in beta 6 fixed
  * Fixed biller sales report status issue [http://simpleinvoices.org/forum/discussion/1227/quote-statement-invoice/#Item_4 link]
+ * Fixed paid invoices issue [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link] - needs review
 ==2010.2 Beta 6 ==
  * Process payment page redone - no more crappy autocomplete
  * Payments - updated to work with the new Invoice ID system
