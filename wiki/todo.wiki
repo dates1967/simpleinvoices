@@ -9,7 +9,6 @@
  * Once these are fixed 2010.2 stable will be released
   * Paypal IPN issue [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 link] - needs testing
   * invoice numbering not working correctly - Payments [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link] - needs review
-  * Paid invoices issue [http://simpleinvoices.org/forum/discussion/1248/bug-in-paid-invoices/#Item_3 link] - needs review
   * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
 
 
