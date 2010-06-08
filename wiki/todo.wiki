@@ -22,7 +22,6 @@
    * minify and gzip js&css.
    * Try merge js into one file.
      * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
-   * Test xls/doc export from Manage Invoices page [http://simpleinvoices.org/forum/discussion/1266/i-cant-export-to-xls-or-doc-in-svn-revision/#Comment_6923 link]
    * Invoice Preference: Invoice detail line not displayed in the view page
 
  * plans
