@@ -7,8 +7,8 @@
 ---
 
  * Once these are fixed 2010.2 stable will be released
-  * Paypal IPN issue [http://simpleinvoices.org/forum/discussion/1182/simple-invoices-20102-beta-3-released/#Item_10 link] - needs testing
-  * Payments/Index_name/Invoices ID and Paypal - sort of it all OK
+  * all issues fixed - now all modules/section of Simple Invoices need testing - if no issues  will release 2010.2 beta 7 - then if no issues will release 2010.2 statble
+
 
 --- 2010.3 ---
 
