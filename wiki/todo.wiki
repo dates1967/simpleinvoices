@@ -9,6 +9,10 @@
  * Once these are fixed 2010.2 stable will be released
   * all issues fixed - now all modules/section of Simple Invoices need testing - if no issues  will release 2010.2 beta 7 - then if no issues will release 2010.2 statble
 
+ * 
+  * Review .htaccess [http://simpleinvoices.org/forum/discussion/1296/htaccess-rewrite/#Item_1 link]
+  * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
+
 
 --- 2010.3 ---
 
