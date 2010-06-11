@@ -8,9 +8,7 @@
 
  * Once these are fixed 2010.2 stable will be released
   
- * beta 6 issues
-  * paypal button update [http://simpleinvoices.org/forum/discussion/1295/paypal-button-issues/#Item_1 link]
-  * Review .htaccess [http://simpleinvoices.org/forum/discussion/1296/htaccess-rewrite/#Item_1 link]
+ * beta 7 issues
   * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
 
 
