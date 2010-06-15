@@ -41,6 +41,7 @@
    * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files] 
 
  * really shoud
+   * short wording in Quick View page [http://simpleinvoices.org/forum/discussion/1305/formatting-witl-long-words-in-italian/#Item_1 link]
    * custom fields - domain id - stuff - JK
    * make search in Manage pages work good for all pages
    * Products - allow setting 2 or more default taxes pre product
