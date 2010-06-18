@@ -11,6 +11,7 @@
  * beta 7 issues
   * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
   * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
+  * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
 
 
 --- 2010.3 ---
