@@ -6,6 +6,8 @@
 ==2010.2 Beta 8==
   * paypal button updated [http://simpleinvoices.org/forum/discussion/1295/paypal-button-issues/#Item_1 link]
   * .htaccess updated [http://simpleinvoices.org/forum/discussion/1296/htaccess-rewrite/#Item_1 link]
+  * update customer credit card issue fixed
+  * Quick View html/custom fields issue fixed
 
 ==2010.2 Beta 7 ==
  * Issue with editing invoices in beta 6 fixed
