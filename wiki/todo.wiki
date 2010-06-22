@@ -9,9 +9,7 @@
  * Once these are fixed 2010.2 stable will be released
   
  * beta 7 issues
-  * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
-  * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
-  * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
+
 
 
 --- 2010.3 ---
@@ -28,6 +26,11 @@
      * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
    * Invoice Preference: Invoice detail line not displayed in the view page
    * DB adjustments for large data - indexes, adjsut si_invoices etc..[http://simpleinvoices.org/forum/discussion/1304/is-simple-invoices-suitable-for-large-databases/#Item_1 link]
+   * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
+   * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
+   * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
+   * 2 Decimal place product/tax can end up with 3 decimal place total - reveiw
+   
 
  * plans
    * language and locale pre invoice preference
