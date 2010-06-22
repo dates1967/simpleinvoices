@@ -2,9 +2,6 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] || [Escaping] ||
 
---- 
-2010.2 beta series
----
 
 --- 2010.3 ---
 
