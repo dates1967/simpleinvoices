@@ -6,6 +6,7 @@
 --- 2010.3 ---
 
  * current bugs
+   * resave the ducth file - copy/paste to new file then rename - encoding issue
    * 0 size PDFs when being emaield - when file name character accented
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
