@@ -6,12 +6,6 @@
 2010.2 beta series
 ---
 
- * Once these are fixed 2010.2 stable will be released
-  
- * beta 7 issues
-
-
-
 --- 2010.3 ---
 
  * current bugs
