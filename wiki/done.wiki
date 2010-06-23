@@ -3,6 +3,21 @@
 
 <wiki:toc/>
 = 2010 series =
+
+==2010.2 Stable==
+  * Paypal support http://www.simpleinvoices.org/wiki/paypal
+  * Recurring invoices http://www.simpleinvoices.org/wiki/recurrence
+  * Added Inventory http://simpleinvoices.org/wiki/inventory
+  * Eway support http://www.simpleinvoices.org/wiki/eway
+  * Added invoice statements
+  * Predefined filters added to the Manage Invoices pages http://simpleinvoices.org/wiki/filters
+  * Process payments page redone
+  * Installer update
+  * XSS fixed and data escaping
+  * Invoices can now have statuses http://simpleinvoices.org/wiki/status
+  * Invoice numbering groups added - ie. multiple invoice numbering ranges http://simpleinvoices.org/wiki/invoice_numbering_groups
+  * Zend Framework update
+
 ==2010.2 Beta 8==
   * paypal button updated [http://simpleinvoices.org/forum/discussion/1295/paypal-button-issues/#Item_1 link]
   * .htaccess updated [http://simpleinvoices.org/forum/discussion/1296/htaccess-rewrite/#Item_1 link]
