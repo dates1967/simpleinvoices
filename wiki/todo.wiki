@@ -22,6 +22,7 @@
    * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
    * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
    * 2 Decimal place product/tax can end up with 3 decimal place total - reveiw
+   * Make all words/strings translatable [http://simpleinvoices.org/forum/discussion/1335/strings-out-the-lang-file/#Item_0 link]
    
 
  * plans
