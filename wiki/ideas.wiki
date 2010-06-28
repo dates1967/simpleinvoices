@@ -3,6 +3,13 @@
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 _Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
+ * API
+   * Create an API to handle
+     * Add customer
+     * Add product
+     * Add biller
+     * Add invoice
+     * get PDF
  * Invoice
    * Invoice - New: Add customers/billers/products on the fly while creating a new invoice - via light box window
    * Invoice history - ie. Invoice 5 was first Quote 5, then changed, then emailed, then paid etc..
