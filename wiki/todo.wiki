@@ -6,7 +6,7 @@
 --- 2010.3 ---
 
  * current bugs
-   * Papypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
+   * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
    * resave the ducth file - copy/paste to new file then rename - encoding issue
    * 0 size PDFs when being emaield - when file name character accented
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
