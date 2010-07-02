@@ -10,14 +10,36 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * Add biller
      * Add invoice
      * get PDF
+
+
+ * Code
+   * Simple Invoices Errors - make look all pretty
+   * apply aplysia new drop down list code to others (refer system default: biller)
+   * index.php review input if is safe enought
+ 
+
+ * Config
+   * [http://simpleinvoices.org/forum/discussion/928/number-of-invoices-on-one-page/#Item_1 Set number of rows in the manage grids as a config option]
+   * preferences: move rest into db
+
+ * Delete
+   * if delete is enabled allow delete for ALL items - products, billers, etc.. all with their relevant rules ie. if product has been included in an invoice then CAN'T delete etc..
+
+ * Email
+   * email : html and no html option - maybe??
+   * email: add default signature - maybe - set in biller details ??
+   * use utf-8 for e-mail sending - check this - AP
+   * [http://simpleinvoices.org/forum/discussion/908/reminders-for-open-invoices-help-wanted/#Item_14 Reminder emails for unpaid invoices (cron-script)]
+   * If fail to send add error messages etc..
+   * Add to invoice history that it has been emailed
+
  * Extensions
    * Make manage extensions UI better
    * Fix menu issue
    * Add field to extension info file to say which version works with [http://simpleinvoices.org/forum/discussion/1342/cleaning-si/#Item_1 link]
 
- * Email
-   * If fail to send add error messages etc..
-   * Add to invoice history that it has been emailed
+ * Installer
+   * [http://simpleinvoices.org/forum/discussion/883/logo-not-showing-in-pdf-invoice-issueopen/#Item_21 Add system requirements checler - inc PHP-GD etc.. ]
 
  * Invoice
    * Invoice - New: Add customers/billers/products on the fly while creating a new invoice - via light box window
@@ -31,6 +53,17 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * [http://simpleinvoices.org/forum/discussion/1206/add-sum-total-at-the-bottom-of-the-invoice-list/#Comment_6528 Add total $ for all invoices in the Manage Invoices page]
    * Pre tax discount /Cumulative CA/Quebec tax calc [http://simpleinvoices.org/forum/discussion/1013/pretax-discounts-as-an-extension-perhaps/#Item_17 link]
 
+ * Localise
+   * choose automatic language (need to rename language files/subfolder). We should use this standards (first we can start with only 2 chars variant)
+     * http://www.rfc-editor.org/rfc/rfc4646.txt
+     * http://www.iana.org/assignments/language-subtag-registry
+         * use in the installer and i'll think about it for the login page when/if i add a lang drop down box there
+   * Localise - look into Zend Locale or similar to handle localising all the formatting of dates, currency etc.
+
+ * Login/Users/ACL
+   * Customer Login
+   * Biller login
+   * users/groups/domains - make this happen!
 
  * Payments
    * Payments - nice print view ( or easy way to print receipt of current invoice)
@@ -38,40 +71,10 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * [http://simpleinvoices.org/forum/discussion/1195/automatic-emailing-of-receipts/#Item_0 Auto email receipt on payment]
    * [http://simpleinvoices.org/forum/discussion/1246/pdf-for-receipts/#Comment_6809 PDF payment]
  
- * Login/Users/ACL
-   * Customer Login
-   * Biller login
-   * users/groups/domains - make this happen!
-
- * Config
-   * [http://simpleinvoices.org/forum/discussion/928/number-of-invoices-on-one-page/#Item_1 Set number of rows in the manage grids as a config option]
-   * preferences: move rest into db
 
  * Products
    * ~~Product Cost field - http://simpleinvoices.org/forum/discussion/687/product-cost-price-field ~~ implemented
    * Add Product full desctipion - this will auto populate teh item details section in new invioce refer http://simpleinvoices.org/forum/discussion/1191/description-of-product/#Item_1
-
- * Code
-   * Simple Invoices Errors - make look all pretty
-   * apply aplysia new drop down list code to others (refer system default: biller)
-   * index.php review input if is safe enought
- 
- * Delete
-   * if delete is enabled allow delete for ALL items - products, billers, etc.. all with their relevant rules ie. if product has been included in an invoice then CAN'T delete etc..
-
- * Email
-   * email : html and no html option - maybe??
-   * email: add default signature - maybe - set in biller details ??
-   * use utf-8 for e-mail sending - check this - AP
-   * [http://simpleinvoices.org/forum/discussion/908/reminders-for-open-invoices-help-wanted/#Item_14 Reminder emails for unpaid invoices (cron-script)]
-
- * Installer
-   * [http://simpleinvoices.org/forum/discussion/883/logo-not-showing-in-pdf-invoice-issueopen/#Item_21 Add system requirements checler - inc PHP-GD etc.. ]
-
- * Validation:
-   * Add validation to the edit screen
-   * make a proper validation function/class
-   * Product Add - add validation on price
 
  * Reports
    * Date based reports : http://simpleinvoices.org/forum/topic-391.html ( payments received today, invoices made today etc..) - AP
@@ -79,12 +82,12 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * blow up phpreports and implement our own reporting tools
    * reports : add export to .xls format 
 
- * Localise
-   * choose automatic language (need to rename language files/subfolder). We should use this standards (first we can start with only 2 chars variant)
-     * http://www.rfc-editor.org/rfc/rfc4646.txt
-     * http://www.iana.org/assignments/language-subtag-registry
-         * use in the installer and i'll think about it for the login page when/if i add a lang drop down box there
-   * Localise - look into Zend Locale or similar to handle localising all the formatting of dates, currency etc.
+ * Validation:
+   * Add validation to the edit screen
+   * make a proper validation function/class
+   * Product Add - add validation on price
+
+~~ Misc. ~~
 
  * Backup
    * backups sent via email : http://simpleinvoices.org/forum/discussion/1037/database-backup-sent-via-email-or-at-least-downloadable/#Item_0
