@@ -7,6 +7,7 @@
 
  * current bugs
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
+   * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
    * resave the ducth file - copy/paste to new file then rename - encoding issue
    * 0 size PDFs when being emaield - when file name character accented
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
