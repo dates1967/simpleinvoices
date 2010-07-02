@@ -12,6 +12,32 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * get PDF
 
 
+ * Backup
+   * backups sent via email : http://simpleinvoices.org/forum/discussion/1037/database-backup-sent-via-email-or-at-least-downloadable/#Item_0
+   * backup to a web directory is not really a good idea. Perhaps the download solution is a better one:
+     * just mod the existing backup script to dump to screen or download file - same as how phpmyadmin dumps to screeen - in a text box
+     * mod headers as in your example
+{{{
+		<?php
+		include('config.php');
+
+		$conn = mysql_connect( $host, $user, $password );
+		mysql_select_db( $database, $conn );
+		$name = date("ymd")."_tillbackup.sql";
+		$backupFile = "/tmp/{$name}";
+
+		system("/sw/bin/mysqldump --user=$user --pass=$password $database > $backupFile");
+
+		header("Content-disposition: attachment; filename=$name");
+		header("Content-type: unknown/unknown");
+
+		include($backupFile);
+
+		unlink($backupFile);
+		?>
+}}}
+
+ 
  * Code
    * Simple Invoices Errors - make look all pretty
    * apply aplysia new drop down list code to others (refer system default: biller)
@@ -21,6 +47,24 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * Config
    * [http://simpleinvoices.org/forum/discussion/928/number-of-invoices-on-one-page/#Item_1 Set number of rows in the manage grids as a config option]
    * preferences: move rest into db
+
+* Custom fields
+   * Make custom_fields dynamic with the following tables
+{{{
+	customFieldsCategorie
+	id,name (product,customer,biller,...)
+	
+	customFields
+	id,categorieId,itemId,value
+
+	customFieldsValues
+	id,cateogireId,customFieldId,itemId,value
+
+	customFieldType (can be added as plugin or so...)
+	id, name, 
+}}}
+  * defining for every module an id?
+  * customFieldPlugin Id's have to be unique. 0 - 100 for shipping plugins. Other numbers can be choosen with attention (public list?)
 
  * Delete
    * if delete is enabled allow delete for ALL items - products, billers, etc.. all with their relevant rules ie. if product has been included in an invoice then CAN'T delete etc..
@@ -86,48 +130,3 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * Add validation to the edit screen
    * make a proper validation function/class
    * Product Add - add validation on price
-
-~~ Misc. ~~
-
- * Backup
-   * backups sent via email : http://simpleinvoices.org/forum/discussion/1037/database-backup-sent-via-email-or-at-least-downloadable/#Item_0
-   * backup to a web directory is not really a good idea. Perhaps the download solution is a better one:
-     * just mod the existing backup script to dump to screen or download file - same as how phpmyadmin dumps to screeen - in a text box
-     * mod headers as in your example
-{{{
-		<?php
-		include('config.php');
-
-		$conn = mysql_connect( $host, $user, $password );
-		mysql_select_db( $database, $conn );
-		$name = date("ymd")."_tillbackup.sql";
-		$backupFile = "/tmp/{$name}";
-
-		system("/sw/bin/mysqldump --user=$user --pass=$password $database > $backupFile");
-
-		header("Content-disposition: attachment; filename=$name");
-		header("Content-type: unknown/unknown");
-
-		include($backupFile);
-
-		unlink($backupFile);
-		?>
-}}}
-
- * Custom fields
-   * Make custom_fields dynamic with the following tables
-{{{
-	customFieldsCategorie
-	id,name (product,customer,biller,...)
-	
-	customFields
-	id,categorieId,itemId,value
-
-	customFieldsValues
-	id,cateogireId,customFieldId,itemId,value
-
-	customFieldType (can be added as plugin or so...)
-	id, name, 
-}}}
-  * defining for every module an id?
-  * customFieldPlugin Id's have to be unique. 0 - 100 for shipping plugins. Other numbers can be choosen with attention (public list?)
