@@ -68,6 +68,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
 
  * Customers
    * Change default tab in Customer View to be invoice listing rather than custom fields [http://simpleinvoices.org/forum/discussion/1356/sugestion-change-customer-invoice-listing-tab-position/#Item_0 link]
+
  * Delete
    * if delete is enabled allow delete for ALL items - products, billers, etc.. all with their relevant rules ie. if product has been included in an invoice then CAN'T delete etc..
 
