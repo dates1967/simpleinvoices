@@ -6,6 +6,7 @@
 --- 2010.3 ---
 
  * current bugs
+   * si_user_roles table has auto increment id of 6 - review
    * magic_quotes option - if enabled stripslashes
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
    * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
