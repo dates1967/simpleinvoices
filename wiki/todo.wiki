@@ -6,6 +6,7 @@
 --- 2010.3 ---
 
  * current bugs
+   * remove 'Database Upgrade Manager' from System settings page
    * si_user_roles table has auto increment id of 6 - review
    * magic_quotes option - if enabled stripslashes
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
