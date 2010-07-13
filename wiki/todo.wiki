@@ -35,6 +35,7 @@
    
 
  * plans
+   * Javascript based logo uplaoder [http://simpleinvoices.org/forum/discussion/1354/upload-a-logo-file-the-code/#Item_13 link]
    * language and locale pre invoice preference
    * locale select in defaults 
    * Update UI of System Preferences
