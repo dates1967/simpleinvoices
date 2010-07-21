@@ -79,6 +79,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * [http://simpleinvoices.org/forum/discussion/908/reminders-for-open-invoices-help-wanted/#Item_14 Reminder emails for unpaid invoices (cron-script)]
    * If fail to send add error messages etc..
    * Add to invoice history that it has been emailed
+   * Ability to set default email text
 
  * Extensions
    * Make manage extensions UI better
