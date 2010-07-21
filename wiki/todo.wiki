@@ -77,7 +77,7 @@
  * [http://simpleinvoices.org/forum/discussion/1114/edit-field-not-working-cant-put-in-text/#Item_3 Konquerer issues]
  * [http://code.google.com/p/simpleinvoices/issues/detail?id=136 Sales report - menu problem]
  * [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 Adjust pdf function for config]
-
+ * Make reports 2 decimal places [http://simpleinvoices.org/forum/discussion/1333/ link] [http://simpleinvoices.org/forum/discussion/1387/decimals-in-report link]
 --- simpleinvoices.org issues ---
  
  * move http://simpleinvoices.org/roadmap/dreamtime into google wiki
