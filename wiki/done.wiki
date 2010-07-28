@@ -3,7 +3,7 @@
 
 <wiki:toc/>
 = 2010 series =
-==2010.2 U[date 1 ==
+==2010.2 Udate 1 ==
   * Fixed teh edit customer issue in 2010.2 Stable [http://simpleinvoices.org/forum/discussion/1375/editing-customers-sql-error/ link]
 
 ==2010.2 Stable==
