@@ -36,7 +36,7 @@
    
 
  * plans
-   * Javascript based logo uplaoder [http://simpleinvoices.org/forum/discussion/1354/upload-a-logo-file-the-code/#Item_13 link]
+   * ~~Javascript based logo uploader [http://simpleinvoices.org/forum/discussion/1354/upload-a-logo-file-the-code/#Item_13 link]~~ Added in r3264
    * language and locale pre invoice preference
    * locale select in defaults 
    * Update UI of System Preferences
