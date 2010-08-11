@@ -3,7 +3,9 @@
 
 <wiki:toc/>
 = 2010 series =
-==2010.2 Udate 1 ==
+==2010.2 Update 2 ==
+  * Fixed cron only runs 25 jobs at once issue [http://code.google.com/p/simpleinvoices/issues/detail?id=146 link]
+==2010.2 Update 1 ==
   * Fixed teh edit customer issue in 2010.2 Stable [http://simpleinvoices.org/forum/discussion/1375/editing-customers-sql-error/ link]
 
 ==2010.2 Stable==
