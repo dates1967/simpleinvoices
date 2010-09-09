@@ -71,7 +71,7 @@
 
  * need to get done
   * Update UI of System Preferences
-  * [http://simpleinvoices.org/forum/discussion/859/ Adjust IVA amount %]
+  * Adjust IVA amount % [http://simpleinvoices.org/forum/discussion/859/ link]
   * [http://simpleinvoices.org/forum/discussion/866/email-sent-without-the-pdf/#Item_4  strip special characters from invoice name when emailing]
   * [http://simpleinvoices.org/forum/discussion/978/installation-error/ If tmp/log not  write-able don't error - just no cache or logging]
   * [http://simpleinvoices.org/forum/discussion/985/display-is-null-or-not-an- object/#Item_0 IE - Manage Payments doesnt work]
