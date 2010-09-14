@@ -111,7 +111,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * http://www.iana.org/assignments/language-subtag-registry
          * use in the installer and i'll think about it for the login page when/if i add a lang drop down box there
    * Localise - look into Zend Locale or similar to handle localising all the formatting of dates, currency etc.
-   * Add select language drop down box on login screen
+   * Add select language drop down box on login screen [implemented in svn]
    * Localise all the javascript files    [http://simpleinvoices.org/forum/discussion/1385/localisation-one-more-change-to-do/#Item_0 link]
 
  * Login/Users/ACL
