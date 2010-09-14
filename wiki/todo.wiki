@@ -5,6 +5,9 @@
 
 --- 2010.3 ---
 
+ * svn trunk issues
+   * if using /app can't do css in PDFs
+
  * will do
    * htmlsafe 
      * edit biller - email address not happy 
