@@ -57,7 +57,7 @@
    * locale + language + index_group fix
    * edit invoice - adjust label
    * payments - adjust label
-   * [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 Remove old sql files] 
+   * Remove old sql files [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 link] 
 
  * really shoud
    * short wording in Quick View page [http://simpleinvoices.org/forum/discussion/1305/formatting-witl-long-words-in-italian/#Item_1 link]
