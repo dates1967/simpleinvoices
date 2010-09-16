@@ -41,6 +41,7 @@
    * Make all words/strings translatable [http://simpleinvoices.org/forum/discussion/1335/strings-out-the-lang-file/#Item_0 link]
    * Invoice blank re template = default issue [http://simpleinvoices.org/forum/discussion/848/pdfdoc-excel-coming-blank/#Item_9 link]
    * Investigate partially paid invoices causing problems in reports [http://simpleinvoices.org/forum/discussion/1431/reports-doing-odd-things-in-20102update/#Item_2 link]
+   * Reports show si_invoices.id instead of si_invoices.index_id [http://simpleinvoices.org/forum/discussion/comment/8072/#Comment_8072 link]
 
 
  * plans
