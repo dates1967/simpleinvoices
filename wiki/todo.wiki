@@ -27,7 +27,6 @@
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
    * Escaping templates and relevant php files
-   * Dutch translation - apparently when dutch selected the Manage pages/grids not work - testing required
    * Convert all inline javascript >2 lines into files.
    * minify and gzip js&css.
    * Try merge js into one file.
