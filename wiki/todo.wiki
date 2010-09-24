@@ -59,6 +59,7 @@
    * Remove old sql files [http://simpleinvoices.org/forum/discussion/856/many-errors-in-installation-solved/#Item_7 link] 
 
  * really shoud
+   * add SI version number into GUI - probably in the sys setting  page[http://simpleinvoices.org/forum/discussion/1504/ link]
    * short wording in Quick View page [http://simpleinvoices.org/forum/discussion/1305/formatting-witl-long-words-in-italian/#Item_1 link]
    * custom fields - domain id - stuff - JK
    * make search in Manage pages work good for all pages
