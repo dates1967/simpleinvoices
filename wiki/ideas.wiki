@@ -86,6 +86,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * remove Unregister from the core extension
    * Fix menu issue
    * Add field to extension info file to say which version works with [http://simpleinvoices.org/forum/discussion/1342/cleaning-si/#Item_1 link]
+
  * HTML
    * Convert all inline javascript >2 lines into files.
    * minify and gzip js&css.
