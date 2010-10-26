@@ -27,10 +27,6 @@
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
    * Escaping templates and relevant php files
-   * Convert all inline javascript >2 lines into files.
-   * minify and gzip js&css.
-   * Try merge js into one file.
-     * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
    * Invoice Preference: Invoice detail line not displayed in the view page
    * DB adjustments for large data - indexes, adjsut si_invoices etc..[http://simpleinvoices.org/forum/discussion/1304/is-simple-invoices-suitable-for-large-databases/#Item_1 link]
    * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
