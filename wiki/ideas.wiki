@@ -149,6 +149,9 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
  * Statements
   * Add option to select only 'real'/non-draft invoices [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
 
+ * Translation
+  * Add new translation for Paid filter and Paid amount [http://simpleinvoices.org/forum/discussion/1543/p/#Item_1 link]
+
  * Validation:
    * Add validation to the edit screen
    * make a proper validation function/class
