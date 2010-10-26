@@ -144,6 +144,7 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * Customer : Statement of Accounts : http://simpleinvoices.org/forum/topic-414.html - AP
    * blow up phpreports and implement our own reporting tools
    * reports : add export to .xls format 
+   * Add total tax to the 'Monthly Sales and Payments per year' report
 
  * Statements
   * Add option to select only 'real'/non-draft invoices [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
