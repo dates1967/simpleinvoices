@@ -86,6 +86,11 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * remove Unregister from the core extension
    * Fix menu issue
    * Add field to extension info file to say which version works with [http://simpleinvoices.org/forum/discussion/1342/cleaning-si/#Item_1 link]
+ * HTML
+   * Convert all inline javascript >2 lines into files.
+   * minify and gzip js&css.
+   * Try merge js into one file.
+     * With JS stuff just make sure the original - unminified javascript still lives somewhere in svn and that there are instructions to redo the minification
 
  * Installer
    * [http://simpleinvoices.org/forum/discussion/883/logo-not-showing-in-pdf-invoice-issueopen/#Item_21 Add system requirements checler - inc PHP-GD etc.. ]
