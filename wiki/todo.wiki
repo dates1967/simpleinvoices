@@ -7,6 +7,7 @@
 
  * svn trunk issues
    * if using /app can't do css in PDFs
+   * invoice edit - delete icon issue
 
  * will do
    * htmlsafe 
