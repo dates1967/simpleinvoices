@@ -112,7 +112,11 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
    * [http://simpleinvoices.org/forum/discussion/1206/add-sum-total-at-the-bottom-of-the-invoice-list/#Comment_6528 Add total $ for all invoices in the Manage Invoices page]
    * Pre tax discount /Cumulative CA/Quebec tax calc [http://simpleinvoices.org/forum/discussion/1013/pretax-discounts-as-an-extension-perhaps/#Item_17 link]
    * Multi select export [http://www.simpleinvoices.org/forum/discussion/1529//p1 link]
-
+ 
+ * Manage Invoices
+   * Add search to top of Manage Invoices grid [http://simpleinvoices.org/forum/discussion/1564 link]
+   * Add preference to filter by default on X [http://simpleinvoices.org/forum/discussion/1564 link]
+ 
  * Localise
    * choose automatic language (need to rename language files/subfolder). We should use this standards (first we can start with only 2 chars variant)
      * http://www.rfc-editor.org/rfc/rfc4646.txt
