@@ -14,6 +14,7 @@
    * Customer/user - currenlt if user email = customer email they are the same 
      * change this - add a select customer to link the user to in the user add/edit page
      * in customer edit/view add tab for list of users
+     * in customer add - have abiality to add a customer user
    * Create acl/permission for customer login
 
  * will do
