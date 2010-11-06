@@ -6,7 +6,6 @@
 --- 2010.3 ---
 
  * svn trunk issues
-   * if using /app can't do css in PDFs
    * invoice edit - delete icon issue
    * jquery error [http://i.imgur.com/JSnQc.jpg link]
 
