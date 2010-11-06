@@ -6,6 +6,7 @@
 --- 2010.3 ---
 
  * svn trunk issues
+   * Total style invoice - no header sections
    * Biller - logo - update re correct dir
    * Biller - upload logo file - list doesn't get refreshed
    * jquery error [http://i.imgur.com/JSnQc.jpg link]
