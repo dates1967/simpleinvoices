@@ -6,7 +6,8 @@
 --- 2010.3 ---
 
  * svn trunk issues
-   * invoice edit - delete icon issue
+   * Biller - logo - update re correct dir
+   * Biller - upload logo file - list doesn't get refreshed
    * jquery error [http://i.imgur.com/JSnQc.jpg link]
 
  * will do
