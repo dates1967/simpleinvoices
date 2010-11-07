@@ -30,11 +30,9 @@
    * magic_quotes option - if enabled stripslashes
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
    * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
-   * resave the ducth file - copy/paste to new file then rename - encoding issue
    * 0 size PDFs when being emaield - when file name character accented
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
-   * Escaping templates and relevant php files
    * Invoice Preference: Invoice detail line not displayed in the view page
    * DB adjustments for large data - indexes, adjsut si_invoices etc..[http://simpleinvoices.org/forum/discussion/1304/is-simple-invoices-suitable-for-large-databases/#Item_1 link]
    * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
