@@ -6,7 +6,6 @@
 --- 2010.3 ---
 
  * beta 1
-   * Review all sql patches since last release - comment our not needed ones
    * Review version control section
    * There seems to be a duplicate entry in the si_sql_patchmanager table in /databases/mysql/Full_Simple_Invoices.sql at Line 733/734 - needs review JK
      * (556, 210, '', '', ''),
