@@ -6,27 +6,28 @@
 --- 2010.3 ---
 
  * beta 1
-   * jquery error [http://i.imgur.com/JSnQc.jpg link]
-   * add in timetracker extension [http://www.simpleinvoices.org/forum/discussion/1577//#Item_1 link]
-   * Customer/user - currenlt if user email = customer email they are the same 
-     * change this - add a select customer to link the user to in the user add/edit page
-     * in customer edit/view add tab for list of users
-     * in customer add - have abiality to add a customer user
-   * Create acl/permission for customer login
+   * Review all sql patches since last release - comment our not needed ones
    * Review version control section
+   * There seems to be a duplicate entry in the si_sql_patchmanager table in /databases/mysql/Full_Simple_Invoices.sql at Line 733/734 - needs review JK
+     * (556, 210, '', '', ''),
+     * (557, 210, '', '', ''),
+   * Create the correct JSON sql based on the new sql patches - and update the .sql files
 
  * beta 2
    * htmlsafe 
      * edit biller - email address not happy 
      * what about magic quotes
-   * There seems to be a duplicate entry in the si_sql_patchmanager table in /databases/mysql/Full_Simple_Invoices.sql at Line 733/734 - needs review JK
-     * (556, 210, '', '', ''),
-     * (557, 210, '', '', ''),
    * magic_quotes option - if enabled stripslashes
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
    * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
+   * Customer/user - currenlt if user email = customer email they are the same 
+     * change this - add a select customer to link the user to in the user add/edit page
+     * in customer edit/view add tab for list of users
+     * in customer add - have abiality to add a customer user
+   * Create acl/permission for customer login
 
  * beta 3
+   * add in timetracker extension [http://www.simpleinvoices.org/forum/discussion/1577//#Item_1 link]
    * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
    * fix up inventory qty re statues
    * 0 size PDFs when being emaield - when file name character accented
@@ -47,6 +48,7 @@
 
 
  * plans
+   * jquery error [http://i.imgur.com/JSnQc.jpg link]
    * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Make all words/strings translatable [http://simpleinvoices.org/forum/discussion/1335/strings-out-the-lang-file/#Item_0 link]
    * Rename 'Invoice Preferences' to Documents or doc type .. [http://simpleinvoices.org/forum/discussion/comment/8023/#Comment_8023 link]
