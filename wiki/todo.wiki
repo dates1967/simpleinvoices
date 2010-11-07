@@ -5,7 +5,7 @@
 
 --- 2010.3 ---
 
- * svn trunk issues
+ * beta 1
    * jquery error [http://i.imgur.com/JSnQc.jpg link]
    * add in timetracker extension [http://www.simpleinvoices.org/forum/discussion/1577//#Item_1 link]
    * Customer/user - currenlt if user email = customer email they are the same 
@@ -15,7 +15,7 @@
    * Create acl/permission for customer login
    * Review version control section
 
- * will do
+ * beta 2
    * htmlsafe 
      * edit biller - email address not happy 
      * what about magic quotes
@@ -24,15 +24,21 @@
      * (557, 210, '', '', ''),
    * magic_quotes option - if enabled stripslashes
    * Paypal link ? update refer reply from Tom [http://www.simpleinvoices.org/wiki/paypal link]
+   * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
+
+ * beta 3
    * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
+   * fix up inventory qty re statues
    * 0 size PDFs when being emaield - when file name character accented
-   * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
+
+ * beta 4
    * 1 being added to css url - review [http://simpleinvoices.org/forum/discussion/1241/2010-beta-5 link ]
    * Invoice Preference: Invoice detail line not displayed in the view page
    * DB adjustments for large data - indexes, adjsut si_invoices etc..[http://simpleinvoices.org/forum/discussion/1304/is-simple-invoices-suitable-for-large-databases/#Item_1 link]
    * API - zend auth error [http://simpleinvoices.org/forum/discussion/1303/api-and-authentication/#Item_1 link]
    * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
-   * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
+
+ * beta 5
    * 2 Decimal place product/tax can end up with 3 decimal place total - reveiw
    * Invoice blank re template = default issue [http://simpleinvoices.org/forum/discussion/848/pdfdoc-excel-coming-blank/#Item_9 link]
    * Investigate partially paid invoices causing problems in reports [http://simpleinvoices.org/forum/discussion/1431/reports-doing-odd-things-in-20102update/#Item_2 link]
@@ -41,6 +47,7 @@
 
 
  * plans
+   * Invoice numbering - add some kind of valiadation so can't be duplicated [http://simpleinvoices.org/forum/discussion/1199/simple-invoices-20102-beta-4-released/#Item_7 link]
    * Make all words/strings translatable [http://simpleinvoices.org/forum/discussion/1335/strings-out-the-lang-file/#Item_0 link]
    * Rename 'Invoice Preferences' to Documents or doc type .. [http://simpleinvoices.org/forum/discussion/comment/8023/#Comment_8023 link]
    * language and locale pre invoice preference
