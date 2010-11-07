@@ -44,7 +44,6 @@
 
  * plans
    * Make all words/strings translatable [http://simpleinvoices.org/forum/discussion/1335/strings-out-the-lang-file/#Item_0 link]
-   * ~~Javascript based logo uploader [http://simpleinvoices.org/forum/discussion/1354/upload-a-logo-file-the-code/#Item_13 link]~~ Added in r3264
    * Rename 'Invoice Preferences' to Documents or doc type .. [http://simpleinvoices.org/forum/discussion/comment/8023/#Comment_8023 link]
    * language and locale pre invoice preference
    * locale select in defaults 
