@@ -38,7 +38,6 @@
    * Biller Sales by Customer - Totals [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_4 link]
    * Cron emails - only customer gets emails [http://simpleinvoices.org/forum/discussion/1292/simple-invoices-20102-beta-7-released/#Item_9 link]
    * 2 Decimal place product/tax can end up with 3 decimal place total - reveiw
-
    * Invoice blank re template = default issue [http://simpleinvoices.org/forum/discussion/848/pdfdoc-excel-coming-blank/#Item_9 link]
    * Investigate partially paid invoices causing problems in reports [http://simpleinvoices.org/forum/discussion/1431/reports-doing-odd-things-in-20102update/#Item_2 link]
    * Reports show si_invoices.id instead of si_invoices.index_id [http://simpleinvoices.org/forum/discussion/comment/8072/#Comment_8072 link]
