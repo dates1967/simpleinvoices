@@ -19,8 +19,6 @@
    * htmlsafe 
      * edit biller - email address not happy 
      * what about magic quotes
-   * upload logo
-     * needs to auto populate and select uploaded logo in biller add/edit page
    * There seems to be a duplicate entry in the si_sql_patchmanager table in /databases/mysql/Full_Simple_Invoices.sql at Line 733/734 - needs review JK
      * (556, 210, '', '', ''),
      * (557, 210, '', '', ''),
