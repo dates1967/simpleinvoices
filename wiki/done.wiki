@@ -8,6 +8,7 @@
  * Escape as much SI data as possible: refer [Escaping]
  * Dutch translation fixed up to work OK
  * Fixed up si_user_roles table has auto increment id of 6
+ * add SI version number into GUI - probably in the sys setting  page[http://simpleinvoices.org/forum/discussion/1504/ link]
 ==2010.2 Update 2 - unreleased ==
   * Fixed cron only runs 25 jobs at once issue [http://code.google.com/p/simpleinvoices/issues/detail?id=146 link]
 ==2010.2 Update 1 ==
