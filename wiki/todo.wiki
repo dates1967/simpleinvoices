@@ -15,6 +15,7 @@
      * in customer edit/view add tab for list of users
      * in customer add - have abiality to add a customer user
    * Create acl/permission for customer login
+   * Review version control section
 
  * will do
    * htmlsafe 
