@@ -35,8 +35,7 @@ class invoice {
 				custom_field1,
 				custom_field2,
 				custom_field3,
-				custom_field4,
-                inv_status,
+				custom_field4
 			)
 			VALUES
 			(
@@ -52,8 +51,7 @@ class invoice {
 				:custom_field1,
 				:custom_field2,
 				:custom_field3,
-				:custom_field4,
-                NULL
+				:custom_field4
 				)";
 
 		$pref_group=getPreference($this->preference_id);
@@ -84,29 +82,7 @@ class invoice {
 	}
 
 	public function insert_item()
-	{
-
-        global $LANG;
-
-        $tax_total = getTaxesPerLineItem($this->line_item_tax_id,$this->quantity, $this->unit_price);
-
-        //line item gross total
-        $gross_total = $this->unit_price * $this->quantity;
-
-        //line item total
-        $total = $gross_total + $tax_total;
-
-        //Remove jquery auto-fill description - refer jquery.conf.js.tpl autofill section
-        if ($this->description == $LANG['description'])
-        {
-            $this->description ="";
-        }
-
-        if ($db_server == 'mysql' && !_invoice_items_check_fk(
-            $invoice_id, $product_id, $tax['tax_id'])) {
-            return null;
-        }
-	
+	{	
 		$sql = "INSERT INTO ".TB_PREFIX."invoice_items 
 				(
 					invoice_id, 
@@ -138,16 +114,15 @@ class invoice {
 			':unit_price', $this->unit_price,
 		//	':tax_id', $tax[tax_id],
 		//	':tax_percentage', $tax[tax_percentage],
-            ':tax_amount', $tax_total,
-            ':gross_total', $gross_total,
-            ':description', $this->description,
-            ':total', $total
+			':tax_amount', $this->tax_amount,
+			':gross_total', $this->gross_total,
+
+			':description', $this->description,
+			':total', $this->total
 
 			);
 
 		invoice_item_tax(lastInsertId(),$this->tax,$this->unit_price,$this->quantity,"insert");
-
-        return true;
 	}
 
     public static function select($id)
@@ -219,14 +194,6 @@ class invoice {
         return $sth->fetchAll();
 
     }
-    
-    function select_customer_id($email='')
-    {
-     $sql = "select id from ".TB_PREFIX."customers where email=:email";
-     $sth = dbQuery($sql, ':email', $email);
-     $res = $sth->fetch();
-     return $res['id'];
-    }
 
     function select_all($type='', $dir='DESC', $rp='25', $page='1', $having='')
     {
@@ -250,7 +217,7 @@ class invoice {
         /*SQL where - start*/
         $query = $this->query;
         $qtype = $this->qtype;
-      
+
         $where = " WHERE iv.domain_id = :domain_id ";
         if ($query) $where = " WHERE iv.domain_id = :domain_id AND $qtype LIKE '%$query%' ";
         if ($this->biller) $where .= " AND b.id = '$this->biller' ";
@@ -260,7 +227,7 @@ class invoice {
 	
 
         /*Check that the sort field is OK*/
-        $validFields = array('index_name','iv.id', 'biller', 'customer', 'invoice_total','owing','date','aging','type','preference','type_id','inv_status');
+        $validFields = array('index_name','iv.id', 'biller', 'customer', 'invoice_total','owing','date','aging','type','preference','type_id');
 
         if (in_array($sort, $validFields)) {
             $sort = $sort;
@@ -338,7 +305,6 @@ class invoice {
                 SELECT
                      iv.id,
                      iv.index_id as index_id,
-                     iv.inv_status as inv_status,
                      b.name AS Biller,
                      c.name AS Customer,
                      sum(ii.total) AS INV_TOTAL,
@@ -373,9 +339,8 @@ class invoice {
             default:
                $sql ="
                 SELECT  
-                       iv.id,       
+                       iv.id,
                        iv.index_id as index_id,
-		       iv.inv_status as inv_status,
                        b.name AS biller,
                        c.name AS customer,
                        (SELECT coalesce(SUM(ii.total), 0) FROM " .
