@@ -28,7 +28,7 @@
    * Create acl/permission for customer login
 
  * beta 3
-   * add in timetracker extension [http://www.simpleinvoices.org/forum/discussion/1577//#Item_1 link]
+   * add in timetracker    extension [http://www.simpleinvoices.org/forum/discussion/1577//#Item_1 link]
    * Adjust Tax Total re statuses [http://simpleinvoices.org/forum/discussion/1352/reports-not-working-100-query-errors/#Item_1 link]
    * fix up inventory qty re statues
    * 0 size PDFs when being emaield - when file name character accented
