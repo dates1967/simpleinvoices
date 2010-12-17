@@ -2,8 +2,6 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
-## this is jsut a test
-
 == 2009.1 :: RC 1 ==
 
  * French translation - the manage grids dont work
