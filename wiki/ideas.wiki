@@ -11,8 +11,6 @@ _Disclaimer: if its in the list it may get done sometime in the future if and wh
      * Add invoice
      * get PDF
 
- * test section
-
  * Backup
    * backups sent via email : http://simpleinvoices.org/forum/discussion/1037/database-backup-sent-via-email-or-at-least-downloadable/#Item_0
    * backup to a web directory is not really a good idea. Perhaps the download solution is a better one:
