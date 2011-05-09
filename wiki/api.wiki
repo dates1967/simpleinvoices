@@ -3,7 +3,7 @@ Invoice Prepopulations
 URL parameters to prepopulate and invoice
 
 || *url* || *php* || *invoice* ||
-|| biller || $_GET\['biller'\] || sets the biller to this ID ||
+|| biller || {{{$_GET['biller']}}} || sets the biller to this ID ||
 ||customer || $_GET\['customer'\] || sets the customer field to this customer ID ||
 ||quantity\[x\] || $_GET\['quantity']\[x\] || sets the quantity field for line number 'x' - starting at 0 ||
 ||product[x] || $_GET['product'] || sets the product field to this product ID ||
