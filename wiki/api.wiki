@@ -1,6 +1,6 @@
 = Invoice Prepopulations =
 
-== URL parameters to prepopulate and invoice ==
+== URL parameters to prepopulate an invoice ==
 
 || *url* || *php* || *invoice* ||
 || biller || {{{$_GET['biller']}}} || sets the biller to this ID ||
