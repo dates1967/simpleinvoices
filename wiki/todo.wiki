@@ -77,6 +77,7 @@
    * PDF - minor edit to html2pdf [http://simpleinvoices.org/forum/discussion/846/errors-while-trying-to-export-to-pdf/#Item_14 link]
    * Delete invoice not working in svn trunk [http://code.google.com/p/simpleinvoices/issues/detail?id=135 link]
 
+
 --- future releases ---
 
  * need to get done
@@ -94,6 +95,7 @@
  * really should
    * Products - allow setting 2 or more default taxes pre product
    * user - if user disbaled - if login attempt - give nice message
+   * Display amount of tax for each item on an invoice.
 
  * maybe
    * move all configs (where possible) out of config.ini and into system_defaults
