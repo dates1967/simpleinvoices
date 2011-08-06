@@ -1,3 +1,5 @@
+#summary How to contribute translations.
+
 = The process for starting/modifying a translation =
 
 There are 2 different ways to translate Simple Invoices, 1 is by using Subversion - which is a version control tool and 2 is the manual version. If your already familiar with subversion use subversion else use the Non Subversion method
