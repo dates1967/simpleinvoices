@@ -1,7 +1,0 @@
-#summary One-sentence summary of this page.
-#sidebar TableOfContents
-
-= Introduction =
-
-
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/110543442524307353585/include-gadget.xml" up_pref_url="http://simpleinvoices.googlecode.com/svn/trunk/lang/ca/lang.php" up_pref_height="600" up_pref_title="CA" height="600" width="600"/> 
