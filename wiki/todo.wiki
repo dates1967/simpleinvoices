@@ -91,6 +91,7 @@
   * Sales report - menu problem [http://code.google.com/p/simpleinvoices/issues/detail?id=136 link]
   * Adjust pdf function for config [http://simpleinvoices.org/forum/discussion/1121/cant-produce-pdf-in-letter-size/#Item_2 link]
   * Make reports 2 decimal places [http://simpleinvoices.org/forum/discussion/1333/ link] [http://simpleinvoices.org/forum/discussion/1387/decimals-in-report link]
+  * Automatic notifications for overdue invoices [http://code.google.com/p/simpleinvoices/issues/detail?id=172 link]
 
  * really should
    * Products - allow setting 2 or more default taxes pre product
