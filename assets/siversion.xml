@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <versionInfo>
-  <versionId>20101001</versionId>
-  <versionTitle>2010.03 update 0</versionTitle>
+  <versionId>20110513</versionId>
+  <versionTitle>2011.1 update 0</versionTitle>
   <releaseNotes>
-     <note>1. Customer accounts to login and look at own invoices</note>
-	 <note>2. Version control</note>
+     
   </releaseNotes>     
-  <downloadLink>http://simpleinvoices.googlecode.com/files/simpleinvoices.2010.2.update-2.zip</downloadLink>
+  <downloadLink>http://simpleinvoices.googlecode.com/files/simpleinvoices.2011.1.zip</downloadLink>
 
 </versionInfo>
 
