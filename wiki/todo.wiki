@@ -97,6 +97,7 @@
    * Products - allow setting 2 or more default taxes pre product
    * user - if user disbaled - if login attempt - give nice message
    * Display amount of tax for each item on an invoice.
+   * Apply payments independent of invoices [http://code.google.com/p/simpleinvoices/issues/detail?id=176 link]
 
  * maybe
    * move all configs (where possible) out of config.ini and into system_defaults
