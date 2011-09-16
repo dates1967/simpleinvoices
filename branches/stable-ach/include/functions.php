@@ -614,6 +614,19 @@ function base64_url_decode($input)
     return base64_decode(strtr($input, '-_,', '+/='));
 }
 
+function simple_encrypt($text)
+    {
+        GLOBAL $config;
+        return trim(base64_url_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $config->encryption->default->key, $text, MCRYPT_MODE_ECB, mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND))));
+}
+
+    function simple_decrypt($text)
+    {
+        GLOBAL $config;
+        return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $config->encryption->default->key, base64_url_decode($text), MCRYPT_MODE_ECB, mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND)));
+    } 
+
+
 /*function addCSRFToken($matches)
 {
     if(!preg_match('/method=[\'"]?post[\'"\s>]/i', $action[0])) //post only

@@ -3,6 +3,7 @@
 function smarty_function_online_payment_link($params, &$smarty) {
     global $LANG;
     global $config;
+		global $siUrl;
     $domain_id = domain_id::get($params['domain_id']);
 
     $url = getURL();
@@ -48,10 +49,9 @@ function smarty_function_online_payment_link($params, &$smarty) {
     if (in_array("ach",explode(",", $params['type'])))
     {
 
-       $xinvoice_id = base64_url_encode($params['invoice'].$config->encryption->default->key);
-
+       $xinvoice_id = simple_encrypt($params['invoice']);
         $link = "<a 
-            href=\"http://www.si.com/index.php?module=payments&view=ach&id=".$xinvoice_id."\">";
+            href=\"$siUrl/index.php?module=payments&view=ach&id=".$xinvoice_id."\">";
         if($params['include_image'] == "true")
         {
             $link .= "<img border='0' src='".urlsafe($url)."/images/common/pay_with_ach.gif'/>";
