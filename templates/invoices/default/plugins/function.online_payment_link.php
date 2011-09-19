@@ -71,7 +71,8 @@ function smarty_function_online_payment_link($params, &$smarty) {
             ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
             ."&pg_billto_postal_postalcode=". $params['customer']['zip_code']
             ."&pg_consumerorderid=". $params['invoice']
-            ."&pg_return_url=". $siUrl. "/api-ach/&pg_save_client=2'>";
+            ."&pg_return_method=AsyncPost&pg_continue_url=". $siUrl
+            ."/api-ach&pg_return_url=". $siUrl. "/api-ach&pg_save_client=2'>";
 
         if($params['include_image'] == "true")
         {
