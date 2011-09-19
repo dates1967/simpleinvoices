@@ -55,10 +55,24 @@ function smarty_function_online_payment_link($params, &$smarty) {
         $interval = $datetime1->diff($datetime2);
         $seconds =  $interval->format('%a') * 24 * 60 * 60;
         //get biller secure trans key here
-        $hash = hash_hmac('md5',"APILOGINID | 10 | 1.0 | 5.00 | 634094514514687490 | 100055", "SECURETRANSACTIONKEY") ;
+        $hash = hash_hmac('md5',"4HI10gbUy0 | 10 | 1.0 | ". urlencode(number_format($params['amount'], 2, '.', '')) ." | ". $seconds. " | ". $params['invoice'] .", ". $params['trans_password']." ");
 
         $link = "<a 
-            href=\"https://swp.paymentsgateway.net/default.aspx?pg_api_login_id=".urlencode($params['business'])."&pg_billto_postal_name_first=".$hah."&pg_billto_postal_name_last=".$hash."&pg_transaction_type=".$hash."&pg_version_number=".$hash."&pg_total_amount=".urlencode(number_format($params['amount'], 2, '.', ''))."&pg_utc_time=".$seconds."&pg_transaction_order_number=".$hash."&pg_ts_hash=".$hash."aaitem_name=".urlencode($params['item_name'])."&invoice=".urlencode($params['invoice'])."&amount=".urlencode(number_format($params['amount'], 2, '.', ''))."&currency_code=".urlencode($params['currency_code'])."&notify_url=".urlencode($params['notify_url'])."&return=".urlencode($params['return_url'])."&no_shipping=1&no_note=1&custom=domain_id:".urlencode($domain_id)."; \">";
+            href='https://sandbox.paymentsgateway.net/swp/default.aspx?pg_api_login_id=". 
+            urlencode($params['api_id'])
+            . "&pg_billto_postal_name_company=". urlencode($params['customer']['name'])
+            . "&pg_transaction_type=10&pg_version_number=1.0&pg_total_amount=" .
+            urlencode(number_format($params['amount'], 2, '.', ''))."&pg_utc_time=". 
+            $seconds . "&pg_transaction_order_number=".urlencode($params['invoice'])."&pg_ts_hash=".
+            $hash . "&pg_billto_postal_street_line1=". $params['customer']['street_address']
+            ."&pg_billto_postal_street_line2=". urlencode($params['customer']['street_address2'])
+            ."&pg_billto_postal_city=". $params['customer']['city']
+            ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
+            ."&pg_billto_postal_postalcode=". $params['customer']['zip_code']
+            ."&pg_consumerorderid=". $params['invoice']
+            ."&pg_return_url=". urlencode($params['notify_url']) ."&pg_save_client=2&return=". 
+            urlencode($params['return_url']). "&no_shipping=1&no_note=1&custom=domain_id:". 
+            urlencode($domain_id). "'>";
 
         if($params['include_image'] == "true")
         {
