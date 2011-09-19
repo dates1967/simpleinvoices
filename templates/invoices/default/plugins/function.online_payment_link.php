@@ -2,6 +2,7 @@
 
 function smarty_function_online_payment_link($params, &$smarty) {
     global $LANG;
+    global $siUrl;
     global $config;
 		global $siUrl;
     $domain_id = domain_id::get($params['domain_id']);
@@ -70,7 +71,7 @@ function smarty_function_online_payment_link($params, &$smarty) {
             ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
             ."&pg_billto_postal_postalcode=". $params['customer']['zip_code']
             ."&pg_consumerorderid=". $params['invoice']
-            ."&pg_return_url=". urlencode($params['notify_url']) ."&pg_save_client=2&return=". 
+            ."&pg_return_url=". urlencode($siUrl."/api-ach/".) ."&pg_save_client=2". 
             urlencode($params['return_url']). "&no_shipping=1&no_note=1&custom=domain_id:". 
             urlencode($domain_id). "'>";
 
