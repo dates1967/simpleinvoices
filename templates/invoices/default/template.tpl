@@ -446,6 +446,9 @@
 				link_wording=$LANG.paypal_link
 				notify_url=$biller.paypal_notify_url return_url=$biller.paypal_return_url
 				domain_id = $invoice.domain_id include_image=true
+                api_id = $biller.paymentsgateway_api_id
+                transaction_password = $biller.paymentsgateway_transaction_password
+                customer = $customer
 			}
 
 		</td>
