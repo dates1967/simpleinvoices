@@ -56,7 +56,8 @@ function smarty_function_online_payment_link($params, &$smarty) {
         $interval = $datetime1->diff($datetime2);
         $seconds =  $interval->format('%a') * 24 * 60 * 60;
         //get biller secure trans key here
-        $hash = hash_hmac('md5',"4HI10gbUy0 | 10 | 1.0 | ". urlencode(number_format($params['amount'], 2, '.', '')) ." | ". $seconds. " | ". $params['invoice'] .", ". $params['trans_password']." ");
+        $hash_info = $params['api_id'] ." | 10 | 1.0 | ". urlencode(number_format($params['amount'], 2, '.', '')) ." | ". $seconds. " | ". $params['invoice'] ;
+        $hash = hash_hmac('md5', $hash_info, $params['trans_password']) ;
 
         $link = "<a 
             href='https://sandbox.paymentsgateway.net/swp/default.aspx?pg_api_login_id=". 
@@ -71,8 +72,7 @@ function smarty_function_online_payment_link($params, &$smarty) {
             ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
             ."&pg_billto_postal_postalcode=". $params['customer']['zip_code']
             ."&pg_consumerorderid=". $params['invoice']
-            ."&pg_return_method=AsyncPost&pg_continue_url=". $siUrl
-            ."/api-ach&pg_return_url=". $siUrl. "/api-ach&pg_save_client=2'>";
+            ."&pg_return_url=". $siUrl. "/api-ach&pg_save_client=2'>";
 
         if($params['include_image'] == "true")
         {
