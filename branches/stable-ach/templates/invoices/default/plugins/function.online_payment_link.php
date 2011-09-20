@@ -50,14 +50,18 @@ function smarty_function_online_payment_link($params, &$smarty) {
     if (in_array("ach",explode(",", $params['type'])))
     {
 
-        $today = date('Y-m-d');
+
+        // $today = date('Y-m-d',$x);
         $datetime1 = new DateTime('0001-01-01');
-        $datetime2 = new DateTime($today);
+        $datetime2 = new DateTime('now', new DateTimeZone('UTC'));
         $interval = $datetime1->diff($datetime2);
-        $seconds =  $interval->format('%a') * 24 * 60 * 60;
+        //$interval->format('%a %h %i %s ') ;
+        $seconds = ( $interval->format('%a') * 24 * 60 * 60) + ( $interval->format('%h') * 60 * 60 )+  ($interval->format('%i') * 60) + ( $interval->format('%s') ) ;
+
         //get biller secure trans key here
-        $hash_info = $params['api_id'] ." | 10 | 1.0 | ". urlencode(number_format($params['amount'], 2, '.', '')) ." | ". $seconds. " | ". $params['invoice'] ;
-        $hash = hash_hmac('md5', $hash_info, $params['trans_password']) ;
+        $hash_info = $params['api_id'] ." | 10 | 1.0 | ". number_format($params['amount'], 2, '.', '') ." | ". $seconds. " | ". $params['invoice'] ;
+        //echo "<br />trans password: ".$params['transaction_password']. "<br />";
+        $hash = hash_hmac('md5', $hash_info, $params['transaction_password']) ;
 
         $link = "<a 
             href='https://sandbox.paymentsgateway.net/swp/default.aspx?pg_api_login_id=". 
