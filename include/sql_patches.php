@@ -1487,10 +1487,6 @@ PRIMARY KEY ( `domain_id`, `id` )
     $patch['253']['name'] = "Add PaymentsGateway API ID field";
     $patch['253']['patch'] = "ALTER TABLE `".TB_PREFIX."biller` ADD  `paymentsgateway_api_id` VARCHAR( 255 ) NULL AFTER `eway_customer_id`;";
     $patch['253']['date'] = "20110918";    
-
-    $patch['254']['name'] = "Add PaymentsGateway API ID field";
-    $patch['254']['patch'] = "ALTER TABLE `".TB_PREFIX."biller` ADD  `paymentsgateway_transaction_password` VARCHAR( 255 ) NULL AFTER `paymentsgateway_api_id`;";
-    $patch['254']['date'] = "20110918";    
 /*
 ALTER TABLE  `si_system_defaults` ADD  `new_id` INT( 11 ) NOT NULL FIRST; UPDATE `si_system_defaults` SET new_id = id; ALTER TABLE  `si_system_defaults` DROP  `id` ; ALTER TABLE  `si_system_defaults` DROP INDEX `name` ; ALTER TABLE  `si_system_defaults` CHANGE  `new_id`  `id` INT( 11 ) NOT NULL; ALTER TABLE  `si_system_defaults` ADD PRIMARY KEY(`domain_id`,`id` );
 

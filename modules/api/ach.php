@@ -30,7 +30,7 @@ if ($_POST['pg_response_code']=='A01') {
 		$payment = new payment();
 		$payment->ac_inv_id = $_POST['pg_consumerorderid'];
 		$payment->ac_amount = $_POST['pg_total_amount'];
-		$payment->ac_notes = $_POST;
+		$payment->ac_notes = $paypal_data;
 		$payment->ac_date = date( 'Y-m-d');
 		$payment->online_payment_id = $_POST['pg_consumerorderid'];
 		$payment->domain_id = '1';
