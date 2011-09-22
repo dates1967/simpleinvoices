@@ -13,7 +13,7 @@ if ($_POST['pg_response_code']=='A01') {
 
 	$check_payment = new payment();
 	$check_payment->filter='online_payment_id';
-	$check_payment->online_payment_id = $_POST['pg_consumerorder_id'];
+	$check_payment->online_payment_id = $_POST['pg_consumerorderid'];
 	$check_payment->domain_id = '1';
     $number_of_payments = $check_payment->count();
 	$logger->log('ACH - number of times this payment is in the db: '.$number_of_payments, Zend_Log::INFO);
@@ -61,7 +61,7 @@ if ($_POST['pg_response_code']=='A01') {
 		$email -> send ();
         $xml_message = "+++++++++<br /><br />";
 		$xml_message .= "Thank you for the payment, the details have been recorded and ". $biller['name'] ." has been notified via email.";
-        $xml_message .= "<br />+++++++++<br />";
+        $xml_message .= "<br /><br />+++++++++<br />";
 	}
 } else {
 
