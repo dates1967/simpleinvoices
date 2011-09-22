@@ -2,7 +2,6 @@
 
 $logger->log('ACH API page called', Zend_Log::INFO);
 if ($_POST['pg_response_code']=='A01') {
-#if (!empty($_POST)) {
 
 	$logger->log('ACH validate success', Zend_Log::INFO);
 
@@ -59,7 +58,7 @@ if ($_POST['pg_response_code']=='A01') {
 		$email -> from = "simpleinvoices@localhost.localdomain";
 		$email -> subject = 'ACH -Instant Payment Notification - Recieved Payment';
 		$email -> send ();
-        $xml_message = "+++++++++<br /><br />"
+        $xml_message = "+++++++++<br /><br />";
 		$xml_message .= "Thank you for the payment, the details have been recorded and $biller['name'] has been notified via email";
         $xml_message .= "<br />+++++++++<br />"
 	}
