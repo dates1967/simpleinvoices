@@ -52,25 +52,28 @@ function smarty_function_online_payment_link($params, &$smarty) {
 
 
         // $today = date('Y-m-d',$x);
-        $datetime1 = new DateTime('0001-01-01');
-        $datetime2 = new DateTime('now', new DateTimeZone('UTC'));
-        $interval = $datetime1->diff($datetime2);
+        /*
+           $datetime1 = new DateTime('0001-01-01');
+           $datetime2 = new DateTime('now', new DateTimeZone('UTC'));
+           $interval = $datetime1->diff($datetime2);
         //$interval->format('%a %h %i %s ') ;
         $seconds = ( $interval->format('%a') * 24 * 60 * 60) + ( $interval->format('%h') * 60 * 60 )+  ($interval->format('%i') * 60) + ( $interval->format('%s') ) ;
+         */
+        //$time = time() + 62135596800;
+        //$seconds =  $time . '0000000';
 
         //get biller secure trans key here
-        $hash_info = $params['api_id'] ." | 10 | 1.0 | ". number_format($params['amount'], 2, '.', '') ." | ". $seconds. " | ". $params['invoice'] ;
-        //echo "<br />trans password: ".$params['transaction_password']. "<br />";
+        $hash_info = $params['api_id'] ."|1|1.0|". number_format($params['amount'], 2, '.', '') ."|". $seconds. "|". $params['invoice'] ;
         $hash = hash_hmac('md5', $hash_info, $params['transaction_password']) ;
 
         $link = "<a 
-            href='https://sandbox.paymentsgateway.net/swp/default.aspx?pg_api_login_id=". 
+            href='https://sandbox.paymentsgateway.net/SWP/co/default.aspx?pg_api_login_id=". 
             urlencode($params['api_id'])
             . "&pg_billto_postal_name_company=". urlencode($params['customer']['name'])
             . "&pg_transaction_type=10&pg_version_number=1.0&pg_total_amount=" .
-            urlencode(number_format($params['amount'], 2, '.', ''))."&pg_utc_time=". 
-            $seconds . "&pg_transaction_order_number=".urlencode($params['invoice'])."&pg_ts_hash=".
-            $hash . "&pg_billto_postal_street_line1=". $params['customer']['street_address']
+            urlencode(number_format($params['amount'], 2, '.', ''))
+            ."&pg_transaction_order_number=".urlencode($params['invoice'])
+            ."&pg_billto_postal_street_line1=". $params['customer']['street_address']
             ."&pg_billto_postal_street_line2=". urlencode($params['customer']['street_address2'])
             ."&pg_billto_postal_city=". $params['customer']['city']
             ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
