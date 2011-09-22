@@ -64,7 +64,7 @@ if ($_POST['pg_response_code']=='A01') {
 	}
 } else {
 
-	$xml_message = "ACH validate failed - please contact $biller['name']" ;
+	$xml_message = "ACH validate failed - please contact ". $biller['name'] ;
 	$logger->log('ACH validate failed', Zend_Log::INFO);
 }
 
