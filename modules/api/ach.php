@@ -47,8 +47,9 @@ if ($_POST['pg_response_code']=='A01') {
 		$biller = getBiller($invoice['biller_id']);
 
 		//send email
-		$body =  "A ACH payment notification was successfully received into Simple Invoices\n";
-		$body .= "from ".$_POST['pg_billto_postal_name_company']." on ".date('m/d/Y');
+		$body =  "A PaymentsGateway.com payment of ".$_POST['pg_total_amount']." was successfully received into Simple Invoices\n";
+		$body .= "for invoice: ".$_POST['pg_consumerorderid'] ;
+		$body .= " from ".$_POST['pg_billto_postal_name_company']." on ".date('m/d/Y');
 		$body .= " at ".date('g:i A')."\n\nDetails:\n";
 		$body .= $paypal_data;
 
@@ -56,7 +57,7 @@ if ($_POST['pg_response_code']=='A01') {
 		$email -> notes = $body;
 		$email -> to = $biller['email'];
 		$email -> from = "simpleinvoices@localhost.localdomain";
-		$email -> subject = 'ACH -Instant Payment Notification - Recieved Payment';
+		$email -> subject = 'PaymentsGateway.com -Instant Payment Notification - Recieved Payment';
 		$email -> send ();
         $xml_message = "+++++++++<br /><br />";
 		$xml_message .= "Thank you for the payment, the details have been recorded and ". $biller['name'] ." has been notified via email.";
@@ -64,7 +65,7 @@ if ($_POST['pg_response_code']=='A01') {
 	}
 } else {
 
-	$xml_message = "ACH validate failed - please contact ". $biller['name'] ;
+	$xml_message = "PaymentsGateway.com payment validate failed - please contact ". $biller['name'] ;
 	$logger->log('ACH validate failed', Zend_Log::INFO);
 }
 
