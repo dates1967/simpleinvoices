@@ -18,7 +18,6 @@ regex :%s/;/ /1/;// 1\/\/1/g - remove the spaces
 #all
 $LANG['about'] = "About";//1
 $LANG['account_info'] = "Account Info";//1
-$LANG['ach_payment'] = "ACH Payment";//1
 $LANG['actions'] = "Actions";//1
 $LANG['add'] = "Add";//1
 $LANG['add_biller'] = "Add Biller";//1
@@ -380,6 +379,7 @@ $LANG['payment_type_method'] = "Payment Type/Method";//1
 $LANG['payment_type_to_add'] = "Payment type to add";//1
 $LANG['payment_types'] = "Payment Types";//1
 $LANG['payments'] = "Payments";//1
+$LANG['paymentsgateway'] = "PaymentsGateway.com";//1
 $LANG['payments_filtered'] = "Filtered by ";//1
 $LANG['payments_filtered_customer'] = "Filtered by customer";//1
 $LANG['payments_filtered_invoice'] = "Process Payment for this Invoice";//1
