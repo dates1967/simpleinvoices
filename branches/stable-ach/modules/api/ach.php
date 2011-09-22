@@ -48,10 +48,10 @@ if ($_POST['pg_response_code']=='A01') {
 		$biller = getBiller($invoice['biller_id']);
 
 		//send email
-		$body =  "A ACH payment notification was successfully recieved into Simple Invoices\n";
+		$body =  "A ACH payment notification was successfully received into Simple Invoices\n";
 		$body .= "from ".$_POST['pg_billto_postal_name_company']." on ".date('m/d/Y');
 		$body .= " at ".date('g:i A')."\n\nDetails:\n";
-		$body .= $_POST;
+		$body .= $paypal_data;
 
 		$email = new email();
 		$email -> notes = $body;
@@ -60,11 +60,11 @@ if ($_POST['pg_response_code']=='A01') {
 		$email -> subject = 'ACH -Instant Payment Notification - Recieved Payment';
 		$email -> send ();
 
-		$xml_message['data'] .= $body;
+		$xml_message = "Thank you for the payment, the details have been recorded and $biller['name'] has been notified via email";
 	}
 } else {
 
-	$xml_message .= "ACH validate failed" ;
+	$xml_message .= "ACH validate failed - please contact $biller['name']" ;
 	$logger->log('ACH validate failed', Zend_Log::INFO);
 }
 
