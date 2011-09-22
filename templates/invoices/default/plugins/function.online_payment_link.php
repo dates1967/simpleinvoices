@@ -47,7 +47,7 @@ function smarty_function_online_payment_link($params, &$smarty) {
         echo $link;
     }
 
-    if (in_array("ach",explode(",", $params['type'])))
+    if (in_array("paymentsgateway",explode(",", $params['type'])))
     {
 
 
@@ -63,8 +63,8 @@ function smarty_function_online_payment_link($params, &$smarty) {
         //$seconds =  $time . '0000000';
 
         //get biller secure trans key here
-        $hash_info = $params['api_id'] ."|1|1.0|". number_format($params['amount'], 2, '.', '') ."|". $seconds. "|". $params['invoice'] ;
-        $hash = hash_hmac('md5', $hash_info, $params['transaction_password']) ;
+       // $hash_info = $params['api_id'] ."|1|1.0|". number_format($params['amount'], 2, '.', '') ."|". $seconds. "|". $params['invoice'] ;
+        //$hash = hash_hmac('md5', $hash_info, $params['transaction_password']) ;
 
         $link = "<a 
             href='https://sandbox.paymentsgateway.net/SWP/co/default.aspx?pg_api_login_id=". 

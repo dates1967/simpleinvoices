@@ -4,7 +4,7 @@ $logger->log('ACH API page called', Zend_Log::INFO);
 if ($_POST['pg_response_code']=='A01') {
 #if (!empty($_POST)) {
 
-	$logger->log('ACHl validate success', Zend_Log::INFO);
+	$logger->log('ACH validate success', Zend_Log::INFO);
 
 	//insert into payments
 	$paypal_data ="";
@@ -14,14 +14,14 @@ if ($_POST['pg_response_code']=='A01') {
 
 	$check_payment = new payment();
 	$check_payment->filter='online_payment_id';
-	$check_payment->online_payment_id = $_POST['pg_trace_number'];
+	$check_payment->online_payment_id = $_POST['pg_consumerorder_id'];
 	$check_payment->domain_id = '1';
     $number_of_payments = $check_payment->count();
 	$logger->log('ACH - number of times this payment is in the db: '.$number_of_payments, Zend_Log::INFO);
 	
 	if($number_of_payments > 0)
 	{
-		$xml_message .= 'Online payment '.$_POST['pg_transaction_order_number'].' has already been entered into Simple Invoices';
+		$xml_message = 'Online payment for invoices: '.$_POST['pg_consumerorderid'].' has already been entered into Simple Invoices';
 		$logger->log($xml_message, Zend_Log::INFO);
 	}
 
@@ -33,7 +33,7 @@ if ($_POST['pg_response_code']=='A01') {
 		$payment->ac_amount = $_POST['pg_total_amount'];
 		$payment->ac_notes = $_POST;
 		$payment->ac_date = date( 'Y-m-d');
-		$payment->online_payment_id = $_POST['pg_trace_number'];
+		$payment->online_payment_id = $_POST['pg_consumerorderid'];
 		$payment->domain_id = '1';
 
 			$payment_type = new payment_type();
@@ -59,12 +59,13 @@ if ($_POST['pg_response_code']=='A01') {
 		$email -> from = "simpleinvoices@localhost.localdomain";
 		$email -> subject = 'ACH -Instant Payment Notification - Recieved Payment';
 		$email -> send ();
-
-		$xml_message = "Thank you for the payment, the details have been recorded and $biller['name'] has been notified via email";
+        $xml_message = "+++++++++<br /><br />"
+		$xml_message .= "Thank you for the payment, the details have been recorded and $biller['name'] has been notified via email";
+        $xml_message .= "<br />+++++++++<br />"
 	}
 } else {
 
-	$xml_message .= "ACH validate failed - please contact $biller['name']" ;
+	$xml_message = "ACH validate failed - please contact $biller['name']" ;
 	$logger->log('ACH validate failed', Zend_Log::INFO);
 }
 
