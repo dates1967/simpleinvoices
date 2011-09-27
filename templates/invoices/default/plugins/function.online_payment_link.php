@@ -73,9 +73,8 @@ function smarty_function_online_payment_link($params, &$smarty) {
             . "&pg_version_number=1.0&pg_total_amount=" .
             urlencode(number_format($params['amount'], 2, '.', ''))
             ."&pg_transaction_order_number=". urlencode($params['invoice'])
-            ."&pg_billto_postal_name_first=". urlencode($params['customer']['name'])
+            ."&pg_billto_postal_name_first=". urlencode($params['customer']['attention'])
             ."&pg_billto_postal_name_last=-&pg_billto_postal_street_line1=". urlencode($params['customer']['street_address'])
-            ."&pg_billto_postal_street_line1=". urlencode($params['customer']['street_address'])
             ."&pg_billto_postal_street_line2=". urlencode($params['customer']['street_address2'])
             ."&pg_billto_postal_city=". urlencode($params['customer']['city'])
             ."&pg_billto_postal_stateprov=". urlencode($params['customer']['state'])
