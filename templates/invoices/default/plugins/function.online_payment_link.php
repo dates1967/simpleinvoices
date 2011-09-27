@@ -70,9 +70,11 @@ function smarty_function_online_payment_link($params, &$smarty) {
             href='https://sandbox.paymentsgateway.net/SWP/co/default.aspx?pg_api_login_id=". 
             urlencode($params['api_id'])
             . "&pg_billto_postal_name_company=". urlencode($params['customer']['name'])
-            . "&pg_transaction_type=10&pg_version_number=1.0&pg_total_amount=" .
+            . "&pg_version_number=1.0&pg_total_amount=" .
             urlencode(number_format($params['amount'], 2, '.', ''))
-            ."&pg_transaction_order_number=".urlencode($params['invoice'])
+            ."&pg_transaction_order_number=". urlencode($params['invoice'])
+            ."&pg_billto_postal_name_first=". $params['customer']['name']
+            ."&pg_billto_postal_name_last=-&pg_billto_postal_street_line1=". $params['customer']['street_address']
             ."&pg_billto_postal_street_line1=". $params['customer']['street_address']
             ."&pg_billto_postal_street_line2=". urlencode($params['customer']['street_address2'])
             ."&pg_billto_postal_city=". $params['customer']['city']
