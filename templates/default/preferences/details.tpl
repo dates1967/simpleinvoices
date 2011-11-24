@@ -91,25 +91,29 @@
 				<img src="./images/common/help-small.png" alt="" /></a>
 			</td>
 			<td>{$preference.pref_inv_payment_line2_value|htmlsafe}</td>
-		</tr>		
+		</tr>
+		
         <tr>
         	<td class="details_screen">{$LANG.enabled} 
 				<a class="cluetip" href="#" rel="index.php?module=documentation&amp;view=view&amp;page=help_inv_pref_invoice_enabled" title="{$LANG.enabled}">
 				<img src="./images/common/help-small.png" alt="" /></a>
 			</td>
-			<td>{$preference.enabled}</td>		</tr>	
+			<td>{$preference.enabled}</td>
+		</tr>	
         <tr>
         	<td class="details_screen">{$LANG.status} 
 				<a class="cluetip" href="#" rel="index.php?module=documentation&amp;view=view&amp;page=help_inv_pref_status" title="{$LANG.status}">
 				<img src="./images/common/help-small.png" alt="" /></a>
 			</td>
-			<td>{$preference.status_wording}</td>		</tr>	
+			<td>{$preference.status_wording}</td>
+		</tr>	
         <tr>
         	<td class="details_screen">{$LANG.invoice_numbering_group} 
 				<a class="cluetip" href="#" rel="index.php?module=documentation&amp;view=view&amp;page=help_inv_pref_invoice_numbering_group" title="{$LANG.invoice_numbering_group}">
 				<img src="./images/common/help-small.png" alt="" /></a>
 			</td>
-			<td>{$index_group.pref_description}</td>		</tr>	
+			<td>{$index_group.pref_description}</td>
+		</tr>	
 		<tr>
 			<td colspan="2" align="center"></td>
 		</tr>
