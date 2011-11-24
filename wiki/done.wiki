@@ -2,8 +2,8 @@
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
 
 <wiki:toc/>
-= 2010 series =
-== 2010.x (svn trunk) ==
+= SVN Trunk
+== 201x.x (svn trunk) ==
  * remove 'Database Upgrade Manager' from System settings page
  * Escape as much SI data as possible: refer [Escaping]
  * Dutch translation fixed up to work OK
@@ -12,8 +12,13 @@
  * Biller logo uploader [http://simpleinvoices.org/forum/discussion/1354/upload-a-logo-file-the-code/#Item_13 link]
 ==2010.2 Update 2 - unreleased ==
   * Fixed cron only runs 25 jobs at once issue [http://code.google.com/p/simpleinvoices/issues/detail?id=146 link]
-==2010.2 Update 1 ==
+
+= 2011 series =
+
+==2011.1 ==
   * Fixed teh edit customer issue in 2010.2 Stable [http://simpleinvoices.org/forum/discussion/1375/editing-customers-sql-error/ link]
+
+= 2010 series =
 
 ==2010.2 Stable==
   * Paypal support http://www.simpleinvoices.org/wiki/paypal
