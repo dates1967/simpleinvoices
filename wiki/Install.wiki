@@ -1,4 +1,5 @@
 #summary Detailed installation instructions
+#labels Featured
 
 = Installing Simple Invoices =
 ----
