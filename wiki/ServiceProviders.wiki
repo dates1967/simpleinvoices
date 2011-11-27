@@ -16,7 +16,7 @@ Got issues installing and configuring Simple Invoices? Don't have a publicly ava
 
 Smarter Invoices provides various hosting services for Simple Invoices specifically aimed at freelancers and micro-business.
 
-Similar to SixHQ.com, Smarter Invoices was started by [[people/justin|Justin Kelly]], the founder and still one of the current developers of Simple Invoices with the aim is to provide services to enhance your Simple Invoices experience. 
+Similar to SixHQ.com, Smarter Invoices was started by Justin Kelly, the founder and still one of the current developers of Simple Invoices with the aim is to provide services to enhance your Simple Invoices experience. 
 
 ----
 
@@ -40,7 +40,7 @@ The aim of SixHQ is to provide services to enhance your Simple Invoices experien
 
   * [http://sixhq.com/web_development Freelance web development]
 
-If you have any queries about how SixHQ can help you please don't hesitate to drop me a line ( <justin@sixhq.com> ).
+If you have any queries about how SixHQ can help you please don't hesitate to drop me a line ( justin@sixhq.com ).
 
 Whatever your Simple Invoices needs are we can sort it out.
 
@@ -120,6 +120,8 @@ For more on why the Market Place was started refer: http://www.sixhq.com/#why
 = How to join =
 If you would like your company listed here as a Simple Invoices service provider please contact us via twitter (@SimpleInvoices)
 
-If you have any queries about the Market Place feel free to post on the Market Place [[http://simpleinvoices.org/forum/9/|forum]]
+If you have any queries about the Market Place feel free to post on the forum [[http://simpleinvoices.org/forum]]
 
 Note: the only requirement to get listed on the Market Place is to link back to simpleinvoices.org from your site
+
+<g:plusone size="medium"></g:plusone>
