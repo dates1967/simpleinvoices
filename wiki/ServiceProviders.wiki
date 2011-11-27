@@ -116,7 +116,7 @@ Whatever your Simple Invoices needs are we can sort it out.
 
 ----
 
-== Why a Market Place? ==
+= Why a Market Place? =
 Though the Simple Invoices [[http://www.simpleinvoices.org/forum|Forums]] rock and provide the level of support that most people will need, it became clear that some members of the Simple Invoices community required a level of support that was not practical under the normal open source/community model
 
 What also became evident was a need to provide a clear path for development of extensions or modifications and other services for Simple Invoices for specific people on a for $ basis
@@ -127,7 +127,7 @@ For more on why the Market Place was started refer: http://www.sixhq.com/#why
 
 ----
 
-== How to join ==
+= How to join =
 If you would like your company listed here as a Simple Invoices service provider please contact us via twitter (@SimpleInvoices)
 
 If you have any queries about the Market Place feel free to post on the Market Place [[http://simpleinvoices.org/forum/9/|forum]]
