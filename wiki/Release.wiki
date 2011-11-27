@@ -21,11 +21,11 @@ find ./ -type f -name \*.php -exec php -l -d error_reporting=32767 '{}' \; | gre
 Justin: Please write more about how this version number is set up.
 
   # The tag will then be exported from Subversion to a directory on the local computer.
-  # This directory will then be zipped. and uploaded to the Downloads-section on Google Code.
-  # get john from teammc - hes on the Si lists- to do a windows version
-
-John: please write here what exactly you are doing.
-
+  # This directory will then be zipped and uploaded to the Downloads-section on Google Code.
+  # get john from teammc to do a windows version
+  # The windows version name will correspond to the simple invoices version, If updates/fixes are needed for the program and not for si then the new release's version will have "fix-1" added to it name.
+  # update windows release package with new si stable from google code
+  # The windows version will then be zipped and uploaded to the Downloads-section on Google Code as well.
   # Inform everyone about the new release
     * announce on forum
     * announce on blog
