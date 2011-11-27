@@ -8,6 +8,8 @@
 Before you get started there are a few requirements, have a quick read of the below page
   * [http://code.google.com/p/simpleinvoices/wiki/Requirements System requirements] page
 
+----
+
 == Installation ==
 
 If you know what your doing re PHP/MySQL just follow the quick install guide, else read on below for the full details
@@ -19,6 +21,7 @@ Quick install guide:
 4. Edit [[config|config/config.ini]] with db details
 5. Open Simple Invoices in your browser ( http://localhost/simpleinvoices ) and follow the installer
 
+----
 
 == Full details ==
 
@@ -36,6 +39,7 @@ Quick install guide:
    * Open up Simple Invoices in your web browser ie. ( http://localhost/simpleinvoices ) and follow the 3 step installer.
    * Simple invoices has been installed
 
+----
 
 ==  Export to PDF ==
 
@@ -92,6 +96,7 @@ If creating PDF in Simple Invoices didn't 'Just Work' there are a couple of chan
 }}}
          * For this change to come into affect you need to reload apache, in red hat based systems sudo /etc/init.d/httpd reload or in ubuntu/debian sudo /etc/init.d/apache2 reload. If your unsure of this step or your a windows users just restart your system and it'll be right. 
 
+----
 
 == Final steps ==
 
@@ -99,6 +104,7 @@ If creating PDF in Simple Invoices didn't 'Just Work' there are a couple of chan
   * Open your Internet browser and go to http://localhost/simpleinvoices and use Simple Invoices as you wish
   * Installation is finished 
 
+----
   
 == Had problems with the Simple Invoices installer ? ==
  
@@ -108,12 +114,14 @@ If you had problems with the Simple Invoices installer you can manually import t
   * Select the 'Import' tab and import the file './databases/mysql/simpleinvoices_full.sql' from your Simple Invoices directory
   * Open your Internet browser and go to http://localhost/simpleinvoices and use Simple Invoices as you wish
 
+----
 
 == More info ==
 For more information on setup options please refer to the below links:
   * To enable login/authentication refer [[wiki:how_do_i_enable_authentification_ie_a_login_system_in_simple_invoices]]
   * To upgrade Simple Invoices from one version to another refer [[wiki:upgrade]]
 
+----
 
 == Questions ==
   * If you have any questions, queries, ideas etc. re Simple Invoices you can post on our forum at:
