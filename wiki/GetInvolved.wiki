@@ -1,4 +1,5 @@
 #summary Technical or Non-Technical, everybody is welcome!
+#labels Featured
 
 
 = Get Involved =
