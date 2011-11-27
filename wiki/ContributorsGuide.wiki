@@ -167,3 +167,70 @@ SimpleInvoices leverages the following third party libraries for the [[Single Do
 ||[http://tango.freedesktop.org/ Tango icons]  || CC  ||  ||
 ||[http://www.famfamfam.com/lab/icons/silk/ FamFamFam silk icons]  || CC  ||  ||
 ||[http://phpmailer.codeworxtech.com/ PHPMailer]  || CC  || Phpmailer and SMTP class files can just be replaced  ||
+
+----
+
+== TuFat's HTML2PDF - Generated PDF File Size Reduction ==
+
+The PDF library which was earlier at include/pdf is now migrated to library/pdf in the SVN post SI_20071231.
+
+The XML file that stores information about how the fonts are handled and bundled into the generated PDF file is located at library/pdf/html2ps.config . The variable that cntrols font bundling mode is located in library/pdf/config.inc.php .
+
+In the [[Single Domain Version]] (SDV), Unicode was not available and no font was bundled at all which resulted in a non-graphic default invoice PDF size of about 45Kb and a nominal graphic based PDF size of about 80Kb. The graphic compression was poor because all JPGs were converted to PNG internally.
+
+In the [[Multi Domain Version]] (MDV), Unicode support is available and all fonts (other than Arial Unicode MS) are bundled in by default. Hence the PDF file size can be about 512KB for the simplest of text invoices. 
+
+Tweak the parameters below to reduce the size of the generated PDFs (in MDV only) by removing unwanted fonts from being bundled into the generated PDFs. Note that Helvetica is mapped to Arial in html2pdf here. 
+
+/library/pdf/config.inc.php defaults
+{{{
+//SDV Line 18: 
+define('DEFAULT_ENCODING', 'utf-8');
+//MDV Line 20: 
+define('DEFAULT_ENCODING', 'iso-8859-1');
+}}}
+
+In the above file for MDV - Lines 54 to 58, we have the following that can be set as desired:
+{{{
+// Determines how font files are embedded. May be:
+// 'all' - embed all fonts
+// 'none' - do not embed any fonts
+// 'config' - whether font is embedded is determined by html2ps.config 'embed' attribute value for this font
+define('FONT_EMBEDDING_MODE', 'config');
+}}}
+
+The following original lines 16 to 18 and 96 to 98 in
+
+library/pdf/html2ps.config
+{{{
+  <family name="helvetica">
+    <normal normal="Helvetica" italic="Helvetica-Oblique" oblique="Helvetica-Oblique"/>
+    <bold normal="Helvetica-Bold" italic="Helvetica-BoldOblique" oblique="Helvetica-BoldOblique"/>
+}}}
+can be tweaked as below:
+{{{
+  <family name="helvetica">
+    <normal normal="Helvetica" italic="Helvetica" oblique="Helvetica"/>
+    <bold normal="Helvetica" italic="Helvetica" oblique="Helvetica"/>
+  </family>
+}}}
+
+In the same file, lines 130 to 133
+
+{{{
+  <ttf typeface="Helvetica"             embed="1" file="arial.ttf"/>
+  <ttf typeface="Helvetica-Oblique"     embed="1" file="ariali.ttf"/>
+  <ttf typeface="Helvetica-Bold"        embed="1" file="arialbd.ttf"/>
+  <ttf typeface="Helvetica-BoldOblique" embed="1" file="arialbi.ttf"/>
+}}}
+
+can be tweaked as
+
+{{{
+  <ttf typeface="Helvetica"             embed="0" file="arial.ttf"/>
+  <ttf typeface="Helvetica-Oblique"     embed="0" file="ariali.ttf"/>
+  <ttf typeface="Helvetica-Bold"        embed="0" file="arialbd.ttf"/>
+  <ttf typeface="Helvetica-BoldOblique" embed="0" file="arialbi.ttf"/>
+}}}
+
+to prevent the common Arial font from being embedded into the PDF file generated.
