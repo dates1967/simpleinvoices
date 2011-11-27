@@ -1,6 +1,6 @@
 #summary Copy of the ReadMe.txt included in the SI For Windows package
 
-Simple Invoices For Windows
+=Simple Invoices For Windows=
 
 http://SimpleInvoices.org
 
