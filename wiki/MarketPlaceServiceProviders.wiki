@@ -1,0 +1,120 @@
+= Market Place=
+
+The Simple Invoices Market Place enables you to easily find a Simple Invoices service provider.
+===== SmarterInvoices.com =====
+[[http://www.smarterinvoices.com|{{ :smarterinvoices_logo.png|Smarter Invoices}}]]
+[[http://www.smarterinvoices.com|Smarter Invoices]] - The Simple Invoices 'hosting' company
+
+Got issues installing and configuring Simple Invoices? Don't have a publicly available web-server. No worries. Smarter Invoices can help you out! 
+
+Smarter Invoices provides various hosting services for Simple Invoices specifically aimed at freelancers and micro-business.
+
+Similar to SixHQ.com, Smarter Invoices was started by [[people/justin|Justin Kelly]], the founder and still one of the current developers of Simple Invoices with the aim is to provide services to enhance your Simple Invoices experience. 
+
+===== SixHQ  =====
+[[http://www.sixhq.com|{{ :sixhq_logo.png|SixHQ}}]]
+[[http://www.sixhq.com|SixHQ]] - The Simple Invoices 'eXtensions' company
+
+SixHQ = Simple Invoices eXtended
+
+SixHQ was started by Justin Kelly, the founder and still one of the current developers of Simple Invoices.
+
+The aim of SixHQ is to provide services to enhance your Simple Invoices experience. This ranges from custom Simple Invoices development and modification to support.
+
+** Available Simple Invoices services** 
+  * [[http://sixhq.com/hosting|Simple Invoices hosting]]
+  * [[http://sixhq.com/modifications|Modifications]]
+  * [[http://sixhq.com/custom_reports|Custom Reports]]
+  * [[http://sixhq.com/support|Support]]
+  * [[http://sixhq.com/installation|Installation]]
+
+**Other services**
+
+  * [[http://sixhq.com/web_development|Freelance web development]]
+
+If you have any queries about how SixHQ can help you please don't hesitate to drop me a line ( <justin@sixhq.com> ).
+
+Whatever your Simple Invoices needs are we can sort it out.
+===== Acuras  =====
+[[http://www.acuras.co.uk/|{{ :acuras.jpg|Buckinghamshire Website Design}}]]
+[[http://www.acuras.co.uk/|http://www.acuras.co.uk]]
+
+** Available Simple Invoices services** 
+  * Installation
+  * Hosting
+  * Technical support
+  * Invoice template customisation
+  * Custom reports
+  * Bespoke extensions development
+
+===== TOCICI =====
+[[http://www.tocici.com/|{{ :logo_tocici.png}}]]
+[[http://www.tocici.com/|http://www.tocici.com]]
+
+** Available Simple Invoices services** 
+  * Hosting
+  * Technical support
+
+===== Bunology  =====
+[[http://www.bunology.com.au/|{{ :bunology.png|bunology.com.au}}]]
+[[http://www.bunology.com.au/|http://www.bunology.com.au]]
+
+** Available Simple Invoices services** 
+  * Installation
+  * Hosting
+  * Technical support
+  * Invoice template customisation
+  * Custom reports
+
+===== Open Sussex  =====
+[[http://www.opensussex.net/|{{ :opensussex_logo.png|opensussex.net}}]]
+[[http://www.opensussex.net/|http://www.opensussex.net]]
+
+** Available Simple Invoices services** 
+  * Installation
+  * Hosting
+===== OutsourceIT  =====
+[[http://www.simplyoutsourceit.com/solutions-SimpleInvoices.html|{{ http://i.imgur.com/LVRbO.png
+}}]]
+[[http://www.simplyoutsourceit.com/solutions-SimpleInvoices.html|www.simplyoutsourceit.com]]
+
+** Available Simple Invoices services** 
+  * Installation
+  * Hosting
+  * Technical support
+  * Invoice template customisation
+===== HostSphere  =====
+[[http://hostsphere.co.uk/news/item/15-new-one-click-installers-6-of-them|{{ http://hostsphere.co.uk/templates/hostpay_blue_update_spares/images/header-object.png
+}}]]
+[[http://hostsphere.co.uk/news/item/15-new-one-click-installers-6-of-them|www.hostsphere.co.uk]]
+
+** Available Simple Invoices services** 
+  * Simple Invoices is available via their 1 click installers
+
+===== Hexahost =====
+
+[[http://hexahost.com/simpleinvoices-web-hosting|{{ :hexahostlogo.jpg|www.hexahost.com}}]]
+[[http://hexahost.com/simpleinvoices-web-hosting|www.hexahost.com]]
+
+** Available Simple Invoices services** 
+  * Simple Invoices hosting
+
+
+===== Why a Market Place? =====
+
+
+Though the Simple Invoices [[http://www.simpleinvoices.org/forum|Forums]] rock and provide the level of support that most people will need, it became clear that some members of the Simple Invoices community required a level of support that was not practical under the normal open source/community model
+
+What also became evident was a need to provide a clear path for development of extensions or modifications and other services for Simple Invoices for specific people on a for $ basis
+
+The main aim of the Market Place is to create an ecosystem around Simple Invoices where for $ work can be done without interfering with the natural open-source development and support of Simple Invoices
+
+For more on why the Market Place was started refer: http://www.sixhq.com/#why
+===== How to join =====
+
+
+If you would like your company listed here as a Simple Invoices service provider please contact us via twitter (@SimpleInvoices)
+
+If you have any queries about the Market Place feel free to post on the Market Place [[http://simpleinvoices.org/forum/9/|forum]]
+
+Note: the only requirement to get listed on the Market Place is to link back to simpleinvoices.org from your site
