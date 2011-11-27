@@ -60,3 +60,96 @@ to
 extension=php_xsl.dll
 }}}
 then restart the WAMP5 server to enable this option.
+
+== ... send emails ==
+For Simple Invoices to be able to send email you need access to an smtp server. This can be your ISP's smtp server or other. But if you don't have access to an smtp server you can install one on your PC. Below details some of the available option for each operating system
+
+=== Windows===
+  * Mercury/Pegasus mail
+    * http://www.pmail.com/index.htm
+    * http://www.pmail.com/downloads_s3_t.htm (free)
+    * http://www.softstack.com/freesmtp.html (free)
+    * http://www.axigen.com (not-free)
+
+===Mac===
+If your not on mac osx server or sendmail isn't installed on your system you can use the below listed:
+  * http://postfix.darwinports.com/ (free)
+  * http://cutedgesystems.com/software/postfixenabler/ (not-free)
+
+===Linux===
+If your version of linux doesn't already come installed with one of the below listed mail servers, please install one as per your distributions installation procedure
+
+  * Postfix (free) ← This is the easiest option
+  * Sendmail (free)
+
+===Gmail===
+
+You can use Google GMail to send emails in Simple Invoices.
+
+Example SMTP Settings From Google's Gmail:
+  * Outgoing Mail (SMTP) Server - requires TLS or SSL: smtp.gmail.com (use authentication)
+  * Use Authentication: Yes
+  * Port for TLS/STARTTLS: 587
+  * Port for SSL: 465
+
+Steps
+  * In the simple invoices configuration file (located at “conf/config.ini”) find the options starting with “email.”
+  * Using the information in the example above you would set you config.ini to look like this:
+{{{
+email.host = smtp.gmail.com
+email.smtp_auth	 = true
+email.username	 = mylogin@gmail.com
+email.password = mypassword
+email.smtpport	 = 465
+email.secure = SSL
+email.ack = false
+}}}
+Note: Be sure that SMTP/POP access is enabled in your email settings, and that your using the correct port, the SSL port is recomended not just for security but because some ISPs and/or firewalls may interfer otherwise.
+
+For more information see here: http://simpleinvoices.org/forum/discussion/1307//#Item_26
+
+== ... change the invoice number starting point==
+Say you want the have the invoice number start at 1000 instead of 1.
+
+Open phpMyAdmin, go to your Simple Invoices database, then find the si_index table. Then click browse, the data should look something like
+||id	||node	||sub_node	||sub_node2	||domain_id||
+||1 	||invoice 	||1	||	||1||
+
+edit this row and change it to below
+||id	||node	||sub_node	||sub_node2	||domain_id||
+||999 	||invoice 	||1	||	||1||
+
+or just execute the below SQL
+{{{
+DELETE FROM `si_index`;
+INSERT INTO `si_index` VALUES('999','invoice','1',' ','1');
+}}}
+
+Notice: notice: if someone need to start with 21 the first ID should be 20.
+
+== ... convert numbers to words==
+  # download this script http://download.pear.php.net/package/Numbers_Words-0.16.2.tgz
+  # extract the downloaded file and copy Numbers folder to library/ folder in SI directory
+  # open "includes/class/export.php"
+  # at line 2 add this: include('./library/Numbers/Words.php');
+  # on the same file search for line 216 - you'll find: $customFieldLabels = getCustomFieldLabels();
+  # right below this line paste this:
+{{{
+$nw = new Numbers_Words();
+$invoice['total_in_words'] = $nw->toWords( $invoice['total']);
+$invoice['total_in_words_currency'] = $nw->toCurrency( $invoice['total']);
+}}}
+  # save "includes/class/export.php" file :p
+  # open "templates/invoices/default/template.tpl" (or the template.tpl of the template you're using) and wherever you want to appear the "words" paste this:
+{{{
+{$invoice.total_in_words} -for total value of the invoice in words
+}}}
+or/and
+{{{
+{$invoice.total_in_words_currency} - for total value of the invoice in currency
+}}}
+  # save "templates/invoices/default/template.tpl" file
+  # clear your cache folder ( /tmp/cache/ )
+  # open a new invoice in the print view
+
+For more information see here: http://simpleinvoices.org/forum/discussion/1236/numbers-to-words/#Comment_6738
