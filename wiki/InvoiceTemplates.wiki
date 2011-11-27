@@ -1,0 +1,34 @@
+#summary Several templates that can be used with Simple Invoices
+#labels Phase-Support,Phase-Deploy
+
+= Invoice Templates & Styles =
+
+Got a sweet invoice template you'd like to share with the Simple Invoices community?
+
+  * If so just create a new wiki page here, give us some description of the template and upload the files
+    * refer the Example template page below for how to create a page and the how to create a template page on the wiki page for more info
+
+  * Invoice templates define what and how information will be shown on the invoice
+  * Invoice styles define how the invoice will look, these are alternate css styles that can be used with any of the templates
+
+
+
+
+= Available templates =
+
+  # Example template page
+    This is my example template page
+  # Euro template
+    This is the default template modified to have the currency symbol after the amount, and the correct format numbers for Euros –> ie. 2.132,45 €. Moreover there is some alignment corrections in the table of products.
+  # Template - No labels
+    This is a reworking of the original template with a few extras: Paid Stamp, PayPal link, No labels.
+  #Template - Grey Separators - Layout Change
+   This is a modification of the original template. I Moved sections around a bit, changed some font sizes, and added a background color to the section separatros.
+  # Template - with 'ship to' fields
+    This is an improved version of the original template. I created the 'ship to' section ( needed in some cases) using the custom fields. By courtesy of Binary Networks SAS - Colombia.
+
+Available styles
+
+  # CSS Style 1
+      Original CSS template with some modifications
+
