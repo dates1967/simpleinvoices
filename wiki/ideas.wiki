@@ -1,6 +1,6 @@
 #summary Simple Invoices ideas list
 
-|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] ||
+|| *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] ||
 
 _Disclaimer: if its in the list it may get done sometime in the future if and when someone feels like it_
  * API
