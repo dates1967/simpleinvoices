@@ -68,28 +68,28 @@ http://TeamMC.cc - john@teammc.cc
 
 ==Changes:==
 	1.6.1 - 12/1/2011
-		Changed: Restructured Settings.ini for simplicity
-		Changed: ToggleServer (previously "startstopserveroption") is disabled by default
-		Fixed: Window activation priority when opening program when alreading running
-		Added: SQLServer option in settings.ini, use this to disable the built in sql server and use your own
-		Added: SQLAddress option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
-		Added: Custom GUI for GUI prompt
-		Added: Option on GUI prompt screen to set the default start option
-		Fixed: Minor code optimations and adjustments
+               * Changed: Restructured Settings.ini for simplicity
+               * Changed: ToggleServer (previously "startstopserveroption") is disabled by default
+               * Fixed: Window activation priority when opening program when alreading running
+               * Added: SQLServer option in settings.ini, use this to disable the built in sql server and use your own
+               * Added: SQLAddress option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
+               * Added: Custom GUI for GUI prompt
+               * Added: Option on GUI prompt screen to set the default start option
+               * Fixed: Minor code optimations and adjustments
 
 	1.6.0 - 9/18/2011
-		Changed: Updated Apache to 2.2.21
-		Changed: Updated MySQL to 5.5.16
-		Changed: Updated To PHP 5.2.17
-		Changed: Web root folder is now "www" instead of "si"
-		Fixed: Using default browser option forces tray icon to apear (had no way to exit program otherwise)
-		Fixed: About dialog not apearing
-		Fixed: MySQL safe shutdown procedure failing
-		Note: This release contains No binarys from a 3rd part, they are all direct from their respective projects. Also, no files are compressed (UPX)
+               * Changed: Updated Apache to 2.2.21
+               * Changed: Updated MySQL to 5.5.16
+               * Changed: Updated To PHP 5.2.17
+               * Changed: Web root folder is now "www" instead of "si"
+               * Fixed: Using default browser option forces tray icon to apear (had no way to exit program otherwise)
+               * Fixed: About dialog not apearing
+               * Fixed: MySQL safe shutdown procedure failing
+               * Note: This release contains No binarys from a 3rd part, they are all direct from their respective projects. Also, no files are compressed (UPX)
 
 	1.5.0 - 5/25/2011
-		Added: ini Option EnableTrayIcon
-		Added: Menu items previously used in the tray will no also apear in the 'help' menu
+               * Added: ini Option EnableTrayIcon
+               * Added: Menu items previously used in the tray will no also apear in the 'help' menu
 		Changed: Tray Disable By Default
 		Changed: Renamed ini option "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
 		Changed: Renamed "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
