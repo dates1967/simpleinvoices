@@ -5,9 +5,8 @@
 
 ==  Requirements ==
 
-Before you get started there are a few requirements, have a quick read of the below pages
-  * [[need_to_know|Stuff you need to know]] page
-  * [[requirements|System requirements]] page
+Before you get started there are a few requirements, have a quick read of the below page
+  * [http://code.google.com/p/simpleinvoices/wiki/Requirements System requirements] page
 
 == Installation ==
 
