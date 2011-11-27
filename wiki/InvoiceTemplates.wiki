@@ -16,19 +16,21 @@ Got a sweet invoice template you'd like to share with the Simple Invoices commun
 
 = Available templates =
 
-  # Example template page
-    This is my example template page
   # Euro template
     This is the default template modified to have the currency symbol after the amount, and the correct format numbers for Euros –> ie. 2.132,45 €. Moreover there is some alignment corrections in the table of products.
+   http://simpleinvoices.googlecode.com/svn/templates/euro_template.tpl
   # Template - No labels
-    This is a reworking of the original template with a few extras: Paid Stamp, PayPal link, No labels.
-  #Template - Grey Separators - Layout Change
-   This is a modification of the original template. I Moved sections around a bit, changed some font sizes, and added a background color to the section separatros.
+    This is a reworking of the original template with a few extras: Paid Stamp, PayPal link, No labels
+   http://www.simpleinvoices.org/wiki/template_-_no_labels
+  # Template - Grey Separators - Layout Change
+    This is a modification of the original template. I Moved sections around a bit, changed some font sizes, and added a background color to the section separatros.
+   http://simpleinvoices.googlecode.com/svn/templates/gray_separators.tpl
   # Template - with 'ship to' fields
     This is an improved version of the original template. I created the 'ship to' section ( needed in some cases) using the custom fields. By courtesy of Binary Networks SAS - Colombia.
+   http://simpleinvoices.googlecode.com/svn/templates/with_shipto.tpl
 
 Available styles
 
   # CSS Style 1
-      Original CSS template with some modifications
-
+    Original CSS template with some modifications. CSS style black and white with horizontal lines.
+   http://simpleinvoices.googlecode.com/svn/templates/css_rules.tpl
