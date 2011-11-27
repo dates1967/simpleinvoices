@@ -4,6 +4,9 @@
 = Introduction =
 There are several thing a contributor should take care. Since security is becoming more and more an issue we need to stick to some rules in order to make SI saver.
 
+Table of Contents
+<wiki:toc max_depth="2" />
+
 ----
 
 = Security =
