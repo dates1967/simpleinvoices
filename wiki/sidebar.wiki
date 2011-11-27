@@ -1,9 +1,0 @@
-[todo]
-
-[done]
-
-[ideas]
-
-[known_issues]
-
-[notes]
