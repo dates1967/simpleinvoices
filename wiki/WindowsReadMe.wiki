@@ -9,12 +9,12 @@ http://TeamMC.cc - john@teammc.cc
 
 ==Instructions:==
 
-	1. Unzip the "Simple Invoices For Windows" folder to your desktop, hard drive or a portable USB drive.
-	2. Run "SimpleInvoices.exe" inside the "Simple Invoices For Windows" folder
-	3. Select one of the following:
-		"GUI" to start Simple Invoices in its own window.
-		"Browser" to start Simple Invoices in you web browser (close Simple Invoices using its tray icon).
-	4. Follow the instruction on screen to configure Simple Invoices.
+	* Unzip the "Simple Invoices For Windows" folder to your desktop, hard drive or a portable USB drive.
+	* Run "SimpleInvoices.exe" inside the "Simple Invoices For Windows" folder
+	* Select one of the following:
+		* "GUI" to start Simple Invoices in its own window.
+		* "Browser" to start Simple Invoices in you web browser (close Simple Invoices using its tray icon).
+	* Follow the instruction on screen to configure Simple Invoices.
 
 ==Configuration:==
 
@@ -23,38 +23,36 @@ http://TeamMC.cc - john@teammc.cc
 	To configure options specific to "SimpleInvoices for windows" (not Simple Invoices)
 	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
 
-		
-	Basic Settings:
-		GUI=1
-			Setting this to 0 will not allow the user to choose the GUI option when starting Simple Invoices
+	* GUI=1
+		* Setting this to 0 will not allow the user to choose the GUI option when starting Simple Invoices
 
-		Browser=1
-			Setting this to 0 will not allow the user to choose the DefaultBrowser option when starting Simple Invoices.
+	* Browser=1
+		* Setting this to 0 will not allow the user to choose the DefaultBrowser option when starting Simple Invoices.
 
-		PromptGUIBrowser=1
-			Setting this to 0 will not prompt the user to choose the startup method of Simple Invoices, 
-			whatever method is enabled will be the one to start, if both are enabled or disabled the GUI method will be used.
+	* PromptGUIBrowser=1
+		* Setting this to 0 will not prompt the user to choose the startup method of Simple Invoices, 
+		* Whatever method is enabled will be the one to start, if both are enabled or disabled the GUI method will be used.
 
-		EnableTrayIcon=0
-			Settings this to 1 wll show a system tray icon giving you a few simple functions (Browser mode forces the tray icon to apear).
+	* EnableTrayIcon=0
+		* Settings this to 1 wll show a system tray icon giving you a few simple functions (Browser mode forces the tray icon to apear).
 
-		ShowPHPMyAdminOption=1
-			Setting this to 0 will hide the options to open the database manager PHPMyAdmin,
-			note that PHPMyAdmin can still be accessed manualy in a web browser givin the proper url
+	* ShowPHPMyAdminOption=1
+		* Setting this to 0 will hide the options to open the database manager PHPMyAdmin,
+		* Note that PHPMyAdmin can still be accessed manualy in a web browser givin the proper url
 
-		ShowToggleServerOption=1
-			Setting this to 0 will hide the options to start and stop the server.
+	* ShowToggleServerOption=1
+		* Setting this to 0 will hide the options to start and stop the server.
 
-		WebAddress=localhost
-			Setting this to blank will allow other computers on your network to access SimpleInvoice givin the correct URL.
-			For this to work other factors need to be acounted for including network configuration and firewall settings.
-			The URL should be in this format: http://*IP*:*port* check settings.ini for "WebPort"
+	* WebAddress=localhost
+		* Setting this to blank will allow other computers on your network to access SimpleInvoice givin the correct URL.
+		* For this to work other factors need to be acounted for including network configuration and firewall settings.
+		* The URL should be in this format: http://*IP*:*port* check settings.ini for "WebPort"
 
-		WebPort=8877
-			Change this only if you get a message saying apache wont start and you suspect that another program on your computer is using this port.
+	* WebPort=8877
+		* Change this only if you get a message saying apache wont start and you suspect that another program on your computer is using this port.
 
-		SQLServer,SQLAddress,SQLPort
-			Advanced settings for the MySQL server, change these only if you have a port conflict or want to disable the SQL server to use a remote server.
+	SQLServer,SQLAddress,SQLPort
+		* Advanced settings for the MySQL server, change these only if you have a port conflict or want to disable the SQL server to use a remote server.
 
 			
 
