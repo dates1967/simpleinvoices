@@ -51,7 +51,7 @@ http://TeamMC.cc - john@teammc.cc
 	* WebPort=8877
 		* Change this only if you get a message saying apache wont start and you suspect that another program on your computer is using this port.
 
-	SQLServer,SQLAddress,SQLPort
+	* SQLServer,SQLAddress,SQLPort
 		* Advanced settings for the MySQL server, change these only if you have a port conflict or want to disable the SQL server to use a remote server.
 
 			
