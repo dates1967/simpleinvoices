@@ -30,3 +30,33 @@ That's it - you can login with:
 Since Simple Invoices 2009.1 you can edit a username and password within Simple Invoices - go to the People tab and select Users.
 
 For developers: The password is hashed in the DB with MD5(new_password).
+
+== ... backup the database ==
+For 'Simple invoices database backup' to work the first step is to make the tmp/database_backups directory(which is in the Simple Invoices directory) writeable by the webserver
+  * To do this the in unix cd to the Simple Invoices directory (cd /var/www/html/simpleinvoices) and chown the tmp/database_backups directory to the apache(web server) user (chown apache:apache tmp/database_backups), in windows just browse to the tmp/database_backups folder and make sure its writeable by all users.
+
+...second step?
+
+== ... add a new logo ==
+To make a new logo available in Simple Invoices just copy the logo file from your computer into the logo directory in the Simple Invoices folder
+  * in unix the Simple Invoices folder will usually be /var/www/html/simpleinvoices
+  * just copy your new logo file into /var/www/html/simpleinvoices/templates/invoices/logos/
+
+Note - on an ubuntu 6.06.1 server it's /var/www/simpleinvoices/templates/invoices/logos/your_logo.jpg
+
+Now the logo should be available in Simple Invoices.
+
+== ... get reports working on Windows/WAMP5 ==
+To enable reports to work when using Windows and using WAMP5
+
+open the php.ini, find the line ;extension=php_xsl.dll and remove the ;
+
+from
+{{{
+;extension=php_xsl.dll
+}}}
+to
+{{{
+extension=php_xsl.dll
+}}}
+then restart the WAMP5 server to enable this option.
