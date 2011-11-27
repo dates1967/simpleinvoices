@@ -1,41 +1,32 @@
-= Release how-to =
+#labels Phase-Design,Phase-Implementation,Phase-QA,Phase-Deploy
+= Release Management =
+In order to get a better and more stable code we try to formalize the release management.
 
-== Goal ==
+== Release Planning ==
+  # After a new version has been released the next version is planed. All issues that should be solved in the next version will be given the milestone "next-release"
+  # The leader will keep an eye on the list and will give a message in the [http://dev.simpleinvoices.org/ dev forum] when he sees that all issues of this milestone are solved or will be solved in the next few days.
+  # The last preparations before the release can be done then.
 
- * Release code that works and is stable
-
-== Current SVN structure ==
-
- * /trunk
- * /branches/stable
- * /branches/stable-'release or feature dev name'
- 
-== SVN Process ==
-The process I have used to do releases of SimpleInvoices is
-
- * when trunk is getting close to stable branch to /branches with the planned release name ie. /branches/2012-1
- * and finalise the code there and release
- * merge changes between /trunk and the release branch as needed to make it all happy pre prelease
+== Pre release tests ==
+A release will only happen if no PHP related errors are present in the code. In order to test this the following code is called in the root directory of the project:
+{{{
+find ./ -type f -name \*.php -exec php -l -d error_reporting=32767 '{}' \; | grep -v "No syntax errors detected"
+}}}
 
 == Release Process ==
-If this a release when lots of changes I do a number of beta releases to make sure everything is working as expected and iron out any final bugs
+  # When the code is ready a new "tag" is set on the current trunk version. The tag will have the same name is the version (e.g. 2011-1).
 
-If all looks OK with the current code I do the release
- * get john from teammc - hes on the Si lists- to do a windows version
- * upload to google code
- * announce on forum
- * announce on blog
- * announce on email lists
+Justin: Please write more about how this version number is set up.
 
-Then continue to work on trunk
+  # The tag will then be exported from Subversion to a directory on the local computer.
+  # This directory will then be zipped. and uploaded to the Downloads-section on Google Code.
+  # get john from teammc - hes on the Si lists- to do a windows version
 
-If trunk is a long way off getting stable and there are pressing issues I do a copy of the release branch and make it as Update 1 or the next release up (with bugs fix in this branch and trunk)
+John: please write here what exactly you are doing.
 
-then repeat!!
+  # Inform everyone about the new release
+    * announce on forum
+    * announce on blog
+    * announce on email lists
 
-== Windows Release Process ==
-The windows version name will correspond to the simple invoices version, If updates/fixes are needed for the program and not for si then the new release's version will have "fix-1" added to it name.
-
- * update windows release package with new si stable from google code
- * upload to google code
- * announce on si list
+Then continue with the planning again.
