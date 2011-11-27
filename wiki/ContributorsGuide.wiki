@@ -4,6 +4,7 @@
 = Introduction =
 There are several thing a contributor should take care. Since security is becoming more and more an issue we need to stick to some rules in order to make SI saver.
 
+----
 
 = Security =
 With the following commands the output can be sanitized/escaped.
@@ -21,3 +22,5 @@ With the following commands the output can be sanitized/escaped.
 || urlesafe() || sanitises a whole url to be put into src or href. Will not allow javascript: urls.||
 || urlencode() || escapes something to be put into a query string||
 || outhtml()  || sanitises raw html for output.||
+
+----
