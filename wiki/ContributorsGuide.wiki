@@ -27,3 +27,143 @@ With the following commands the output can be sanitized/escaped.
 || outhtml()  || sanitises raw html for output.||
 
 ----
+
+=Developer FAQs=
+
+
+==How to display PHP errors on screen==
+
+Edit config/config.ini and set
+
+{{{
+debug.error_reporting 				= E_ALL
+phpSettings.display_startup_errors 	        = 1
+phpSettings.display_errors 			= 1
+}}}
+
+----
+
+==How to not display PHP errors on screen==
+
+Edit config/config.ini and set
+
+{{{
+debug.error_reporting 				= 0
+phpSettings.display_startup_errors 	        = 0
+phpSettings.display_errors 			= 0
+}}}
+
+----
+
+==How to write a SQL Patch==
+
+To add a sql patch in Simple Invoices follow the steps below:
+
+    * Write the sql for this patch in a way that wont mess with anyone data
+          * that includes not changing the encoding of rows etc.. 
+    * Once you've got the sql for the patch written open up the file include/sql_patches.php and copy the format of the other sql patches to create
+          * $sql_patch_name_ is the name of the patch
+                * ie. $sql_patch_name_8 = "Edit default invoice template field lenght to 50"; 
+          * $sql_patch_8 is the actual sql for the patch
+                * ie. $sql_patch_8 = "ALTER TABLE si_defaults CHANGE def_inv_template def_inv_template VARCHAR( 50 ) DEFAULT NULL"; 
+          * $sql_patch_update_ is the sql to insert a row into the sql patchmanger table to say that the patch has been applied
+                * ie. $sql_patch_update_8 = "INSERT INTO si_sql_patchmanager ( sql_id ,sql_patch_ref , sql_patch , sql_release , sql_statement ) VALUES (,8,'$sql_patch_name_8',20060526,)"; 
+
+file::/include/sql_patches.php
+
+    * Once the patch has been written the database_sqlpatches.php file has to be update to check and run this patch
+          * open the file and add your patch to the run code
+                * copy the format used for the other patches
+                      * ie. run_sql_patch(8,$sql_patch_name_8,$sql_patch_8,$sql_patch_update_8); 
+          * edit the file to add the sql for sql patch code
+                * copy the format used for the other patches
+                      * ie. check_sql_patch(8,$sql_patch_name_8); 
+file::/database_sqlpatches.php
+
+    * Now if you go to the Database Upgrade Manager page in Simple Invoices if will give you a list of all the patches that have and have not been applied, if alls well it should say that your newly added patch hasnt been applied. 
+
+    * To run the sql patch to make sure it works click the UPDATE button in the Database Upgrade Manager screen and Simple Invoices will check which patches have been applied and applied the ones that havent been applied. If this works fine you can commit you sql patch to subversion 
+
+----
+
+== Simple Invoices subversion how-to: ==
+
+=== Check Out ===
+
+ in commandline:
+
+  * If you have an intention of commiting code to Simple Invoices 
+       * email me (justin@kelly.org.au) with your gmail username, (if you dont have one create one at http://www.gmail.com) and i'll add you as a project member
+      * get your subversion password at http://code.google.com/hosting/settings (click the 'googlecode.com password' link to get your password)
+      * to checkout a copy of Simple Invoices
+          * svn checkout https://simpleinvoices.googlecode.com/svn/trunk/ simpleinvoices --username (YOUR GMAIL USERNAME ie, justin if your email is justin@gmail.com)
+          * when asked for your password use your google subversion password NOT your gmail password
+           
+
+  * If you wish to check out subversion anonymously (which means you WONT be able to check the project in if you make any changes) but you will get the latest code
+     * svn checkout http://simpleinvoices.googlecode.com/svn/trunk/ simpleinvoices
+
+**NOTE: you can only commit code into Simple Invoices if you have checked out the code using HTTPS and your gmail name**
+
+refer:
+  * http://code.google.com/p/simpleinvoices/source
+  * http://code.google.com/hosting/settings
+  * [http://internetducttape.com/2007/03/03/howto_google_code_hosting_subversion_tortoisesvn/ GoogleCode with TortoiseSVN] - Slightly out of date but relevant nevertheless
+
+=== Local setup ===
+
+Now you've got the latest code, to start using this
+ 
+  - setup a test Simple Invoices database on your local MySQL server
+  - if your going to commit code into the Simple Invoice repo then
+    - copy the ./config/config.ini file to ./config/dev.config.ini
+    - edit ./config/dev.config.ini and go to the [dev : production] and enter your db settings
+  - if your not committing code
+    - just edit ./config/define.php and set "$environment = 'production';"
+    - and edit ./config/config.ini and enter your db settings and whatever other settings you want
+  - now open Simple Invoices in your browser and you should be able to follow the installer to import the correct data into Simple Invoices
+    - if you have any issues with the install just import the file ./database/MySQL/Full_Simple_Invoices.sql into your database using phpMyAdmin
+    - or read the install for more info
+
+=== Process ===
+
+Once you've checked out svn trunk using https your now free to commit whatever changes you want to Simple Invoices
+
+Feel free to discuss what you want to work on - either in our forum or google group
+
+  * Google group: http://groups.google.com/group/simpleinvoices
+  * Forum: http://simpleinvoices.org/forum/7/
+
+=== Monitoring ===
+
+Each time a commit it made to our svn and email automatically gets sent to our google group (refer below)
+
+To keep track of who is checking in what signup to either the google group or the rss feed below
+
+  * Google Group: http://groups.google.com/group/simpleinvoices-trac
+  * Rss: http://feeds2.feedburner.com/SimpleInvoicesTracking
+
+----
+
+== 3rd Party Libraries ==
+
+SimpleInvoices leverages the following third party libraries for the [[Single Domain Version]] (SDV) and [[Multi Domain Version]] (MDV) (unless specifically indicated). Paths for the libraries may be different. SDV will have libraries in /include and /modules/include but MDV has all libraies in /include.
+
+|| *Solution* || *License* || *Integration Notes* ||
+||[http://www.jquery.com/|jquery]  || GPL  ||  ||
+||[http://www.dyve.net/jquery/?autocomplete jquery autocomplete]  || GPL ||  ||
+||[http://stilbuero.de/jquery/tabs/ jquery tabs]  || GPL  ||  ||
+||[http://fmarcia.info/jquery/accordion.html jquery accordian menu]]  || GPL/MIT?  ||  ||
+||[http://kelvinluck.com/assets/jquery/datePicker/ jquery data selector]  || GPL/MIT?  ||  ||
+||[http://orangoo.com/labs/GreyBox/ GreyBox]  || LGPL  ||  ||
+||[http://orangoo.com/labs/AJS/ AJS JavaScript library]  || LGPL  ||  ||
+||[http://dowdybrown.com/dbprod/ Open Rico Live Grid Plus]  || Apache 2.0  ||  ||
+||[http://www.aplus.co.yu/adxmenu/ ADxMenu]  || CC  ||  ||
+||[http://www.tufat.com/ tufat html2pdf]  || GPL  || HTML2PDF mods ||
+||[http://tinymce.moxiecode.com/ TinyMCE]  || LGPL  ||  ||
+||[http://phpreports.sourceforge.net/ PHPReports]  || GPL  || PHPReport mods - Rare PHPReport Error Fixes||
+||[http://pajhome.org.uk/crypt/md5/index.html Javascript MD5]  || BSD  || ||
+||[http://smarty.php.net/ Smarty Template Engine]  || LGPL  || ||
+||[http://tango.freedesktop.org/ Tango icons]  || CC  ||  ||
+||[http://www.famfamfam.com/lab/icons/silk/ FamFamFam silk icons]  || CC  ||  ||
+||[http://phpmailer.codeworxtech.com/ PHPMailer]  || CC  || Phpmailer and SMTP class files can just be replaced  ||
