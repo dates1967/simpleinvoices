@@ -59,11 +59,11 @@ http://TeamMC.cc - john@teammc.cc
 			
 
 ==Version Notes:==
-	-AutoIT 3.3.6.1 - http://www.autoitscript.com
-	-Simple Invoices 2011.1  - http://www.simpleinvoices.org
-	-PHP 5.2.17 - http://php.net
-	-Apache 2.2.21 - http://httpd.apache.org
-	-MySQL  5.5.16 - http://mysql.com/
+        * AutoIT 3.3.6.1 - http://www.autoitscript.com
+        * Simple Invoices 2011.1  - http://www.simpleinvoices.org
+        * PHP 5.2.17 - http://php.net
+        * Apache 2.2.21 - http://httpd.apache.org
+        * MySQL  5.5.16 - http://mysql.com/
 
 
 ==Changes:==
