@@ -4,7 +4,7 @@
 
 The Simple Invoices Market Place enables you to easily find a Simple Invoices service provider.
 
-The following companies are listed here:
+Table of Content
 <wiki:toc max_depth="2" />
 
 ----
