@@ -6,6 +6,7 @@ To run Simple Invoices on your server or computer there are a number of applicat
 
 If you don't have a server please refer to the market place for a list of Simple Invoices service providers who can provide you with Simple Invoices hosting - think google apps but for invoicing
 
+----
 
 == Required ==
 
@@ -20,11 +21,13 @@ If you don't have a server please refer to the market place for a list of Simple
   * The tmp/ directory in the Simple Invoices folder must be writeable by the webserver user (ie chown apache:apache cache)
   * To send emails you will need access to a mail server (smtp)
 
+----
 
 == Recommended ==
 
     * phpMyAdmin http://phpmyadmin.sf.net
 
+----
 
 == Installation ==
 
