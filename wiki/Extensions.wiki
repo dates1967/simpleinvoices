@@ -312,3 +312,117 @@ By default, the template invoice number is stored in custom userfield customer_c
 ===Author===
 
 Marcel van Dorp
+
+----
+
+=Modifications=
+
+Modifications are unintegrated customisations to Simple Invoices
+
+Note: it is preferable if you create an extension rather then a modification, modification where how we used to do stuff prior to the new Simple Invoices extensions system existing
+
+This is the place to detail any add-on or modification your made to your own version of Simple Invoices that the rest of the Simple Invoices community can benefit from
+
+----
+
+==Custom Numbering==
+
+When I saw invoice numbering i have on mind, this isnt good for my. But I have solution for users with <10000 invoices maybe more. open: include/sql_queries.php and paste this code on the end:
+{{{
+function lastInvoiceYearItem($type_id="2",$format="y",$inv_length="3") {
+$year_newid = $type_id.date($format).sprintf("%0".$inv_length."d","0");
+$sql = "SELECT count(`date`) AS count FROM `".TB_PREFIX."invoices` WHERE YEAR(`date`) = YEAR(CURDATE()) AND `type_id` = '".$type_id."'";
+$lastinyear = dbQuery($sql);
+$lastinyear_num = $lastinyear->fetch();
+$year_id = $lastinyear_num["count"]+1;
+$year_newid = $type_id.date($format).sprintf("%0".$inv_length."d",$year_id);
+return $year_newid;
+}
+}}}
+Go to line: 1914 and comment the line, next add this:
+{{{
+':index_id', lastInvoiceYearItem(), //':index_id',
+index::next('invoice',$pref_group[index_group]),
+after // is commented line
+}}}
+This is all, you can format your invoice numbering. But type ID its in this case only 2, bug is reported!
+
+----
+
+==Smart Invoice Numbering==
+
+===Description===
+
+I wanted to output my invoice numbers into this form: 000022, 000023, etc… I decided to do this with a Smarty plugin, so that I wouldn't have to change any of the core code, only my invoice templates.
+
+===Installation===
+
+Upload the PHP file function.invoice_number.php inside the plug-in folder: /simpleinvoices/include/smarty_plugins/ to enable the plugin for all Simple Invoices' template files (all templates inside /simpleinvoices/templates/default).
+
+You're not ready yet. The invoice templates (/templates/invoices/) won't load the plug-in. So, you also need to upload the file function.invoice_number.php into this folder: /templates/invoices/{yourinvoicetemplate}/plugins/.
+
+Now the plug-in is automatically loaded and usable.
+
+===Download===
+
+You can download the zip file [http://www.gelderblomwebdesign.nl/public/simpleinvoices/smarty_invoice_number.zip here]. 
+- or refer the below Code section
+
+===Examples===
+
+====Basic usage====
+
+In most templates, the invoice number is printed with this code:
+{{{
+{$invoice.id}
+}}}
+Change it to this form:
+{{{
+{invoice_number invoiceId=$invoice.id}
+}}}
+This will invoke the Smarty function that adds the 0's, so that the invoice number is exactly 0 characters long, eg: 000022.
+
+====Specify the length====
+
+If you want to specify the length of your invoice number (default is 6), you can easily change this. Just add the parameter length=8, or any other length, to the smarty code. For example:
+{{{
+{invoiceNumber invoiceId=$invoice.id length=8}
+}}}
+
+===Author and copyright===
+
+This code is donated to the Simple Invoices community and is therefor part of the Simple Invoices project and freely usable (philosophy).
+
+The original author is Gelderblom Webdesign, a Dutch webdesign company.
+
+===Code===
+
+File: function.invoice_number.php
+{{{
+<?php
+/**
+ * Smarty plugin
+ * @package Smarty
+ * @subpackage plugins
+ * @author Gelderblom Webdesign, www.gelderblomwebdesign.nl
+ */
+ 
+/**
+ * Invoice number plugin
+ * 
+ * @param mixed $params Array with 'invoiceId' and 'length'. Length will be defaulted to 6, if not set.
+ * @param Object $smarty
+ * @example {invoiceNumber invoiceId=$invoice.id length=8}
+ */
+function smarty_function_invoice_number($params, &$smarty)
+{
+	if(empty($params['length']))
+	{
+		$params['length'] = 6;
+	}
+	$comp = $params['length'] - strlen($params['invoiceId']);
+	for($i = 1; $i <= $comp; $i++) echo '0';
+	echo $params['invoiceId'];
+}
+?>
+}}}
