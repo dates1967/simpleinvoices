@@ -7,7 +7,7 @@ http://SimpleInvoices.org
 http://TeamMC.cc - john@teammc.cc
 
 
-Instructions:
+==Instructions:==
 
 	1. Unzip the "Simple Invoices For Windows" folder to your desktop, hard drive or a portable USB drive.
 	2. Run "SimpleInvoices.exe" inside the "Simple Invoices For Windows" folder
@@ -16,7 +16,7 @@ Instructions:
 		"Browser" to start Simple Invoices in you web browser (close Simple Invoices using its tray icon).
 	4. Follow the instruction on screen to configure Simple Invoices.
 
-Configuration:
+==Configuration:==
 
 	To configure options for Simple Invoices itself please visit http://SimpleInvoices.org/install
 
@@ -48,7 +48,7 @@ Configuration:
 		WebAddress=localhost
 			Setting this to blank will allow other computers on your network to access SimpleInvoice givin the correct URL.
 			For this to work other factors need to be acounted for including network configuration and firewall settings.
-			The URL should be in this format: http://<IP>:<port> check settings.ini for "WebPort"
+			The URL should be in this format: http://*IP*:*port* check settings.ini for "WebPort"
 
 		WebPort=8877
 			Change this only if you get a message saying apache wont start and you suspect that another program on your computer is using this port.
@@ -58,7 +58,7 @@ Configuration:
 
 			
 
-Version Notes:
+==Version Notes:==
 	-AutoIT 3.3.6.1 - http://www.autoitscript.com
 	-Simple Invoices 2011.1  - http://www.simpleinvoices.org
 	-PHP 5.2.17 - http://php.net
@@ -66,7 +66,7 @@ Version Notes:
 	-MySQL  5.5.16 - http://mysql.com/
 
 
-Changes:
+==Changes:==
 	1.6.1 - 12/1/2011
 		Changed: Restructured Settings.ini for simplicity
 		Changed: ToggleServer (previously "startstopserveroption") is disabled by default
