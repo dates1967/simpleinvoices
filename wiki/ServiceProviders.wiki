@@ -4,6 +4,7 @@
 
 The Simple Invoices Market Place enables you to easily find a Simple Invoices service provider.
 
+----
 
 == SmarterInvoices.com ==
 [http://www.smarterinvoices.com Smarter Invoices] - The Simple Invoices 'hosting' company
@@ -14,6 +15,7 @@ Smarter Invoices provides various hosting services for Simple Invoices specifica
 
 Similar to SixHQ.com, Smarter Invoices was started by [[people/justin|Justin Kelly]], the founder and still one of the current developers of Simple Invoices with the aim is to provide services to enhance your Simple Invoices experience. 
 
+----
 
 == SixHQ  ==
 [http://www.sixhq.com SixHQ] - The Simple Invoices 'eXtensions' company
@@ -39,6 +41,7 @@ If you have any queries about how SixHQ can help you please don't hesitate to dr
 
 Whatever your Simple Invoices needs are we can sort it out.
 
+----
 
 == Acuras  ==
 [http://www.acuras.co.uk/ ]
@@ -51,6 +54,7 @@ Whatever your Simple Invoices needs are we can sort it out.
   * Custom reports
   * Bespoke extensions development
 
+----
 
 == TOCICI ==
 [http://www.tocici.com/]
@@ -59,6 +63,7 @@ Whatever your Simple Invoices needs are we can sort it out.
   * Hosting
   * Technical support
 
+----
 
 == Bunology  ==
 [http://www.bunology.com.au/]
@@ -70,6 +75,7 @@ Whatever your Simple Invoices needs are we can sort it out.
   * Invoice template customisation
   * Custom reports
 
+----
 
 == Open Sussex  ==
 [http://www.opensussex.net]
@@ -78,6 +84,7 @@ Whatever your Simple Invoices needs are we can sort it out.
   * Installation
   * Hosting
 
+----
 
 == OutsourceIT  ==
 [http://www.simplyoutsourceit.com/solutions-SimpleInvoices.html www.simplyoutsourceit.com]
@@ -88,6 +95,7 @@ Whatever your Simple Invoices needs are we can sort it out.
   * Technical support
   * Invoice template customisation
 
+----
 
 == HostSphere  ==
 [http://hostsphere.co.uk/news/item/15-new-one-click-installers-6-of-them www.hostsphere.co.uk]
@@ -95,6 +103,7 @@ Whatever your Simple Invoices needs are we can sort it out.
 ** Available Simple Invoices services** 
   * Simple Invoices is available via their 1 click installers
 
+----
 
 == Hexahost ==
 [http://hexahost.com/simpleinvoices-web-hosting www.hexahost.com]
@@ -102,6 +111,7 @@ Whatever your Simple Invoices needs are we can sort it out.
 ** Available Simple Invoices services** 
   * Simple Invoices hosting
 
+----
 
 == Why a Market Place? ==
 Though the Simple Invoices [[http://www.simpleinvoices.org/forum|Forums]] rock and provide the level of support that most people will need, it became clear that some members of the Simple Invoices community required a level of support that was not practical under the normal open source/community model
@@ -112,6 +122,7 @@ The main aim of the Market Place is to create an ecosystem around Simple Invoice
 
 For more on why the Market Place was started refer: http://www.sixhq.com/#why
 
+----
 
 == How to join ==
 If you would like your company listed here as a Simple Invoices service provider please contact us via twitter (@SimpleInvoices)
