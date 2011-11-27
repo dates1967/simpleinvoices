@@ -1,4 +1,6 @@
+#summary All information regarding the release management.
 #labels Phase-Design,Phase-Implementation,Phase-QA,Phase-Deploy
+
 = Release Management =
 In order to get a better and more stable code we try to formalize the release management.
 
