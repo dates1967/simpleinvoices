@@ -3,7 +3,7 @@
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] || [Escaping] ||
 
 
---- 2010.3 ---
+--- Next major release ---
 
  * beta 1
    * review inv_status - jk
