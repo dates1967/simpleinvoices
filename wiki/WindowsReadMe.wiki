@@ -1,4 +1,4 @@
-#summary Copy of the ReadMe.txt included in the SI For Windows package
+#summary ReadMe.txt included in the SI For Windows package
 
 =Simple Invoices For Windows=
 
