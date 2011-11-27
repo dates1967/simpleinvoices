@@ -12,30 +12,21 @@ The easiest way to get involved in the Simple Invoices community is to download 
 
 
 ==  Translations ==
-
-  * Refer to [http://code.google.com/p/simpleinvoices/wiki/translate translate] for more info on all things tranlsation
-  * Update an existing translation: Simple Invoices has been translated in a number of languages but not all of these translated are actively maintained (with each new release of Simple Invoices there are new phrases to be translated). Check of the [http://code.google.com/p/simpleinvoices/source/browse/trunk/lang/lang_check.txt Lang Check page] to find out if there are any translations you can help update
-  * New translation: Your language is not in the [http://code.google.com/p/simpleinvoices/source/browse/trunk/lang/lang_check.txt Lang Check page]. That means you are free to create a new translation of Simple Invoices! Its not to hard, just grab the latest release(or svn if possible) and translate 1 text file (note: there are a few hundred phrases to translate).
+We have already more than 16 translations. But not all of them are finished. And we always welcome new translations. We have moved all the information regarding translation onto another [http://code.google.com/p/simpleinvoices/wiki/translate page] in order to have all the relevant information at one place.
 
 
 ==  Helping out on the forums ==
 
-       * Theres always some posts on the forum that can be better answered. If you can help out answering/resolving someones issue its a great help and a great way to build a stronger community
-       * Got some useful tips: Feel free to post any tips/updates/whaterver in our forum or blog. 
+       * There is always some posts on the [http://www.simpleinvoices.org/forum forum] that can be better answered. If you can help out answering/resolving someones issue its a great help and a great way to build a stronger community
+       * Got some useful tips: Feel free to post any tips/updates/whatever in our forum or blog. 
 
 
 == Coding ==
 
-       * Know or want to know PHP and or MySQL. Jump on the [http://www.simpleinvoices.org/forum forum] or check out our roadmap to see whats planned for future development. If you can lend a hand coding its always greatly appreciated.
+       * Know or want to know PHP and or MySQL. Jump on the [http://dev.simpleinvoices.org/ developers forum on posterous] or check out our [http://code.google.com/p/simpleinvoices/wiki/todo todo list] to see whats planned for future development. If you can lend a hand coding its always greatly appreciated.
        * Note: for those interested in Simple Invoices development I suggest a quick read of the following links
          * [http://gettingreal.37signals.com/toc.php 37signals.com :: less features, small and passionate dev teams]
-         * Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we havent thought about it or bugged it doesnt mean it shouldnt get done (alot of Simple Invoices dev is stuff someone thought about at 2am in the morning and just started coding). Just keep in mind the above reading: have fun and keep it simple. 
-
-
-==  Jobs ==
-
-  * Are your a casual developer, UI freak? Looking to work on Simple Invoices but svn head may not be your style. No worries, there are plenty of 'jobs' in the Simple Invoices community that need workers
-  * The complete todo list for Simple Invoices is at http://code.google.com/p/simpleinvoices/wiki/todo , feel free to jump in and help with any items you want - any help is always appreciated
+         * Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we have not thought about it or bugged it does not mean it should not get done. It would be good if you could write in the developers forum about it too. Maybe someone else already started the same thing but did not finish it till now.
 
 
 == Donating ==
