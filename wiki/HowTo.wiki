@@ -20,7 +20,7 @@ to
 authentication.enabled	       = true
 }}}
 
-For more information see here: http://simpleinvoices.org/config#authentication
+For more information see [http://code.google.com/p/simpleinvoices/wiki/Config#Authentication the authentication section in the config wiki]
 
 That's it - you can login with:
 
