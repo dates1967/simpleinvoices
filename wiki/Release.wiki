@@ -32,3 +32,10 @@ Then continue to work on trunk
 If trunk is a long way off getting stable and there are pressing issues I do a copy of the release branch and make it as Update 1 or the next release up (with bugs fix in this branch and trunk)
 
 then repeat!!
+
+== Windows Release Process ==
+The windows version name will correspond to the simple invoices version, If updates/fixes are needed for the program and not for si then the new release's version will have "fix-1" added to it name.
+
+ * update windows release package with new si stable from google code
+ * upload to google code
+ * announce on si list
