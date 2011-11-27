@@ -2,9 +2,7 @@
 
 =Simple Invoices For Windows=
 
-http://SimpleInvoices.org
-
-http://TeamMC.cc - john@teammc.cc
+The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 
 ==Instructions:==
