@@ -29,6 +29,6 @@ If all looks OK with the current code I do the release
 
 Then continue to work on trunk
 
-If trunk is a away off getting stable and there are pressing issues I do a copy of the release branch and make it as Update 1 or the next release up (with bugs fix in this branch and trunk)
+If trunk is a long way off getting stable and there are pressing issues I do a copy of the release branch and make it as Update 1 or the next release up (with bugs fix in this branch and trunk)
 
 then repeat!!
