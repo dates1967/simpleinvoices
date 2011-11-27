@@ -1,0 +1,70 @@
+#summary Extensions provides a basic method to develop and distribute integrated customisations for Simple Invoices.
+
+=Extensions=
+
+----
+
+==Expense Extension==
+
+===About===
+
+This extensions provides Simple Invoices with expense features
+
+Note:
+
+The main purpose of this extension is for reporting
+You can assign an expense to a biller, customer, invoice or product - but this is for reporting purposes only, you can't add an expense to an invoice and have that expense added to the total etc..
+
+===Install===
+
+This extension is available in svn (as at 2009/08/08) and will be included in 2009.1 release. To enable this extension download the release with this extension then go to 'Settings' tab and select 'Settings'. In this page select 'Extensions' and then click the 'Register” link next to the Expenses extension and clic. Once registered just click the 'Enable' link next to Expenses in the list of extensions.
+
+Once the extension has been enabled please run the below sql in your Simple Invoices database to create the required tables
+
+===SQL===
+
+To enable the extension - only run if you don't activate the extension via the GUI
+{{{
+ INSERT INTO si_extensions VALUES ('2','1','expense','expense','1');
+To create the tables
+
+CREATE TABLE  `si_expense` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`amount` DECIMAL(25,6) NOT NULL ,
+`domain_id` INT( 11 ) NOT NULL ,
+`expense_account_id` INT( 11 ) NOT NULL ,
+`biller_id` INT( 11 ) NOT NULL ,
+`customer_id` INT( 11 ) NOT NULL ,
+`invoice_id` INT( 11 ) NOT NULL ,
+`product_id` INT( 11 ) NOT NULL ,
+`date` DATE NOT NULL ,
+`note` TEXT NOT NULL ,
+`status` INT(1) NOT NULL 
+) ENGINE = INNODB ;
+ 
+CREATE TABLE  `si_expense_account` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`domain_id` INT( 11 ) NOT NULL ,
+`name` VARCHAR( 255 ) NOT NULL
+) ENGINE = INNODB;
+ 
+INSERT INTO `si_expense_account` (`id`, `domain_id`, `name`) VALUES (NULL, '1', 'Car expense'), (NULL, '1', 'IT costs');
+ 
+CREATE TABLE `si_expense_item_tax` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+`expense_id` INT( 11 ) NOT NULL ,
+`tax_id` INT( 11 ) NOT NULL ,
+`tax_type` VARCHAR( 1 ) NOT NULL ,
+`tax_rate` DECIMAL( 25, 6 ) NOT NULL ,
+`tax_amount` DECIMAL( 25, 2 ) NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+}}}
+
+===Who===
+
+This extension was developed by Justin Kelly of SixHQ for Carlos of Maximum Consult
+
+===License===
+
+This extension is released under the GNU GPL 3
