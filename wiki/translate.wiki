@@ -1,7 +1,7 @@
 #summary How to contribute translations.
 #labels Phase-Implementation
 
-=How to translate SimpleInvoices=
+=How to translate Simple Invoices=
 
 There are 2 different ways to translate Simple Invoices:
 
