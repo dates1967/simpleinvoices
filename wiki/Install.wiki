@@ -1,4 +1,4 @@
-#summary Detailer installation instructions
+#summary Detailed installation instructions
 
 = Installing Simple Invoices =
 ----
