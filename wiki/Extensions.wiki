@@ -426,3 +426,89 @@ function smarty_function_invoice_number($params, &$smarty)
 }
 ?>
 }}}
+
+----
+
+==Per operator invoice numbers==
+
+===Installation===
+====Add si_biller_index table====
+
+Add a new table, si_biller_index, that is similar in function to si_index, just with one index per operator:
+
+{{{
+CREATE TABLE IF NOT EXISTS `simple_invoices`.`si_biller_index` ( 
+    `biller_id` INT(10) NOT NULL , 
+    `invoice_number` INT(11) NOT NULL , 
+    INDEX `fk_si_biller_index_1` (`biller_id` ASC) , 
+    PRIMARY KEY (`biller_id`) , 
+    CONSTRAINT `fk_si_biller_index_1` 
+    FOREIGN KEY (`biller_id` ) REFERENCES `simple_invoices`.`si_biller` (`id` ) ON DELETE CASCADE ON UPDATE CASCADE
+);
+}}}
+
+====Change SQL to use the new table====
+
+Have si_biller_index updated in much the same way as for si_index (in sql_queries.php) when a new invoice is created and add a new column, invoice_number, to si_invoices where this per operator index is inserted.
+
+====Show invoice number in UI====
+
+Then make sure that the invoice_number is shown in the manage view of the invoices module and also that it is used in the default template for printing.
+
+===Code===
+
+Patch for this functionality (here in combination with [http://www.simpleinvoices.org/wiki/template_for_f60_invoice_form template_for_f60_invoice_form]) can be found [http://www.simpleinvoices.org/_media/wiki/per-operator-invoice-number.tar.bz2?id=wiki%3Aper_operator_invoice_numbers&cache=cache here].
+
+----
+
+==Customer login app==
+
+===Info===
+
+Countrygirl - from the Simple Invoices forum developed a 'customer login app' for Simple Invoices
+
+refer below link for the forum post
+
+http://simpleinvoices.org/forum/discussion/1150/customer-login-area-available-for-testing
+
+===Setup===
+
+Download: [http://www.simpleinvoices.org/_media/wiki/client_area.zip?id=wiki%3Acustomer_login_app&cache=cache client_area.zip]
+
+as listed in the setup.txt file
+
+1. Run the following SQL commands in phpMyAdmin or insert the columns manually into the si_customers database if you want them to appear in a specific place
+
+ALTER TABLE `si_customers` ADD `username` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL
+
+ALTER TABLE `si_customers` ADD `password` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL
+
+ALTER TABLE `si_customers` ADD `usertype` VARCHAR(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL
+
+2. Add to simpleinvoices/lang/en-gb/lang.php (these values are all in alphabetical order so you may want to keep them that way)
+
+$LANG['password'] = “Password”;1 $LANG['username'] = “Username”;1 $LANG['usertype'] = “User Type”;//1
+
+3. Save lang.php and reupload to simpleinvoices/lang/en-gb/
+
+4. Put values in all of the new username, password and usertype fields in the si_customers table usertype should be enterred as “user” without the quotes.
+
+5. Open dbc.php folder and change the top two lines of code
+
+$dbname = 'database_name'; $link = mysql_connect(“localhost”,”db_username”,”db_password”) or die(“Couldn't make connection.”);
+
+change database_name to your database name change db_username to your database username change db_password to your database password
+
+6. Open myaccount.php and change email@domain.com on line 138 to the email address that you accept paypal payments through, you can also change currency_code=USD to currency_code=CAD if you want your funds in Canadian funds
+
+7. Upload the client_area to your web server, I do not have mine within the simple invoices folder, mine is separate. If you do yours the same way you should be able to get there by going to http://www.yourdomain.com/client_area
+
+Note: In order to get the invoice view pdf symbol to work you need to go into the simpleinvoices application and export each invoice as a pdf. The pdf automatically wants to save in this format Invoice1.pdf, keep that format and save it, then upload the pdf to the invoices folder
+
+Note: This is a very simple system and can be used temporarily until the simple invoices gang get's their customer login are up and running.
+
+Note: My client area code is put into the template of my web site so it looks identical to the rest of my web site. You can wrap every one of these pages with your website code to make yours the same way, or you can just use it the way it is. If you do want to wrap it with your web site code I have marked in each page where to put the code with:
+
+<!– This is where you put the html for the top portion of your web site –>
+
+<!– This is where you put the html for the bottom portion of your web site –>
