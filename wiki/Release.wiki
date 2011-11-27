@@ -1,5 +1,9 @@
 = Release how-to =
 
+== Goal ==
+
+ * Release code that works and is stable
+
 == Current SVN structure ==
 
  * /trunk
