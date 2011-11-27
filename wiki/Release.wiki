@@ -1,17 +1,19 @@
-#Release how-to.
+= Release how-to =
 
-= Current SVN structure =
+== Current SVN structure ==
 
  * /trunk
  * /branches/stable
  * /branches/stable-'release or feature dev name'
-
+ 
+== SVN Process ==
 The process I have used to do releases of SimpleInvoices is
 
  * when trunk is getting close to stable branch to /branches with the planned release name ie. /branches/2012-1
  * and finalise the code there and release
  * merge changes between /trunk and the release branch as needed to make it all happy pre prelease
 
+== Release Process ==
 If this a release when lots of changes I do a number of beta releases to make sure everything is working as expected and iron out any final bugs
 
 If all looks OK with the current code I do the release
