@@ -2,6 +2,11 @@
 
 || *Wiki pages:* ||[todo] ||[done] || [ideas]|| [known_issues] || [notes] || [Escaping] ||
 
+--- next minor release ---
+
+ * 2011.2
+   * issue 201
+   * ACH/PaymentsGateway.com code
 
 --- Next major release ---
 
