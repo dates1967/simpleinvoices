@@ -1,0 +1,32 @@
+#summary Several small how to's
+#labels Phase-Support,Phase-Deploy
+
+<wiki:toc max_depth="2" />
+= How to... =
+
+== ... enable the login system ==
+
+Simple Invoices has an optional login system to allow you to protect your install of Simple Invoices with a username/password system.
+
+If you are using a version of Simple Invoices later than 2007 08 then all you have to do is edit config/config.ini and set authentication.enabled to true.
+
+To do this just change the file from
+{{{
+authentication.enabled	       = false
+}}}
+
+to
+{{{
+authentication.enabled	       = true
+}}}
+
+For more information see here: http://simpleinvoices.org/config#authentication
+
+That's it - you can login with:
+
+|| Email address || demo@simpleinvoices.org ||
+|| Password || demo ||
+
+Since Simple Invoices 2009.1 you can edit a username and password within Simple Invoices - go to the People tab and select Users.
+
+For developers: The password is hashed in the DB with MD5(new_password).
