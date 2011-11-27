@@ -33,7 +33,7 @@ Quick install guide:
            * 'database.params.dbname' to the name of the database (normally "simple_invoices"),
            * 'database.params.username' to the database username for the database specified in $db_name,
            * 'database.params.password' to the password of the database user
-        * Set the tmp directory as writeable. To do this cd to the Simple Invoices directory (cd /var/www/html/simpleinvoices) and chown the cache directory to the apache(web server) user (chown apache:apache cache) or if your lazy just chmod 777 the directory (chmod -Rv 777 tmp*) 
+        * Set the tmp directory as writeable. To do this cd to the Simple Invoices directory (cd /var/www/html/simpleinvoices) and chown the cache directory to the apache(web server) user (chown apache:apache cache) or if your lazy just chmod 777 the directory (chmod -Rv 777 tmp) 
    * Open up Simple Invoices in your web browser ie. ( http://localhost/simpleinvoices ) and follow the 3 step installer.
    * Simple invoices has been installed
 
@@ -46,14 +46,15 @@ If creating PDF in Simple Invoices didn't 'Just Work' there are a couple of chan
        * The first step is to ensure the pdf exports directory writeable by the webserver
          * To do this the cachce directory in your Simple Invoices folder must be writeable, in unix cd to the Simple Invoices 'tmp' directory (cd /var/www/html/simpleinvoices/tmp) and chown the cache directory to the apache (webserver user) (chown apache:apache cache), in windows just browse to the cache folder and make sure its writeable by all users.
          * We also need to make the pdf fonts directory writeable. To do this in unix chown the ./library/pdf/fpdf directory to the apache(web server) user (chmown apache:apache library/pdf/fpdf/), in windows just browse to the fdpf folder(in the pdf folder) and make sure its writeable by all users. 
-      *//gd2// Once this cache folder has been made writeable the next step is to test if version of PHP has GD2 support
+      *Once this cache folder has been made writeable the next step is to test if version of PHP has GD2 support
           * GD2 is an extension to PHP which enables PHP to create and manipulate image files in a variety of different image formats
           * To test if your version of PHP has GD2 support open up your internet browser and browse inside Siple Invoice folder to the phpinfo.php file (http://localhost/simpleinvoices/phpinfo.php)
           * Once phpinfo.php is open in your browser, scroll down to the 'gd' section and check the values for 'GD Support' and 'GD Version'. If all goes well you should see similar information to below
-            * <code>          
+      {{{
            gd
            GD Support 	enabled
-           GD Version 	2.0 or higher</code>
+           GD Version 	2.0 or higher
+}}}
           * If your PHP doesnt have GD2 support enabled or doesnt have GD2 or above please refer to your operating systems PHP guide on how to enable this. In Debain/Ubuntu just install the php-gd package through 'Add Applications' to get gd support 
       * Once you have confirmed your PHP has GD2 support we must test if your php.ini file needs to be altered to enable pdf creation
          * To test if you need to modify your php.ini file open your internet browser and go to your Simple Invoices directory ./library/pdf/ (http://localhost/simpleinvoices/library/pdf)
@@ -61,35 +62,40 @@ If creating PDF in Simple Invoices didn't 'Just Work' there are a couple of chan
          * The 'Source' area the 'Single URL' is set to www.google.com by default, if you are connected to the internet just leave this as is but if your currently not connected to the internet change this to a valid webpage on your system ie. http://localhost/simpleinvoices and scroll to the bottom of the page and click the 'Convert File' button
          * If all goes well a pdf of www.google.com homepage(or the valid url you entered) will be created and displayed in your pdf viewer
          * If a pdf wasn't created and the below error occurred this mean you will have to alter your php.ini file
-           * <code>
+           {{{
            Fatal error: Allowed memory size of 8388608 bytes exhausted (tried to allocate 4864 bytes) 
-           in /var/www/simpleinvoices/pdf/filter.data.html2xhtml.class.php on line 8              </code>
+           in /var/www/simpleinvoices/pdf/filter.data.html2xhtml.class.php on line 8
+}}}
       * php.ini
         * If in the above procedure you found that a pdf cant be created and an 'Allowed memory size' error occurred you have to edit your php.ini
         * To find where your php.ini file is stored on the system browse again to tha phpinfo.php page (http://localhost/simpleinvoices/phpinfo.php) and note where the 'Configuration File (php.ini) Path' is referring to.
         * Open the php.ini file from the location referred in the previous step in your favourite text editor (notepad,vi,emacs,gedit...) and alter the specified 'memory_limit' number
           * Find the line 'memory_limit =' (refer below) and change this from the default 8M to 64M (more if your adventurous :) )
-            * <code>
+            
+            {{{
             ;;;;;;;;;;;;;;;;;;;
             ; Resource Limits ;
             ;;;;;;;;;;;;;;;;;;;
 
             max_execution_time = 90     ; Maximum execution time of each script, in seconds
             max_input_time = 60 ; Maximum amount of time each script may spend parsing request data
-            memory_limit = 8M      ; Maximum amount of memory a script may consume (8MB)               </code>
+            memory_limit = 8M      ; Maximum amount of memory a script may consume (8MB)
+}}}
           * Your altered php.ini file should now looking like below
-            * <code>
+             {{{
             ;;;;;;;;;;;;;;;;;;;
             ; Resource Limits ;
             ;;;;;;;;;;;;;;;;;;;
 
             max_execution_time = 90     ; Maximum execution time of each script, in seconds
             max_input_time = 60 ; Maximum amount of time each script may spend parsing request data
-            memory_limit = 64M      ; Maximum amount of memory a script may consume (8MB)             </code>
+            memory_limit = 64M      ; Maximum amount of memory a script may consume (8MB) 
+}}}
          * For this change to come into affect you need to reload apache, in red hat based systems sudo /etc/init.d/httpd reload or in ubuntu/debian sudo /etc/init.d/apache2 reload. If your unsure of this step or your a windows users just restart your system and it'll be right. 
 
 
-===== Final steps =====
+== Final steps ==
+
   * Everything has been setup and configured now, Simple Invoice is ready to be used
   * Open your Internet browser and go to http://localhost/simpleinvoices and use Simple Invoices as you wish
   * Installation is finished 
