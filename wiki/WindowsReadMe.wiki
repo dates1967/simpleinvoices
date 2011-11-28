@@ -16,7 +16,7 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 ==Configuration:==
 
-	To configure options for Simple Invoices itself please visit http://SimpleInvoices.org/install
+	To configure options for Simple Invoices itself please visit [Install]
 
 	To configure options specific to "SimpleInvoices for windows" (not Simple Invoices)
 	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
