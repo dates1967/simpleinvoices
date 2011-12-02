@@ -18,7 +18,7 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 	To configure options for Simple Invoices itself please visit [Install]
 
-	To configure options specific to "SimpleInvoices for windows" (not Simple Invoices)
+	To configure options specific to "Simple Invoices For Windows" (not Simple Invoices)
 	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
 
 	* GUI=1
@@ -54,7 +54,7 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 			
 
-==Version Notes:==
+==Software Versions:==
         * AutoIT 3.3.6.1 - http://www.autoitscript.com
         * Simple Invoices 2011.1  - http://www.simpleinvoices.org
         * PHP 5.2.17 - http://php.net
@@ -63,12 +63,14 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 
 ==Changes:==
-      * 1.6.1 - 12/1/2011
+      * 1.6.1 - 12/X/2011
+               * Changed: Split some primary functions into separate include files to make group editing tolerable
+               * Changed: Optimized this readme for google code wiki (will be maintained on google code going forward)
                * Changed: Restructured Settings.ini for simplicity
-               * Changed: ToggleServer (previously "startstopserveroption") is disabled by default
+               * Changed: "ToggleServer" (previously "startstopserveroption") is disabled by default
                * Fixed: Window activation priority when opening program when alreading running
-               * Added: SQLServer option in settings.ini, use this to disable the built in sql server and use your own
-               * Added: SQLAddress option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
+               * Added: "SQLServer" option in settings.ini, use this to disable the built in sql server and use your own
+               * Added: "SQLAddress" option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
                * Added: Custom GUI for GUI prompt
                * Added: Option on GUI prompt screen to set the default start option
                * Fixed: Minor code optimations and adjustments
