@@ -43,7 +43,7 @@ ServerRoot "!TEAMMCPATH!\apache"
 # prevent Apache from glomming onto all bound IP addresses.
 #
 #Listen 12.34.56.78:80
-Listen !TEAMMCADDRESSAPACHELISTEN!!TEAMMCWEBPORT!
+Listen !TEAMMCWEBADDRESS_HTTPD!!TEAMMCWEBPORT!
 
 #
 # Dynamic Shared Object (DSO) Support

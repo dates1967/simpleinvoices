@@ -1,0 +1,190 @@
+[Sun Nov 27 13:41:42 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 13:41:43 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 13:41:43 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 13:41:43 2011] [notice] Parent: Created child process 4908
+[Sun Nov 27 13:41:43 2011] [notice] Child 4908: Child process is running
+[Sun Nov 27 13:41:43 2011] [notice] Child 4908: Acquired the start mutex.
+[Sun Nov 27 13:41:43 2011] [notice] Child 4908: Starting 64 worker threads.
+[Sun Nov 27 13:41:43 2011] [notice] Child 4908: Starting thread to listen on port 8877.
+[Sun Nov 27 14:12:43 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 14:12:43 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 14:12:43 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 14:12:43 2011] [notice] Parent: Created child process 5720
+[Sun Nov 27 14:12:44 2011] [notice] Child 5720: Child process is running
+[Sun Nov 27 14:12:44 2011] [notice] Child 5720: Acquired the start mutex.
+[Sun Nov 27 14:12:44 2011] [notice] Child 5720: Starting 64 worker threads.
+[Sun Nov 27 14:12:44 2011] [notice] Child 5720: Starting thread to listen on port 8877.
+[Sun Nov 27 14:12:45 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 14:12:57 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 14:12:57 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 14:12:57 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 14:12:57 2011] [notice] Parent: Created child process 6120
+[Sun Nov 27 14:12:57 2011] [notice] Child 6120: Child process is running
+[Sun Nov 27 14:12:57 2011] [notice] Child 6120: Acquired the start mutex.
+[Sun Nov 27 14:12:57 2011] [notice] Child 6120: Starting 64 worker threads.
+[Sun Nov 27 14:12:57 2011] [notice] Child 6120: Starting thread to listen on port 8877.
+[Sun Nov 27 14:12:58 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 14:21:09 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 14:21:10 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 14:21:10 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 14:21:10 2011] [notice] Parent: Created child process 2000
+[Sun Nov 27 14:21:10 2011] [notice] Child 2000: Child process is running
+[Sun Nov 27 14:21:10 2011] [notice] Child 2000: Acquired the start mutex.
+[Sun Nov 27 14:21:10 2011] [notice] Child 2000: Starting 64 worker threads.
+[Sun Nov 27 14:21:10 2011] [notice] Child 2000: Starting thread to listen on port 8877.
+[Sun Nov 27 14:21:11 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:30:48 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:30:48 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:30:48 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:30:48 2011] [notice] Parent: Created child process 6060
+[Sun Nov 27 15:30:48 2011] [notice] Child 6060: Child process is running
+[Sun Nov 27 15:30:48 2011] [notice] Child 6060: Acquired the start mutex.
+[Sun Nov 27 15:30:48 2011] [notice] Child 6060: Starting 64 worker threads.
+[Sun Nov 27 15:30:48 2011] [notice] Child 6060: Starting thread to listen on port 8877.
+[Sun Nov 27 15:30:49 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:31:16 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:31:16 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:31:16 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:31:16 2011] [notice] Parent: Created child process 5340
+[Sun Nov 27 15:31:16 2011] [notice] Child 5340: Child process is running
+[Sun Nov 27 15:31:16 2011] [notice] Child 5340: Acquired the start mutex.
+[Sun Nov 27 15:31:16 2011] [notice] Child 5340: Starting 64 worker threads.
+[Sun Nov 27 15:31:16 2011] [notice] Child 5340: Starting thread to listen on port 8877.
+[Sun Nov 27 15:31:17 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:32:19 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:32:19 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:32:19 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:32:19 2011] [notice] Parent: Created child process 5224
+[Sun Nov 27 15:32:20 2011] [notice] Child 5224: Child process is running
+[Sun Nov 27 15:32:20 2011] [notice] Child 5224: Acquired the start mutex.
+[Sun Nov 27 15:32:20 2011] [notice] Child 5224: Starting 64 worker threads.
+[Sun Nov 27 15:32:20 2011] [notice] Child 5224: Starting thread to listen on port 8877.
+[Sun Nov 27 15:32:20 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:36:07 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:36:07 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:36:07 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:36:07 2011] [notice] Parent: Created child process 3932
+[Sun Nov 27 15:36:08 2011] [notice] Child 3932: Child process is running
+[Sun Nov 27 15:36:08 2011] [notice] Child 3932: Acquired the start mutex.
+[Sun Nov 27 15:36:08 2011] [notice] Child 3932: Starting 64 worker threads.
+[Sun Nov 27 15:36:08 2011] [notice] Child 3932: Starting thread to listen on port 8877.
+[Sun Nov 27 15:36:08 2011] [error] [client 10.8.0.102] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://10.8.0.102:8877/
+[Sun Nov 27 15:36:26 2011] [error] [client 10.8.0.102] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://10.8.0.102:8877/
+[Sun Nov 27 15:43:56 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:43:56 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:43:56 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:43:56 2011] [notice] Parent: Created child process 1728
+[Sun Nov 27 15:43:56 2011] [notice] Child 1728: Child process is running
+[Sun Nov 27 15:43:56 2011] [notice] Child 1728: Acquired the start mutex.
+[Sun Nov 27 15:43:56 2011] [notice] Child 1728: Starting 64 worker threads.
+[Sun Nov 27 15:43:56 2011] [notice] Child 1728: Starting thread to listen on port 8877.
+[Sun Nov 27 15:43:57 2011] [error] [client 10.8.0.102] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://10.8.0.102:8877/
+[Sun Nov 27 15:45:52 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:45:53 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:45:53 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:45:53 2011] [notice] Parent: Created child process 5872
+[Sun Nov 27 15:45:53 2011] [notice] Child 5872: Child process is running
+[Sun Nov 27 15:45:53 2011] [notice] Child 5872: Acquired the start mutex.
+[Sun Nov 27 15:45:53 2011] [notice] Child 5872: Starting 64 worker threads.
+[Sun Nov 27 15:45:53 2011] [notice] Child 5872: Starting thread to listen on port 8877.
+[Sun Nov 27 15:45:53 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:58:41 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 15:58:41 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 15:58:41 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 15:58:41 2011] [notice] Parent: Created child process 5992
+[Sun Nov 27 15:58:42 2011] [notice] Child 5992: Child process is running
+[Sun Nov 27 15:58:42 2011] [notice] Child 5992: Acquired the start mutex.
+[Sun Nov 27 15:58:42 2011] [notice] Child 5992: Starting 64 worker threads.
+[Sun Nov 27 15:58:42 2011] [notice] Child 5992: Starting thread to listen on port 8877.
+[Sun Nov 27 15:58:46 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 15:58:52 2011] [error] [client 10.8.0.102] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://10.8.0.102:8877/
+[Sun Nov 27 16:09:01 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:09:01 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:09:01 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:09:01 2011] [notice] Parent: Created child process 260
+[Sun Nov 27 16:09:02 2011] [notice] Child 260: Child process is running
+[Sun Nov 27 16:09:02 2011] [notice] Child 260: Acquired the start mutex.
+[Sun Nov 27 16:09:02 2011] [notice] Child 260: Starting 64 worker threads.
+[Sun Nov 27 16:09:02 2011] [notice] Child 260: Starting thread to listen on port 8877.
+[Sun Nov 27 16:09:02 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:20:50 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:20:50 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:20:50 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:20:50 2011] [notice] Parent: Created child process 3348
+[Sun Nov 27 16:20:51 2011] [notice] Child 3348: Child process is running
+[Sun Nov 27 16:20:51 2011] [notice] Child 3348: Acquired the start mutex.
+[Sun Nov 27 16:20:51 2011] [notice] Child 3348: Starting 64 worker threads.
+[Sun Nov 27 16:20:51 2011] [notice] Child 3348: Starting thread to listen on port 8877.
+[Sun Nov 27 16:20:51 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:21:45 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:21:45 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:21:45 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:21:45 2011] [notice] Parent: Created child process 260
+[Sun Nov 27 16:21:45 2011] [notice] Child 260: Child process is running
+[Sun Nov 27 16:21:45 2011] [notice] Child 260: Acquired the start mutex.
+[Sun Nov 27 16:21:45 2011] [notice] Child 260: Starting 64 worker threads.
+[Sun Nov 27 16:21:45 2011] [notice] Child 260: Starting thread to listen on port 8877.
+[Sun Nov 27 16:21:50 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:21:53 2011] [error] [client 10.8.0.102] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://10.8.0.102:8877/
+[Sun Nov 27 16:24:00 2011] [warn] pid file Z:/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:24:01 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:24:01 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:24:01 2011] [notice] Parent: Created child process 3168
+[Sun Nov 27 16:24:04 2011] [notice] Child 3168: Child process is running
+[Sun Nov 27 16:24:04 2011] [notice] Child 3168: Acquired the start mutex.
+[Sun Nov 27 16:24:04 2011] [notice] Child 3168: Starting 64 worker threads.
+[Sun Nov 27 16:24:04 2011] [notice] Child 3168: Starting thread to listen on port 8877.
+[Sun Nov 27 16:46:10 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:46:11 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:46:11 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:46:11 2011] [notice] Parent: Created child process 5628
+[Sun Nov 27 16:46:11 2011] [notice] Child 5628: Child process is running
+[Sun Nov 27 16:46:11 2011] [notice] Child 5628: Acquired the start mutex.
+[Sun Nov 27 16:46:11 2011] [notice] Child 5628: Starting 64 worker threads.
+[Sun Nov 27 16:46:11 2011] [notice] Child 5628: Starting thread to listen on port 8877.
+[Sun Nov 27 16:46:12 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:46:19 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:46:19 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:46:19 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:46:19 2011] [notice] Parent: Created child process 3912
+[Sun Nov 27 16:46:19 2011] [notice] Child 3912: Child process is running
+[Sun Nov 27 16:46:19 2011] [notice] Child 3912: Acquired the start mutex.
+[Sun Nov 27 16:46:19 2011] [notice] Child 3912: Starting 64 worker threads.
+[Sun Nov 27 16:46:19 2011] [notice] Child 3912: Starting thread to listen on port 8877.
+[Sun Nov 27 16:49:18 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:49:18 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:49:18 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:49:18 2011] [notice] Parent: Created child process 6120
+[Sun Nov 27 16:49:18 2011] [notice] Child 6120: Child process is running
+[Sun Nov 27 16:49:18 2011] [notice] Child 6120: Acquired the start mutex.
+[Sun Nov 27 16:49:18 2011] [notice] Child 6120: Starting 64 worker threads.
+[Sun Nov 27 16:49:18 2011] [notice] Child 6120: Starting thread to listen on port 8877.
+[Sun Nov 27 16:49:19 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:54:26 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Nov 27 16:54:26 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Sun Nov 27 16:54:26 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Sun Nov 27 16:54:26 2011] [notice] Parent: Created child process 3900
+[Sun Nov 27 16:54:27 2011] [notice] Child 3900: Child process is running
+[Sun Nov 27 16:54:27 2011] [notice] Child 3900: Acquired the start mutex.
+[Sun Nov 27 16:54:27 2011] [notice] Child 3900: Starting 64 worker threads.
+[Sun Nov 27 16:54:27 2011] [notice] Child 3900: Starting thread to listen on port 8877.
+[Sun Nov 27 16:54:27 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Sun Nov 27 16:58:18 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Thu Dec 01 22:06:08 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Dec 01 22:06:08 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Thu Dec 01 22:06:08 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Thu Dec 01 22:06:08 2011] [notice] Parent: Created child process 5900
+[Thu Dec 01 22:06:08 2011] [notice] Child 5900: Child process is running
+[Thu Dec 01 22:06:08 2011] [notice] Child 5900: Acquired the start mutex.
+[Thu Dec 01 22:06:08 2011] [notice] Child 5900: Starting 64 worker threads.
+[Thu Dec 01 22:06:08 2011] [notice] Child 5900: Starting thread to listen on port 8877.
+[Thu Dec 01 22:06:09 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
+[Thu Dec 01 22:06:46 2011] [warn] pid file C:/Users/John McLaren/Desktop/Simple Invoices For Windows/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Dec 01 22:06:46 2011] [notice] Apache/2.2.21 (Win32) PHP/5.2.17 configured -- resuming normal operations
+[Thu Dec 01 22:06:46 2011] [notice] Server built: Sep  9 2011 10:26:10
+[Thu Dec 01 22:06:46 2011] [notice] Parent: Created child process 2444
+[Thu Dec 01 22:06:46 2011] [notice] Child 2444: Child process is running
+[Thu Dec 01 22:06:46 2011] [notice] Child 2444: Acquired the start mutex.
+[Thu Dec 01 22:06:46 2011] [notice] Child 2444: Starting 64 worker threads.
+[Thu Dec 01 22:06:46 2011] [notice] Child 2444: Starting thread to listen on port 8877.
+[Thu Dec 01 22:06:47 2011] [error] [client 127.0.0.1] File does not exist: C:/Users/John McLaren/Desktop/Simple Invoices For Windows/www/extensions/tab_menu, referer: http://127.0.0.1:8877/
