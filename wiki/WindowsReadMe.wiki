@@ -2,8 +2,9 @@
 
 =Simple Invoices For Windows=
 
-The windows version is maintained by http://TeamMC.cc - john@teammc.cc
+This Windows based version of Simple Invoices is maintained by John McLaren at http://TeamMC.cc/SimpleInvoices  -  john@teammc.cc
 
+Support may be offered by emailing John or by visiting the Simple Invoices forum at http://www.simpleinvoices.org
 
 ==Instructions:==
 
@@ -16,10 +17,10 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 ==Configuration:==
 
-	To configure options for Simple Invoices itself please visit [Install]
+	To configure options for Simple Invoices itself please visit [Install]  or  http://code.google.com/p/simpleinvoices/wiki/Install
 
 	To configure options specific to "Simple Invoices For Windows" (not Simple Invoices)
-	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
+	open and edit Settings.ini in the "Simple Invoices For Windows" folder. Here is an explanation of the various options you will see in Settings.ini.
 
 	* GUI=1
 		* Setting this to 0 will not allow the user to choose the GUI option when starting Simple Invoices
