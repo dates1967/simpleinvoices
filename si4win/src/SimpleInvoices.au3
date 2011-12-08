@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=y
-#AutoIt3Wrapper_Res_Fileversion=1.6.0.38
+#AutoIt3Wrapper_Res_Fileversion=1.6.0.41
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -52,13 +52,17 @@ Global $DEBUGLOG=iniread($INI_SETTINGS,"SETTINGS","Log",0)
 Global $URL_BASE="http://"&$WEBADDRESS&":"&$WEBPORT
 Global $URL_SCRIPTS=$URL_BASE&"/scripts/"
 Global $URL_SI=$URL_BASE&"/"
-Global $TITLE="Simple Invoices For Windows"
-Global $TITLE_SHORT="Simple Invoices"
+Global $TeamMC_Title="TeamMC Portable Web Apps"
+Global $TITLE=iniread($INI_SETTINGS,"SETTINGS","Title","Portable Web Server")
+Global $TITLE_SHORT=iniread($INI_SETTINGS,"SETTINGS","Title_Short","Portable Web Server")
 Global $Proccess_Apache="simpleinvoices_httpd.exe"
 Global $Proccess_MySQL="simpleinvoices_mysqld.exe"
 
-Global $SIVERSION=_StringProper(iniread("www\config\config.ini","production","version.name","ERROR"));"2010.2 Update 1"
+Global $VERSION_WWW=iniread($INI_SETTINGS,"SETTINGS","Version","Unknown")
 Global $VERSION=FileGetVersion(@AutoItExe)
+Global $URL_WWW=iniread($INI_SETTINGS,"SETTINGS","URL","Unknown")
+Global $URL="www.TeamMC.cc/simpleinvoices"
+
 Global $STATE_SERVER=0
 
 _cfl($TITLE&" "&$VERSION)
@@ -96,15 +100,7 @@ if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=1 then
 	$Tray_ToggleServer=TrayCreateItem("Toggle Server")
 	TrayItemSetOnEvent(-1,"toggleserver")
 endif
-#cs
-if iniread($INI_SETTINGS,"SETTINGS","RemoteFunctionsEnable",0)=1 then
-	TrayCreateItem("Download Database")
-	TrayItemSetOnEvent(-1,"RemoteDBToLocalDB")
 
-	TrayCreateItem("Upload DB Changes")
-	TrayItemSetOnEvent(-1,"LocalChangesToRemoteDB")
-endif
-#ce
 TrayCreateItem("")
 
 TrayCreateItem("About")
@@ -253,5 +249,4 @@ WEnd
 #include <func_stopserver.au3>
 #include <func_startserver.au3>
 #include <func_toggleserver.au3>
-;#include <func_remotedb.au3>
 #Include <func_parseconfig.au3>

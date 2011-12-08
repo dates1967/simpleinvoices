@@ -3,7 +3,7 @@ func TrayExitEvent()
 endfunc
 func About()
 	_cfl("About")
-	_msgbox(64+262144,$TITLE,$TITLE&@CRLF&"Version: "&$VERSION&@CRLF&"www.TeamMC.cc/simpleinvoices"&@CRLF&@CRLF&"Simple Invoices"&@CRLF&"Version: "&$SIVERSION&@CRLF&"www.SimpleInvoices.org")
+	_msgbox(64+262144,$TITLE,$TeamMC_Title&@CRLF&"Version: "&$VERSION&@CRLF&$URL&@CRLF&@CRLF&$TITLE_SHORT&@CRLF&"Version: "&$VERSION_WWW&@CRLF&$URL_WWW)
 endfunc
 func OpenBrowser()
 	_cfl("OpenBrowser")
