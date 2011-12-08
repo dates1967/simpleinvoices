@@ -23,7 +23,7 @@
 #Include <String.au3>
 
 ;=====================================================================================
-if @compiled=0 then;Used Only for test purposes when script is executed as uncompiled
+if @compiled=0 then;Change only for testing purposes when script is executed as uncompiled
 	msgbox(0,"Testing...","Currently Nothing To Do Uncompiled")
 	Exit
 EndIf
