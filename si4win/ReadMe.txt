@@ -1,10 +1,8 @@
-#summary Copy of the ReadMe.txt included in the SI For Windows package
+#summary ReadMe.txt included in the SI For Windows package
 
 =Simple Invoices For Windows=
 
-http://SimpleInvoices.org
-
-http://TeamMC.cc - john@teammc.cc
+The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 
 ==Instructions:==
@@ -18,9 +16,9 @@ http://TeamMC.cc - john@teammc.cc
 
 ==Configuration:==
 
-	To configure options for Simple Invoices itself please visit http://SimpleInvoices.org/install
+	To configure options for Simple Invoices itself please visit [Install] (http://code.google.com/p/simpleinvoices/wiki/Install)
 
-	To configure options specific to "SimpleInvoices for windows" (not Simple Invoices)
+	To configure options specific to "Simple Invoices For Windows" (not Simple Invoices)
 	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
 
 	* GUI=1
@@ -56,7 +54,7 @@ http://TeamMC.cc - john@teammc.cc
 
 			
 
-==Version Notes:==
+==Software Versions:==
         * AutoIT 3.3.6.1 - http://www.autoitscript.com
         * Simple Invoices 2011.1  - http://www.simpleinvoices.org
         * PHP 5.2.17 - http://php.net
@@ -65,51 +63,58 @@ http://TeamMC.cc - john@teammc.cc
 
 
 ==Changes:==
-      * 1.6.1 - 12/1/2011
-		* Changed: Optimized this readme for google code wiki
-		* Changed: Restructured Settings.ini for simplicity
-		* Changed: ToggleServer (previously "startstopserveroption") is disabled by default
-		* Fixed: Window activation priority when opening program when alreading running
-		* Added: SQLServer option in settings.ini, use this to disable the built in sql server and use your own
-		* Added: SQLAddress option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
-		* Added: Custom GUI for GUI prompt
-		* Added: Option on GUI prompt screen to set the default start option
-		* Fixed: Minor code optimations and adjustments
+      * 1.7.0- 12/X/2011
+               * Added: Print button to main menu
+               * Changed: Browser UI menus have been consolidated under the file menu
+               * Changed: Moved "<< Back" button from sub menu to main menu
+               * Added: New ini values for window/program titles, instead of having them embeded
+               * Added: New ini value for si version information instead of detecting it automaticly
+               * Removed: Unused PHP extention for connecting to MSSQL
+               * Changed: Split some primary functions into separate include files to make group editing tolerable
+               * Changed: Optimized this readme for google code wiki (will be maintained on google code going forward)
+               * Changed: Restructured Settings.ini for simplicity
+               * Changed: "ToggleServer" (previously "startstopserveroption") is disabled by default
+               * Fixed: Window activation priority when opening program when alreading running
+               * Added: "SQLServer" option in settings.ini, use this to disable the built in sql server and use your own
+               * Added: "SQLAddress" option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
+               * Added: New Custom GUI for GUI prompt
+               * Added: Option on GUI prompt screen to set the default start option
+               * Fixed: Minor code optimations and adjustments
 
       * 1.6.0 - 9/18/2011
-		* Changed: Updated Apache to 2.2.21
-		* Changed: Updated MySQL to 5.5.16
-		* Changed: Updated To PHP 5.2.17
-		* Changed: Web root folder is now "www" instead of "si"
-		* Fixed: Using default browser option forces tray icon to apear (had no way to exit program otherwise)
-		* Fixed: About dialog not apearing
-		* Fixed: MySQL safe shutdown procedure failing
-		* Note: This release contains No binarys from a 3rd part, they are all direct from their respective projects. Also, no files are compressed (UPX)
+               * Changed: Updated Apache to 2.2.21
+               * Changed: Updated MySQL to 5.5.16
+               * Changed: Updated To PHP 5.2.17
+               * Changed: Web root folder is now "www" instead of "si"
+               * Fixed: Using default browser option forces tray icon to apear (had no way to exit program otherwise)
+               * Fixed: About dialog not apearing
+               * Fixed: MySQL safe shutdown procedure failing
+               * Note: This release contains No binarys from a 3rd part, they are all direct from their respective projects. Also, no files are compressed (UPX)
 
       * 1.5.0 - 5/25/2011
-		* Added: ini Option EnableTrayIcon
-		* Added: Menu items previously used in the tray will no also apear in the 'help' menu
-		* Changed: Tray Disable By Default
-		* Changed: Renamed ini option "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
-		* Changed: Renamed "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
-		* Changed: Updated Simple Invoices to version 2011.1
-		* Changed: Added note to si config.ini, noting that the default port for MySQL is 3306
-		* Changed: Renamed apache and mysql server proccesses to start with "simpleinvoices_" making them easy to find in task manager
-		* Changed: Start or Stop server is now always displayed as "Toggle Server" but prompts you with a confirmation of the action to be taken
-		* Changed: Set password "1234" for mysql root user
-		* Fixed: Simple Invoices version not showing in about dialog
-		* Fixed: Default mysql port was set to 3306 instead of 3304 if settings.ini was missing
-		* Fixed: Default bind address was set incorrectly if settings.ini was missing
-		* Fixed: If bind address was blank (accept on all addresses) a false error would be displayed
-		* Fixed: Typo in settings.ini - height value was being ignored because key was spelled "hight"
-		* Note: Other minor tweaks and internal script adjustments
+               * Added: ini Option EnableTrayIcon
+               * Added: Menu items previously used in the tray will no also apear in the 'help' menu
+               * Changed: Tray Disable By Default
+               * Changed: Renamed ini option "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
+               * Changed: Renamed "ShowPHPMyAdminTrayOption" to "ShowPHPMyAdminOption"
+               * Changed: Updated Simple Invoices to version 2011.1
+               * Changed: Added note to si config.ini, noting that the default port for MySQL is 3306
+               * Changed: Renamed apache and mysql server proccesses to start with "simpleinvoices_" making them easy to find in task manager
+               * Changed: Start or Stop server is now always displayed as "Toggle Server" but prompts you with a confirmation of the action to be taken
+               * Changed: Set password "1234" for mysql root user
+               * Fixed: Simple Invoices version not showing in about dialog
+               * Fixed: Default mysql port was set to 3306 instead of 3304 if settings.ini was missing
+               * Fixed: Default bind address was set incorrectly if settings.ini was missing
+               * Fixed: If bind address was blank (accept on all addresses) a false error would be displayed
+               * Fixed: Typo in settings.ini - height value was being ignored because key was spelled "hight"
+               * Note: Other minor tweaks and internal script adjustments
 
       * 1.4.1 - 9/17/2010
-		* Added: XLM support for reports
-		* Added: ReadMe.txt
-		* Changed: Default MySQL port is now 3304 instead of 3306
-		* Changed: Renamed the simpleinvoices folder to si to avoid confusion when following directions to unpack from zip
-		* Note: This version contains the exact same "SimpleInvoices.exe" as the previous version, no changes were needed.
+               * Added: XLM support for reports
+               * Added: ReadMe.txt
+               * Changed: Default MySQL port is now 3304 instead of 3306
+               * Changed: Renamed the simpleinvoices folder to si to avoid confusion when following directions to unpack from zip
+               * Note: This version contains the exact same "SimpleInvoices.exe" as the previous version, no changes were needed.
 
       * 1.4.0 - 8/?/2010
-		* First offical release
+               * First offical release

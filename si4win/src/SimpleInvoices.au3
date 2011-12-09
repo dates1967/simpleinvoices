@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=y
-#AutoIt3Wrapper_Res_Fileversion=1.6.0.41
+#AutoIt3Wrapper_Res_Fileversion=1.6.0.58
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -191,23 +191,32 @@ WEnd
 ;=====================================================================================
 _cfl("GUI-2 Build")
 
-$GUI_Browser = GUICreate($TITLE,$WIDTH,$HIGHT,-1,-1,BitOr($GUI_SS_DEFAULT_GUI,$WS_SIZEBOX,$WS_MAXIMIZEBOX))
 $oIE = ObjCreate("Shell.Explorer.2")
+
+$GUI_Browser = GUICreate($TITLE,$WIDTH,$HIGHT,-1,-1,BitOr($GUI_SS_DEFAULT_GUI,$WS_SIZEBOX,$WS_MAXIMIZEBOX))
 $GUIActiveX = GUICtrlCreateObj ($oIE, 1, 1,$WIDTH-2,$HIGHT-4-20)
 GUICtrlSetResizing ($GUIActiveX,2+4+32+64)
 $MenuItem1 = GUICtrlCreateMenu("&File")
-$MenuItem7 = GUICtrlCreateMenuItem("Exit", $MenuItem1)
-$MenuItem10 = GUICtrlCreateMenu("Controls")
-$MenuItem2 = GUICtrlCreateMenuItem("Back <<", $MenuItem10)
-$MenuItem5 = GUICtrlCreateMenuItem("Forward >>", $MenuItem10)
-$MenuItem6 = GUICtrlCreateMenuItem("Refresh ", $MenuItem10)
-$MenuItem11 = GUICtrlCreateMenuItem("Home", $MenuItem10)
-$MenuItem8 = GUICtrlCreateMenu("Help")
-if iniread($INI_SETTINGS,"SETTINGS","ShowPHPMyAdminOption",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem8)
-if iniread($INI_SETTINGS,"SETTINGS","EnableDefaultBrowser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem8)
-if iniread($INI_SETTINGS,"SETTINGS","ShowToggleServerOption",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem8)
-GUICtrlCreateMenuItem("", $MenuItem8)
-$MenuItem3 = GUICtrlCreateMenuItem("About", $MenuItem8)
+	$MenuItem6 = GUICtrlCreateMenuItem("Refresh", $MenuItem1)
+	$MenuItem11 = GUICtrlCreateMenuItem("Home", $MenuItem1)
+	$MenuItem5 = GUICtrlCreateMenuItem("Forward >>", $MenuItem1)
+
+	$MenuItem8 = GUICtrlCreateMenuItem("",$MenuItem1)
+
+	if iniread($INI_SETTINGS,"SETTINGS","ShowPHPMyAdminOption",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","EnableDefaultBrowser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","ShowToggleServerOption",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
+
+	$MenuItem13 = GUICtrlCreateMenuItem("",$MenuItem1)
+
+	$MenuItem3 = GUICtrlCreateMenuItem("About", $MenuItem1)
+	$MenuItem7 = GUICtrlCreateMenuItem("Exit", $MenuItem1)
+
+$MenuItem2 = GUICtrlCreateMenuItem("<< &Back",-1)
+$MenuItem10 = GUICtrlCreateMenuItem("&Print",-1)
+
+
+
 ;$StatusBar1 = _GUICtrlStatusBar_Create($Form1)
 GUISetState(@SW_SHOW,$GUI_Browser)
 
@@ -223,13 +232,15 @@ While 1
 		Case $GUI_EVENT_CLOSE, $MenuItem7
 			if Msgbox(1,$TITLE,"Exit Simple Invoices? (Unsaved data will be lost)") = 1 then Exit
 		Case $MenuItem2
-			$oIE.GoBack
+			If $oIE.LocationURL<>$URL_SI Then $oIE.GoBack
 		Case $MenuItem5
 			$oIE.GoForward
 		Case $MenuItem11
 			$oIE.navigate($URL_SI)
 		Case $MenuItem6
 			$oIE.ReFresh
+		Case $MenuItem10
+			$oIE.document.parentwindow.Print()
 		Case $MenuItem3
 			About()
 		Case $MenuItem4

@@ -64,7 +64,13 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 
 
 ==Changes:==
-      * 1.6.1 - 12/X/2011
+      * 1.7.0- 12/X/2011
+               * Added: Print button to main menu
+               * Changed: Browser UI menus have been consolidated under the file menu
+               * Changed: Moved "<< Back" button from sub menu to main menu
+               * Added: New ini values for window/program titles, instead of having them embeded
+               * Added: New ini value for si version information instead of detecting it automaticly
+               * Removed: Unused PHP extention for connecting to MSSQL
                * Changed: Split some primary functions into separate include files to make group editing tolerable
                * Changed: Optimized this readme for google code wiki (will be maintained on google code going forward)
                * Changed: Restructured Settings.ini for simplicity
