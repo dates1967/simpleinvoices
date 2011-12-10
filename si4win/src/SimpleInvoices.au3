@@ -3,8 +3,8 @@
 #AutoIt3Wrapper_icon=_icon.ico
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
-#AutoIt3Wrapper_Change2CUI=y
-#AutoIt3Wrapper_Res_Fileversion=1.6.0.58
+#AutoIt3Wrapper_Change2CUI=n
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.66
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -70,9 +70,12 @@ _cfl($TITLE&" "&$VERSION)
 ;=====================================================================================
 _cfl("_only_instance")
 If _only_instance(0)=1 then
-	if NOT WinActivate($TITLE) then
-	elseif WinActivate("Simple Invoices",$URL_BASE) then
-	elseif WinActivate("Simple Invoices - Mozilla Firefox") then
+	if WinActivate($TITLE) then
+	elseif WinActivate("",$URL_BASE) then
+	elseif WinActivate("",StringReplace($URL_BASE,"http://","")) then
+
+	;find a way to deal with firefox
+
 	else
 		OpenBrowser()
 	EndIf
@@ -128,21 +131,24 @@ $Button3 = GUICtrlCreateButton("Exit", 296, 63, 127, 33, $WS_GROUP)
 GUICtrlSetFont(-1, 10, 400, 0, "Verdana")
 GUICtrlSetColor(-1, 0xFFFFFF)
 GUICtrlSetBkColor(-1, 0xD54E21)
-$Label1 = GUICtrlCreateLabel("2011.1 - stable / 1.6.1", 176, 118, 252, 17, $SS_RIGHT)
+$Label1 = GUICtrlCreateLabel($VERSION_WWW&"/"&$VERSION, 176, 118, 252, 17, $SS_RIGHT)
 GUICtrlSetFont(-1, 8, 400, 0, "Verdana")
 GUICtrlSetColor(-1, 0x808080)
 $Label2 = GUICtrlCreateLabel("How would you like to open "&$TITLE_SHORT&"?", 104, 26, 300, 20)
 GUICtrlSetFont(-1, 10, 400, 0, "Verdana")
-$Checkbox1 = GUICtrlCreateCheckbox("Set As Default", 24, 116, 97, 17)
+$Checkbox1 = GUICtrlCreateCheckbox("Set As Default", 48, 116, 97, 17)
 GUICtrlSetFont(-1, 8, 400, 2, "Verdana")
 GUICtrlSetColor(-1, 0x808080)
-$Progress1 = GUICtrlCreateProgress(20, 116, 150, 17)
-GUICtrlSetState(-1, $GUI_HIDE)
 $Icon1 = GUICtrlCreateIcon("src\_icon.ico", -1, 32, 12, 48, 48, BitOR($SS_NOTIFY,$WS_GROUP))
+$Icon2 = GUICtrlCreateIcon("src\_gear.ico", -1, 20, 116, 16, 16, BitOR($SS_NOTIFY,$WS_GROUP))
+
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 
 if iniread($INI_SETTINGS,"SETTINGS","GUI",1)=0 then GUICtrlSetState ($Button1,$GUI_DISABLE)
 if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=0 then GUICtrlSetState ($Button3,$GUI_DISABLE)
+if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=0 then GUICtrlSetState($Icon1, $GUI_HIDE)
+if iniread($INI_SETTINGS,"SETTINGS","SetAsDefaultCheckBox",1)=0 then GUICtrlSetState($Checkbox1, $GUI_HIDE)
+
 $Dummy1=GUICtrlCreateDummy ( )
 $Dummy2=GUICtrlCreateDummy ( )
 
@@ -181,8 +187,11 @@ While 1
 			GUIDelete($GUI_Prompt)
 
 			Opt("TrayIconHide", 0)
+			TrayTip ($TITLE_SHORT,"Use this tray icon to close the program when your done",6,1)
 			StartServer()
 			OpenBrowser()
+		Case $Icon2
+			Settings()
 
 	EndSwitch
 
@@ -203,9 +212,10 @@ $MenuItem1 = GUICtrlCreateMenu("&File")
 
 	$MenuItem8 = GUICtrlCreateMenuItem("",$MenuItem1)
 
-	if iniread($INI_SETTINGS,"SETTINGS","ShowPHPMyAdminOption",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
-	if iniread($INI_SETTINGS,"SETTINGS","EnableDefaultBrowser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
-	if iniread($INI_SETTINGS,"SETTINGS","ShowToggleServerOption",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=1 then $MenuItem14 = GUICtrlCreateMenuItem("Settings", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
 
 	$MenuItem13 = GUICtrlCreateMenuItem("",$MenuItem1)
 
@@ -230,7 +240,7 @@ While 1
 	$msg = GUIGetMsg()
 	switch $msg
 		Case $GUI_EVENT_CLOSE, $MenuItem7
-			if Msgbox(1,$TITLE,"Exit Simple Invoices? (Unsaved data will be lost)") = 1 then Exit
+			if Msgbox(1,$TITLE,"Are you sure you want to exit? (Unsaved data will be lost)") = 1 then Exit
 		Case $MenuItem2
 			If $oIE.LocationURL<>$URL_SI Then $oIE.GoBack
 		Case $MenuItem5
@@ -249,13 +259,15 @@ While 1
 			OpenBrowser()
 		Case $MenuItem12
 			toggleserver()
+		Case $MenuItem14
+			settings()
 	Endswitch
 
 	sleep(10)
 WEnd
 
 ;=====================================================================================
-
+#include <func_settings.au3>
 #include <func_misc.au3>
 #include <func_stopserver.au3>
 #include <func_startserver.au3>
