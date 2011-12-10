@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.66
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.69
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -24,7 +24,7 @@
 
 ;=====================================================================================
 if @compiled=0 then;Change only for testing purposes when script is executed as uncompiled
-	msgbox(0,"Testing...","Currently Nothing To Do Uncompiled")
+	msgbox(0,"Error...","This script contains features that require it to be compiled")
 	Exit
 EndIf
 
@@ -146,7 +146,7 @@ GUICtrlCreateGroup("", -99, -99, 1, 1)
 
 if iniread($INI_SETTINGS,"SETTINGS","GUI",1)=0 then GUICtrlSetState ($Button1,$GUI_DISABLE)
 if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=0 then GUICtrlSetState ($Button3,$GUI_DISABLE)
-if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=0 then GUICtrlSetState($Icon1, $GUI_HIDE)
+if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=0 then GUICtrlSetState($Icon2, $GUI_HIDE)
 if iniread($INI_SETTINGS,"SETTINGS","SetAsDefaultCheckBox",1)=0 then GUICtrlSetState($Checkbox1, $GUI_HIDE)
 
 $Dummy1=GUICtrlCreateDummy ( )
@@ -212,10 +212,10 @@ $MenuItem1 = GUICtrlCreateMenu("&File")
 
 	$MenuItem8 = GUICtrlCreateMenuItem("",$MenuItem1)
 
-	if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=1 then $MenuItem14 = GUICtrlCreateMenuItem("Settings", $MenuItem1)
-	if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
-	if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
-	if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
+	$MenuItem14 = GUICtrlCreateMenuItem("Settings", $MenuItem1)
+	$MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
+	$MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
+	$MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
 
 	$MenuItem13 = GUICtrlCreateMenuItem("",$MenuItem1)
 
@@ -225,9 +225,11 @@ $MenuItem1 = GUICtrlCreateMenu("&File")
 $MenuItem2 = GUICtrlCreateMenuItem("<< &Back",-1)
 $MenuItem10 = GUICtrlCreateMenuItem("&Print",-1)
 
+if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=0 then GUICtrlSetState($MenuItem14,$GUI_HIDE)
+if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=0 then GUICtrlSetState($MenuItem4,$GUI_HIDE)
+if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=0 then GUICtrlSetState($MenuItem9,$GUI_HIDE)
+if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=0 then GUICtrlSetState($MenuItem12,$GUI_HIDE)
 
-
-;$StatusBar1 = _GUICtrlStatusBar_Create($Form1)
 GUISetState(@SW_SHOW,$GUI_Browser)
 
 Dim $Form1_AccelTable[1][2] = [["^f", $MenuItem1]]
