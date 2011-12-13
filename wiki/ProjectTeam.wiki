@@ -2,7 +2,7 @@
 
 == Admin Members ==
 
-* Justin Kelly - Project Founder*
+* Justin Kelly - Project Founder
 * Matt West (MattAntWest)- Project Manager, Release Manager, Forum Admin, Developer
 * Raffael Luthiger (r.luthiger) - Forum Moderator, Developer
 * John McLaren (jmclaren078) - Windows Release, Developer
