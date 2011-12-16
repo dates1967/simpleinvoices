@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.101
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.107
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -53,6 +53,7 @@ Global $DEBUGLOG=iniread($INI_SETTINGS,"SETTINGS","Log",0)
 Global $URL_BASE="http://"&$WEBADDRESS&":"&$WEBPORT
 Global $URL_SCRIPTS=$URL_BASE&"/scripts/"
 Global $URL_SI=$URL_BASE&"/"
+Global $URL_SI_START=$URL_SI&"#START"
 Global $TeamMC_Title="TeamMC Portable Web Apps"
 Global $TITLE=iniread($INI_SETTINGS,"SETTINGS","Title","Portable Web Server")
 Global $TITLE_SHORT=iniread($INI_SETTINGS,"SETTINGS","Title_Short","Portable Web Server")
@@ -239,7 +240,7 @@ GUISetState(@SW_SHOW,$GUI_Browser)
 Dim $Form1_AccelTable[1][2] = [["^f", $MenuItem1]]
 GUISetAccelerators($Form1_AccelTable)
 
-$oIE.navigate($URL_SI)
+$oIE.navigate($URL_SI_START)
 
 _cfl("GUI-2 Loop")
 While 1
@@ -248,7 +249,8 @@ While 1
 		Case $GUI_EVENT_CLOSE, $MenuItem7
 			if Msgbox(1,$TITLE,"Are you sure you want to exit? (Unsaved data will be lost)") = 1 then Exit
 		Case $MenuItem2
-			If $oIE.LocationURL<>$URL_SI Then $oIE.GoBack
+			_cfl($oIE.LocationURL&" - "&$oIE.Busy)
+			If $oIE.LocationURL<>$URL_SI_START AND NOT $oIE.Busy Then $oIE.GoBack
 		Case $MenuItem5
 			$oIE.GoForward
 		Case $MenuItem11
