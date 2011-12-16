@@ -1,6 +1,6 @@
 ;===============================================================================
 ;DONT FORGET TO UPDATE VERSION NUMBERS AND DATES
-;REVISED 20110918
+;REVISED 201101215
 ;===============================================================================
 #include-once
 #Include <Array.au3>
@@ -155,12 +155,15 @@ EndFunc ;==>_sini
 Func _cfl($Text,$SameLine=0)
 	Local $LogFile, $Line, $Handle, $Data
 
-	$LogFile=@TempDir&"\"&@ScriptName&"_LOG.txt"
+	$LogFile=@ScriptFullPath&"_Log.txt"
+	If Eval("DEBUGLOG")=2 Or StringInStr($CmdLineRaw,"-debuglogtempdir") then $LogFile=@TempDir&"\"&@ScriptName&"_Log.txt"
+	If StringInStr($CmdLineRaw,"-debuglogworkingdir") then $LogFile=@WorkingDir&"\"&@ScriptName&"_Log.txt"
+
 	$Line=@CRLF&@HOUR&":"&@MIN&":"&@SEC&"> "&$Text
 	If $SameLine=1 Then $Line=$Text
 
 	ConsoleWrite($Line)
-	If Eval("DEBUGLOG")=1 Or StringInStr($CmdLineRaw,"-debuglog") Then
+	If Eval("DEBUGLOG")>0 Or StringInStr($CmdLineRaw,"-debuglog") Then
 		if FileGetSize($LogFile)>1048576 then
 			$Data=stringtrimleft(FileRead($LogFile),stringlen($Line)*2)
 			$Handle=fileopen($LogFile,2)

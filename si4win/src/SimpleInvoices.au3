@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.72
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.101
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -28,7 +28,8 @@ if @compiled=0 then;Change only for testing purposes when script is executed as 
 	Exit
 EndIf
 
-Global $INI_SETTINGS="Settings.ini"
+Global $INI_SETTINGS_FILE="Settings.ini"
+Global $INI_SETTINGS=@ScriptDir&"\"&$INI_SETTINGS_FILE
 Global $WEBPORT=iniread($INI_SETTINGS,"SETTINGS","WebPort","8877")
 Global $SQLPORT=iniread($INI_SETTINGS,"SETTINGS","SQLPort","3304")
 Global $WEBADDRESS=iniread($INI_SETTINGS,"SETTINGS","WebAddress","localhost")
@@ -65,6 +66,7 @@ Global $URL="www.TeamMC.cc/simpleinvoices"
 
 Global $STATE_SERVER=0
 
+_cfl("====================================================")
 _cfl($TITLE&" "&$VERSION)
 
 ;=====================================================================================
@@ -94,6 +96,12 @@ TraySetToolTip ($TITLE)
 if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=1 then
 	TrayCreateItem("Open In Browser")
 	TrayItemSetOnEvent(-1,"OpenBrowser")
+	TrayCreateItem("")
+endif
+
+if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=1 then
+	TrayCreateItem("Settings")
+	TrayItemSetOnEvent(-1,"settings")
 endif
 if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=1 then
 	TrayCreateItem("PHPMyAdmin")
@@ -200,6 +208,7 @@ WEnd
 ;=====================================================================================
 _cfl("GUI-2 Build")
 
+local $MenuItem14=1, $MenuItem4=1, $MenuItem9=1, $MenuItem12=1
 $oIE = ObjCreate("Shell.Explorer.2")
 
 $GUI_Browser = GUICreate($TITLE,$WIDTH,$HIGHT,-1,-1,BitOr($GUI_SS_DEFAULT_GUI,$WS_SIZEBOX,$WS_MAXIMIZEBOX))
@@ -212,10 +221,10 @@ $MenuItem1 = GUICtrlCreateMenu("&File")
 
 	$MenuItem8 = GUICtrlCreateMenuItem("",$MenuItem1)
 
-	$MenuItem14 = GUICtrlCreateMenuItem("Settings", $MenuItem1)
-	$MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
-	$MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
-	$MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=1 then $MenuItem14 = GUICtrlCreateMenuItem("Settings", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=1 then $MenuItem4 = GUICtrlCreateMenuItem("PHPMyAdmin", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=1 then $MenuItem9 = GUICtrlCreateMenuItem("Open In Browser", $MenuItem1)
+	if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=1 then $MenuItem12 = GUICtrlCreateMenuItem("Toggle Server", $MenuItem1)
 
 	$MenuItem13 = GUICtrlCreateMenuItem("",$MenuItem1)
 
@@ -224,11 +233,6 @@ $MenuItem1 = GUICtrlCreateMenu("&File")
 
 $MenuItem2 = GUICtrlCreateMenuItem("<< &Back",-1)
 $MenuItem10 = GUICtrlCreateMenuItem("&Print",-1)
-
-if iniread($INI_SETTINGS,"SETTINGS","Settings",1)=0 then GUICtrlSetState($MenuItem14,$GUI_HIDE)
-if iniread($INI_SETTINGS,"SETTINGS","PHPMyAdmin",1)=0 then GUICtrlSetState($MenuItem4,$GUI_HIDE)
-if iniread($INI_SETTINGS,"SETTINGS","Browser",1)=0 then GUICtrlSetState($MenuItem9,$GUI_HIDE)
-if iniread($INI_SETTINGS,"SETTINGS","ToggleServer",1)=0 then GUICtrlSetState($MenuItem12,$GUI_HIDE)
 
 GUISetState(@SW_SHOW,$GUI_Browser)
 

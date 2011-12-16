@@ -2,8 +2,9 @@
 
 =Simple Invoices For Windows=
 
-The windows version is maintained by http://TeamMC.cc - john@teammc.cc
+This Windows based version of Simple Invoices is maintained by John McLaren at http://TeamMC.cc/SimpleInvoices  -  john@teammc.cc
 
+Support may be offered by emailing John or by visiting the Simple Invoices forum at http://www.simpleinvoices.org
 
 ==Instructions:==
 
@@ -16,10 +17,11 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 ==Configuration:==
 
-	To configure options for Simple Invoices itself please visit [Install] (http://code.google.com/p/simpleinvoices/wiki/Install)
+	To configure options for Simple Invoices itself please visit [Install]  or  http://code.google.com/p/simpleinvoices/wiki/Install
 
 	To configure options specific to "Simple Invoices For Windows" (not Simple Invoices)
-	open and edit Settings.ini in the "Simple Invoices For Windows" folder.
+	open and edit Settings.ini in the "Simple Invoices For Windows" folder. 
+	Here is an explanation of some options you will see in Settings.ini.
 
 	* GUI=1
 		* Setting this to 0 will not allow the user to choose the GUI option when starting Simple Invoices
@@ -31,14 +33,14 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 		* Setting this to 0 will not prompt the user to choose the startup method of Simple Invoices, 
 		* Whatever method is enabled will be the one to start, if both are enabled or disabled the GUI method will be used.
 
-	* EnableTrayIcon=0
+	* TrayIcon=0
 		* Settings this to 1 wll show a system tray icon giving you a few simple functions (Browser mode forces the tray icon to apear).
 
-	* ShowPHPMyAdminOption=1
+	* PHPMyAdmin=1
 		* Setting this to 0 will hide the options to open the database manager PHPMyAdmin,
 		* Note that PHPMyAdmin can still be accessed manualy in a web browser givin the proper url
 
-	* ShowToggleServerOption=1
+	* ToggleServer=1
 		* Setting this to 0 will hide the options to start and stop the server.
 
 	* WebAddress=localhost
@@ -51,7 +53,7 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 	* SQLServer,SQLAddress,SQLPort
 		* Advanced settings for the MySQL server, change these only if you have a port conflict or want to disable the SQL server to use a remote server.
-
+		* Note that changing these settings will require you to reconfigure Simple Invoice's 'config.ini'
 			
 
 ==Software Versions:==
@@ -64,22 +66,24 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
 
 ==Changes:==
       * 1.7.0- 12/X/2011
-               * Added: Print button to main menu
-               * Changed: Browser UI menus have been consolidated under the file menu
+               * Changed: Browser UI menus have been consolidated under the file sub menu
                * Changed: Moved "<< Back" button from sub menu to main menu
-               * Added: New ini values for window/program titles, instead of having them embeded
-               * Added: New ini value for si version information instead of detecting it automaticly
-               * Removed: Unused PHP extention for connecting to MSSQL
                * Changed: Split some primary functions into separate include files to make group editing tolerable
-               * Changed: Optimized this readme for google code wiki (will be maintained on google code going forward)
+               * Changed: Updated and Optimized this readme for google code wiki (will be maintained on google code going forward)
                * Changed: Restructured Settings.ini for simplicity
                * Changed: "ToggleServer" (previously "startstopserveroption") is disabled by default
-               * Fixed: Window activation priority when opening program when alreading running
-               * Added: "SQLServer" option in settings.ini, use this to disable the built in sql server and use your own
-               * Added: "SQLAddress" option in settings.ini, use this to specifiy the address of the sql server seperate from the web server
+               * Added: Print button to main menu
+               * Added: New ini values for program name and version, instead of having thrm embeded
+               * Added: "SQLServer" and "SQLAddress" options in settings.ini, use this to disable the built in sql server and use your own
                * Added: New Custom GUI for GUI prompt
-               * Added: Option on GUI prompt screen to set the default start option
+               * Added: Check box on GUI prompt screen to set the default start option
+               * Added: Gear icon on GUI prompt and 'Settings' item to file menu (currently opens settings.ini)
+	       * Fixed: Server shutdown adjusted for speed and safety
+               * Fixed: Updates to ReadMe.txt
+               * Fixed: mcrypt module not loading in php
+	       * Fixed: Window activation priority when opening the program and its alreading running
                * Fixed: Minor code optimations and adjustments
+               * Removed: Unused PHP extention for connecting to MSSQL
 
       * 1.6.0 - 9/18/2011
                * Changed: Updated Apache to 2.2.21
@@ -89,7 +93,9 @@ The windows version is maintained by http://TeamMC.cc - john@teammc.cc
                * Fixed: Using default browser option forces tray icon to apear (had no way to exit program otherwise)
                * Fixed: About dialog not apearing
                * Fixed: MySQL safe shutdown procedure failing
-               * Note: This release contains No binarys from a 3rd part, they are all direct from their respective projects. Also, no files are compressed (UPX)
+               * Note: This release contains No binarys from a 3rd party, 
+	       		they are all direct from their respective projects. Also, no files are compressed (UPX)
+			This should solve any false positives with any anti-virus program
 
       * 1.5.0 - 5/25/2011
                * Added: ini Option EnableTrayIcon
