@@ -65,7 +65,7 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 
 
 ==Changes:==
-      * 1.7.0- 12/X/2011
+      * 1.7.0- 12/x/2011
                * Changed: Browser UI menus have been consolidated under the file sub menu
                * Changed: Moved "<< Back" button from sub menu to main menu
                * Changed: Split some primary functions into separate include files to make group editing tolerable
@@ -78,6 +78,9 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
                * Added: New Custom GUI for GUI prompt
                * Added: Check box on GUI prompt screen to set the default start option
                * Added: Gear icon on GUI prompt and 'Settings' item to file menu (currently opens settings.ini)
+	       * Fixed: Added GD2 php extention to enable logos in generated pdfs
+	       * Fixed: Browser back button causing program to crash if nothing to go back to
+	       * Fixed: Added openssl php extention (fixed error when using ssl with email configuration)
 	       * Fixed: Server shutdown adjusted for speed and safety
                * Fixed: Updates to ReadMe.txt
                * Fixed: mcrypt module not loading in php
