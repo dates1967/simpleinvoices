@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.107
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.111
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -240,6 +240,9 @@ GUISetState(@SW_SHOW,$GUI_Browser)
 Dim $Form1_AccelTable[1][2] = [["^f", $MenuItem1]]
 GUISetAccelerators($Form1_AccelTable)
 
+_cfl("Registering Error Handler")
+$objError = ObjEvent("AutoIt.Error", "_ErrorHandlerFunction")
+
 $oIE.navigate($URL_SI_START)
 
 _cfl("GUI-2 Loop")
@@ -275,6 +278,10 @@ While 1
 WEnd
 
 ;=====================================================================================
+func _ErrorHandlerFunction()
+	;Nothing to do
+	_cfl("_ErrorHandlerFunction Called - Nothing To Do")
+endfunc
 #include <func_settings.au3>
 #include <func_misc.au3>
 #include <func_stopserver.au3>
