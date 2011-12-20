@@ -6,7 +6,47 @@ Table of Contents
 <wiki:toc max_depth="2" />
 
 ----
+=How extensions work=
 
+index.php is the main file in Simple Invoices that does all the work to say what files are to be loaded when and what to present on screen
+
+  * normally based on the url ie. index.php?module=invoices&view=manage
+
+In the above example url index.php would load the relevant files to show the Manage Invoices page
+
+  * it would load all the normal stuff to run Simple Invoices
+  * then the php code for this page from ./modules/invoices/manage.php would be loaded
+  * then it would load the template for this page from ./templates/default/invoices/manage.tpl
+  * and then present a combination of the above file to the browser
+
+The extension system provide a way to override and/or extended what is loaded via index.php
+
+In index.php there are checks at each main include section to see if an extension has been enabled and if it has either include the extensions version of the requested file instead of the normal file or include it inconjunction with the normal file
+
+For an extension to be included correctly the same directory structure for the normal file must be repeated in the extensions directory (ie. ./extensions/gene/modules/invoices/itemised.php would replace the normal file ./modules/invoices/itemised.php if the Gene extension was enabled)
+
+To explain how it works i'll use a quick example from the Gene extension
+
+  * What was required:
+    * A customisation of the New Itemised invoice page with additional fields to be available
+  * New fields meant that the function that inserts the products into the invoice items table will have to be altered
+    * The normal function for this is stored in ./includes/sql_queries.php
+    * index.php includes the extensions version of sql_queries.php, ./extensions/gene/include/sql_queries.php along with the normal ./includes/sql_queries.php
+    * only the new functions/classes were placed in ./extensions/gene/include/sql_queries.php all the normal functions stayed unedited in ./include/sql_queries.php
+
+  * The logic of the itemised screen has to be altered
+    * By including the file ./extensions/gene/module/invoices/itemised.php it overwrote the default itemised.php file (./modules/invoices/itemised.php)
+
+  * A custom view of the New Itemised invoice page was required
+    * By including the file ./extensions/gene/templates/default/invoices/itemised.tpl it overwrote the default itemised.tpl file (./modules/invoices/itemised.tpl)
+
+With these new files loaded a custom version of the Itemised invoices page was displayed and developed in a way to complement Simple Invoices
+
+=How to enable an extension=
+
+In the current version 2010.x, Extensions can be enabled / disabled by Registering / Unregistering at: Settings → Extensions and clicking on the first green icon on the left of ech extension entry. 
+----
+=Extension Directory=
 ==Expense Extension==
 
 ===About===
