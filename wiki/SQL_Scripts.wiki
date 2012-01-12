@@ -1,4 +1,4 @@
-#All information regarding the sql scripts used for install/update of db scheme 
+#summary All information regarding the sql scripts used for install/update of db scheme
 
 = Introduction =
 
