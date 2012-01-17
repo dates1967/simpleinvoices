@@ -26,6 +26,10 @@ We have already more than 16 translations. But not all of them are finished. And
   * Know or want to know PHP and or MySQL. Jump on the [http://dev.simpleinvoices.org/ developers forum on posterous] or check out our [http://code.google.com/p/simpleinvoices/wiki/todo todo list] to see whats planned for future development. If you can lend a hand coding its always greatly appreciated. If you want to follow on what is happening you can register for our [http://tracker.simpleinvoices.org/ tracker] too. There you can see all commits.
   * Note: for those interested in Simple Invoices development I suggest a quick read the following link [http://gettingreal.37signals.com/toc.php 37signals.com :: less features, small and passionate dev teams]
   * Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we have not thought about it or bugged it does not mean it should not get done. It would be good if you could write in the developers forum about it too. Maybe someone else already started the same thing but did not finish it till now.
+  * Also we have a development mailing list at http://dev.simpleinvoices.org
+  * if you want to chat to the developers we have a jabber/xmpp channel:
+    * Room: simpleinvoices
+    * Server: conference.jabber.org
 
 
 == Donating ==
@@ -43,3 +47,26 @@ If you like Simple Invoices, help us promote it! The best way to do that is to t
   * You can write reviews for on relevant websites, send emails to editors from magazines or blogs you read, or tell your friends about Simple Invoices via email. 
   * Do whatever you can do to get the word out about Simple Invoices.
   * It also helps us if you add Simple Invoices to your social bookmarks.
+
+== RSS and Email alerts ==
+
+Want to automatically keep in touch with the latest happenings of Simple Invoices. You can [http://simpleinvoices.org/subscribe subscribe] (via either [http://www.feedburner.com/fb/a/emailverifySubmit?feedId=662422 email] or [http://feeds.feedburner.com/SimpleInvoicesBlog rss]) to [http://simpleinvoices.org/blog Simple Invoices Blog] [http://simpleinvoices.org/subscribe here]
+
+== Mailing lists ==
+
+  * Simple Invoices dev list :: http://dev.simpleinvoices.org
+  * Simple Invoices tracker list :: http://tracker.simpleinvoices.org
+    * auto generated posts from our development area
+
+== Jabber/XMPP/Google IM channel ==
+
+Feel free to jump into the Simple Invoices jabber/xmpp channel simpleinvoices@conference.jabber.org
+
+  * Room: simpleinvoices
+  * Server: conference.jabber.org
+
+Note: you can use your normal jabber/xmpp/google im account to connect to this channel, just will need a client that supports jabber. ie Pidgin, PSI, Miranda, Empathy etc..
+
+Refer this image for how to conenct in your client: 
+
+http://i.minus.com/iiqQ2M0evB2Sm.png
