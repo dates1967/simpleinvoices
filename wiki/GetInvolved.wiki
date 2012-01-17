@@ -17,17 +17,15 @@ We have already more than 16 translations. But not all of them are finished. And
 
 
 ==  Helping out on the forums ==
-
-       * There is always some posts on the [http://www.simpleinvoices.org/forum forum] that can be better answered. If you can help out answering/resolving someones issue its a great help and a great way to build a stronger community
-       * Got some useful tips: Feel free to post any tips/updates/whatever in our forum or blog. 
+  * There is always some posts on the [http://www.simpleinvoices.org/forum forum] that can be better answered. If you can help out answering/resolving someones issue its a great help and a great way to build a stronger community
+  * Got some useful tips: Feel free to post any tips/updates/whatever in our forum or blog. 
 
 
 == Coding ==
 
-       * Know or want to know PHP and or MySQL. Jump on the [http://dev.simpleinvoices.org/ developers forum on posterous] or check out our [http://code.google.com/p/simpleinvoices/wiki/todo todo list] to see whats planned for future development. If you can lend a hand coding its always greatly appreciated.
-       * Note: for those interested in Simple Invoices development I suggest a quick read of the following links
-         * [http://gettingreal.37signals.com/toc.php 37signals.com :: less features, small and passionate dev teams]
-         * Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we have not thought about it or bugged it does not mean it should not get done. It would be good if you could write in the developers forum about it too. Maybe someone else already started the same thing but did not finish it till now.
+  * Know or want to know PHP and or MySQL. Jump on the [http://dev.simpleinvoices.org/ developers forum on posterous] or check out our [http://code.google.com/p/simpleinvoices/wiki/todo todo list] to see whats planned for future development. If you can lend a hand coding its always greatly appreciated. If you want to follow on what is happening you can register for our [http://tracker.simpleinvoices.org/ tracker] too. There you can see all commits.
+  * Note: for those interested in Simple Invoices development I suggest a quick read the following link [http://gettingreal.37signals.com/toc.php 37signals.com :: less features, small and passionate dev teams]
+  * Got an idea you want to code but its not on our list or forum. Go for it!!! Just because we have not thought about it or bugged it does not mean it should not get done. It would be good if you could write in the developers forum about it too. Maybe someone else already started the same thing but did not finish it till now.
 
 
 == Donating ==
