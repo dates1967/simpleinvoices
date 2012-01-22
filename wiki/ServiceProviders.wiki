@@ -106,6 +106,18 @@ Whatever your Simple Invoices needs are we can sort it out.
 
 ----
 
+== Ninocebrian ==
+
+[http://www.nincocebrian.com/]
+
+** Available Simple Invoices Services **
+  * Installation
+  * Hosting
+  * Technical support
+  * Invoice template customisation
+
+----
+
 = Why a Market Place? =
 Though the Simple Invoices [[http://www.simpleinvoices.org/forum|Forums]] rock and provide the level of support that most people will need, it became clear that some members of the Simple Invoices community required a level of support that was not practical under the normal open source/community model
 
