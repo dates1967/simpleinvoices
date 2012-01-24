@@ -26,6 +26,7 @@ Justin: Please write more about how this version number is set up.
   # The windows version name will correspond to the simple invoices version, If updates/fixes are needed for the program and not for si then the new release's version will have "fix-1" added to it name.
   # update windows release package with new si stable from google code
   # The windows version will then be zipped and uploaded to the Downloads-section on Google Code as well.
+  # Mark the two new packages as featured and the old ones as deprecated.
   # Inform everyone about the new release
     * announce on forum
     * announce on blog
