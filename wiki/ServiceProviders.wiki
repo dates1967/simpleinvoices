@@ -143,6 +143,7 @@ If you would like your company listed here as a Simple Invoices service provider
 
 If you have any queries about the Market Place feel free to post on the forum [[http://simpleinvoices.org/forum]]
 
-Note: the only requirement to get listed on the Market Place is to link back to simpleinvoices.org from your site
-
+Note: the requirements to get listed on the Market Place are:
+  * Have a dedicated Simple Invoices page on your website - which is linked from your front page
+  * Have links back to SimpleInvoices.org and include our logo
 <g:plusone size="medium"></g:plusone>
