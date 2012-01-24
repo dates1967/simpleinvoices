@@ -130,7 +130,7 @@ For more on why the Market Place was started refer: http://www.sixhq.com/#why
 ----
 
 = How to join =
-If you would like your company listed here as a Simple Invoices service provider please contact us via twitter (@SimpleInvoices)
+If you would like your company listed here as a Simple Invoices service provider please contact one of the of the project owners listed [http://code.google.com/p/simpleinvoices/people/list here] 
 
 If you have any queries about the Market Place feel free to post on the forum [[http://simpleinvoices.org/forum]]
 
