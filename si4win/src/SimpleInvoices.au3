@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.111
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.115
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Obfuscator=n
@@ -50,11 +50,14 @@ Global $HIGHT=iniread($INI_SETTINGS,"SETTINGS","WinHeight",680)
 Global $WIDTH=iniread($INI_SETTINGS,"SETTINGS","WinWidth",1020)
 Global $DEBUGLOG=iniread($INI_SETTINGS,"SETTINGS","Log",0)
 
+Global $DIR_ROOT=@ScriptDir
+Global $DIR_WWW=$DIR_ROOT&"\www"
+
 Global $URL_BASE="http://"&$WEBADDRESS&":"&$WEBPORT
-Global $URL_SCRIPTS=$URL_BASE&"/scripts/"
+;Global $URL_SCRIPTS=$URL_BASE&"/scripts/"
 Global $URL_SI=$URL_BASE&"/"
 Global $URL_SI_START=$URL_SI&"#START"
-Global $TeamMC_Title="TeamMC Portable Web Apps"
+Global $TeamMC_Title="TeamMC Portable Web Server"
 Global $TITLE=iniread($INI_SETTINGS,"SETTINGS","Title","Portable Web Server")
 Global $TITLE_SHORT=iniread($INI_SETTINGS,"SETTINGS","Title_Short","Portable Web Server")
 Global $Proccess_Apache="simpleinvoices_httpd.exe"

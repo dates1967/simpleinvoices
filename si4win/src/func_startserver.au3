@@ -1,6 +1,11 @@
 func StartServer()
 	_cfl("StartServer")
 
+	if NOT FileExists($DIR_WWW) Then
+		msgbox(16,$TITLE,"Web root is missing ("&$DIR_WWW&")")
+		exit
+	endif
+
 	ProgressOff()
 	ProgressOn($TITLE,$TITLE,"Starting Server",Default,@DesktopHeight/2-200,16)
 
@@ -29,6 +34,7 @@ func StartServer()
 	Sleep(100)
 
 	ProgressSet(70,"Waitng For Connections")
+	_cfl("Waitng For Connections")
 
 	TCPStartUp()
 	for $i=1 to 60
@@ -46,21 +52,26 @@ func StartServer()
 	next
 
 	ProgressSet(80,"Checking Proccesses & Connections")
+	_cfl("Checking Proccesses & Connections")
 
 	if ProcessExists($PID_Apache)=0 AND $WEBERROR<>10048 Then
-		msgbox(0,$TITLE,"Apache proccess failed to start and connection could not be detected")
+		_cfl("Apache proccess failed to start and connection could not be detected")
+		msgbox(16,$TITLE,"Apache proccess failed to start and connection could not be detected")
 		Exit
 
 	elseif ProcessExists($PID_Apache)=1 AND $WEBERROR<>10048 Then
-		msgbox(0,$TITLE,"Apache proccess started but connection could not be detected")
+		_cfl("Apache proccess started but connection could not be detected")
+		msgbox(16,$TITLE,"Apache proccess started but connection could not be detected")
 		Exit
 
 	elseif ProcessExists($PID_MySQL)=0 AND $WEBERROR<>10048 Then
-		msgbox(0,$TITLE,"MySQL proccess failed to start and connection could not be detected")
+		_cfl("MySQL proccess failed to start and connection could not be detected")
+		msgbox(16,$TITLE,"MySQL proccess failed to start and connection could not be detected")
 		Exit
 
 	elseif ProcessExists($PID_MySQL)=1 AND $WEBERROR<>10048 Then
-		msgbox(0,$TITLE,"MySQL proccess started but connection could not be detected")
+		_cfl("MySQL proccess started but connection could not be detected")
+		msgbox(16,$TITLE,"MySQL proccess started but connection could not be detected")
 		Exit
 	endif
 
