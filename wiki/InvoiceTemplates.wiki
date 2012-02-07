@@ -34,3 +34,26 @@ Available styles
   # CSS Style 1
     Original CSS template with some modifications. CSS style black and white with horizontal lines.
    http://simpleinvoices.googlecode.com/svn/templates/css_rules.tpl
+
+
+=New invoice/export Template=
+To create a new invoice/export template the easiest way is to copy one of the subfolders of /templates/invoices/ (for example default) and edit it. Rename the folder and don't use special chars like öéä, spaces, etc.
+
+Inside this folder is a file called template.tpl. It's the basic template file and will be read out automatically. So just modify this file to your needs.
+
+The second file is called style.css. If you want to use css tags stored in an external file then you have to store it in style.css. To include it in your template.tpl file you have to add the following line (in the header if possible)
+
+<link rel="stylesheet" type="text/css" href="{$css}">
+
+The variable $css automatically points to your style.css.
+
+=== Activating your template ===
+Once you have created your new template, you can set it as the default template from Settings->System Preferences-[Edit]->Default Invoice Template.
+
+
+=== Enhanced templates ===
+If you are an enhanced user and know smarty a bit I'm sure you know a bit about plugins. It's possible to write your own smarty-plugins for your invoice template. An example is shown in the default template. You have to place your plugins inside the folder /templates/invoices/yourinvoicetemplate/plugins/ so that they are read out correctly. You will find more about smarty plug-ins at this site: http://smarty.php.net/manual/en/plugins.php
+
+=== New Simpleinvoices Template ===
+At the moment I don't advise changing the simpleinvoices templates (in the /templates/default folder).
+To create a new one you can copy the folder default and make your changes in the new folder. So you don't have to modify the default template. Then open the file index.php and edit all lines with ../templates/default/ to ../templates/yourname/. This should work, but isn't tested. In later stage, there should be a possibilty to change the simpleinvoices templates like the invoices templates.
