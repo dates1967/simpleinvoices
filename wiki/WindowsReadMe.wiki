@@ -12,11 +12,9 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 
 ==Limitations:==
 
-	* Simple Invoices offers you a quick and easy way to email an invoice using the SMTP protocol, this function could experience problems. 
-	   Follow the Simple Invoices instructions like normal for configuring email and make sure you use SSL/Secure settings.
+	* Simple Invoices offers you a quick and easy way to email an invoice using the SMTP protocol, this function could experience problems. Follow the Simple Invoices instructions like normal for configuring email and make sure you use SSL/Secure settings.
 	   
-	* Simple Invoices allows you to setup reoccurring invoices (i.e. monthly automatic billing). This feature uses a webserver feature called 'cron', this feature is 
-	   not available in a portable webserver such as the one used for Simple Invoices For Windows and no workaround is currently known.
+	* Simple Invoices allows you to setup reoccurring invoices (i.e. monthly automatic billing). This feature uses a webserver feature called 'cron', this feature is not available in a portable webserver such as the one used for Simple Invoices For Windows and no workaround is currently known.
 
 ==Instructions:==
 
