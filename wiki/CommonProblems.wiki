@@ -97,3 +97,10 @@ Your webserver needs to be able access your site - so if you have any firewall r
 Either:
   * delete the .htaccess file in the Simple Invoices folder
   * or enable mod_rewrite in Apache
+
+----
+
+== TCPDF ERROR: [Image] Unable to get image: ==
+
+This is because TCPDF cannot write to the lib/tcpdf/cache folder.
+Update the folder permissions to solve this problem.
