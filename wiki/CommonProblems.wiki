@@ -83,8 +83,10 @@ Your webserver needs to be able access your site - so if you have any firewall r
 		AuthDigestProvider file
 		AuthDigestDomain / http://your.simpleinvoices.tld/
 		AuthUserFile /www/your.simpleinvoices.tld/.htdigest
-	
 	        Require valid-user
+
+                Order Deny,Allow
+                Deny From All
 		Allow from 127.0.0.1
 		Allow from 1.2.3.4 ### change this to your server's IP address
 		Satisfy any
