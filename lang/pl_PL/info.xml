@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<langfile version="1.0.0" type="language">
+	<name>Polish</name>
+	<shortname>pl_PL</shortname>
+	<englishname>PL</englishname>
+	<version>0.0.1</version>
+	<creationDate>2012-03-31</creationDate>
+	<author>Tomasz Świerszcz</author>
+	<authorEmail>mail@tomaszswierszcz.pl</authorEmail>
+</langfile>
