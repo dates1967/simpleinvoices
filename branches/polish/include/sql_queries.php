@@ -1032,7 +1032,8 @@ function taxesGroupedForInvoiceItem($invoice_item_id)
 	$sql = "select 
 				item_tax.id as row_id, 
 				tax.tax_description as tax_name, 
-				tax.tax_id as tax_id 
+				tax.tax_id as tax_id,
+				item_tax.tax_rate 
 			from 
 				si_invoice_item_tax item_tax, 
 				si_tax tax 

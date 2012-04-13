@@ -417,7 +417,7 @@ class invoice {
 
 			foreach ($tax as $key => $value)
 			{
-				$invoiceItem['tax'][$key] = $value['tax_id'];
+				$invoiceItem['tax'][$key] = $value['tax_rate'];
 				$logger->log('Invoice: '.$invoiceItem['invoice_id'].' Item id: '.$invoiceItem['id'].' Tax '.$key.' Tax ID: '.$value['tax_id'], Zend_Log::INFO);
 			}
 			$invoiceItems[$i] = $invoiceItem;
