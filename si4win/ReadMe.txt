@@ -10,14 +10,16 @@ This Windows based version of Simple Invoices is maintained by John McLaren at h
 
 Support may be offered by emailing John or by visiting the Simple Invoices forum at http://www.simpleinvoices.org
 
-==Limitations:==
+==Limitations & Special Considerations:==
 
-	* Simple Invoices offers you a quick and easy way to email an invoice using the SMTP protocol, this function could experience problems. 
-	   Follow the Simple Invoices instructions like normal for configuring email and make sure you use SSL/Secure settings.
+	* Simple Invoices offers you a quick and easy way to email an invoice using the SMTP protocol, this function could experience problems. Follow the Simple Invoices instructions like normal for configuring email and make sure you use SSL/Secure settings.
 	   
-	* Simple Invoices allows you to setup reoccurring invoices (i.e. monthly automatic billing). This feature uses a webserver feature called 'cron', this feature is 
-	   not available in a portable webserver such as the one used for Simple Invoices For Windows and no workaround is currently known.
+	* Simple Invoices allows you to setup recurring invoices (i.e. monthly automatic billing). This feature uses a webserver feature called 'cron', this feature is not available in a portable webserver such as the one used for Simple Invoices For Windows and no workaround is currently known.
 
+	* Simple Invoices For Windows uses a custom configured portable webserver and database server, these services use a network connection to communicate with each other even though they remain on the same computer, some antivirus programs or firewalls might try to block these connections
+	
+	* Using Simple Invoices For Windows on a computer that has an installation of Apache, MySQL or PHP could cause problems, please report these issues along with details about your configuration
+	
 ==Instructions:==
 
 	* Unzip the "Simple Invoices For Windows" folder to your desktop, hard drive or a portable USB drive.
@@ -51,7 +53,7 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 
 	* PHPMyAdmin=1
 		* Setting this to 0 will hide the options to open the database manager PHPMyAdmin,
-		* Note that PHPMyAdmin can still be accessed manually in a web browser given the correct URL, to make PHPMyAdmin unaccessable you may remove or move the contents of the 'phpmyadmin' folder
+		* Note that PHPMyAdmin can still be accessed manually in a web browser given the correct URL, to make PHPMyAdmin inaccessible you may remove or move the contents of the 'phpmyadmin' folder
 
 	* ToggleServer=1
 		* Setting this to 0 will hide the options to start and stop the server.
@@ -70,18 +72,20 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 			
 
 ==Software Versions:==
-        * AutoIT 3.3.6.1 - http://www.autoitscript.com
-        * Simple Invoices X  - http://www.simpleinvoices.org
+        * AutoIT 3.3.8.1 - http://www.autoitscript.com
+        * Simple Invoices 2011.1- http://www.simpleinvoices.org
         * PHP 5.2.17 - http://php.net
         * Apache 2.2.21 - http://httpd.apache.org
-        * MySQL  5.5.16 - http://mysql.com/
+        * MySQL  5.0.96 - http://mysql.com/
 
 
 ==Changes:==
-      * 1.7.0 - 2/X/2012
-	       * Changed: Updated SimpleInvoices to X
-	       * Changes: Made sure that all external projects had a popperly formatted and named LICENSE.txt file
-               * Changed: Browser UI menus have been consolidated under the file sub menu
+      * 1.7.0 - 5/X/2012
+               * Changed: Updated AutoIT to 3.3.8.1
+               * Changed: Updated PHPMyAdmin to 3.5.1
+      	       * Changed: Downgraded MySQL to match PHP library and database server versions potentially solving some db setup issues
+	       * Changes: Made sure that all external projects had a properly formatted and named LICENSE.txt file
+               * Changed: Browser UI menus have been consolidated under the file submenu
                * Changed: Moved "<< Back" button from sub menu to main menu
                * Changed: Split some primary functions into separate include files to make group editing tolerable
                * Changed: Updated and Optimized this readme for google code wiki (will be maintained on google code going forward)
@@ -131,7 +135,7 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
                * Fixed: Simple Invoices version not showing in about dialog
                * Fixed: Default mysql port was set to 3306 instead of 3304 if settings.ini was missing
                * Fixed: Default bind address was set incorrectly if settings.ini was missing
-               * Fixed: If bind address was blank (accept on all addresses) a false error would be displayed
+               * Fixed: If bind address was blank (bind to all addresses) a false error would be displayed
                * Fixed: Typo in settings.ini - height value was being ignored because key was spelled "hight"
                * Note: Other minor tweaks and internal script adjustments
 
@@ -144,3 +148,4 @@ Support may be offered by emailing John or by visiting the Simple Invoices forum
 
       * 1.4.0 - 8/30/2010
                * First official release
+ 

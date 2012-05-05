@@ -1,13 +1,12 @@
 #NoTrayIcon
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_icon=_icon.ico
-#AutoIt3Wrapper_outfile=..\SimpleInvoices.exe
+#AutoIt3Wrapper_Icon=_icon.ico
+#AutoIt3Wrapper_Outfile=..\SimpleInvoices.exe
 #AutoIt3Wrapper_UseUpx=n
-#AutoIt3Wrapper_Change2CUI=n
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.115
+#AutoIt3Wrapper_Res_Fileversion=1.7.0.116
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Run_Obfuscator=n
+#AutoIt3Wrapper_Res_requestedExecutionLevel=asInvoker
 #Obfuscator_Parameters=/striponly
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 ;=====================================================================================
